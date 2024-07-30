@@ -6,6 +6,11 @@ if (GEngine) {
 		GEngine->AddOnScreenDebugMessage(1, 60.f, FColor::Cyan, FString("Item OnScreen Message"));
 	}
 ```
+想要格式化Name字符串，必须在前面加上*，意为C style
+```
+FString Name = GetName();
+FString Message = FString::Printf(TEXT("DeltaTime: %s"), *Name);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODg0OTg0MDVdfQ==
+eyJoaXN0b3J5IjpbLTkzOTUxOTk3NSwtMTU4ODQ5ODQwNV19
 -->
