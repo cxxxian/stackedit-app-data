@@ -13,13 +13,13 @@ if (GEngine) {
 	}
 ```
 ### FString
-想要格式化Name字符串，必须在前面加上*，意为C style
+想要格式化Name字符串，必须在前面加上*，C style
 ![输入图片说明](/imgs/2024-07-31/jm6yKw7MBWMWw55T.jpeg)
 ```
 FString Name = GetName();
-FString Message = FString::Printf(TEXT("DeltaTime: %s"), *Name);
+FString Message = FString::Printf(TEXT("Item Name: %s"), *Name);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMTE3MzI5MDUsLTkzOTUxOTk3NSwtMT
+eyJoaXN0b3J5IjpbLTEzNDcyMjk5NTMsLTkzOTUxOTk3NSwtMT
 U4ODQ5ODQwNV19
 -->
