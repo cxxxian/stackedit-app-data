@@ -1,4 +1,5 @@
-前者是
+前者是在输出日志中输出，后者是直接输出在屏幕上。
+此处GEngineshi
 ```
 UE_LOG(LogTemp, Warning, TEXT("begin play called"));
 if (GEngine) {
@@ -6,5 +7,5 @@ if (GEngine) {
 	}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3MjQxODg3N119
+eyJoaXN0b3J5IjpbLTcyMzg2MjQ0MV19
 -->
