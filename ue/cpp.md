@@ -19,7 +19,16 @@ if (GEngine) {
 FString Name = GetName();
 FString Message = FString::Printf(TEXT("Item Name: %s"), *Name);
 ```
+### DrawDebugSphere
+在actor的位置处绘制一个球形Debug体
+```
+UWorld* World = GetWorld();
+	if (World) {
+		FVector Location = GetActorLocation();
+		DrawDebugSphere(World, Location, 25.f, 24, FColor::Red, false, 30.f);
+	}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDcyMjk5NTMsLTkzOTUxOTk3NSwtMT
-U4ODQ5ODQwNV19
+eyJoaXN0b3J5IjpbMTIxNDg0MzI2LC0xMzQ3MjI5OTUzLC05Mz
+k1MTk5NzUsLTE1ODg0OTg0MDVdfQ==
 -->
