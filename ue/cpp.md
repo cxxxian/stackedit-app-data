@@ -101,7 +101,7 @@ float Amplitude = 0.25f;
 UPROPERTY(EditAnywhere, BlueprintReadWrite);
 ```
 对于变量进行分类
-Category = "Sine Parameters"，将Amplitude
+Category = "Sine Parameters"，将Amplitude和TimeConstant两个变量分类在Sine Parameters下
 ```
 UPROPERTY(EditAnywhere, BlueprintReadWrite,Category = "Sine Parameters");
 float Amplitude = 0.25f;
@@ -110,9 +110,9 @@ UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sine Parameters")
 float TimeConstant = 5.f;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg3MTgyMzU5LDcyNDA3MTQxNSwtMjEyND
-Q3MzI2NSwtNTY1ODgzNjYwLDEyODE4NjA3MjQsLTEwMTI1MDY0
-NDcsLTE0MDI4Njk2NjMsNjEwNzYyMDE2LC04OTczMzQ5OTgsNj
-Y2OTk4OTIyLDEyMTQ4NDMyNiwtMTM0NzIyOTk1MywtOTM5NTE5
-OTc1LC0xNTg4NDk4NDA1XX0=
+eyJoaXN0b3J5IjpbLTExOTk0NjYyNDIsNzI0MDcxNDE1LC0yMT
+I0NDczMjY1LC01NjU4ODM2NjAsMTI4MTg2MDcyNCwtMTAxMjUw
+NjQ0NywtMTQwMjg2OTY2Myw2MTA3NjIwMTYsLTg5NzMzNDk5OC
+w2NjY5OTg5MjIsMTIxNDg0MzI2LC0xMzQ3MjI5OTUzLC05Mzk1
+MTk5NzUsLTE1ODg0OTg0MDVdfQ==
 -->
