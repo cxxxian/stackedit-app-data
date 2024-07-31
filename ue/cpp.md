@@ -100,6 +100,12 @@ float Amplitude = 0.25f;
 
 UPROPERTY(EditAnywhere, BlueprintReadWrite);
 ```
+如需要在private下定义的情况下，使用meta = (AllowPrivateAccess = "true")，同样也可以达到
+```
+private:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	float RunningTime;
+```
 对于变量进行分类
 Category = "Sine Parameters"，将Amplitude和TimeConstant两个变量分类在Sine Parameters下
 ```
@@ -110,9 +116,9 @@ UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sine Parameters")
 float TimeConstant = 5.f;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTk0NjYyNDIsNzI0MDcxNDE1LC0yMT
-I0NDczMjY1LC01NjU4ODM2NjAsMTI4MTg2MDcyNCwtMTAxMjUw
-NjQ0NywtMTQwMjg2OTY2Myw2MTA3NjIwMTYsLTg5NzMzNDk5OC
-w2NjY5OTg5MjIsMTIxNDg0MzI2LC0xMzQ3MjI5OTUzLC05Mzk1
-MTk5NzUsLTE1ODg0OTg0MDVdfQ==
+eyJoaXN0b3J5IjpbMzM5NzMxOTUxLC0xMTk5NDY2MjQyLDcyND
+A3MTQxNSwtMjEyNDQ3MzI2NSwtNTY1ODgzNjYwLDEyODE4NjA3
+MjQsLTEwMTI1MDY0NDcsLTE0MDI4Njk2NjMsNjEwNzYyMDE2LC
+04OTczMzQ5OTgsNjY2OTk4OTIyLDEyMTQ4NDMyNiwtMTM0NzIy
+OTk1MywtOTM5NTE5OTc1LC0xNTg4NDk4NDA1XX0=
 -->
