@@ -91,7 +91,7 @@ UPROPERTY(VisibleDefaultsOnly)
 UPROPERTY(VisibleInstanceOnly)
 UPROPERTY(VisibleAnywhere)
 ```
-在蓝图中获取变量
+在蓝图中获取变量（**前提是变量在.h文件中需在protected而不能在private中**）
 BlueprintReadOnly只能get到变量
 BlueprintReadWrite即可get也可set
 ```
@@ -101,7 +101,7 @@ float Amplitude = 0.25f;
 UPROPERTY(EditAnywhere, BlueprintReadWrite);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTg0NjIzMjU5LC0yMTI0NDczMjY1LC01Nj
+eyJoaXN0b3J5IjpbNzI0MDcxNDE1LC0yMTI0NDczMjY1LC01Nj
 U4ODM2NjAsMTI4MTg2MDcyNCwtMTAxMjUwNjQ0NywtMTQwMjg2
 OTY2Myw2MTA3NjIwMTYsLTg5NzMzNDk5OCw2NjY5OTg5MjIsMT
 IxNDg0MzI2LC0xMzQ3MjI5OTUzLC05Mzk1MTk5NzUsLTE1ODg0
