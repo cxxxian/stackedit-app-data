@@ -51,17 +51,16 @@ SetActorRotation(FRotator(0.f, 45.f, 0.f));
 actor移动增量:
 - 每帧（frame）向前移动1.f（即一厘米）
 ```
-float MovementRate = 50.f;
 AddActorWorldOffset(FVector(1.f, 0.f, 0.f));
 ```
 - 每秒移动50.f
-MovementRate（c'm） * DeltaTime
+MovementRate（cm/s） * DeltaTime（s/frame）= （cm/frame）
 ```
 float MovementRate = 50.f;
 AddActorWorldOffset(FVector(MovementRate * DeltaTime, 0.f, 0.f));
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTY3NTI0NTg0LDYxMDc2MjAxNiwtODk3Mz
-M0OTk4LDY2Njk5ODkyMiwxMjE0ODQzMjYsLTEzNDcyMjk5NTMs
-LTkzOTUxOTk3NSwtMTU4ODQ5ODQwNV19
+eyJoaXN0b3J5IjpbLTE0MDI4Njk2NjMsNjEwNzYyMDE2LC04OT
+czMzQ5OTgsNjY2OTk4OTIyLDEyMTQ4NDMyNiwtMTM0NzIyOTk1
+MywtOTM5NTE5OTc1LC0xNTg4NDk4NDA1XX0=
 -->
