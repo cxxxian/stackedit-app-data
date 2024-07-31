@@ -77,7 +77,7 @@ RunningTime += DeltaTime;
 
 ### UPROPERTY
 EditDefaultsOnly将变量暴露给默认蓝图
-EditInstanceOnly将bian
+EditInstanceOnly将变量暴露给蓝图示例
 ```
 UPROPERTY(EditDefaultsOnly)
 float Amplitude = 0.25f;
@@ -86,8 +86,8 @@ UPROPERTY(EditInstanceOnly)
 float TimeConstant = 5.f;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTk2OTc0MzgsMTI4MTg2MDcyNCwtMTAxMj
-UwNjQ0NywtMTQwMjg2OTY2Myw2MTA3NjIwMTYsLTg5NzMzNDk5
-OCw2NjY5OTg5MjIsMTIxNDg0MzI2LC0xMzQ3MjI5OTUzLC05Mz
-k1MTk5NzUsLTE1ODg0OTg0MDVdfQ==
+eyJoaXN0b3J5IjpbMTY0NzA4ODgzMCwxMjgxODYwNzI0LC0xMD
+EyNTA2NDQ3LC0xNDAyODY5NjYzLDYxMDc2MjAxNiwtODk3MzM0
+OTk4LDY2Njk5ODkyMiwxMjE0ODQzMjYsLTEzNDcyMjk5NTMsLT
+kzOTUxOTk3NSwtMTU4ODQ5ODQwNV19
 -->
