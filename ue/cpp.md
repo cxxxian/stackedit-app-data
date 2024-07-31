@@ -68,14 +68,15 @@ AddActorWorldRotation(FRotator(0.f, RotationRate * DeltaTime, 0.f));
 ### Sin
 Amplitude用来控制振幅
 TimeConstant用来控制时间
+RunningTime随着每帧运行不断增加
 ```
 RunningTime += DeltaTime;
 
 	float DeltaZ = Amplitude * FMath::Sin(RunningTime * TimeConstant);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDc0ODA0MjksLTEwMTI1MDY0NDcsLT
-E0MDI4Njk2NjMsNjEwNzYyMDE2LC04OTczMzQ5OTgsNjY2OTk4
-OTIyLDEyMTQ4NDMyNiwtMTM0NzIyOTk1MywtOTM5NTE5OTc1LC
-0xNTg4NDk4NDA1XX0=
+eyJoaXN0b3J5IjpbMTI4MTg2MDcyNCwtMTAxMjUwNjQ0NywtMT
+QwMjg2OTY2Myw2MTA3NjIwMTYsLTg5NzMzNDk5OCw2NjY5OTg5
+MjIsMTIxNDg0MzI2LC0xMzQ3MjI5OTUzLC05Mzk1MTk5NzUsLT
+E1ODg0OTg0MDVdfQ==
 -->
