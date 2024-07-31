@@ -65,9 +65,17 @@ float RotationRate = 45.f;
 ```
 AddActorWorldRotation(FRotator(0.f, RotationRate * DeltaTime, 0.f));
 ```
+### Sin
+Amplitude用来控制振幅
+TimeConstant用来控制时间
+```
+RunningTime += DeltaTime;
+
+	float DeltaZ = Amplitude * FMath::Sin(RunningTime * TimeConstant);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTI1MDY0NDcsLTE0MDI4Njk2NjMsNj
-EwNzYyMDE2LC04OTczMzQ5OTgsNjY2OTk4OTIyLDEyMTQ4NDMy
-NiwtMTM0NzIyOTk1MywtOTM5NTE5OTc1LC0xNTg4NDk4NDA1XX
-0=
+eyJoaXN0b3J5IjpbLTEwNDc0ODA0MjksLTEwMTI1MDY0NDcsLT
+E0MDI4Njk2NjMsNjEwNzYyMDE2LC04OTczMzQ5OTgsNjY2OTk4
+OTIyLDEyMTQ4NDMyNiwtMTM0NzIyOTk1MywtOTM5NTE5OTc1LC
+0xNTg4NDk4NDA1XX0=
 -->
