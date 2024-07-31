@@ -37,9 +37,13 @@ FVector Location = GetActorLocation();
 	}
 ```
 
-### 
+### SetActorLocation
+设置actor的位置
+```
+SetActorLocation(FVector(0.f, 0.f, 50.f));
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjIxMjk1MDQ5LDY2Njk5ODkyMiwxMjE0OD
-QzMjYsLTEzNDcyMjk5NTMsLTkzOTUxOTk3NSwtMTU4ODQ5ODQw
-NV19
+eyJoaXN0b3J5IjpbLTg5NzMzNDk5OCw2NjY5OTg5MjIsMTIxND
+g0MzI2LC0xMzQ3MjI5OTUzLC05Mzk1MTk5NzUsLTE1ODg0OTg0
+MDVdfQ==
 -->
