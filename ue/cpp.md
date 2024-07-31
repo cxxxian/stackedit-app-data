@@ -100,7 +100,7 @@ float Amplitude = 0.25f;
 
 UPROPERTY(EditAnywhere, BlueprintReadWrite);
 ```
-如需要在private下定义的情况下，使用meta = (AllowPrivateAccess = "true")，同样也可以达到
+如需要在private下定义的情况下，使用meta = (AllowPrivateAccess = "true")，同样也可以达到在蓝图中获取变量的效果
 ```
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
@@ -116,7 +116,7 @@ UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sine Parameters")
 float TimeConstant = 5.f;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzM5NzMxOTUxLC0xMTk5NDY2MjQyLDcyND
+eyJoaXN0b3J5IjpbNTUxMzE5NTYzLC0xMTk5NDY2MjQyLDcyND
 A3MTQxNSwtMjEyNDQ3MzI2NSwtNTY1ODgzNjYwLDEyODE4NjA3
 MjQsLTEwMTI1MDY0NDcsLTE0MDI4Njk2NjMsNjEwNzYyMDE2LC
 04OTczMzQ5OTgsNjY2OTk4OTIyLDEyMTQ4NDMyNiwtMTM0NzIy
