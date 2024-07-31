@@ -100,10 +100,15 @@ float Amplitude = 0.25f;
 
 UPROPERTY(EditAnywhere, BlueprintReadWrite);
 ```
+UPROPERTY(EditAnywhere, BlueprintReadWrite,Category = "Sine Parameters");
+	float Amplitude = 0.25f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sine Parameters")
+	float TimeConstant = 5.f;
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzI0MDcxNDE1LC0yMTI0NDczMjY1LC01Nj
-U4ODM2NjAsMTI4MTg2MDcyNCwtMTAxMjUwNjQ0NywtMTQwMjg2
-OTY2Myw2MTA3NjIwMTYsLTg5NzMzNDk5OCw2NjY5OTg5MjIsMT
-IxNDg0MzI2LC0xMzQ3MjI5OTUzLC05Mzk1MTk5NzUsLTE1ODg0
-OTg0MDVdfQ==
+eyJoaXN0b3J5IjpbLTEwMzA5MDk4NTIsNzI0MDcxNDE1LC0yMT
+I0NDczMjY1LC01NjU4ODM2NjAsMTI4MTg2MDcyNCwtMTAxMjUw
+NjQ0NywtMTQwMjg2OTY2Myw2MTA3NjIwMTYsLTg5NzMzNDk5OC
+w2NjY5OTg5MjIsMTIxNDg0MzI2LC0xMzQ3MjI5OTUzLC05Mzk1
+MTk5NzUsLTE1ODg0OTg0MDVdfQ==
 -->
