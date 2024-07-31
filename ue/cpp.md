@@ -59,8 +59,15 @@ MovementRate（cm/s） * DeltaTime（s/frame）= （cm/frame）
 float MovementRate = 50.f;
 AddActorWorldOffset(FVector(MovementRate * DeltaTime, 0.f, 0.f));
 ```
+### AddActorWorldRotation
+float RotationRate = 45.f;
+- 每秒转45.f
+```
+AddActorWorldRotation(FRotator(0.f, RotationRate * DeltaTime, 0.f));
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDI4Njk2NjMsNjEwNzYyMDE2LC04OT
-czMzQ5OTgsNjY2OTk4OTIyLDEyMTQ4NDMyNiwtMTM0NzIyOTk1
-MywtOTM5NTE5OTc1LC0xNTg4NDk4NDA1XX0=
+eyJoaXN0b3J5IjpbLTEwMTI1MDY0NDcsLTE0MDI4Njk2NjMsNj
+EwNzYyMDE2LC04OTczMzQ5OTgsNjY2OTk4OTIyLDEyMTQ4NDMy
+NiwtMTM0NzIyOTk1MywtOTM5NTE5OTc1LC0xNTg4NDk4NDA1XX
+0=
 -->
