@@ -28,7 +28,15 @@ UWorld* World = GetWorld();
 		DrawDebugSphere(World, Location, 25.f, 24, FColor::Red, false, 30.f);
 	}
 ```
+### DrawDebugLine
+```
+FVector Location = GetActorLocation();
+	if (World) {
+		FVector Forward = GetActorForwardVector();
+		DrawDebugLine(World, Location, Location + Forward * 100.f, FColor::Red, true, -1.f, 0, 1.f);
+	}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIxNDg0MzI2LC0xMzQ3MjI5OTUzLC05Mz
-k1MTk5NzUsLTE1ODg0OTg0MDVdfQ==
+eyJoaXN0b3J5IjpbNjY2OTk4OTIyLDEyMTQ4NDMyNiwtMTM0Nz
+IyOTk1MywtOTM5NTE5OTc1LC0xNTg4NDk4NDA1XX0=
 -->
