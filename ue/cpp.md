@@ -42,10 +42,13 @@ FVector Location = GetActorLocation();
 ```
 SetActorLocation(FVector(0.f, 0.f, 50.f));
 ```
-
-
+### SetActorRotation
+设置actor的旋转
+```
+SetActorRotation(FRotator(0.f, 45.f, 0.f));
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI2NTUyNjAxMCwtODk3MzM0OTk4LDY2Nj
-k5ODkyMiwxMjE0ODQzMjYsLTEzNDcyMjk5NTMsLTkzOTUxOTk3
-NSwtMTU4ODQ5ODQwNV19
+eyJoaXN0b3J5IjpbNjEwNzYyMDE2LC04OTczMzQ5OTgsNjY2OT
+k4OTIyLDEyMTQ4NDMyNiwtMTM0NzIyOTk1MywtOTM5NTE5OTc1
+LC0xNTg4NDk4NDA1XX0=
 -->
