@@ -74,9 +74,20 @@ RunningTime += DeltaTime;
 
 	float DeltaZ = Amplitude * FMath::Sin(RunningTime * TimeConstant);
 ```
+
+### UPROPERTY
+EditDefaultsOnly将变量暴露给默认蓝图
+EditInstanceOnly将bian
+```
+UPROPERTY(EditDefaultsOnly)
+float Amplitude = 0.25f;
+
+UPROPERTY(EditInstanceOnly)
+float TimeConstant = 5.f;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4MTg2MDcyNCwtMTAxMjUwNjQ0NywtMT
-QwMjg2OTY2Myw2MTA3NjIwMTYsLTg5NzMzNDk5OCw2NjY5OTg5
-MjIsMTIxNDg0MzI2LC0xMzQ3MjI5OTUzLC05Mzk1MTk5NzUsLT
-E1ODg0OTg0MDVdfQ==
+eyJoaXN0b3J5IjpbOTk2OTc0MzgsMTI4MTg2MDcyNCwtMTAxMj
+UwNjQ0NywtMTQwMjg2OTY2Myw2MTA3NjIwMTYsLTg5NzMzNDk5
+OCw2NjY5OTg5MjIsMTIxNDg0MzI2LC0xMzQ3MjI5OTUzLC05Mz
+k1MTk5NzUsLTE1ODg0OTg0MDVdfQ==
 -->
