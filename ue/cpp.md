@@ -47,8 +47,12 @@ SetActorLocation(FVector(0.f, 0.f, 50.f));
 ```
 SetActorRotation(FRotator(0.f, 45.f, 0.f));
 ```
+
+float MovementRate = 50.f;
+
+	AddActorWorldOffset(FVector(MovementRate * DeltaTime, 0.f, 0.f));
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjEwNzYyMDE2LC04OTczMzQ5OTgsNjY2OT
-k4OTIyLDEyMTQ4NDMyNiwtMTM0NzIyOTk1MywtOTM5NTE5OTc1
-LC0xNTg4NDk4NDA1XX0=
+eyJoaXN0b3J5IjpbMjAzODc2NDUxNyw2MTA3NjIwMTYsLTg5Nz
+MzNDk5OCw2NjY5OTg5MjIsMTIxNDg0MzI2LC0xMzQ3MjI5OTUz
+LC05Mzk1MTk5NzUsLTE1ODg0OTg0MDVdfQ==
 -->
