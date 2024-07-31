@@ -78,15 +78,18 @@ RunningTime += DeltaTime;
 ### UPROPERTY
 EditDefaultsOnly将变量暴露给默认蓝图
 EditInstanceOnly将变量暴露给蓝图示例
+EditAnywhere同时将变量暴露给默认蓝图和蓝图示例
 ```
 UPROPERTY(EditDefaultsOnly)
 float Amplitude = 0.25f;
 
 UPROPERTY(EditInstanceOnly)
 float TimeConstant = 5.f;
+
+UPROPERTY(EditAnywhere)
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0NzA4ODgzMCwxMjgxODYwNzI0LC0xMD
+eyJoaXN0b3J5IjpbLTU2NTg4MzY2MCwxMjgxODYwNzI0LC0xMD
 EyNTA2NDQ3LC0xNDAyODY5NjYzLDYxMDc2MjAxNiwtODk3MzM0
 OTk4LDY2Njk5ODkyMiwxMjE0ODQzMjYsLTEzNDcyMjk5NTMsLT
 kzOTUxOTk3NSwtMTU4ODQ5ODQwNV19
