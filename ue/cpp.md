@@ -155,17 +155,20 @@ float AvgFloat = Avg<float>(3.45f, 7.86f);
 ```
 CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ItemMeshComponent"));
 ```
-以上该函数返回一个指向新创建对象的指针，赋值给
+以上该函数返回一个指向新创建对象的指针，赋值给在.h中声明的ItemMesh。
 ```
 UPROPERTY(VisibleAnywhere)
-	UStaticMeshComponent* ItemMesh;
-	```
+UStaticMeshComponent* ItemMesh;
+```
+```
+ItemMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ItemMeshComponent"));
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTA0ODczMjMxLDEyODQwMzI0MjQsMTQ3OT
-c0MjgzOSw1MDE0ODEyODYsMjU3MzA3NzkyLDU1MTMxOTU2Mywt
-MTE5OTQ2NjI0Miw3MjQwNzE0MTUsLTIxMjQ0NzMyNjUsLTU2NT
-g4MzY2MCwxMjgxODYwNzI0LC0xMDEyNTA2NDQ3LC0xNDAyODY5
-NjYzLDYxMDc2MjAxNiwtODk3MzM0OTk4LDY2Njk5ODkyMiwxMj
-E0ODQzMjYsLTEzNDcyMjk5NTMsLTkzOTUxOTk3NSwtMTU4ODQ5
-ODQwNV19
+eyJoaXN0b3J5IjpbMjA5NDEyNDI0MywxMjg0MDMyNDI0LDE0Nz
+k3NDI4MzksNTAxNDgxMjg2LDI1NzMwNzc5Miw1NTEzMTk1NjMs
+LTExOTk0NjYyNDIsNzI0MDcxNDE1LC0yMTI0NDczMjY1LC01Nj
+U4ODM2NjAsMTI4MTg2MDcyNCwtMTAxMjUwNjQ0NywtMTQwMjg2
+OTY2Myw2MTA3NjIwMTYsLTg5NzMzNDk5OCw2NjY5OTg5MjIsMT
+IxNDg0MzI2LC0xMzQ3MjI5OTUzLC05Mzk1MTk5NzUsLTE1ODg0
+OTg0MDVdfQ==
 -->
