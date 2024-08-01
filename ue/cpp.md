@@ -156,17 +156,18 @@ float AvgFloat = Avg<float>(3.45f, 7.86f);
 CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ItemMeshComponent"));
 ```
 以上该函数返回一个指向新创建对象的指针，赋值给在.h中声明的ItemMesh。
-在.h中声明的ItemMesh初始状态下只是一个空指针，需要创建新组建并将地址存储在这个指针中。被指针指向的对象，引擎会识别出有指针指向的对象仍然在被使用，而不会被当作垃圾bei'shou'j
+在.h中声明的ItemMesh初始状态下只是一个空指针，需要创建新组建并将地址存储在这个指针中。被指针指向的对象，引擎会识别出有指针指向的对象仍然在被使用，而不会被当作垃圾被收集删除。
 ```
 UPROPERTY(VisibleAnywhere)
 UStaticMeshComponent* ItemMesh;
 ```
+RootComponent = ItemMesh此句话将根组件指针变量存储的默认场景根改为ItemMesh，所以默认场景根会被
 ```
 ItemMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ItemMeshComponent"));
 RootComponent = ItemMesh;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjc2NTY0OTc4LDEyODQwMzI0MjQsMTQ3OT
+eyJoaXN0b3J5IjpbNjQ0MTI5NzMwLDEyODQwMzI0MjQsMTQ3OT
 c0MjgzOSw1MDE0ODEyODYsMjU3MzA3NzkyLDU1MTMxOTU2Mywt
 MTE5OTQ2NjI0Miw3MjQwNzE0MTUsLTIxMjQ0NzMyNjUsLTU2NT
 g4MzY2MCwxMjgxODYwNzI0LC0xMDEyNTA2NDQ3LC0xNDAyODY5
