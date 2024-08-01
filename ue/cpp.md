@@ -151,7 +151,7 @@ float AvgFloat = Avg<float>(3.45f, 7.86f);
 	UE_LOG(LogTemp, Warning, TEXT("Avg of 3.45 and 7.86: %f"), AvgFloat);
 ```
 ### Component
-创建默认子对象，子对象的类型为静态网格体组件（UStaticMeshComponent），使用文本宏给该组件添加内部名字TEXT("ItemMeshComponent")。
+在.cpp文件中，创建默认子对象，子对象的类型为静态网格体组件（UStaticMeshComponent），使用文本宏给该组件添加内部名字TEXT("ItemMeshComponent")。
 ```
 CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ItemMeshComponent"));
 ```
@@ -168,7 +168,7 @@ RootComponent = ItemMesh;
 ```
 所以综上，目前根组件指针指向新创建的项目网格子对象即ItemMesh。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYzMzA0OTM0NCwxMjg0MDMyNDI0LDE0Nz
+eyJoaXN0b3J5IjpbLTIxODI0NjczNSwxMjg0MDMyNDI0LDE0Nz
 k3NDI4MzksNTAxNDgxMjg2LDI1NzMwNzc5Miw1NTEzMTk1NjMs
 LTExOTk0NjYyNDIsNzI0MDcxNDE1LC0yMTI0NDczMjY1LC01Nj
 U4ODM2NjAsMTI4MTg2MDcyNCwtMTAxMjUwNjQ0NywtMTQwMjg2
