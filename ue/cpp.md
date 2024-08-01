@@ -142,12 +142,16 @@ inline T AItem::Avg(T First, T Second)
 }
 ```
 函数的使用（ue中的int为int32）
+灵活替换模板中的数据类型
 ```
 int32 AvgInt = Avg<int32>(1, 3);
 UE_LOG(LogTemp, Warning, TEXT("Avg of 1 and 3: %d"), AvgInt);
+
+float AvgFloat = Avg<float>(3.45f, 7.86f);
+	UE_LOG(LogTemp, Warning, TEXT("Avg of 3.45 and 7.86: %f"), AvgFloat);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3OTc5NDM3Miw1MDE0ODEyODYsMjU3Mz
+eyJoaXN0b3J5IjpbMTQ3OTc0MjgzOSw1MDE0ODEyODYsMjU3Mz
 A3NzkyLDU1MTMxOTU2MywtMTE5OTQ2NjI0Miw3MjQwNzE0MTUs
 LTIxMjQ0NzMyNjUsLTU2NTg4MzY2MCwxMjgxODYwNzI0LC0xMD
 EyNTA2NDQ3LC0xNDAyODY5NjYzLDYxMDc2MjAxNiwtODk3MzM0
