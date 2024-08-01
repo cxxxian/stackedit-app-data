@@ -127,12 +127,25 @@ UFUNCTION(BlueprintPure)
 float TransformedSin(float value);
 ```
 
-
+### template<typename T>
+模板函数的使用
+```
+template<typename T>
+T Avg(T First, T Second);
+```
+内联函数构造，类似于宏的替换，替换上述定义的方法
+```
+template<typename T>
+inline T AItem::Avg(T First, T Second)
+{
+	return (First + Second) / 2;
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNDMzNjMwLDUwMTQ4MTI4NiwyNTczMD
-c3OTIsNTUxMzE5NTYzLC0xMTk5NDY2MjQyLDcyNDA3MTQxNSwt
-MjEyNDQ3MzI2NSwtNTY1ODgzNjYwLDEyODE4NjA3MjQsLTEwMT
-I1MDY0NDcsLTE0MDI4Njk2NjMsNjEwNzYyMDE2LC04OTczMzQ5
-OTgsNjY2OTk4OTIyLDEyMTQ4NDMyNiwtMTM0NzIyOTk1MywtOT
-M5NTE5OTc1LC0xNTg4NDk4NDA1XX0=
+eyJoaXN0b3J5IjpbLTIxMjQxNTY1OTEsNTAxNDgxMjg2LDI1Nz
+MwNzc5Miw1NTEzMTk1NjMsLTExOTk0NjYyNDIsNzI0MDcxNDE1
+LC0yMTI0NDczMjY1LC01NjU4ODM2NjAsMTI4MTg2MDcyNCwtMT
+AxMjUwNjQ0NywtMTQwMjg2OTY2Myw2MTA3NjIwMTYsLTg5NzMz
+NDk5OCw2NjY5OTg5MjIsMTIxNDg0MzI2LC0xMzQ3MjI5OTUzLC
+05Mzk1MTk5NzUsLTE1ODg0OTg0MDVdfQ==
 -->
