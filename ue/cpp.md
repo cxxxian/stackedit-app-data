@@ -161,7 +161,7 @@ CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ItemMeshComponent"));
 UPROPERTY(VisibleAnywhere)
 UStaticMeshComponent* ItemMesh;
 ```
-RootComponent = ItemMesh此句话将根组件指针变量存储的默认场景根改为ItemMesh，所以默认场景根会被自动删除。
+RootComponent = ItemMesh此句话将根组件指针变量存储的默认场景根改为ItemMesh，此时默认场景根mei所以默认场景根会被自动删除。
 ```
 ItemMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ItemMeshComponent"));
 RootComponent = ItemMesh;
@@ -171,11 +171,11 @@ RootComponent = ItemMesh;
 ItemMesh是声明的指针，ItemMeshComponent是文本宏创建的名字
 ![输入图片说明](/imgs/2024-08-01/HWf3S6b64VphAP2F.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzk2MTIzMjE2LDIxMTMyNTkzMTEsLTIxOD
-I0NjczNSwxMjg0MDMyNDI0LDE0Nzk3NDI4MzksNTAxNDgxMjg2
-LDI1NzMwNzc5Miw1NTEzMTk1NjMsLTExOTk0NjYyNDIsNzI0MD
-cxNDE1LC0yMTI0NDczMjY1LC01NjU4ODM2NjAsMTI4MTg2MDcy
-NCwtMTAxMjUwNjQ0NywtMTQwMjg2OTY2Myw2MTA3NjIwMTYsLT
-g5NzMzNDk5OCw2NjY5OTg5MjIsMTIxNDg0MzI2LC0xMzQ3MjI5
-OTUzXX0=
+eyJoaXN0b3J5IjpbMTkyMjczNTAwMyw3OTYxMjMyMTYsMjExMz
+I1OTMxMSwtMjE4MjQ2NzM1LDEyODQwMzI0MjQsMTQ3OTc0Mjgz
+OSw1MDE0ODEyODYsMjU3MzA3NzkyLDU1MTMxOTU2MywtMTE5OT
+Q2NjI0Miw3MjQwNzE0MTUsLTIxMjQ0NzMyNjUsLTU2NTg4MzY2
+MCwxMjgxODYwNzI0LC0xMDEyNTA2NDQ3LC0xNDAyODY5NjYzLD
+YxMDc2MjAxNiwtODk3MzM0OTk4LDY2Njk5ODkyMiwxMjE0ODQz
+MjZdfQ==
 -->
