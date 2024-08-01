@@ -150,11 +150,16 @@ UE_LOG(LogTemp, Warning, TEXT("Avg of 1 and 3: %d"), AvgInt);
 float AvgFloat = Avg<float>(3.45f, 7.86f);
 	UE_LOG(LogTemp, Warning, TEXT("Avg of 3.45 and 7.86: %f"), AvgFloat);
 ```
+### Component
+创建默认子对象，子对象的类型为静态网格体组件（UStaticMeshComponent）
+```
+CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ItemMeshComponent"));
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ3OTc0MjgzOSw1MDE0ODEyODYsMjU3Mz
-A3NzkyLDU1MTMxOTU2MywtMTE5OTQ2NjI0Miw3MjQwNzE0MTUs
-LTIxMjQ0NzMyNjUsLTU2NTg4MzY2MCwxMjgxODYwNzI0LC0xMD
-EyNTA2NDQ3LC0xNDAyODY5NjYzLDYxMDc2MjAxNiwtODk3MzM0
-OTk4LDY2Njk5ODkyMiwxMjE0ODQzMjYsLTEzNDcyMjk5NTMsLT
-kzOTUxOTk3NSwtMTU4ODQ5ODQwNV19
+eyJoaXN0b3J5IjpbLTUzMzQ3NDg3MiwxNDc5NzQyODM5LDUwMT
+Q4MTI4NiwyNTczMDc3OTIsNTUxMzE5NTYzLC0xMTk5NDY2MjQy
+LDcyNDA3MTQxNSwtMjEyNDQ3MzI2NSwtNTY1ODgzNjYwLDEyOD
+E4NjA3MjQsLTEwMTI1MDY0NDcsLTE0MDI4Njk2NjMsNjEwNzYy
+MDE2LC04OTczMzQ5OTgsNjY2OTk4OTIyLDEyMTQ4NDMyNiwtMT
+M0NzIyOTk1MywtOTM5NTE5OTc1LC0xNTg4NDk4NDA1XX0=
 -->
