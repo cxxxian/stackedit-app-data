@@ -167,14 +167,15 @@ ItemMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ItemMeshComponent"
 RootComponent = ItemMesh;
 ```
 所以综上，目前根组件指针指向新创建的项目网格子对象即ItemMesh。
-编译后ue5生成如下
+编译后ue5生成如下：
+ItemMesh是声明的指针，ItemMeshComponent是文本宏创建的名字
 ![输入图片说明](/imgs/2024-08-01/HWf3S6b64VphAP2F.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExMzI1OTMxMSwtMjE4MjQ2NzM1LDEyOD
-QwMzI0MjQsMTQ3OTc0MjgzOSw1MDE0ODEyODYsMjU3MzA3Nzky
-LDU1MTMxOTU2MywtMTE5OTQ2NjI0Miw3MjQwNzE0MTUsLTIxMj
-Q0NzMyNjUsLTU2NTg4MzY2MCwxMjgxODYwNzI0LC0xMDEyNTA2
-NDQ3LC0xNDAyODY5NjYzLDYxMDc2MjAxNiwtODk3MzM0OTk4LD
-Y2Njk5ODkyMiwxMjE0ODQzMjYsLTEzNDcyMjk5NTMsLTkzOTUx
-OTk3NV19
+eyJoaXN0b3J5IjpbNzk2MTIzMjE2LDIxMTMyNTkzMTEsLTIxOD
+I0NjczNSwxMjg0MDMyNDI0LDE0Nzk3NDI4MzksNTAxNDgxMjg2
+LDI1NzMwNzc5Miw1NTEzMTk1NjMsLTExOTk0NjYyNDIsNzI0MD
+cxNDE1LC0yMTI0NDczMjY1LC01NjU4ODM2NjAsMTI4MTg2MDcy
+NCwtMTAxMjUwNjQ0NywtMTQwMjg2OTY2Myw2MTA3NjIwMTYsLT
+g5NzMzNDk5OCw2NjY5OTg5MjIsMTIxNDg0MzI2LC0xMzQ3MjI5
+OTUzXX0=
 -->
