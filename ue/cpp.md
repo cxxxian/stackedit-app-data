@@ -151,12 +151,12 @@ float AvgFloat = Avg<float>(3.45f, 7.86f);
 	UE_LOG(LogTemp, Warning, TEXT("Avg of 3.45 and 7.86: %f"), AvgFloat);
 ```
 ### Component
-创建默认子对象，子对象的类型为静态网格体组件（UStaticMeshComponent）
+创建默认子对象，子对象的类型为静态网格体组件（UStaticMeshComponent），使用文本宏给该组件添加内部名字TEXT("ItemMeshComponent")。
 ```
 CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ItemMeshComponent"));
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUzMzQ3NDg3MiwxNDc5NzQyODM5LDUwMT
+eyJoaXN0b3J5IjpbMTI4NDAzMjQyNCwxNDc5NzQyODM5LDUwMT
 Q4MTI4NiwyNTczMDc3OTIsNTUxMzE5NTYzLC0xMTk5NDY2MjQy
 LDcyNDA3MTQxNSwtMjEyNDQ3MzI2NSwtNTY1ODgzNjYwLDEyOD
 E4NjA3MjQsLTEwMTI1MDY0NDcsLTE0MDI4Njk2NjMsNjEwNzYy
