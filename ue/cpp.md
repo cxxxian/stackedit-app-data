@@ -127,7 +127,7 @@ UFUNCTION(BlueprintPure)
 float TransformedSin(float value);
 ```
 
-### template<typename T>
+### template
 模板函数的使用
 ```
 template<typename T>
@@ -141,11 +141,16 @@ inline T AItem::Avg(T First, T Second)
 	return (First + Second) / 2;
 }
 ```
+函数的使用（ue中的int为int32）
+```
+int32 AvgInt = Avg<int32>(1, 3);
+UE_LOG(LogTemp, Warning, TEXT("Avg of 1 and 3: %d"), AvgInt);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjQxNTY1OTEsNTAxNDgxMjg2LDI1Nz
-MwNzc5Miw1NTEzMTk1NjMsLTExOTk0NjYyNDIsNzI0MDcxNDE1
-LC0yMTI0NDczMjY1LC01NjU4ODM2NjAsMTI4MTg2MDcyNCwtMT
-AxMjUwNjQ0NywtMTQwMjg2OTY2Myw2MTA3NjIwMTYsLTg5NzMz
-NDk5OCw2NjY5OTg5MjIsMTIxNDg0MzI2LC0xMzQ3MjI5OTUzLC
-05Mzk1MTk5NzUsLTE1ODg0OTg0MDVdfQ==
+eyJoaXN0b3J5IjpbMTM3OTc5NDM3Miw1MDE0ODEyODYsMjU3Mz
+A3NzkyLDU1MTMxOTU2MywtMTE5OTQ2NjI0Miw3MjQwNzE0MTUs
+LTIxMjQ0NzMyNjUsLTU2NTg4MzY2MCwxMjgxODYwNzI0LC0xMD
+EyNTA2NDQ3LC0xNDAyODY5NjYzLDYxMDc2MjAxNiwtODk3MzM0
+OTk4LDY2Njk5ODkyMiwxMjE0ODQzMjYsLTEzNDcyMjk5NTMsLT
+kzOTUxOTk3NSwtMTU4ODQ5ODQwNV19
 -->
