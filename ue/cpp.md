@@ -197,15 +197,15 @@ private:
 	UPROPERTY(VisibleAnywhere)
 	class UCapsuleComponent* Capsule;
 ```
-可在程序
+可在程序开头处写class UCapsuleComponent，则之后遇到UCapsuleComponent* Capsule;即可自动识别
 ```
 private:
 	UPROPERTY(VisibleAnywhere)
-	class UCapsuleComponent* Capsule;
+	UCapsuleComponent* Capsule;
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIzNTM5MTgzOSw5MzA2NTc4NDQsMTA3Mj
+eyJoaXN0b3J5IjpbMTQwNTkzODk0OCw5MzA2NTc4NDQsMTA3Mj
 QzNDIyNyw1MzQ0MTA0MzksNzk2MTIzMjE2LDIxMTMyNTkzMTEs
 LTIxODI0NjczNSwxMjg0MDMyNDI0LDE0Nzk3NDI4MzksNTAxND
 gxMjg2LDI1NzMwNzc5Miw1NTEzMTk1NjMsLTExOTk0NjYyNDIs
