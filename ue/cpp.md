@@ -238,7 +238,9 @@ void ABird::MoveForward(float Value)
 }
 ```
 在此方法中将我们定义的MoveForward进行轴映射绑定
-方法中的第一个参数传入字符串命名（可以是直接"MoveForward"，或者通过文字宏命名TEXT("MoveForward"),或者使用构造方法FName("MoveForward")）
+- 方法中的第一个参数传入字符串命名（可以是直接"MoveForward"，或者通过文字宏命名TEXT("MoveForward"),或者使用构造方法FName("MoveForward")）
+- 第二个参数传入this指针，指的是控制器所控制的的对象为目前的对象，即Bird
+- 第三个参数是传入对应函数的指针
 ```
 void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -248,11 +250,11 @@ void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDAzMjc0NjI5LDUwNTA2MjA4LC05ODYyMj
-EwOTMsMzQ4MTQyNiwtMTM3NDY2MDAxNSwxNDA1OTM4OTQ4LDkz
-MDY1Nzg0NCwxMDcyNDM0MjI3LDUzNDQxMDQzOSw3OTYxMjMyMT
-YsMjExMzI1OTMxMSwtMjE4MjQ2NzM1LDEyODQwMzI0MjQsMTQ3
-OTc0MjgzOSw1MDE0ODEyODYsMjU3MzA3NzkyLDU1MTMxOTU2My
-wtMTE5OTQ2NjI0Miw3MjQwNzE0MTUsLTIxMjQ0NzMyNjVdfQ==
+eyJoaXN0b3J5IjpbLTEwNzI4NjY2NTMsNTA1MDYyMDgsLTk4Nj
+IyMTA5MywzNDgxNDI2LC0xMzc0NjYwMDE1LDE0MDU5Mzg5NDgs
+OTMwNjU3ODQ0LDEwNzI0MzQyMjcsNTM0NDEwNDM5LDc5NjEyMz
+IxNiwyMTEzMjU5MzExLC0yMTgyNDY3MzUsMTI4NDAzMjQyNCwx
+NDc5NzQyODM5LDUwMTQ4MTI4NiwyNTczMDc3OTIsNTUxMzE5NT
+YzLC0xMTk5NDY2MjQyLDcyNDA3MTQxNSwtMjEyNDQ3MzI2NV19
 
 -->
