@@ -197,7 +197,7 @@ private:
 	UPROPERTY(VisibleAnywhere)
 	class UCapsuleComponent* Capsule;
 ```
-可在程序开头处写class UCapsuleComponent，则之后遇到UCapsuleComponent* Capsule;即可自动识别
+也可在程序开头处写**class UCapsuleComponent**，则之后遇到UCapsuleComponent* Capsule;即可自动识别（两种方法都可）
 ```
 private:
 	UPROPERTY(VisibleAnywhere)
@@ -205,11 +205,11 @@ private:
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwNTkzODk0OCw5MzA2NTc4NDQsMTA3Mj
-QzNDIyNyw1MzQ0MTA0MzksNzk2MTIzMjE2LDIxMTMyNTkzMTEs
-LTIxODI0NjczNSwxMjg0MDMyNDI0LDE0Nzk3NDI4MzksNTAxND
-gxMjg2LDI1NzMwNzc5Miw1NTEzMTk1NjMsLTExOTk0NjYyNDIs
-NzI0MDcxNDE1LC0yMTI0NDczMjY1LC01NjU4ODM2NjAsMTI4MT
-g2MDcyNCwtMTAxMjUwNjQ0NywtMTQwMjg2OTY2Myw2MTA3NjIw
-MTZdfQ==
+eyJoaXN0b3J5IjpbLTEzNzQ2NjAwMTUsMTQwNTkzODk0OCw5Mz
+A2NTc4NDQsMTA3MjQzNDIyNyw1MzQ0MTA0MzksNzk2MTIzMjE2
+LDIxMTMyNTkzMTEsLTIxODI0NjczNSwxMjg0MDMyNDI0LDE0Nz
+k3NDI4MzksNTAxNDgxMjg2LDI1NzMwNzc5Miw1NTEzMTk1NjMs
+LTExOTk0NjYyNDIsNzI0MDcxNDE1LC0yMTI0NDczMjY1LC01Nj
+U4ODM2NjAsMTI4MTg2MDcyNCwtMTAxMjUwNjQ0NywtMTQwMjg2
+OTY2M119
 -->
