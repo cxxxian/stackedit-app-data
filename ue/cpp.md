@@ -251,9 +251,10 @@ void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	PlayerInputComponent->BindAxis(FName("MoveForward"), this, &ABird::MoveForward);
 }
 ```
-[图片上传失败...(image-xj1pXByQtgiZWenO)]
+[图片上传失败...(image-S8CILW8xLbCbvllx)]
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyNDA1MDM2Nyw1MDUwNjIwOCwtOTg2Mj
+eyJoaXN0b3J5IjpbLTQyMDgwNzk5Miw1MDUwNjIwOCwtOTg2Mj
 IxMDkzLDM0ODE0MjYsLTEzNzQ2NjAwMTUsMTQwNTkzODk0OCw5
 MzA2NTc4NDQsMTA3MjQzNDIyNyw1MzQ0MTA0MzksNzk2MTIzMj
 E2LDIxMTMyNTkzMTEsLTIxODI0NjczNSwxMjg0MDMyNDI0LDE0
