@@ -190,12 +190,26 @@ Capsule->SetCapsuleHalfHeight(20.f);
 Capsule->SetCapsuleRadius(15.f);
 SetRootComponent(Capsule);
 ```
+如果使用此形式声明，在前面加上class，即可以不使用头文件导入
+#include "Components/CapsuleComponent.h"
+```
+private:
+	UPROPERTY(VisibleAnywhere)
+	class UCapsuleComponent* Capsule;
+```
+可在程序
+```
+private:
+	UPROPERTY(VisibleAnywhere)
+	class UCapsuleComponent* Capsule;
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTMwNjU3ODQ0LDEwNzI0MzQyMjcsNTM0ND
-EwNDM5LDc5NjEyMzIxNiwyMTEzMjU5MzExLC0yMTgyNDY3MzUs
-MTI4NDAzMjQyNCwxNDc5NzQyODM5LDUwMTQ4MTI4NiwyNTczMD
-c3OTIsNTUxMzE5NTYzLC0xMTk5NDY2MjQyLDcyNDA3MTQxNSwt
-MjEyNDQ3MzI2NSwtNTY1ODgzNjYwLDEyODE4NjA3MjQsLTEwMT
-I1MDY0NDcsLTE0MDI4Njk2NjMsNjEwNzYyMDE2LC04OTczMzQ5
-OThdfQ==
+eyJoaXN0b3J5IjpbLTIzNTM5MTgzOSw5MzA2NTc4NDQsMTA3Mj
+QzNDIyNyw1MzQ0MTA0MzksNzk2MTIzMjE2LDIxMTMyNTkzMTEs
+LTIxODI0NjczNSwxMjg0MDMyNDI0LDE0Nzk3NDI4MzksNTAxND
+gxMjg2LDI1NzMwNzc5Miw1NTEzMTk1NjMsLTExOTk0NjYyNDIs
+NzI0MDcxNDE1LC0yMTI0NDczMjY1LC01NjU4ODM2NjAsMTI4MT
+g2MDcyNCwtMTAxMjUwNjQ0NywtMTQwMjg2OTY2Myw2MTA3NjIw
+MTZdfQ==
 -->
