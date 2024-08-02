@@ -36,7 +36,7 @@ FVector Location = GetActorLocation();
 		DrawDebugLine(World, Location, Location + Forward * 100.f, FColor::Red, true, -1.f, 0, 1.f);
 	}
 ```
-
+## Actor
 ### SetActorLocation
 设置actor的位置
 ```
@@ -170,12 +170,15 @@ RootComponent = ItemMesh;
 编译后ue5生成如下：
 ItemMesh是声明的指针，ItemMeshComponent是文本宏创建的名字
 ![输入图片说明](/imgs/2024-08-01/HWf3S6b64VphAP2F.png)
+
+## Pawn
+### 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTM0NDEwNDM5LDc5NjEyMzIxNiwyMTEzMj
-U5MzExLC0yMTgyNDY3MzUsMTI4NDAzMjQyNCwxNDc5NzQyODM5
-LDUwMTQ4MTI4NiwyNTczMDc3OTIsNTUxMzE5NTYzLC0xMTk5ND
-Y2MjQyLDcyNDA3MTQxNSwtMjEyNDQ3MzI2NSwtNTY1ODgzNjYw
-LDEyODE4NjA3MjQsLTEwMTI1MDY0NDcsLTE0MDI4Njk2NjMsNj
-EwNzYyMDE2LC04OTczMzQ5OTgsNjY2OTk4OTIyLDEyMTQ4NDMy
-Nl19
+eyJoaXN0b3J5IjpbMTQzMjc3NDQ2OSw1MzQ0MTA0MzksNzk2MT
+IzMjE2LDIxMTMyNTkzMTEsLTIxODI0NjczNSwxMjg0MDMyNDI0
+LDE0Nzk3NDI4MzksNTAxNDgxMjg2LDI1NzMwNzc5Miw1NTEzMT
+k1NjMsLTExOTk0NjYyNDIsNzI0MDcxNDE1LC0yMTI0NDczMjY1
+LC01NjU4ODM2NjAsMTI4MTg2MDcyNCwtMTAxMjUwNjQ0NywtMT
+QwMjg2OTY2Myw2MTA3NjIwMTYsLTg5NzMzNDk5OCw2NjY5OTg5
+MjJdfQ==
 -->
