@@ -173,8 +173,11 @@ ItemMesh是声明的指针，ItemMeshComponent是文本宏创建的名字
 
 ## Pawn
 ### 
+private:
+	UPROPERTY(VisibleAnywhere)
+	UCapsuleComponent* Capsule;
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzMjc3NDQ2OSw1MzQ0MTA0MzksNzk2MT
+eyJoaXN0b3J5IjpbLTY4OTA5Nzg5MSw1MzQ0MTA0MzksNzk2MT
 IzMjE2LDIxMTMyNTkzMTEsLTIxODI0NjczNSwxMjg0MDMyNDI0
 LDE0Nzk3NDI4MzksNTAxNDgxMjg2LDI1NzMwNzc5Miw1NTEzMT
 k1NjMsLTExOTk0NjYyNDIsNzI0MDcxNDE1LC0yMTI0NDczMjY1
