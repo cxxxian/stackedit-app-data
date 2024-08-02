@@ -172,16 +172,25 @@ ItemMesh是声明的指针，ItemMeshComponent是文本宏创建的名字
 ![输入图片说明](/imgs/2024-08-01/HWf3S6b64VphAP2F.png)
 
 ## Pawn
-### 
+### Capsule
+构建胶囊体
+在.h中声明如下
+```
 private:
 	UPROPERTY(VisibleAnywhere)
 	UCapsuleComponent* Capsule;
+```
+在.cpp中声明如下
+```
+ItemMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ItemMeshComponent"));
+RootComponent = ItemMesh;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4OTA5Nzg5MSw1MzQ0MTA0MzksNzk2MT
-IzMjE2LDIxMTMyNTkzMTEsLTIxODI0NjczNSwxMjg0MDMyNDI0
-LDE0Nzk3NDI4MzksNTAxNDgxMjg2LDI1NzMwNzc5Miw1NTEzMT
-k1NjMsLTExOTk0NjYyNDIsNzI0MDcxNDE1LC0yMTI0NDczMjY1
-LC01NjU4ODM2NjAsMTI4MTg2MDcyNCwtMTAxMjUwNjQ0NywtMT
-QwMjg2OTY2Myw2MTA3NjIwMTYsLTg5NzMzNDk5OCw2NjY5OTg5
-MjJdfQ==
+eyJoaXN0b3J5IjpbLTExODQxOTM3MzQsNTM0NDEwNDM5LDc5Nj
+EyMzIxNiwyMTEzMjU5MzExLC0yMTgyNDY3MzUsMTI4NDAzMjQy
+NCwxNDc5NzQyODM5LDUwMTQ4MTI4NiwyNTczMDc3OTIsNTUxMz
+E5NTYzLC0xMTk5NDY2MjQyLDcyNDA3MTQxNSwtMjEyNDQ3MzI2
+NSwtNTY1ODgzNjYwLDEyODE4NjA3MjQsLTEwMTI1MDY0NDcsLT
+E0MDI4Njk2NjMsNjEwNzYyMDE2LC04OTczMzQ5OTgsNjY2OTk4
+OTIyXX0=
 -->
