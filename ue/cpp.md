@@ -173,6 +173,10 @@ ItemMesh是声明的指针，ItemMeshComponent是文本宏创建的名字
 
 ## Pawn
 ### Capsule
+头文件
+```
+#include "Components/CapsuleComponent.h"
+```
 构建胶囊体
 在.h中声明如下
 ```
@@ -203,13 +207,17 @@ private:
 	UPROPERTY(VisibleAnywhere)
 	UCapsuleComponent* Capsule;
 ```
-
+### SkeletalMesh
+头文件
+```
+#include "Components/SkeletalMeshComponent.h"
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNzQ2NjAwMTUsMTQwNTkzODk0OCw5Mz
-A2NTc4NDQsMTA3MjQzNDIyNyw1MzQ0MTA0MzksNzk2MTIzMjE2
-LDIxMTMyNTkzMTEsLTIxODI0NjczNSwxMjg0MDMyNDI0LDE0Nz
-k3NDI4MzksNTAxNDgxMjg2LDI1NzMwNzc5Miw1NTEzMTk1NjMs
-LTExOTk0NjYyNDIsNzI0MDcxNDE1LC0yMTI0NDczMjY1LC01Nj
-U4ODM2NjAsMTI4MTg2MDcyNCwtMTAxMjUwNjQ0NywtMTQwMjg2
-OTY2M119
+eyJoaXN0b3J5IjpbLTEzMTE1OTM3MTksLTEzNzQ2NjAwMTUsMT
+QwNTkzODk0OCw5MzA2NTc4NDQsMTA3MjQzNDIyNyw1MzQ0MTA0
+MzksNzk2MTIzMjE2LDIxMTMyNTkzMTEsLTIxODI0NjczNSwxMj
+g0MDMyNDI0LDE0Nzk3NDI4MzksNTAxNDgxMjg2LDI1NzMwNzc5
+Miw1NTEzMTk1NjMsLTExOTk0NjYyNDIsNzI0MDcxNDE1LC0yMT
+I0NDczMjY1LC01NjU4ODM2NjAsMTI4MTg2MDcyNCwtMTAxMjUw
+NjQ0N119
 -->
