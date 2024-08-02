@@ -262,13 +262,23 @@ void ABird::MoveForward(float Value)
 }
 ```
 需要手动添加运动组件**FloatingPawnMovement**，即可进行前进后退的运动。
+### Camera && Spring Arm
+在. h中声明ViewCamera和SpringArm，zai
+```
+```
+```
+UPROPERTY(VisibleAnywhere)
+USpringArmComponent* SpringArm;
 
+UPROPERTY(VisibleAnywhere)
+UCameraComponent* ViewCamera;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0OTUxOTc1LDE4OTA2ODAyOTgsLTUzMj
-Y2NTIwNSwtMTAyNjczMjI3NSw1MDUwNjIwOCwtOTg2MjIxMDkz
-LDM0ODE0MjYsLTEzNzQ2NjAwMTUsMTQwNTkzODk0OCw5MzA2NT
-c4NDQsMTA3MjQzNDIyNyw1MzQ0MTA0MzksNzk2MTIzMjE2LDIx
-MTMyNTkzMTEsLTIxODI0NjczNSwxMjg0MDMyNDI0LDE0Nzk3ND
-I4MzksNTAxNDgxMjg2LDI1NzMwNzc5Miw1NTEzMTk1NjNdfQ==
+eyJoaXN0b3J5IjpbLTgxMDAyMjE4MywtNDQ5NTE5NzUsMTg5MD
+Y4MDI5OCwtNTMyNjY1MjA1LC0xMDI2NzMyMjc1LDUwNTA2MjA4
+LC05ODYyMjEwOTMsMzQ4MTQyNiwtMTM3NDY2MDAxNSwxNDA1OT
+M4OTQ4LDkzMDY1Nzg0NCwxMDcyNDM0MjI3LDUzNDQxMDQzOSw3
+OTYxMjMyMTYsMjExMzI1OTMxMSwtMjE4MjQ2NzM1LDEyODQwMz
+I0MjQsMTQ3OTc0MjgzOSw1MDE0ODEyODYsMjU3MzA3NzkyXX0=
 
 -->
