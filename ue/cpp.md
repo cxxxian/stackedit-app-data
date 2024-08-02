@@ -217,12 +217,17 @@ private:
 UPROPERTY(VisibleAnywhere)
 USkeletalMeshComponent* BirdMesh;
 ```
+在.cpp中声明如下，SetupAttachment用来将BirdMesh附加到根组件下面，此处用GetRootComponent()，
+```
+BirdMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("BirdMesh"));
+BirdMesh->SetupAttachment(GetRootComponent());
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQ4MTQyNiwtMTM3NDY2MDAxNSwxNDA1OT
-M4OTQ4LDkzMDY1Nzg0NCwxMDcyNDM0MjI3LDUzNDQxMDQzOSw3
-OTYxMjMyMTYsMjExMzI1OTMxMSwtMjE4MjQ2NzM1LDEyODQwMz
-I0MjQsMTQ3OTc0MjgzOSw1MDE0ODEyODYsMjU3MzA3NzkyLDU1
-MTMxOTU2MywtMTE5OTQ2NjI0Miw3MjQwNzE0MTUsLTIxMjQ0Nz
-MyNjUsLTU2NTg4MzY2MCwxMjgxODYwNzI0LC0xMDEyNTA2NDQ3
-XX0=
+eyJoaXN0b3J5IjpbLTYwNTE1NzY2MiwzNDgxNDI2LC0xMzc0Nj
+YwMDE1LDE0MDU5Mzg5NDgsOTMwNjU3ODQ0LDEwNzI0MzQyMjcs
+NTM0NDEwNDM5LDc5NjEyMzIxNiwyMTEzMjU5MzExLC0yMTgyND
+Y3MzUsMTI4NDAzMjQyNCwxNDc5NzQyODM5LDUwMTQ4MTI4Niwy
+NTczMDc3OTIsNTUxMzE5NTYzLC0xMTk5NDY2MjQyLDcyNDA3MT
+QxNSwtMjEyNDQ3MzI2NSwtNTY1ODgzNjYwLDEyODE4NjA3MjRd
+fQ==
 -->
