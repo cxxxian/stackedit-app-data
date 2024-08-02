@@ -239,7 +239,8 @@ void ABird::MoveForward(float Value)
 }
 ```
 在此方法中将我们定义的MoveForward进行轴映射绑定
-- 方法中的第一个参数传入字符串（可以是直接"MoveForward"，或者通过文字宏命名TEXT("MoveForward"),或者使用构造方法FName("MoveForward")），此字符串将与项目设置中的输入映射进行对应
+- 方法中的第一个参数传入字符串（可以是直接"MoveForward"，或者通过文字宏命名TEXT("MoveForward"),或者使用构造方法FName("MoveForward")），此字符串将与项目设置中的输入映射进行文字上的对应
+
 - 第二个参数传入this指针，指的是控制器所控制的的对象为目前的对象，即Bird
 - 第三个参数是传入对应函数，直接传入函数的地址即&ABird::MoveForward，需要将类限定一起传入
 ```
@@ -250,8 +251,9 @@ void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	PlayerInputComponent->BindAxis(FName("MoveForward"), this, &ABird::MoveForward);
 }
 ```
+[图片上传失败...(image-xj1pXByQtgiZWenO)]
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgxOTc2MjEyMyw1MDUwNjIwOCwtOTg2Mj
+eyJoaXN0b3J5IjpbLTgyNDA1MDM2Nyw1MDUwNjIwOCwtOTg2Mj
 IxMDkzLDM0ODE0MjYsLTEzNzQ2NjAwMTUsMTQwNTkzODk0OCw5
 MzA2NTc4NDQsMTA3MjQzNDIyNyw1MzQ0MTA0MzksNzk2MTIzMj
 E2LDIxMTMyNTkzMTEsLTIxODI0NjczNSwxMjg0MDMyNDI0LDE0
