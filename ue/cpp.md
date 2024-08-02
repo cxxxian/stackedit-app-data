@@ -242,7 +242,7 @@ void ABird::MoveForward(float Value)
 - 方法中的第一个参数传入字符串（可以是直接"MoveForward"，或者通过文字宏命名TEXT("MoveForward"),或者使用构造方法FName("MoveForward")），此字符串将与项目设置中的输入映射进行文字上的对应
 ![输入图片说明](/imgs/2024-08-02/qXzjAwrzctWNuS0V.png)
 - 第二个参数传入this指针，指的是控制器所控制的的对象为目前的对象，即Bird
-- 第三个参数是传入对应函数，直接传入函数的地址即&ABird::MoveForward，需要将类限定一起传入
+- 第三个参数是传入对应函数，直接传入函数的地址即&ABird::MoveForward，需要将类限定ABird::一起传入
 ```
 void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -253,11 +253,11 @@ void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODgyMDc2NzksLTEwMjY3MzIyNzUsNT
-A1MDYyMDgsLTk4NjIyMTA5MywzNDgxNDI2LC0xMzc0NjYwMDE1
-LDE0MDU5Mzg5NDgsOTMwNjU3ODQ0LDEwNzI0MzQyMjcsNTM0ND
-EwNDM5LDc5NjEyMzIxNiwyMTEzMjU5MzExLC0yMTgyNDY3MzUs
-MTI4NDAzMjQyNCwxNDc5NzQyODM5LDUwMTQ4MTI4NiwyNTczMD
-c3OTIsNTUxMzE5NTYzLC0xMTk5NDY2MjQyLDcyNDA3MTQxNV19
+eyJoaXN0b3J5IjpbLTUzMjY2NTIwNSwtMTAyNjczMjI3NSw1MD
+UwNjIwOCwtOTg2MjIxMDkzLDM0ODE0MjYsLTEzNzQ2NjAwMTUs
+MTQwNTkzODk0OCw5MzA2NTc4NDQsMTA3MjQzNDIyNyw1MzQ0MT
+A0MzksNzk2MTIzMjE2LDIxMTMyNTkzMTEsLTIxODI0NjczNSwx
+Mjg0MDMyNDI0LDE0Nzk3NDI4MzksNTAxNDgxMjg2LDI1NzMwNz
+c5Miw1NTEzMTk1NjMsLTExOTk0NjYyNDIsNzI0MDcxNDE1XX0=
 
 -->
