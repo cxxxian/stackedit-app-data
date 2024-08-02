@@ -251,13 +251,22 @@ void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	PlayerInputComponent->BindAxis(FName("MoveForward"), this, &ABird::MoveForward);
 }
 ```
+```
+void ABird::MoveForward(float Value)
+{
+	if ((Controller != nullptr) && (Value != 0.f)) {
+		FVector Forward = GetActorForwardVector();
+		AddMovementInput(Forward, Value);
+	}
+}
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUzMjY2NTIwNSwtMTAyNjczMjI3NSw1MD
-UwNjIwOCwtOTg2MjIxMDkzLDM0ODE0MjYsLTEzNzQ2NjAwMTUs
-MTQwNTkzODk0OCw5MzA2NTc4NDQsMTA3MjQzNDIyNyw1MzQ0MT
-A0MzksNzk2MTIzMjE2LDIxMTMyNTkzMTEsLTIxODI0NjczNSwx
-Mjg0MDMyNDI0LDE0Nzk3NDI4MzksNTAxNDgxMjg2LDI1NzMwNz
-c5Miw1NTEzMTk1NjMsLTExOTk0NjYyNDIsNzI0MDcxNDE1XX0=
+eyJoaXN0b3J5IjpbMTUwNTIyMTQzNywtNTMyNjY1MjA1LC0xMD
+I2NzMyMjc1LDUwNTA2MjA4LC05ODYyMjEwOTMsMzQ4MTQyNiwt
+MTM3NDY2MDAxNSwxNDA1OTM4OTQ4LDkzMDY1Nzg0NCwxMDcyND
+M0MjI3LDUzNDQxMDQzOSw3OTYxMjMyMTYsMjExMzI1OTMxMSwt
+MjE4MjQ2NzM1LDEyODQwMzI0MjQsMTQ3OTc0MjgzOSw1MDE0OD
+EyODYsMjU3MzA3NzkyLDU1MTMxOTU2MywtMTE5OTQ2NjI0Ml19
 
 -->
