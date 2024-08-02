@@ -240,7 +240,7 @@ void ABird::MoveForward(float Value)
 ```
 在此方法中将我们定义的MoveForward进行轴映射绑定
 - 方法中的第一个参数传入字符串（可以是直接"MoveForward"，或者通过文字宏命名TEXT("MoveForward"),或者使用构造方法FName("MoveForward")），此字符串将与项目设置中的输入映射进行文字上的对应
-![输入图片说明](/imgs/2024-08-02/qXzjAwrzctWNuS0V.png)
+![输入图片说明](/imgs/2024-08-02/dG7R3fmfJBPHYPHE.png)
 - 第二个参数传入this指针，指的是控制器所控制的的对象为目前的对象，即Bird
 - 第三个参数是传入对应函数，直接传入函数的地址即&ABird::MoveForward，需要将类限定ABird::一起传入
 ```
@@ -264,11 +264,11 @@ void ABird::MoveForward(float Value)
 需要手动添加运动组件**FloatingPawnMovement**，即可进行前进的运动。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTM2MDY4MywxODkwNjgwMjk4LC01Mz
-I2NjUyMDUsLTEwMjY3MzIyNzUsNTA1MDYyMDgsLTk4NjIyMTA5
-MywzNDgxNDI2LC0xMzc0NjYwMDE1LDE0MDU5Mzg5NDgsOTMwNj
-U3ODQ0LDEwNzI0MzQyMjcsNTM0NDEwNDM5LDc5NjEyMzIxNiwy
-MTEzMjU5MzExLC0yMTgyNDY3MzUsMTI4NDAzMjQyNCwxNDc5Nz
-QyODM5LDUwMTQ4MTI4NiwyNTczMDc3OTIsNTUxMzE5NTYzXX0=
+eyJoaXN0b3J5IjpbLTIwNjM3MjczMjYsMTg5MDY4MDI5OCwtNT
+MyNjY1MjA1LC0xMDI2NzMyMjc1LDUwNTA2MjA4LC05ODYyMjEw
+OTMsMzQ4MTQyNiwtMTM3NDY2MDAxNSwxNDA1OTM4OTQ4LDkzMD
+Y1Nzg0NCwxMDcyNDM0MjI3LDUzNDQxMDQzOSw3OTYxMjMyMTYs
+MjExMzI1OTMxMSwtMjE4MjQ2NzM1LDEyODQwMzI0MjQsMTQ3OT
+c0MjgzOSw1MDE0ODEyODYsMjU3MzA3NzkyLDU1MTMxOTU2M119
 
 -->
