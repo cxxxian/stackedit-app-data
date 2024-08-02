@@ -181,16 +181,18 @@ private:
 	UCapsuleComponent* Capsule;
 ```
 在.cpp中声明如下
+SetRootComponent(Capsule);等同于RootComponent = Capsule;
+都能改变默认根组件
 ```
-ItemMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ItemMeshComponent"));
-RootComponent = ItemMesh;
+Capsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Capsule"));
+SetRootComponent(Capsule);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExODQxOTM3MzQsNTM0NDEwNDM5LDc5Nj
-EyMzIxNiwyMTEzMjU5MzExLC0yMTgyNDY3MzUsMTI4NDAzMjQy
-NCwxNDc5NzQyODM5LDUwMTQ4MTI4NiwyNTczMDc3OTIsNTUxMz
-E5NTYzLC0xMTk5NDY2MjQyLDcyNDA3MTQxNSwtMjEyNDQ3MzI2
-NSwtNTY1ODgzNjYwLDEyODE4NjA3MjQsLTEwMTI1MDY0NDcsLT
-E0MDI4Njk2NjMsNjEwNzYyMDE2LC04OTczMzQ5OTgsNjY2OTk4
-OTIyXX0=
+eyJoaXN0b3J5IjpbMTA3MjQzNDIyNyw1MzQ0MTA0MzksNzk2MT
+IzMjE2LDIxMTMyNTkzMTEsLTIxODI0NjczNSwxMjg0MDMyNDI0
+LDE0Nzk3NDI4MzksNTAxNDgxMjg2LDI1NzMwNzc5Miw1NTEzMT
+k1NjMsLTExOTk0NjYyNDIsNzI0MDcxNDE1LC0yMTI0NDczMjY1
+LC01NjU4ODM2NjAsMTI4MTg2MDcyNCwtMTAxMjUwNjQ0NywtMT
+QwMjg2OTY2Myw2MTA3NjIwMTYsLTg5NzMzNDk5OCw2NjY5OTg5
+MjJdfQ==
 -->
