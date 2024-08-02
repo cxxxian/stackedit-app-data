@@ -182,17 +182,20 @@ private:
 ```
 在.cpp中声明如下
 SetRootComponent(Capsule);等同于RootComponent = Capsule;
-都能改变默认根组件
+都能改变默认根组件.
+中间两句话用来设置胶囊体的高和半径
 ```
 Capsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Capsule"));
+Capsule->SetCapsuleHalfHeight(20.f);
+Capsule->SetCapsuleRadius(15.f);
 SetRootComponent(Capsule);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3MjQzNDIyNyw1MzQ0MTA0MzksNzk2MT
-IzMjE2LDIxMTMyNTkzMTEsLTIxODI0NjczNSwxMjg0MDMyNDI0
-LDE0Nzk3NDI4MzksNTAxNDgxMjg2LDI1NzMwNzc5Miw1NTEzMT
-k1NjMsLTExOTk0NjYyNDIsNzI0MDcxNDE1LC0yMTI0NDczMjY1
-LC01NjU4ODM2NjAsMTI4MTg2MDcyNCwtMTAxMjUwNjQ0NywtMT
-QwMjg2OTY2Myw2MTA3NjIwMTYsLTg5NzMzNDk5OCw2NjY5OTg5
-MjJdfQ==
+eyJoaXN0b3J5IjpbOTMwNjU3ODQ0LDEwNzI0MzQyMjcsNTM0ND
+EwNDM5LDc5NjEyMzIxNiwyMTEzMjU5MzExLC0yMTgyNDY3MzUs
+MTI4NDAzMjQyNCwxNDc5NzQyODM5LDUwMTQ4MTI4NiwyNTczMD
+c3OTIsNTUxMzE5NTYzLC0xMTk5NDY2MjQyLDcyNDA3MTQxNSwt
+MjEyNDQ3MzI2NSwtNTY1ODgzNjYwLDEyODE4NjA3MjQsLTEwMT
+I1MDY0NDcsLTE0MDI4Njk2NjMsNjEwNzYyMDE2LC04OTczMzQ5
+OThdfQ==
 -->
