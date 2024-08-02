@@ -251,7 +251,7 @@ void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	PlayerInputComponent->BindAxis(FName("MoveForward"), this, &ABird::MoveForward);
 }
 ```
-完善MoveForward方法，已知按下W键即前进的时候，Value等于1，满足if条件，得到前进向量，调用AddMovementInput(Forward, Value)，此时value为正1，会向着Forward的方向运动，如果是负数
+完善MoveForward方法，已知按下W键即前进的时候，Value等于1，满足if条件，得到前进向量，调用AddMovementInput(Forward, Value)，此时value为正1，会向着Forward的方向运动，如果是负1则对向量取反
 ```
 void ABird::MoveForward(float Value)
 {
@@ -263,7 +263,7 @@ void ABird::MoveForward(float Value)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQxNTA4MzMyOCwtNTMyNjY1MjA1LC0xMD
+eyJoaXN0b3J5IjpbMTg5MDY4MDI5OCwtNTMyNjY1MjA1LC0xMD
 I2NzMyMjc1LDUwNTA2MjA4LC05ODYyMjEwOTMsMzQ4MTQyNiwt
 MTM3NDY2MDAxNSwxNDA1OTM4OTQ4LDkzMDY1Nzg0NCwxMDcyND
 M0MjI3LDUzNDQxMDQzOSw3OTYxMjMyMTYsMjExMzI1OTMxMSwt
