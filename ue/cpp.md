@@ -251,6 +251,7 @@ void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	PlayerInputComponent->BindAxis(FName("MoveForward"), this, &ABird::MoveForward);
 }
 ```
+完善MoveForward方法，已知按下W键即前进的时候
 ```
 void ABird::MoveForward(float Value)
 {
@@ -262,11 +263,11 @@ void ABird::MoveForward(float Value)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwNTIyMTQzNywtNTMyNjY1MjA1LC0xMD
-I2NzMyMjc1LDUwNTA2MjA4LC05ODYyMjEwOTMsMzQ4MTQyNiwt
-MTM3NDY2MDAxNSwxNDA1OTM4OTQ4LDkzMDY1Nzg0NCwxMDcyND
-M0MjI3LDUzNDQxMDQzOSw3OTYxMjMyMTYsMjExMzI1OTMxMSwt
-MjE4MjQ2NzM1LDEyODQwMzI0MjQsMTQ3OTc0MjgzOSw1MDE0OD
-EyODYsMjU3MzA3NzkyLDU1MTMxOTU2MywtMTE5OTQ2NjI0Ml19
+eyJoaXN0b3J5IjpbMjM2MTQ2MzczLC01MzI2NjUyMDUsLTEwMj
+Y3MzIyNzUsNTA1MDYyMDgsLTk4NjIyMTA5MywzNDgxNDI2LC0x
+Mzc0NjYwMDE1LDE0MDU5Mzg5NDgsOTMwNjU3ODQ0LDEwNzI0Mz
+QyMjcsNTM0NDEwNDM5LDc5NjEyMzIxNiwyMTEzMjU5MzExLC0y
+MTgyNDY3MzUsMTI4NDAzMjQyNCwxNDc5NzQyODM5LDUwMTQ4MT
+I4NiwyNTczMDc3OTIsNTUxMzE5NTYzLC0xMTk5NDY2MjQyXX0=
 
 -->
