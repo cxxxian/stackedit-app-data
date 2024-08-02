@@ -238,7 +238,7 @@ void ABird::MoveForward(float Value)
 }
 ```
 在此方法中将我们定义的MoveForward进行轴映射绑定
-方法中的第一个参数
+方法中的第一个参数传入字符串命名（可以是直接"MoveForward"，或者通过文字宏命名TEXT("MoveForward"),或者使用构造方法FName("MoveForward")）
 ```
 void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -248,7 +248,7 @@ void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzNDM4MDE1LDUwNTA2MjA4LC05ODYyMj
+eyJoaXN0b3J5IjpbNDAzMjc0NjI5LDUwNTA2MjA4LC05ODYyMj
 EwOTMsMzQ4MTQyNiwtMTM3NDY2MDAxNSwxNDA1OTM4OTQ4LDkz
 MDY1Nzg0NCwxMDcyNDM0MjI3LDUzNDQxMDQzOSw3OTYxMjMyMT
 YsMjExMzI1OTMxMSwtMjE4MjQ2NzM1LDEyODQwMzI0MjQsMTQ3
