@@ -261,10 +261,10 @@ void ABird::MoveForward(float Value)
 	}
 }
 ```
-FloatingPawnMovement
+需要手动添加运动组件**FloatingPawnMovement**，即可进行前进的运动。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1NTQ1NDExNywxODkwNjgwMjk4LC01Mz
+eyJoaXN0b3J5IjpbLTE3OTM2MDY4MywxODkwNjgwMjk4LC01Mz
 I2NjUyMDUsLTEwMjY3MzIyNzUsNTA1MDYyMDgsLTk4NjIyMTA5
 MywzNDgxNDI2LC0xMzc0NjYwMDE1LDE0MDU5Mzg5NDgsOTMwNj
 U3ODQ0LDEwNzI0MzQyMjcsNTM0NDEwNDM5LDc5NjEyMzIxNiwy
