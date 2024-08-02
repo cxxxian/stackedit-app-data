@@ -217,13 +217,13 @@ private:
 UPROPERTY(VisibleAnywhere)
 USkeletalMeshComponent* BirdMesh;
 ```
-在.cpp中声明如下，SetupAttachment用来将BirdMesh附加到根组件下面，此处用GetRootComponent()，
+在.cpp中声明如下，SetupAttachment用来将BirdMesh附加到根组件下面，此处用GetRootComponent()，RootComponent，或者Capsule都是可以的，都是根组件的引用。
 ```
 BirdMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("BirdMesh"));
 BirdMesh->SetupAttachment(GetRootComponent());
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwNTE1NzY2MiwzNDgxNDI2LC0xMzc0Nj
+eyJoaXN0b3J5IjpbLTk4NjIyMTA5MywzNDgxNDI2LC0xMzc0Nj
 YwMDE1LDE0MDU5Mzg5NDgsOTMwNjU3ODQ0LDEwNzI0MzQyMjcs
 NTM0NDEwNDM5LDc5NjEyMzIxNiwyMTEzMjU5MzExLC0yMTgyND
 Y3MzUsMTI4NDAzMjQyNCwxNDc5NzQyODM5LDUwMTQ4MTI4Niwy
