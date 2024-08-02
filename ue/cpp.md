@@ -232,6 +232,7 @@ AutoPossessPlayer = EAutoReceiveInput::Player0;
 protected:
 void MoveForward(float Value);
 ```
+zai
 ```
 void ABird::MoveForward(float Value)
 {
@@ -240,7 +241,7 @@ void ABird::MoveForward(float Value)
 在此方法中将我们定义的MoveForward进行轴映射绑定
 - 方法中的第一个参数传入字符串命名（可以是直接"MoveForward"，或者通过文字宏命名TEXT("MoveForward"),或者使用构造方法FName("MoveForward")）
 - 第二个参数传入this指针，指的是控制器所控制的的对象为目前的对象，即Bird
-- 第三个参数是传入对应函数的指针
+- 第三个参数是传入对应函数，直接传入函数的地址即&ABird::MoveForward，需要将类限定一起传入
 ```
 void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -250,11 +251,11 @@ void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNzI4NjY2NTMsNTA1MDYyMDgsLTk4Nj
-IyMTA5MywzNDgxNDI2LC0xMzc0NjYwMDE1LDE0MDU5Mzg5NDgs
-OTMwNjU3ODQ0LDEwNzI0MzQyMjcsNTM0NDEwNDM5LDc5NjEyMz
-IxNiwyMTEzMjU5MzExLC0yMTgyNDY3MzUsMTI4NDAzMjQyNCwx
-NDc5NzQyODM5LDUwMTQ4MTI4NiwyNTczMDc3OTIsNTUxMzE5NT
-YzLC0xMTk5NDY2MjQyLDcyNDA3MTQxNSwtMjEyNDQ3MzI2NV19
+eyJoaXN0b3J5IjpbLTg3NzA3NzY0Miw1MDUwNjIwOCwtOTg2Mj
+IxMDkzLDM0ODE0MjYsLTEzNzQ2NjAwMTUsMTQwNTkzODk0OCw5
+MzA2NTc4NDQsMTA3MjQzNDIyNyw1MzQ0MTA0MzksNzk2MTIzMj
+E2LDIxMTMyNTkzMTEsLTIxODI0NjczNSwxMjg0MDMyNDI0LDE0
+Nzk3NDI4MzksNTAxNDgxMjg2LDI1NzMwNzc5Miw1NTEzMTk1Nj
+MsLTExOTk0NjYyNDIsNzI0MDcxNDE1LC0yMTI0NDczMjY1XX0=
 
 -->
