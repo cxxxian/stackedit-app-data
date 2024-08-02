@@ -251,7 +251,7 @@ void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	PlayerInputComponent->BindAxis(FName("MoveForward"), this, &ABird::MoveForward);
 }
 ```
-完善MoveForward方法，已知按下W键即前进的时候，Value等于1，满足if条件，得到前进向量，调用AddMovementInput(Forward, Value)，此时value为正1，会向着Forward的方向运动，如果是负1则对向量取反
+完善MoveForward方法，已知按下W键即前进的时候，Value等于1，满足if条件，得到前进向量，调用AddMovementInput(Forward, Value)，此时value为1，会向着Forward的方向运动，如果是-1则对向量取反（对应S键的值为-1），则会倒退
 ```
 void ABird::MoveForward(float Value)
 {
@@ -261,14 +261,14 @@ void ABird::MoveForward(float Value)
 	}
 }
 ```
-需要手动添加运动组件**FloatingPawnMovement**，即可进行前进的运动。
+需要手动添加运动组件**FloatingPawnMovement**，即可进行前进后退的运动。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjM3MjczMjYsMTg5MDY4MDI5OCwtNT
-MyNjY1MjA1LC0xMDI2NzMyMjc1LDUwNTA2MjA4LC05ODYyMjEw
-OTMsMzQ4MTQyNiwtMTM3NDY2MDAxNSwxNDA1OTM4OTQ4LDkzMD
-Y1Nzg0NCwxMDcyNDM0MjI3LDUzNDQxMDQzOSw3OTYxMjMyMTYs
-MjExMzI1OTMxMSwtMjE4MjQ2NzM1LDEyODQwMzI0MjQsMTQ3OT
-c0MjgzOSw1MDE0ODEyODYsMjU3MzA3NzkyLDU1MTMxOTU2M119
+eyJoaXN0b3J5IjpbLTQ0OTUxOTc1LDE4OTA2ODAyOTgsLTUzMj
+Y2NTIwNSwtMTAyNjczMjI3NSw1MDUwNjIwOCwtOTg2MjIxMDkz
+LDM0ODE0MjYsLTEzNzQ2NjAwMTUsMTQwNTkzODk0OCw5MzA2NT
+c4NDQsMTA3MjQzNDIyNyw1MzQ0MTA0MzksNzk2MTIzMjE2LDIx
+MTMyNTkzMTEsLTIxODI0NjczNSwxMjg0MDMyNDI0LDE0Nzk3ND
+I4MzksNTAxNDgxMjg2LDI1NzMwNzc5Miw1NTEzMTk1NjNdfQ==
 
 -->
