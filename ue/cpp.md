@@ -275,18 +275,18 @@ USpringArmComponent* SpringArm;
 UPROPERTY(VisibleAnywhere)
 UCameraComponent* ViewCamera;
 ```
-在.cpp中，创建DpringArm
+在.cpp中，创建SpringArm并且将其添加到根组件上
 ```
 #include "GameFramework/SpringArmComponent.h"
 SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
 SpringArm->SetupAttachment(GetRootComponent());
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NzU0NzYyMTAsLTE4MTg4MDEzMTksLT
-Q0OTUxOTc1LDE4OTA2ODAyOTgsLTUzMjY2NTIwNSwtMTAyNjcz
-MjI3NSw1MDUwNjIwOCwtOTg2MjIxMDkzLDM0ODE0MjYsLTEzNz
-Q2NjAwMTUsMTQwNTkzODk0OCw5MzA2NTc4NDQsMTA3MjQzNDIy
-Nyw1MzQ0MTA0MzksNzk2MTIzMjE2LDIxMTMyNTkzMTEsLTIxOD
-I0NjczNSwxMjg0MDMyNDI0LDE0Nzk3NDI4MzksNTAxNDgxMjg2
-XX0=
+eyJoaXN0b3J5IjpbOTY3MjUyNjgzLC0xODE4ODAxMzE5LC00ND
+k1MTk3NSwxODkwNjgwMjk4LC01MzI2NjUyMDUsLTEwMjY3MzIy
+NzUsNTA1MDYyMDgsLTk4NjIyMTA5MywzNDgxNDI2LC0xMzc0Nj
+YwMDE1LDE0MDU5Mzg5NDgsOTMwNjU3ODQ0LDEwNzI0MzQyMjcs
+NTM0NDEwNDM5LDc5NjEyMzIxNiwyMTEzMjU5MzExLC0yMTgyND
+Y3MzUsMTI4NDAzMjQyNCwxNDc5NzQyODM5LDUwMTQ4MTI4Nl19
+
 -->
