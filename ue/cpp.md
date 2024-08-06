@@ -287,12 +287,17 @@ SpringArm->SetupAttachment(GetRootComponent());
 ViewCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("ViewCamera"));
 ViewCamera->SetupAttachment(SpringArm);
 ```
+### 左右及上下转向
+```
+void Turn(float Value);
+	void LookUp(float Value);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1NjYxNTc1MywtMTgxODgwMTMxOSwtND
-Q5NTE5NzUsMTg5MDY4MDI5OCwtNTMyNjY1MjA1LC0xMDI2NzMy
-Mjc1LDUwNTA2MjA4LC05ODYyMjEwOTMsMzQ4MTQyNiwtMTM3ND
-Y2MDAxNSwxNDA1OTM4OTQ4LDkzMDY1Nzg0NCwxMDcyNDM0MjI3
-LDUzNDQxMDQzOSw3OTYxMjMyMTYsMjExMzI1OTMxMSwtMjE4Mj
-Q2NzM1LDEyODQwMzI0MjQsMTQ3OTc0MjgzOSw1MDE0ODEyODZd
-fQ==
+eyJoaXN0b3J5IjpbMTAxMDgzNTc0MCwyMDU2NjE1NzUzLC0xOD
+E4ODAxMzE5LC00NDk1MTk3NSwxODkwNjgwMjk4LC01MzI2NjUy
+MDUsLTEwMjY3MzIyNzUsNTA1MDYyMDgsLTk4NjIyMTA5MywzND
+gxNDI2LC0xMzc0NjYwMDE1LDE0MDU5Mzg5NDgsOTMwNjU3ODQ0
+LDEwNzI0MzQyMjcsNTM0NDEwNDM5LDc5NjEyMzIxNiwyMTEzMj
+U5MzExLC0yMTgyNDY3MzUsMTI4NDAzMjQyNCwxNDc5NzQyODM5
+XX0=
 -->
