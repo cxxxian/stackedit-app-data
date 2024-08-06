@@ -281,14 +281,18 @@ UCameraComponent* ViewCamera;
 SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
 SpringArm->SetupAttachment(GetRootComponent());
 ```
+创建ViewCamera并且将其添加到SpringArm上
+```
+#include "Camera/CameraComponent.h"
 ViewCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("ViewCamera"));
-	ViewCamera->SetupAttachment(SpringArm);
+ViewCamera->SetupAttachment(SpringArm);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MTU0MDEwNDksLTE4MTg4MDEzMTksLT
-Q0OTUxOTc1LDE4OTA2ODAyOTgsLTUzMjY2NTIwNSwtMTAyNjcz
-MjI3NSw1MDUwNjIwOCwtOTg2MjIxMDkzLDM0ODE0MjYsLTEzNz
-Q2NjAwMTUsMTQwNTkzODk0OCw5MzA2NTc4NDQsMTA3MjQzNDIy
-Nyw1MzQ0MTA0MzksNzk2MTIzMjE2LDIxMTMyNTkzMTEsLTIxOD
-I0NjczNSwxMjg0MDMyNDI0LDE0Nzk3NDI4MzksNTAxNDgxMjg2
-XX0=
+eyJoaXN0b3J5IjpbMjA1NjYxNTc1MywtMTgxODgwMTMxOSwtND
+Q5NTE5NzUsMTg5MDY4MDI5OCwtNTMyNjY1MjA1LC0xMDI2NzMy
+Mjc1LDUwNTA2MjA4LC05ODYyMjEwOTMsMzQ4MTQyNiwtMTM3ND
+Y2MDAxNSwxNDA1OTM4OTQ4LDkzMDY1Nzg0NCwxMDcyNDM0MjI3
+LDUzNDQxMDQzOSw3OTYxMjMyMTYsMjExMzI1OTMxMSwtMjE4Mj
+Q2NzM1LDEyODQwMzI0MjQsMTQ3OTc0MjgzOSw1MDE0ODEyODZd
+fQ==
 -->
