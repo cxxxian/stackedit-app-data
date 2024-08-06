@@ -288,12 +288,25 @@ ViewCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("ViewCamera"));
 ViewCamera->SetupAttachment(SpringArm);
 ```
 ### 左右及上下转向
+在.h中声明方法
 ```
 void Turn(float Value);
-	void LookUp(float Value);
+void LookUp(float Value);
 ```
+在.cpp中进行方法的构造
+```
+void ABird::Turn(float Value)
+{
+}
+
+void ABird::LookUp(float Value)
+{
+}
+```
+在SetupPlayerInputComponent方法中进行周映射绑定
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxMDgzNTc0MCwyMDU2NjE1NzUzLC0xOD
+eyJoaXN0b3J5IjpbMTE0MDEzODAwNywyMDU2NjE1NzUzLC0xOD
 E4ODAxMzE5LC00NDk1MTk3NSwxODkwNjgwMjk4LC01MzI2NjUy
 MDUsLTEwMjY3MzIyNzUsNTA1MDYyMDgsLTk4NjIyMTA5MywzND
 gxNDI2LC0xMzc0NjYwMDE1LDE0MDU5Mzg5NDgsOTMwNjU3ODQ0
