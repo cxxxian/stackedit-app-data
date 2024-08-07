@@ -408,18 +408,20 @@ public:
 ```
 void USlashAnimInstance::NativeInitializeAnimation()
 {
-	Super::NativeInitializeAnimation();
+	Super::NativeInitializeAnimation();//继承父类
 
-	SlashCharacter = Cast<ASlashCharacter>(TryGetPawnOwner());
+	SlashCharacter = Cast<ASlashCharacter>(TryGetPawnOwner());//这句话用来将TryGetPawnOwner()得到的对象转化成ASlashCharacter
 	if (SlashCharacter)
 	{
 		SlashCharacterMovement = SlashCharacter->GetCharacterMovement();
 	}
 }
+```
+```
 
 void USlashAnimInstance::NativeUpdateAnimation(float DeltTime)
 {
-	Super::NativeUpdateAnimation(DeltTime);
+	Super::NativeUpdateAnimation(DeltTime);//继承父类
 
 	if (SlashCharacterMovement)
 	{
@@ -428,11 +430,11 @@ void USlashAnimInstance::NativeUpdateAnimation(float DeltTime)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg3MTM1MjU2NiwtMTMwMzg0MDUyMywzOT
-AzMzAzMDIsNzM3NzgzMzA1LDU0OTUzNzIxOSwyOTIzNTExMjgs
-MjA1NjI0NjQwMSwtMTY4MjUyNDMwNCwtNDQ4ODE1NTI5LDM4ND
-UxOTEyMCwyOTk4Mzk4MzksNDM3Njk1MDY2LDIwNTY2MTU3NTMs
-LTE4MTg4MDEzMTksLTQ0OTUxOTc1LDE4OTA2ODAyOTgsLTUzMj
-Y2NTIwNSwtMTAyNjczMjI3NSw1MDUwNjIwOCwtOTg2MjIxMDkz
-XX0=
+eyJoaXN0b3J5IjpbMzUxNDM4NDM3LC0xMzAzODQwNTIzLDM5MD
+MzMDMwMiw3Mzc3ODMzMDUsNTQ5NTM3MjE5LDI5MjM1MTEyOCwy
+MDU2MjQ2NDAxLC0xNjgyNTI0MzA0LC00NDg4MTU1MjksMzg0NT
+E5MTIwLDI5OTgzOTgzOSw0Mzc2OTUwNjYsMjA1NjYxNTc1Mywt
+MTgxODgwMTMxOSwtNDQ5NTE5NzUsMTg5MDY4MDI5OCwtNTMyNj
+Y1MjA1LC0xMDI2NzMyMjc1LDUwNTA2MjA4LC05ODYyMjEwOTNd
+fQ==
 -->
