@@ -298,10 +298,12 @@ void LookUp(float Value);
 ```
 void ABird::Turn(float Value)
 {
+    AddControllerYawInput(Value);
 }
 
 void ABird::LookUp(float Value)
 {
+    AddControllerPitchInput(Value);
 }
 ```
 在SetupPlayerInputComponent方法中进行周映射绑定
@@ -313,11 +315,11 @@ PlayerInputComponent->BindAxis(FName("LookUp"), this, &ABird::LookUp);
 ![输入图片说明](/imgs/2024-08-06/tgWzvJyAl1jnLy1i.png)
 ## Character
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzg0NTE5MTIwLDI5OTgzOTgzOSw0Mzc2OT
-UwNjYsMjA1NjYxNTc1MywtMTgxODgwMTMxOSwtNDQ5NTE5NzUs
-MTg5MDY4MDI5OCwtNTMyNjY1MjA1LC0xMDI2NzMyMjc1LDUwNT
-A2MjA4LC05ODYyMjEwOTMsMzQ4MTQyNiwtMTM3NDY2MDAxNSwx
-NDA1OTM4OTQ4LDkzMDY1Nzg0NCwxMDcyNDM0MjI3LDUzNDQxMD
-QzOSw3OTYxMjMyMTYsMjExMzI1OTMxMSwtMjE4MjQ2NzM1XX0=
+eyJoaXN0b3J5IjpbLTQ0ODgxNTUyOSwzODQ1MTkxMjAsMjk5OD
+M5ODM5LDQzNzY5NTA2NiwyMDU2NjE1NzUzLC0xODE4ODAxMzE5
+LC00NDk1MTk3NSwxODkwNjgwMjk4LC01MzI2NjUyMDUsLTEwMj
+Y3MzIyNzUsNTA1MDYyMDgsLTk4NjIyMTA5MywzNDgxNDI2LC0x
+Mzc0NjYwMDE1LDE0MDU5Mzg5NDgsOTMwNjU3ODQ0LDEwNzI0Mz
+QyMjcsNTM0NDEwNDM5LDc5NjEyMzIxNiwyMTEzMjU5MzExXX0=
 
 -->
