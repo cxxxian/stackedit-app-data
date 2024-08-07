@@ -321,13 +321,27 @@ bUseControllerRotationPitch = false;
 bUseControllerRotationYaw = false;
 bUseControllerRotationRoll = false;
 ```
+优化原来只能沿着向前向量移动的问题，以下方法：
+> 1·通过GetControlRotation()得到控制器旋转
+```
+void ASlashCharacter::MoveForward(float Value)
+{
+	if (Controller && (Value != 0.f))
+	{
+		const FRotator ControlRotation = GetControlRotation();
+		const FRotator YawRotation(0.f, ControlRotation.Yaw, 0.f);
 
+		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+		AddMovementInput(Direction, Value);
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzU0MzI4NjIsLTE2ODI1MjQzMDQsLTQ0OD
-gxNTUyOSwzODQ1MTkxMjAsMjk5ODM5ODM5LDQzNzY5NTA2Niwy
-MDU2NjE1NzUzLC0xODE4ODAxMzE5LC00NDk1MTk3NSwxODkwNj
-gwMjk4LC01MzI2NjUyMDUsLTEwMjY3MzIyNzUsNTA1MDYyMDgs
-LTk4NjIyMTA5MywzNDgxNDI2LC0xMzc0NjYwMDE1LDE0MDU5Mz
-g5NDgsOTMwNjU3ODQ0LDEwNzI0MzQyMjcsNTM0NDEwNDM5XX0=
-
+eyJoaXN0b3J5IjpbLTEyMDMzMzgyNiwtMTY4MjUyNDMwNCwtND
+Q4ODE1NTI5LDM4NDUxOTEyMCwyOTk4Mzk4MzksNDM3Njk1MDY2
+LDIwNTY2MTU3NTMsLTE4MTg4MDEzMTksLTQ0OTUxOTc1LDE4OT
+A2ODAyOTgsLTUzMjY2NTIwNSwtMTAyNjczMjI3NSw1MDUwNjIw
+OCwtOTg2MjIxMDkzLDM0ODE0MjYsLTEzNzQ2NjAwMTUsMTQwNT
+kzODk0OCw5MzA2NTc4NDQsMTA3MjQzNDIyNyw1MzQ0MTA0Mzld
+fQ==
 -->
