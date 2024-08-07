@@ -425,16 +425,16 @@ void USlashAnimInstance::NativeUpdateAnimation(float DeltTime)
 
 	if (SlashCharacterMovement)//如果得到了SlashCharacterMovement
 	{
-		GroundSpeed = UKismetMathLibrary::VSizeXY(SlashCharacterMovement->Velocity);//计算速度
+		GroundSpeed = UKismetMathLibrary::VSizeXY(SlashCharacterMovement->Velocity);//计算速度矢量zai
 	}
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTUzMzk5MTgsLTEzMDM4NDA1MjMsMz
-kwMzMwMzAyLDczNzc4MzMwNSw1NDk1MzcyMTksMjkyMzUxMTI4
-LDIwNTYyNDY0MDEsLTE2ODI1MjQzMDQsLTQ0ODgxNTUyOSwzOD
-Q1MTkxMjAsMjk5ODM5ODM5LDQzNzY5NTA2NiwyMDU2NjE1NzUz
-LC0xODE4ODAxMzE5LC00NDk1MTk3NSwxODkwNjgwMjk4LC01Mz
-I2NjUyMDUsLTEwMjY3MzIyNzUsNTA1MDYyMDgsLTk4NjIyMTA5
-M119
+eyJoaXN0b3J5IjpbLTIzOTMwNTQ5LC0xMzAzODQwNTIzLDM5MD
+MzMDMwMiw3Mzc3ODMzMDUsNTQ5NTM3MjE5LDI5MjM1MTEyOCwy
+MDU2MjQ2NDAxLC0xNjgyNTI0MzA0LC00NDg4MTU1MjksMzg0NT
+E5MTIwLDI5OTgzOTgzOSw0Mzc2OTUwNjYsMjA1NjYxNTc1Mywt
+MTgxODgwMTMxOSwtNDQ5NTE5NzUsMTg5MDY4MDI5OCwtNTMyNj
+Y1MjA1LC0xMDI2NzMyMjc1LDUwNTA2MjA4LC05ODYyMjEwOTNd
+fQ==
 -->
