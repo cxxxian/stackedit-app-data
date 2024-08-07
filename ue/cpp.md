@@ -278,6 +278,7 @@ UCameraComponent* ViewCamera;
 在.cpp中，创建SpringArm并且将其添加到根组件上
 ```
 #include "GameFramework/SpringArmComponent.h"
+#include "Camera/CameraComponent.h"
 SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
 SpringArm->SetupAttachment(GetRootComponent());
 ```
@@ -312,11 +313,11 @@ PlayerInputComponent->BindAxis(FName("LookUp"), this, &ABird::LookUp);
 ![输入图片说明](/imgs/2024-08-06/tgWzvJyAl1jnLy1i.png)
 ## Character
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjk5ODM5ODM5LDQzNzY5NTA2NiwyMDU2Nj
-E1NzUzLC0xODE4ODAxMzE5LC00NDk1MTk3NSwxODkwNjgwMjk4
-LC01MzI2NjUyMDUsLTEwMjY3MzIyNzUsNTA1MDYyMDgsLTk4Nj
-IyMTA5MywzNDgxNDI2LC0xMzc0NjYwMDE1LDE0MDU5Mzg5NDgs
-OTMwNjU3ODQ0LDEwNzI0MzQyMjcsNTM0NDEwNDM5LDc5NjEyMz
-IxNiwyMTEzMjU5MzExLC0yMTgyNDY3MzUsMTI4NDAzMjQyNF19
+eyJoaXN0b3J5IjpbMzg0NTE5MTIwLDI5OTgzOTgzOSw0Mzc2OT
+UwNjYsMjA1NjYxNTc1MywtMTgxODgwMTMxOSwtNDQ5NTE5NzUs
+MTg5MDY4MDI5OCwtNTMyNjY1MjA1LC0xMDI2NzMyMjc1LDUwNT
+A2MjA4LC05ODYyMjEwOTMsMzQ4MTQyNiwtMTM3NDY2MDAxNSwx
+NDA1OTM4OTQ4LDkzMDY1Nzg0NCwxMDcyNDM0MjI3LDUzNDQxMD
+QzOSw3OTYxMjMyMTYsMjExMzI1OTMxMSwtMjE4MjQ2NzM1XX0=
 
 -->
