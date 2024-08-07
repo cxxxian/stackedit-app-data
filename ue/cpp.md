@@ -325,7 +325,7 @@ bUseControllerRotationRoll = false;
 > 1.通过GetControlRotation()得到控制器旋转的向量，用ControlRotation存储起来
 > 2.通过YawRotation(0.f, ControlRotation.Yaw, 0.f)构造器得到ControlRotation的Yaw方向的向量
 > 3.FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X)，先得到旋转值的旋转矩阵表示方法，然后得到X方向上的单位向量
-> 4.
+> 4.最后将Direction作为向量传入AddMovementInput方法中
 ```
 void ASlashCharacter::MoveForward(float Value)
 {
@@ -340,7 +340,7 @@ void ASlashCharacter::MoveForward(float Value)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzMTY1MzEyMCwtMTY4MjUyNDMwNCwtND
+eyJoaXN0b3J5IjpbMjA1NjI0NjQwMSwtMTY4MjUyNDMwNCwtND
 Q4ODE1NTI5LDM4NDUxOTEyMCwyOTk4Mzk4MzksNDM3Njk1MDY2
 LDIwNTY2MTU3NTMsLTE4MTg4MDEzMTksLTQ0OTUxOTc1LDE4OT
 A2ODAyOTgsLTUzMjY2NTIwNSwtMTAyNjczMjI3NSw1MDUwNjIw
