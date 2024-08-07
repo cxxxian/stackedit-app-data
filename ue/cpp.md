@@ -314,12 +314,15 @@ PlayerInputComponent->BindAxis(FName("LookUp"), this, &ABird::LookUp);
 **注意**：记得要在蓝图中将**使用控制器旋转Pitch/Yaw**勾选上才能正确进行旋转
 ![输入图片说明](/imgs/2024-08-06/tgWzvJyAl1jnLy1i.png)
 ## Character
+bUseControllerRotationPitch = false;
+	bUseControllerRotationYaw = false;
+	bUseControllerRotationRoll = false;
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0ODgxNTUyOSwzODQ1MTkxMjAsMjk5OD
-M5ODM5LDQzNzY5NTA2NiwyMDU2NjE1NzUzLC0xODE4ODAxMzE5
-LC00NDk1MTk3NSwxODkwNjgwMjk4LC01MzI2NjUyMDUsLTEwMj
-Y3MzIyNzUsNTA1MDYyMDgsLTk4NjIyMTA5MywzNDgxNDI2LC0x
-Mzc0NjYwMDE1LDE0MDU5Mzg5NDgsOTMwNjU3ODQ0LDEwNzI0Mz
-QyMjcsNTM0NDEwNDM5LDc5NjEyMzIxNiwyMTEzMjU5MzExXX0=
+eyJoaXN0b3J5IjpbLTE1MjYxNzQ5MzUsLTQ0ODgxNTUyOSwzOD
+Q1MTkxMjAsMjk5ODM5ODM5LDQzNzY5NTA2NiwyMDU2NjE1NzUz
+LC0xODE4ODAxMzE5LC00NDk1MTk3NSwxODkwNjgwMjk4LC01Mz
+I2NjUyMDUsLTEwMjY3MzIyNzUsNTA1MDYyMDgsLTk4NjIyMTA5
+MywzNDgxNDI2LC0xMzc0NjYwMDE1LDE0MDU5Mzg5NDgsOTMwNj
+U3ODQ0LDEwNzI0MzQyMjcsNTM0NDEwNDM5LDc5NjEyMzIxNl19
 
 -->
