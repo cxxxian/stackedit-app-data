@@ -322,7 +322,9 @@ bUseControllerRotationYaw = false;
 bUseControllerRotationRoll = false;
 ```
 优化原来只能沿着向前向量移动的问题，以下方法：
-> 1·通过GetControlRotation()得到控制器旋转
+> 1·通过GetControlRotation()得到控制器旋转的向量，用ControlRotation存储起来
+> 2.通过YawRotation(0.f, ControlRotation.Yaw, 0.f)构造器得到ControlRotation的Yaw方向的向量
+> 3。
 ```
 void ASlashCharacter::MoveForward(float Value)
 {
@@ -337,11 +339,11 @@ void ASlashCharacter::MoveForward(float Value)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDMzMzgyNiwtMTY4MjUyNDMwNCwtND
-Q4ODE1NTI5LDM4NDUxOTEyMCwyOTk4Mzk4MzksNDM3Njk1MDY2
-LDIwNTY2MTU3NTMsLTE4MTg4MDEzMTksLTQ0OTUxOTc1LDE4OT
-A2ODAyOTgsLTUzMjY2NTIwNSwtMTAyNjczMjI3NSw1MDUwNjIw
-OCwtOTg2MjIxMDkzLDM0ODE0MjYsLTEzNzQ2NjAwMTUsMTQwNT
-kzODk0OCw5MzA2NTc4NDQsMTA3MjQzNDIyNyw1MzQ0MTA0Mzld
-fQ==
+eyJoaXN0b3J5IjpbLTEwMTg2NjY4MjQsLTE2ODI1MjQzMDQsLT
+Q0ODgxNTUyOSwzODQ1MTkxMjAsMjk5ODM5ODM5LDQzNzY5NTA2
+NiwyMDU2NjE1NzUzLC0xODE4ODAxMzE5LC00NDk1MTk3NSwxOD
+kwNjgwMjk4LC01MzI2NjUyMDUsLTEwMjY3MzIyNzUsNTA1MDYy
+MDgsLTk4NjIyMTA5MywzNDgxNDI2LC0xMzc0NjYwMDE1LDE0MD
+U5Mzg5NDgsOTMwNjU3ODQ0LDEwNzI0MzQyMjcsNTM0NDEwNDM5
+XX0=
 -->
