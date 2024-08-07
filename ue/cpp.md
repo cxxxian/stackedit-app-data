@@ -397,13 +397,14 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = Movement)
 	float GroundSpeed;
 ```
-在.cpp
+在.cpp中引用以下头文件
 ```
 #include "Characters/SlashAnimInstance.h"
 #include "Characters/SlashCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 ```
+并实现方法
 ```
 void USlashAnimInstance::NativeInitializeAnimation()
 {
@@ -427,7 +428,7 @@ void USlashAnimInstance::NativeUpdateAnimation(float DeltTime)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwMjkyMDk5NywtMTMwMzg0MDUyMywzOT
+eyJoaXN0b3J5IjpbLTg3MTM1MjU2NiwtMTMwMzg0MDUyMywzOT
 AzMzAzMDIsNzM3NzgzMzA1LDU0OTUzNzIxOSwyOTIzNTExMjgs
 MjA1NjI0NjQwMSwtMTY4MjUyNDMwNCwtNDQ4ODE1NTI5LDM4ND
 UxOTEyMCwyOTk4Mzk4MzksNDM3Njk1MDY2LDIwNTY2MTU3NTMs
