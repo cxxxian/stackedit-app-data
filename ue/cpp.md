@@ -382,9 +382,23 @@ Eyebrows->AttachmentName = FString("head");
 ![输入图片说明](/imgs/2024-08-07/tM0qzH0fPaw5mcBn.png)
 ## 动画
 ![输入图片说明](/imgs/2024-08-08/Zife25LjEgqAihOI.png)
-dui'yi
+对应蓝图，在.h中声明这两个方法
+```
+public:
+	virtual void NativeInitializeAnimation() override;
+	virtual void NativeUpdateAnimation(float DeltTime) override;
+
+	UPROPERTY(BlueprintReadOnly)
+	class ASlashCharacter* SlashCharacter;
+
+	UPROPERTY(BlueprintReadOnly, Category = Movement)
+	class UCharacterMovementComponent* SlashCharacterMovement;
+
+	UPROPERTY(BlueprintReadOnly, Category = Movement)
+	float GroundSpeed;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTM4NjMyMzU1LC0xMzAzODQwNTIzLDM5MD
+eyJoaXN0b3J5IjpbMzA2NzY4OTgzLC0xMzAzODQwNTIzLDM5MD
 MzMDMwMiw3Mzc3ODMzMDUsNTQ5NTM3MjE5LDI5MjM1MTEyOCwy
 MDU2MjQ2NDAxLC0xNjgyNTI0MzA0LC00NDg4MTU1MjksMzg0NT
 E5MTIwLDI5OTgzOTgzOSw0Mzc2OTUwNjYsMjA1NjYxNTc1Mywt
