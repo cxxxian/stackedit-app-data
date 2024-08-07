@@ -369,12 +369,22 @@ UGroomComponent* Hair;
 UPROPERTY(VisibleAnywhere, Category = Hair)
 UGroomComponent* Eyebrows;
 ```
+在.cpp中的构造函数中进行赋值和添加到对应的mesh上
+```
+Hair = CreateDefaultSubobject<UGroomComponent>(TEXT("Hair"));
+Hair->SetupAttachment(GetMesh());
+Hair->AttachmentName = FString("head");
+
+Eyebrows = CreateDefaultSubobject<UGroomComponent>(TEXT("Eyebrows"));
+Eyebrows->SetupAttachment(GetMesh());
+Eyebrows->AttachmentName = FString("head");
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDc3NTc2NjgsNTQ5NTM3MjE5LDI5Mj
-M1MTEyOCwyMDU2MjQ2NDAxLC0xNjgyNTI0MzA0LC00NDg4MTU1
-MjksMzg0NTE5MTIwLDI5OTgzOTgzOSw0Mzc2OTUwNjYsMjA1Nj
-YxNTc1MywtMTgxODgwMTMxOSwtNDQ5NTE5NzUsMTg5MDY4MDI5
-OCwtNTMyNjY1MjA1LC0xMDI2NzMyMjc1LDUwNTA2MjA4LC05OD
-YyMjEwOTMsMzQ4MTQyNiwtMTM3NDY2MDAxNSwxNDA1OTM4OTQ4
-XX0=
+eyJoaXN0b3J5IjpbNzM3NzgzMzA1LDU0OTUzNzIxOSwyOTIzNT
+ExMjgsMjA1NjI0NjQwMSwtMTY4MjUyNDMwNCwtNDQ4ODE1NTI5
+LDM4NDUxOTEyMCwyOTk4Mzk4MzksNDM3Njk1MDY2LDIwNTY2MT
+U3NTMsLTE4MTg4MDEzMTksLTQ0OTUxOTc1LDE4OTA2ODAyOTgs
+LTUzMjY2NTIwNSwtMTAyNjczMjI3NSw1MDUwNjIwOCwtOTg2Mj
+IxMDkzLDM0ODE0MjYsLTEzNzQ2NjAwMTUsMTQwNTkzODk0OF19
+
 -->
