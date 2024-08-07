@@ -382,7 +382,7 @@ Eyebrows->AttachmentName = FString("head");
 ![输入图片说明](/imgs/2024-08-07/tM0qzH0fPaw5mcBn.png)
 ## 动画
 ![输入图片说明](/imgs/2024-08-08/Zife25LjEgqAihOI.png)
-对应蓝图，在.h中声明这两个方法，声明
+对应蓝图，在.h中声明这两个方法，声明SlashCharacter，SlashCharacterMovement（移动组件），GroundSpeed（地面速度）
 ```
 public:
 	virtual void NativeInitializeAnimation() override;
@@ -397,8 +397,37 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = Movement)
 	float GroundSpeed;
 ```
+在.cpp
+```
+#include "Characters/SlashAnimInstance.h"
+#include "Characters/SlashCharacter.h"
+#include "GameFramework/CharacterMovementComponent.h"
+#include "Kismet/KismetMathLibrary.h"
+```
+```
+void USlashAnimInstance::NativeInitializeAnimation()
+{
+	Super::NativeInitializeAnimation();
+
+	SlashCharacter = Cast<ASlashCharacter>(TryGetPawnOwner());
+	if (SlashCharacter)
+	{
+		SlashCharacterMovement = SlashCharacter->GetCharacterMovement();
+	}
+}
+
+void USlashAnimInstance::NativeUpdateAnimation(float DeltTime)
+{
+	Super::NativeUpdateAnimation(DeltTime);
+
+	if (SlashCharacterMovement)
+	{
+		GroundSpeed = UKismetMathLibrary::VSizeXY(SlashCharacterMovement->Velocity);
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwMjc4NTE5NywtMTMwMzg0MDUyMywzOT
+eyJoaXN0b3J5IjpbMTUwMjkyMDk5NywtMTMwMzg0MDUyMywzOT
 AzMzAzMDIsNzM3NzgzMzA1LDU0OTUzNzIxOSwyOTIzNTExMjgs
 MjA1NjI0NjQwMSwtMTY4MjUyNDMwNCwtNDQ4ODE1NTI5LDM4ND
 UxOTEyMCwyOTk4Mzk4MzksNDM3Njk1MDY2LDIwNTY2MTU3NTMs
