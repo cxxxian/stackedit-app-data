@@ -338,13 +338,24 @@ void ASlashCharacter::MoveForward(float Value)
 		AddMovementInput(Direction, Value);
 	}
 }
+void ASlashCharacter::MoveRight(float Value)
+{
+	if (Controller && (Value != 0.f))
+	{
+		const FRotator ControlRotation = GetControlRotation();
+		const FRotator YawRotation(0.f, ControlRotation.Yaw, 0.f);
+
+		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+		AddMovementInput(Direction, Value);
+	}
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1NjI0NjQwMSwtMTY4MjUyNDMwNCwtND
-Q4ODE1NTI5LDM4NDUxOTEyMCwyOTk4Mzk4MzksNDM3Njk1MDY2
-LDIwNTY2MTU3NTMsLTE4MTg4MDEzMTksLTQ0OTUxOTc1LDE4OT
-A2ODAyOTgsLTUzMjY2NTIwNSwtMTAyNjczMjI3NSw1MDUwNjIw
-OCwtOTg2MjIxMDkzLDM0ODE0MjYsLTEzNzQ2NjAwMTUsMTQwNT
-kzODk0OCw5MzA2NTc4NDQsMTA3MjQzNDIyNyw1MzQ0MTA0Mzld
+eyJoaXN0b3J5IjpbMjkyMzUxMTI4LDIwNTYyNDY0MDEsLTE2OD
+I1MjQzMDQsLTQ0ODgxNTUyOSwzODQ1MTkxMjAsMjk5ODM5ODM5
+LDQzNzY5NTA2NiwyMDU2NjE1NzUzLC0xODE4ODAxMzE5LC00ND
+k1MTk3NSwxODkwNjgwMjk4LC01MzI2NjUyMDUsLTEwMjY3MzIy
+NzUsNTA1MDYyMDgsLTk4NjIyMTA5MywzNDgxNDI2LC0xMzc0Nj
+YwMDE1LDE0MDU5Mzg5NDgsOTMwNjU3ODQ0LDEwNzI0MzQyMjdd
 fQ==
 -->
