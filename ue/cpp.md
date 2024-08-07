@@ -314,11 +314,15 @@ PlayerInputComponent->BindAxis(FName("LookUp"), this, &ABird::LookUp);
 **注意**：记得要在蓝图中将**使用控制器旋转Pitch/Yaw**勾选上才能正确进行旋转
 ![输入图片说明](/imgs/2024-08-06/tgWzvJyAl1jnLy1i.png)
 ## Character
+与bird类一样进行相机弹簧臂的绑定，以及前进后退的实现
+在构造函数中，对以下三个controller旋转的初始化
+```
 bUseControllerRotationPitch = false;
-	bUseControllerRotationYaw = false;
-	bUseControllerRotationRoll = false;
+bUseControllerRotationYaw = false;
+bUseControllerRotationRoll = false;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjYxNzQ5MzUsLTQ0ODgxNTUyOSwzOD
+eyJoaXN0b3J5IjpbLTE2ODI1MjQzMDQsLTQ0ODgxNTUyOSwzOD
 Q1MTkxMjAsMjk5ODM5ODM5LDQzNzY5NTA2NiwyMDU2NjE1NzUz
 LC0xODE4ODAxMzE5LC00NDk1MTk3NSwxODkwNjgwMjk4LC01Mz
 I2NjUyMDUsLTEwMjY3MzIyNzUsNTA1MDYyMDgsLTk4NjIyMTA5
