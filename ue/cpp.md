@@ -355,13 +355,17 @@ void ASlashCharacter::MoveRight(float Value)
 GetCharacterMovement()->bOrientRotationToMovement = true;
 GetCharacterMovement()->RotationRate = FRotator(0.f, 400.f, 0.f);
 ```
-###
+### 头发和眉毛的设置
+需要在build.cs内手动添加对应的模块"HairStrandsCore"和"Niagara"
+```
+PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HairStrandsCore", "Niagara" });
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODM5OTY2NDAsNTQ5NTM3MjE5LDI5Mj
-M1MTEyOCwyMDU2MjQ2NDAxLC0xNjgyNTI0MzA0LC00NDg4MTU1
-MjksMzg0NTE5MTIwLDI5OTgzOTgzOSw0Mzc2OTUwNjYsMjA1Nj
-YxNTc1MywtMTgxODgwMTMxOSwtNDQ5NTE5NzUsMTg5MDY4MDI5
-OCwtNTMyNjY1MjA1LC0xMDI2NzMyMjc1LDUwNTA2MjA4LC05OD
-YyMjEwOTMsMzQ4MTQyNiwtMTM3NDY2MDAxNSwxNDA1OTM4OTQ4
-XX0=
+eyJoaXN0b3J5IjpbNzE0MTIyMDgwLDU0OTUzNzIxOSwyOTIzNT
+ExMjgsMjA1NjI0NjQwMSwtMTY4MjUyNDMwNCwtNDQ4ODE1NTI5
+LDM4NDUxOTEyMCwyOTk4Mzk4MzksNDM3Njk1MDY2LDIwNTY2MT
+U3NTMsLTE4MTg4MDEzMTksLTQ0OTUxOTc1LDE4OTA2ODAyOTgs
+LTUzMjY2NTIwNSwtMTAyNjczMjI3NSw1MDUwNjIwOCwtOTg2Mj
+IxMDkzLDM0ODE0MjYsLTEzNzQ2NjAwMTUsMTQwNTkzODk0OF19
+
 -->
