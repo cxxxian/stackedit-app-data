@@ -434,16 +434,16 @@ void USlashAnimInstance::NativeUpdateAnimation(float DeltTime)
 在操作映射中添加跳跃
 ![输入图片说明](/imgs/2024-08-08/CVr0sAXab2FBwoMp.png)
 此处用的是操作映射而不是轴映射
-第一个参数对应名字
+第一个参数对应名字，第二个参数为一个枚举类，选择IE_Pressed意为按下后生效
 ```
 PlayerInputComponent->BindAction(FName("Jump"), IE_Pressed, this, &ACharacter::Jump);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc0MzUxNTc2MywtMTA1MzU3MDQ3MCwtMT
-MwMzg0MDUyMywzOTAzMzAzMDIsNzM3NzgzMzA1LDU0OTUzNzIx
-OSwyOTIzNTExMjgsMjA1NjI0NjQwMSwtMTY4MjUyNDMwNCwtND
-Q4ODE1NTI5LDM4NDUxOTEyMCwyOTk4Mzk4MzksNDM3Njk1MDY2
-LDIwNTY2MTU3NTMsLTE4MTg4MDEzMTksLTQ0OTUxOTc1LDE4OT
-A2ODAyOTgsLTUzMjY2NTIwNSwtMTAyNjczMjI3NSw1MDUwNjIw
-OF19
+eyJoaXN0b3J5IjpbLTIwOTYyNzQyNjEsLTEwNTM1NzA0NzAsLT
+EzMDM4NDA1MjMsMzkwMzMwMzAyLDczNzc4MzMwNSw1NDk1Mzcy
+MTksMjkyMzUxMTI4LDIwNTYyNDY0MDEsLTE2ODI1MjQzMDQsLT
+Q0ODgxNTUyOSwzODQ1MTkxMjAsMjk5ODM5ODM5LDQzNzY5NTA2
+NiwyMDU2NjE1NzUzLC0xODE4ODAxMzE5LC00NDk1MTk3NSwxOD
+kwNjgwMjk4LC01MzI2NjUyMDUsLTEwMjY3MzIyNzUsNTA1MDYy
+MDhdfQ==
 -->
