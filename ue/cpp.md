@@ -380,7 +380,7 @@ Eyebrows->SetupAttachment(GetMesh());
 Eyebrows->AttachmentName = FString("head");
 ```
 ![输入图片说明](/imgs/2024-08-07/tM0qzH0fPaw5mcBn.png)
-## 动画
+### 动画
 ![输入图片说明](/imgs/2024-08-08/Zife25LjEgqAihOI.png)
 对应蓝图，在.h中声明这两个方法，声明SlashCharacter，SlashCharacterMovement（移动组件），GroundSpeed（地面速度）
 ```
@@ -430,12 +430,13 @@ void USlashAnimInstance::NativeUpdateAnimation(float DeltTime)
 	}
 }
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTM1NzA0NzAsLTEzMDM4NDA1MjMsMz
-kwMzMwMzAyLDczNzc4MzMwNSw1NDk1MzcyMTksMjkyMzUxMTI4
-LDIwNTYyNDY0MDEsLTE2ODI1MjQzMDQsLTQ0ODgxNTUyOSwzOD
-Q1MTkxMjAsMjk5ODM5ODM5LDQzNzY5NTA2NiwyMDU2NjE1NzUz
-LC0xODE4ODAxMzE5LC00NDk1MTk3NSwxODkwNjgwMjk4LC01Mz
-I2NjUyMDUsLTEwMjY3MzIyNzUsNTA1MDYyMDgsLTk4NjIyMTA5
-M119
+eyJoaXN0b3J5IjpbLTEyNzIyNjE1MjEsLTEwNTM1NzA0NzAsLT
+EzMDM4NDA1MjMsMzkwMzMwMzAyLDczNzc4MzMwNSw1NDk1Mzcy
+MTksMjkyMzUxMTI4LDIwNTYyNDY0MDEsLTE2ODI1MjQzMDQsLT
+Q0ODgxNTUyOSwzODQ1MTkxMjAsMjk5ODM5ODM5LDQzNzY5NTA2
+NiwyMDU2NjE1NzUzLC0xODE4ODAxMzE5LC00NDk1MTk3NSwxOD
+kwNjgwMjk4LC01MzI2NjUyMDUsLTEwMjY3MzIyNzUsNTA1MDYy
+MDhdfQ==
 -->
