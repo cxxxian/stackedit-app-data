@@ -468,9 +468,9 @@ void AItem::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 }
 ```
 ## Weapon
-由于weapon和
+由于weapon和和
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc1NzIwNzY0OCw3Njc3NzcyMjAsLTE1Mj
+eyJoaXN0b3J5IjpbLTUxNTA5MjI0OCw3Njc3NzcyMjAsLTE1Mj
 Q2MTMxNSwtMjA3MjIzNTA3NywtMjA5NjI3NDI2MSwtMTA1MzU3
 MDQ3MCwtMTMwMzg0MDUyMywzOTAzMzAzMDIsNzM3NzgzMzA1LD
 U0OTUzNzIxOSwyOTIzNTExMjgsMjA1NjI0NjQwMSwtMTY4MjUy
