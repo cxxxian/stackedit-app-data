@@ -475,12 +475,18 @@ void AItem::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 virtual void OnSphereOverlap
 virtual void OnSphereEndOverlap
 ```
+在weapon.h中写方法并override，此时不可以写FUNCTION否则会导致编译错误，因为本质上是继承关系
+```
+virtual void OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) override;
+
+virtual void OnSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex) override;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzMDQxNDU1Niw3Njc3NzcyMjAsLTE1Mj
-Q2MTMxNSwtMjA3MjIzNTA3NywtMjA5NjI3NDI2MSwtMTA1MzU3
-MDQ3MCwtMTMwMzg0MDUyMywzOTAzMzAzMDIsNzM3NzgzMzA1LD
-U0OTUzNzIxOSwyOTIzNTExMjgsMjA1NjI0NjQwMSwtMTY4MjUy
-NDMwNCwtNDQ4ODE1NTI5LDM4NDUxOTEyMCwyOTk4Mzk4MzksND
-M3Njk1MDY2LDIwNTY2MTU3NTMsLTE4MTg4MDEzMTksLTQ0OTUx
-OTc1XX0=
+eyJoaXN0b3J5IjpbMTQ0MDAzODU5NiwtODMwNDE0NTU2LDc2Nz
+c3NzIyMCwtMTUyNDYxMzE1LC0yMDcyMjM1MDc3LC0yMDk2Mjc0
+MjYxLC0xMDUzNTcwNDcwLC0xMzAzODQwNTIzLDM5MDMzMDMwMi
+w3Mzc3ODMzMDUsNTQ5NTM3MjE5LDI5MjM1MTEyOCwyMDU2MjQ2
+NDAxLC0xNjgyNTI0MzA0LC00NDg4MTU1MjksMzg0NTE5MTIwLD
+I5OTgzOTgzOSw0Mzc2OTUwNjYsMjA1NjYxNTc1MywtMTgxODgw
+MTMxOV19
 -->
