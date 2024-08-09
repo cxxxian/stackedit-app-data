@@ -451,13 +451,23 @@ private:
 UPROPERTY(VisibleAnywhere)
 USphereComponent* Sphere;
 ```
+在beginplay中绑定该函数，在函数中实现重叠时输出重叠角色的名字
+```
 void AItem::BeginPlay()
 {
 	Super::BeginPlay();
 	Sphere->OnComponentBeginOverlap.AddDynamic(this, &AItem::OnSphereOverlap);
 }
+void AItem::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	const FString OtherActorName = OtherActor->GetName();
+	if (GEngine) {
+		GEngine->AddOnScreenDebugMessage(1, 30.f, FColor::Red, OtherActorName);
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODE4NDAyMjk2LC0xNTI0NjEzMTUsLTIwNz
+eyJoaXN0b3J5IjpbNzY3Nzc3MjIwLC0xNTI0NjEzMTUsLTIwNz
 IyMzUwNzcsLTIwOTYyNzQyNjEsLTEwNTM1NzA0NzAsLTEzMDM4
 NDA1MjMsMzkwMzMwMzAyLDczNzc4MzMwNSw1NDk1MzcyMTksMj
 kyMzUxMTI4LDIwNTYyNDY0MDEsLTE2ODI1MjQzMDQsLTQ0ODgx
