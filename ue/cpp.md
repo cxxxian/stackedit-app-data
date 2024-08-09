@@ -468,9 +468,11 @@ void AItem::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 }
 ```
 ## Weapon
-由于weapon和和先前定义item有共同之处，
+由于weapon和和先前定义item有共同之处
+![输入图片说明](/imgs/2024-08-09/bjdJt3ILYNcQVzD1.png)
+直接通过item创建子类
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk3NDgxODE5NCw3Njc3NzcyMjAsLTE1Mj
+eyJoaXN0b3J5IjpbLTY1Nzg4NTE2Nyw3Njc3NzcyMjAsLTE1Mj
 Q2MTMxNSwtMjA3MjIzNTA3NywtMjA5NjI3NDI2MSwtMTA1MzU3
 MDQ3MCwtMTMwMzg0MDUyMywzOTAzMzAzMDIsNzM3NzgzMzA1LD
 U0OTUzNzIxOSwyOTIzNTExMjgsMjA1NjI0NjQwMSwtMTY4MjUy
