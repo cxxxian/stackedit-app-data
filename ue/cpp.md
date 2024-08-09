@@ -441,6 +441,7 @@ PlayerInputComponent->BindAction(FName("Jump"), IE_Pressed, this, &ACharacter::J
 ![输入图片说明](/imgs/2024-08-08/TSHFGoJpVtTVxO9v.png)
 通过缓存姿势可以做到如上效果，然后在其他状态机内即可使用Ground Locomoton
 ## 重叠事件
+在.h中声明如下
 ```
 class USphereComponent;
 protected:
@@ -449,8 +450,9 @@ void OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActo
 private:
 UPROPERTY(VisibleAnywhere)
 USphereComponent* Sphere;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMTA3NTU0NywtMjA3MjIzNTA3NywtMj
+eyJoaXN0b3J5IjpbLTE1MjQ2MTMxNSwtMjA3MjIzNTA3NywtMj
 A5NjI3NDI2MSwtMTA1MzU3MDQ3MCwtMTMwMzg0MDUyMywzOTAz
 MzAzMDIsNzM3NzgzMzA1LDU0OTUzNzIxOSwyOTIzNTExMjgsMj
 A1NjI0NjQwMSwtMTY4MjUyNDMwNCwtNDQ4ODE1NTI5LDM4NDUx
