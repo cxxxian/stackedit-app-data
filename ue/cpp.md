@@ -440,7 +440,8 @@ PlayerInputComponent->BindAction(FName("Jump"), IE_Pressed, this, &ACharacter::J
 ```
 ![输入图片说明](/imgs/2024-08-08/TSHFGoJpVtTVxO9v.png)
 通过缓存姿势可以做到如上效果，然后在其他状态机内即可使用Ground Locomoton
-## 重叠事件
+## 委托
+### 重叠事件
 在.h中声明如下
 ```
 class USphereComponent;
@@ -467,11 +468,11 @@ void AItem::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzY3Nzc3MjIwLC0xNTI0NjEzMTUsLTIwNz
-IyMzUwNzcsLTIwOTYyNzQyNjEsLTEwNTM1NzA0NzAsLTEzMDM4
-NDA1MjMsMzkwMzMwMzAyLDczNzc4MzMwNSw1NDk1MzcyMTksMj
-kyMzUxMTI4LDIwNTYyNDY0MDEsLTE2ODI1MjQzMDQsLTQ0ODgx
-NTUyOSwzODQ1MTkxMjAsMjk5ODM5ODM5LDQzNzY5NTA2NiwyMD
-U2NjE1NzUzLC0xODE4ODAxMzE5LC00NDk1MTk3NSwxODkwNjgw
-Mjk4XX0=
+eyJoaXN0b3J5IjpbMTE2MzE4NDk4Myw3Njc3NzcyMjAsLTE1Mj
+Q2MTMxNSwtMjA3MjIzNTA3NywtMjA5NjI3NDI2MSwtMTA1MzU3
+MDQ3MCwtMTMwMzg0MDUyMywzOTAzMzAzMDIsNzM3NzgzMzA1LD
+U0OTUzNzIxOSwyOTIzNTExMjgsMjA1NjI0NjQwMSwtMTY4MjUy
+NDMwNCwtNDQ4ODE1NTI5LDM4NDUxOTEyMCwyOTk4Mzk4MzksND
+M3Njk1MDY2LDIwNTY2MTU3NTMsLTE4MTg4MDEzMTksLTQ0OTUx
+OTc1XX0=
 -->
