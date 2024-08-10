@@ -481,12 +481,13 @@ virtual void OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* O
 
 virtual void OnSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex) override;
 ```
+### 将weapon添加到手上
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ0MDAzODU5NiwtODMwNDE0NTU2LDc2Nz
-c3NzIyMCwtMTUyNDYxMzE1LC0yMDcyMjM1MDc3LC0yMDk2Mjc0
-MjYxLC0xMDUzNTcwNDcwLC0xMzAzODQwNTIzLDM5MDMzMDMwMi
-w3Mzc3ODMzMDUsNTQ5NTM3MjE5LDI5MjM1MTEyOCwyMDU2MjQ2
-NDAxLC0xNjgyNTI0MzA0LC00NDg4MTU1MjksMzg0NTE5MTIwLD
-I5OTgzOTgzOSw0Mzc2OTUwNjYsMjA1NjYxNTc1MywtMTgxODgw
-MTMxOV19
+eyJoaXN0b3J5IjpbLTEyODU1MjQ3MjMsMTQ0MDAzODU5NiwtOD
+MwNDE0NTU2LDc2Nzc3NzIyMCwtMTUyNDYxMzE1LC0yMDcyMjM1
+MDc3LC0yMDk2Mjc0MjYxLC0xMDUzNTcwNDcwLC0xMzAzODQwNT
+IzLDM5MDMzMDMwMiw3Mzc3ODMzMDUsNTQ5NTM3MjE5LDI5MjM1
+MTEyOCwyMDU2MjQ2NDAxLC0xNjgyNTI0MzA0LC00NDg4MTU1Mj
+ksMzg0NTE5MTIwLDI5OTgzOTgzOSw0Mzc2OTUwNjYsMjA1NjYx
+NTc1M119
 -->
