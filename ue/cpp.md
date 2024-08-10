@@ -558,14 +558,14 @@ enum class ECharacterState : uint8//虚幻约定在枚举类前加上E，uint8�
 	ECS_EquippedTwoHandedWeapon UMETA(DisplayName = "Equipped Two-Handed Weapon")
 };
 private:
-	ECharacterState CharacterState = ECharacterState::Unequiped;
+	ECharacterState CharacterState = ECharacterState::ECS_Unequiped;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQwMTMwMjExLDEzNjAzMzM1NjAsNzc4Nz
-g1NjA5LDExNjE3ODA1NDgsLTI0NTI5NjA1NCwzMjU2MzM1NzQs
-LTExNDc0OTU3MjIsNjM4MzU1OTE3LDE2OTI2OTY1MjgsLTYxND
-MwOTYzMiwxNDQwMDM4NTk2LC04MzA0MTQ1NTYsNzY3Nzc3MjIw
-LC0xNTI0NjEzMTUsLTIwNzIyMzUwNzcsLTIwOTYyNzQyNjEsLT
-EwNTM1NzA0NzAsLTEzMDM4NDA1MjMsMzkwMzMwMzAyLDczNzc4
-MzMwNV19
+eyJoaXN0b3J5IjpbLTIwNTUyNDg1OTUsMTM2MDMzMzU2MCw3Nz
+g3ODU2MDksMTE2MTc4MDU0OCwtMjQ1Mjk2MDU0LDMyNTYzMzU3
+NCwtMTE0NzQ5NTcyMiw2MzgzNTU5MTcsMTY5MjY5NjUyOCwtNj
+E0MzA5NjMyLDE0NDAwMzg1OTYsLTgzMDQxNDU1Niw3Njc3Nzcy
+MjAsLTE1MjQ2MTMxNSwtMjA3MjIzNTA3NywtMjA5NjI3NDI2MS
+wtMTA1MzU3MDQ3MCwtMTMwMzg0MDUyMywzOTAzMzAzMDIsNzM3
+NzgzMzA1XX0=
 -->
