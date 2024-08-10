@@ -498,18 +498,20 @@ void AWeapon::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* 
 }
 ```
 ### 将weapon添加到手上（按键E拾取）
-在.
+在.h中声明方法，并之后在.cpp中实现
+```
 void EKeyPressed();
-将事件绑定
+```
+在.cpp中将事件绑定
 ```
 PlayerInputComponent->BindAction(FName("Equip"), IE_Pressed, this, ASlashCharacter::EKeyPressed);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwNjk4MzM3OSwxNjkyNjk2NTI4LC02MT
-QzMDk2MzIsMTQ0MDAzODU5NiwtODMwNDE0NTU2LDc2Nzc3NzIy
-MCwtMTUyNDYxMzE1LC0yMDcyMjM1MDc3LC0yMDk2Mjc0MjYxLC
-0xMDUzNTcwNDcwLC0xMzAzODQwNTIzLDM5MDMzMDMwMiw3Mzc3
-ODMzMDUsNTQ5NTM3MjE5LDI5MjM1MTEyOCwyMDU2MjQ2NDAxLC
-0xNjgyNTI0MzA0LC00NDg4MTU1MjksMzg0NTE5MTIwLDI5OTgz
-OTgzOV19
+eyJoaXN0b3J5IjpbNjM4MzU1OTE3LDE2OTI2OTY1MjgsLTYxND
+MwOTYzMiwxNDQwMDM4NTk2LC04MzA0MTQ1NTYsNzY3Nzc3MjIw
+LC0xNTI0NjEzMTUsLTIwNzIyMzUwNzcsLTIwOTYyNzQyNjEsLT
+EwNTM1NzA0NzAsLTEzMDM4NDA1MjMsMzkwMzMwMzAyLDczNzc4
+MzMwNSw1NDk1MzcyMTksMjkyMzUxMTI4LDIwNTYyNDY0MDEsLT
+E2ODI1MjQzMDQsLTQ0ODgxNTUyOSwzODQ1MTkxMjAsMjk5ODM5
+ODM5XX0=
 -->
