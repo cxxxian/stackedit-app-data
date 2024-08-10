@@ -508,13 +508,32 @@ public:
 ```
 PlayerInputComponent->BindAction(FName("Equip"), IE_Pressed, this, ASlashCharacter::EKeyPressed);
 ```
-在item.cppz'j
+在item.cpp中修改两个重叠函数，重叠的时候将item作为参数传入方法中，结束重叠的时候传入nullptr，意为重叠结束
+```
+void AItem::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	ASlashCharacter* SlashCharacter = Cast<ASlashCharacter>(OtherActor);
+	if (SlashCharacter)
+	{
+		SlashCharacter->SetOverlappingItem(this);
+	}
+}
+
+void AItem::OnSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	ASlashCharacter* SlashCharacter = Cast<ASlashCharacter>(OtherActor);
+	if (SlashCharacter)
+	{
+		SlashCharacter->SetOverlappingItem(nullptr);
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1NDYxMjkxMCw2MzgzNTU5MTcsMTY5Mj
-Y5NjUyOCwtNjE0MzA5NjMyLDE0NDAwMzg1OTYsLTgzMDQxNDU1
-Niw3Njc3NzcyMjAsLTE1MjQ2MTMxNSwtMjA3MjIzNTA3NywtMj
-A5NjI3NDI2MSwtMTA1MzU3MDQ3MCwtMTMwMzg0MDUyMywzOTAz
-MzAzMDIsNzM3NzgzMzA1LDU0OTUzNzIxOSwyOTIzNTExMjgsMj
-A1NjI0NjQwMSwtMTY4MjUyNDMwNCwtNDQ4ODE1NTI5LDM4NDUx
-OTEyMF19
+eyJoaXN0b3J5IjpbLTExNDc0OTU3MjIsNjM4MzU1OTE3LDE2OT
+I2OTY1MjgsLTYxNDMwOTYzMiwxNDQwMDM4NTk2LC04MzA0MTQ1
+NTYsNzY3Nzc3MjIwLC0xNTI0NjEzMTUsLTIwNzIyMzUwNzcsLT
+IwOTYyNzQyNjEsLTEwNTM1NzA0NzAsLTEzMDM4NDA1MjMsMzkw
+MzMwMzAyLDczNzc4MzMwNSw1NDk1MzcyMTksMjkyMzUxMTI4LD
+IwNTYyNDY0MDEsLTE2ODI1MjQzMDQsLTQ0ODgxNTUyOSwzODQ1
+MTkxMjBdfQ==
 -->
