@@ -528,12 +528,20 @@ void AItem::OnSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor*
 	}
 }
 ```
+在weapon.h中声明并在.cpp中定义此函数
+```
+void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
+{
+	FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
+	ItemMesh->AttachToComponent(Inparent, TransformRules, InSocketName);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDc0OTU3MjIsNjM4MzU1OTE3LDE2OT
-I2OTY1MjgsLTYxNDMwOTYzMiwxNDQwMDM4NTk2LC04MzA0MTQ1
-NTYsNzY3Nzc3MjIwLC0xNTI0NjEzMTUsLTIwNzIyMzUwNzcsLT
-IwOTYyNzQyNjEsLTEwNTM1NzA0NzAsLTEzMDM4NDA1MjMsMzkw
-MzMwMzAyLDczNzc4MzMwNSw1NDk1MzcyMTksMjkyMzUxMTI4LD
-IwNTYyNDY0MDEsLTE2ODI1MjQzMDQsLTQ0ODgxNTUyOSwzODQ1
-MTkxMjBdfQ==
+eyJoaXN0b3J5IjpbMzI1NjMzNTc0LC0xMTQ3NDk1NzIyLDYzOD
+M1NTkxNywxNjkyNjk2NTI4LC02MTQzMDk2MzIsMTQ0MDAzODU5
+NiwtODMwNDE0NTU2LDc2Nzc3NzIyMCwtMTUyNDYxMzE1LC0yMD
+cyMjM1MDc3LC0yMDk2Mjc0MjYxLC0xMDUzNTcwNDcwLC0xMzAz
+ODQwNTIzLDM5MDMzMDMwMiw3Mzc3ODMzMDUsNTQ5NTM3MjE5LD
+I5MjM1MTEyOCwyMDU2MjQ2NDAxLC0xNjgyNTI0MzA0LC00NDg4
+MTU1MjldfQ==
 -->
