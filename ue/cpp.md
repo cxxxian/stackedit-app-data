@@ -582,8 +582,22 @@ ECharacterState CharacterState = ECharacterState::ECS_Unequiped;
 public:
 FORCEINLINE ECharacterState GetCharacterState() const { return CharacterState; }
 ```
+在SlashAnimInstance.cpp中使用此get方法
+```
+void USlashAnimInstance::NativeUpdateAnimation(float DeltTime)
+{
+	Super::NativeUpdateAnimation(DeltTime);
+
+	if (SlashCharacterMovement)
+	{
+		GroundSpeed = UKismetMathLibrary::VSizeXY(SlashCharacterMovement->Velocity);
+		IsFalling = SlashCharacterMovement->IsFalling();
+		CharacterState = SlashCharacter->GetCharacterState();
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3Mzg2NDUwNiwtMTAxODg0MDQ2OSwxMz
+eyJoaXN0b3J5IjpbMjAyNjQwNDY5NSwtMTAxODg0MDQ2OSwxMz
 YwMzMzNTYwLDc3ODc4NTYwOSwxMTYxNzgwNTQ4LC0yNDUyOTYw
 NTQsMzI1NjMzNTc0LC0xMTQ3NDk1NzIyLDYzODM1NTkxNywxNj
 kyNjk2NTI4LC02MTQzMDk2MzIsMTQ0MDAzODU5NiwtODMwNDE0
