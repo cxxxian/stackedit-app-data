@@ -553,19 +553,19 @@ void ASlashCharacter::EKeyPressed()
 UENUM(BlueprintType)//加上BlueprintType即成了可以在蓝图中使用的类型
 enum class ECharacterState : uint8//虚幻约定在枚举类前加上E，uint8意为只能是八位正整数
 {
-	ECS_Unequiped,//ECS也是虚幻约定
-	ECS_EquippedOneHandedWeapon,
-	ECS_EquippedTwoHandedWeapon
+	ECS_Unequiped UMETA(DisplayName = "Unequipped"),//ECS为虚幻约定，为了优化用户的蓝图使用在后面加上UMETA(DisplayName = "Unequipped")可以自己更改在蓝图中显示的名字
+	ECS_EquippedOneHandedWeapon UMETA(DisplayName = "Equipped One-Handed Weapon"),
+	ECS_EquippedTwoHandedWeapon UMETA(DisplayName = "Equipped Two-Handed Weapon")
 };
 private:
 	ECharacterState CharacterState = ECharacterState::Unequiped;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2MDMzMzU2MCw3Nzg3ODU2MDksMTE2MT
-c4MDU0OCwtMjQ1Mjk2MDU0LDMyNTYzMzU3NCwtMTE0NzQ5NTcy
-Miw2MzgzNTU5MTcsMTY5MjY5NjUyOCwtNjE0MzA5NjMyLDE0ND
-AwMzg1OTYsLTgzMDQxNDU1Niw3Njc3NzcyMjAsLTE1MjQ2MTMx
-NSwtMjA3MjIzNTA3NywtMjA5NjI3NDI2MSwtMTA1MzU3MDQ3MC
-wtMTMwMzg0MDUyMywzOTAzMzAzMDIsNzM3NzgzMzA1LDU0OTUz
-NzIxOV19
+eyJoaXN0b3J5IjpbOTQwMTMwMjExLDEzNjAzMzM1NjAsNzc4Nz
+g1NjA5LDExNjE3ODA1NDgsLTI0NTI5NjA1NCwzMjU2MzM1NzQs
+LTExNDc0OTU3MjIsNjM4MzU1OTE3LDE2OTI2OTY1MjgsLTYxND
+MwOTYzMiwxNDQwMDM4NTk2LC04MzA0MTQ1NTYsNzY3Nzc3MjIw
+LC0xNTI0NjEzMTUsLTIwNzIyMzUwNzcsLTIwOTYyNzQyNjEsLT
+EwNTM1NzA0NzAsLTEzMDM4NDA1MjMsMzkwMzMwMzAyLDczNzc4
+MzMwNV19
 -->
