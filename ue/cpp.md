@@ -560,15 +560,24 @@ enum class ECharacterState : uint8//虚幻约定在枚举类前加上E，uint8�
 private:
 	ECharacterState CharacterState = ECharacterState::ECS_Unequiped;
 ```
-在character.cppz
+在character.cpp中，完善方法将状态修改成ECS_EquippedOneHandedWeapon
 ```
+void ASlashCharacter::EKeyPressed()
+{
+	AWeapon* OverlappingWeapon = Cast<AWeapon>(OverlappingItem);
+	if(OverlappingWeapon)
+	{
+		OverlappingWeapon->Equip(GetMesh(), FName("RightHandSocket"));
+		CharacterState = ECharacterState::ECS_EquippedOneHandedWeapon;
+	}
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0MjY0NjM1NywxMzYwMzMzNTYwLDc3OD
-c4NTYwOSwxMTYxNzgwNTQ4LC0yNDUyOTYwNTQsMzI1NjMzNTc0
-LC0xMTQ3NDk1NzIyLDYzODM1NTkxNywxNjkyNjk2NTI4LC02MT
-QzMDk2MzIsMTQ0MDAzODU5NiwtODMwNDE0NTU2LDc2Nzc3NzIy
-MCwtMTUyNDYxMzE1LC0yMDcyMjM1MDc3LC0yMDk2Mjc0MjYxLC
-0xMDUzNTcwNDcwLC0xMzAzODQwNTIzLDM5MDMzMDMwMiw3Mzc3
-ODMzMDVdfQ==
+eyJoaXN0b3J5IjpbLTEwMTg4NDA0NjksMTM2MDMzMzU2MCw3Nz
+g3ODU2MDksMTE2MTc4MDU0OCwtMjQ1Mjk2MDU0LDMyNTYzMzU3
+NCwtMTE0NzQ5NTcyMiw2MzgzNTU5MTcsMTY5MjY5NjUyOCwtNj
+E0MzA5NjMyLDE0NDAwMzg1OTYsLTgzMDQxNDU1Niw3Njc3Nzcy
+MjAsLTE1MjQ2MTMxNSwtMjA3MjIzNTA3NywtMjA5NjI3NDI2MS
+wtMTA1MzU3MDQ3MCwtMTMwMzg0MDUyMywzOTAzMzAzMDIsNzM3
+NzgzMzA1XX0=
 -->
