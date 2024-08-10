@@ -552,19 +552,19 @@ void ASlashCharacter::EKeyPressed()
 ```
 enum class ECharacterState//虚幻约定在枚举类前加上E
 {
-	Unequiped,
-	EquippedOneHandedWeapon,
-	EquippedTwoHandedWeapon
+	ECS_Unequiped,//ECS也是虚幻约定
+	ECS_EquippedOneHandedWeapon,
+	ECS_EquippedTwoHandedWeapon
 };
 private:
 	ECharacterState CharacterState = ECharacterState::Unequiped;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjA4NTE0NDYzLDExNjE3ODA1NDgsLTI0NT
-I5NjA1NCwzMjU2MzM1NzQsLTExNDc0OTU3MjIsNjM4MzU1OTE3
-LDE2OTI2OTY1MjgsLTYxNDMwOTYzMiwxNDQwMDM4NTk2LC04Mz
-A0MTQ1NTYsNzY3Nzc3MjIwLC0xNTI0NjEzMTUsLTIwNzIyMzUw
-NzcsLTIwOTYyNzQyNjEsLTEwNTM1NzA0NzAsLTEzMDM4NDA1Mj
-MsMzkwMzMwMzAyLDczNzc4MzMwNSw1NDk1MzcyMTksMjkyMzUx
-MTI4XX0=
+eyJoaXN0b3J5IjpbLTQ3OTcxMTMyOSwxMTYxNzgwNTQ4LC0yND
+UyOTYwNTQsMzI1NjMzNTc0LC0xMTQ3NDk1NzIyLDYzODM1NTkx
+NywxNjkyNjk2NTI4LC02MTQzMDk2MzIsMTQ0MDAzODU5NiwtOD
+MwNDE0NTU2LDc2Nzc3NzIyMCwtMTUyNDYxMzE1LC0yMDcyMjM1
+MDc3LC0yMDk2Mjc0MjYxLC0xMDUzNTcwNDcwLC0xMzAzODQwNT
+IzLDM5MDMzMDMwMiw3Mzc3ODMzMDUsNTQ5NTM3MjE5LDI5MjM1
+MTEyOF19
 -->
