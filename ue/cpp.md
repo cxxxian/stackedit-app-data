@@ -540,19 +540,19 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 ```
 void ASlashCharacter::EKeyPressed()
 {
-	AWeapon* OverlappingWeapon = Cast<AWeapon>(OverlappingWeapon);//将
+	AWeapon* OverlappingWeapon = Cast<AWeapon>(OverlappingItem);//将重叠的Item进行AWeapon的转化
 	if(OverlappingWeapon)
 	{
-		OverlappingWeapon->Equip(GetMesh(), FName("RightHandSocket"));
+		OverlappingWeapon->Equip(GetMesh(), FName("RightHandSocket"));//转化成功则运行Equip方法
 	}
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzUzOTY3MzMsMzI1NjMzNTc0LC0xMT
-Q3NDk1NzIyLDYzODM1NTkxNywxNjkyNjk2NTI4LC02MTQzMDk2
-MzIsMTQ0MDAzODU5NiwtODMwNDE0NTU2LDc2Nzc3NzIyMCwtMT
-UyNDYxMzE1LC0yMDcyMjM1MDc3LC0yMDk2Mjc0MjYxLC0xMDUz
-NTcwNDcwLC0xMzAzODQwNTIzLDM5MDMzMDMwMiw3Mzc3ODMzMD
-UsNTQ5NTM3MjE5LDI5MjM1MTEyOCwyMDU2MjQ2NDAxLC0xNjgy
-NTI0MzA0XX0=
+eyJoaXN0b3J5IjpbLTI0NTI5NjA1NCwzMjU2MzM1NzQsLTExND
+c0OTU3MjIsNjM4MzU1OTE3LDE2OTI2OTY1MjgsLTYxNDMwOTYz
+MiwxNDQwMDM4NTk2LC04MzA0MTQ1NTYsNzY3Nzc3MjIwLC0xNT
+I0NjEzMTUsLTIwNzIyMzUwNzcsLTIwOTYyNzQyNjEsLTEwNTM1
+NzA0NzAsLTEzMDM4NDA1MjMsMzkwMzMwMzAyLDczNzc4MzMwNS
+w1NDk1MzcyMTksMjkyMzUxMTI4LDIwNTYyNDY0MDEsLTE2ODI1
+MjQzMDRdfQ==
 -->
