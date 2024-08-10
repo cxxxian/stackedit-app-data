@@ -492,13 +492,13 @@ void AWeapon::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* 
 	ASlashCharacter* SlashCharacter = Cast<ASlashCharacter>(OtherActor);//将OtherActor转化成ASlashCharacter，如果失败SlashCharacter则会是null
 	if (SlashCharacter)//检测是否cast成功
 	{
-		FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
+		FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);//
 		ItemMesh->AttachToComponent(SlashCharacter->GetMesh(), TransformRules, FName("RightHandSocket"));
 	}
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0MTU2MDI0MCwtNjE0MzA5NjMyLDE0ND
+eyJoaXN0b3J5IjpbMTY5MjY5NjUyOCwtNjE0MzA5NjMyLDE0ND
 AwMzg1OTYsLTgzMDQxNDU1Niw3Njc3NzcyMjAsLTE1MjQ2MTMx
 NSwtMjA3MjIzNTA3NywtMjA5NjI3NDI2MSwtMTA1MzU3MDQ3MC
 wtMTMwMzg0MDUyMywzOTAzMzAzMDIsNzM3NzgzMzA1LDU0OTUz
