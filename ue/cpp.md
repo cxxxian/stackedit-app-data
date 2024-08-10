@@ -575,13 +575,17 @@ void ASlashCharacter::EKeyPressed()
 	}
 }
 ```
+由于我们在SlashCharacter.h中对于ECharacterState CharacterState = ECharacterState::ECS_Unequiped;的声明是private的，所以我们在publiczh
+```
+public:
 FORCEINLINE ECharacterState GetCharacterState() const { return CharacterState; }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxMzg2MTU3MSwtMTAxODg0MDQ2OSwxMz
-YwMzMzNTYwLDc3ODc4NTYwOSwxMTYxNzgwNTQ4LC0yNDUyOTYw
-NTQsMzI1NjMzNTc0LC0xMTQ3NDk1NzIyLDYzODM1NTkxNywxNj
-kyNjk2NTI4LC02MTQzMDk2MzIsMTQ0MDAzODU5NiwtODMwNDE0
-NTU2LDc2Nzc3NzIyMCwtMTUyNDYxMzE1LC0yMDcyMjM1MDc3LC
-0yMDk2Mjc0MjYxLC0xMDUzNTcwNDcwLC0xMzAzODQwNTIzLDM5
-MDMzMDMwMl19
+eyJoaXN0b3J5IjpbNTI1NzQ3OSwtMTAxODg0MDQ2OSwxMzYwMz
+MzNTYwLDc3ODc4NTYwOSwxMTYxNzgwNTQ4LC0yNDUyOTYwNTQs
+MzI1NjMzNTc0LC0xMTQ3NDk1NzIyLDYzODM1NTkxNywxNjkyNj
+k2NTI4LC02MTQzMDk2MzIsMTQ0MDAzODU5NiwtODMwNDE0NTU2
+LDc2Nzc3NzIyMCwtMTUyNDYxMzE1LC0yMDcyMjM1MDc3LC0yMD
+k2Mjc0MjYxLC0xMDUzNTcwNDcwLC0xMzAzODQwNTIzLDM5MDMz
+MDMwMl19
 -->
