@@ -482,12 +482,16 @@ virtual void OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* O
 virtual void OnSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex) override;
 ```
 ### 将weapon添加到手上
+在.cpp中引入头文件使用人物
+```
+#include "Characters/SlashCharacter.h"
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyODU1MjQ3MjMsMTQ0MDAzODU5NiwtOD
-MwNDE0NTU2LDc2Nzc3NzIyMCwtMTUyNDYxMzE1LC0yMDcyMjM1
-MDc3LC0yMDk2Mjc0MjYxLC0xMDUzNTcwNDcwLC0xMzAzODQwNT
-IzLDM5MDMzMDMwMiw3Mzc3ODMzMDUsNTQ5NTM3MjE5LDI5MjM1
-MTEyOCwyMDU2MjQ2NDAxLC0xNjgyNTI0MzA0LC00NDg4MTU1Mj
-ksMzg0NTE5MTIwLDI5OTgzOTgzOSw0Mzc2OTUwNjYsMjA1NjYx
-NTc1M119
+eyJoaXN0b3J5IjpbLTYxNDMwOTYzMiwxNDQwMDM4NTk2LC04Mz
+A0MTQ1NTYsNzY3Nzc3MjIwLC0xNTI0NjEzMTUsLTIwNzIyMzUw
+NzcsLTIwOTYyNzQyNjEsLTEwNTM1NzA0NzAsLTEzMDM4NDA1Mj
+MsMzkwMzMwMzAyLDczNzc4MzMwNSw1NDk1MzcyMTksMjkyMzUx
+MTI4LDIwNTYyNDY0MDEsLTE2ODI1MjQzMDQsLTQ0ODgxNTUyOS
+wzODQ1MTkxMjAsMjk5ODM5ODM5LDQzNzY5NTA2NiwyMDU2NjE1
+NzUzXX0=
 -->
