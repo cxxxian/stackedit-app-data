@@ -485,13 +485,24 @@ virtual void OnSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor
 在.cpp中引入头文件使用人物
 ```
 #include "Characters/SlashCharacter.h"
+void AWeapon::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	Super::OnSphereOverlap(OverlappedComponent, OtherActor, OtherComp, OtherBodyIndex, bFromSweep, SweepResult);
+
+	ASlashCharacter* SlashCharacter = Cast<ASlashCharacter>(OtherActor);
+	if (SlashCharacter)
+	{
+		FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
+		ItemMesh->AttachToComponent(SlashCharacter->GetMesh(), TransformRules, FName("RightHandSocket"));
+	}
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYxNDMwOTYzMiwxNDQwMDM4NTk2LC04Mz
-A0MTQ1NTYsNzY3Nzc3MjIwLC0xNTI0NjEzMTUsLTIwNzIyMzUw
-NzcsLTIwOTYyNzQyNjEsLTEwNTM1NzA0NzAsLTEzMDM4NDA1Mj
-MsMzkwMzMwMzAyLDczNzc4MzMwNSw1NDk1MzcyMTksMjkyMzUx
-MTI4LDIwNTYyNDY0MDEsLTE2ODI1MjQzMDQsLTQ0ODgxNTUyOS
-wzODQ1MTkxMjAsMjk5ODM5ODM5LDQzNzY5NTA2NiwyMDU2NjE1
-NzUzXX0=
+eyJoaXN0b3J5IjpbMjA1MzAyNjI4MCwtNjE0MzA5NjMyLDE0ND
+AwMzg1OTYsLTgzMDQxNDU1Niw3Njc3NzcyMjAsLTE1MjQ2MTMx
+NSwtMjA3MjIzNTA3NywtMjA5NjI3NDI2MSwtMTA1MzU3MDQ3MC
+wtMTMwMzg0MDUyMywzOTAzMzAzMDIsNzM3NzgzMzA1LDU0OTUz
+NzIxOSwyOTIzNTExMjgsMjA1NjI0NjQwMSwtMTY4MjUyNDMwNC
+wtNDQ4ODE1NTI5LDM4NDUxOTEyMCwyOTk4Mzk4MzksNDM3Njk1
+MDY2XX0=
 -->
