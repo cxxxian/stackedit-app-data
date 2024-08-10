@@ -550,6 +550,7 @@ void ASlashCharacter::EKeyPressed()
 ## 角色状态
 在character.h中声明枚举类，并初始化State为Unequiped
 ```
+UENUM(BlueprintType)//加上BlueprintType即成了可以在蓝图中使用的类型
 enum class ECharacterState : uint8//虚幻约定在枚举类前加上E，uint8意为只能是八位正整数
 {
 	ECS_Unequiped,//ECS也是虚幻约定
@@ -560,11 +561,11 @@ private:
 	ECharacterState CharacterState = ECharacterState::Unequiped;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzc4Nzg1NjA5LDExNjE3ODA1NDgsLTI0NT
-I5NjA1NCwzMjU2MzM1NzQsLTExNDc0OTU3MjIsNjM4MzU1OTE3
-LDE2OTI2OTY1MjgsLTYxNDMwOTYzMiwxNDQwMDM4NTk2LC04Mz
-A0MTQ1NTYsNzY3Nzc3MjIwLC0xNTI0NjEzMTUsLTIwNzIyMzUw
-NzcsLTIwOTYyNzQyNjEsLTEwNTM1NzA0NzAsLTEzMDM4NDA1Mj
-MsMzkwMzMwMzAyLDczNzc4MzMwNSw1NDk1MzcyMTksMjkyMzUx
-MTI4XX0=
+eyJoaXN0b3J5IjpbMTM2MDMzMzU2MCw3Nzg3ODU2MDksMTE2MT
+c4MDU0OCwtMjQ1Mjk2MDU0LDMyNTYzMzU3NCwtMTE0NzQ5NTcy
+Miw2MzgzNTU5MTcsMTY5MjY5NjUyOCwtNjE0MzA5NjMyLDE0ND
+AwMzg1OTYsLTgzMDQxNDU1Niw3Njc3NzcyMjAsLTE1MjQ2MTMx
+NSwtMjA3MjIzNTA3NywtMjA5NjI3NDI2MSwtMTA1MzU3MDQ3MC
+wtMTMwMzg0MDUyMywzOTAzMzAzMDIsNzM3NzgzMzA1LDU0OTUz
+NzIxOV19
 -->
