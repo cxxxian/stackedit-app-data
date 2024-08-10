@@ -498,20 +498,23 @@ void AWeapon::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* 
 }
 ```
 ### 将weapon添加到手上（按键E拾取）
-在.h中声明方法，并之后在.cpp中实现
+在SlashCharacter.h中声明方法，并之后在.cpp中实现，声明了一个内联函数，FORCEINLINE意为强制内联。
 ```
 void EKeyPressed();
+public:
+	FORCEINLINE void SetOverlappingItem(AItem* Item) { OverlappingItem = Item; }
 ```
-在.cpp中将事件绑定
+在SlashCharacter.cpp中将事件绑定
 ```
 PlayerInputComponent->BindAction(FName("Equip"), IE_Pressed, this, ASlashCharacter::EKeyPressed);
 ```
+在item.cppz'j
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjM4MzU1OTE3LDE2OTI2OTY1MjgsLTYxND
-MwOTYzMiwxNDQwMDM4NTk2LC04MzA0MTQ1NTYsNzY3Nzc3MjIw
-LC0xNTI0NjEzMTUsLTIwNzIyMzUwNzcsLTIwOTYyNzQyNjEsLT
-EwNTM1NzA0NzAsLTEzMDM4NDA1MjMsMzkwMzMwMzAyLDczNzc4
-MzMwNSw1NDk1MzcyMTksMjkyMzUxMTI4LDIwNTYyNDY0MDEsLT
-E2ODI1MjQzMDQsLTQ0ODgxNTUyOSwzODQ1MTkxMjAsMjk5ODM5
-ODM5XX0=
+eyJoaXN0b3J5IjpbLTI1NDYxMjkxMCw2MzgzNTU5MTcsMTY5Mj
+Y5NjUyOCwtNjE0MzA5NjMyLDE0NDAwMzg1OTYsLTgzMDQxNDU1
+Niw3Njc3NzcyMjAsLTE1MjQ2MTMxNSwtMjA3MjIzNTA3NywtMj
+A5NjI3NDI2MSwtMTA1MzU3MDQ3MCwtMTMwMzg0MDUyMywzOTAz
+MzAzMDIsNzM3NzgzMzA1LDU0OTUzNzIxOSwyOTIzNTExMjgsMj
+A1NjI0NjQwMSwtMTY4MjUyNDMwNCwtNDQ4ODE1NTI5LDM4NDUx
+OTEyMF19
 -->
