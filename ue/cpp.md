@@ -548,7 +548,7 @@ void ASlashCharacter::EKeyPressed()
 }
 ```
 ## 角色状态
-在character.h中声明枚举类，并初始化State为Unequiped
+新建一个头文件CharacterTypes.h声明枚举类
 ```
 UENUM(BlueprintType)//加上BlueprintType即成了可以在蓝图中使用的类型
 enum class ECharacterState : uint8//虚幻约定在枚举类前加上E，uint8意为只能是八位正整数
@@ -557,6 +557,9 @@ enum class ECharacterState : uint8//虚幻约定在枚举类前加上E，uint8�
 	ECS_EquippedOneHandedWeapon UMETA(DisplayName = "Equipped One-Handed Weapon"),
 	ECS_EquippedTwoHandedWeapon UMETA(DisplayName = "Equipped Two-Handed Weapon")
 };
+```
+在character.h初始化State为Unequiped
+```
 private:
 	ECharacterState CharacterState = ECharacterState::ECS_Unequiped;
 ```
@@ -573,11 +576,11 @@ void ASlashCharacter::EKeyPressed()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTg4NDA0NjksMTM2MDMzMzU2MCw3Nz
-g3ODU2MDksMTE2MTc4MDU0OCwtMjQ1Mjk2MDU0LDMyNTYzMzU3
-NCwtMTE0NzQ5NTcyMiw2MzgzNTU5MTcsMTY5MjY5NjUyOCwtNj
-E0MzA5NjMyLDE0NDAwMzg1OTYsLTgzMDQxNDU1Niw3Njc3Nzcy
-MjAsLTE1MjQ2MTMxNSwtMjA3MjIzNTA3NywtMjA5NjI3NDI2MS
-wtMTA1MzU3MDQ3MCwtMTMwMzg0MDUyMywzOTAzMzAzMDIsNzM3
-NzgzMzA1XX0=
+eyJoaXN0b3J5IjpbMTgzNjYwNjY2MywtMTAxODg0MDQ2OSwxMz
+YwMzMzNTYwLDc3ODc4NTYwOSwxMTYxNzgwNTQ4LC0yNDUyOTYw
+NTQsMzI1NjMzNTc0LC0xMTQ3NDk1NzIyLDYzODM1NTkxNywxNj
+kyNjk2NTI4LC02MTQzMDk2MzIsMTQ0MDAzODU5NiwtODMwNDE0
+NTU2LDc2Nzc3NzIyMCwtMTUyNDYxMzE1LC0yMDcyMjM1MDc3LC
+0yMDk2Mjc0MjYxLC0xMDUzNTcwNDcwLC0xMzAzODQwNTIzLDM5
+MDMzMDMwMl19
 -->
