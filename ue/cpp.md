@@ -575,8 +575,9 @@ void ASlashCharacter::EKeyPressed()
 	}
 }
 ```
+FORCEINLINE ECharacterState GetCharacterState() const { return CharacterState; }
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgzNjYwNjY2MywtMTAxODg0MDQ2OSwxMz
+eyJoaXN0b3J5IjpbMTQxMzg2MTU3MSwtMTAxODg0MDQ2OSwxMz
 YwMzMzNTYwLDc3ODc4NTYwOSwxMTYxNzgwNTQ4LC0yNDUyOTYw
 NTQsMzI1NjMzNTc0LC0xMTQ3NDk1NzIyLDYzODM1NTkxNywxNj
 kyNjk2NTI4LC02MTQzMDk2MzIsMTQ0MDAzODU5NiwtODMwNDE0
