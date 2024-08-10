@@ -481,7 +481,7 @@ virtual void OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* O
 
 virtual void OnSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex) override;
 ```
-### 将weapon添加到手上
+### 将weapon添加到手上（自动拾取）
 在.cpp中引入头文件使用人物，完善重叠方法
 ```
 #include "Characters/SlashCharacter.h"
@@ -497,12 +497,19 @@ void AWeapon::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* 
 	}
 }
 ```
+### 将weapon添加到手上（按键E拾取）
+在.
+void EKeyPressed();
+将事件绑定
+```
+PlayerInputComponent->BindAction(FName("Equip"), IE_Pressed, this, ASlashCharacter::EKeyPressed);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5MjY5NjUyOCwtNjE0MzA5NjMyLDE0ND
-AwMzg1OTYsLTgzMDQxNDU1Niw3Njc3NzcyMjAsLTE1MjQ2MTMx
-NSwtMjA3MjIzNTA3NywtMjA5NjI3NDI2MSwtMTA1MzU3MDQ3MC
-wtMTMwMzg0MDUyMywzOTAzMzAzMDIsNzM3NzgzMzA1LDU0OTUz
-NzIxOSwyOTIzNTExMjgsMjA1NjI0NjQwMSwtMTY4MjUyNDMwNC
-wtNDQ4ODE1NTI5LDM4NDUxOTEyMCwyOTk4Mzk4MzksNDM3Njk1
-MDY2XX0=
+eyJoaXN0b3J5IjpbMTEwNjk4MzM3OSwxNjkyNjk2NTI4LC02MT
+QzMDk2MzIsMTQ0MDAzODU5NiwtODMwNDE0NTU2LDc2Nzc3NzIy
+MCwtMTUyNDYxMzE1LC0yMDcyMjM1MDc3LC0yMDk2Mjc0MjYxLC
+0xMDUzNTcwNDcwLC0xMzAzODQwNTIzLDM5MDMzMDMwMiw3Mzc3
+ODMzMDUsNTQ5NTM3MjE5LDI5MjM1MTEyOCwyMDU2MjQ2NDAxLC
+0xNjgyNTI0MzA0LC00NDg4MTU1MjksMzg0NTE5MTIwLDI5OTgz
+OTgzOV19
 -->
