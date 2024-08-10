@@ -548,7 +548,7 @@ void ASlashCharacter::EKeyPressed()
 }
 ```
 ## 角色状态
-在character.h中声明枚举类
+在character.h中声明枚举类，并初始化State为Unequiped
 ```
 enum class ECharacterState
 {
@@ -556,13 +556,15 @@ enum class ECharacterState
 	EquippedOneHandedWeapon,
 	EquippedTwoHandedWeapon
 };
+private:
+	ECharacterState CharacterState = ECharacterState::Unequiped;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDk1NjgyODksMTE2MTc4MDU0OCwtMj
-Q1Mjk2MDU0LDMyNTYzMzU3NCwtMTE0NzQ5NTcyMiw2MzgzNTU5
-MTcsMTY5MjY5NjUyOCwtNjE0MzA5NjMyLDE0NDAwMzg1OTYsLT
-gzMDQxNDU1Niw3Njc3NzcyMjAsLTE1MjQ2MTMxNSwtMjA3MjIz
-NTA3NywtMjA5NjI3NDI2MSwtMTA1MzU3MDQ3MCwtMTMwMzg0MD
-UyMywzOTAzMzAzMDIsNzM3NzgzMzA1LDU0OTUzNzIxOSwyOTIz
-NTExMjhdfQ==
+eyJoaXN0b3J5IjpbMjEzMzg1MTI3NywxMTYxNzgwNTQ4LC0yND
+UyOTYwNTQsMzI1NjMzNTc0LC0xMTQ3NDk1NzIyLDYzODM1NTkx
+NywxNjkyNjk2NTI4LC02MTQzMDk2MzIsMTQ0MDAzODU5NiwtOD
+MwNDE0NTU2LDc2Nzc3NzIyMCwtMTUyNDYxMzE1LC0yMDcyMjM1
+MDc3LC0yMDk2Mjc0MjYxLC0xMDUzNTcwNDcwLC0xMzAzODQwNT
+IzLDM5MDMzMDMwMiw3Mzc3ODMzMDUsNTQ5NTM3MjE5LDI5MjM1
+MTEyOF19
 -->
