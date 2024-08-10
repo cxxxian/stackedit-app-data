@@ -482,15 +482,15 @@ virtual void OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* O
 virtual void OnSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex) override;
 ```
 ### 将weapon添加到手上
-在.cpp中引入头文件使用人物
+在.cpp中引入头文件使用人物，完善重叠方法
 ```
 #include "Characters/SlashCharacter.h"
 void AWeapon::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	Super::OnSphereOverlap(OverlappedComponent, OtherActor, OtherComp, OtherBodyIndex, bFromSweep, SweepResult);
 
-	ASlashCharacter* SlashCharacter = Cast<ASlashCharacter>(OtherActor);
-	if (SlashCharacter)
+	ASlashCharacter* SlashCharacter = Cast<ASlashCharacter>(OtherActor);//将OtherActor转化成ASlashCharacter，如果失败SlashCharacter则会是null
+	if (SlashCharacter)//检测是否cast成功
 	{
 		FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
 		ItemMesh->AttachToComponent(SlashCharacter->GetMesh(), TransformRules, FName("RightHandSocket"));
@@ -498,7 +498,7 @@ void AWeapon::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* 
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1MzAyNjI4MCwtNjE0MzA5NjMyLDE0ND
+eyJoaXN0b3J5IjpbMjA0MTU2MDI0MCwtNjE0MzA5NjMyLDE0ND
 AwMzg1OTYsLTgzMDQxNDU1Niw3Njc3NzcyMjAsLTE1MjQ2MTMx
 NSwtMjA3MjIzNTA3NywtMjA5NjI3NDI2MSwtMTA1MzU3MDQ3MC
 wtMTMwMzg0MDUyMywzOTAzMzAzMDIsNzM3NzgzMzA1LDU0OTUz
