@@ -536,12 +536,23 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 	ItemMesh->AttachToComponent(Inparent, TransformRules, InSocketName);
 }
 ```
+最后在SlashCharacter.cpp中完善EKeyPressed方法
+```
+void ASlashCharacter::EKeyPressed()
+{
+	AWeapon* OverlappingWeapon = Cast<AWeapon>(OverlappingWeapon);//将
+	if(OverlappingWeapon)
+	{
+		OverlappingWeapon->Equip(GetMesh(), FName("RightHandSocket"));
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzI1NjMzNTc0LC0xMTQ3NDk1NzIyLDYzOD
-M1NTkxNywxNjkyNjk2NTI4LC02MTQzMDk2MzIsMTQ0MDAzODU5
-NiwtODMwNDE0NTU2LDc2Nzc3NzIyMCwtMTUyNDYxMzE1LC0yMD
-cyMjM1MDc3LC0yMDk2Mjc0MjYxLC0xMDUzNTcwNDcwLC0xMzAz
-ODQwNTIzLDM5MDMzMDMwMiw3Mzc3ODMzMDUsNTQ5NTM3MjE5LD
-I5MjM1MTEyOCwyMDU2MjQ2NDAxLC0xNjgyNTI0MzA0LC00NDg4
-MTU1MjldfQ==
+eyJoaXN0b3J5IjpbLTIwMzUzOTY3MzMsMzI1NjMzNTc0LC0xMT
+Q3NDk1NzIyLDYzODM1NTkxNywxNjkyNjk2NTI4LC02MTQzMDk2
+MzIsMTQ0MDAzODU5NiwtODMwNDE0NTU2LDc2Nzc3NzIyMCwtMT
+UyNDYxMzE1LC0yMDcyMjM1MDc3LC0yMDk2Mjc0MjYxLC0xMDUz
+NTcwNDcwLC0xMzAzODQwNTIzLDM5MDMzMDMwMiw3Mzc3ODMzMD
+UsNTQ5NTM3MjE5LDI5MjM1MTEyOCwyMDU2MjQ2NDAxLC0xNjgy
+NTI0MzA0XX0=
 -->
