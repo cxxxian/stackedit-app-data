@@ -9,6 +9,9 @@
 4.将各个骨骼分别建出对应的链
 5.最后建立IK重定向器将两个人物进行重定向
 ![输入图片说明](/imgs/2024-08-09/aEkc6Xdu6oqhpy5h.png)
+6.可以手动调节姿势，防止源人物与目标人物初始姿势不符合导致目标人物动画出错
+![输入图片说明](/imgs/2024-08-10/BByvwsYhdxS7LKeP.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzc1NTk5NTczLC04NDUxNzAzMDhdfQ==
+eyJoaXN0b3J5IjpbLTExMDc2MjA2MjMsNzc1NTk5NTczLC04ND
+UxNzAzMDhdfQ==
 -->
