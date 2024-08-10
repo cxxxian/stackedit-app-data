@@ -381,6 +381,7 @@ Eyebrows->AttachmentName = FString("head");
 ```
 ![输入图片说明](/imgs/2024-08-07/tM0qzH0fPaw5mcBn.png)
 ### 动画
+![输入图片说明](/imgs/2024-08-10/n4SfnX3mOEJzNTRx.png)
 ![输入图片说明](/imgs/2024-08-08/Zife25LjEgqAihOI.png)
 对应蓝图，在.h中声明这两个方法，声明SlashCharacter，SlashCharacterMovement（移动组件），GroundSpeed（地面速度）
 ```
@@ -605,11 +606,11 @@ ECharacterState CharacterState;
 ![输入图片说明](/imgs/2024-08-10/kvH7G5CLNH6up044.png)
 ![输入图片说明](/imgs/2024-08-10/7Z07JVf3PS2nvpBN.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5NjA3OTg3MywxODg5MzU2NDAzLDIwMj
-Y0MDQ2OTUsLTEwMTg4NDA0NjksMTM2MDMzMzU2MCw3Nzg3ODU2
-MDksMTE2MTc4MDU0OCwtMjQ1Mjk2MDU0LDMyNTYzMzU3NCwtMT
-E0NzQ5NTcyMiw2MzgzNTU5MTcsMTY5MjY5NjUyOCwtNjE0MzA5
-NjMyLDE0NDAwMzg1OTYsLTgzMDQxNDU1Niw3Njc3NzcyMjAsLT
-E1MjQ2MTMxNSwtMjA3MjIzNTA3NywtMjA5NjI3NDI2MSwtMTA1
-MzU3MDQ3MF19
+eyJoaXN0b3J5IjpbMzQ4NTg5MDI4LDExOTYwNzk4NzMsMTg4OT
+M1NjQwMywyMDI2NDA0Njk1LC0xMDE4ODQwNDY5LDEzNjAzMzM1
+NjAsNzc4Nzg1NjA5LDExNjE3ODA1NDgsLTI0NTI5NjA1NCwzMj
+U2MzM1NzQsLTExNDc0OTU3MjIsNjM4MzU1OTE3LDE2OTI2OTY1
+MjgsLTYxNDMwOTYzMiwxNDQwMDM4NTk2LC04MzA0MTQ1NTYsNz
+Y3Nzc3MjIwLC0xNTI0NjEzMTUsLTIwNzIyMzUwNzcsLTIwOTYy
+NzQyNjFdfQ==
 -->
