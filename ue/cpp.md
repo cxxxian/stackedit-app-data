@@ -653,12 +653,12 @@ enum class EActionState : uint8
 	EAS_Attacking UMETA(DisplayName = "Attacking")
 };
 ```
-在Sla'sh'A'c
+在SlashCharacter.h中初始化ActionState
 ```
 EActionState ActionState = EActionState::EAS_Unoccupied;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3MTc3MzI4NywxOTY5OTUxOTIwLC0xMT
+eyJoaXN0b3J5IjpbLTQ1MzE0ODgyOSwxOTY5OTUxOTIwLC0xMT
 M2Nzk3MDQxLDExNTE3MTQ0NTksLTE5NzcxNzI0NTEsMzQ4NTg5
 MDI4LDExOTYwNzk4NzMsMTg4OTM1NjQwMywyMDI2NDA0Njk1LC
 0xMDE4ODQwNDY5LDEzNjAzMzM1NjAsNzc4Nzg1NjA5LDExNjE3
