@@ -719,12 +719,35 @@ enum class EItemState : uint8
 };
 EItemState ItemState = EItemState::EIS_Hovering;
 ```
+在item.cpp中，如果满足if条件则进行正弦运动
+```
+void AItem::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	RunningTime += DeltaTime;
+
+	if (ItemState == EItemState::EIS_Hovering) {
+		AddActorWorldOffset(FVector(0.f, 0.f, TransformedSin()));
+	}
+	
+}
+```
+在weapon.cpp中的equipfa'NGFA
+```
+void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
+{
+	FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
+	ItemMesh->AttachToComponent(Inparent, TransformRules, InSocketName);
+	ItemState = EItemState::EIS_Equipped;
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjU1ODg2ODAsLTEzNzY2NDI5NzQsLTE3MD
-M2NDE3MTMsMTExODYxMzUzNywyMTI0NTYwNjAyLDE5Njk5NTE5
-MjAsLTExMzY3OTcwNDEsMTE1MTcxNDQ1OSwtMTk3NzE3MjQ1MS
-wzNDg1ODkwMjgsMTE5NjA3OTg3MywxODg5MzU2NDAzLDIwMjY0
-MDQ2OTUsLTEwMTg4NDA0NjksMTM2MDMzMzU2MCw3Nzg3ODU2MD
-ksMTE2MTc4MDU0OCwtMjQ1Mjk2MDU0LDMyNTYzMzU3NCwtMTE0
-NzQ5NTcyMl19
+eyJoaXN0b3J5IjpbLTE5NDgyOTMyOTUsLTEzNzY2NDI5NzQsLT
+E3MDM2NDE3MTMsMTExODYxMzUzNywyMTI0NTYwNjAyLDE5Njk5
+NTE5MjAsLTExMzY3OTcwNDEsMTE1MTcxNDQ1OSwtMTk3NzE3Mj
+Q1MSwzNDg1ODkwMjgsMTE5NjA3OTg3MywxODg5MzU2NDAzLDIw
+MjY0MDQ2OTUsLTEwMTg4NDA0NjksMTM2MDMzMzU2MCw3Nzg3OD
+U2MDksMTE2MTc4MDU0OCwtMjQ1Mjk2MDU0LDMyNTYzMzU3NCwt
+MTE0NzQ5NTcyMl19
 -->
