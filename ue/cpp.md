@@ -693,14 +693,26 @@ void ASlashCharacter::PlayAttackMontage()
 	}
 }
 ```
-在蒙太奇中建立动画通知
-> 蓝图做法![输入图片说明](/imgs/2024-08-11/U4dz4JD3l9SEAsIc.png)
+### 在蒙太奇中建立动画通知
+蓝图做法![输入图片说明](/imgs/2024-08-11/U4dz4JD3l9SEAsIc.png)
+c++做法
+在SlashCharacter.h中声明，
+```
+UFUNCTION(BlueprintCallable)
+void AttackEnd();
+```
+```
+void ASlashCharacter::AttackEnd()
+{
+	ActionState = EActionState::EAS_Unoccupied;
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MDM2NDE3MTMsMTExODYxMzUzNywyMT
-I0NTYwNjAyLDE5Njk5NTE5MjAsLTExMzY3OTcwNDEsMTE1MTcx
-NDQ1OSwtMTk3NzE3MjQ1MSwzNDg1ODkwMjgsMTE5NjA3OTg3My
-wxODg5MzU2NDAzLDIwMjY0MDQ2OTUsLTEwMTg4NDA0NjksMTM2
-MDMzMzU2MCw3Nzg3ODU2MDksMTE2MTc4MDU0OCwtMjQ1Mjk2MD
-U0LDMyNTYzMzU3NCwtMTE0NzQ5NTcyMiw2MzgzNTU5MTcsMTY5
-MjY5NjUyOF19
+eyJoaXN0b3J5IjpbODY0NTYzMzQ0LC0xNzAzNjQxNzEzLDExMT
+g2MTM1MzcsMjEyNDU2MDYwMiwxOTY5OTUxOTIwLC0xMTM2Nzk3
+MDQxLDExNTE3MTQ0NTksLTE5NzcxNzI0NTEsMzQ4NTg5MDI4LD
+ExOTYwNzk4NzMsMTg4OTM1NjQwMywyMDI2NDA0Njk1LC0xMDE4
+ODQwNDY5LDEzNjAzMzM1NjAsNzc4Nzg1NjA5LDExNjE3ODA1ND
+gsLTI0NTI5NjA1NCwzMjU2MzM1NzQsLTExNDc0OTU3MjIsNjM4
+MzU1OTE3XX0=
 -->
