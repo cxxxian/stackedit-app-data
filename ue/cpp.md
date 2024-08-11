@@ -742,12 +742,17 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 	ItemState = EItemState::EIS_Equipped;
 }
 ```
+### 完善攻击时还能移动的bug
+在SlashCharacter.cpp中的moveForward和moveRight的方法中加入这句话，检查此时是否在o'g
+```
+if (ActionState == EActionState::EAS_Attacking) { return; }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2MDY5NTE1NiwtMTM3NjY0Mjk3NCwtMT
-cwMzY0MTcxMywxMTE4NjEzNTM3LDIxMjQ1NjA2MDIsMTk2OTk1
-MTkyMCwtMTEzNjc5NzA0MSwxMTUxNzE0NDU5LC0xOTc3MTcyND
-UxLDM0ODU4OTAyOCwxMTk2MDc5ODczLDE4ODkzNTY0MDMsMjAy
-NjQwNDY5NSwtMTAxODg0MDQ2OSwxMzYwMzMzNTYwLDc3ODc4NT
-YwOSwxMTYxNzgwNTQ4LC0yNDUyOTYwNTQsMzI1NjMzNTc0LC0x
-MTQ3NDk1NzIyXX0=
+eyJoaXN0b3J5IjpbLTE3MDk1NzMxNDgsMTc2MDY5NTE1NiwtMT
+M3NjY0Mjk3NCwtMTcwMzY0MTcxMywxMTE4NjEzNTM3LDIxMjQ1
+NjA2MDIsMTk2OTk1MTkyMCwtMTEzNjc5NzA0MSwxMTUxNzE0ND
+U5LC0xOTc3MTcyNDUxLDM0ODU4OTAyOCwxMTk2MDc5ODczLDE4
+ODkzNTY0MDMsMjAyNjQwNDY5NSwtMTAxODg0MDQ2OSwxMzYwMz
+MzNTYwLDc3ODc4NTYwOSwxMTYxNzgwNTQ4LC0yNDUyOTYwNTQs
+MzI1NjMzNTc0XX0=
 -->
