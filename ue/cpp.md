@@ -626,7 +626,7 @@ void ASlashCharacter::Attack()
 	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();//得到角色动画实例
 	if(AnimInstance && AttackMontage)
 	{
-		AnimInstance->Montage_Play(AttackMontage);//attack
+		AnimInstance->Montage_Play(AttackMontage);//AttackMontage是在.h中声明的默认蓝图可编辑对象，可在默认蓝图为其赋值
 		int32 Selection = FMath::RandRange(0, 1);
 		FName SectionName = FName();
 		switch (Selection)
@@ -645,7 +645,7 @@ void ASlashCharacter::Attack()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwMjE5MzMzMSwtMTEzNjc5NzA0MSwxMT
+eyJoaXN0b3J5IjpbMTk2OTk1MTkyMCwtMTEzNjc5NzA0MSwxMT
 UxNzE0NDU5LC0xOTc3MTcyNDUxLDM0ODU4OTAyOCwxMTk2MDc5
 ODczLDE4ODkzNTY0MDMsMjAyNjQwNDY5NSwtMTAxODg0MDQ2OS
 wxMzYwMzMzNTYwLDc3ODc4NTYwOSwxMTYxNzgwNTQ4LC0yNDUy
