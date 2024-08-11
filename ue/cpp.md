@@ -696,23 +696,25 @@ void ASlashCharacter::PlayAttackMontage()
 ### 在蒙太奇中建立动画通知
 蓝图做法![输入图片说明](/imgs/2024-08-11/U4dz4JD3l9SEAsIc.png)
 c++做法
-在SlashCharacter.h中声明，
+在SlashCharacter.h中声明一个可以在蓝图中被调用的函数
 ```
 UFUNCTION(BlueprintCallable)
 void AttackEnd();
 ```
+在SlashCharacter.cpp完善此函数，将状态改回未攻击状态
 ```
 void ASlashCharacter::AttackEnd()
 {
 	ActionState = EActionState::EAS_Unoccupied;
 }
 ```
+![输入图片说明](/imgs/2024-08-11/lCP0dUuJpA9PTyIR.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODY0NTYzMzQ0LC0xNzAzNjQxNzEzLDExMT
-g2MTM1MzcsMjEyNDU2MDYwMiwxOTY5OTUxOTIwLC0xMTM2Nzk3
-MDQxLDExNTE3MTQ0NTksLTE5NzcxNzI0NTEsMzQ4NTg5MDI4LD
-ExOTYwNzk4NzMsMTg4OTM1NjQwMywyMDI2NDA0Njk1LC0xMDE4
-ODQwNDY5LDEzNjAzMzM1NjAsNzc4Nzg1NjA5LDExNjE3ODA1ND
-gsLTI0NTI5NjA1NCwzMjU2MzM1NzQsLTExNDc0OTU3MjIsNjM4
-MzU1OTE3XX0=
+eyJoaXN0b3J5IjpbLTEzNzY2NDI5NzQsLTE3MDM2NDE3MTMsMT
+ExODYxMzUzNywyMTI0NTYwNjAyLDE5Njk5NTE5MjAsLTExMzY3
+OTcwNDEsMTE1MTcxNDQ1OSwtMTk3NzE3MjQ1MSwzNDg1ODkwMj
+gsMTE5NjA3OTg3MywxODg5MzU2NDAzLDIwMjY0MDQ2OTUsLTEw
+MTg4NDA0NjksMTM2MDMzMzU2MCw3Nzg3ODU2MDksMTE2MTc4MD
+U0OCwtMjQ1Mjk2MDU0LDMyNTYzMzU3NCwtMTE0NzQ5NTcyMiw2
+MzgzNTU5MTddfQ==
 -->
