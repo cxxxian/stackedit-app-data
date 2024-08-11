@@ -658,8 +658,43 @@ enum class EActionState : uint8
 EActionState ActionState = EActionState::EAS_Unoccupied;
 ```
 利用封装的思想，将攻击蒙太奇封装成一个函数
+```
+void ASlashCharacter::Attack()
+{
+	if (ActionState == EActionState::EAS_Unoccupied) {
+		PlayAttackMontage();
+		ActionState = EActionState::EAS_Attacking;
+	}
+	
+}
+
+void ASlashCharacter::PlayAttackMontage()
+{
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if (AnimInstance && AttackMontage)
+	{
+		AnimInstance->Montage_Play(AttackMontage);
+		const int32 Selection = FMath::RandRange(0, 1);
+		FName SectionName = FName();
+		switch (Selection)
+		{
+		case 0:
+			SectionName = FName("Attack1");
+			break;
+		case 1:
+			SectionName = FName("Attack2");
+			break;
+		default:
+			break;
+		}
+		AnimInstance->Montage_JumpToSection(SectionName, AttackMontage);
+	}
+}
+
+
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3NzY1Mzg4OSwxOTY5OTUxOTIwLC0xMT
+eyJoaXN0b3J5IjpbMjEyNDU2MDYwMiwxOTY5OTUxOTIwLC0xMT
 M2Nzk3MDQxLDExNTE3MTQ0NTksLTE5NzcxNzI0NTEsMzQ4NTg5
 MDI4LDExOTYwNzk4NzMsMTg4OTM1NjQwMywyMDI2NDA0Njk1LC
 0xMDE4ODQwNDY5LDEzNjAzMzM1NjAsNzc4Nzg1NjA5LDExNjE3
