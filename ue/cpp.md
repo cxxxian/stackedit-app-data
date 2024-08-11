@@ -743,12 +743,12 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 }
 ```
 ### 完善攻击时还能移动的bug
-在SlashCharacter.cpp中的moveForward和moveRight的方法中加入这句话，检查此时是否在o'g
+在SlashCharacter.cpp中的moveForward和moveRight的方法中加入这句话，检查此时是否在攻击状态中，如果是则return，即无法运动
 ```
 if (ActionState == EActionState::EAS_Attacking) { return; }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MDk1NzMxNDgsMTc2MDY5NTE1NiwtMT
+eyJoaXN0b3J5IjpbLTEwMjc5ODA3OTksMTc2MDY5NTE1NiwtMT
 M3NjY0Mjk3NCwtMTcwMzY0MTcxMywxMTE4NjEzNTM3LDIxMjQ1
 NjA2MDIsMTk2OTk1MTkyMCwtMTEzNjc5NzA0MSwxMTUxNzE0ND
 U5LC0xOTc3MTcyNDUxLDM0ODU4OTAyOCwxMTk2MDc5ODczLDE4
