@@ -609,6 +609,7 @@ ECharacterState CharacterState;
 ![输入图片说明](/imgs/2024-08-10/7Z07JVf3PS2nvpBN.png)
 
 ## 攻击
+在.h中声明攻击方法和动画蒙太奇变量
 ```
 class UAnimMontage;
 protected:
@@ -618,12 +619,37 @@ private:
 UPROPERTY(EditDefaultsOnly, Category = Montages)
 UAnimMontage* AttackMontage;
 ```
+在.cpp中，绑定完attack的按键之后，实现attack方法
+```
+void ASlashCharacter::Attack()
+{
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();//得到角色动画实例
+	if(AnimInstance && AttackMontage)
+	{
+		AnimInstance->Montage_Play(AttackMontage);//attack
+		int32 Selection = FMath::RandRange(0, 1);
+		FName SectionName = FName();
+		switch (Selection)
+		{
+		case 0:
+			SectionName = FName("Attack1");
+			break;
+		case 1:
+			SectionName = FName("Attack2");
+			break;
+		default:
+			break;
+		}
+		AnimInstance->Montage_JumpToSection(SectionName, AttackMontage);
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMzY3OTcwNDEsMTE1MTcxNDQ1OSwtMT
-k3NzE3MjQ1MSwzNDg1ODkwMjgsMTE5NjA3OTg3MywxODg5MzU2
-NDAzLDIwMjY0MDQ2OTUsLTEwMTg4NDA0NjksMTM2MDMzMzU2MC
-w3Nzg3ODU2MDksMTE2MTc4MDU0OCwtMjQ1Mjk2MDU0LDMyNTYz
-MzU3NCwtMTE0NzQ5NTcyMiw2MzgzNTU5MTcsMTY5MjY5NjUyOC
-wtNjE0MzA5NjMyLDE0NDAwMzg1OTYsLTgzMDQxNDU1Niw3Njc3
-NzcyMjBdfQ==
+eyJoaXN0b3J5IjpbLTQwMjE5MzMzMSwtMTEzNjc5NzA0MSwxMT
+UxNzE0NDU5LC0xOTc3MTcyNDUxLDM0ODU4OTAyOCwxMTk2MDc5
+ODczLDE4ODkzNTY0MDMsMjAyNjQwNDY5NSwtMTAxODg0MDQ2OS
+wxMzYwMzMzNTYwLDc3ODc4NTYwOSwxMTYxNzgwNTQ4LC0yNDUy
+OTYwNTQsMzI1NjMzNTc0LC0xMTQ3NDk1NzIyLDYzODM1NTkxNy
+wxNjkyNjk2NTI4LC02MTQzMDk2MzIsMTQ0MDAzODU5NiwtODMw
+NDE0NTU2XX0=
 -->
