@@ -856,12 +856,32 @@ void ASlashCharacter::FinshEquipping()
 	ActionState = EActionState::EAS_Unoccupied;
 }
 ```
+### 装备时添加音效
+Weapon.h中声明
+```
+class UBaseSound;
+private:
+
+UPROPERTY(EditAnywhere, Category = "Weapon Properties")
+USoundBase* EquipSound;
+```
+在Weapon.cpp
+```
+void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
+{
+	AttachMeshToSocket(Inparent, InSocketName);
+	ItemState = EItemState::EIS_Equipped;
+	if (EquipSound) {
+		UGameplayStatics::PlaySoundAtLocation(this, EquipSound, GetActorLocation());
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExODY5Njg4MDIsODAzMjEwOTUwLDUyMT
-EwMTA2LC01MTc5OTY0NiwtMTAyNzk4MDc5OSwxNzYwNjk1MTU2
-LC0xMzc2NjQyOTc0LC0xNzAzNjQxNzEzLDExMTg2MTM1MzcsMj
-EyNDU2MDYwMiwxOTY5OTUxOTIwLC0xMTM2Nzk3MDQxLDExNTE3
-MTQ0NTksLTE5NzcxNzI0NTEsMzQ4NTg5MDI4LDExOTYwNzk4Nz
-MsMTg4OTM1NjQwMywyMDI2NDA0Njk1LC0xMDE4ODQwNDY5LDEz
-NjAzMzM1NjBdfQ==
+eyJoaXN0b3J5IjpbLTM2MDM1MTAwMCwtMTE4Njk2ODgwMiw4MD
+MyMTA5NTAsNTIxMTAxMDYsLTUxNzk5NjQ2LC0xMDI3OTgwNzk5
+LDE3NjA2OTUxNTYsLTEzNzY2NDI5NzQsLTE3MDM2NDE3MTMsMT
+ExODYxMzUzNywyMTI0NTYwNjAyLDE5Njk5NTE5MjAsLTExMzY3
+OTcwNDEsMTE1MTcxNDQ1OSwtMTk3NzE3MjQ1MSwzNDg1ODkwMj
+gsMTE5NjA3OTg3MywxODg5MzU2NDAzLDIwMjY0MDQ2OTUsLTEw
+MTg4NDA0NjldfQ==
 -->
