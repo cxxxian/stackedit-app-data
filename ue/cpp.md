@@ -809,13 +809,36 @@ void ASlashCharacter::EKeyPressed()
 }
 ```
 在背部添加一个插槽（SpineSocket）用来放剑，在蒙太奇轨道中建立动画通知，创建arm和disarm的通知
+在SlashCharacter.h创建两个函数
+```
+UFUNCTION(BlueprintCallable)
+void Disarm();
+UFUNCTION(BlueprintCallable)
+void Arm();
+```
+在
+```
+void ASlashCharacter::Disarm()
+{
+	if (EquippedWeapon) {
+		EquippedWeapon->AttachMeshToSocket(GetMesh(), FName("SpineSocket"));
+	}
+}
+
+void ASlashCharacter::Arm()
+{
+	if (EquippedWeapon) {
+		EquippedWeapon->AttachMeshToSocket(GetMesh(), FName("RightHandSocket"));
+	}
+}
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxNjc5ODcwMCw1MjExMDEwNiwtNTE3OT
-k2NDYsLTEwMjc5ODA3OTksMTc2MDY5NTE1NiwtMTM3NjY0Mjk3
-NCwtMTcwMzY0MTcxMywxMTE4NjEzNTM3LDIxMjQ1NjA2MDIsMT
-k2OTk1MTkyMCwtMTEzNjc5NzA0MSwxMTUxNzE0NDU5LC0xOTc3
-MTcyNDUxLDM0ODU4OTAyOCwxMTk2MDc5ODczLDE4ODkzNTY0MD
-MsMjAyNjQwNDY5NSwtMTAxODg0MDQ2OSwxMzYwMzMzNTYwLDc3
-ODc4NTYwOV19
+eyJoaXN0b3J5IjpbMzgzOTcxOTMyLDUyMTEwMTA2LC01MTc5OT
+Y0NiwtMTAyNzk4MDc5OSwxNzYwNjk1MTU2LC0xMzc2NjQyOTc0
+LC0xNzAzNjQxNzEzLDExMTg2MTM1MzcsMjEyNDU2MDYwMiwxOT
+Y5OTUxOTIwLC0xMTM2Nzk3MDQxLDExNTE3MTQ0NTksLTE5Nzcx
+NzI0NTEsMzQ4NTg5MDI4LDExOTYwNzk4NzMsMTg4OTM1NjQwMy
+wyMDI2NDA0Njk1LC0xMDE4ODQwNDY5LDEzNjAzMzM1NjAsNzc4
+Nzg1NjA5XX0=
 -->
