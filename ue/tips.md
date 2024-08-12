@@ -4,8 +4,9 @@ ctrl+F可以打开vs的搜索框
 
 选取目标函数段，右键快速操作和重构，再选择提取函数，可以快速创建一个含有目标函数段的函数
 
+对于脚底的IK问题，ARPG从入门到进阶p82解决
 对于动画中的碰撞问题，ARPG从入门到进阶p114解决
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMxNDEzMjE2MCwtMjEzMDQzNjM1LC03OT
-M2Njg5MTUsNzk1NTYzOTc3XX0=
+eyJoaXN0b3J5IjpbMjEyNjgyNjUyLC0yMTMwNDM2MzUsLTc5Mz
+Y2ODkxNSw3OTU1NjM5NzddfQ==
 -->
