@@ -840,9 +840,18 @@ void AWeapon::AttachMeshToSocket(USceneComponent* Inparent, const FName& InSocke
 	ItemMesh->AttachToComponent(Inparent, TransformRules, InSocketName);
 }
 ```
+完善枚举类的代码，增加一个装备武器的状态，可以便于做出更多判断，比如
+```
+enum class EActionState : uint8
+{
+	EAS_Unoccupied UMETA(DisplayName = "Unoccupied"),
+	EAS_Attacking UMETA(DisplayName = "Attacking"),
+	EAS_EquippingWeapon UMETA(DisplayName = "EquippingWeapon")
+};
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxNjczMzM1MSw1MjExMDEwNiwtNTE3OT
+eyJoaXN0b3J5IjpbLTU2NjgyNTczMCw1MjExMDEwNiwtNTE3OT
 k2NDYsLTEwMjc5ODA3OTksMTc2MDY5NTE1NiwtMTM3NjY0Mjk3
 NCwtMTcwMzY0MTcxMywxMTE4NjEzNTM3LDIxMjQ1NjA2MDIsMT
 k2OTk1MTkyMCwtMTEzNjc5NzA0MSwxMTUxNzE0NDU5LC0xOTc3
