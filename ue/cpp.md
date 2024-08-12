@@ -753,15 +753,42 @@ if (ActionState == EActionState::EAS_Attacking) { return; }
 ### 代码部分
 在SlashCharacter.h中声明装备蒙太奇
 ```
+public:
+void PlayEquipMontage(FName SectionName);
+bool CanDisarm();
+bool CanArm();
+private:
 UPROPERTY(EditDefaultsOnly, Category = Montages)
-	UAnimMontage* EquipMontage;
+UAnimMontage* EquipMontage;
+
+UPROPERTY(VisibleAnywhere, Category = Weapon)
+AWeapon* EquippedWeapon;
+```
+```
+bool ASlashCharacter::CanDisarm()
+{
+	return ActionState == EActionState::EAS_Unoccupied && CharacterState != ECharacterState::ECS_Unequiped;
+}
+
+bool ASlashCharacter::CanArm()
+{
+	return ActionState == EActionState::EAS_Unoccupied && CharacterState == ECharacterState::ECS_Unequiped && EquippedWeapon;
+}
+void ASlashCharacter::PlayEquipMontage(FName SectionName)
+{
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if (AnimInstance && EquipMontage) {
+		AnimInstance->Montage_Play(EquipMontage);
+		AnimInstance->Montage_JumpToSection(SectionName, EquipMontage);
+	}
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUxNzk5NjQ2LC0xMDI3OTgwNzk5LDE3Nj
-A2OTUxNTYsLTEzNzY2NDI5NzQsLTE3MDM2NDE3MTMsMTExODYx
-MzUzNywyMTI0NTYwNjAyLDE5Njk5NTE5MjAsLTExMzY3OTcwND
-EsMTE1MTcxNDQ1OSwtMTk3NzE3MjQ1MSwzNDg1ODkwMjgsMTE5
-NjA3OTg3MywxODg5MzU2NDAzLDIwMjY0MDQ2OTUsLTEwMTg4ND
-A0NjksMTM2MDMzMzU2MCw3Nzg3ODU2MDksMTE2MTc4MDU0OCwt
-MjQ1Mjk2MDU0XX0=
+eyJoaXN0b3J5IjpbLTUxMTcwOTI3MywtNTE3OTk2NDYsLTEwMj
+c5ODA3OTksMTc2MDY5NTE1NiwtMTM3NjY0Mjk3NCwtMTcwMzY0
+MTcxMywxMTE4NjEzNTM3LDIxMjQ1NjA2MDIsMTk2OTk1MTkyMC
+wtMTEzNjc5NzA0MSwxMTUxNzE0NDU5LC0xOTc3MTcyNDUxLDM0
+ODU4OTAyOCwxMTk2MDc5ODczLDE4ODkzNTY0MDMsMjAyNjQwND
+Y5NSwtMTAxODg0MDQ2OSwxMzYwMzMzNTYwLDc3ODc4NTYwOSwx
+MTYxNzgwNTQ4XX0=
 -->
