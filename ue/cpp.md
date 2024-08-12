@@ -857,7 +857,7 @@ void ASlashCharacter::FinshEquipping()
 }
 ```
 ### 装备时添加音效
-Weapon.h中声明
+Weapon.h中声明EquipSound
 ```
 class UBaseSound;
 private:
@@ -865,7 +865,7 @@ private:
 UPROPERTY(EditAnywhere, Category = "Weapon Properties")
 USoundBase* EquipSound;
 ```
-在Weapon.cpp
+在Weapon.cpp中，将声音播放置于装备的方法中
 ```
 void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 {
@@ -877,7 +877,7 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2MDM1MTAwMCwtMTE4Njk2ODgwMiw4MD
+eyJoaXN0b3J5IjpbMjA5NTU3NTU5OSwtMTE4Njk2ODgwMiw4MD
 MyMTA5NTAsNTIxMTAxMDYsLTUxNzk5NjQ2LC0xMDI3OTgwNzk5
 LDE3NjA2OTUxNTYsLTEzNzY2NDI5NzQsLTE3MDM2NDE3MTMsMT
 ExODYxMzUzNywyMTI0NTYwNjAyLDE5Njk5NTE5MjAsLTExMzY3
