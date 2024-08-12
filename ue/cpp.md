@@ -750,9 +750,14 @@ if (ActionState == EActionState::EAS_Attacking) { return; }
 ## 装备
 ### 动画准备
 先准备好装备武器以及解除装备武器的动画，并将其制作为蒙太奇
-·
+### 代码部分
+在SlashCharacter.h中声明装备蒙太奇
+```
+UPROPERTY(EditDefaultsOnly, Category = Montages)
+	UAnimMontage* EquipMontage;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTc5MDk3NDM0LC0xMDI3OTgwNzk5LDE3Nj
+eyJoaXN0b3J5IjpbLTUxNzk5NjQ2LC0xMDI3OTgwNzk5LDE3Nj
 A2OTUxNTYsLTEzNzY2NDI5NzQsLTE3MDM2NDE3MTMsMTExODYx
 MzUzNywyMTI0NTYwNjAyLDE5Njk5NTE5MjAsLTExMzY3OTcwND
 EsMTE1MTcxNDQ1OSwtMTk3NzE3MjQ1MSwzNDg1ODkwMjgsMTE5
