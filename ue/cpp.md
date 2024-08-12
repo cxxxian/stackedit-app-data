@@ -849,13 +849,19 @@ enum class EActionState : uint8
 	EAS_EquippingWeapon UMETA(DisplayName = "EquippingWeapon")
 };
 ```
-
+在装备结束时的动画添加一个通知，并在SlashCharacter里面声明函数，将状态从装备中切换回未被占用
+```
+void ASlashCharacter::FinshEquipping()
+{
+	ActionState = EActionState::EAS_Unoccupied;
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODAzMjEwOTUwLDUyMTEwMTA2LC01MTc5OT
-Y0NiwtMTAyNzk4MDc5OSwxNzYwNjk1MTU2LC0xMzc2NjQyOTc0
-LC0xNzAzNjQxNzEzLDExMTg2MTM1MzcsMjEyNDU2MDYwMiwxOT
-Y5OTUxOTIwLC0xMTM2Nzk3MDQxLDExNTE3MTQ0NTksLTE5Nzcx
-NzI0NTEsMzQ4NTg5MDI4LDExOTYwNzk4NzMsMTg4OTM1NjQwMy
-wyMDI2NDA0Njk1LC0xMDE4ODQwNDY5LDEzNjAzMzM1NjAsNzc4
-Nzg1NjA5XX0=
+eyJoaXN0b3J5IjpbLTExODY5Njg4MDIsODAzMjEwOTUwLDUyMT
+EwMTA2LC01MTc5OTY0NiwtMTAyNzk4MDc5OSwxNzYwNjk1MTU2
+LC0xMzc2NjQyOTc0LC0xNzAzNjQxNzEzLDExMTg2MTM1MzcsMj
+EyNDU2MDYwMiwxOTY5OTUxOTIwLC0xMTM2Nzk3MDQxLDExNTE3
+MTQ0NTksLTE5NzcxNzI0NTEsMzQ4NTg5MDI4LDExOTYwNzk4Nz
+MsMTg4OTM1NjQwMywyMDI2NDA0Njk1LC0xMDE4ODQwNDY5LDEz
+NjAzMzM1NjBdfQ==
 -->
