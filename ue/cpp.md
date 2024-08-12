@@ -840,7 +840,7 @@ void AWeapon::AttachMeshToSocket(USceneComponent* Inparent, const FName& InSocke
 	ItemMesh->AttachToComponent(Inparent, TransformRules, InSocketName);
 }
 ```
-完善枚举类的代码，增加一个装备武器的状态，可以便于做出更多判断，比如
+完善枚举类的代码，增加一个装备武器的状态，可以便于做出更多判断，比如在装备武器时禁止移动
 ```
 enum class EActionState : uint8
 {
@@ -851,11 +851,11 @@ enum class EActionState : uint8
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2NjgyNTczMCw1MjExMDEwNiwtNTE3OT
-k2NDYsLTEwMjc5ODA3OTksMTc2MDY5NTE1NiwtMTM3NjY0Mjk3
-NCwtMTcwMzY0MTcxMywxMTE4NjEzNTM3LDIxMjQ1NjA2MDIsMT
-k2OTk1MTkyMCwtMTEzNjc5NzA0MSwxMTUxNzE0NDU5LC0xOTc3
-MTcyNDUxLDM0ODU4OTAyOCwxMTk2MDc5ODczLDE4ODkzNTY0MD
-MsMjAyNjQwNDY5NSwtMTAxODg0MDQ2OSwxMzYwMzMzNTYwLDc3
-ODc4NTYwOV19
+eyJoaXN0b3J5IjpbODAzMjEwOTUwLDUyMTEwMTA2LC01MTc5OT
+Y0NiwtMTAyNzk4MDc5OSwxNzYwNjk1MTU2LC0xMzc2NjQyOTc0
+LC0xNzAzNjQxNzEzLDExMTg2MTM1MzcsMjEyNDU2MDYwMiwxOT
+Y5OTUxOTIwLC0xMTM2Nzk3MDQxLDExNTE3MTQ0NTksLTE5Nzcx
+NzI0NTEsMzQ4NTg5MDI4LDExOTYwNzk4NzMsMTg4OTM1NjQwMy
+wyMDI2NDA0Njk1LC0xMDE4ODQwNDY5LDEzNjAzMzM1NjAsNzc4
+Nzg1NjA5XX0=
 -->
