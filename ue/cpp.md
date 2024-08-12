@@ -764,6 +764,7 @@ UAnimMontage* EquipMontage;
 UPROPERTY(VisibleAnywhere, Category = Weapon)
 AWeapon* EquippedWeapon;
 ```
+在SlashCharacter.cpp中，完善candisarm和canarm方法，以及播放装备蒙太奇的方法。
 ```
 bool ASlashCharacter::CanDisarm()
 {
@@ -783,8 +784,32 @@ void ASlashCharacter::PlayEquipMontage(FName SectionName)
 	}
 }
 ```
+为EKeyPressed添加
+```
+void ASlashCharacter::EKeyPressed()
+{
+	AWeapon* OverlappingWeapon = Cast<AWeapon>(OverlappingItem);
+	if(OverlappingWeapon)
+	{
+		OverlappingWeapon->Equip(GetMesh(), FName("RightHandSocket"));
+		CharacterState = ECharacterState::ECS_EquippedOneHandedWeapon;
+		EquippedWeapon = OverlappingWeapon;
+		OverlappingItem = nullptr;
+	}
+	else {
+		if (CanDisarm()) {
+			PlayEquipMontage(FName("Unequip"));
+			CharacterState = ECharacterState::ECS_Unequiped;
+		}
+		if (CanArm()) {
+			PlayEquipMontage(FName("Equip"));
+			CharacterState = ECharacterState::ECS_EquippedOneHandedWeapon;
+		}
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUxMTcwOTI3MywtNTE3OTk2NDYsLTEwMj
+eyJoaXN0b3J5IjpbLTgxOTM2NTEyMiwtNTE3OTk2NDYsLTEwMj
 c5ODA3OTksMTc2MDY5NTE1NiwtMTM3NjY0Mjk3NCwtMTcwMzY0
 MTcxMywxMTE4NjEzNTM3LDIxMjQ1NjA2MDIsMTk2OTk1MTkyMC
 wtMTEzNjc5NzA0MSwxMTUxNzE0NDU5LC0xOTc3MTcyNDUxLDM0
