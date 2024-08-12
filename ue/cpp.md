@@ -865,7 +865,7 @@ private:
 UPROPERTY(EditAnywhere, Category = "Weapon Properties")
 USoundBase* EquipSound;
 ```
-在Weapon.cpp中，将声音播放置于装备的方法中
+在Weapon.cpp中，将声音播放置于装备的方法中，并对于Sphere，先将它从item.h中的private改成protected，然后使它再捡起后的碰撞变为无碰撞，这样就不会有捡起武器后按E仍然会有shink的声音了
 ```
 void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 {
@@ -880,11 +880,11 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjgzODA1ODk4LC0xMTg2OTY4ODAyLDgwMz
-IxMDk1MCw1MjExMDEwNiwtNTE3OTk2NDYsLTEwMjc5ODA3OTks
-MTc2MDY5NTE1NiwtMTM3NjY0Mjk3NCwtMTcwMzY0MTcxMywxMT
-E4NjEzNTM3LDIxMjQ1NjA2MDIsMTk2OTk1MTkyMCwtMTEzNjc5
-NzA0MSwxMTUxNzE0NDU5LC0xOTc3MTcyNDUxLDM0ODU4OTAyOC
-wxMTk2MDc5ODczLDE4ODkzNTY0MDMsMjAyNjQwNDY5NSwtMTAx
-ODg0MDQ2OV19
+eyJoaXN0b3J5IjpbMTYwNjA2ODQxNSwtMTE4Njk2ODgwMiw4MD
+MyMTA5NTAsNTIxMTAxMDYsLTUxNzk5NjQ2LC0xMDI3OTgwNzk5
+LDE3NjA2OTUxNTYsLTEzNzY2NDI5NzQsLTE3MDM2NDE3MTMsMT
+ExODYxMzUzNywyMTI0NTYwNjAyLDE5Njk5NTE5MjAsLTExMzY3
+OTcwNDEsMTE1MTcxNDQ1OSwtMTk3NzE3MjQ1MSwzNDg1ODkwMj
+gsMTE5NjA3OTg3MywxODg5MzU2NDAzLDIwMjY0MDQ2OTUsLTEw
+MTg4NDA0NjldfQ==
 -->
