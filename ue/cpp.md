@@ -816,7 +816,7 @@ void Disarm();
 UFUNCTION(BlueprintCallable)
 void Arm();
 ```
-在
+在SlashCharacter.cpp中实现，用来切换插槽（手与背之间）
 ```
 void ASlashCharacter::Disarm()
 {
@@ -832,13 +832,21 @@ void ASlashCharacter::Arm()
 	}
 }
 ```
+上面运用的方法时在Weapon.cpp中提取成函数的两句代码，增强可复用性
+```
+void AWeapon::AttachMeshToSocket(USceneComponent* Inparent, const FName& InSocketName)
+{
+	FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
+	ItemMesh->AttachToComponent(Inparent, TransformRules, InSocketName);
+}
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzgzOTcxOTMyLDUyMTEwMTA2LC01MTc5OT
-Y0NiwtMTAyNzk4MDc5OSwxNzYwNjk1MTU2LC0xMzc2NjQyOTc0
-LC0xNzAzNjQxNzEzLDExMTg2MTM1MzcsMjEyNDU2MDYwMiwxOT
-Y5OTUxOTIwLC0xMTM2Nzk3MDQxLDExNTE3MTQ0NTksLTE5Nzcx
-NzI0NTEsMzQ4NTg5MDI4LDExOTYwNzk4NzMsMTg4OTM1NjQwMy
-wyMDI2NDA0Njk1LC0xMDE4ODQwNDY5LDEzNjAzMzM1NjAsNzc4
-Nzg1NjA5XX0=
+eyJoaXN0b3J5IjpbMTQxNjczMzM1MSw1MjExMDEwNiwtNTE3OT
+k2NDYsLTEwMjc5ODA3OTksMTc2MDY5NTE1NiwtMTM3NjY0Mjk3
+NCwtMTcwMzY0MTcxMywxMTE4NjEzNTM3LDIxMjQ1NjA2MDIsMT
+k2OTk1MTkyMCwtMTEzNjc5NzA0MSwxMTUxNzE0NDU5LC0xOTc3
+MTcyNDUxLDM0ODU4OTAyOCwxMTk2MDc5ODczLDE4ODkzNTY0MD
+MsMjAyNjQwNDY5NSwtMTAxODg0MDQ2OSwxMzYwMzMzNTYwLDc3
+ODc4NTYwOV19
 -->
