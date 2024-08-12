@@ -749,9 +749,9 @@ if (ActionState == EActionState::EAS_Attacking) { return; }
 ```
 ## 装备
 ### 动画准备
-先
+先准备好装备武器以及解除装备武器的动画，并将其制作为蒙太奇
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI5NDE0NDU3NCwtMTAyNzk4MDc5OSwxNz
+eyJoaXN0b3J5IjpbMTY0MTAyMDk0OSwtMTAyNzk4MDc5OSwxNz
 YwNjk1MTU2LC0xMzc2NjQyOTc0LC0xNzAzNjQxNzEzLDExMTg2
 MTM1MzcsMjEyNDU2MDYwMiwxOTY5OTUxOTIwLC0xMTM2Nzk3MD
 QxLDExNTE3MTQ0NTksLTE5NzcxNzI0NTEsMzQ4NTg5MDI4LDEx
