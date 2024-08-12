@@ -764,7 +764,7 @@ UAnimMontage* EquipMontage;
 UPROPERTY(VisibleAnywhere, Category = Weapon)
 AWeapon* EquippedWeapon;
 ```
-在SlashCharacter.cpp中，完善candisarm和canarm方法，以及播放装备蒙太奇的方法。
+在SlashCharacter.cpp中，完善canDisarm和canArm方法，以及播放装备蒙太奇的方法。
 ```
 bool ASlashCharacter::CanDisarm()
 {
@@ -808,12 +808,14 @@ void ASlashCharacter::EKeyPressed()
 	}
 }
 ```
+在背部添加一个插槽（SpineSocket）用来放剑
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTIxMTAxMDYsLTUxNzk5NjQ2LC0xMDI3OT
-gwNzk5LDE3NjA2OTUxNTYsLTEzNzY2NDI5NzQsLTE3MDM2NDE3
-MTMsMTExODYxMzUzNywyMTI0NTYwNjAyLDE5Njk5NTE5MjAsLT
-ExMzY3OTcwNDEsMTE1MTcxNDQ1OSwtMTk3NzE3MjQ1MSwzNDg1
-ODkwMjgsMTE5NjA3OTg3MywxODg5MzU2NDAzLDIwMjY0MDQ2OT
-UsLTEwMTg4NDA0NjksMTM2MDMzMzU2MCw3Nzg3ODU2MDksMTE2
-MTc4MDU0OF19
+eyJoaXN0b3J5IjpbLTE5ODg4MzIyMTUsNTIxMTAxMDYsLTUxNz
+k5NjQ2LC0xMDI3OTgwNzk5LDE3NjA2OTUxNTYsLTEzNzY2NDI5
+NzQsLTE3MDM2NDE3MTMsMTExODYxMzUzNywyMTI0NTYwNjAyLD
+E5Njk5NTE5MjAsLTExMzY3OTcwNDEsMTE1MTcxNDQ1OSwtMTk3
+NzE3MjQ1MSwzNDg1ODkwMjgsMTE5NjA3OTg3MywxODg5MzU2ND
+AzLDIwMjY0MDQ2OTUsLTEwMTg4NDA0NjksMTM2MDMzMzU2MCw3
+Nzg3ODU2MDldfQ==
 -->
