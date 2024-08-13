@@ -886,14 +886,16 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 **pay attention**：对于想要得到重叠响应的目标，必须勾选生成重叠事件！！！然后根据情况设置碰撞预设
 ![输入图片说明](/imgs/2024-08-13/AjX9Fbzl5Lhk44mm.png)
 2.蓝图做法，使用box tracing by channel（按通道进行盒体追踪）
-Start和End分别传入刚刚制作的Sce'ne
+Start和End分别传入刚刚制作的Scene组件，HalfSize是制作出的盒子的边长。
 ![输入图片说明](/imgs/2024-08-13/HYO8vWCUuB5VsMD3.png)
+将OutHit节点break（中断命中结果），会得到很多
+![输入图片说明](/imgs/2024-08-13/ChKsX0Lv5a2r2tDz.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTA3NTExODAxLC0yMTMwODM4MTU0LDE2MD
-YwNjg0MTUsLTExODY5Njg4MDIsODAzMjEwOTUwLDUyMTEwMTA2
-LC01MTc5OTY0NiwtMTAyNzk4MDc5OSwxNzYwNjk1MTU2LC0xMz
-c2NjQyOTc0LC0xNzAzNjQxNzEzLDExMTg2MTM1MzcsMjEyNDU2
-MDYwMiwxOTY5OTUxOTIwLC0xMTM2Nzk3MDQxLDExNTE3MTQ0NT
-ksLTE5NzcxNzI0NTEsMzQ4NTg5MDI4LDExOTYwNzk4NzMsMTg4
-OTM1NjQwM119
+eyJoaXN0b3J5IjpbLTIwMzA1MTg3MDksLTIxMzA4MzgxNTQsMT
+YwNjA2ODQxNSwtMTE4Njk2ODgwMiw4MDMyMTA5NTAsNTIxMTAx
+MDYsLTUxNzk5NjQ2LC0xMDI3OTgwNzk5LDE3NjA2OTUxNTYsLT
+EzNzY2NDI5NzQsLTE3MDM2NDE3MTMsMTExODYxMzUzNywyMTI0
+NTYwNjAyLDE5Njk5NTE5MjAsLTExMzY3OTcwNDEsMTE1MTcxND
+Q1OSwtMTk3NzE3MjQ1MSwzNDg1ODkwMjgsMTE5NjA3OTg3Mywx
+ODg5MzU2NDAzXX0=
 -->
