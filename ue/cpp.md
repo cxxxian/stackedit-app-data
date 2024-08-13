@@ -901,14 +901,26 @@ AWeapon::AWeapon() {
 	WeaponBox->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn, ECollisionResponse::ECR_Ignore);
 }
 ```
+```
 protected:
 	virtual void BeginPlay() override;
+	UFUNCTION()
+	void OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+```
+```
+void AWeapon::BeginPlay()
+{
+	Super::BeginPlay();
+
+	WeaponBox->OnComponentBeginOverlap.AddDynamic(this, &AWeapon::OnBoxOverlap);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTcwNjE3MTYsLTE3MzA0NDA2OTQsMT
-gxMTUwNzMyMywtMjEzMDgzODE1NCwxNjA2MDY4NDE1LC0xMTg2
-OTY4ODAyLDgwMzIxMDk1MCw1MjExMDEwNiwtNTE3OTk2NDYsLT
-EwMjc5ODA3OTksMTc2MDY5NTE1NiwtMTM3NjY0Mjk3NCwtMTcw
-MzY0MTcxMywxMTE4NjEzNTM3LDIxMjQ1NjA2MDIsMTk2OTk1MT
-kyMCwtMTEzNjc5NzA0MSwxMTUxNzE0NDU5LC0xOTc3MTcyNDUx
-LDM0ODU4OTAyOF19
+eyJoaXN0b3J5IjpbMzM3NDg1MTA3LC0xNzMwNDQwNjk0LDE4MT
+E1MDczMjMsLTIxMzA4MzgxNTQsMTYwNjA2ODQxNSwtMTE4Njk2
+ODgwMiw4MDMyMTA5NTAsNTIxMTAxMDYsLTUxNzk5NjQ2LC0xMD
+I3OTgwNzk5LDE3NjA2OTUxNTYsLTEzNzY2NDI5NzQsLTE3MDM2
+NDE3MTMsMTExODYxMzUzNywyMTI0NTYwNjAyLDE5Njk5NTE5Mj
+AsLTExMzY3OTcwNDEsMTE1MTcxNDQ1OSwtMTk3NzE3MjQ1MSwz
+NDg1ODkwMjhdfQ==
 -->
