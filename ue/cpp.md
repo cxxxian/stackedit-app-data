@@ -968,7 +968,7 @@ void ASlashCharacter::SetWeaponCollisionEnable(ECollisionEnabled::Type Collision
 ```
 
 ## 接口（Unreal Interface）
-在HitInterface.h中声明一个纯虚函数GetHit()，通过=0来表示它是一个chu
+在HitInterface.h中声明一个纯虚函数GetHit()，通过=0来表示它是一个纯虚函数，即无需在HitInterface.cpp中声明该函数的实现
 ```
 class SLASH_API IHitInterface
 {
@@ -978,11 +978,11 @@ public:
 };
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1MTYzMTE1MCwtMjA5NzY3ODg0MCwxOT
-kxMzUwNjI1LC03NzA1MzU0MjMsLTEzNTcyOTcxNjcsLTE1MDQ3
-MzE5NDAsMTc5MTAxNTg0OCwtMTczMDQ0MDY5NCwxODExNTA3Mz
-IzLC0yMTMwODM4MTU0LDE2MDYwNjg0MTUsLTExODY5Njg4MDIs
-ODAzMjEwOTUwLDUyMTEwMTA2LC01MTc5OTY0NiwtMTAyNzk4MD
-c5OSwxNzYwNjk1MTU2LC0xMzc2NjQyOTc0LC0xNzAzNjQxNzEz
-LDExMTg2MTM1MzddfQ==
+eyJoaXN0b3J5IjpbNTA3ODgwMDIzLC0yMDk3Njc4ODQwLDE5OT
+EzNTA2MjUsLTc3MDUzNTQyMywtMTM1NzI5NzE2NywtMTUwNDcz
+MTk0MCwxNzkxMDE1ODQ4LC0xNzMwNDQwNjk0LDE4MTE1MDczMj
+MsLTIxMzA4MzgxNTQsMTYwNjA2ODQxNSwtMTE4Njk2ODgwMiw4
+MDMyMTA5NTAsNTIxMTAxMDYsLTUxNzk5NjQ2LC0xMDI3OTgwNz
+k5LDE3NjA2OTUxNTYsLTEzNzY2NDI5NzQsLTE3MDM2NDE3MTMs
+MTExODYxMzUzN119
 -->
