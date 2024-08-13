@@ -888,14 +888,14 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 2.蓝图做法，使用box tracing by channel（按通道进行盒体追踪）
 Start和End分别传入刚刚制作的Scene组件，HalfSize是制作出的盒子的边长。
 ![输入图片说明](/imgs/2024-08-13/HYO8vWCUuB5VsMD3.png)
-将OutHit节点break（中断命中结果），会得到很多
+将OutHit节点break（中断命中结果），会得到很多位置信息，我们将impactPoint绘制球体，即可以得到以命中点为中心绘制的球体
 ![输入图片说明](/imgs/2024-08-13/ChKsX0Lv5a2r2tDz.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzA1MTg3MDksLTIxMzA4MzgxNTQsMT
-YwNjA2ODQxNSwtMTE4Njk2ODgwMiw4MDMyMTA5NTAsNTIxMTAx
-MDYsLTUxNzk5NjQ2LC0xMDI3OTgwNzk5LDE3NjA2OTUxNTYsLT
-EzNzY2NDI5NzQsLTE3MDM2NDE3MTMsMTExODYxMzUzNywyMTI0
-NTYwNjAyLDE5Njk5NTE5MjAsLTExMzY3OTcwNDEsMTE1MTcxND
-Q1OSwtMTk3NzE3MjQ1MSwzNDg1ODkwMjgsMTE5NjA3OTg3Mywx
-ODg5MzU2NDAzXX0=
+eyJoaXN0b3J5IjpbMTgxMTUwNzMyMywtMjEzMDgzODE1NCwxNj
+A2MDY4NDE1LC0xMTg2OTY4ODAyLDgwMzIxMDk1MCw1MjExMDEw
+NiwtNTE3OTk2NDYsLTEwMjc5ODA3OTksMTc2MDY5NTE1NiwtMT
+M3NjY0Mjk3NCwtMTcwMzY0MTcxMywxMTE4NjEzNTM3LDIxMjQ1
+NjA2MDIsMTk2OTk1MTkyMCwtMTEzNjc5NzA0MSwxMTUxNzE0ND
+U5LC0xOTc3MTcyNDUxLDM0ODU4OTAyOCwxMTk2MDc5ODczLDE4
+ODkzNTY0MDNdfQ==
 -->
