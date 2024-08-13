@@ -946,12 +946,12 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 UFUNCTION(BlueprintCallable)
 	void SetWeaponCollisionEnable(ECollisionEnabled::Type CollisionEnabled);
 ```
-将先前在Weapon.cpp的AWeapon构造函数中的QueryOnly
+将先前在Weapon.cpp的AWeapon构造函数中的QueryOnly改为NoCollision
 ```
-WeaponBox->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+WeaponBox->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzcwNzMzOCwtNzcwNTM1NDIzLC0xMz
+eyJoaXN0b3J5IjpbMTk5MTM1MDYyNSwtNzcwNTM1NDIzLC0xMz
 U3Mjk3MTY3LC0xNTA0NzMxOTQwLDE3OTEwMTU4NDgsLTE3MzA0
 NDA2OTQsMTgxMTUwNzMyMywtMjEzMDgzODE1NCwxNjA2MDY4ND
 E1LC0xMTg2OTY4ODAyLDgwMzIxMDk1MCw1MjExMDEwNiwtNTE3
