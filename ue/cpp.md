@@ -977,12 +977,28 @@ public:
 	virtual void GetHit() = 0;
 };
 ```
+在Enemy.cpp中，先完善AEnemy()构造器，
+1.首先不能将敌人设置为pawn，因为我们的武器设置了忽略pawn，所以将其设置为WorldDynamic
+2.
+```
+AEnemy::AEnemy()
+{
+ 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	PrimaryActorTick.bCanEverTick = true;
+
+	GetMesh()->SetCollisionObjectType(ECollisionChannel::ECC_WorldDynamic);
+	GetMesh()->SetCollisionResponseToChannel(ECollisionChannel::ECC_Visibility, ECollisionResponse::ECR_Block);
+	GetMesh()->SetCollisionResponseToChannel(ECollisionChannel::ECC_Camera, ECollisionResponse::ECR_Ignore);
+	GetCapsuleComponent()->SetCollisionResponseToChannel(ECollisionChannel::ECC_Camera, ECollisionResponse::ECR_Ignore);
+	GetMesh()->SetGenerateOverlapEvents(true);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTA3ODgwMDIzLC0yMDk3Njc4ODQwLDE5OT
-EzNTA2MjUsLTc3MDUzNTQyMywtMTM1NzI5NzE2NywtMTUwNDcz
-MTk0MCwxNzkxMDE1ODQ4LC0xNzMwNDQwNjk0LDE4MTE1MDczMj
-MsLTIxMzA4MzgxNTQsMTYwNjA2ODQxNSwtMTE4Njk2ODgwMiw4
-MDMyMTA5NTAsNTIxMTAxMDYsLTUxNzk5NjQ2LC0xMDI3OTgwNz
-k5LDE3NjA2OTUxNTYsLTEzNzY2NDI5NzQsLTE3MDM2NDE3MTMs
-MTExODYxMzUzN119
+eyJoaXN0b3J5IjpbNDQ0MjkxOTI0LDUwNzg4MDAyMywtMjA5Nz
+Y3ODg0MCwxOTkxMzUwNjI1LC03NzA1MzU0MjMsLTEzNTcyOTcx
+NjcsLTE1MDQ3MzE5NDAsMTc5MTAxNTg0OCwtMTczMDQ0MDY5NC
+wxODExNTA3MzIzLC0yMTMwODM4MTU0LDE2MDYwNjg0MTUsLTEx
+ODY5Njg4MDIsODAzMjEwOTUwLDUyMTEwMTA2LC01MTc5OTY0Ni
+wtMTAyNzk4MDc5OSwxNzYwNjk1MTU2LC0xMzc2NjQyOTc0LC0x
+NzAzNjQxNzEzXX0=
 -->
