@@ -891,7 +891,7 @@ Start和End分别传入刚刚制作的Scene组件，HalfSize是制作出的盒�
 将OutHit节点break（中断命中结果），会得到很多位置信息，我们将impactPoint绘制球体，即可以得到以命中点为中心绘制的球体
 ![输入图片说明](/imgs/2024-08-13/ChKsX0Lv5a2r2tDz.png)
 ### 3.代码做法
-在Weapon.cpp的AWeapon构造函数中，对于WeaponBox进行碰撞的c
+在Weapon.cpp的AWeapon构造函数中，对于WeaponBox进行碰撞的处理，先将所有碰撞频道设为重叠，然后单独将Pawn轨道设为忽略
 ```
 AWeapon::AWeapon() {
 	WeaponBox = CreateDefaultSubobject<UBoxComponent>(TEXT("Weapon Box"));
@@ -902,11 +902,11 @@ AWeapon::AWeapon() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0NDUwNTEsMTgxMTUwNzMyMywtMjEzMD
-gzODE1NCwxNjA2MDY4NDE1LC0xMTg2OTY4ODAyLDgwMzIxMDk1
-MCw1MjExMDEwNiwtNTE3OTk2NDYsLTEwMjc5ODA3OTksMTc2MD
-Y5NTE1NiwtMTM3NjY0Mjk3NCwtMTcwMzY0MTcxMywxMTE4NjEz
-NTM3LDIxMjQ1NjA2MDIsMTk2OTk1MTkyMCwtMTEzNjc5NzA0MS
-wxMTUxNzE0NDU5LC0xOTc3MTcyNDUxLDM0ODU4OTAyOCwxMTk2
-MDc5ODczXX0=
+eyJoaXN0b3J5IjpbLTE3MzA0NDA2OTQsMTgxMTUwNzMyMywtMj
+EzMDgzODE1NCwxNjA2MDY4NDE1LC0xMTg2OTY4ODAyLDgwMzIx
+MDk1MCw1MjExMDEwNiwtNTE3OTk2NDYsLTEwMjc5ODA3OTksMT
+c2MDY5NTE1NiwtMTM3NjY0Mjk3NCwtMTcwMzY0MTcxMywxMTE4
+NjEzNTM3LDIxMjQ1NjA2MDIsMTk2OTk1MTkyMCwtMTEzNjc5Nz
+A0MSwxMTUxNzE0NDU5LC0xOTc3MTcyNDUxLDM0ODU4OTAyOCwx
+MTk2MDc5ODczXX0=
 -->
