@@ -881,12 +881,14 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 ```
 ## Tracing（武器打击检测）
 1.制作起点终点
-想要有一个组件，没有网格或其他任何东西，只有位置信息，可以使用Scene
+想要有一个组件，没有网格或其他任何东西，只有位置信息，可以使用Scene，制作一个Start和一个End，例如剑的话一个放在剑头一个剑尾
 ![输入图片说明](/imgs/2024-08-13/iqbISCwzI8aYhdg8.png)
 **pay attention**：对于想要得到重叠响应的目标，必须勾选生成重叠事件！！！然后根据情况设置碰撞预设
 ![输入图片说明](/imgs/2024-08-13/AjX9Fbzl5Lhk44mm.png)
+2.蓝图做法，zhe'yan
+![输入图片说明](/imgs/2024-08-13/RoMlvfxDlEQp07ot.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2OTMyODAzMiwtMjEzMDgzODE1NCwxNj
+eyJoaXN0b3J5IjpbMTkyNTYwMTMzMSwtMjEzMDgzODE1NCwxNj
 A2MDY4NDE1LC0xMTg2OTY4ODAyLDgwMzIxMDk1MCw1MjExMDEw
 NiwtNTE3OTk2NDYsLTEwMjc5ODA3OTksMTc2MDY5NTE1NiwtMT
 M3NjY0Mjk3NCwtMTcwMzY0MTcxMywxMTE4NjEzNTM3LDIxMjQ1
