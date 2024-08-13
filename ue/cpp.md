@@ -890,7 +890,7 @@ Start和End分别传入刚刚制作的Scene组件，HalfSize是制作出的盒�
 ![输入图片说明](/imgs/2024-08-13/HYO8vWCUuB5VsMD3.png)
 将OutHit节点break（中断命中结果），会得到很多位置信息，我们将impactPoint绘制球体，即可以得到以命中点为中心绘制的球体
 ![输入图片说明](/imgs/2024-08-13/ChKsX0Lv5a2r2tDz.png)
-### 3.代码做法
+### 2.代码做法
 在Weapon.cpp的AWeapon构造函数中，对于WeaponBox进行碰撞的处理，先将所有碰撞频道设为重叠，然后单独将Pawn轨道设为忽略
 ```
 AWeapon::AWeapon() {
@@ -940,12 +940,13 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 }
 
 ```
+### 3.完善武器未攻击时也能重叠的bug
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTcyOTcxNjcsLTE1MDQ3MzE5NDAsMT
-c5MTAxNTg0OCwtMTczMDQ0MDY5NCwxODExNTA3MzIzLC0yMTMw
-ODM4MTU0LDE2MDYwNjg0MTUsLTExODY5Njg4MDIsODAzMjEwOT
-UwLDUyMTEwMTA2LC01MTc5OTY0NiwtMTAyNzk4MDc5OSwxNzYw
-Njk1MTU2LC0xMzc2NjQyOTc0LC0xNzAzNjQxNzEzLDExMTg2MT
-M1MzcsMjEyNDU2MDYwMiwxOTY5OTUxOTIwLC0xMTM2Nzk3MDQx
-LDExNTE3MTQ0NTldfQ==
+eyJoaXN0b3J5IjpbLTc3MDUzNTQyMywtMTM1NzI5NzE2NywtMT
+UwNDczMTk0MCwxNzkxMDE1ODQ4LC0xNzMwNDQwNjk0LDE4MTE1
+MDczMjMsLTIxMzA4MzgxNTQsMTYwNjA2ODQxNSwtMTE4Njk2OD
+gwMiw4MDMyMTA5NTAsNTIxMTAxMDYsLTUxNzk5NjQ2LC0xMDI3
+OTgwNzk5LDE3NjA2OTUxNTYsLTEzNzY2NDI5NzQsLTE3MDM2ND
+E3MTMsMTExODYxMzUzNywyMTI0NTYwNjAyLDE5Njk5NTE5MjAs
+LTExMzY3OTcwNDFdfQ==
 -->
