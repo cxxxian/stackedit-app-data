@@ -941,14 +941,21 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 
 ```
 ### 3.完善武器未攻击时也能重叠的bug
+在SlashCharacter.h中定义一个用来开启武器碰撞的方法
+```
 UFUNCTION(BlueprintCallable)
 	void SetWeaponCollisionEnable(ECollisionEnabled::Type CollisionEnabled);
+```
+将先前在Weapon.cpp的AWeapon构造函数中的QueryOnly
+```
+WeaponBox->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MjIwNTU5ODAsLTc3MDUzNTQyMywtMT
-M1NzI5NzE2NywtMTUwNDczMTk0MCwxNzkxMDE1ODQ4LC0xNzMw
-NDQwNjk0LDE4MTE1MDczMjMsLTIxMzA4MzgxNTQsMTYwNjA2OD
-QxNSwtMTE4Njk2ODgwMiw4MDMyMTA5NTAsNTIxMTAxMDYsLTUx
-Nzk5NjQ2LC0xMDI3OTgwNzk5LDE3NjA2OTUxNTYsLTEzNzY2ND
-I5NzQsLTE3MDM2NDE3MTMsMTExODYxMzUzNywyMTI0NTYwNjAy
-LDE5Njk5NTE5MjBdfQ==
+eyJoaXN0b3J5IjpbLTE4MzcwNzMzOCwtNzcwNTM1NDIzLC0xMz
+U3Mjk3MTY3LC0xNTA0NzMxOTQwLDE3OTEwMTU4NDgsLTE3MzA0
+NDA2OTQsMTgxMTUwNzMyMywtMjEzMDgzODE1NCwxNjA2MDY4ND
+E1LC0xMTg2OTY4ODAyLDgwMzIxMDk1MCw1MjExMDEwNiwtNTE3
+OTk2NDYsLTEwMjc5ODA3OTksMTc2MDY5NTE1NiwtMTM3NjY0Mj
+k3NCwtMTcwMzY0MTcxMywxMTE4NjEzNTM3LDIxMjQ1NjA2MDIs
+MTk2OTk1MTkyMF19
 -->
