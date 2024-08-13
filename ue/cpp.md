@@ -957,7 +957,7 @@ public:
 UFUNCTION(BlueprintCallable)
 	void SetWeaponCollisionEnable(ECollisionEnabled::Type CollisionEnabled);
 ```
-完善f
+完善方法，此句运用的方法EquippedWeapon->GetWeaponBox()是刚刚在Weapon.h中定义的使其可以取得WeaponBox，
 ```
 void ASlashCharacter::SetWeaponCollisionEnable(ECollisionEnabled::Type CollisionEnabled)
 {
@@ -967,11 +967,11 @@ void ASlashCharacter::SetWeaponCollisionEnable(ECollisionEnabled::Type Collision
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2NTcyNDk3LDE5OTEzNTA2MjUsLTc3MD
-UzNTQyMywtMTM1NzI5NzE2NywtMTUwNDczMTk0MCwxNzkxMDE1
-ODQ4LC0xNzMwNDQwNjk0LDE4MTE1MDczMjMsLTIxMzA4MzgxNT
-QsMTYwNjA2ODQxNSwtMTE4Njk2ODgwMiw4MDMyMTA5NTAsNTIx
-MTAxMDYsLTUxNzk5NjQ2LC0xMDI3OTgwNzk5LDE3NjA2OTUxNT
-YsLTEzNzY2NDI5NzQsLTE3MDM2NDE3MTMsMTExODYxMzUzNywy
-MTI0NTYwNjAyXX0=
+eyJoaXN0b3J5IjpbLTIwOTc2Nzg4NDAsMTk5MTM1MDYyNSwtNz
+cwNTM1NDIzLC0xMzU3Mjk3MTY3LC0xNTA0NzMxOTQwLDE3OTEw
+MTU4NDgsLTE3MzA0NDA2OTQsMTgxMTUwNzMyMywtMjEzMDgzOD
+E1NCwxNjA2MDY4NDE1LC0xMTg2OTY4ODAyLDgwMzIxMDk1MCw1
+MjExMDEwNiwtNTE3OTk2NDYsLTEwMjc5ODA3OTksMTc2MDY5NT
+E1NiwtMTM3NjY0Mjk3NCwtMTcwMzY0MTcxMywxMTE4NjEzNTM3
+LDIxMjQ1NjA2MDJdfQ==
 -->
