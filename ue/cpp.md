@@ -880,9 +880,9 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 }
 ```
 ## Tracing（武器打击检测）
-
+想要有一个组件，没有网格或其他任何东西，z
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2MTI4OTg3NSwxNjA2MDY4NDE1LC0xMT
+eyJoaXN0b3J5IjpbLTc3Nzc0Njk2MiwxNjA2MDY4NDE1LC0xMT
 g2OTY4ODAyLDgwMzIxMDk1MCw1MjExMDEwNiwtNTE3OTk2NDYs
 LTEwMjc5ODA3OTksMTc2MDY5NTE1NiwtMTM3NjY0Mjk3NCwtMT
 cwMzY0MTcxMywxMTE4NjEzNTM3LDIxMjQ1NjA2MDIsMTk2OTk1
