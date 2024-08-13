@@ -880,12 +880,12 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 }
 ```
 ## Tracing（武器打击检测）
-### 1.制作起点终点
+### 1.蓝图做法，使用box tracing by channel（按通道进行盒体追踪）
 想要有一个组件，没有网格或其他任何东西，只有位置信息，可以使用Scene，制作一个Start和一个End，例如剑的话一个放在剑头一个剑尾
 ![输入图片说明](/imgs/2024-08-13/iqbISCwzI8aYhdg8.png)
 **pay attention**：对于想要得到重叠响应的目标，必须勾选生成重叠事件！！！然后根据情况设置碰撞预设
 ![输入图片说明](/imgs/2024-08-13/AjX9Fbzl5Lhk44mm.png)
-### 2.蓝图做法，使用box tracing by channel（按通道进行盒体追踪）
+
 Start和End分别传入刚刚制作的Scene组件，HalfSize是制作出的盒子的边长。
 ![输入图片说明](/imgs/2024-08-13/HYO8vWCUuB5VsMD3.png)
 将OutHit节点break（中断命中结果），会得到很多位置信息，我们将impactPoint绘制球体，即可以得到以命中点为中心绘制的球体
@@ -918,11 +918,11 @@ void AWeapon::BeginPlay()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc5MTAxNTg0OCwtMTczMDQ0MDY5NCwxOD
-ExNTA3MzIzLC0yMTMwODM4MTU0LDE2MDYwNjg0MTUsLTExODY5
-Njg4MDIsODAzMjEwOTUwLDUyMTEwMTA2LC01MTc5OTY0NiwtMT
-AyNzk4MDc5OSwxNzYwNjk1MTU2LC0xMzc2NjQyOTc0LC0xNzAz
-NjQxNzEzLDExMTg2MTM1MzcsMjEyNDU2MDYwMiwxOTY5OTUxOT
-IwLC0xMTM2Nzk3MDQxLDExNTE3MTQ0NTksLTE5NzcxNzI0NTEs
-MzQ4NTg5MDI4XX0=
+eyJoaXN0b3J5IjpbLTE1MDQ3MzE5NDAsMTc5MTAxNTg0OCwtMT
+czMDQ0MDY5NCwxODExNTA3MzIzLC0yMTMwODM4MTU0LDE2MDYw
+Njg0MTUsLTExODY5Njg4MDIsODAzMjEwOTUwLDUyMTEwMTA2LC
+01MTc5OTY0NiwtMTAyNzk4MDc5OSwxNzYwNjk1MTU2LC0xMzc2
+NjQyOTc0LC0xNzAzNjQxNzEzLDExMTg2MTM1MzcsMjEyNDU2MD
+YwMiwxOTY5OTUxOTIwLC0xMTM2Nzk3MDQxLDExNTE3MTQ0NTks
+LTE5NzcxNzI0NTFdfQ==
 -->
