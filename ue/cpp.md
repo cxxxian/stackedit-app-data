@@ -880,22 +880,33 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 }
 ```
 ## Tracing（武器打击检测）
-1.制作起点终点
+### 1.制作起点终点
 想要有一个组件，没有网格或其他任何东西，只有位置信息，可以使用Scene，制作一个Start和一个End，例如剑的话一个放在剑头一个剑尾
 ![输入图片说明](/imgs/2024-08-13/iqbISCwzI8aYhdg8.png)
 **pay attention**：对于想要得到重叠响应的目标，必须勾选生成重叠事件！！！然后根据情况设置碰撞预设
 ![输入图片说明](/imgs/2024-08-13/AjX9Fbzl5Lhk44mm.png)
-2.蓝图做法，使用box tracing by channel（按通道进行盒体追踪）
+### 2.蓝图做法，使用box tracing by channel（按通道进行盒体追踪）
 Start和End分别传入刚刚制作的Scene组件，HalfSize是制作出的盒子的边长。
 ![输入图片说明](/imgs/2024-08-13/HYO8vWCUuB5VsMD3.png)
 将OutHit节点break（中断命中结果），会得到很多位置信息，我们将impactPoint绘制球体，即可以得到以命中点为中心绘制的球体
 ![输入图片说明](/imgs/2024-08-13/ChKsX0Lv5a2r2tDz.png)
+### 3.代码做法
+在Weapon.cpp的AWeapon构造函数中，对于WeaponBox进行碰撞的c
+```
+AWeapon::AWeapon() {
+	WeaponBox = CreateDefaultSubobject<UBoxComponent>(TEXT("Weapon Box"));
+	WeaponBox->SetupAttachment(GetRootComponent());
+	WeaponBox->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+	WeaponBox->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Overlap);
+	WeaponBox->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn, ECollisionResponse::ECR_Ignore);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxMTUwNzMyMywtMjEzMDgzODE1NCwxNj
-A2MDY4NDE1LC0xMTg2OTY4ODAyLDgwMzIxMDk1MCw1MjExMDEw
-NiwtNTE3OTk2NDYsLTEwMjc5ODA3OTksMTc2MDY5NTE1NiwtMT
-M3NjY0Mjk3NCwtMTcwMzY0MTcxMywxMTE4NjEzNTM3LDIxMjQ1
-NjA2MDIsMTk2OTk1MTkyMCwtMTEzNjc5NzA0MSwxMTUxNzE0ND
-U5LC0xOTc3MTcyNDUxLDM0ODU4OTAyOCwxMTk2MDc5ODczLDE4
-ODkzNTY0MDNdfQ==
+eyJoaXN0b3J5IjpbMTI0NDUwNTEsMTgxMTUwNzMyMywtMjEzMD
+gzODE1NCwxNjA2MDY4NDE1LC0xMTg2OTY4ODAyLDgwMzIxMDk1
+MCw1MjExMDEwNiwtNTE3OTk2NDYsLTEwMjc5ODA3OTksMTc2MD
+Y5NTE1NiwtMTM3NjY0Mjk3NCwtMTcwMzY0MTcxMywxMTE4NjEz
+NTM3LDIxMjQ1NjA2MDIsMTk2OTk1MTkyMCwtMTEzNjc5NzA0MS
+wxMTUxNzE0NDU5LC0xOTc3MTcyNDUxLDM0ODU4OTAyOCwxMTk2
+MDc5ODczXX0=
 -->
