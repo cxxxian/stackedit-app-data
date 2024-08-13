@@ -917,12 +917,35 @@ void AWeapon::BeginPlay()
 	WeaponBox->OnComponentBeginOverlap.AddDynamic(this, &AWeapon::OnBoxOverlap);
 }
 ```
+并完善重叠函数
+```
+void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	const FVector Start = BoxTraceStart->GetComponentLocation();
+	const FVector End = BoxTraceEnd->GetComponentLocation();
+
+	TArray<AActor*> ActorsToIgnore;
+	ActorsToIgnore.Add(this);
+	FHitResult BoxHit;
+
+	UKismetSystemLibrary::BoxTraceSingle(
+		this, Start, End,
+		FVector(5.f, 5.f, 5.f),
+		BoxTraceStart->GetComponentRotation(),
+		ETraceTypeQuery::TraceTypeQuery1,
+		false,
+		ActorsToIgnore,
+		EDrawDebugTrace::ForDuration,
+		BoxHit, true);
+}
+
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDQ3MzE5NDAsMTc5MTAxNTg0OCwtMT
-czMDQ0MDY5NCwxODExNTA3MzIzLC0yMTMwODM4MTU0LDE2MDYw
-Njg0MTUsLTExODY5Njg4MDIsODAzMjEwOTUwLDUyMTEwMTA2LC
-01MTc5OTY0NiwtMTAyNzk4MDc5OSwxNzYwNjk1MTU2LC0xMzc2
-NjQyOTc0LC0xNzAzNjQxNzEzLDExMTg2MTM1MzcsMjEyNDU2MD
-YwMiwxOTY5OTUxOTIwLC0xMTM2Nzk3MDQxLDExNTE3MTQ0NTks
-LTE5NzcxNzI0NTFdfQ==
+eyJoaXN0b3J5IjpbLTEzNTcyOTcxNjcsLTE1MDQ3MzE5NDAsMT
+c5MTAxNTg0OCwtMTczMDQ0MDY5NCwxODExNTA3MzIzLC0yMTMw
+ODM4MTU0LDE2MDYwNjg0MTUsLTExODY5Njg4MDIsODAzMjEwOT
+UwLDUyMTEwMTA2LC01MTc5OTY0NiwtMTAyNzk4MDc5OSwxNzYw
+Njk1MTU2LC0xMzc2NjQyOTc0LC0xNzAzNjQxNzEzLDExMTg2MT
+M1MzcsMjEyNDU2MDYwMiwxOTY5OTUxOTIwLC0xMTM2Nzk3MDQx
+LDExNTE3MTQ0NTldfQ==
 -->
