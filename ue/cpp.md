@@ -901,12 +901,14 @@ AWeapon::AWeapon() {
 	WeaponBox->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn, ECollisionResponse::ECR_Ignore);
 }
 ```
+在Weapon.h中声明override的BeginPlay()和OnBoxOverlap
 ```
 protected:
 	virtual void BeginPlay() override;
 	UFUNCTION()
 	void OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 ```
+在Weapon.cpp中在BeginPlay中绑定重叠事件
 ```
 void AWeapon::BeginPlay()
 {
@@ -916,11 +918,11 @@ void AWeapon::BeginPlay()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzM3NDg1MTA3LC0xNzMwNDQwNjk0LDE4MT
-E1MDczMjMsLTIxMzA4MzgxNTQsMTYwNjA2ODQxNSwtMTE4Njk2
-ODgwMiw4MDMyMTA5NTAsNTIxMTAxMDYsLTUxNzk5NjQ2LC0xMD
-I3OTgwNzk5LDE3NjA2OTUxNTYsLTEzNzY2NDI5NzQsLTE3MDM2
-NDE3MTMsMTExODYxMzUzNywyMTI0NTYwNjAyLDE5Njk5NTE5Mj
-AsLTExMzY3OTcwNDEsMTE1MTcxNDQ1OSwtMTk3NzE3MjQ1MSwz
-NDg1ODkwMjhdfQ==
+eyJoaXN0b3J5IjpbMTc5MTAxNTg0OCwtMTczMDQ0MDY5NCwxOD
+ExNTA3MzIzLC0yMTMwODM4MTU0LDE2MDYwNjg0MTUsLTExODY5
+Njg4MDIsODAzMjEwOTUwLDUyMTEwMTA2LC01MTc5OTY0NiwtMT
+AyNzk4MDc5OSwxNzYwNjk1MTU2LC0xMzc2NjQyOTc0LC0xNzAz
+NjQxNzEzLDExMTg2MTM1MzcsMjEyNDU2MDYwMiwxOTY5OTUxOT
+IwLC0xMTM2Nzk3MDQxLDExNTE3MTQ0NTksLTE5NzcxNzI0NTEs
+MzQ4NTg5MDI4XX0=
 -->
