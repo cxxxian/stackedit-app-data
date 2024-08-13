@@ -885,14 +885,14 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 ![输入图片说明](/imgs/2024-08-13/iqbISCwzI8aYhdg8.png)
 **pay attention**：对于想要得到重叠响应的目标，必须勾选生成重叠事件！！！然后根据情况设置碰撞预设
 ![输入图片说明](/imgs/2024-08-13/AjX9Fbzl5Lhk44mm.png)
-2.蓝图做法
+2.蓝图做法，使用box tracing by channel（按通道进行盒体追踪）
 ![输入图片说明](/imgs/2024-08-13/WWcMuV0hKz7MXT6d.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2Mjk3NTMwOSwtMjEzMDgzODE1NCwxNj
-A2MDY4NDE1LC0xMTg2OTY4ODAyLDgwMzIxMDk1MCw1MjExMDEw
-NiwtNTE3OTk2NDYsLTEwMjc5ODA3OTksMTc2MDY5NTE1NiwtMT
-M3NjY0Mjk3NCwtMTcwMzY0MTcxMywxMTE4NjEzNTM3LDIxMjQ1
-NjA2MDIsMTk2OTk1MTkyMCwtMTEzNjc5NzA0MSwxMTUxNzE0ND
-U5LC0xOTc3MTcyNDUxLDM0ODU4OTAyOCwxMTk2MDc5ODczLDE4
-ODkzNTY0MDNdfQ==
+eyJoaXN0b3J5IjpbMjE4Nzc2MzI1LC0yMTMwODM4MTU0LDE2MD
+YwNjg0MTUsLTExODY5Njg4MDIsODAzMjEwOTUwLDUyMTEwMTA2
+LC01MTc5OTY0NiwtMTAyNzk4MDc5OSwxNzYwNjk1MTU2LC0xMz
+c2NjQyOTc0LC0xNzAzNjQxNzEzLDExMTg2MTM1MzcsMjEyNDU2
+MDYwMiwxOTY5OTUxOTIwLC0xMTM2Nzk3MDQxLDExNTE3MTQ0NT
+ksLTE5NzcxNzI0NTEsMzQ4NTg5MDI4LDExOTYwNzk4NzMsMTg4
+OTM1NjQwM119
 -->
