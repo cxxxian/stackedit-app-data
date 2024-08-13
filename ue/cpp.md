@@ -979,7 +979,8 @@ public:
 ```
 在Enemy.cpp中，先完善AEnemy()构造器，
 1.首先不能将敌人设置为pawn，因为我们的武器设置了忽略pawn，所以将其设置为WorldDynamic
-2.
+2.使用的**Visibility**通道，所以将mesh设为Visibility的block
+3.不希望它与玩家摄像机产生碰撞，所以将
 ```
 AEnemy::AEnemy()
 {
@@ -994,7 +995,7 @@ AEnemy::AEnemy()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQ0MjkxOTI0LDUwNzg4MDAyMywtMjA5Nz
+eyJoaXN0b3J5IjpbNzE0MTA4MTA0LDUwNzg4MDAyMywtMjA5Nz
 Y3ODg0MCwxOTkxMzUwNjI1LC03NzA1MzU0MjMsLTEzNTcyOTcx
 NjcsLTE1MDQ3MzE5NDAsMTc5MTAxNTg0OCwtMTczMDQ0MDY5NC
 wxODExNTA3MzIzLC0yMTMwODM4MTU0LDE2MDYwNjg0MTUsLTEx
