@@ -886,9 +886,10 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 **pay attention**：对于想要得到重叠响应的目标，必须勾选生成重叠事件！！！然后根据情况设置碰撞预设
 ![输入图片说明](/imgs/2024-08-13/AjX9Fbzl5Lhk44mm.png)
 2.蓝图做法，使用box tracing by channel（按通道进行盒体追踪）
-![输入图片说明](/imgs/2024-08-13/WWcMuV0hKz7MXT6d.png)
+Start和End分别传入刚刚制作的Sce'ne
+![输入图片说明](/imgs/2024-08-13/HYO8vWCUuB5VsMD3.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE4Nzc2MzI1LC0yMTMwODM4MTU0LDE2MD
+eyJoaXN0b3J5IjpbNTA3NTExODAxLC0yMTMwODM4MTU0LDE2MD
 YwNjg0MTUsLTExODY5Njg4MDIsODAzMjEwOTUwLDUyMTEwMTA2
 LC01MTc5OTY0NiwtMTAyNzk4MDc5OSwxNzYwNjk1MTU2LC0xMz
 c2NjQyOTc0LC0xNzAzNjQxNzEzLDExMTg2MTM1MzcsMjEyNDU2
