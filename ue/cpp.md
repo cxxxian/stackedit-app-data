@@ -1060,12 +1060,28 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 	DRAW_SPHERE_COLOR(ImpactPoint, FColor::Orange);
 }
 ```
+## 受击动画
+在Enemy.h中声明变量
+```
+private:
+	/**
+	*  Animation Montages
+	**/
+	UPROPERTY(EditDefaultsOnly, Category = Montages)
+	UAnimMontage* HitReactMontage;
+
+protected:
+	/**
+	* Play montage function
+	**/
+	void PlayHitReactMontage(const FName& SectionName);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzY2MTI3ODIsLTYxODYzNDI4NywtNz
-U3NjEzMTYwLC0xMTg3MjMzOTE4LC02MTAxOTczNDgsMTcxMTgy
-Mjk0MywtMTc2NjMxMzU4Niw1MDc4ODAwMjMsLTIwOTc2Nzg4ND
-AsMTk5MTM1MDYyNSwtNzcwNTM1NDIzLC0xMzU3Mjk3MTY3LC0x
-NTA0NzMxOTQwLDE3OTEwMTU4NDgsLTE3MzA0NDA2OTQsMTgxMT
-UwNzMyMywtMjEzMDgzODE1NCwxNjA2MDY4NDE1LC0xMTg2OTY4
-ODAyLDgwMzIxMDk1MF19
+eyJoaXN0b3J5IjpbMjA0ODE1NjEzNSwtMTY3NjYxMjc4MiwtNj
+E4NjM0Mjg3LC03NTc2MTMxNjAsLTExODcyMzM5MTgsLTYxMDE5
+NzM0OCwxNzExODIyOTQzLC0xNzY2MzEzNTg2LDUwNzg4MDAyMy
+wtMjA5NzY3ODg0MCwxOTkxMzUwNjI1LC03NzA1MzU0MjMsLTEz
+NTcyOTcxNjcsLTE1MDQ3MzE5NDAsMTc5MTAxNTg0OCwtMTczMD
+Q0MDY5NCwxODExNTA3MzIzLC0yMTMwODM4MTU0LDE2MDYwNjg0
+MTUsLTExODY5Njg4MDJdfQ==
 -->
