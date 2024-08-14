@@ -1048,13 +1048,24 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 	}
 }
 ```
-
+### 修改DEBUG
+新建一条宏定义，新加变量Color可以自己更改颜色，画出的球体5秒后消失
+```
+#define DRAW_SPHERE_COLOR(Location, Color) DrawDebugSphere(GetWorld(), Location, 8.f, 12, Color, false, 5.f);
+```
+修改GetHit方法，使用新的go
+```
+void AEnemy::GetHit(const FVector& ImpactPoint)
+{
+	DRAW_SPHERE_COLOR(ImpactPoint, FColor::Orange);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjMxNTIyNzUxLC02MTg2MzQyODcsLTc1Nz
-YxMzE2MCwtMTE4NzIzMzkxOCwtNjEwMTk3MzQ4LDE3MTE4MjI5
-NDMsLTE3NjYzMTM1ODYsNTA3ODgwMDIzLC0yMDk3Njc4ODQwLD
-E5OTEzNTA2MjUsLTc3MDUzNTQyMywtMTM1NzI5NzE2NywtMTUw
-NDczMTk0MCwxNzkxMDE1ODQ4LC0xNzMwNDQwNjk0LDE4MTE1MD
-czMjMsLTIxMzA4MzgxNTQsMTYwNjA2ODQxNSwtMTE4Njk2ODgw
-Miw4MDMyMTA5NTBdfQ==
+eyJoaXN0b3J5IjpbMTc3NTcyODg5MCwtNjE4NjM0Mjg3LC03NT
+c2MTMxNjAsLTExODcyMzM5MTgsLTYxMDE5NzM0OCwxNzExODIy
+OTQzLC0xNzY2MzEzNTg2LDUwNzg4MDAyMywtMjA5NzY3ODg0MC
+wxOTkxMzUwNjI1LC03NzA1MzU0MjMsLTEzNTcyOTcxNjcsLTE1
+MDQ3MzE5NDAsMTc5MTAxNTg0OCwtMTczMDQ0MDY5NCwxODExNT
+A3MzIzLC0yMTMwODM4MTU0LDE2MDYwNjg0MTUsLTExODY5Njg4
+MDIsODAzMjEwOTUwXX0=
 -->
