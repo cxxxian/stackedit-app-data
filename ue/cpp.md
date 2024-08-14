@@ -1088,6 +1088,7 @@ void AEnemy::PlayHitReactMontage(const FName& SectionName)
 }
 ```
 ## 计算受击角度
+首先得到敌人向前的向量，以及受击点减去敌人位置的向量，将会得到一个从敌人位置指向受击点位置的向量，GetSafeNormal()将其单位化
 ```
 void AEnemy::GetHit(const FVector& ImpactPoint)
 {
@@ -1097,12 +1098,13 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 	const FVector Forward = GetActorForwardVector();
 	const FVector ToHit = (ImpactPoint - GetActorLocation()).GetSafeNormal();
 }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzY2MjI5NzIsNjE2NjY3NDc1LC0xNj
-c2NjEyNzgyLC02MTg2MzQyODcsLTc1NzYxMzE2MCwtMTE4NzIz
-MzkxOCwtNjEwMTk3MzQ4LDE3MTE4MjI5NDMsLTE3NjYzMTM1OD
-YsNTA3ODgwMDIzLC0yMDk3Njc4ODQwLDE5OTEzNTA2MjUsLTc3
-MDUzNTQyMywtMTM1NzI5NzE2NywtMTUwNDczMTk0MCwxNzkxMD
-E1ODQ4LC0xNzMwNDQwNjk0LDE4MTE1MDczMjMsLTIxMzA4Mzgx
-NTQsMTYwNjA2ODQxNV19
+eyJoaXN0b3J5IjpbODk3MDI2Mzg5LDYxNjY2NzQ3NSwtMTY3Nj
+YxMjc4MiwtNjE4NjM0Mjg3LC03NTc2MTMxNjAsLTExODcyMzM5
+MTgsLTYxMDE5NzM0OCwxNzExODIyOTQzLC0xNzY2MzEzNTg2LD
+UwNzg4MDAyMywtMjA5NzY3ODg0MCwxOTkxMzUwNjI1LC03NzA1
+MzU0MjMsLTEzNTcyOTcxNjcsLTE1MDQ3MzE5NDAsMTc5MTAxNT
+g0OCwtMTczMDQ0MDY5NCwxODExNTA3MzIzLC0yMTMwODM4MTU0
+LDE2MDYwNjg0MTVdfQ==
 -->
