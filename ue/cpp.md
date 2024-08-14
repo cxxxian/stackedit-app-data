@@ -1013,10 +1013,11 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 }
 ```
 在Weapon.cpp中，
-`
+```
 #include "Interfaces/HitInterface.h"
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgxMTMxMzc0NiwtMTE4NzIzMzkxOCwtNj
+eyJoaXN0b3J5IjpbLTc1NzYxMzE2MCwtMTE4NzIzMzkxOCwtNj
 EwMTk3MzQ4LDE3MTE4MjI5NDMsLTE3NjYzMTM1ODYsNTA3ODgw
 MDIzLC0yMDk3Njc4ODQwLDE5OTEzNTA2MjUsLTc3MDUzNTQyMy
 wtMTM1NzI5NzE2NywtMTUwNDczMTk0MCwxNzkxMDE1ODQ4LC0x
