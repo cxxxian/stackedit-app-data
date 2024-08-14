@@ -1014,7 +1014,7 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 ```
 在Weapon.cpp中，在先前OnBoxOverlap的基础上，利用BoxHit来进行操作。
 1.if (BoxHit.GetActor())，如果击中了对象返回为true后
-2.将BoxHit.GetActor()转化为IHitInterface，此时能转化的原因是我们击中的敌人为enemy类型，
+2.将BoxHit.GetActor()转化为IHitInterface，此时能转化的原因是我们击中的敌人为enemy类型，而e
 ```
 IHitInterface* HitInterface = Cast<IHitInterface>(BoxHit.GetActor());
 ```
@@ -1047,7 +1047,7 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3MDkxNTAzMywtNzU3NjEzMTYwLC0xMT
+eyJoaXN0b3J5IjpbMjAxNzA2NTMyNiwtNzU3NjEzMTYwLC0xMT
 g3MjMzOTE4LC02MTAxOTczNDgsMTcxMTgyMjk0MywtMTc2NjMx
 MzU4Niw1MDc4ODAwMjMsLTIwOTc2Nzg4NDAsMTk5MTM1MDYyNS
 wtNzcwNTM1NDIzLC0xMzU3Mjk3MTY3LC0xNTA0NzMxOTQwLDE3
