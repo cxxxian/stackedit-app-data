@@ -996,13 +996,17 @@ AEnemy::AEnemy()
 }
 ```
 ### 多重继承
-同时继承自ACharacter和IHitInterface
+在Enemy.h中，同时继承自ACharacter和IHitInterface
 ```
 #include "Interfaces/HitInterface"
 class SLASH_API AEnemy : public ACharacter, public IHitInterface
 ```
+并且override函数 GetHit
+```
+virtual void GetHit(const FVector& ImpactPoint) override;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4NDI4ODA2MSwxNzExODIyOTQzLC0xNz
+eyJoaXN0b3J5IjpbLTYxMDE5NzM0OCwxNzExODIyOTQzLC0xNz
 Y2MzEzNTg2LDUwNzg4MDAyMywtMjA5NzY3ODg0MCwxOTkxMzUw
 NjI1LC03NzA1MzU0MjMsLTEzNTcyOTcxNjcsLTE1MDQ3MzE5ND
 AsMTc5MTAxNTg0OCwtMTczMDQ0MDY5NCwxODExNTA3MzIzLC0y
