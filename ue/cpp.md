@@ -1013,6 +1013,11 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 }
 ```
 在Weapon.cpp中，在先前OnBoxOverlap的基础上，利用BoxHit来进行操作。
+1.if (BoxHit.GetActor())，如果击中了对象返回为true后
+2.将BoxHit.GetActor()转化为IHitInterface，此时能转化的原因是我们ji'zh
+```
+IHitInterface* HitInterface = Cast<IHitInterface>(BoxHit.GetActor());
+```
 ```
 #include "Interfaces/HitInterface.h"
 void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
@@ -1042,7 +1047,7 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODkzNzczOTMsLTc1NzYxMzE2MCwtMT
+eyJoaXN0b3J5IjpbLTE2NDk1MjUxNTcsLTc1NzYxMzE2MCwtMT
 E4NzIzMzkxOCwtNjEwMTk3MzQ4LDE3MTE4MjI5NDMsLTE3NjYz
 MTM1ODYsNTA3ODgwMDIzLC0yMDk3Njc4ODQwLDE5OTEzNTA2Mj
 UsLTc3MDUzNTQyMywtMTM1NzI5NzE2NywtMTUwNDczMTk0MCwx
