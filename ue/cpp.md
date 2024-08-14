@@ -1005,12 +1005,19 @@ class SLASH_API AEnemy : public ACharacter, public IHitInterface
 ```
 virtual void GetHit(const FVector& ImpactPoint) override;
 ```
+在Enemy.cpp中实现方法GetHit，根据传入的ImpactPoint绘制debug球体，即可做到
+```
+void AEnemy::GetHit(const FVector& ImpactPoint)
+{
+	DRAW_SPHERE(ImpactPoint);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYxMDE5NzM0OCwxNzExODIyOTQzLC0xNz
-Y2MzEzNTg2LDUwNzg4MDAyMywtMjA5NzY3ODg0MCwxOTkxMzUw
-NjI1LC03NzA1MzU0MjMsLTEzNTcyOTcxNjcsLTE1MDQ3MzE5ND
-AsMTc5MTAxNTg0OCwtMTczMDQ0MDY5NCwxODExNTA3MzIzLC0y
-MTMwODM4MTU0LDE2MDYwNjg0MTUsLTExODY5Njg4MDIsODAzMj
-EwOTUwLDUyMTEwMTA2LC01MTc5OTY0NiwtMTAyNzk4MDc5OSwx
-NzYwNjk1MTU2XX0=
+eyJoaXN0b3J5IjpbODM2MzgwNzgzLC02MTAxOTczNDgsMTcxMT
+gyMjk0MywtMTc2NjMxMzU4Niw1MDc4ODAwMjMsLTIwOTc2Nzg4
+NDAsMTk5MTM1MDYyNSwtNzcwNTM1NDIzLC0xMzU3Mjk3MTY3LC
+0xNTA0NzMxOTQwLDE3OTEwMTU4NDgsLTE3MzA0NDA2OTQsMTgx
+MTUwNzMyMywtMjEzMDgzODE1NCwxNjA2MDY4NDE1LC0xMTg2OT
+Y4ODAyLDgwMzIxMDk1MCw1MjExMDEwNiwtNTE3OTk2NDYsLTEw
+Mjc5ODA3OTldfQ==
 -->
