@@ -1012,16 +1012,41 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 	DRAW_SPHERE(ImpactPoint);
 }
 ```
-在Weapon.cpp中，
+在Weapon.cpp中，在先前OnBoxOverlap的基础上，利用BoxHit来进行操作。
 ```
 #include "Interfaces/HitInterface.h"
+void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	const FVector Start = BoxTraceStart->GetComponentLocation();
+	const FVector End = BoxTraceEnd->GetComponentLocation();
+
+	TArray<AActor*> ActorsToIgnore;
+	ActorsToIgnore.Add(this);
+	FHitResult BoxHit;
+
+	UKismetSystemLibrary::BoxTraceSingle(
+		this, Start, End,
+		FVector(5.f, 5.f, 5.f),
+		BoxTraceStart->GetComponentRotation(),
+		ETraceTypeQuery::TraceTypeQuery1,
+		false,
+		ActorsToIgnore,
+		EDrawDebugTrace::ForDuration,
+		BoxHit, true);
+	if (BoxHit.GetActor()) {
+		IHitInterface* HitInterface = Cast<IHitInterface>(BoxHit.GetActor());
+		if (HitInterface) {
+			HitInterface->GetHit(BoxHit.ImpactPoint);
+		}
+	}
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1NzYxMzE2MCwtMTE4NzIzMzkxOCwtNj
-EwMTk3MzQ4LDE3MTE4MjI5NDMsLTE3NjYzMTM1ODYsNTA3ODgw
-MDIzLC0yMDk3Njc4ODQwLDE5OTEzNTA2MjUsLTc3MDUzNTQyMy
-wtMTM1NzI5NzE2NywtMTUwNDczMTk0MCwxNzkxMDE1ODQ4LC0x
-NzMwNDQwNjk0LDE4MTE1MDczMjMsLTIxMzA4MzgxNTQsMTYwNj
-A2ODQxNSwtMTE4Njk2ODgwMiw4MDMyMTA5NTAsNTIxMTAxMDYs
-LTUxNzk5NjQ2XX0=
+eyJoaXN0b3J5IjpbLTE1ODkzNzczOTMsLTc1NzYxMzE2MCwtMT
+E4NzIzMzkxOCwtNjEwMTk3MzQ4LDE3MTE4MjI5NDMsLTE3NjYz
+MTM1ODYsNTA3ODgwMDIzLC0yMDk3Njc4ODQwLDE5OTEzNTA2Mj
+UsLTc3MDUzNTQyMywtMTM1NzI5NzE2NywtMTUwNDczMTk0MCwx
+NzkxMDE1ODQ4LC0xNzMwNDQwNjk0LDE4MTE1MDczMjMsLTIxMz
+A4MzgxNTQsMTYwNjA2ODQxNSwtMTE4Njk2ODgwMiw4MDMyMTA5
+NTAsNTIxMTAxMDZdfQ==
 -->
