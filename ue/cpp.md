@@ -1076,8 +1076,19 @@ protected:
 	**/
 	void PlayHitReactMontage(const FName& SectionName);
 ```
+在Enemy.cpp中实现该方法，声明动画实例对象AnimInstance，播放对应蒙太奇中名字相符合的片段
+```
+void AEnemy::PlayHitReactMontage(const FName& SectionName)
+{
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if (AnimInstance && HitReactMontage) {
+		AnimInstance->Montage_Play(HitReactMontage);
+		AnimInstance->Montage_JumpToSection(SectionName, HitReactMontage);
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0ODE1NjEzNSwtMTY3NjYxMjc4MiwtNj
+eyJoaXN0b3J5IjpbMjA5NTkyNjAyMCwtMTY3NjYxMjc4MiwtNj
 E4NjM0Mjg3LC03NTc2MTMxNjAsLTExODcyMzM5MTgsLTYxMDE5
 NzM0OCwxNzExODIyOTQzLC0xNzY2MzEzNTg2LDUwNzg4MDAyMy
 wtMjA5NzY3ODg0MCwxOTkxMzUwNjI1LC03NzA1MzU0MjMsLTEz
