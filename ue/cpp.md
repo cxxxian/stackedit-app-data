@@ -1087,12 +1087,22 @@ void AEnemy::PlayHitReactMontage(const FName& SectionName)
 	}
 }
 ```
+## 计算受击角度
+```
+void AEnemy::GetHit(const FVector& ImpactPoint)
+{
+	DRAW_SPHERE_COLOR(ImpactPoint, FColor::Orange);
+	PlayHitReactMontage(FName("FromLeft"));
+
+	const FVector Forward = GetActorForwardVector();
+	const FVector ToHit = (ImpactPoint - GetActorLocation()).GetSafeNormal();
+}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjE2NjY3NDc1LC0xNjc2NjEyNzgyLC02MT
-g2MzQyODcsLTc1NzYxMzE2MCwtMTE4NzIzMzkxOCwtNjEwMTk3
-MzQ4LDE3MTE4MjI5NDMsLTE3NjYzMTM1ODYsNTA3ODgwMDIzLC
-0yMDk3Njc4ODQwLDE5OTEzNTA2MjUsLTc3MDUzNTQyMywtMTM1
-NzI5NzE2NywtMTUwNDczMTk0MCwxNzkxMDE1ODQ4LC0xNzMwND
-QwNjk0LDE4MTE1MDczMjMsLTIxMzA4MzgxNTQsMTYwNjA2ODQx
-NSwtMTE4Njk2ODgwMl19
+eyJoaXN0b3J5IjpbLTEyMzY2MjI5NzIsNjE2NjY3NDc1LC0xNj
+c2NjEyNzgyLC02MTg2MzQyODcsLTc1NzYxMzE2MCwtMTE4NzIz
+MzkxOCwtNjEwMTk3MzQ4LDE3MTE4MjI5NDMsLTE3NjYzMTM1OD
+YsNTA3ODgwMDIzLC0yMDk3Njc4ODQwLDE5OTEzNTA2MjUsLTc3
+MDUzNTQyMywtMTM1NzI5NzE2NywtMTUwNDczMTk0MCwxNzkxMD
+E1ODQ4LC0xNzMwNDQwNjk0LDE4MTE1MDczMjMsLTIxMzA4Mzgx
+NTQsMTYwNjA2ODQxNV19
 -->
