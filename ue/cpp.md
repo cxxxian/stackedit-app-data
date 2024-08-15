@@ -1131,14 +1131,15 @@ void AEnemy::DirectionHitReact(const FVector& ImpactPoint)
 	UKismetSystemLibrary::DrawDebugArrow(this, GetActorLocation(), GetActorLocation() + ToHit * 60.f, 5.f, FColor::Green, 5.f);
 }
 ```
-### 解决攻击一次可能会触发多个触发he
-
+### 解决攻击一次可能会触发多个触发盒子导致攻击变向问题
+在Weapon.h中声明一个数组
+TArray<AActor*> IgnoreActors;
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg1NDI3MTUxLC0xNDYzMzIzOTE4LDE4ND
-g4OTE5MywxMzc5MzM4NjQxLC04NzUxNjMyNiw4OTcwMjYzODks
-NjE2NjY3NDc1LC0xNjc2NjEyNzgyLC02MTg2MzQyODcsLTc1Nz
-YxMzE2MCwtMTE4NzIzMzkxOCwtNjEwMTk3MzQ4LDE3MTE4MjI5
-NDMsLTE3NjYzMTM1ODYsNTA3ODgwMDIzLC0yMDk3Njc4ODQwLD
-E5OTEzNTA2MjUsLTc3MDUzNTQyMywtMTM1NzI5NzE2NywtMTUw
-NDczMTk0MF19
+eyJoaXN0b3J5IjpbMTk1MTk0Nzc2NCwtMTQ2MzMyMzkxOCwxOD
+Q4ODkxOTMsMTM3OTMzODY0MSwtODc1MTYzMjYsODk3MDI2Mzg5
+LDYxNjY2NzQ3NSwtMTY3NjYxMjc4MiwtNjE4NjM0Mjg3LC03NT
+c2MTMxNjAsLTExODcyMzM5MTgsLTYxMDE5NzM0OCwxNzExODIy
+OTQzLC0xNzY2MzEzNTg2LDUwNzg4MDAyMywtMjA5NzY3ODg0MC
+wxOTkxMzUwNjI1LC03NzA1MzU0MjMsLTEzNTcyOTcxNjcsLTE1
+MDQ3MzE5NDBdfQ==
 -->
