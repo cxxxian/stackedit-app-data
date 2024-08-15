@@ -1091,7 +1091,8 @@ void AEnemy::PlayHitReactMontage(const FName& SectionName)
 1.首先得到敌人向前的向量，以及受击点减去敌人位置的向量，将会得到一个从敌人位置指向受击点位置的向量，GetSafeNormal()将其单位化。
 2.ImpactLowered是将受击点改为到与敌人同一Z轴高度，使得与向前向量在同一Z轴高度更加方便观察
 3.CosTheta得到点乘的值，再利用Acos得到反余弦的值，最终得到Theta的值
-4.FMath::RadiansToDegrees(Theta)
+4.FMath::RadiansToDegrees(Theta)将弧度制转化为度数
+5.UKismetSystemLibrary::DrawDebugArrow用来绘制箭头，根据传入的向量来绘制
 ```
 void AEnemy::GetHit(const FVector& ImpactPoint)
 {
@@ -1113,11 +1114,11 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODk3OTMwODksODk3MDI2Mzg5LDYxNjY2Nz
-Q3NSwtMTY3NjYxMjc4MiwtNjE4NjM0Mjg3LC03NTc2MTMxNjAs
-LTExODcyMzM5MTgsLTYxMDE5NzM0OCwxNzExODIyOTQzLC0xNz
-Y2MzEzNTg2LDUwNzg4MDAyMywtMjA5NzY3ODg0MCwxOTkxMzUw
-NjI1LC03NzA1MzU0MjMsLTEzNTcyOTcxNjcsLTE1MDQ3MzE5ND
-AsMTc5MTAxNTg0OCwtMTczMDQ0MDY5NCwxODExNTA3MzIzLC0y
-MTMwODM4MTU0XX0=
+eyJoaXN0b3J5IjpbLTg3NTE2MzI2LDg5NzAyNjM4OSw2MTY2Nj
+c0NzUsLTE2NzY2MTI3ODIsLTYxODYzNDI4NywtNzU3NjEzMTYw
+LC0xMTg3MjMzOTE4LC02MTAxOTczNDgsMTcxMTgyMjk0MywtMT
+c2NjMxMzU4Niw1MDc4ODAwMjMsLTIwOTc2Nzg4NDAsMTk5MTM1
+MDYyNSwtNzcwNTM1NDIzLC0xMzU3Mjk3MTY3LC0xNTA0NzMxOT
+QwLDE3OTEwMTU4NDgsLTE3MzA0NDA2OTQsMTgxMTUwNzMyMywt
+MjEzMDgzODE1NF19
 -->
