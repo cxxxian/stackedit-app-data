@@ -1166,7 +1166,7 @@ void ASlashCharacter::SetWeaponCollisionEnable(ECollisionEnabled::Type Collision
 }
 ```
 ## 受击时在受击点释放音效/溅血效果
-在Enemy.h中，声明HitSound，制作MetaSound音效，在Enemy蓝图中赋值使用，HitParticles使用导入的k
+在Enemy.h中，声明HitSound，制作MetaSound音效，在Enemy蓝图中赋值使用，在蓝图中选择使用导入的粒子特效赋值给HitParticles
 ```
 private:
 UPROPERTY(EditAnywhere, Category = Sounds)
@@ -1174,7 +1174,7 @@ USoundBase* HitSound;
 UPROPERTY(EditAnywhere, Category = VisualEffects)
 UParticleSystem* HitParticles;
 ```
-在Enemy.cpp中，完善GetHit方法，制作释放音效的功能
+在Enemy.cpp中，完善GetHit方法，制作释放音效/溅血的功能
 ```
 #include "Kismet/GameplayStatics.h"
 void AEnemy::GetHit(const FVector& ImpactPoint)
@@ -1197,11 +1197,11 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4NzY1ODY1OCwtMTEwOTgyMDQxNCwtMT
-c5NTA0NjkyLC0xNDYzMzIzOTE4LDE4NDg4OTE5MywxMzc5MzM4
-NjQxLC04NzUxNjMyNiw4OTcwMjYzODksNjE2NjY3NDc1LC0xNj
-c2NjEyNzgyLC02MTg2MzQyODcsLTc1NzYxMzE2MCwtMTE4NzIz
-MzkxOCwtNjEwMTk3MzQ4LDE3MTE4MjI5NDMsLTE3NjYzMTM1OD
-YsNTA3ODgwMDIzLC0yMDk3Njc4ODQwLDE5OTEzNTA2MjUsLTc3
-MDUzNTQyM119
+eyJoaXN0b3J5IjpbOTA5MzM4Njk4LC0xMTA5ODIwNDE0LC0xNz
+k1MDQ2OTIsLTE0NjMzMjM5MTgsMTg0ODg5MTkzLDEzNzkzMzg2
+NDEsLTg3NTE2MzI2LDg5NzAyNjM4OSw2MTY2Njc0NzUsLTE2Nz
+Y2MTI3ODIsLTYxODYzNDI4NywtNzU3NjEzMTYwLC0xMTg3MjMz
+OTE4LC02MTAxOTczNDgsMTcxMTgyMjk0MywtMTc2NjMxMzU4Ni
+w1MDc4ODAwMjMsLTIwOTc2Nzg4NDAsMTk5MTM1MDYyNSwtNzcw
+NTM1NDIzXX0=
 -->
