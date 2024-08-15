@@ -1131,10 +1131,10 @@ void AEnemy::DirectionHitReact(const FVector& ImpactPoint)
 	UKismetSystemLibrary::DrawDebugArrow(this, GetActorLocation(), GetActorLocation() + ToHit * 60.f, 5.f, FColor::Green, 5.f);
 }
 ```
-### 解决
+### 解决攻击一次可能会触发多个触发he
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI2OTgzODUzLC0xNDYzMzIzOTE4LDE4ND
+eyJoaXN0b3J5IjpbMjg1NDI3MTUxLC0xNDYzMzIzOTE4LDE4ND
 g4OTE5MywxMzc5MzM4NjQxLC04NzUxNjMyNiw4OTcwMjYzODks
 NjE2NjY3NDc1LC0xNjc2NjEyNzgyLC02MTg2MzQyODcsLTc1Nz
 YxMzE2MCwtMTE4NzIzMzkxOCwtNjEwMTk3MzQ4LDE3MTE4MjI5
