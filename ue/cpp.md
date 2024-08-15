@@ -1088,7 +1088,8 @@ void AEnemy::PlayHitReactMontage(const FName& SectionName)
 }
 ```
 ## 计算受击角度
-首先得到敌人向前的向量，以及受击点减去敌人位置的向量，将会得到一个从敌人位置指向受击点位置的向量，GetSafeNormal()将其单位化
+1.首先得到敌人向前的向量，以及受击点减去敌人位置的向量，将会得到一个从敌人位置指向受击点位置的向量，GetSafeNormal()将其单位化。
+2.ImpactLowered是将受击点改为到与敌人同一Z轴高度使得
 ```
 void AEnemy::GetHit(const FVector& ImpactPoint)
 {
@@ -1096,15 +1097,25 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 	PlayHitReactMontage(FName("FromLeft"));
 
 	const FVector Forward = GetActorForwardVector();
-	const FVector ToHit = (ImpactPoint - GetActorLocation()).GetSafeNormal();
+	const FVector ImpactLowered(ImpactPoint.X, ImpactPoint.Y, GetActorLocation().Z);
+	const FVector ToHit = (ImpactLowered - GetActorLocation()).GetSafeNormal();
+
+	const double CosTheta = FVector::DotProduct(Forward, ToHit);
+	double Theta = FMath::Acos(CosTheta);
+	Theta = FMath::RadiansToDegrees(Theta);
+	if (GEngine) {
+		GEngine->AddOnScreenDebugMessage(1, 5.f, FColor::Green, FString::Printf(TEXT("Theta: %f"), Theta));
+	}
+	UKismetSystemLibrary::DrawDebugArrow(this, GetActorLocation(), GetActorLocation() + Forward * 60.f, 5.f, FColor::Red, 5.f);
+	UKismetSystemLibrary::DrawDebugArrow(this, GetActorLocation(), GetActorLocation() + ToHit * 60.f, 5.f, FColor::Green, 5.f);
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODk3MDI2Mzg5LDYxNjY2NzQ3NSwtMTY3Nj
-YxMjc4MiwtNjE4NjM0Mjg3LC03NTc2MTMxNjAsLTExODcyMzM5
-MTgsLTYxMDE5NzM0OCwxNzExODIyOTQzLC0xNzY2MzEzNTg2LD
-UwNzg4MDAyMywtMjA5NzY3ODg0MCwxOTkxMzUwNjI1LC03NzA1
-MzU0MjMsLTEzNTcyOTcxNjcsLTE1MDQ3MzE5NDAsMTc5MTAxNT
-g0OCwtMTczMDQ0MDY5NCwxODExNTA3MzIzLC0yMTMwODM4MTU0
-LDE2MDYwNjg0MTVdfQ==
+eyJoaXN0b3J5IjpbLTE0MjgxMzgzMSw4OTcwMjYzODksNjE2Nj
+Y3NDc1LC0xNjc2NjEyNzgyLC02MTg2MzQyODcsLTc1NzYxMzE2
+MCwtMTE4NzIzMzkxOCwtNjEwMTk3MzQ4LDE3MTE4MjI5NDMsLT
+E3NjYzMTM1ODYsNTA3ODgwMDIzLC0yMDk3Njc4ODQwLDE5OTEz
+NTA2MjUsLTc3MDUzNTQyMywtMTM1NzI5NzE2NywtMTUwNDczMT
+k0MCwxNzkxMDE1ODQ4LC0xNzMwNDQwNjk0LDE4MTE1MDczMjMs
+LTIxMzA4MzgxNTRdfQ==
 -->
