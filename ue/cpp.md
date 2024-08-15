@@ -1092,9 +1092,9 @@ void AEnemy::PlayHitReactMontage(const FName& SectionName)
  2. ImpactLowered是将受击点改为到与敌人同一Z轴高度，使得与向前向量在同一Z轴高度更加方便观察
  3. CosTheta得到点乘的值，再利用Acos得到反余弦的值，最终得到Theta的值
  4. FMath::RadiansToDegrees(Theta)将弧度制转化为度数
-    5.计算叉乘的向量结果
-
-7.UKismetSystemLibrary::DrawDebugArrow用来绘制箭头，根据传入的向量来绘制
+ 5. 计算叉乘的向量结果
+ 6. 根据得到的角度来进行if分支的判断，初始默认为FromBack，如果有其他情况则改成对应情况，没有的话则是FromBack，将对应的名字传入
+ 8. UKismetSystemLibrary::DrawDebugArrow用来绘制箭头，根据传入的向量来绘制
 
 ```
 void AEnemy::GetHit(const FVector& ImpactPoint)
@@ -1132,11 +1132,11 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTIwNzI3MDMsMTM3OTMzODY0MSwtOD
-c1MTYzMjYsODk3MDI2Mzg5LDYxNjY2NzQ3NSwtMTY3NjYxMjc4
-MiwtNjE4NjM0Mjg3LC03NTc2MTMxNjAsLTExODcyMzM5MTgsLT
-YxMDE5NzM0OCwxNzExODIyOTQzLC0xNzY2MzEzNTg2LDUwNzg4
-MDAyMywtMjA5NzY3ODg0MCwxOTkxMzUwNjI1LC03NzA1MzU0Mj
-MsLTEzNTcyOTcxNjcsLTE1MDQ3MzE5NDAsMTc5MTAxNTg0OCwt
-MTczMDQ0MDY5NF19
+eyJoaXN0b3J5IjpbMTg0MzIxNTY0OCwxMzc5MzM4NjQxLC04Nz
+UxNjMyNiw4OTcwMjYzODksNjE2NjY3NDc1LC0xNjc2NjEyNzgy
+LC02MTg2MzQyODcsLTc1NzYxMzE2MCwtMTE4NzIzMzkxOCwtNj
+EwMTk3MzQ4LDE3MTE4MjI5NDMsLTE3NjYzMTM1ODYsNTA3ODgw
+MDIzLC0yMDk3Njc4ODQwLDE5OTEzNTA2MjUsLTc3MDUzNTQyMy
+wtMTM1NzI5NzE2NywtMTUwNDczMTk0MCwxNzkxMDE1ODQ4LC0x
+NzMwNDQwNjk0XX0=
 -->
