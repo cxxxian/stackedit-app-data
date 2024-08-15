@@ -1136,7 +1136,7 @@ void AEnemy::DirectionHitReact(const FVector& ImpactPoint)
 ```
 TArray<AActor*> IgnoreActors;
 ```
-在Weapon.cpp中
+在Weapon.cpp中添加一个循环，遍历IgnoreActors，将chong'qi
 ```
 void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
@@ -1152,11 +1152,11 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 ...(省略)
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDA0NDc3MTY2LC0xNDYzMzIzOTE4LDE4ND
-g4OTE5MywxMzc5MzM4NjQxLC04NzUxNjMyNiw4OTcwMjYzODks
-NjE2NjY3NDc1LC0xNjc2NjEyNzgyLC02MTg2MzQyODcsLTc1Nz
-YxMzE2MCwtMTE4NzIzMzkxOCwtNjEwMTk3MzQ4LDE3MTE4MjI5
-NDMsLTE3NjYzMTM1ODYsNTA3ODgwMDIzLC0yMDk3Njc4ODQwLD
-E5OTEzNTA2MjUsLTc3MDUzNTQyMywtMTM1NzI5NzE2NywtMTUw
-NDczMTk0MF19
+eyJoaXN0b3J5IjpbMTYyNTI3NzIzNywtMTQ2MzMyMzkxOCwxOD
+Q4ODkxOTMsMTM3OTMzODY0MSwtODc1MTYzMjYsODk3MDI2Mzg5
+LDYxNjY2NzQ3NSwtMTY3NjYxMjc4MiwtNjE4NjM0Mjg3LC03NT
+c2MTMxNjAsLTExODcyMzM5MTgsLTYxMDE5NzM0OCwxNzExODIy
+OTQzLC0xNzY2MzEzNTg2LDUwNzg4MDAyMywtMjA5NzY3ODg0MC
+wxOTkxMzUwNjI1LC03NzA1MzU0MjMsLTEzNTcyOTcxNjcsLTE1
+MDQ3MzE5NDBdfQ==
 -->
