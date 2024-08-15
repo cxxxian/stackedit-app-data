@@ -1154,6 +1154,7 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 ```
 由于IgnoreActors是每次判断的依据，所以在武器每次开启，结束碰撞时，需要在结束时清零，以便于下次继续计算。
 所以我们可以在SlashCharacter.cpp中，利用先前在动画蓝图里面定义的结束碰撞的轨道，在结束碰撞后将其清零
+![输入图片说明](/imgs/2024-08-15/9AYdt4I18lp6ZNL2.png)
 ```
 void ASlashCharacter::SetWeaponCollisionEnable(ECollisionEnabled::Type CollisionEnabled)
 {
@@ -1165,11 +1166,11 @@ void ASlashCharacter::SetWeaponCollisionEnable(ECollisionEnabled::Type Collision
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjA3NjQ4MjgsLTE0NjMzMjM5MTgsMT
-g0ODg5MTkzLDEzNzkzMzg2NDEsLTg3NTE2MzI2LDg5NzAyNjM4
-OSw2MTY2Njc0NzUsLTE2NzY2MTI3ODIsLTYxODYzNDI4NywtNz
-U3NjEzMTYwLC0xMTg3MjMzOTE4LC02MTAxOTczNDgsMTcxMTgy
-Mjk0MywtMTc2NjMxMzU4Niw1MDc4ODAwMjMsLTIwOTc2Nzg4ND
-AsMTk5MTM1MDYyNSwtNzcwNTM1NDIzLC0xMzU3Mjk3MTY3LC0x
-NTA0NzMxOTQwXX0=
+eyJoaXN0b3J5IjpbLTE3OTUwNDY5MiwtMTQ2MzMyMzkxOCwxOD
+Q4ODkxOTMsMTM3OTMzODY0MSwtODc1MTYzMjYsODk3MDI2Mzg5
+LDYxNjY2NzQ3NSwtMTY3NjYxMjc4MiwtNjE4NjM0Mjg3LC03NT
+c2MTMxNjAsLTExODcyMzM5MTgsLTYxMDE5NzM0OCwxNzExODIy
+OTQzLC0xNzY2MzEzNTg2LDUwNzg4MDAyMywtMjA5NzY3ODg0MC
+wxOTkxMzUwNjI1LC03NzA1MzU0MjMsLTEzNTcyOTcxNjcsLTE1
+MDQ3MzE5NDBdfQ==
 -->
