@@ -1134,9 +1134,10 @@ void AEnemy::DirectionHitReact(const FVector& ImpactPoint)
 ### 解决攻击一次可能会触发多个触发盒子导致攻击变向问题
 在Weapon.h中声明一个数组
 ```
+public:
 TArray<AActor*> IgnoreActors;
 ```
-在Weapon.cpp中添加一个循环，遍历IgnoreActors，将chong'qi
+在Weapon.cpp中添加一个循环，遍历IgnoreActors，将重叠的，未添加过的ActorsToIgnore.AddUnique(Actor);添加进去。
 ```
 void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
@@ -1151,8 +1152,9 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 	}
 ...(省略)
 ```
+由于IgnoreActors是每次判断的依据，s
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYyNTI3NzIzNywtMTQ2MzMyMzkxOCwxOD
+eyJoaXN0b3J5IjpbLTk1MzAxMTgwOSwtMTQ2MzMyMzkxOCwxOD
 Q4ODkxOTMsMTM3OTMzODY0MSwtODc1MTYzMjYsODk3MDI2Mzg5
 LDYxNjY2NzQ3NSwtMTY3NjYxMjc4MiwtNjE4NjM0Mjg3LC03NT
 c2MTMxNjAsLTExODcyMzM5MTgsLTYxMDE5NzM0OCwxNzExODIy
