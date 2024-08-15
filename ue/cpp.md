@@ -1165,12 +1165,31 @@ void ASlashCharacter::SetWeaponCollisionEnable(ECollisionEnabled::Type Collision
 	}
 }
 ```
+## 受击时在受击点释放音效
+在Enemy.cpp中，完善Gethit方法
+```
+#include "Kismet/GameplayStatics.h"
+void AEnemy::GetHit(const FVector& ImpactPoint)
+{
+	DRAW_SPHERE_COLOR(ImpactPoint, FColor::Orange);
+	
+
+	DirectionHitReact(ImpactPoint);
+
+	if (HitSound) {
+		UGameplayStatics::PlaySoundAtLocation(
+			this,
+			HitSound,
+			ImpactPoint);
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTUwNDY5MiwtMTQ2MzMyMzkxOCwxOD
-Q4ODkxOTMsMTM3OTMzODY0MSwtODc1MTYzMjYsODk3MDI2Mzg5
-LDYxNjY2NzQ3NSwtMTY3NjYxMjc4MiwtNjE4NjM0Mjg3LC03NT
-c2MTMxNjAsLTExODcyMzM5MTgsLTYxMDE5NzM0OCwxNzExODIy
-OTQzLC0xNzY2MzEzNTg2LDUwNzg4MDAyMywtMjA5NzY3ODg0MC
-wxOTkxMzUwNjI1LC03NzA1MzU0MjMsLTEzNTcyOTcxNjcsLTE1
-MDQ3MzE5NDBdfQ==
+eyJoaXN0b3J5IjpbMjAxNTg1NTQ3NywtMTc5NTA0NjkyLC0xND
+YzMzIzOTE4LDE4NDg4OTE5MywxMzc5MzM4NjQxLC04NzUxNjMy
+Niw4OTcwMjYzODksNjE2NjY3NDc1LC0xNjc2NjEyNzgyLC02MT
+g2MzQyODcsLTc1NzYxMzE2MCwtMTE4NzIzMzkxOCwtNjEwMTk3
+MzQ4LDE3MTE4MjI5NDMsLTE3NjYzMTM1ODYsNTA3ODgwMDIzLC
+0yMDk3Njc4ODQwLDE5OTEzNTA2MjUsLTc3MDUzNTQyMywtMTM1
+NzI5NzE2N119
 -->
