@@ -1093,8 +1093,8 @@ void AEnemy::PlayHitReactMontage(const FName& SectionName)
  3. CosTheta得到点乘的值，再利用Acos得到反余弦的值，最终得到Theta的值
  4. FMath::RadiansToDegrees(Theta)将弧度制转化为度数
  5. 计算叉乘的向量结果
- 6. 根据得到的角度来进行if分支的判断，初始默认为FromBack，如果有其他情况则改成对应情况，没有的话则是FromBack，将对应的名字传入
- 8. UKismetSystemLibrary::DrawDebugArrow用来绘制箭头，根据传入的向量来绘制
+ 6. 根据得到的角度来进行if分支的判断，初始默认为FromBack，如果有其他情况则改成对应情况，没有的话则是FromBack，将对应的名字传入蒙太奇进行播放。
+ 7. UKismetSystemLibrary::DrawDebugArrow用来绘制箭头，根据传入的向量来绘制
 
 ```
 void AEnemy::GetHit(const FVector& ImpactPoint)
@@ -1132,11 +1132,11 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg0MzIxNTY0OCwxMzc5MzM4NjQxLC04Nz
-UxNjMyNiw4OTcwMjYzODksNjE2NjY3NDc1LC0xNjc2NjEyNzgy
-LC02MTg2MzQyODcsLTc1NzYxMzE2MCwtMTE4NzIzMzkxOCwtNj
-EwMTk3MzQ4LDE3MTE4MjI5NDMsLTE3NjYzMTM1ODYsNTA3ODgw
-MDIzLC0yMDk3Njc4ODQwLDE5OTEzNTA2MjUsLTc3MDUzNTQyMy
-wtMTM1NzI5NzE2NywtMTUwNDczMTk0MCwxNzkxMDE1ODQ4LC0x
-NzMwNDQwNjk0XX0=
+eyJoaXN0b3J5IjpbMTg0ODg5MTkzLDEzNzkzMzg2NDEsLTg3NT
+E2MzI2LDg5NzAyNjM4OSw2MTY2Njc0NzUsLTE2NzY2MTI3ODIs
+LTYxODYzNDI4NywtNzU3NjEzMTYwLC0xMTg3MjMzOTE4LC02MT
+AxOTczNDgsMTcxMTgyMjk0MywtMTc2NjMxMzU4Niw1MDc4ODAw
+MjMsLTIwOTc2Nzg4NDAsMTk5MTM1MDYyNSwtNzcwNTM1NDIzLC
+0xMzU3Mjk3MTY3LC0xNTA0NzMxOTQwLDE3OTEwMTU4NDgsLTE3
+MzA0NDA2OTRdfQ==
 -->
