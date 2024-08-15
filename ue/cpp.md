@@ -1097,11 +1097,8 @@ void AEnemy::PlayHitReactMontage(const FName& SectionName)
  7. UKismetSystemLibrary::DrawDebugArrow用来绘制箭头，根据传入的向量来绘制
 
 ```
-void AEnemy::GetHit(const FVector& ImpactPoint)
+void AEnemy::DirectionHitReact(const FVector& ImpactPoint)
 {
-	DRAW_SPHERE_COLOR(ImpactPoint, FColor::Orange);
-	PlayHitReactMontage(FName("FromLeft"));
-
 	const FVector Forward = GetActorForwardVector();
 	const FVector ImpactLowered(ImpactPoint.X, ImpactPoint.Y, GetActorLocation().Z);
 	const FVector ToHit = (ImpactLowered - GetActorLocation()).GetSafeNormal();
@@ -1109,19 +1106,21 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 	const double CosTheta = FVector::DotProduct(Forward, ToHit);
 	double Theta = FMath::Acos(CosTheta);
 	Theta = FMath::RadiansToDegrees(Theta);
+
 	const FVector CrossProduct = FVector::CrossProduct(Forward, ToHit);
-	
+
 	if (CrossProduct.Z < 0) {
+
 		Theta *= -1.f;
 	}
 
 	FName Section("FromBack");
-	if (Theta >= -45.f && Theta < 45.f) {Section = FName("FromFront");}
+	if (Theta >= -45.f && Theta < 45.f) { Section = FName("FromFront"); }
 	else if (Theta >= -135.f && Theta < -45.f) { Section = FName("FromLeft"); }
 	else if (Theta >= 45.f && Theta < 135.f) { Section = FName("FromRight"); }
 
 	PlayHitReactMontage(Section);
-	
+
 	UKismetSystemLibrary::DrawDebugArrow(this, GetActorLocation(), GetActorLocation() + CrossProduct * 100.f, 5.f, FColor::Blue, 5.f);
 
 	if (GEngine) {
@@ -1131,12 +1130,13 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 	UKismetSystemLibrary::DrawDebugArrow(this, GetActorLocation(), GetActorLocation() + ToHit * 60.f, 5.f, FColor::Green, 5.f);
 }
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg0ODg5MTkzLDEzNzkzMzg2NDEsLTg3NT
-E2MzI2LDg5NzAyNjM4OSw2MTY2Njc0NzUsLTE2NzY2MTI3ODIs
-LTYxODYzNDI4NywtNzU3NjEzMTYwLC0xMTg3MjMzOTE4LC02MT
-AxOTczNDgsMTcxMTgyMjk0MywtMTc2NjMxMzU4Niw1MDc4ODAw
-MjMsLTIwOTc2Nzg4NDAsMTk5MTM1MDYyNSwtNzcwNTM1NDIzLC
-0xMzU3Mjk3MTY3LC0xNTA0NzMxOTQwLDE3OTEwMTU4NDgsLTE3
-MzA0NDA2OTRdfQ==
+eyJoaXN0b3J5IjpbLTE0MTk0Mjg1MzQsMTg0ODg5MTkzLDEzNz
+kzMzg2NDEsLTg3NTE2MzI2LDg5NzAyNjM4OSw2MTY2Njc0NzUs
+LTE2NzY2MTI3ODIsLTYxODYzNDI4NywtNzU3NjEzMTYwLC0xMT
+g3MjMzOTE4LC02MTAxOTczNDgsMTcxMTgyMjk0MywtMTc2NjMx
+MzU4Niw1MDc4ODAwMjMsLTIwOTc2Nzg4NDAsMTk5MTM1MDYyNS
+wtNzcwNTM1NDIzLC0xMzU3Mjk3MTY3LC0xNTA0NzMxOTQwLDE3
+OTEwMTU4NDhdfQ==
 -->
