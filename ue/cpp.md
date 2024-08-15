@@ -1152,9 +1152,19 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 	}
 ...(省略)
 ```
-由于IgnoreActors是每次判断的依据，s
+由于IgnoreActors是每次判断的依据，所以在武器每次开启，结束碰撞时，需要在结束时清零，以便于下次继续计算。
+所以我们可以在SlashCharacter.cpp中，利用先前在动画蓝图里面定义的结束碰撞的轨道，在结束peng'zhaun'hou
+void ASlashCharacter::SetWeaponCollisionEnable(ECollisionEnabled::Type CollisionEnabled)
+{
+	if (EquippedWeapon && EquippedWeapon->GetWeaponBox()) {
+		EquippedWeapon->GetWeaponBox()->SetCollisionEnabled(CollisionEnabled);
+		EquippedWeapon->IgnoreActors.Empty();
+
+	}
+
+}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1MzAxMTgwOSwtMTQ2MzMyMzkxOCwxOD
+eyJoaXN0b3J5IjpbMTU1NzU1Mzg4OSwtMTQ2MzMyMzkxOCwxOD
 Q4ODkxOTMsMTM3OTMzODY0MSwtODc1MTYzMjYsODk3MDI2Mzg5
 LDYxNjY2NzQ3NSwtMTY3NjYxMjc4MiwtNjE4NjM0Mjg3LC03NT
 c2MTMxNjAsLTExODcyMzM5MTgsLTYxMDE5NzM0OCwxNzExODIy
