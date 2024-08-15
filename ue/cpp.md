@@ -1166,7 +1166,7 @@ void ASlashCharacter::SetWeaponCollisionEnable(ECollisionEnabled::Type Collision
 }
 ```
 ## 受击时在受击点释放音效
-在Enemy.h中，声明HitSound，EditAnywhere即表示
+在Enemy.h中，声明HitSound，制作MetaSound音效，在Enemy蓝图中赋值使用
 ```
 private:
 UPROPERTY(EditAnywhere, Category = Sounds)
@@ -1191,11 +1191,11 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2OTgyMDg4NSwtMTc5NTA0NjkyLC0xND
-YzMzIzOTE4LDE4NDg4OTE5MywxMzc5MzM4NjQxLC04NzUxNjMy
-Niw4OTcwMjYzODksNjE2NjY3NDc1LC0xNjc2NjEyNzgyLC02MT
-g2MzQyODcsLTc1NzYxMzE2MCwtMTE4NzIzMzkxOCwtNjEwMTk3
-MzQ4LDE3MTE4MjI5NDMsLTE3NjYzMTM1ODYsNTA3ODgwMDIzLC
-0yMDk3Njc4ODQwLDE5OTEzNTA2MjUsLTc3MDUzNTQyMywtMTM1
-NzI5NzE2N119
+eyJoaXN0b3J5IjpbLTExMDk4MjA0MTQsLTE3OTUwNDY5MiwtMT
+Q2MzMyMzkxOCwxODQ4ODkxOTMsMTM3OTMzODY0MSwtODc1MTYz
+MjYsODk3MDI2Mzg5LDYxNjY2NzQ3NSwtMTY3NjYxMjc4MiwtNj
+E4NjM0Mjg3LC03NTc2MTMxNjAsLTExODcyMzM5MTgsLTYxMDE5
+NzM0OCwxNzExODIyOTQzLC0xNzY2MzEzNTg2LDUwNzg4MDAyMy
+wtMjA5NzY3ODg0MCwxOTkxMzUwNjI1LC03NzA1MzU0MjMsLTEz
+NTcyOTcxNjddfQ==
 -->
