@@ -1106,6 +1106,7 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 	const double CosTheta = FVector::DotProduct(Forward, ToHit);
 	double Theta = FMath::Acos(CosTheta);
 	Theta = FMath::RadiansToDegrees(Theta);
+	
 	if (GEngine) {
 		GEngine->AddOnScreenDebugMessage(1, 5.f, FColor::Green, FString::Printf(TEXT("Theta: %f"), Theta));
 	}
@@ -1114,11 +1115,11 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg3NTE2MzI2LDg5NzAyNjM4OSw2MTY2Nj
-c0NzUsLTE2NzY2MTI3ODIsLTYxODYzNDI4NywtNzU3NjEzMTYw
-LC0xMTg3MjMzOTE4LC02MTAxOTczNDgsMTcxMTgyMjk0MywtMT
-c2NjMxMzU4Niw1MDc4ODAwMjMsLTIwOTc2Nzg4NDAsMTk5MTM1
-MDYyNSwtNzcwNTM1NDIzLC0xMzU3Mjk3MTY3LC0xNTA0NzMxOT
-QwLDE3OTEwMTU4NDgsLTE3MzA0NDA2OTQsMTgxMTUwNzMyMywt
-MjEzMDgzODE1NF19
+eyJoaXN0b3J5IjpbLTExNzcyMzgxNjAsLTg3NTE2MzI2LDg5Nz
+AyNjM4OSw2MTY2Njc0NzUsLTE2NzY2MTI3ODIsLTYxODYzNDI4
+NywtNzU3NjEzMTYwLC0xMTg3MjMzOTE4LC02MTAxOTczNDgsMT
+cxMTgyMjk0MywtMTc2NjMxMzU4Niw1MDc4ODAwMjMsLTIwOTc2
+Nzg4NDAsMTk5MTM1MDYyNSwtNzcwNTM1NDIzLC0xMzU3Mjk3MT
+Y3LC0xNTA0NzMxOTQwLDE3OTEwMTU4NDgsLTE3MzA0NDA2OTQs
+MTgxMTUwNzMyM119
 -->
