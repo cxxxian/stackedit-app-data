@@ -1166,7 +1166,13 @@ void ASlashCharacter::SetWeaponCollisionEnable(ECollisionEnabled::Type Collision
 }
 ```
 ## 受击时在受击点释放音效
-在Enemy.cpp中，完善Gethit方法
+在Enemy.h中，声明HitSound，EditAnywhere即表示
+```
+private:
+UPROPERTY(EditAnywhere, Category = Sounds)
+USoundBase* HitSound;
+```
+在Enemy.cpp中，完善GetHit方法，制作释放音效的功能
 ```
 #include "Kismet/GameplayStatics.h"
 void AEnemy::GetHit(const FVector& ImpactPoint)
@@ -1185,7 +1191,7 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxNTg1NTQ3NywtMTc5NTA0NjkyLC0xND
+eyJoaXN0b3J5IjpbMTA2OTgyMDg4NSwtMTc5NTA0NjkyLC0xND
 YzMzIzOTE4LDE4NDg4OTE5MywxMzc5MzM4NjQxLC04NzUxNjMy
 Niw4OTcwMjYzODksNjE2NjY3NDc1LC0xNjc2NjEyNzgyLC02MT
 g2MzQyODcsLTc1NzYxMzE2MCwtMTE4NzIzMzkxOCwtNjEwMTk3
