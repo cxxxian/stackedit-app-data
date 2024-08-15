@@ -1088,12 +1088,14 @@ void AEnemy::PlayHitReactMontage(const FName& SectionName)
 }
 ```
 ## 计算受击角度
-1.首先得到敌人向前的向量，以及受击点减去敌人位置的向量，将会得到一个从敌人位置指向受击点位置的向量，GetSafeNormal()将其单位化。
-2.ImpactLowered是将受击点改为到与敌人同一Z轴高度，使得与向前向量在同一Z轴高度更加方便观察
-3.CosTheta得到点乘的值，再利用Acos得到反余弦的值，最终得到Theta的值
-4.FMath::RadiansToDegrees(Theta)将弧度制转化为度数
-5.计算叉乘的向量结果
-6.UKismetSystemLibrary::DrawDebugArrow用来绘制箭头，根据传入的向量来绘制
+ 1. 首先得到敌人向前的向量，以及受击点减去敌人位置的向量，将会得到一个从敌人位置指向受击点位置的向量，GetSafeNormal()将其单位化。
+ 2. ImpactLowered是将受击点改为到与敌人同一Z轴高度，使得与向前向量在同一Z轴高度更加方便观察
+ 3. CosTheta得到点乘的值，再利用Acos得到反余弦的值，最终得到Theta的值
+ 4. FMath::RadiansToDegrees(Theta)将弧度制转化为度数
+    5.计算叉乘的向量结果
+
+7.UKismetSystemLibrary::DrawDebugArrow用来绘制箭头，根据传入的向量来绘制
+
 ```
 void AEnemy::GetHit(const FVector& ImpactPoint)
 {
@@ -1108,6 +1110,18 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 	double Theta = FMath::Acos(CosTheta);
 	Theta = FMath::RadiansToDegrees(Theta);
 	const FVector CrossProduct = FVector::CrossProduct(Forward, ToHit);
+	
+	if (CrossProduct.Z < 0) {
+		Theta *= -1.f;
+	}
+
+	FName Section("FromBack");
+	if (Theta >= -45.f && Theta < 45.f) {Section = FName("FromFront");}
+	else if (Theta >= -135.f && Theta < -45.f) { Section = FName("FromLeft"); }
+	else if (Theta >= 45.f && Theta < 135.f) { Section = FName("FromRight"); }
+
+	PlayHitReactMontage(Section);
+	
 	UKismetSystemLibrary::DrawDebugArrow(this, GetActorLocation(), GetActorLocation() + CrossProduct * 100.f, 5.f, FColor::Blue, 5.f);
 
 	if (GEngine) {
@@ -1118,11 +1132,11 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3OTMzODY0MSwtODc1MTYzMjYsODk3MD
-I2Mzg5LDYxNjY2NzQ3NSwtMTY3NjYxMjc4MiwtNjE4NjM0Mjg3
-LC03NTc2MTMxNjAsLTExODcyMzM5MTgsLTYxMDE5NzM0OCwxNz
-ExODIyOTQzLC0xNzY2MzEzNTg2LDUwNzg4MDAyMywtMjA5NzY3
-ODg0MCwxOTkxMzUwNjI1LC03NzA1MzU0MjMsLTEzNTcyOTcxNj
-csLTE1MDQ3MzE5NDAsMTc5MTAxNTg0OCwtMTczMDQ0MDY5NCwx
-ODExNTA3MzIzXX0=
+eyJoaXN0b3J5IjpbLTEwMTIwNzI3MDMsMTM3OTMzODY0MSwtOD
+c1MTYzMjYsODk3MDI2Mzg5LDYxNjY2NzQ3NSwtMTY3NjYxMjc4
+MiwtNjE4NjM0Mjg3LC03NTc2MTMxNjAsLTExODcyMzM5MTgsLT
+YxMDE5NzM0OCwxNzExODIyOTQzLC0xNzY2MzEzNTg2LDUwNzg4
+MDAyMywtMjA5NzY3ODg0MCwxOTkxMzUwNjI1LC03NzA1MzU0Mj
+MsLTEzNTcyOTcxNjcsLTE1MDQ3MzE5NDAsMTc5MTAxNTg0OCwt
+MTczMDQ0MDY5NF19
 -->
