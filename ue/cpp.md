@@ -1088,6 +1088,7 @@ void AEnemy::PlayHitReactMontage(const FName& SectionName)
 }
 ```
 ## 计算受击角度
+在Enemy.h中声明DirectionHitReact方法且在cpp中实现
  1. 首先得到敌人向前的向量，以及受击点减去敌人位置的向量，将会得到一个从敌人位置指向受击点位置的向量，GetSafeNormal()将其单位化。
  2. ImpactLowered是将受击点改为到与敌人同一Z轴高度，使得与向前向量在同一Z轴高度更加方便观察
  3. CosTheta得到点乘的值，再利用Acos得到反余弦的值，最终得到Theta的值
@@ -1132,7 +1133,7 @@ void AEnemy::DirectionHitReact(const FVector& ImpactPoint)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTk0Mjg1MzQsMTg0ODg5MTkzLDEzNz
+eyJoaXN0b3J5IjpbLTE0NjMzMjM5MTgsMTg0ODg5MTkzLDEzNz
 kzMzg2NDEsLTg3NTE2MzI2LDg5NzAyNjM4OSw2MTY2Njc0NzUs
 LTE2NzY2MTI3ODIsLTYxODYzNDI4NywtNzU3NjEzMTYwLC0xMT
 g3MjMzOTE4LC02MTAxOTczNDgsMTcxMTgyMjk0MywtMTc2NjMx
