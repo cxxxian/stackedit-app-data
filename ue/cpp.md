@@ -1256,7 +1256,7 @@ virtual void GetHit(const FVector& ImpactPoint) override;
 virtual void GetHit_Implementation(const FVector& ImpactPoint) override;
 ```
 对应的Enemy.cpp中也需改名。
-而在Weapon.cpp调用此方法GetHit，则需要采用这种类型Execute_GetHit
+而在Weapon.cpp调用此方法GetHit，则需要采用这种类型Execute_GetHit，需要传入第一个为执行事件的对象，第二个是方法定义时的参数
 ```
 void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
@@ -1267,11 +1267,11 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0NTY2MjkzNSwyMTMxNTMyMDEwLDEzNz
-I1NzgyMDYsMTY4MjY4MDE2MywtMTUzMjU0MjQzOSwxNzg2NzUx
-MTMyLDkwOTMzODY5OCwtMTEwOTgyMDQxNCwtMTc5NTA0NjkyLC
-0xNDYzMzIzOTE4LDE4NDg4OTE5MywxMzc5MzM4NjQxLC04NzUx
-NjMyNiw4OTcwMjYzODksNjE2NjY3NDc1LC0xNjc2NjEyNzgyLC
-02MTg2MzQyODcsLTc1NzYxMzE2MCwtMTE4NzIzMzkxOCwtNjEw
-MTk3MzQ4XX0=
+eyJoaXN0b3J5IjpbLTE2NDQ3NTE3NjcsMjEzMTUzMjAxMCwxMz
+cyNTc4MjA2LDE2ODI2ODAxNjMsLTE1MzI1NDI0MzksMTc4Njc1
+MTEzMiw5MDkzMzg2OTgsLTExMDk4MjA0MTQsLTE3OTUwNDY5Mi
+wtMTQ2MzMyMzkxOCwxODQ4ODkxOTMsMTM3OTMzODY0MSwtODc1
+MTYzMjYsODk3MDI2Mzg5LDYxNjY2NzQ3NSwtMTY3NjYxMjc4Mi
+wtNjE4NjM0Mjg3LC03NTc2MTMxNjAsLTExODcyMzM5MTgsLTYx
+MDE5NzM0OF19
 -->
