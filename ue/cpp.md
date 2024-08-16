@@ -1202,14 +1202,25 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 [图片上传中...(image-mY3hfHMtYk9bktQA)]
 ![输入图片说明](/imgs/2024-08-16/kym2NRzXKTwowHzQ.png)
 ![输入图片说明](/imgs/2024-08-16/T2reRwbX0FDJ5Jee.png)
+在Weapon.h中声明函数
 ```
-
+UFUNCTION(BlueprintImplementableEvent)
+void CreateFields(const FVector& FieldLocation);
+```
+由于此处我们是想在蓝图中实现，所以在Weapon.cpp中调用函数并传入BoxHit.ImpactPoint
+```
+void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+...省略
+		CreateFields(BoxHit.ImpactPoint);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDA0MDI5MDA0LDkwOTMzODY5OCwtMTEwOT
-gyMDQxNCwtMTc5NTA0NjkyLC0xNDYzMzIzOTE4LDE4NDg4OTE5
-MywxMzc5MzM4NjQxLC04NzUxNjMyNiw4OTcwMjYzODksNjE2Nj
-Y3NDc1LC0xNjc2NjEyNzgyLC02MTg2MzQyODcsLTc1NzYxMzE2
-MCwtMTE4NzIzMzkxOCwtNjEwMTk3MzQ4LDE3MTE4MjI5NDMsLT
-E3NjYzMTM1ODYsNTA3ODgwMDIzLC0yMDk3Njc4ODQwLDE5OTEz
-NTA2MjVdfQ==
+eyJoaXN0b3J5IjpbMjA1MzcyNTk1NSw5MDkzMzg2OTgsLTExMD
+k4MjA0MTQsLTE3OTUwNDY5MiwtMTQ2MzMyMzkxOCwxODQ4ODkx
+OTMsMTM3OTMzODY0MSwtODc1MTYzMjYsODk3MDI2Mzg5LDYxNj
+Y2NzQ3NSwtMTY3NjYxMjc4MiwtNjE4NjM0Mjg3LC03NTc2MTMx
+NjAsLTExODcyMzM5MTgsLTYxMDE5NzM0OCwxNzExODIyOTQzLC
+0xNzY2MzEzNTg2LDUwNzg4MDAyMywtMjA5NzY3ODg0MCwxOTkx
+MzUwNjI1XX0=
 -->
