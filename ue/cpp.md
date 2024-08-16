@@ -1201,7 +1201,6 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 在weapon蓝图中添加FieldSystem组件以及相应需要的组件
 [图片上传中...(image-mY3hfHMtYk9bktQA)]
 ![输入图片说明](/imgs/2024-08-16/kym2NRzXKTwowHzQ.png)
-![输入图片说明](/imgs/2024-08-16/T2reRwbX0FDJ5Jee.png)
 在Weapon.h中声明函数
 ```
 UFUNCTION(BlueprintImplementableEvent)
@@ -1215,8 +1214,11 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 		CreateFields(BoxHit.ImpactPoint);
 }
 ```
+最后在weapon蓝图中使用该事件并完善其功能，参考**击碎网格体**
+![输入图片说明](/imgs/2024-08-16/T2reRwbX0FDJ5Jee.png)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1MzcyNTk1NSw5MDkzMzg2OTgsLTExMD
+eyJoaXN0b3J5IjpbMTc4Njc1MTEzMiw5MDkzMzg2OTgsLTExMD
 k4MjA0MTQsLTE3OTUwNDY5MiwtMTQ2MzMyMzkxOCwxODQ4ODkx
 OTMsMTM3OTMzODY0MSwtODc1MTYzMjYsODk3MDI2Mzg5LDYxNj
 Y2NzQ3NSwtMTY3NjYxMjc4MiwtNjE4NjM0Mjg3LC03NTc2MTMx
