@@ -1237,14 +1237,15 @@ ABreakableActor::ABreakableActor()
 	GeometryCollection->SetGenerateOverlapEvents(true);
 }
 ```
-此处为了能成功编译需要在Build.cs中添加"GeometryCollectionEngine"模块
+
+ - 此处为了能成功编译需要在Build.cs中添加"GeometryCollectionEngine"模块
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzc1MDQ3NTc4LC0xNTMyNTQyNDM5LDE3OD
-Y3NTExMzIsOTA5MzM4Njk4LC0xMTA5ODIwNDE0LC0xNzk1MDQ2
-OTIsLTE0NjMzMjM5MTgsMTg0ODg5MTkzLDEzNzkzMzg2NDEsLT
-g3NTE2MzI2LDg5NzAyNjM4OSw2MTY2Njc0NzUsLTE2NzY2MTI3
-ODIsLTYxODYzNDI4NywtNzU3NjEzMTYwLC0xMTg3MjMzOTE4LC
-02MTAxOTczNDgsMTcxMTgyMjk0MywtMTc2NjMxMzU4Niw1MDc4
-ODAwMjNdfQ==
+eyJoaXN0b3J5IjpbMTY4MjY4MDE2MywtMTUzMjU0MjQzOSwxNz
+g2NzUxMTMyLDkwOTMzODY5OCwtMTEwOTgyMDQxNCwtMTc5NTA0
+NjkyLC0xNDYzMzIzOTE4LDE4NDg4OTE5MywxMzc5MzM4NjQxLC
+04NzUxNjMyNiw4OTcwMjYzODksNjE2NjY3NDc1LC0xNjc2NjEy
+NzgyLC02MTg2MzQyODcsLTc1NzYxMzE2MCwtMTE4NzIzMzkxOC
+wtNjEwMTk3MzQ4LDE3MTE4MjI5NDMsLTE3NjYzMTM1ODYsNTA3
+ODgwMDIzXX0=
 -->
