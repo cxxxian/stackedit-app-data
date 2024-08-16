@@ -1199,7 +1199,6 @@ void AEnemy::GetHit(const FVector& ImpactPoint)
 ## 制作武器打碎瓦罐效果
 此处采用cpp声明蓝图实现
 在weapon蓝图中添加FieldSystem组件以及相应需要的组件
-[图片上传中...(image-mY3hfHMtYk9bktQA)]
 ![输入图片说明](/imgs/2024-08-16/kym2NRzXKTwowHzQ.png)
 在Weapon.h中声明函数
 ```
@@ -1218,11 +1217,11 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 ![输入图片说明](/imgs/2024-08-16/T2reRwbX0FDJ5Jee.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc4Njc1MTEzMiw5MDkzMzg2OTgsLTExMD
-k4MjA0MTQsLTE3OTUwNDY5MiwtMTQ2MzMyMzkxOCwxODQ4ODkx
-OTMsMTM3OTMzODY0MSwtODc1MTYzMjYsODk3MDI2Mzg5LDYxNj
-Y2NzQ3NSwtMTY3NjYxMjc4MiwtNjE4NjM0Mjg3LC03NTc2MTMx
-NjAsLTExODcyMzM5MTgsLTYxMDE5NzM0OCwxNzExODIyOTQzLC
-0xNzY2MzEzNTg2LDUwNzg4MDAyMywtMjA5NzY3ODg0MCwxOTkx
-MzUwNjI1XX0=
+eyJoaXN0b3J5IjpbLTE1MzI1NDI0MzksMTc4Njc1MTEzMiw5MD
+kzMzg2OTgsLTExMDk4MjA0MTQsLTE3OTUwNDY5MiwtMTQ2MzMy
+MzkxOCwxODQ4ODkxOTMsMTM3OTMzODY0MSwtODc1MTYzMjYsOD
+k3MDI2Mzg5LDYxNjY2NzQ3NSwtMTY3NjYxMjc4MiwtNjE4NjM0
+Mjg3LC03NTc2MTMxNjAsLTExODcyMzM5MTgsLTYxMDE5NzM0OC
+wxNzExODIyOTQzLC0xNzY2MzEzNTg2LDUwNzg4MDAyMywtMjA5
+NzY3ODg0MF19
 -->
