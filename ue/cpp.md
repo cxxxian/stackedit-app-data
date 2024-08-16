@@ -1251,12 +1251,22 @@ public:
 ```
 virtual void GetHit(const FVector& ImpactPoint) override;
 ```
-需改写成（）
+需改写成（虚幻定义的）
 ```
 virtual void GetHit_Implementation(const FVector& ImpactPoint) override;
 ```
+对应的Enemy.cpp中也需改名。
+```
+void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+···省略
+		if (HitInterface) {
+			HitInterface->Execute_GetHit(BoxHit.GetActor(), BoxHit.ImpactPoint);
+		}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3MDU3NjcyMSwxMzcyNTc4MjA2LDE2OD
+eyJoaXN0b3J5IjpbMjEzMTUzMjAxMCwxMzcyNTc4MjA2LDE2OD
 I2ODAxNjMsLTE1MzI1NDI0MzksMTc4Njc1MTEzMiw5MDkzMzg2
 OTgsLTExMDk4MjA0MTQsLTE3OTUwNDY5MiwtMTQ2MzMyMzkxOC
 wxODQ4ODkxOTMsMTM3OTMzODY0MSwtODc1MTYzMjYsODk3MDI2
