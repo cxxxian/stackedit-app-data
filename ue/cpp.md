@@ -1246,13 +1246,21 @@ public:
 	UFUNCTION(BlueprintNativeEvent)
 	void GetHit(const FVector& ImpactPoint);
 ```
-表示为可以在蓝图中进行实现，为了在cpp中也进行实现，需改写之前的
+表示为可以在蓝图中进行实现，为了在cpp中也进行实现，需改写之前继承自HitInterface接口的类
+例如Enemy.h中的
+```
+virtual void GetHit(const FVector& ImpactPoint) override;
+```
+需改写成（）
+```
+virtual void GetHit_Implementation(const FVector& ImpactPoint) override;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3MjU3ODIwNiwxNjgyNjgwMTYzLC0xNT
-MyNTQyNDM5LDE3ODY3NTExMzIsOTA5MzM4Njk4LC0xMTA5ODIw
-NDE0LC0xNzk1MDQ2OTIsLTE0NjMzMjM5MTgsMTg0ODg5MTkzLD
-EzNzkzMzg2NDEsLTg3NTE2MzI2LDg5NzAyNjM4OSw2MTY2Njc0
-NzUsLTE2NzY2MTI3ODIsLTYxODYzNDI4NywtNzU3NjEzMTYwLC
-0xMTg3MjMzOTE4LC02MTAxOTczNDgsMTcxMTgyMjk0MywtMTc2
-NjMxMzU4Nl19
+eyJoaXN0b3J5IjpbLTU3MDU3NjcyMSwxMzcyNTc4MjA2LDE2OD
+I2ODAxNjMsLTE1MzI1NDI0MzksMTc4Njc1MTEzMiw5MDkzMzg2
+OTgsLTExMDk4MjA0MTQsLTE3OTUwNDY5MiwtMTQ2MzMyMzkxOC
+wxODQ4ODkxOTMsMTM3OTMzODY0MSwtODc1MTYzMjYsODk3MDI2
+Mzg5LDYxNjY2NzQ3NSwtMTY3NjYxMjc4MiwtNjE4NjM0Mjg3LC
+03NTc2MTMxNjAsLTExODcyMzM5MTgsLTYxMDE5NzM0OCwxNzEx
+ODIyOTQzXX0=
 -->
