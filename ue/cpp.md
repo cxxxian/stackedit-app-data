@@ -1216,9 +1216,16 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 最后在weapon蓝图中使用该事件并完善其功能，参考**击碎网格体**
 ![输入图片说明](/imgs/2024-08-16/T2reRwbX0FDJ5Jee.png)
 ## 制作一个Actor适用于所有可被打碎的物品
+创建BreakableActor类。
+在BreakableActor.h中声明变量
+```
+private:
+	UPROPERTY(VisibleAnywhere)
+	UGeometryCollectionComponent* GeometryCollection;
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzEyNTc3NzgsLTE1MzI1NDI0MzksMT
+eyJoaXN0b3J5IjpbLTExNDg5ODMzMzgsLTE1MzI1NDI0MzksMT
 c4Njc1MTEzMiw5MDkzMzg2OTgsLTExMDk4MjA0MTQsLTE3OTUw
 NDY5MiwtMTQ2MzMyMzkxOCwxODQ4ODkxOTMsMTM3OTMzODY0MS
 wtODc1MTYzMjYsODk3MDI2Mzg5LDYxNjY2NzQ3NSwtMTY3NjYx
