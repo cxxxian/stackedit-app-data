@@ -1256,6 +1256,7 @@ virtual void GetHit(const FVector& ImpactPoint) override;
 virtual void GetHit_Implementation(const FVector& ImpactPoint) override;
 ```
 对应的Enemy.cpp中也需改名。
+而在Weapon.cpp
 ```
 void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
@@ -1266,11 +1267,11 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzMTUzMjAxMCwxMzcyNTc4MjA2LDE2OD
-I2ODAxNjMsLTE1MzI1NDI0MzksMTc4Njc1MTEzMiw5MDkzMzg2
-OTgsLTExMDk4MjA0MTQsLTE3OTUwNDY5MiwtMTQ2MzMyMzkxOC
-wxODQ4ODkxOTMsMTM3OTMzODY0MSwtODc1MTYzMjYsODk3MDI2
-Mzg5LDYxNjY2NzQ3NSwtMTY3NjYxMjc4MiwtNjE4NjM0Mjg3LC
-03NTc2MTMxNjAsLTExODcyMzM5MTgsLTYxMDE5NzM0OCwxNzEx
-ODIyOTQzXX0=
+eyJoaXN0b3J5IjpbMzA4NDU5NDY1LDIxMzE1MzIwMTAsMTM3Mj
+U3ODIwNiwxNjgyNjgwMTYzLC0xNTMyNTQyNDM5LDE3ODY3NTEx
+MzIsOTA5MzM4Njk4LC0xMTA5ODIwNDE0LC0xNzk1MDQ2OTIsLT
+E0NjMzMjM5MTgsMTg0ODg5MTkzLDEzNzkzMzg2NDEsLTg3NTE2
+MzI2LDg5NzAyNjM4OSw2MTY2Njc0NzUsLTE2NzY2MTI3ODIsLT
+YxODYzNDI4NywtNzU3NjEzMTYwLC0xMTg3MjMzOTE4LC02MTAx
+OTczNDhdfQ==
 -->
