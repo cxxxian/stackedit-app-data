@@ -1240,13 +1240,19 @@ ABreakableActor::ABreakableActor()
 
  - 此处为了能成功编译需要在Build.cs中添加"GeometryCollectionEngine"模块
 ### 制作同时可在cpp中实现也可以在蓝图实现的函数
-先前在HitInterface.h中定义的Ge't'H
+先前在HitInterface.h中定义的GetHit，将其修改为
+```
+public:
+	UFUNCTION(BlueprintNativeEvent)
+	void GetHit(const FVector& ImpactPoint);
+```
+表示为可以在蓝图中进行实现，为了在cpp中也进行实现，需改写之前的
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4MzE1Mzc5LDE2ODI2ODAxNjMsLTE1Mz
-I1NDI0MzksMTc4Njc1MTEzMiw5MDkzMzg2OTgsLTExMDk4MjA0
-MTQsLTE3OTUwNDY5MiwtMTQ2MzMyMzkxOCwxODQ4ODkxOTMsMT
-M3OTMzODY0MSwtODc1MTYzMjYsODk3MDI2Mzg5LDYxNjY2NzQ3
-NSwtMTY3NjYxMjc4MiwtNjE4NjM0Mjg3LC03NTc2MTMxNjAsLT
-ExODcyMzM5MTgsLTYxMDE5NzM0OCwxNzExODIyOTQzLC0xNzY2
-MzEzNTg2XX0=
+eyJoaXN0b3J5IjpbMTM3MjU3ODIwNiwxNjgyNjgwMTYzLC0xNT
+MyNTQyNDM5LDE3ODY3NTExMzIsOTA5MzM4Njk4LC0xMTA5ODIw
+NDE0LC0xNzk1MDQ2OTIsLTE0NjMzMjM5MTgsMTg0ODg5MTkzLD
+EzNzkzMzg2NDEsLTg3NTE2MzI2LDg5NzAyNjM4OSw2MTY2Njc0
+NzUsLTE2NzY2MTI3ODIsLTYxODYzNDI4NywtNzU3NjEzMTYwLC
+0xMTg3MjMzOTE4LC02MTAxOTczNDgsMTcxMTgyMjk0MywtMTc2
+NjMxMzU4Nl19
 -->
