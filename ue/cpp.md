@@ -1223,9 +1223,24 @@ private:
 	UPROPERTY(VisibleAnywhere)
 	UGeometryCollectionComponent* GeometryCollection;
 ```
+在BreakableActor.cpp中的构造函数进行初始化actor步骤
+```
+#include "GeometryCollection/GeometryCollectionComponent.h"
+
+
+ABreakableActor::ABreakableActor()
+{
+	PrimaryActorTick.bCanEverTick = false;
+
+	GeometryCollection = CreateDefaultSubobject<UGeometryCollectionComponent>(TEXT("GeometryCollection"));
+	SetRootComponent(GeometryCollection);
+	GeometryCollection->SetGenerateOverlapEvents(true);
+}
+```
+此处为了neng'c
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDg5ODMzMzgsLTE1MzI1NDI0MzksMT
+eyJoaXN0b3J5IjpbLTExMjU3MTA2MDQsLTE1MzI1NDI0MzksMT
 c4Njc1MTEzMiw5MDkzMzg2OTgsLTExMDk4MjA0MTQsLTE3OTUw
 NDY5MiwtMTQ2MzMyMzkxOCwxODQ4ODkxOTMsMTM3OTMzODY0MS
 wtODc1MTYzMjYsODk3MDI2Mzg5LDYxNjY2NzQ3NSwtMTY3NjYx
