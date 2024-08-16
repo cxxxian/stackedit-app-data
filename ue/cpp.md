@@ -1251,7 +1251,7 @@ public:
 ```
 virtual void GetHit(const FVector& ImpactPoint) override;
 ```
-需改写成（虚幻定义的），则一共两版本，GetHit为蓝图版本，GetHit_Implementation
+需改写成（虚幻定义的），则一共两版本，GetHit为蓝图版本，GetHit_Implementation为cpp版本
 ```
 virtual void GetHit_Implementation(const FVector& ImpactPoint) override;
 ```
@@ -1267,11 +1267,11 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMjQ0Mjk1MzUsLTE2NDQ3NTE3NjcsMj
-EzMTUzMjAxMCwxMzcyNTc4MjA2LDE2ODI2ODAxNjMsLTE1MzI1
-NDI0MzksMTc4Njc1MTEzMiw5MDkzMzg2OTgsLTExMDk4MjA0MT
-QsLTE3OTUwNDY5MiwtMTQ2MzMyMzkxOCwxODQ4ODkxOTMsMTM3
-OTMzODY0MSwtODc1MTYzMjYsODk3MDI2Mzg5LDYxNjY2NzQ3NS
-wtMTY3NjYxMjc4MiwtNjE4NjM0Mjg3LC03NTc2MTMxNjAsLTEx
-ODcyMzM5MThdfQ==
+eyJoaXN0b3J5IjpbMzQzNTM1MTUwLC0xNjQ0NzUxNzY3LDIxMz
+E1MzIwMTAsMTM3MjU3ODIwNiwxNjgyNjgwMTYzLC0xNTMyNTQy
+NDM5LDE3ODY3NTExMzIsOTA5MzM4Njk4LC0xMTA5ODIwNDE0LC
+0xNzk1MDQ2OTIsLTE0NjMzMjM5MTgsMTg0ODg5MTkzLDEzNzkz
+Mzg2NDEsLTg3NTE2MzI2LDg5NzAyNjM4OSw2MTY2Njc0NzUsLT
+E2NzY2MTI3ODIsLTYxODYzNDI4NywtNzU3NjEzMTYwLC0xMTg3
+MjMzOTE4XX0=
 -->
