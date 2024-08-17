@@ -1302,9 +1302,16 @@ void ATreasure::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor
 ## 制作瓦罐破碎后生成宝藏的效果
 ### 蓝图做法
 ![输入图片说明](/imgs/2024-08-17/JBWEmDxlf2V0Wd2u.png)
-## 
+### 代码做法
+使用SpawnActor函数
+za
+```
+private:
+	UPROPERTY(EditAnywhere)
+	UClass* TreasureClass;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxNjQ5NjgxNiw4MTEwNTYxODIsLTEzMj
+eyJoaXN0b3J5IjpbMjAyNTE4MzA1OSw4MTEwNTYxODIsLTEzMj
 MwOTk4MjQsMTE2NjEwMTcxNCw5MjEwOTE3OTUsMzQzNTM1MTUw
 LC0xNjQ0NzUxNzY3LDIxMzE1MzIwMTAsMTM3MjU3ODIwNiwxNj
 gyNjgwMTYzLC0xNTMyNTQyNDM5LDE3ODY3NTExMzIsOTA5MzM4
