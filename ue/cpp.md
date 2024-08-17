@@ -1310,7 +1310,7 @@ private:
 	UPROPERTY(EditAnywhere)
 	UClass* TreasureClass;
 ```
-在BreakableActor.cpp中完善GetHit方法，在BreakableActor.h中声明一个TreasureClass主要是因为如果不用此方法的话，SpawnActor会基于Treasure的c++类进行生成，而我们的Treasure蓝图是更加完善并最终要使用的
+在BreakableActor.cpp中完善GetHit方法，在BreakableActor.h中声明一个TreasureClass主要是因为如果不用此方法的话，SpawnActor无法根据蓝图类进行生成，而我们的Treasure蓝图是更加完善并最终要使用的。此方法乐意指定该Class为蓝图类或者C++类都行
 > 如果需要基于c++类生成的话，即使用ATreasure::StaticClass()即可
 
 ```
@@ -1325,11 +1325,11 @@ void ABreakableActor::GetHit_Implementation(const FVector& ImpactPoint)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQwODc3NTE5LDgxMTA1NjE4MiwtMTMyMz
-A5OTgyNCwxMTY2MTAxNzE0LDkyMTA5MTc5NSwzNDM1MzUxNTAs
-LTE2NDQ3NTE3NjcsMjEzMTUzMjAxMCwxMzcyNTc4MjA2LDE2OD
-I2ODAxNjMsLTE1MzI1NDI0MzksMTc4Njc1MTEzMiw5MDkzMzg2
-OTgsLTExMDk4MjA0MTQsLTE3OTUwNDY5MiwtMTQ2MzMyMzkxOC
-wxODQ4ODkxOTMsMTM3OTMzODY0MSwtODc1MTYzMjYsODk3MDI2
-Mzg5XX0=
+eyJoaXN0b3J5IjpbLTEwNDA5NzgxMzUsODExMDU2MTgyLC0xMz
+IzMDk5ODI0LDExNjYxMDE3MTQsOTIxMDkxNzk1LDM0MzUzNTE1
+MCwtMTY0NDc1MTc2NywyMTMxNTMyMDEwLDEzNzI1NzgyMDYsMT
+Y4MjY4MDE2MywtMTUzMjU0MjQzOSwxNzg2NzUxMTMyLDkwOTMz
+ODY5OCwtMTEwOTgyMDQxNCwtMTc5NTA0NjkyLC0xNDYzMzIzOT
+E4LDE4NDg4OTE5MywxMzc5MzM4NjQxLC04NzUxNjMyNiw4OTcw
+MjYzODldfQ==
 -->
