@@ -1358,7 +1358,11 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Breakable Properties")
 	TArray<TSubclassOf<class ATreasure>> TreasureClasses;
 ```
-所以修改BreakableActor.cpp中的方法
+所以修改BreakableActor.cpp中的方法，
+
+ 1. 增加判断条件TreasureClasses.Num() > 0，说明此破碎物品会掉落宝藏
+ 2. 使用FMath::RandRange(0, TreasureClasses.Num() - 1)用来进行随机数的选择，得到随机宝藏的效果 
+
 ```
 void ABreakableActor::GetHit_Implementation(const FVector& ImpactPoint)
 {
@@ -1372,11 +1376,11 @@ void ABreakableActor::GetHit_Implementation(const FVector& ImpactPoint)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwMzc0NDQ5OSwtODg5NjA3NTUzLC0xNz
-E1NzEzMzA2LDE0MTY2MDQwNTgsLTEwNDA5NzgxMzUsODExMDU2
-MTgyLC0xMzIzMDk5ODI0LDExNjYxMDE3MTQsOTIxMDkxNzk1LD
-M0MzUzNTE1MCwtMTY0NDc1MTc2NywyMTMxNTMyMDEwLDEzNzI1
-NzgyMDYsMTY4MjY4MDE2MywtMTUzMjU0MjQzOSwxNzg2NzUxMT
-MyLDkwOTMzODY5OCwtMTEwOTgyMDQxNCwtMTc5NTA0NjkyLC0x
-NDYzMzIzOTE4XX0=
+eyJoaXN0b3J5IjpbLTE1Njc0MzYyNjUsLTg4OTYwNzU1MywtMT
+cxNTcxMzMwNiwxNDE2NjA0MDU4LC0xMDQwOTc4MTM1LDgxMTA1
+NjE4MiwtMTMyMzA5OTgyNCwxMTY2MTAxNzE0LDkyMTA5MTc5NS
+wzNDM1MzUxNTAsLTE2NDQ3NTE3NjcsMjEzMTUzMjAxMCwxMzcy
+NTc4MjA2LDE2ODI2ODAxNjMsLTE1MzI1NDI0MzksMTc4Njc1MT
+EzMiw5MDkzMzg2OTgsLTExMDk4MjA0MTQsLTE3OTUwNDY5Miwt
+MTQ2MzMyMzkxOF19
 -->
