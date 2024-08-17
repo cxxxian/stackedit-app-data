@@ -1331,9 +1331,14 @@ TSubclassOf<class ATreasure> TreasureClass;
 ```
 ![输入图片说明](/imgs/2024-08-17/hPnKDrxIVvcNiQjp.png)
 ### 改进瓦罐破碎后飞溅碎片与角色的碰撞问题
-
+可以将整个瓦罐改为ignore pawn，但是此时未破碎时角色可以直接穿过瓦罐
+此时在
+···
+protected:
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	class UCapsuleComponent* Capsule;
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2NDE1Nzc3LDE0MTY2MDQwNTgsLTEwND
+eyJoaXN0b3J5IjpbNzEwNDI5MjY0LDE0MTY2MDQwNTgsLTEwND
 A5NzgxMzUsODExMDU2MTgyLC0xMzIzMDk5ODI0LDExNjYxMDE3
 MTQsOTIxMDkxNzk1LDM0MzUzNTE1MCwtMTY0NDc1MTc2NywyMT
 MxNTMyMDEwLDEzNzI1NzgyMDYsMTY4MjY4MDE2MywtMTUzMjU0
