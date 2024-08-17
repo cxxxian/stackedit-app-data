@@ -1375,8 +1375,27 @@ void ABreakableActor::GetHit_Implementation(const FVector& ImpactPoint)
 }
 ```
 ### 由于可破坏的物体增多后，调用GetHit函数次数也增多，次数过多容易发生死循环错误
+在BreakableActor.h中声明一个bBroken
+```
+bool bBroken = false;
+```
+完善BreakableActor.cpp中的方法，如果bBroken等于true就说明
+```
+void ABreakableActor::GetHit_Implementation(const FVector& ImpactPoint)
+{
+	if (bBroken) { return; }
+	bBroken = true;
+	UWorld* World = GetWorld();
+	if (World && TreasureClasses.Num() > 0) {
+		FVector Location = GetActorLocation();
+		Location.Z += 75.f;
+		const int32 Selection = FMath::RandRange(0, TreasureClasses.Num() - 1);
+		World->SpawnActor<ATreasure>(TreasureClasses[Selection], Location, GetActorRotation());
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5OTI4NDc4NCwtMTA4NzIwMTM1MywtOD
+eyJoaXN0b3J5IjpbMTI0Mzk2ODkwMCwtMTA4NzIwMTM1MywtOD
 g5NjA3NTUzLC0xNzE1NzEzMzA2LDE0MTY2MDQwNTgsLTEwNDA5
 NzgxMzUsODExMDU2MTgyLC0xMzIzMDk5ODI0LDExNjYxMDE3MT
 QsOTIxMDkxNzk1LDM0MzUzNTE1MCwtMTY0NDc1MTc2NywyMTMx
