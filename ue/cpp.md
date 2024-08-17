@@ -1379,7 +1379,7 @@ void ABreakableActor::GetHit_Implementation(const FVector& ImpactPoint)
 ```
 bool bBroken = false;
 ```
-完善BreakableActor.cpp中的方法，如果bBroken等于true就说明
+完善BreakableActor.cpp中的方法，如果bBroken等于true就说明罐子已经破碎了，直接return
 ```
 void ABreakableActor::GetHit_Implementation(const FVector& ImpactPoint)
 {
@@ -1395,11 +1395,11 @@ void ABreakableActor::GetHit_Implementation(const FVector& ImpactPoint)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0Mzk2ODkwMCwtMTA4NzIwMTM1MywtOD
-g5NjA3NTUzLC0xNzE1NzEzMzA2LDE0MTY2MDQwNTgsLTEwNDA5
-NzgxMzUsODExMDU2MTgyLC0xMzIzMDk5ODI0LDExNjYxMDE3MT
-QsOTIxMDkxNzk1LDM0MzUzNTE1MCwtMTY0NDc1MTc2NywyMTMx
-NTMyMDEwLDEzNzI1NzgyMDYsMTY4MjY4MDE2MywtMTUzMjU0Mj
-QzOSwxNzg2NzUxMTMyLDkwOTMzODY5OCwtMTEwOTgyMDQxNCwt
-MTc5NTA0NjkyXX0=
+eyJoaXN0b3J5IjpbNjUwMzgzNzE4LC0xMDg3MjAxMzUzLC04OD
+k2MDc1NTMsLTE3MTU3MTMzMDYsMTQxNjYwNDA1OCwtMTA0MDk3
+ODEzNSw4MTEwNTYxODIsLTEzMjMwOTk4MjQsMTE2NjEwMTcxNC
+w5MjEwOTE3OTUsMzQzNTM1MTUwLC0xNjQ0NzUxNzY3LDIxMzE1
+MzIwMTAsMTM3MjU3ODIwNiwxNjgyNjgwMTYzLC0xNTMyNTQyND
+M5LDE3ODY3NTExMzIsOTA5MzM4Njk4LC0xMTA5ODIwNDE0LC0x
+Nzk1MDQ2OTJdfQ==
 -->
