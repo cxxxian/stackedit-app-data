@@ -1351,12 +1351,32 @@ Capsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Capsule"));
 ## 制作随机生成不同的宝藏
 制作一个BaseTreasure，以其为基础创造子类蓝图，将子类改为不同的网格体
 ![输入图片说明](/imgs/2024-08-17/QF9R5jZWSF9PqMyk.png)
+将之前在BreakableActor.h声明的TreasureClass改成一个数组
+```
+private:
+
+	UPROPERTY(EditAnywhere, Category = "Breakable Properties")
+	TArray<TSubclassOf<class ATreasure>> TreasureClasses;
+```
+所以修改BreakableActor.cpp中的方法
+```
+void ABreakableActor::GetHit_Implementation(const FVector& ImpactPoint)
+{
+	UWorld* World = GetWorld();
+	if (World && TreasureClasses.Num() > 0) {
+		FVector Location = GetActorLocation();
+		Location.Z += 75.f;
+		const int32 Selection = FMath::RandRange(0, TreasureClasses.Num() - 1);
+		World->SpawnActor<ATreasure>(TreasureClasses[Selection], Location, GetActorRotation());
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg4OTYwNzU1MywtMTcxNTcxMzMwNiwxND
-E2NjA0MDU4LC0xMDQwOTc4MTM1LDgxMTA1NjE4MiwtMTMyMzA5
-OTgyNCwxMTY2MTAxNzE0LDkyMTA5MTc5NSwzNDM1MzUxNTAsLT
-E2NDQ3NTE3NjcsMjEzMTUzMjAxMCwxMzcyNTc4MjA2LDE2ODI2
-ODAxNjMsLTE1MzI1NDI0MzksMTc4Njc1MTEzMiw5MDkzMzg2OT
-gsLTExMDk4MjA0MTQsLTE3OTUwNDY5MiwtMTQ2MzMyMzkxOCwx
-ODQ4ODkxOTNdfQ==
+eyJoaXN0b3J5IjpbLTcwMzc0NDQ5OSwtODg5NjA3NTUzLC0xNz
+E1NzEzMzA2LDE0MTY2MDQwNTgsLTEwNDA5NzgxMzUsODExMDU2
+MTgyLC0xMzIzMDk5ODI0LDExNjYxMDE3MTQsOTIxMDkxNzk1LD
+M0MzUzNTE1MCwtMTY0NDc1MTc2NywyMTMxNTMyMDEwLDEzNzI1
+NzgyMDYsMTY4MjY4MDE2MywtMTUzMjU0MjQzOSwxNzg2NzUxMT
+MyLDkwOTMzODY5OCwtMTEwOTgyMDQxNCwtMTc5NTA0NjkyLC0x
+NDYzMzIzOTE4XX0=
 -->
