@@ -1338,15 +1338,16 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	class UCapsuleComponent* Capsule;
 ```
-在BreakableActor.cpp的构造函数中对capsule进行初始化，将其改为对所有都不忽略，再单独将其设为对角色pawn忽略，
+在BreakableActor.cpp的构造函数中对capsule进行初始化，将其改为对所有都不忽略，再单独将其设为对角色pawn忽略，即也可以做到了阻挡的效果
 ```
 Capsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Capsule"));
 	Capsule->SetupAttachment(GetRootComponent());
 	Capsule->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
 	Capsule->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn, ECollisionResponse::ECR_Block);
 ```
+但是此时破碎时胶囊体仍然存在，因为我们先前设置了破碎后三秒后整个物体才会
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYxMTY0MTEwNywxNDE2NjA0MDU4LC0xMD
+eyJoaXN0b3J5IjpbLTk0OTYzNjQ4OCwxNDE2NjA0MDU4LC0xMD
 QwOTc4MTM1LDgxMTA1NjE4MiwtMTMyMzA5OTgyNCwxMTY2MTAx
 NzE0LDkyMTA5MTc5NSwzNDM1MzUxNTAsLTE2NDQ3NTE3NjcsMj
 EzMTUzMjAxMCwxMzcyNTc4MjA2LDE2ODI2ODAxNjMsLTE1MzI1
