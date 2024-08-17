@@ -1345,13 +1345,15 @@ Capsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Capsule"));
 	Capsule->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
 	Capsule->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn, ECollisionResponse::ECR_Block);
 ```
-但是此时破碎时胶囊体仍然存在，因为我们先前设置了破碎后三秒后整个物体才会
+但是此时破碎时胶囊体仍然存在，因为我们先前设置了破碎后三秒后整个物体才会消失，所以此时即使破碎了但是还是有个胶囊体挡住我们。
+我们可以手动在蓝图中进行碰撞响应的改变，在破碎之后将对pawn轨道的碰撞改为忽略
+![输入图片说明](/imgs/2024-08-17/mQwVFAPo3BZRq4CG.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk0OTYzNjQ4OCwxNDE2NjA0MDU4LC0xMD
-QwOTc4MTM1LDgxMTA1NjE4MiwtMTMyMzA5OTgyNCwxMTY2MTAx
-NzE0LDkyMTA5MTc5NSwzNDM1MzUxNTAsLTE2NDQ3NTE3NjcsMj
-EzMTUzMjAxMCwxMzcyNTc4MjA2LDE2ODI2ODAxNjMsLTE1MzI1
-NDI0MzksMTc4Njc1MTEzMiw5MDkzMzg2OTgsLTExMDk4MjA0MT
-QsLTE3OTUwNDY5MiwtMTQ2MzMyMzkxOCwxODQ4ODkxOTMsMTM3
-OTMzODY0MV19
+eyJoaXN0b3J5IjpbLTE3MTU3MTMzMDYsMTQxNjYwNDA1OCwtMT
+A0MDk3ODEzNSw4MTEwNTYxODIsLTEzMjMwOTk4MjQsMTE2NjEw
+MTcxNCw5MjEwOTE3OTUsMzQzNTM1MTUwLC0xNjQ0NzUxNzY3LD
+IxMzE1MzIwMTAsMTM3MjU3ODIwNiwxNjgyNjgwMTYzLC0xNTMy
+NTQyNDM5LDE3ODY3NTExMzIsOTA5MzM4Njk4LC0xMTA5ODIwND
+E0LC0xNzk1MDQ2OTIsLTE0NjMzMjM5MTgsMTg0ODg5MTkzLDEz
+NzkzMzg2NDFdfQ==
 -->
