@@ -1324,13 +1324,13 @@ void ABreakableActor::GetHit_Implementation(const FVector& ImpactPoint)
 	}
 }
 ```
-**改进
+**改进**：先前可以在蓝图中随意选取蓝图，而我们只想要关于Treasure类的，可以用TSubclassOf来加以限制
 ```
 UPROPERTY(EditAnywhere)
 TSubclassOf<class ATreasure> TreasureClass;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2MTQxNDQ1MCwtMTA0MDk3ODEzNSw4MT
+eyJoaXN0b3J5IjpbLTQxMjgxNDY2NiwtMTA0MDk3ODEzNSw4MT
 EwNTYxODIsLTEzMjMwOTk4MjQsMTE2NjEwMTcxNCw5MjEwOTE3
 OTUsMzQzNTM1MTUwLC0xNjQ0NzUxNzY3LDIxMzE1MzIwMTAsMT
 M3MjU3ODIwNiwxNjgyNjgwMTYzLC0xNTMyNTQyNDM5LDE3ODY3
