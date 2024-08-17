@@ -1332,17 +1332,25 @@ TSubclassOf<class ATreasure> TreasureClass;
 ![输入图片说明](/imgs/2024-08-17/hPnKDrxIVvcNiQjp.png)
 ### 改进瓦罐破碎后飞溅碎片与角色的碰撞问题
 可以将整个瓦罐改为ignore pawn，但是此时未破碎时角色可以直接穿过瓦罐
-此时在
-···
+此时在BreakableActor.h声明一个胶囊体
+```
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	class UCapsuleComponent* Capsule;
+```
+在BreakableActor.cpp的构造函数中对capsule进行初始化，将其改为对所有都不忽略，再单独将其设为对角色pawn忽略，
+```
+Capsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Capsule"));
+	Capsule->SetupAttachment(GetRootComponent());
+	Capsule->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
+	Capsule->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn, ECollisionResponse::ECR_Block);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzEwNDI5MjY0LDE0MTY2MDQwNTgsLTEwND
-A5NzgxMzUsODExMDU2MTgyLC0xMzIzMDk5ODI0LDExNjYxMDE3
-MTQsOTIxMDkxNzk1LDM0MzUzNTE1MCwtMTY0NDc1MTc2NywyMT
-MxNTMyMDEwLDEzNzI1NzgyMDYsMTY4MjY4MDE2MywtMTUzMjU0
-MjQzOSwxNzg2NzUxMTMyLDkwOTMzODY5OCwtMTEwOTgyMDQxNC
-wtMTc5NTA0NjkyLC0xNDYzMzIzOTE4LDE4NDg4OTE5MywxMzc5
-MzM4NjQxXX0=
+eyJoaXN0b3J5IjpbMTYxMTY0MTEwNywxNDE2NjA0MDU4LC0xMD
+QwOTc4MTM1LDgxMTA1NjE4MiwtMTMyMzA5OTgyNCwxMTY2MTAx
+NzE0LDkyMTA5MTc5NSwzNDM1MzUxNTAsLTE2NDQ3NTE3NjcsMj
+EzMTUzMjAxMCwxMzcyNTc4MjA2LDE2ODI2ODAxNjMsLTE1MzI1
+NDI0MzksMTc4Njc1MTEzMiw5MDkzMzg2OTgsLTExMDk4MjA0MT
+QsLTE3OTUwNDY5MiwtMTQ2MzMyMzkxOCwxODQ4ODkxOTMsMTM3
+OTMzODY0MV19
 -->
