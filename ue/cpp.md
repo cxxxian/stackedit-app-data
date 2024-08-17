@@ -1329,8 +1329,9 @@ void ABreakableActor::GetHit_Implementation(const FVector& ImpactPoint)
 UPROPERTY(EditAnywhere)
 TSubclassOf<class ATreasure> TreasureClass;
 ```
+![输入图片说明](/imgs/2024-08-17/hPnKDrxIVvcNiQjp.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQxMjgxNDY2NiwtMTA0MDk3ODEzNSw4MT
+eyJoaXN0b3J5IjpbMTQxNjYwNDA1OCwtMTA0MDk3ODEzNSw4MT
 EwNTYxODIsLTEzMjMwOTk4MjQsMTE2NjEwMTcxNCw5MjEwOTE3
 OTUsMzQzNTM1MTUwLC0xNjQ0NzUxNzY3LDIxMzE1MzIwMTAsMT
 M3MjU3ODIwNiwxNjgyNjgwMTYzLC0xNTMyNTQyNDM5LDE3ODY3
