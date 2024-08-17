@@ -1273,21 +1273,39 @@ Breakable的蓝图中，调用事件GetHit，右键可以调用cpp中的GetHit�
 ![输入图片说明](/imgs/2024-08-17/SZhMktgyyuFROpkF.png)
 ## 制作宝藏
 以item为父类创建子类cpp文件：Treasure
-在Treasure.h中
+在Treasure.h中，重写父类的重叠事件以及声明蓝图可编辑的声音
 ```
 protected:
 	virtual void OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) override;
 	
 private:
-
 	UPROPERTY(EditAnywhere, Category = Sounds)
 	USoundBase* PickupSound;
+```
+在Treasure.cpp中，触发重叠时，播放声音以及销毁掉宝藏资源
+```
+void ATreasure::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	ASlashCharacter* SlashCharacter = Cast<ASlashCharacter>(OtherActor);
+	if (SlashCharacter) {
+		if (PickupSound) {
+			UGameplayStatics::PlaySoundAtLocation(
+				this,
+				PickupSound,
+				GetActorLocation()
+				);
+		}
+		Destroy();
+	}
+}
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyMTQzMDk3NCwxMTY2MTAxNzE0LDkyMT
-A5MTc5NSwzNDM1MzUxNTAsLTE2NDQ3NTE3NjcsMjEzMTUzMjAx
-MCwxMzcyNTc4MjA2LDE2ODI2ODAxNjMsLTE1MzI1NDI0MzksMT
-c4Njc1MTEzMiw5MDkzMzg2OTgsLTExMDk4MjA0MTQsLTE3OTUw
-NDY5MiwtMTQ2MzMyMzkxOCwxODQ4ODkxOTMsMTM3OTMzODY0MS
-wtODc1MTYzMjYsODk3MDI2Mzg5LDYxNjY2NzQ3NSwtMTY3NjYx
-Mjc4Ml19
+eyJoaXN0b3J5IjpbLTEzMjMwOTk4MjQsMTE2NjEwMTcxNCw5Mj
+EwOTE3OTUsMzQzNTM1MTUwLC0xNjQ0NzUxNzY3LDIxMzE1MzIw
+MTAsMTM3MjU3ODIwNiwxNjgyNjgwMTYzLC0xNTMyNTQyNDM5LD
+E3ODY3NTExMzIsOTA5MzM4Njk4LC0xMTA5ODIwNDE0LC0xNzk1
+MDQ2OTIsLTE0NjMzMjM5MTgsMTg0ODg5MTkzLDEzNzkzMzg2ND
+EsLTg3NTE2MzI2LDg5NzAyNjM4OSw2MTY2Njc0NzUsLTE2NzY2
+MTI3ODJdfQ==
 -->
