@@ -1439,10 +1439,10 @@ private:
 ```
 Attributes = CreateDefaultSubobject<UAttributeComponent>(TEXT("Attributes"));
 ```
-所以编译运行即可看到Enemy蓝图中有Attribute组件，组件中有可编辑的Actor At't
+所以编译运行即可看到Enemy蓝图中有Attribute组件，组件中有可编辑的Actor Attributes
 ![输入图片说明](/imgs/2024-08-18/mRdOsG1rODVVwhog.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzNDU3ODI1Nyw0MjU2NTIyNTksLTE1OD
+eyJoaXN0b3J5IjpbLTY1ODExMTk0Miw0MjU2NTIyNTksLTE1OD
 U5MjY4NCw2NTAzODM3MTgsLTEwODcyMDEzNTMsLTg4OTYwNzU1
 MywtMTcxNTcxMzMwNiwxNDE2NjA0MDU4LC0xMDQwOTc4MTM1LD
 gxMTA1NjE4MiwtMTMyMzA5OTgyNCwxMTY2MTAxNzE0LDkyMTA5
