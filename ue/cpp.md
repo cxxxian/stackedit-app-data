@@ -1455,12 +1455,19 @@ UWidgetComponent* HealthBarWidget;
 HealthBarWidget = CreateDefaultSubobject<UWidgetComponent>(TEXT("HealthBar"));
 HealthBarWidget->SetupAttachment(GetRootComponent());
 ```
+在HealthBar.h中，声明变量。
+**注意此处**：我们希望此变量绑定蓝图控件中的进度条，需要对应xian
+```
+public:
+	UPROPERTY(meta = (BindWidget))
+	class UProgressBar* HealthBar;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4NTc1NzYxNywxNzc2NDQyOTQxLC0xNz
-kwMzQxOTA4LDQyNTY1MjI1OSwtMTU4NTkyNjg0LDY1MDM4Mzcx
-OCwtMTA4NzIwMTM1MywtODg5NjA3NTUzLC0xNzE1NzEzMzA2LD
-E0MTY2MDQwNTgsLTEwNDA5NzgxMzUsODExMDU2MTgyLC0xMzIz
-MDk5ODI0LDExNjYxMDE3MTQsOTIxMDkxNzk1LDM0MzUzNTE1MC
-wtMTY0NDc1MTc2NywyMTMxNTMyMDEwLDEzNzI1NzgyMDYsMTY4
-MjY4MDE2M119
+eyJoaXN0b3J5IjpbLTQ0OTAyOTY1OSwtNzg1NzU3NjE3LDE3Nz
+Y0NDI5NDEsLTE3OTAzNDE5MDgsNDI1NjUyMjU5LC0xNTg1OTI2
+ODQsNjUwMzgzNzE4LC0xMDg3MjAxMzUzLC04ODk2MDc1NTMsLT
+E3MTU3MTMzMDYsMTQxNjYwNDA1OCwtMTA0MDk3ODEzNSw4MTEw
+NTYxODIsLTEzMjMwOTk4MjQsMTE2NjEwMTcxNCw5MjEwOTE3OT
+UsMzQzNTM1MTUwLC0xNjQ0NzUxNzY3LDIxMzE1MzIwMTAsMTM3
+MjU3ODIwNl19
 -->
