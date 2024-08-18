@@ -1452,7 +1452,7 @@ UHealthBarComponent* HealthBarWidget;
 在Enemy.cpp中的构造方法中初始化HealthBarWidget
 ```
 #include "Components/WidgetComponent.h"
-HealthBarWidget = CreateDefaultSubobject<UWidgetComponent>(TEXT("HealthBar"));
+HealthBarWidget = CreateDefaultSubobject<UHealthBarComponent>(TEXT("HealthBar"));
 HealthBarWidget->SetupAttachment(GetRootComponent());
 ```
 在HealthBar.h中，声明变量。
@@ -1499,11 +1499,11 @@ void UHealthBarComponent::SetHealthPercent(float Percent)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjgwOTQ5NTEsLTQxNTIxMzczLC00Nz
-kxNzQxMjIsNDIxNjgzNTU3LDExODUzMzQ5MDIsLTc3MjkwOTQ1
-MywxNzUxNTkwOTM2LC03ODU3NTc2MTcsMTc3NjQ0Mjk0MSwtMT
-c5MDM0MTkwOCw0MjU2NTIyNTksLTE1ODU5MjY4NCw2NTAzODM3
-MTgsLTEwODcyMDEzNTMsLTg4OTYwNzU1MywtMTcxNTcxMzMwNi
-wxNDE2NjA0MDU4LC0xMDQwOTc4MTM1LDgxMTA1NjE4MiwtMTMy
-MzA5OTgyNF19
+eyJoaXN0b3J5IjpbMTQyMTY3MTk4NCwtNDE1MjEzNzMsLTQ3OT
+E3NDEyMiw0MjE2ODM1NTcsMTE4NTMzNDkwMiwtNzcyOTA5NDUz
+LDE3NTE1OTA5MzYsLTc4NTc1NzYxNywxNzc2NDQyOTQxLC0xNz
+kwMzQxOTA4LDQyNTY1MjI1OSwtMTU4NTkyNjg0LDY1MDM4Mzcx
+OCwtMTA4NzIwMTM1MywtODg5NjA3NTUzLC0xNzE1NzEzMzA2LD
+E0MTY2MDQwNTgsLTEwNDA5NzgxMzUsODExMDU2MTgyLC0xMzIz
+MDk5ODI0XX0=
 -->
