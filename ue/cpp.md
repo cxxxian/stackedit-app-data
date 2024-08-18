@@ -1480,16 +1480,18 @@ void UHealthBarComponent::SetHealthPercent(float Percent)
 	}
 }
 ```
-所以为了改进，我们在HealthBarComponent.h中
+所以为了改进，我们在HealthBarComponent.h中声明一个HealthBar，为了保证它是初始化为**nullptr**，使用UPROPERTY()声明，防止被**垃圾数据初始化**。
+```
 private:
 	UPROPERTY()
 	class UHealthBar* HealthBar;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTgyNzIzNjQsNDIxNjgzNTU3LDExOD
-UzMzQ5MDIsLTc3MjkwOTQ1MywxNzUxNTkwOTM2LC03ODU3NTc2
-MTcsMTc3NjQ0Mjk0MSwtMTc5MDM0MTkwOCw0MjU2NTIyNTksLT
-E1ODU5MjY4NCw2NTAzODM3MTgsLTEwODcyMDEzNTMsLTg4OTYw
-NzU1MywtMTcxNTcxMzMwNiwxNDE2NjA0MDU4LC0xMDQwOTc4MT
-M1LDgxMTA1NjE4MiwtMTMyMzA5OTgyNCwxMTY2MTAxNzE0LDky
-MTA5MTc5NV19
+eyJoaXN0b3J5IjpbLTQ3OTE3NDEyMiw0MjE2ODM1NTcsMTE4NT
+MzNDkwMiwtNzcyOTA5NDUzLDE3NTE1OTA5MzYsLTc4NTc1NzYx
+NywxNzc2NDQyOTQxLC0xNzkwMzQxOTA4LDQyNTY1MjI1OSwtMT
+U4NTkyNjg0LDY1MDM4MzcxOCwtMTA4NzIwMTM1MywtODg5NjA3
+NTUzLC0xNzE1NzEzMzA2LDE0MTY2MDQwNTgsLTEwNDA5NzgxMz
+UsODExMDU2MTgyLC0xMzIzMDk5ODI0LDExNjYxMDE3MTQsOTIx
+MDkxNzk1XX0=
 -->
