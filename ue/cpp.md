@@ -1463,9 +1463,10 @@ public:
 	UPROPERTY(meta = (BindWidget))
 	class UProgressBar* HealthBar;
 ```
-
+在我们创建的widget蓝图中，点开细节面板，可以将父类改成我们自己创建的HealthBar
+![输入图片说明](/imgs/2024-08-18/A1EPZDj8TXZp4YGY.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4NTI5NTE3NCwtNzcyOTA5NDUzLDE3NT
+eyJoaXN0b3J5IjpbMTE4NTMzNDkwMiwtNzcyOTA5NDUzLDE3NT
 E1OTA5MzYsLTc4NTc1NzYxNywxNzc2NDQyOTQxLC0xNzkwMzQx
 OTA4LDQyNTY1MjI1OSwtMTU4NTkyNjg0LDY1MDM4MzcxOCwtMT
 A4NzIwMTM1MywtODg5NjA3NTUzLC0xNzE1NzEzMzA2LDE0MTY2
