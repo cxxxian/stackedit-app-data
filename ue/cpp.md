@@ -1475,7 +1475,7 @@ public:
 ```
 void UHealthBarComponent::SetHealthPercent(float Percent)
 {
-	UHealthBar* HealthBar = Cast<UHealthBar>(GetUserWidgetObject());
+	UHealthBar* HealthBarWidget = Cast<UHealthBar>(GetUserWidgetObject());
 	if (HealthBar) {
 	}
 }
@@ -1484,14 +1484,14 @@ void UHealthBarComponent::SetHealthPercent(float Percent)
 ```
 private:
 	UPROPERTY()
-	class UHealthBar* HealthBar;
+	class UHealthBar* HealthBarWidget;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3OTE3NDEyMiw0MjE2ODM1NTcsMTE4NT
-MzNDkwMiwtNzcyOTA5NDUzLDE3NTE1OTA5MzYsLTc4NTc1NzYx
-NywxNzc2NDQyOTQxLC0xNzkwMzQxOTA4LDQyNTY1MjI1OSwtMT
-U4NTkyNjg0LDY1MDM4MzcxOCwtMTA4NzIwMTM1MywtODg5NjA3
-NTUzLC0xNzE1NzEzMzA2LDE0MTY2MDQwNTgsLTEwNDA5NzgxMz
-UsODExMDU2MTgyLC0xMzIzMDk5ODI0LDExNjYxMDE3MTQsOTIx
-MDkxNzk1XX0=
+eyJoaXN0b3J5IjpbLTIwNDMwMDMxNzgsLTQ3OTE3NDEyMiw0Mj
+E2ODM1NTcsMTE4NTMzNDkwMiwtNzcyOTA5NDUzLDE3NTE1OTA5
+MzYsLTc4NTc1NzYxNywxNzc2NDQyOTQxLC0xNzkwMzQxOTA4LD
+QyNTY1MjI1OSwtMTU4NTkyNjg0LDY1MDM4MzcxOCwtMTA4NzIw
+MTM1MywtODg5NjA3NTUzLC0xNzE1NzEzMzA2LDE0MTY2MDQwNT
+gsLTEwNDA5NzgxMzUsODExMDU2MTgyLC0xMzIzMDk5ODI0LDEx
+NjYxMDE3MTRdfQ==
 -->
