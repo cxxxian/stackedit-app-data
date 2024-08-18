@@ -1449,12 +1449,18 @@ class UWidgetComponent;
 private:
 UWidgetComponent* HealthBarWidget;
 ```
+在Enemy.cpp中的构造方法中初始化HealthBarWidget
+```
+#include "Components/WidgetComponent.h"
+HealthBarWidget = CreateDefaultSubobject<UWidgetComponent>(TEXT("HealthBar"));
+HealthBarWidget->SetupAttachment(GetRootComponent());
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc3NjQ0Mjk0MSwtMTc5MDM0MTkwOCw0Mj
-U2NTIyNTksLTE1ODU5MjY4NCw2NTAzODM3MTgsLTEwODcyMDEz
-NTMsLTg4OTYwNzU1MywtMTcxNTcxMzMwNiwxNDE2NjA0MDU4LC
-0xMDQwOTc4MTM1LDgxMTA1NjE4MiwtMTMyMzA5OTgyNCwxMTY2
-MTAxNzE0LDkyMTA5MTc5NSwzNDM1MzUxNTAsLTE2NDQ3NTE3Nj
-csMjEzMTUzMjAxMCwxMzcyNTc4MjA2LDE2ODI2ODAxNjMsLTE1
-MzI1NDI0MzldfQ==
+eyJoaXN0b3J5IjpbLTc4NTc1NzYxNywxNzc2NDQyOTQxLC0xNz
+kwMzQxOTA4LDQyNTY1MjI1OSwtMTU4NTkyNjg0LDY1MDM4Mzcx
+OCwtMTA4NzIwMTM1MywtODg5NjA3NTUzLC0xNzE1NzEzMzA2LD
+E0MTY2MDQwNTgsLTEwNDA5NzgxMzUsODExMDU2MTgyLC0xMzIz
+MDk5ODI0LDExNjYxMDE3MTQsOTIxMDkxNzk1LDM0MzUzNTE1MC
+wtMTY0NDc1MTc2NywyMTMxNTMyMDEwLDEzNzI1NzgyMDYsMTY4
+MjY4MDE2M119
 -->
