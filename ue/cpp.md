@@ -1486,6 +1486,7 @@ private:
 	UPROPERTY()
 	class UHealthBar* HealthBarWidget;
 ```
+HealthBarComponent.cpp中完善方法，此处为了防止上述的重复cast问题，采用了存储变量的方法，将cast成功的值存入HealthBarWidget，以后即直接用HealthBarWidget
 ```
 void UHealthBarComponent::SetHealthPercent(float Percent)
 {
@@ -1496,12 +1497,13 @@ void UHealthBarComponent::SetHealthPercent(float Percent)
 		HealthBarWidget->HealthBar->SetPercent(Percent);
 	}
 }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDY0MjczODQsLTQ3OTE3NDEyMiw0Mj
-E2ODM1NTcsMTE4NTMzNDkwMiwtNzcyOTA5NDUzLDE3NTE1OTA5
-MzYsLTc4NTc1NzYxNywxNzc2NDQyOTQxLC0xNzkwMzQxOTA4LD
-QyNTY1MjI1OSwtMTU4NTkyNjg0LDY1MDM4MzcxOCwtMTA4NzIw
-MTM1MywtODg5NjA3NTUzLC0xNzE1NzEzMzA2LDE0MTY2MDQwNT
-gsLTEwNDA5NzgxMzUsODExMDU2MTgyLC0xMzIzMDk5ODI0LDEx
-NjYxMDE3MTRdfQ==
+eyJoaXN0b3J5IjpbLTQxNTIxMzczLC00NzkxNzQxMjIsNDIxNj
+gzNTU3LDExODUzMzQ5MDIsLTc3MjkwOTQ1MywxNzUxNTkwOTM2
+LC03ODU3NTc2MTcsMTc3NjQ0Mjk0MSwtMTc5MDM0MTkwOCw0Mj
+U2NTIyNTksLTE1ODU5MjY4NCw2NTAzODM3MTgsLTEwODcyMDEz
+NTMsLTg4OTYwNzU1MywtMTcxNTcxMzMwNiwxNDE2NjA0MDU4LC
+0xMDQwOTc4MTM1LDgxMTA1NjE4MiwtMTMyMzA5OTgyNCwxMTY2
+MTAxNzE0XX0=
 -->
