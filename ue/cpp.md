@@ -1456,14 +1456,15 @@ HealthBarWidget = CreateDefaultSubobject<UWidgetComponent>(TEXT("HealthBar"));
 HealthBarWidget->SetupAttachment(GetRootComponent());
 ```
 在HealthBar.h中，声明变量。
-**注意此处**：我们希望此变量绑定蓝图控件中的进度条，需要对应xian
+**注意此处**：我们希望此变量绑定蓝图控件中的进度条，需要对应**相同**的名字
+![输入图片说明](/imgs/2024-08-18/ih3BlHrXyr255rSy.png)
 ```
 public:
 	UPROPERTY(meta = (BindWidget))
 	class UProgressBar* HealthBar;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0OTAyOTY1OSwtNzg1NzU3NjE3LDE3Nz
+eyJoaXN0b3J5IjpbMTc1MTU5MDkzNiwtNzg1NzU3NjE3LDE3Nz
 Y0NDI5NDEsLTE3OTAzNDE5MDgsNDI1NjUyMjU5LC0xNTg1OTI2
 ODQsNjUwMzgzNzE4LC0xMDg3MjAxMzUzLC04ODk2MDc1NTMsLT
 E3MTU3MTMzMDYsMTQxNjYwNDA1OCwtMTA0MDk3ODEzNSw4MTEw
