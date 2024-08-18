@@ -1444,11 +1444,13 @@ Attributes = CreateDefaultSubobject<UAttributeComponent>(TEXT("Attributes"));
 ## 制作血条
 在Build.cs中加上OMG模块，以及右键新建c++类以widgetComponent建立HealthBarComponent
 在Enemy.h中声明
+```
 class UWidgetComponent;
 private:
 UWidgetComponent* HealthBarWidget;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE0NzQyMzczMywtMTc5MDM0MTkwOCw0Mj
+eyJoaXN0b3J5IjpbMTc3NjQ0Mjk0MSwtMTc5MDM0MTkwOCw0Mj
 U2NTIyNTksLTE1ODU5MjY4NCw2NTAzODM3MTgsLTEwODcyMDEz
 NTMsLTg4OTYwNzU1MywtMTcxNTcxMzMwNiwxNDE2NjA0MDU4LC
 0xMDQwOTc4MTM1LDgxMTA1NjE4MiwtMTMyMzA5OTgyNCwxMTY2
