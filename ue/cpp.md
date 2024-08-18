@@ -1428,17 +1428,19 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Actor Attributes")
 	float MaxHealth;
 ```
-先应用到Enemy身上，在Enemy.cpp中声明Attributes
+先应用到Enemy身上，在Enemy.h中声明Attributes
 ```
 class UAttributeComponent;
 private:
 	UPROPERTY(VisibleAnywhere)
 	UAttributeComponent* Attributes;
 ```
+在Enemy.cpp中的构造函数进行初始化
 ```
 Attributes = CreateDefaultSubobject<UAttributeComponent>(TEXT("Attributes"));
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1OTM2MTQ1MCw0MjU2NTIyNTksLTE1OD
+eyJoaXN0b3J5IjpbLTczMzE3NTQ4Myw0MjU2NTIyNTksLTE1OD
 U5MjY4NCw2NTAzODM3MTgsLTEwODcyMDEzNTMsLTg4OTYwNzU1
 MywtMTcxNTcxMzMwNiwxNDE2NjA0MDU4LC0xMDQwOTc4MTM1LD
 gxMTA1NjE4MiwtMTMyMzA5OTgyNCwxMTY2MTAxNzE0LDkyMTA5
