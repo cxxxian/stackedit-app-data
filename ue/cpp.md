@@ -1471,7 +1471,7 @@ public:
 	void SetHealthPercent(float Percent);
 ```
 在HealthBarComponent.cpp中实现该方法
-由于我们可能会反复调用此方法，即会反复使用Cast函数，这可能是一项十分耗能的操作
+由于我们可能会反复调用此方法，即会反复使用Cast函数，这可能是一项十分耗能昂贵的操作，因为GetUserWidgetObject()如果转换不成功，它会从父类一直往上一层不断地查找转换。
 ```
 void UHealthBarComponent::SetHealthPercent(float Percent)
 {
@@ -1482,11 +1482,11 @@ void UHealthBarComponent::SetHealthPercent(float Percent)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDQ5ODkwMjIsMTE4NTMzNDkwMiwtNz
-cyOTA5NDUzLDE3NTE1OTA5MzYsLTc4NTc1NzYxNywxNzc2NDQy
-OTQxLC0xNzkwMzQxOTA4LDQyNTY1MjI1OSwtMTU4NTkyNjg0LD
-Y1MDM4MzcxOCwtMTA4NzIwMTM1MywtODg5NjA3NTUzLC0xNzE1
-NzEzMzA2LDE0MTY2MDQwNTgsLTEwNDA5NzgxMzUsODExMDU2MT
-gyLC0xMzIzMDk5ODI0LDExNjYxMDE3MTQsOTIxMDkxNzk1LDM0
-MzUzNTE1MF19
+eyJoaXN0b3J5IjpbNDIxNjgzNTU3LDExODUzMzQ5MDIsLTc3Mj
+kwOTQ1MywxNzUxNTkwOTM2LC03ODU3NTc2MTcsMTc3NjQ0Mjk0
+MSwtMTc5MDM0MTkwOCw0MjU2NTIyNTksLTE1ODU5MjY4NCw2NT
+AzODM3MTgsLTEwODcyMDEzNTMsLTg4OTYwNzU1MywtMTcxNTcx
+MzMwNiwxNDE2NjA0MDU4LC0xMDQwOTc4MTM1LDgxMTA1NjE4Mi
+wtMTMyMzA5OTgyNCwxMTY2MTAxNzE0LDkyMTA5MTc5NSwzNDM1
+MzUxNTBdfQ==
 -->
