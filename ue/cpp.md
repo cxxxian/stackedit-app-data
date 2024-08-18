@@ -1406,13 +1406,23 @@ class UNiagaraComponent* EmbersEffect;
 EmbersEffect = CreateDefaultSubobject<UNiagaraComponent>(TEXT("Embers"));
 	EmbersEffect->SetupAttachment(GetRootComponent());
 ```
-假设我们在武器shang
+假设我们在武器上添加Niagara特效，则此时我们捡起武器时特效并不会消失，需要我们手动关停特效
+```
+#include "NiagaraComponent.h"
+void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
+{
+	···省略
+	if (EmbersEffect) {
+		EmbersEffect->Deactivate();
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0MDIxMzc0LDY1MDM4MzcxOCwtMTA4Nz
-IwMTM1MywtODg5NjA3NTUzLC0xNzE1NzEzMzA2LDE0MTY2MDQw
-NTgsLTEwNDA5NzgxMzUsODExMDU2MTgyLC0xMzIzMDk5ODI0LD
-ExNjYxMDE3MTQsOTIxMDkxNzk1LDM0MzUzNTE1MCwtMTY0NDc1
-MTc2NywyMTMxNTMyMDEwLDEzNzI1NzgyMDYsMTY4MjY4MDE2My
-wtMTUzMjU0MjQzOSwxNzg2NzUxMTMyLDkwOTMzODY5OCwtMTEw
-OTgyMDQxNF19
+eyJoaXN0b3J5IjpbLTE1ODU5MjY4NCw2NTAzODM3MTgsLTEwOD
+cyMDEzNTMsLTg4OTYwNzU1MywtMTcxNTcxMzMwNiwxNDE2NjA0
+MDU4LC0xMDQwOTc4MTM1LDgxMTA1NjE4MiwtMTMyMzA5OTgyNC
+wxMTY2MTAxNzE0LDkyMTA5MTc5NSwzNDM1MzUxNTAsLTE2NDQ3
+NTE3NjcsMjEzMTUzMjAxMCwxMzcyNTc4MjA2LDE2ODI2ODAxNj
+MsLTE1MzI1NDI0MzksMTc4Njc1MTEzMiw5MDkzMzg2OTgsLTEx
+MDk4MjA0MTRdfQ==
 -->
