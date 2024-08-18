@@ -1442,9 +1442,13 @@ Attributes = CreateDefaultSubobject<UAttributeComponent>(TEXT("Attributes"));
 所以编译运行即可看到Enemy蓝图中有Attribute组件，组件中有可编辑的Actor Attributes
 ![输入图片说明](/imgs/2024-08-18/mRdOsG1rODVVwhog.png)
 ## 制作血条
-在Build.cs中加上OMG模块，以及右键新建c++类以widgetComponent建立
+在Build.cs中加上OMG模块，以及右键新建c++类以widgetComponent建立HealthBarComponent
+在Enemy.h中声明
+class UWidgetComponent;
+private:
+UWidgetComponent* HealthBarWidget;
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExMjU2MjE1OCwtMTc5MDM0MTkwOCw0Mj
+eyJoaXN0b3J5IjpbMjE0NzQyMzczMywtMTc5MDM0MTkwOCw0Mj
 U2NTIyNTksLTE1ODU5MjY4NCw2NTAzODM3MTgsLTEwODcyMDEz
 NTMsLTg4OTYwNzU1MywtMTcxNTcxMzMwNiwxNDE2NjA0MDU4LC
 0xMDQwOTc4MTM1LDgxMTA1NjE4MiwtMTMyMzA5OTgyNCwxMTY2
