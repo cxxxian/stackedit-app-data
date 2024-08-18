@@ -1417,9 +1417,19 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 	}
 }
 ```
-
+## 制作自己的组件
+制作自己的Attribute组件
+新建c++类基于Actor组件（ActorComponent）
+在Attribute.h中声明变量
+```
+private:
+	UPROPERTY(EditAnywhere, Category = "Actor Attributes")
+	float Health;
+	UPROPERTY(EditAnywhere, Category = "Actor Attributes")
+	float MaxHealth;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUwMTI4MjU0LC0xNTg1OTI2ODQsNjUwMz
+eyJoaXN0b3J5IjpbNDI1NjUyMjU5LC0xNTg1OTI2ODQsNjUwMz
 gzNzE4LC0xMDg3MjAxMzUzLC04ODk2MDc1NTMsLTE3MTU3MTMz
 MDYsMTQxNjYwNDA1OCwtMTA0MDk3ODEzNSw4MTEwNTYxODIsLT
 EzMjMwOTk4MjQsMTE2NjEwMTcxNCw5MjEwOTE3OTUsMzQzNTM1
