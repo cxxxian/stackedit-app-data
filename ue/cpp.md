@@ -1417,7 +1417,7 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName)
 	}
 }
 ```
-## 制作自己的组件
+## 制作自己的组件（component）
 制作自己的Attribute组件
 新建c++类基于Actor组件（ActorComponent）
 在Attribute.h中声明变量
@@ -1442,11 +1442,11 @@ Attributes = CreateDefaultSubobject<UAttributeComponent>(TEXT("Attributes"));
 所以编译运行即可看到Enemy蓝图中有Attribute组件，组件中有可编辑的Actor Attributes
 ![输入图片说明](/imgs/2024-08-18/mRdOsG1rODVVwhog.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1ODExMTk0Miw0MjU2NTIyNTksLTE1OD
-U5MjY4NCw2NTAzODM3MTgsLTEwODcyMDEzNTMsLTg4OTYwNzU1
-MywtMTcxNTcxMzMwNiwxNDE2NjA0MDU4LC0xMDQwOTc4MTM1LD
-gxMTA1NjE4MiwtMTMyMzA5OTgyNCwxMTY2MTAxNzE0LDkyMTA5
-MTc5NSwzNDM1MzUxNTAsLTE2NDQ3NTE3NjcsMjEzMTUzMjAxMC
-wxMzcyNTc4MjA2LDE2ODI2ODAxNjMsLTE1MzI1NDI0MzksMTc4
-Njc1MTEzMl19
+eyJoaXN0b3J5IjpbLTE3OTAzNDE5MDgsNDI1NjUyMjU5LC0xNT
+g1OTI2ODQsNjUwMzgzNzE4LC0xMDg3MjAxMzUzLC04ODk2MDc1
+NTMsLTE3MTU3MTMzMDYsMTQxNjYwNDA1OCwtMTA0MDk3ODEzNS
+w4MTEwNTYxODIsLTEzMjMwOTk4MjQsMTE2NjEwMTcxNCw5MjEw
+OTE3OTUsMzQzNTM1MTUwLC0xNjQ0NzUxNzY3LDIxMzE1MzIwMT
+AsMTM3MjU3ODIwNiwxNjgyNjgwMTYzLC0xNTMyNTQyNDM5LDE3
+ODY3NTExMzJdfQ==
 -->
