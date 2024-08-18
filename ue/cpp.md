@@ -1486,8 +1486,18 @@ private:
 	UPROPERTY()
 	class UHealthBar* HealthBarWidget;
 ```
+```
+void UHealthBarComponent::SetHealthPercent(float Percent)
+{
+	if (HealthBarWidget == nullptr) {
+		HealthBarWidget = Cast<UHealthBar>(GetUserWidgetObject());
+	}
+	if (HealthBarWidget && HealthBarWidget->HealthBar) {
+		HealthBarWidget->HealthBar->SetPercent(Percent);
+	}
+}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNDMwMDMxNzgsLTQ3OTE3NDEyMiw0Mj
+eyJoaXN0b3J5IjpbLTEzNDY0MjczODQsLTQ3OTE3NDEyMiw0Mj
 E2ODM1NTcsMTE4NTMzNDkwMiwtNzcyOTA5NDUzLDE3NTE1OTA5
 MzYsLTc4NTc1NzYxNywxNzc2NDQyOTQxLC0xNzkwMzQxOTA4LD
 QyNTY1MjI1OSwtMTU4NTkyNjg0LDY1MDM4MzcxOCwtMTA4NzIw
