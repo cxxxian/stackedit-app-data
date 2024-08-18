@@ -1428,12 +1428,21 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Actor Attributes")
 	float MaxHealth;
 ```
+先应用到Enemy身上，在Enemy.cpp中声明Attributes
+```
+class UAttributeComponent;
+private:
+	UPROPERTY(VisibleAnywhere)
+	UAttributeComponent* Attributes;
+```
+```
+Attributes = CreateDefaultSubobject<UAttributeComponent>(TEXT("Attributes"));
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDI1NjUyMjU5LC0xNTg1OTI2ODQsNjUwMz
-gzNzE4LC0xMDg3MjAxMzUzLC04ODk2MDc1NTMsLTE3MTU3MTMz
-MDYsMTQxNjYwNDA1OCwtMTA0MDk3ODEzNSw4MTEwNTYxODIsLT
-EzMjMwOTk4MjQsMTE2NjEwMTcxNCw5MjEwOTE3OTUsMzQzNTM1
-MTUwLC0xNjQ0NzUxNzY3LDIxMzE1MzIwMTAsMTM3MjU3ODIwNi
-wxNjgyNjgwMTYzLC0xNTMyNTQyNDM5LDE3ODY3NTExMzIsOTA5
-MzM4Njk4XX0=
+eyJoaXN0b3J5IjpbLTg1OTM2MTQ1MCw0MjU2NTIyNTksLTE1OD
+U5MjY4NCw2NTAzODM3MTgsLTEwODcyMDEzNTMsLTg4OTYwNzU1
+MywtMTcxNTcxMzMwNiwxNDE2NjA0MDU4LC0xMDQwOTc4MTM1LD
+gxMTA1NjE4MiwtMTMyMzA5OTgyNCwxMTY2MTAxNzE0LDkyMTA5
+MTc5NSwzNDM1MzUxNTAsLTE2NDQ3NTE3NjcsMjEzMTUzMjAxMC
+wxMzcyNTc4MjA2LDE2ODI2ODAxNjMsLTE1MzI1NDI0MzksMTc4
+Njc1MTEzMl19
 -->
