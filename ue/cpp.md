@@ -1445,9 +1445,9 @@ Attributes = CreateDefaultSubobject<UAttributeComponent>(TEXT("Attributes"));
 在Build.cs中加上OMG模块，以及右键新建c++类以widgetComponent建立HealthBarComponent
 在Enemy.h中声明
 ```
-class UWidgetComponent;
+class UHealthBarComponent;
 private:
-UWidgetComponent* HealthBarWidget;
+UHealthBarComponent* HealthBarWidget;
 ```
 在Enemy.cpp中的构造方法中初始化HealthBarWidget
 ```
@@ -1499,11 +1499,11 @@ void UHealthBarComponent::SetHealthPercent(float Percent)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQxNTIxMzczLC00NzkxNzQxMjIsNDIxNj
-gzNTU3LDExODUzMzQ5MDIsLTc3MjkwOTQ1MywxNzUxNTkwOTM2
-LC03ODU3NTc2MTcsMTc3NjQ0Mjk0MSwtMTc5MDM0MTkwOCw0Mj
-U2NTIyNTksLTE1ODU5MjY4NCw2NTAzODM3MTgsLTEwODcyMDEz
-NTMsLTg4OTYwNzU1MywtMTcxNTcxMzMwNiwxNDE2NjA0MDU4LC
-0xMDQwOTc4MTM1LDgxMTA1NjE4MiwtMTMyMzA5OTgyNCwxMTY2
-MTAxNzE0XX0=
+eyJoaXN0b3J5IjpbLTE2MjgwOTQ5NTEsLTQxNTIxMzczLC00Nz
+kxNzQxMjIsNDIxNjgzNTU3LDExODUzMzQ5MDIsLTc3MjkwOTQ1
+MywxNzUxNTkwOTM2LC03ODU3NTc2MTcsMTc3NjQ0Mjk0MSwtMT
+c5MDM0MTkwOCw0MjU2NTIyNTksLTE1ODU5MjY4NCw2NTAzODM3
+MTgsLTEwODcyMDEzNTMsLTg4OTYwNzU1MywtMTcxNTcxMzMwNi
+wxNDE2NjA0MDU4LC0xMDQwOTc4MTM1LDgxMTA1NjE4MiwtMTMy
+MzA5OTgyNF19
 -->
