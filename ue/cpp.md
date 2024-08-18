@@ -1465,12 +1465,25 @@ public:
 ```
 在我们创建的widget蓝图中，点开细节面板，可以将父类改成我们自己创建的HealthBar
 ![输入图片说明](/imgs/2024-08-18/A1EPZDj8TXZp4YGY.png)
+在HealthBarComponent.h中制作计算方法
+```
+public:
+	void SetHealthPercent(float Percent);
+```
+```
+void UHealthBarComponent::SetHealthPercent(float Percent)
+{
+	UHealthBar* HealthBar = Cast<UHealthBar>(GetUserWidgetObject());
+	if (HealthBar) {
+
+	}
+}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4NTMzNDkwMiwtNzcyOTA5NDUzLDE3NT
-E1OTA5MzYsLTc4NTc1NzYxNywxNzc2NDQyOTQxLC0xNzkwMzQx
-OTA4LDQyNTY1MjI1OSwtMTU4NTkyNjg0LDY1MDM4MzcxOCwtMT
-A4NzIwMTM1MywtODg5NjA3NTUzLC0xNzE1NzEzMzA2LDE0MTY2
-MDQwNTgsLTEwNDA5NzgxMzUsODExMDU2MTgyLC0xMzIzMDk5OD
-I0LDExNjYxMDE3MTQsOTIxMDkxNzk1LDM0MzUzNTE1MCwtMTY0
-NDc1MTc2N119
+eyJoaXN0b3J5IjpbNzUwMDgzNDYzLDExODUzMzQ5MDIsLTc3Mj
+kwOTQ1MywxNzUxNTkwOTM2LC03ODU3NTc2MTcsMTc3NjQ0Mjk0
+MSwtMTc5MDM0MTkwOCw0MjU2NTIyNTksLTE1ODU5MjY4NCw2NT
+AzODM3MTgsLTEwODcyMDEzNTMsLTg4OTYwNzU1MywtMTcxNTcx
+MzMwNiwxNDE2NjA0MDU4LC0xMDQwOTc4MTM1LDgxMTA1NjE4Mi
+wtMTMyMzA5OTgyNCwxMTY2MTAxNzE0LDkyMTA5MTc5NSwzNDM1
+MzUxNTBdfQ==
 -->
