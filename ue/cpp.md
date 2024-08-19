@@ -1499,6 +1499,7 @@ void UHealthBarComponent::SetHealthPercent(float Percent)
 }
 ```
 ## 伤害制作
+*
 在weapon.h中声明一个变量Damage用来设置武器伤害
 ```
 UPROPERTY(EditAnywhere, Category = "Weapon Properties")
@@ -1578,11 +1579,11 @@ float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AC
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjIyMDIwMDQwLDE2NTM0NzIxMjMsLTY5NT
-U3OTIyNCwtMTAwMDU2Nzc0MiwzMzA0MzQ2OTQsLTM1MDMyMDI2
-NiwtMTYwMzg2MDMyOSwxMzc3ODI1NTAzLDE0MjE2NzE5ODQsLT
-QxNTIxMzczLC00NzkxNzQxMjIsNDIxNjgzNTU3LDExODUzMzQ5
-MDIsLTc3MjkwOTQ1MywxNzUxNTkwOTM2LC03ODU3NTc2MTcsMT
-c3NjQ0Mjk0MSwtMTc5MDM0MTkwOCw0MjU2NTIyNTksLTE1ODU5
-MjY4NF19
+eyJoaXN0b3J5IjpbLTc4NDUwMzQ1NCw2MjIwMjAwNDAsMTY1Mz
+Q3MjEyMywtNjk1NTc5MjI0LC0xMDAwNTY3NzQyLDMzMDQzNDY5
+NCwtMzUwMzIwMjY2LC0xNjAzODYwMzI5LDEzNzc4MjU1MDMsMT
+QyMTY3MTk4NCwtNDE1MjEzNzMsLTQ3OTE3NDEyMiw0MjE2ODM1
+NTcsMTE4NTMzNDkwMiwtNzcyOTA5NDUzLDE3NTE1OTA5MzYsLT
+c4NTc1NzYxNywxNzc2NDQyOTQxLC0xNzkwMzQxOTA4LDQyNTY1
+MjI1OV19
 -->
