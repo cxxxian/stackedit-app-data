@@ -1499,16 +1499,18 @@ void UHealthBarComponent::SetHealthPercent(float Percent)
 }
 ```
 ## 伤害制作
+UPROPERTY(EditAnywhere, Category = "Weapon Properties")
+	float Damage = 20.f;
 在Enemy.h中override来自AActor的方法（因为Enemy继承自AActor）
 ```
 virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3NzgyNTUwMywxNDIxNjcxOTg0LC00MT
-UyMTM3MywtNDc5MTc0MTIyLDQyMTY4MzU1NywxMTg1MzM0OTAy
-LC03NzI5MDk0NTMsMTc1MTU5MDkzNiwtNzg1NzU3NjE3LDE3Nz
-Y0NDI5NDEsLTE3OTAzNDE5MDgsNDI1NjUyMjU5LC0xNTg1OTI2
-ODQsNjUwMzgzNzE4LC0xMDg3MjAxMzUzLC04ODk2MDc1NTMsLT
-E3MTU3MTMzMDYsMTQxNjYwNDA1OCwtMTA0MDk3ODEzNSw4MTEw
-NTYxODJdfQ==
+eyJoaXN0b3J5IjpbMjAwNDUzNDM0MCwxMzc3ODI1NTAzLDE0Mj
+E2NzE5ODQsLTQxNTIxMzczLC00NzkxNzQxMjIsNDIxNjgzNTU3
+LDExODUzMzQ5MDIsLTc3MjkwOTQ1MywxNzUxNTkwOTM2LC03OD
+U3NTc2MTcsMTc3NjQ0Mjk0MSwtMTc5MDM0MTkwOCw0MjU2NTIy
+NTksLTE1ODU5MjY4NCw2NTAzODM3MTgsLTEwODcyMDEzNTMsLT
+g4OTYwNzU1MywtMTcxNTcxMzMwNiwxNDE2NjA0MDU4LC0xMDQw
+OTc4MTM1XX0=
 -->
