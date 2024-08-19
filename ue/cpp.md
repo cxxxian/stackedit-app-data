@@ -1543,7 +1543,7 @@ void ASlashCharacter::EKeyPressed()
 	。。。省略
 }
 ```
-回到Weapon.cpp中处理造成伤害事件
+回到Weapon.cpp中处理造成伤害事件，此处applyDamage在GetHit之前是因为，GetHit方法中有判断敌人受击方向的方法，如果先执行了GetHit，则当敌人生命为0时还需要再打一下才能判断死亡
 ```
 void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
@@ -1602,11 +1602,11 @@ float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AC
 ## 制作敌人死亡
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzE3MjQ1NDYsLTIwNTU1Mzk0NTAsLT
-czMjI3NzExNCwxMDE4NzUwNDA4LDYyMjAyMDA0MCwxNjUzNDcy
-MTIzLC02OTU1NzkyMjQsLTEwMDA1Njc3NDIsMzMwNDM0Njk0LC
-0zNTAzMjAyNjYsLTE2MDM4NjAzMjksMTM3NzgyNTUwMywxNDIx
-NjcxOTg0LC00MTUyMTM3MywtNDc5MTc0MTIyLDQyMTY4MzU1Ny
-wxMTg1MzM0OTAyLC03NzI5MDk0NTMsMTc1MTU5MDkzNiwtNzg1
-NzU3NjE3XX0=
+eyJoaXN0b3J5IjpbLTYwMjk5Mjg5NiwtMjA1NTUzOTQ1MCwtNz
+MyMjc3MTE0LDEwMTg3NTA0MDgsNjIyMDIwMDQwLDE2NTM0NzIx
+MjMsLTY5NTU3OTIyNCwtMTAwMDU2Nzc0MiwzMzA0MzQ2OTQsLT
+M1MDMyMDI2NiwtMTYwMzg2MDMyOSwxMzc3ODI1NTAzLDE0MjE2
+NzE5ODQsLTQxNTIxMzczLC00NzkxNzQxMjIsNDIxNjgzNTU3LD
+ExODUzMzQ5MDIsLTc3MjkwOTQ1MywxNzUxNTkwOTM2LC03ODU3
+NTc2MTddfQ==
 -->
