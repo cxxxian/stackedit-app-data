@@ -1662,9 +1662,14 @@ void AEnemy::Die()
 }
 ```
 此时我们会发现死亡后会经历死亡动画之后回到Idle状态，这是由于我们的状态机只设定了Idle状态，所以
+1. 建立状态机Main States
+2. 在Main States中实现Idle和Dead的切换
 ![输入图片说明](/imgs/2024-08-19/D5EfPysUSv6wZeHu.png)
+![输入图片说明](/imgs/2024-08-19/CfS2O6U5AHf4qQYA.png)
+此时引入新问题，如果播放对应的六种Dead动画
+### 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAyMzIwNDQ1OCwxNzA3MzA2NjAzLC02MD
+eyJoaXN0b3J5IjpbMTIxOTc1NTAyNCwxNzA3MzA2NjAzLC02MD
 I5OTI4OTYsLTIwNTU1Mzk0NTAsLTczMjI3NzExNCwxMDE4NzUw
 NDA4LDYyMjAyMDA0MCwxNjUzNDcyMTIzLC02OTU1NzkyMjQsLT
 EwMDA1Njc3NDIsMzMwNDM0Njk0LC0zNTAzMjAyNjYsLTE2MDM4
