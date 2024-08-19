@@ -1553,24 +1553,36 @@ public:
 	void ReceiveDamage(float Damage);
 	float GetHealthPercent();
 ```
-在AttributeComponent.cpp中实现方法
+在AttributeComponent.cpp中实现方法，clamp夹值函数，最小不低于0，最大不高于100
 ```
 void UAttributeComponent::ReceiveDamage(float Damage)
 {
-	Health -= FMath::Clamp(Health - Damage, 0.f, MaxHealth);
+	Health = FMath::Clamp(Health - Damage, 0.f, MaxHealth);
 }
 float UAttributeComponent::GetHealthPercent()
 {
 	return Health / MaxHealth;
 }
+```
+最终回到Enemy.cpp完善最后的函数，应用伤害以及she
+```
+float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
+{
+	if (Attributes && HealthBarWidget) {
+		Attributes->ReceiveDamage(DamageAmount);
 
+		HealthBarWidget->SetHealthPercent(Attributes->GetHealthPercent());
+
+	}
+	return DamageAmount;
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY1MzQ3MjEyMywtNjk1NTc5MjI0LC0xMD
-AwNTY3NzQyLDMzMDQzNDY5NCwtMzUwMzIwMjY2LC0xNjAzODYw
-MzI5LDEzNzc4MjU1MDMsMTQyMTY3MTk4NCwtNDE1MjEzNzMsLT
-Q3OTE3NDEyMiw0MjE2ODM1NTcsMTE4NTMzNDkwMiwtNzcyOTA5
-NDUzLDE3NTE1OTA5MzYsLTc4NTc1NzYxNywxNzc2NDQyOTQxLC
-0xNzkwMzQxOTA4LDQyNTY1MjI1OSwtMTU4NTkyNjg0LDY1MDM4
-MzcxOF19
+eyJoaXN0b3J5IjpbMjA0OTY5OTMxNywxNjUzNDcyMTIzLC02OT
+U1NzkyMjQsLTEwMDA1Njc3NDIsMzMwNDM0Njk0LC0zNTAzMjAy
+NjYsLTE2MDM4NjAzMjksMTM3NzgyNTUwMywxNDIxNjcxOTg0LC
+00MTUyMTM3MywtNDc5MTc0MTIyLDQyMTY4MzU1NywxMTg1MzM0
+OTAyLC03NzI5MDk0NTMsMTc1MTU5MDkzNiwtNzg1NzU3NjE3LD
+E3NzY0NDI5NDEsLTE3OTAzNDE5MDgsNDI1NjUyMjU5LC0xNTg1
+OTI2ODRdfQ==
 -->
