@@ -1360,8 +1360,8 @@ private:
 ```
 所以修改BreakableActor.cpp中的方法，
 
- 1. 增加判断条件TreasureClasses.Num() > 0，说明此破碎物品会掉落宝藏
- 2. 使用FMath::RandRange(0, TreasureClasses.Num() - 1)用来进行随机数的选择，得到随机宝藏的效果
+ - 增加判断条件TreasureClasses.Num() > 0，说明此破碎物品会掉落宝藏
+ - 使用FMath::RandRange(0, TreasureClasses.Num() - 1)用来进行随机数的选择，得到随机宝藏的效果
 ```
 void ABreakableActor::GetHit_Implementation(const FVector& ImpactPoint)
 {
@@ -1500,6 +1500,19 @@ void UHealthBarComponent::SetHealthPercent(float Percent)
 ```
 ## 伤害制作
 **最重要的两个函数**AActor类下的**TakeDamage**和UGameplayStatics类下的**ApplyDamage**，通过调用ApplyDamage会转而调用TakeDamage
+### TakeDamage和ApplyDamage
+1. **功能关系**:
+    
+    -   TakeDamage 函数负责处理 Actor 受到伤害时的逻辑,比如扣除生命值、播放受伤动画等。
+    -   ApplyDamage 函数负责调用目标 Actor 的 TakeDamage 函数,从而触发伤害处理逻辑。
+2. **参数传递**:
+    
+ - ApplyDamage 函数会将伤害量、伤害类型、伤害施加者等信息作为参数传递给目标 Actor 的 TakeDamage 函数。
+ - TakeDamage 函数可以根据这些参数信息来决定具体的伤害处理行为。
+3. **调用关系**:
+ - 当需要对某个 Actor 造成伤害时,通常会调用 ApplyDamage 函数。
+- ApplyDamage 函数内部会寻找目标 Actor,并调用其 TakeDamage 函数。
+
 在weapon.h中声明一个变量Damage用来设置武器伤害
 ```
 UPROPERTY(EditAnywhere, Category = "Weapon Properties")
@@ -1547,8 +1560,8 @@ UGameplayStatics::ApplyDamage(
 }
 ```
 由于在Enemy.cpp中的TakeDamage需要伤害的接收，所以
-1. 在AttributeComponent.h中声明一个用来计算生命值的方法，因为我们在AttributeComponent.h中声明的Health和MaxHealth都是private的，我们不想把他们改成public，即建立函数来进行计算
-2. GetHealthPercent()用来计算血条百分比
+5. 在AttributeComponent.h中声明一个用来计算生命值的方法，因为我们在AttributeComponent.h中声明的Health和MaxHealth都是private的，我们不想把他们改成public，即建立函数来进行计算
+6. GetHealthPercent()用来计算血条百分比
 ```
 public:
 	void ReceiveDamage(float Damage);
@@ -1579,11 +1592,11 @@ float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AC
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxODc1MDQwOCw2MjIwMjAwNDAsMTY1Mz
-Q3MjEyMywtNjk1NTc5MjI0LC0xMDAwNTY3NzQyLDMzMDQzNDY5
-NCwtMzUwMzIwMjY2LC0xNjAzODYwMzI5LDEzNzc4MjU1MDMsMT
-QyMTY3MTk4NCwtNDE1MjEzNzMsLTQ3OTE3NDEyMiw0MjE2ODM1
-NTcsMTE4NTMzNDkwMiwtNzcyOTA5NDUzLDE3NTE1OTA5MzYsLT
-c4NTc1NzYxNywxNzc2NDQyOTQxLC0xNzkwMzQxOTA4LDQyNTY1
-MjI1OV19
+eyJoaXN0b3J5IjpbLTczMjI3NzExNCwxMDE4NzUwNDA4LDYyMj
+AyMDA0MCwxNjUzNDcyMTIzLC02OTU1NzkyMjQsLTEwMDA1Njc3
+NDIsMzMwNDM0Njk0LC0zNTAzMjAyNjYsLTE2MDM4NjAzMjksMT
+M3NzgyNTUwMywxNDIxNjcxOTg0LC00MTUyMTM3MywtNDc5MTc0
+MTIyLDQyMTY4MzU1NywxMTg1MzM0OTAyLC03NzI5MDk0NTMsMT
+c1MTU5MDkzNiwtNzg1NzU3NjE3LDE3NzY0NDI5NDEsLTE3OTAz
+NDE5MDhdfQ==
 -->
