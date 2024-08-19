@@ -1601,7 +1601,7 @@ float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AC
 ```
 ## 制作敌人死亡
 由于此时不仅是受击且要判断死亡，所以需要修改之前的GetHit函数
-在Enemy.h中声明一个DeathMontage，在蓝图中给其赋值，Diehan
+在Enemy.h中声明一个DeathMontage，在蓝图中给其赋值，Die函数用来播放蒙太奇
 ```
 private:
 	UPROPERTY(EditDefaultsOnly, Category = Montages)
@@ -1610,6 +1610,7 @@ private:
 protected:
 	void Die();
 ```
+在Enemy.cpp中，将其分为受击或死亡两种情况，通过IsAlive()函数来判断
 ```
 void AEnemy::GetHit_Implementation(const FVector& ImpactPoint)
 {
@@ -1624,8 +1625,44 @@ void AEnemy::GetHit_Implementation(const FVector& ImpactPoint)
 。。。省略
 }
 ```
+对于Die函数的实现，通过其mi
+```
+void AEnemy::Die()
+{
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if (AnimInstance && DeathMontage) {
+		AnimInstance->Montage_Play(DeathMontage);
+
+		const int32 Selection = FMath::RandRange(0, 5);
+		FName SectionName = FName();
+		switch (Selection) {
+		case0:
+			SectionName = FName("Death1");
+			break;
+		case1:
+			SectionName = FName("Death2");
+			break;
+		case2:
+			SectionName = FName("Death3");
+			break;
+		case3:
+			SectionName = FName("Death4");
+			break;
+		case4:
+			SectionName = FName("Death5");
+			break;
+		case5:
+			SectionName = FName("Death6");
+			break;
+		default:
+			break;
+		}
+		AnimInstance->Montage_JumpToSection(SectionName, HitReactMontage);
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1NDA3MTA5NCwtNjAyOTkyODk2LC0yMD
+eyJoaXN0b3J5IjpbLTM5MzAwNDc2NCwtNjAyOTkyODk2LC0yMD
 U1NTM5NDUwLC03MzIyNzcxMTQsMTAxODc1MDQwOCw2MjIwMjAw
 NDAsMTY1MzQ3MjEyMywtNjk1NTc5MjI0LC0xMDAwNTY3NzQyLD
 MzMDQzNDY5NCwtMzUwMzIwMjY2LC0xNjAzODYwMzI5LDEzNzc4
