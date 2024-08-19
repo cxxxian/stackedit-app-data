@@ -1537,9 +1537,8 @@ UGameplayStatics::ApplyDamage(
 }
 ```
 由于在Enemy.cpp中的TakeDamage需要伤害的接收，所以
- 3. 这里是列表文本
-
-在AttributeComponent.h中声明一个用来计算生命值的方法，因为我们在AttributeComponent.h中声明的Health和MaxHealth都是private的，我们不想把他们改成public，即建立函数来进行计算
+1. 在AttributeComponent.h中声明一个用来计算生命值的方法，因为我们在AttributeComponent.h中声明的Health和MaxHealth都是private的，我们不想把他们改成public，即建立函数来进行计算
+2. GetHealthPercent()用来计算血条百分比
 ```
 public:
 	void ReceiveDamage(float Damage);
@@ -1551,13 +1550,18 @@ void UAttributeComponent::ReceiveDamage(float Damage)
 {
 	Health -= FMath::Clamp(Health - Damage, 0.f, MaxHealth);
 }
+float UAttributeComponent::GetHealthPercent()
+{
+	return Health / MaxHealth;
+}
+
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0ODc5NzU4LC0xMDAwNTY3NzQyLDMzMD
-QzNDY5NCwtMzUwMzIwMjY2LC0xNjAzODYwMzI5LDEzNzc4MjU1
-MDMsMTQyMTY3MTk4NCwtNDE1MjEzNzMsLTQ3OTE3NDEyMiw0Mj
-E2ODM1NTcsMTE4NTMzNDkwMiwtNzcyOTA5NDUzLDE3NTE1OTA5
-MzYsLTc4NTc1NzYxNywxNzc2NDQyOTQxLC0xNzkwMzQxOTA4LD
-QyNTY1MjI1OSwtMTU4NTkyNjg0LDY1MDM4MzcxOCwtMTA4NzIw
-MTM1M119
+eyJoaXN0b3J5IjpbLTY5NTU3OTIyNCwtMTAwMDU2Nzc0MiwzMz
+A0MzQ2OTQsLTM1MDMyMDI2NiwtMTYwMzg2MDMyOSwxMzc3ODI1
+NTAzLDE0MjE2NzE5ODQsLTQxNTIxMzczLC00NzkxNzQxMjIsND
+IxNjgzNTU3LDExODUzMzQ5MDIsLTc3MjkwOTQ1MywxNzUxNTkw
+OTM2LC03ODU3NTc2MTcsMTc3NjQ0Mjk0MSwtMTc5MDM0MTkwOC
+w0MjU2NTIyNTksLTE1ODU5MjY4NCw2NTAzODM3MTgsLTEwODcy
+MDEzNTNdfQ==
 -->
