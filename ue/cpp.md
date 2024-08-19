@@ -1499,18 +1499,21 @@ void UHealthBarComponent::SetHealthPercent(float Percent)
 }
 ```
 ## 伤害制作
+在weapon.h中声明一个变量Damage用来设置武器伤害
+```
 UPROPERTY(EditAnywhere, Category = "Weapon Properties")
-	float Damage = 20.f;
+float Damage = 20.f;
+```
 在Enemy.h中override来自AActor的方法（因为Enemy继承自AActor）
 ```
 virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwNDUzNDM0MCwxMzc3ODI1NTAzLDE0Mj
-E2NzE5ODQsLTQxNTIxMzczLC00NzkxNzQxMjIsNDIxNjgzNTU3
-LDExODUzMzQ5MDIsLTc3MjkwOTQ1MywxNzUxNTkwOTM2LC03OD
-U3NTc2MTcsMTc3NjQ0Mjk0MSwtMTc5MDM0MTkwOCw0MjU2NTIy
-NTksLTE1ODU5MjY4NCw2NTAzODM3MTgsLTEwODcyMDEzNTMsLT
-g4OTYwNzU1MywtMTcxNTcxMzMwNiwxNDE2NjA0MDU4LC0xMDQw
-OTc4MTM1XX0=
+eyJoaXN0b3J5IjpbLTE2MDM4NjAzMjksMTM3NzgyNTUwMywxND
+IxNjcxOTg0LC00MTUyMTM3MywtNDc5MTc0MTIyLDQyMTY4MzU1
+NywxMTg1MzM0OTAyLC03NzI5MDk0NTMsMTc1MTU5MDkzNiwtNz
+g1NzU3NjE3LDE3NzY0NDI5NDEsLTE3OTAzNDE5MDgsNDI1NjUy
+MjU5LC0xNTg1OTI2ODQsNjUwMzgzNzE4LC0xMDg3MjAxMzUzLC
+04ODk2MDc1NTMsLTE3MTU3MTMzMDYsMTQxNjYwNDA1OCwtMTA0
+MDk3ODEzNV19
 -->
