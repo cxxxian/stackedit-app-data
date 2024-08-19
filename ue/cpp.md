@@ -1601,6 +1601,15 @@ float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AC
 ```
 ## 制作敌人死亡
 由于此时不仅是受击且要判断死亡，所以需要修改之前的GetHit函数
+在Enemy.h中声明一个DeathMontage，在蓝图中给其赋值，Diehan
+```
+private:
+	UPROPERTY(EditDefaultsOnly, Category = Montages)
+	UAnimMontage* DeathMontage;
+
+protected:
+	void Die();
+```
 ```
 void AEnemy::GetHit_Implementation(const FVector& ImpactPoint)
 {
@@ -1612,11 +1621,11 @@ void AEnemy::GetHit_Implementation(const FVector& ImpactPoint)
 	else {
 		Die();
 	}
-。。。sheng'lu
+。。。省略
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwNjIxODQyOCwtNjAyOTkyODk2LC0yMD
+eyJoaXN0b3J5IjpbMTA1NDA3MTA5NCwtNjAyOTkyODk2LC0yMD
 U1NTM5NDUwLC03MzIyNzcxMTQsMTAxODc1MDQwOCw2MjIwMjAw
 NDAsMTY1MzQ3MjEyMywtNjk1NTc5MjI0LC0xMDAwNTY3NzQyLD
 MzMDQzNDY5NCwtMzUwMzIwMjY2LC0xNjAzODYwMzI5LDEzNzc4
