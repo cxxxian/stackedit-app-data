@@ -1661,9 +1661,10 @@ void AEnemy::Die()
 	}
 }
 ```
-此时我们会发现死亡后会经历死亡动画之后回到Idle状态，这是由于我们的状态机只设定了Idle状态
+此时我们会发现死亡后会经历死亡动画之后回到Idle状态，这是由于我们的状态机只设定了Idle状态，所以
+![输入图片说明](/imgs/2024-08-19/D5EfPysUSv6wZeHu.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1ODYzMTM1MSwxNzA3MzA2NjAzLC02MD
+eyJoaXN0b3J5IjpbMjAyMzIwNDQ1OCwxNzA3MzA2NjAzLC02MD
 I5OTI4OTYsLTIwNTU1Mzk0NTAsLTczMjI3NzExNCwxMDE4NzUw
 NDA4LDYyMjAyMDA0MCwxNjUzNDcyMTIzLC02OTU1NzkyMjQsLT
 EwMDA1Njc3NDIsMzMwNDM0Njk0LC0zNTAzMjAyNjYsLTE2MDM4
