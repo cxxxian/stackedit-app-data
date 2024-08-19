@@ -1508,13 +1508,56 @@ float Damage = 20.f;
 ```
 virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
 ```
-回到
+回到Weapon.cpp中处理伤害事件
+void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	const FVector Start = BoxTraceStart->GetComponentLocation();
+	const FVector End = BoxTraceEnd->GetComponentLocation();
+
+	TArray<AActor*> ActorsToIgnore;
+	ActorsToIgnore.Add(this);
+
+	for (AActor* Actor : IgnoreActors) {
+		ActorsToIgnore.AddUnique(Actor);
+	}
+
+	FHitResult BoxHit;
+
+	UKismetSystemLibrary::BoxTraceSingle(
+		this, Start, End,
+		FVector(5.f, 5.f, 5.f),
+		BoxTraceStart->GetComponentRotation(),
+		ETraceTypeQuery::TraceTypeQuery1,
+		false,
+		ActorsToIgnore,
+		EDrawDebugTrace::None,
+		BoxHit, true);
+	if (BoxHit.GetActor()) {
+		IHitInterface* HitInterface = Cast<IHitInterface>(BoxHit.GetActor());
+		if (HitInterface) {
+			HitInterface->Execute_GetHit(BoxHit.GetActor(), BoxHit.ImpactPoint);
+		}
+		IgnoreActors.AddUnique(BoxHit.GetActor());
+
+		CreateFields(BoxHit.ImpactPoint);
+
+		UGameplayStatics::ApplyDamage(
+			BoxHit.GetActor(),
+			Damage,
+			GetInstigator()->GetController(),
+			this,
+			UDamageType::StaticClass()
+		);
+
+	}
+}
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTc5NDk4MzcsLTE2MDM4NjAzMjksMT
-M3NzgyNTUwMywxNDIxNjcxOTg0LC00MTUyMTM3MywtNDc5MTc0
-MTIyLDQyMTY4MzU1NywxMTg1MzM0OTAyLC03NzI5MDk0NTMsMT
-c1MTU5MDkzNiwtNzg1NzU3NjE3LDE3NzY0NDI5NDEsLTE3OTAz
-NDE5MDgsNDI1NjUyMjU5LC0xNTg1OTI2ODQsNjUwMzgzNzE4LC
-0xMDg3MjAxMzUzLC04ODk2MDc1NTMsLTE3MTU3MTMzMDYsMTQx
-NjYwNDA1OF19
+eyJoaXN0b3J5IjpbLTU2MTkzNjYwNSwtMTYwMzg2MDMyOSwxMz
+c3ODI1NTAzLDE0MjE2NzE5ODQsLTQxNTIxMzczLC00NzkxNzQx
+MjIsNDIxNjgzNTU3LDExODUzMzQ5MDIsLTc3MjkwOTQ1MywxNz
+UxNTkwOTM2LC03ODU3NTc2MTcsMTc3NjQ0Mjk0MSwtMTc5MDM0
+MTkwOCw0MjU2NTIyNTksLTE1ODU5MjY4NCw2NTAzODM3MTgsLT
+EwODcyMDEzNTMsLTg4OTYwNzU1MywtMTcxNTcxMzMwNiwxNDE2
+NjA0MDU4XX0=
 -->
