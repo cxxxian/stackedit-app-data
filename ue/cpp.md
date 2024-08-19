@@ -1522,7 +1522,7 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName, AActor* NewOw
 。。。省略
 }
 ```
-回到Weapon.cpp中处理伤害事件
+回到Weapon.cpp中处理造成伤害事件
 ```
 void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
@@ -1537,11 +1537,11 @@ UGameplayStatics::ApplyDamage(
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1MDMyMDI2NiwtMTYwMzg2MDMyOSwxMz
-c3ODI1NTAzLDE0MjE2NzE5ODQsLTQxNTIxMzczLC00NzkxNzQx
-MjIsNDIxNjgzNTU3LDExODUzMzQ5MDIsLTc3MjkwOTQ1MywxNz
-UxNTkwOTM2LC03ODU3NTc2MTcsMTc3NjQ0Mjk0MSwtMTc5MDM0
-MTkwOCw0MjU2NTIyNTksLTE1ODU5MjY4NCw2NTAzODM3MTgsLT
-EwODcyMDEzNTMsLTg4OTYwNzU1MywtMTcxNTcxMzMwNiwxNDE2
-NjA0MDU4XX0=
+eyJoaXN0b3J5IjpbMzMwNDM0Njk0LC0zNTAzMjAyNjYsLTE2MD
+M4NjAzMjksMTM3NzgyNTUwMywxNDIxNjcxOTg0LC00MTUyMTM3
+MywtNDc5MTc0MTIyLDQyMTY4MzU1NywxMTg1MzM0OTAyLC03Nz
+I5MDk0NTMsMTc1MTU5MDkzNiwtNzg1NzU3NjE3LDE3NzY0NDI5
+NDEsLTE3OTAzNDE5MDgsNDI1NjUyMjU5LC0xNTg1OTI2ODQsNj
+UwMzgzNzE4LC0xMDg3MjAxMzUzLC04ODk2MDc1NTMsLTE3MTU3
+MTMzMDZdfQ==
 -->
