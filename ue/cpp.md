@@ -1536,13 +1536,13 @@ UGameplayStatics::ApplyDamage(
 		);
 }
 ```
-在AttributeComponent.h中声明一个用来计算生命值的方法，因为我们在AttributeComponent.h
+由于在Enemy.cpp中的TakeDamage需要伤害的接收，所以在AttributeComponent.h中声明一个用来计算生命值的方法，因为我们在AttributeComponent.h中声明的Health和MaxHealth都是private的，我们不想把他们改成public，即建立函数来进行计算
 ```
 public:
 	void ReceiveDamage(float Damage);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwNDMyNjgyNSwzMzA0MzQ2OTQsLTM1MD
+eyJoaXN0b3J5IjpbLTM2OTYyMjA0OCwzMzA0MzQ2OTQsLTM1MD
 MyMDI2NiwtMTYwMzg2MDMyOSwxMzc3ODI1NTAzLDE0MjE2NzE5
 ODQsLTQxNTIxMzczLC00NzkxNzQxMjIsNDIxNjgzNTU3LDExOD
 UzMzQ5MDIsLTc3MjkwOTQ1MywxNzUxNTkwOTM2LC03ODU3NTc2
