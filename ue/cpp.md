@@ -1502,11 +1502,9 @@ void UHealthBarComponent::SetHealthPercent(float Percent)
 **最重要的两个函数**AActor类下的**TakeDamage**和UGameplayStatics类下的**ApplyDamage**，通过调用ApplyDamage会转而调用TakeDamage
 ### TakeDamage和ApplyDamage
 1. **功能关系**:
-    
-    -   TakeDamage 函数负责处理 Actor 受到伤害时的逻辑,比如扣除生命值、播放受伤动画等。
-    -   ApplyDamage 函数负责调用目标 Actor 的 TakeDamage 函数,从而触发伤害处理逻辑。
+- TakeDamage 函数负责处理 Actor 受到伤害时的逻辑,比如扣除生命值、播放受伤动画等。
+- ApplyDamage 函数负责调用目标 Actor 的 TakeDamage 函数,从而触发伤害处理逻辑。
 2. **参数传递**:
-    
  - ApplyDamage 函数会将伤害量、伤害类型、伤害施加者等信息作为参数传递给目标 Actor 的 TakeDamage 函数。
  - TakeDamage 函数可以根据这些参数信息来决定具体的伤害处理行为。
 3. **调用关系**:
@@ -1592,11 +1590,11 @@ float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AC
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczMjI3NzExNCwxMDE4NzUwNDA4LDYyMj
-AyMDA0MCwxNjUzNDcyMTIzLC02OTU1NzkyMjQsLTEwMDA1Njc3
-NDIsMzMwNDM0Njk0LC0zNTAzMjAyNjYsLTE2MDM4NjAzMjksMT
-M3NzgyNTUwMywxNDIxNjcxOTg0LC00MTUyMTM3MywtNDc5MTc0
-MTIyLDQyMTY4MzU1NywxMTg1MzM0OTAyLC03NzI5MDk0NTMsMT
-c1MTU5MDkzNiwtNzg1NzU3NjE3LDE3NzY0NDI5NDEsLTE3OTAz
-NDE5MDhdfQ==
+eyJoaXN0b3J5IjpbLTIwNTU1Mzk0NTAsLTczMjI3NzExNCwxMD
+E4NzUwNDA4LDYyMjAyMDA0MCwxNjUzNDcyMTIzLC02OTU1Nzky
+MjQsLTEwMDA1Njc3NDIsMzMwNDM0Njk0LC0zNTAzMjAyNjYsLT
+E2MDM4NjAzMjksMTM3NzgyNTUwMywxNDIxNjcxOTg0LC00MTUy
+MTM3MywtNDc5MTc0MTIyLDQyMTY4MzU1NywxMTg1MzM0OTAyLC
+03NzI5MDk0NTMsMTc1MTU5MDkzNiwtNzg1NzU3NjE3LDE3NzY0
+NDI5NDFdfQ==
 -->
