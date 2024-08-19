@@ -1555,6 +1555,16 @@ UGameplayStatics::ApplyDamage(
 		this,
 		UDamageType::StaticClass()
 		);
+IHitInterface* HitInterface = Cast<IHitInterface>(BoxHit.GetActor());
+		if (HitInterface) {
+			HitInterface->Execute_GetHit(BoxHit.GetActor(), BoxHit.ImpactPoint);
+		}
+		IgnoreActors.AddUnique(BoxHit.GetActor());
+
+		CreateFields(BoxHit.ImpactPoint);
+
+		
+	}
 }
 ```
 由于在Enemy.cpp中的TakeDamage需要伤害的接收，所以
@@ -1590,8 +1600,9 @@ float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AC
 }
 ```
 ## 制作敌人死亡
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjQzNzIyODIsLTIwNTU1Mzk0NTAsLT
+eyJoaXN0b3J5IjpbLTE4NzE3MjQ1NDYsLTIwNTU1Mzk0NTAsLT
 czMjI3NzExNCwxMDE4NzUwNDA4LDYyMjAyMDA0MCwxNjUzNDcy
 MTIzLC02OTU1NzkyMjQsLTEwMDA1Njc3NDIsMzMwNDM0Njk0LC
 0zNTAzMjAyNjYsLTE2MDM4NjAzMjksMTM3NzgyNTUwMywxNDIx
