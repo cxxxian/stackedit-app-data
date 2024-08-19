@@ -1600,13 +1600,27 @@ float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AC
 }
 ```
 ## 制作敌人死亡
-you
+由于此时不仅是受击且要判断死亡，所以需要修改之前的GetHit函数
+```
+void AEnemy::GetHit_Implementation(const FVector& ImpactPoint)
+{
+	//DRAW_SPHERE_COLOR(ImpactPoint, FColor::Orange);
+	
+	if (Attributes && Attributes->IsAlive()) {
+		DirectionHitReact(ImpactPoint);
+	}
+	else {
+		Die();
+	}
+。。。sheng'lu
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTk3OTAwODIxLC02MDI5OTI4OTYsLTIwNT
-U1Mzk0NTAsLTczMjI3NzExNCwxMDE4NzUwNDA4LDYyMjAyMDA0
-MCwxNjUzNDcyMTIzLC02OTU1NzkyMjQsLTEwMDA1Njc3NDIsMz
-MwNDM0Njk0LC0zNTAzMjAyNjYsLTE2MDM4NjAzMjksMTM3Nzgy
-NTUwMywxNDIxNjcxOTg0LC00MTUyMTM3MywtNDc5MTc0MTIyLD
-QyMTY4MzU1NywxMTg1MzM0OTAyLC03NzI5MDk0NTMsMTc1MTU5
-MDkzNl19
+eyJoaXN0b3J5IjpbLTcwNjIxODQyOCwtNjAyOTkyODk2LC0yMD
+U1NTM5NDUwLC03MzIyNzcxMTQsMTAxODc1MDQwOCw2MjIwMjAw
+NDAsMTY1MzQ3MjEyMywtNjk1NTc5MjI0LC0xMDAwNTY3NzQyLD
+MzMDQzNDY5NCwtMzUwMzIwMjY2LC0xNjAzODYwMzI5LDEzNzc4
+MjU1MDMsMTQyMTY3MTk4NCwtNDE1MjEzNzMsLTQ3OTE3NDEyMi
+w0MjE2ODM1NTcsMTE4NTMzNDkwMiwtNzcyOTA5NDUzLDE3NTE1
+OTA5MzZdfQ==
 -->
