@@ -1522,6 +1522,15 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName, AActor* NewOw
 。。。省略
 }
 ```
+由于此处在Equip方法处添加了两个变量，所以在SlashCharacter对应的地方也要x
+```
+void ASlashCharacter::EKeyPressed()
+{
+。。。省略
+		OverlappingWeapon->Equip(GetMesh(), FName("RightHandSocket"), this, this);
+	。。。省略
+}
+```
 回到Weapon.cpp中处理造成伤害事件
 ```
 void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
@@ -1557,11 +1566,11 @@ float UAttributeComponent::GetHealthPercent()
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY5NTU3OTIyNCwtMTAwMDU2Nzc0MiwzMz
-A0MzQ2OTQsLTM1MDMyMDI2NiwtMTYwMzg2MDMyOSwxMzc3ODI1
-NTAzLDE0MjE2NzE5ODQsLTQxNTIxMzczLC00NzkxNzQxMjIsND
-IxNjgzNTU3LDExODUzMzQ5MDIsLTc3MjkwOTQ1MywxNzUxNTkw
-OTM2LC03ODU3NTc2MTcsMTc3NjQ0Mjk0MSwtMTc5MDM0MTkwOC
-w0MjU2NTIyNTksLTE1ODU5MjY4NCw2NTAzODM3MTgsLTEwODcy
-MDEzNTNdfQ==
+eyJoaXN0b3J5IjpbLTE5Mjc3ODQzMiwtNjk1NTc5MjI0LC0xMD
+AwNTY3NzQyLDMzMDQzNDY5NCwtMzUwMzIwMjY2LC0xNjAzODYw
+MzI5LDEzNzc4MjU1MDMsMTQyMTY3MTk4NCwtNDE1MjEzNzMsLT
+Q3OTE3NDEyMiw0MjE2ODM1NTcsMTE4NTMzNDkwMiwtNzcyOTA5
+NDUzLDE3NTE1OTA5MzYsLTc4NTc1NzYxNywxNzc2NDQyOTQxLC
+0xNzkwMzQxOTA4LDQyNTY1MjI1OSwtMTU4NTkyNjg0LDY1MDM4
+MzcxOF19
 -->
