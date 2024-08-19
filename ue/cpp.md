@@ -1522,7 +1522,7 @@ void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName, AActor* NewOw
 。。。省略
 }
 ```
-由于此处在Equip方法处添加了两个变量，所以在SlashCharacter对应的地方也要x
+由于此处在Equip方法处添加了两个变量，所以在SlashCharacter对应的地方也要修改方法
 ```
 void ASlashCharacter::EKeyPressed()
 {
@@ -1566,7 +1566,7 @@ float UAttributeComponent::GetHealthPercent()
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5Mjc3ODQzMiwtNjk1NTc5MjI0LC0xMD
+eyJoaXN0b3J5IjpbMTY1MzQ3MjEyMywtNjk1NTc5MjI0LC0xMD
 AwNTY3NzQyLDMzMDQzNDY5NCwtMzUwMzIwMjY2LC0xNjAzODYw
 MzI5LDEzNzc4MjU1MDMsMTQyMTY3MTk4NCwtNDE1MjEzNzMsLT
 Q3OTE3NDEyMiw0MjE2ODM1NTcsMTE4NTMzNDkwMiwtNzcyOTA5
