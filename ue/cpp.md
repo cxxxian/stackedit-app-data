@@ -1510,7 +1510,18 @@ virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEv
 ```
 由于在ApplyDamage我们需要得到使用该武器的controller
 所以完善Equip方法
+```
 void Equip(USceneComponent* Inparent, FName InSocketName, AActor* NewOwner, APawn* NewInstigator);
+```
+在Weapon.c方法实现部分
+```
+void AWeapon::Equip(USceneComponent* Inparent, FName InSocketName, AActor* NewOwner, APawn* NewInstigator)
+{
+	SetOwner(NewOwner);
+	SetInstigator(NewInstigator);
+。。。省略
+}
+```
 回到Weapon.cpp中处理伤害事件
 ```
 void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
@@ -1526,11 +1537,11 @@ UGameplayStatics::ApplyDamage(
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEyMzI4NzA4MCwtMTYwMzg2MDMyOSwxMz
-c3ODI1NTAzLDE0MjE2NzE5ODQsLTQxNTIxMzczLC00NzkxNzQx
-MjIsNDIxNjgzNTU3LDExODUzMzQ5MDIsLTc3MjkwOTQ1MywxNz
-UxNTkwOTM2LC03ODU3NTc2MTcsMTc3NjQ0Mjk0MSwtMTc5MDM0
-MTkwOCw0MjU2NTIyNTksLTE1ODU5MjY4NCw2NTAzODM3MTgsLT
-EwODcyMDEzNTMsLTg4OTYwNzU1MywtMTcxNTcxMzMwNiwxNDE2
-NjA0MDU4XX0=
+eyJoaXN0b3J5IjpbLTE0MDE3NzE3NzgsLTE2MDM4NjAzMjksMT
+M3NzgyNTUwMywxNDIxNjcxOTg0LC00MTUyMTM3MywtNDc5MTc0
+MTIyLDQyMTY4MzU1NywxMTg1MzM0OTAyLC03NzI5MDk0NTMsMT
+c1MTU5MDkzNiwtNzg1NzU3NjE3LDE3NzY0NDI5NDEsLTE3OTAz
+NDE5MDgsNDI1NjUyMjU5LC0xNTg1OTI2ODQsNjUwMzgzNzE4LC
+0xMDg3MjAxMzUzLC04ODk2MDc1NTMsLTE3MTU3MTMzMDYsMTQx
+NjYwNDA1OF19
 -->
