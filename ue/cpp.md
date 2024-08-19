@@ -1666,14 +1666,28 @@ void AEnemy::Die()
 2. 在Main States中实现Idle和Dead的切换
 ![输入图片说明](/imgs/2024-08-19/D5EfPysUSv6wZeHu.png)
 ![输入图片说明](/imgs/2024-08-19/CfS2O6U5AHf4qQYA.png)
-此时引入新问题，如果播放对应的六种Dead动画
-### 
+此时引入新问题，如果播放对应的六种Dead动画，引入新的枚举类
+### 死亡枚举类
+在CharacterTypes.h中新建一个EDeathPose用来枚举存活和死亡姿势
+```
+UENUM(BlueprintType)
+enum class EDeathPose : uint8
+{
+	EDP_Alive UMETA(DisplayName = "Alive"),
+	EDP_Death1 UMETA(DisplayName = "Death1"),
+	EDP_Death2 UMETA(DisplayName = "Death2"),
+	EDP_Death3 UMETA(DisplayName = "Death3"),
+	EDP_Death4 UMETA(DisplayName = "Death4"),
+	EDP_Death5 UMETA(DisplayName = "Death5"),
+	EDP_Death6 UMETA(DisplayName = "Death6")
+};
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIxOTc1NTAyNCwxNzA3MzA2NjAzLC02MD
-I5OTI4OTYsLTIwNTU1Mzk0NTAsLTczMjI3NzExNCwxMDE4NzUw
-NDA4LDYyMjAyMDA0MCwxNjUzNDcyMTIzLC02OTU1NzkyMjQsLT
-EwMDA1Njc3NDIsMzMwNDM0Njk0LC0zNTAzMjAyNjYsLTE2MDM4
-NjAzMjksMTM3NzgyNTUwMywxNDIxNjcxOTg0LC00MTUyMTM3My
-wtNDc5MTc0MTIyLDQyMTY4MzU1NywxMTg1MzM0OTAyLC03NzI5
-MDk0NTNdfQ==
+eyJoaXN0b3J5IjpbLTE0NjAyNTczNzIsMTcwNzMwNjYwMywtNj
+AyOTkyODk2LC0yMDU1NTM5NDUwLC03MzIyNzcxMTQsMTAxODc1
+MDQwOCw2MjIwMjAwNDAsMTY1MzQ3MjEyMywtNjk1NTc5MjI0LC
+0xMDAwNTY3NzQyLDMzMDQzNDY5NCwtMzUwMzIwMjY2LC0xNjAz
+ODYwMzI5LDEzNzc4MjU1MDMsMTQyMTY3MTk4NCwtNDE1MjEzNz
+MsLTQ3OTE3NDEyMiw0MjE2ODM1NTcsMTE4NTMzNDkwMiwtNzcy
+OTA5NDUzXX0=
 -->
