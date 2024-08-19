@@ -1564,7 +1564,7 @@ float UAttributeComponent::GetHealthPercent()
 	return Health / MaxHealth;
 }
 ```
-最终回到Enemy.cpp完善最后的函数，应用伤害以及she
+最终回到Enemy.cpp完善最后的函数，应用伤害以及设置百分比血条
 ```
 float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
 {
@@ -1578,11 +1578,11 @@ float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AC
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0OTY5OTMxNywxNjUzNDcyMTIzLC02OT
-U1NzkyMjQsLTEwMDA1Njc3NDIsMzMwNDM0Njk0LC0zNTAzMjAy
-NjYsLTE2MDM4NjAzMjksMTM3NzgyNTUwMywxNDIxNjcxOTg0LC
-00MTUyMTM3MywtNDc5MTc0MTIyLDQyMTY4MzU1NywxMTg1MzM0
-OTAyLC03NzI5MDk0NTMsMTc1MTU5MDkzNiwtNzg1NzU3NjE3LD
-E3NzY0NDI5NDEsLTE3OTAzNDE5MDgsNDI1NjUyMjU5LC0xNTg1
-OTI2ODRdfQ==
+eyJoaXN0b3J5IjpbNjIyMDIwMDQwLDE2NTM0NzIxMjMsLTY5NT
+U3OTIyNCwtMTAwMDU2Nzc0MiwzMzA0MzQ2OTQsLTM1MDMyMDI2
+NiwtMTYwMzg2MDMyOSwxMzc3ODI1NTAzLDE0MjE2NzE5ODQsLT
+QxNTIxMzczLC00NzkxNzQxMjIsNDIxNjgzNTU3LDExODUzMzQ5
+MDIsLTc3MjkwOTQ1MywxNzUxNTkwOTM2LC03ODU3NTc2MTcsMT
+c3NjQ0Mjk0MSwtMTc5MDM0MTkwOCw0MjU2NTIyNTksLTE1ODU5
+MjY4NF19
 -->
