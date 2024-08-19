@@ -1625,7 +1625,7 @@ void AEnemy::GetHit_Implementation(const FVector& ImpactPoint)
 。。。省略
 }
 ```
-对于Die函数的实现，通过其mi
+对于Die函数的实现，通过其名字来对应蒙太奇片段并播放
 ```
 void AEnemy::Die()
 {
@@ -1662,7 +1662,7 @@ void AEnemy::Die()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5MzAwNDc2NCwtNjAyOTkyODk2LC0yMD
+eyJoaXN0b3J5IjpbMTcwNzMwNjYwMywtNjAyOTkyODk2LC0yMD
 U1NTM5NDUwLC03MzIyNzcxMTQsMTAxODc1MDQwOCw2MjIwMjAw
 NDAsMTY1MzQ3MjEyMywtNjk1NTc5MjI0LC0xMDAwNTY3NzQyLD
 MzMDQzNDY5NCwtMzUwMzIwMjY2LC0xNjAzODYwMzI5LDEzNzc4
