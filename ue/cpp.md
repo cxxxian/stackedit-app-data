@@ -1541,12 +1541,19 @@ UGameplayStatics::ApplyDamage(
 public:
 	void ReceiveDamage(float Damage);
 ```
+在AttributeComponent.cpp中实现方法
+```
+void UAttributeComponent::ReceiveDamage(float Damage)
+{
+	Health -= FMath::Clamp(Health - Damage, 0.f, MaxHealth);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2OTYyMjA0OCwzMzA0MzQ2OTQsLTM1MD
-MyMDI2NiwtMTYwMzg2MDMyOSwxMzc3ODI1NTAzLDE0MjE2NzE5
-ODQsLTQxNTIxMzczLC00NzkxNzQxMjIsNDIxNjgzNTU3LDExOD
-UzMzQ5MDIsLTc3MjkwOTQ1MywxNzUxNTkwOTM2LC03ODU3NTc2
-MTcsMTc3NjQ0Mjk0MSwtMTc5MDM0MTkwOCw0MjU2NTIyNTksLT
-E1ODU5MjY4NCw2NTAzODM3MTgsLTEwODcyMDEzNTMsLTg4OTYw
-NzU1M119
+eyJoaXN0b3J5IjpbLTEwMDA1Njc3NDIsMzMwNDM0Njk0LC0zNT
+AzMjAyNjYsLTE2MDM4NjAzMjksMTM3NzgyNTUwMywxNDIxNjcx
+OTg0LC00MTUyMTM3MywtNDc5MTc0MTIyLDQyMTY4MzU1NywxMT
+g1MzM0OTAyLC03NzI5MDk0NTMsMTc1MTU5MDkzNiwtNzg1NzU3
+NjE3LDE3NzY0NDI5NDEsLTE3OTAzNDE5MDgsNDI1NjUyMjU5LC
+0xNTg1OTI2ODQsNjUwMzgzNzE4LC0xMDg3MjAxMzUzLC04ODk2
+MDc1NTNdfQ==
 -->
