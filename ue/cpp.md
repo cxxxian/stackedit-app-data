@@ -1789,11 +1789,13 @@ void AEnemy::GetHit_Implementation(const FVector& ImpactPoint)
 }
 ```
 ### 远离一定距离后再次隐藏血条UI
-在Enemy.h中设置攻击对象，UPROPERTY()使其保证为空指针
+在Enemy.h中设置攻击对象，UPROPERTY()使其保证为空指针。
 ```
 private:
 	UPROPERTY()
 	AActor* CombatTarget;
+	UPROPERTY(EditAnywhere)
+	double CombatRadius = 500.f;
 ```
 在Enemy.cpp中的TakeDamage，由EventInstigator->GetPawn()得到Pawn，赋值给CombatTarget
 ```
@@ -1809,12 +1811,30 @@ float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AC
 	return DamageAmount;
 }
 ```
+在Tick函数中，用距离大小来判断
+```
+void AEnemy::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	if (CombatTarget) {
+		const double DistanceToTarget = (CombatTarget->GetActorLocation() - GetActorLocation()).Size();
+		if (DistanceToTarget > CombatRadius) {
+			CombatTarget = nullptr;
+			if (HealthBarWidget) {
+				HealthBarWidget->SetVisibility(false);
+			}
+
+		}
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzc3ODkxMzkwLDY0MzE3NDYwMSwtMTA3NT
-EzNDUyMSwtNDY0ODk0MzI1LC0yNTQyMzkxNzMsMTg2MzY1ODA2
-LDQ2MDY0MzEwOCwtMTQ2MDI1NzM3MiwxNzA3MzA2NjAzLC02MD
-I5OTI4OTYsLTIwNTU1Mzk0NTAsLTczMjI3NzExNCwxMDE4NzUw
-NDA4LDYyMjAyMDA0MCwxNjUzNDcyMTIzLC02OTU1NzkyMjQsLT
-EwMDA1Njc3NDIsMzMwNDM0Njk0LC0zNTAzMjAyNjYsLTE2MDM4
-NjAzMjldfQ==
+eyJoaXN0b3J5IjpbNzc5OTUxMjM5LDc3Nzg5MTM5MCw2NDMxNz
+Q2MDEsLTEwNzUxMzQ1MjEsLTQ2NDg5NDMyNSwtMjU0MjM5MTcz
+LDE4NjM2NTgwNiw0NjA2NDMxMDgsLTE0NjAyNTczNzIsMTcwNz
+MwNjYwMywtNjAyOTkyODk2LC0yMDU1NTM5NDUwLC03MzIyNzcx
+MTQsMTAxODc1MDQwOCw2MjIwMjAwNDAsMTY1MzQ3MjEyMywtNj
+k1NTc5MjI0LC0xMDAwNTY3NzQyLDMzMDQzNDY5NCwtMzUwMzIw
+MjY2XX0=
 -->
