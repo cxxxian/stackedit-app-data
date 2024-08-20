@@ -1741,17 +1741,17 @@ void AEnemy::Die()
 ![输入图片说明](/imgs/2024-08-20/gUMd3sgfqvoTphVr.png)
 ### 方法2
 通过**蓝图线程安全更新动画**函数
-此行为通过多线程技术，需要遵守线程安全，可以避免其他地方同时修改了此状态导致f
+此行为通过多线程技术，需要遵守线程安全，可以避免其他地方同时修改了此状态导致同时发生了变化
 ![输入图片说明](/imgs/2024-08-20/U2MkL5yvH0aWYJHm.png)
 ![输入图片说明](/imgs/2024-08-20/s650jvYQOHVCUdfg.png)
 ![输入图片说明](/imgs/2024-08-20/KOkBSYIVGdzjja96.png)
 ![输入图片说明](/imgs/2024-08-20/jdx6sMQroTKVj9WM.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzODExMjM5MiwxODYzNjU4MDYsNDYwNj
-QzMTA4LC0xNDYwMjU3MzcyLDE3MDczMDY2MDMsLTYwMjk5Mjg5
-NiwtMjA1NTUzOTQ1MCwtNzMyMjc3MTE0LDEwMTg3NTA0MDgsNj
-IyMDIwMDQwLDE2NTM0NzIxMjMsLTY5NTU3OTIyNCwtMTAwMDU2
-Nzc0MiwzMzA0MzQ2OTQsLTM1MDMyMDI2NiwtMTYwMzg2MDMyOS
-wxMzc3ODI1NTAzLDE0MjE2NzE5ODQsLTQxNTIxMzczLC00Nzkx
-NzQxMjJdfQ==
+eyJoaXN0b3J5IjpbNzQxODc1Mzk0LDE4NjM2NTgwNiw0NjA2ND
+MxMDgsLTE0NjAyNTczNzIsMTcwNzMwNjYwMywtNjAyOTkyODk2
+LC0yMDU1NTM5NDUwLC03MzIyNzcxMTQsMTAxODc1MDQwOCw2Mj
+IwMjAwNDAsMTY1MzQ3MjEyMywtNjk1NTc5MjI0LC0xMDAwNTY3
+NzQyLDMzMDQzNDY5NCwtMzUwMzIwMjY2LC0xNjAzODYwMzI5LD
+EzNzc4MjU1MDMsMTQyMTY3MTk4NCwtNDE1MjEzNzMsLTQ3OTE3
+NDEyMl19
 -->
