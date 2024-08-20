@@ -1739,8 +1739,11 @@ void AEnemy::Die()
 ### 方法1
 利用事件蓝图更新动画（此事件为每帧调用），将DeathPose提升为变量，然后根据c++中的DeathPose来Set刚刚提升为变量的蓝图DeathPose
 ![输入图片说明](/imgs/2024-08-20/gUMd3sgfqvoTphVr.png)
+![输入图片说明](/imgs/2024-08-20/U2MkL5yvH0aWYJHm.png)
+![输入图片说明](/imgs/2024-08-20/s650jvYQOHVCUdfg.png)
+![输入图片说明](/imgs/2024-08-20/KOkBSYIVGdzjja96.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTExODI0ODIsNDYwNjQzMTA4LC0xND
+eyJoaXN0b3J5IjpbLTEwNTQ4MTY0ODksNDYwNjQzMTA4LC0xND
 YwMjU3MzcyLDE3MDczMDY2MDMsLTYwMjk5Mjg5NiwtMjA1NTUz
 OTQ1MCwtNzMyMjc3MTE0LDEwMTg3NTA0MDgsNjIyMDIwMDQwLD
 E2NTM0NzIxMjMsLTY5NTU3OTIyNCwtMTAwMDU2Nzc0MiwzMzA0
