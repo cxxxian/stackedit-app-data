@@ -1830,44 +1830,11 @@ void AEnemy::Tick(float DeltaTime)
 	}
 }
 ```
+在Die函数中也添加SetVisibility(false)，否则三秒后空血条才会消失
+```
 void AEnemy::Die()
 {
-	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
-	if (AnimInstance && DeathMontage) {
-		AnimInstance->Montage_Play(DeathMontage);
-
-		const int32 Selection = FMath::RandRange(0, 5);
-		FName SectionName = FName();
-		switch (Selection) {
-		case 0:
-			SectionName = FName("Death1");
-			DeathPose = EDeathPose::EDP_Death1;
-			break;
-		case 1:
-			SectionName = FName("Death2");
-			DeathPose = EDeathPose::EDP_Death2;
-			break;
-		case 2:
-			SectionName = FName("Death3");
-			DeathPose = EDeathPose::EDP_Death3;
-			break;
-		case 3:
-			SectionName = FName("Death4");
-			DeathPose = EDeathPose::EDP_Death4;
-			break;
-		case 4:
-			SectionName = FName("Death5");
-			DeathPose = EDeathPose::EDP_Death5;
-			break;
-		case 5:
-			SectionName = FName("Death6");
-			DeathPose = EDeathPose::EDP_Death6;
-			break;
-		default:
-			break;
-		}
-		AnimInstance->Montage_JumpToSection(SectionName, DeathMontage);
-	}
+。。。省略
 	if (HealthBarWidget) {
 		HealthBarWidget->SetVisibility(false);
 	}
@@ -1875,12 +1842,13 @@ void AEnemy::Die()
 	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	SetLifeSpan(3.f);
 }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTI0NDc4OSw3Nzc4OTEzOTAsNjQzMT
-c0NjAxLC0xMDc1MTM0NTIxLC00NjQ4OTQzMjUsLTI1NDIzOTE3
-MywxODYzNjU4MDYsNDYwNjQzMTA4LC0xNDYwMjU3MzcyLDE3MD
-czMDY2MDMsLTYwMjk5Mjg5NiwtMjA1NTUzOTQ1MCwtNzMyMjc3
-MTE0LDEwMTg3NTA0MDgsNjIyMDIwMDQwLDE2NTM0NzIxMjMsLT
-Y5NTU3OTIyNCwtMTAwMDU2Nzc0MiwzMzA0MzQ2OTQsLTM1MDMy
-MDI2Nl19
+eyJoaXN0b3J5IjpbNDk3ODIwOTIzLDc3Nzg5MTM5MCw2NDMxNz
+Q2MDEsLTEwNzUxMzQ1MjEsLTQ2NDg5NDMyNSwtMjU0MjM5MTcz
+LDE4NjM2NTgwNiw0NjA2NDMxMDgsLTE0NjAyNTczNzIsMTcwNz
+MwNjYwMywtNjAyOTkyODk2LC0yMDU1NTM5NDUwLC03MzIyNzcx
+MTQsMTAxODc1MDQwOCw2MjIwMjAwNDAsMTY1MzQ3MjEyMywtNj
+k1NTc5MjI0LC0xMDAwNTY3NzQyLDMzMDQzNDY5NCwtMzUwMzIw
+MjY2XX0=
 -->
