@@ -1812,7 +1812,7 @@ float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AC
 	return DamageAmount;
 }
 ```
-在Tick函数中，用距离大小来判断
+在Tick函数中，用距离大小来判断是否该显示，如果超过距离则将CombatTarget设为空指针，再次击打才会赋值
 ```
 void AEnemy::Tick(float DeltaTime)
 {
@@ -1831,11 +1831,11 @@ void AEnemy::Tick(float DeltaTime)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0Nzk4Nzk0NCw3Nzc4OTEzOTAsNjQzMT
-c0NjAxLC0xMDc1MTM0NTIxLC00NjQ4OTQzMjUsLTI1NDIzOTE3
-MywxODYzNjU4MDYsNDYwNjQzMTA4LC0xNDYwMjU3MzcyLDE3MD
-czMDY2MDMsLTYwMjk5Mjg5NiwtMjA1NTUzOTQ1MCwtNzMyMjc3
-MTE0LDEwMTg3NTA0MDgsNjIyMDIwMDQwLDE2NTM0NzIxMjMsLT
-Y5NTU3OTIyNCwtMTAwMDU2Nzc0MiwzMzA0MzQ2OTQsLTM1MDMy
-MDI2Nl19
+eyJoaXN0b3J5IjpbNjEzMzMyMDI5LDc3Nzg5MTM5MCw2NDMxNz
+Q2MDEsLTEwNzUxMzQ1MjEsLTQ2NDg5NDMyNSwtMjU0MjM5MTcz
+LDE4NjM2NTgwNiw0NjA2NDMxMDgsLTE0NjAyNTczNzIsMTcwNz
+MwNjYwMywtNjAyOTkyODk2LC0yMDU1NTM5NDUwLC03MzIyNzcx
+MTQsMTAxODc1MDQwOCw2MjIwMjAwNDAsMTY1MzQ3MjEyMywtNj
+k1NTc5MjI0LC0xMDAwNTY3NzQyLDMzMDQzNDY5NCwtMzUwMzIw
+MjY2XX0=
 -->
