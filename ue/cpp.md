@@ -1778,12 +1778,22 @@ void AEnemy::BeginPlay()
 }
 ```
 ### 受击后显示
+```
+void AEnemy::GetHit_Implementation(const FVector& ImpactPoint)
+{
+	//DRAW_SPHERE_COLOR(ImpactPoint, FColor::Orange);
+	if (HealthBarWidget) {
+		HealthBarWidget->SetVisibility(true);
+	}
+	。。。省略
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNzUxMzQ1MjEsLTQ2NDg5NDMyNSwtMj
-U0MjM5MTczLDE4NjM2NTgwNiw0NjA2NDMxMDgsLTE0NjAyNTcz
-NzIsMTcwNzMwNjYwMywtNjAyOTkyODk2LC0yMDU1NTM5NDUwLC
-03MzIyNzcxMTQsMTAxODc1MDQwOCw2MjIwMjAwNDAsMTY1MzQ3
-MjEyMywtNjk1NTc5MjI0LC0xMDAwNTY3NzQyLDMzMDQzNDY5NC
-wtMzUwMzIwMjY2LC0xNjAzODYwMzI5LDEzNzc4MjU1MDMsMTQy
-MTY3MTk4NF19
+eyJoaXN0b3J5IjpbLTE2ODAxMzY2NDEsLTEwNzUxMzQ1MjEsLT
+Q2NDg5NDMyNSwtMjU0MjM5MTczLDE4NjM2NTgwNiw0NjA2NDMx
+MDgsLTE0NjAyNTczNzIsMTcwNzMwNjYwMywtNjAyOTkyODk2LC
+0yMDU1NTM5NDUwLC03MzIyNzcxMTQsMTAxODc1MDQwOCw2MjIw
+MjAwNDAsMTY1MzQ3MjEyMywtNjk1NTc5MjI0LC0xMDAwNTY3Nz
+QyLDMzMDQzNDY5NCwtMzUwMzIwMjY2LC0xNjAzODYwMzI5LDEz
+Nzc4MjU1MDNdfQ==
 -->
