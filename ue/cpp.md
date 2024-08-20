@@ -1734,14 +1734,17 @@ void AEnemy::Die()
 ## 怎么样在敌人死亡后播放随机动画
 我们在代码中已经处理好了随机播放死亡动画的效果，通过Enemy中声明的DeathPose可以得到此时是哪一种死亡姿势
 ### 接下来我们在动画蓝图中处理播放动画的效果
-通过**事件蓝图初始化动画**，我们将Enemy提升为变量，此时即可访问我们在c++中Enemy类里面所声明的Deat'h'P
+通过**事件蓝图初始化动画**，我们将Enemy提升为变量，此时即可访问我们在c++中Enemy类里面所声明的DeathPose枚举
 ![输入图片说明](/imgs/2024-08-20/SHOLAgRpRKYRMPtp.png)
+### 方法1
+在事件蓝图更新动画
+![输入图片说明](/imgs/2024-08-20/gUMd3sgfqvoTphVr.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3MTgzMjE4MSw0NjA2NDMxMDgsLTE0Nj
-AyNTczNzIsMTcwNzMwNjYwMywtNjAyOTkyODk2LC0yMDU1NTM5
-NDUwLC03MzIyNzcxMTQsMTAxODc1MDQwOCw2MjIwMjAwNDAsMT
-Y1MzQ3MjEyMywtNjk1NTc5MjI0LC0xMDAwNTY3NzQyLDMzMDQz
-NDY5NCwtMzUwMzIwMjY2LC0xNjAzODYwMzI5LDEzNzc4MjU1MD
-MsMTQyMTY3MTk4NCwtNDE1MjEzNzMsLTQ3OTE3NDEyMiw0MjE2
-ODM1NTddfQ==
+eyJoaXN0b3J5IjpbNDUxNTQ4NzE0LDQ2MDY0MzEwOCwtMTQ2MD
+I1NzM3MiwxNzA3MzA2NjAzLC02MDI5OTI4OTYsLTIwNTU1Mzk0
+NTAsLTczMjI3NzExNCwxMDE4NzUwNDA4LDYyMjAyMDA0MCwxNj
+UzNDcyMTIzLC02OTU1NzkyMjQsLTEwMDA1Njc3NDIsMzMwNDM0
+Njk0LC0zNTAzMjAyNjYsLTE2MDM4NjAzMjksMTM3NzgyNTUwMy
+wxNDIxNjcxOTg0LC00MTUyMTM3MywtNDc5MTc0MTIyLDQyMTY4
+MzU1N119
 -->
