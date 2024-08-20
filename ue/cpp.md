@@ -1750,10 +1750,10 @@ void AEnemy::Die()
 最后判断条件，判断什么时候应该从Idle转化成Dead
 ![输入图片说明](/imgs/2024-08-20/uf7FybSu9ldCJ0vB.png)
 ![输入图片说明](/imgs/2024-08-20/oFSAD3Ob8pK8aAoV.png)
-在Dead状态下使用混合姿势，
+在Dead状态下使用混合姿势，在最后Active Enum Value使用我们的DeathPose枚举值，即可根据枚举值来进行姿势的选择输出
 ![输入图片说明](/imgs/2024-08-20/S5deB9qAmQ1gAE6J.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMzOTg2MzgzOCwxODYzNjU4MDYsNDYwNj
+eyJoaXN0b3J5IjpbLTI1NDIzOTE3MywxODYzNjU4MDYsNDYwNj
 QzMTA4LC0xNDYwMjU3MzcyLDE3MDczMDY2MDMsLTYwMjk5Mjg5
 NiwtMjA1NTUzOTQ1MCwtNzMyMjc3MTE0LDEwMTg3NTA0MDgsNj
 IyMDIwMDQwLDE2NTM0NzIxMjMsLTY5NTU3OTIyNCwtMTAwMDU2
