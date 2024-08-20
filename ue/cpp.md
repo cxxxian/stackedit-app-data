@@ -1752,12 +1752,23 @@ void AEnemy::Die()
 ![输入图片说明](/imgs/2024-08-20/oFSAD3Ob8pK8aAoV.png)
 在Dead状态下使用混合姿势，在最后Active Enum Value使用我们的DeathPose枚举值，即可根据枚举值来进行姿势的选择输出
 ![输入图片说明](/imgs/2024-08-20/S5deB9qAmQ1gAE6J.png)
+
+## 敌人死亡后解除胶囊体碰撞以及销毁操作
+
+```
+void AEnemy::Die()
+{
+	。。。省略
+	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	SetLifeSpan(3.f);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1NDIzOTE3MywxODYzNjU4MDYsNDYwNj
-QzMTA4LC0xNDYwMjU3MzcyLDE3MDczMDY2MDMsLTYwMjk5Mjg5
-NiwtMjA1NTUzOTQ1MCwtNzMyMjc3MTE0LDEwMTg3NTA0MDgsNj
-IyMDIwMDQwLDE2NTM0NzIxMjMsLTY5NTU3OTIyNCwtMTAwMDU2
-Nzc0MiwzMzA0MzQ2OTQsLTM1MDMyMDI2NiwtMTYwMzg2MDMyOS
-wxMzc3ODI1NTAzLDE0MjE2NzE5ODQsLTQxNTIxMzczLC00Nzkx
-NzQxMjJdfQ==
+eyJoaXN0b3J5IjpbLTE0OTAxNzQ5MSwtMjU0MjM5MTczLDE4Nj
+M2NTgwNiw0NjA2NDMxMDgsLTE0NjAyNTczNzIsMTcwNzMwNjYw
+MywtNjAyOTkyODk2LC0yMDU1NTM5NDUwLC03MzIyNzcxMTQsMT
+AxODc1MDQwOCw2MjIwMjAwNDAsMTY1MzQ3MjEyMywtNjk1NTc5
+MjI0LC0xMDAwNTY3NzQyLDMzMDQzNDY5NCwtMzUwMzIwMjY2LC
+0xNjAzODYwMzI5LDEzNzc4MjU1MDMsMTQyMTY3MTk4NCwtNDE1
+MjEzNzNdfQ==
 -->
