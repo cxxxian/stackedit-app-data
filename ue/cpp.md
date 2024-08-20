@@ -1764,13 +1764,26 @@ void AEnemy::Die()
 	SetLifeSpan(3.f);
 }
 ```
-## 
+## 关于血条UI的设置
+### 初始状态下不显示
+在Enemy.cpp的BeginPlay()中，将HealthBarWidget设为不可见
+```
+void AEnemy::BeginPlay()
+{
+	Super::BeginPlay();
+	if (HealthBarWidget) {
+		HealthBarWidget->SetVisibility(false);
+	}
+	
+}
+```
+### 受击后显示
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzNTM0NzMyMywtNDY0ODk0MzI1LC0yNT
-QyMzkxNzMsMTg2MzY1ODA2LDQ2MDY0MzEwOCwtMTQ2MDI1NzM3
-MiwxNzA3MzA2NjAzLC02MDI5OTI4OTYsLTIwNTU1Mzk0NTAsLT
-czMjI3NzExNCwxMDE4NzUwNDA4LDYyMjAyMDA0MCwxNjUzNDcy
-MTIzLC02OTU1NzkyMjQsLTEwMDA1Njc3NDIsMzMwNDM0Njk0LC
-0zNTAzMjAyNjYsLTE2MDM4NjAzMjksMTM3NzgyNTUwMywxNDIx
-NjcxOTg0XX0=
+eyJoaXN0b3J5IjpbLTEwNzUxMzQ1MjEsLTQ2NDg5NDMyNSwtMj
+U0MjM5MTczLDE4NjM2NTgwNiw0NjA2NDMxMDgsLTE0NjAyNTcz
+NzIsMTcwNzMwNjYwMywtNjAyOTkyODk2LC0yMDU1NTM5NDUwLC
+03MzIyNzcxMTQsMTAxODc1MDQwOCw2MjIwMjAwNDAsMTY1MzQ3
+MjEyMywtNjk1NTc5MjI0LC0xMDAwNTY3NzQyLDMzMDQzNDY5NC
+wtMzUwMzIwMjY2LC0xNjAzODYwMzI5LDEzNzc4MjU1MDMsMTQy
+MTY3MTk4NF19
 -->
