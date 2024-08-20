@@ -1739,16 +1739,19 @@ void AEnemy::Die()
 ### 方法1
 利用事件蓝图更新动画（此事件为每帧调用），将DeathPose提升为变量，然后根据c++中的DeathPose来Set刚刚提升为变量的蓝图DeathPose
 ![输入图片说明](/imgs/2024-08-20/gUMd3sgfqvoTphVr.png)
+### 方法2
+通过**蓝图线程安全更新动画**函数
+此行为
 ![输入图片说明](/imgs/2024-08-20/U2MkL5yvH0aWYJHm.png)
 ![输入图片说明](/imgs/2024-08-20/s650jvYQOHVCUdfg.png)
 ![输入图片说明](/imgs/2024-08-20/KOkBSYIVGdzjja96.png)
 ![输入图片说明](/imgs/2024-08-20/jdx6sMQroTKVj9WM.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg2MzY1ODA2LDQ2MDY0MzEwOCwtMTQ2MD
-I1NzM3MiwxNzA3MzA2NjAzLC02MDI5OTI4OTYsLTIwNTU1Mzk0
-NTAsLTczMjI3NzExNCwxMDE4NzUwNDA4LDYyMjAyMDA0MCwxNj
-UzNDcyMTIzLC02OTU1NzkyMjQsLTEwMDA1Njc3NDIsMzMwNDM0
-Njk0LC0zNTAzMjAyNjYsLTE2MDM4NjAzMjksMTM3NzgyNTUwMy
-wxNDIxNjcxOTg0LC00MTUyMTM3MywtNDc5MTc0MTIyLDQyMTY4
-MzU1N119
+eyJoaXN0b3J5IjpbMzM2OTcyNTQ2LDE4NjM2NTgwNiw0NjA2ND
+MxMDgsLTE0NjAyNTczNzIsMTcwNzMwNjYwMywtNjAyOTkyODk2
+LC0yMDU1NTM5NDUwLC03MzIyNzcxMTQsMTAxODc1MDQwOCw2Mj
+IwMjAwNDAsMTY1MzQ3MjEyMywtNjk1NTc5MjI0LC0xMDAwNTY3
+NzQyLDMzMDQzNDY5NCwtMzUwMzIwMjY2LC0xNjAzODYwMzI5LD
+EzNzc4MjU1MDMsMTQyMTY3MTk4NCwtNDE1MjEzNzMsLTQ3OTE3
+NDEyMl19
 -->
