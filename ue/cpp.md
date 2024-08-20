@@ -1843,14 +1843,24 @@ void AEnemy::Die()
 	SetLifeSpan(3.f);
 }
 ```
+## 制作敌人动画追击效果
+制作一个BlendSpace1D（混合空间）
+并在蓝图中使用
+此时我们需要如下一个GroundSpeed变量
+![输入图片说明](/imgs/2024-08-20/HiMxPdPR6yKxa9VF.png)
+可以到事件图表中获取角色移动并将其提升为变量
+![输入图片说明](/imgs/2024-08-20/bJ4zFCLCQaQkDCjW.png)
+根据之前的多线程函数原理，在Property Access中获得CharacterMovement中的Velocity（速度），并根据此的搭配向量长度XY，即可用来Set速度，即得到了Ground Speed
+![输入图片说明](/imgs/2024-08-20/XUqEl0UcQOJEwqIu.png)
+
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwMzI2OTgwMSwtMTY2NjU1NjU2NCw0OT
-c4MjA5MjMsNzc3ODkxMzkwLDY0MzE3NDYwMSwtMTA3NTEzNDUy
-MSwtNDY0ODk0MzI1LC0yNTQyMzkxNzMsMTg2MzY1ODA2LDQ2MD
-Y0MzEwOCwtMTQ2MDI1NzM3MiwxNzA3MzA2NjAzLC02MDI5OTI4
-OTYsLTIwNTU1Mzk0NTAsLTczMjI3NzExNCwxMDE4NzUwNDA4LD
-YyMjAyMDA0MCwxNjUzNDcyMTIzLC02OTU1NzkyMjQsLTEwMDA1
-Njc3NDJdfQ==
+eyJoaXN0b3J5IjpbMTExOTc3MDEwMiwtMzAzMjY5ODAxLC0xNj
+Y2NTU2NTY0LDQ5NzgyMDkyMyw3Nzc4OTEzOTAsNjQzMTc0NjAx
+LC0xMDc1MTM0NTIxLC00NjQ4OTQzMjUsLTI1NDIzOTE3MywxOD
+YzNjU4MDYsNDYwNjQzMTA4LC0xNDYwMjU3MzcyLDE3MDczMDY2
+MDMsLTYwMjk5Mjg5NiwtMjA1NTUzOTQ1MCwtNzMyMjc3MTE0LD
+EwMTg3NTA0MDgsNjIyMDIwMDQwLDE2NTM0NzIxMjMsLTY5NTU3
+OTIyNF19
 -->
