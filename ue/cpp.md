@@ -1791,15 +1791,30 @@ void AEnemy::GetHit_Implementation(const FVector& ImpactPoint)
 ### 远离一定距离后再次隐藏血条UI
 在Enemy.h中设置攻击对象，UPROPERTY()使其保证为空指针
 ```
-UPROPERTY()
-AActor* CombatTarget;
+private:
+	UPROPERTY()
+	AActor* CombatTarget;
+```
+在Enemy.cpp中的TakeDamage，由EventInstigator->GetPawn()得到Pawn，赋值给CombatTarget
+```
+float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
+{
+	if (Attributes && HealthBarWidget) {
+		Attributes->ReceiveDamage(DamageAmount);
+
+		HealthBarWidget->SetHealthPercent(Attributes->GetHealthPercent());
+
+	}
+	CombatTarget = EventInstigator->GetPawn();
+	return DamageAmount;
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5MTc0NjI0NCw2NDMxNzQ2MDEsLTEwNz
-UxMzQ1MjEsLTQ2NDg5NDMyNSwtMjU0MjM5MTczLDE4NjM2NTgw
-Niw0NjA2NDMxMDgsLTE0NjAyNTczNzIsMTcwNzMwNjYwMywtNj
-AyOTkyODk2LC0yMDU1NTM5NDUwLC03MzIyNzcxMTQsMTAxODc1
-MDQwOCw2MjIwMjAwNDAsMTY1MzQ3MjEyMywtNjk1NTc5MjI0LC
-0xMDAwNTY3NzQyLDMzMDQzNDY5NCwtMzUwMzIwMjY2LC0xNjAz
-ODYwMzI5XX0=
+eyJoaXN0b3J5IjpbNzc3ODkxMzkwLDY0MzE3NDYwMSwtMTA3NT
+EzNDUyMSwtNDY0ODk0MzI1LC0yNTQyMzkxNzMsMTg2MzY1ODA2
+LDQ2MDY0MzEwOCwtMTQ2MDI1NzM3MiwxNzA3MzA2NjAzLC02MD
+I5OTI4OTYsLTIwNTU1Mzk0NTAsLTczMjI3NzExNCwxMDE4NzUw
+NDA4LDYyMjAyMDA0MCwxNjUzNDcyMTIzLC02OTU1NzkyMjQsLT
+EwMDA1Njc3NDIsMzMwNDM0Njk0LC0zNTAzMjAyNjYsLTE2MDM4
+NjAzMjldfQ==
 -->
