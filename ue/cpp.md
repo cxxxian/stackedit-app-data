@@ -1747,11 +1747,13 @@ void AEnemy::Die()
 ![输入图片说明](/imgs/2024-08-20/s650jvYQOHVCUdfg.png)
 ![输入图片说明](/imgs/2024-08-20/KOkBSYIVGdzjja96.png)
 ![输入图片说明](/imgs/2024-08-20/jdx6sMQroTKVj9WM.png)
-最后判断条件，
+最后判断条件，判断什么时候应该从Idle转化成Dead
 ![输入图片说明](/imgs/2024-08-20/uf7FybSu9ldCJ0vB.png)
 ![输入图片说明](/imgs/2024-08-20/oFSAD3Ob8pK8aAoV.png)
+在Dead状态下使用混合姿势，
+![输入图片说明](/imgs/2024-08-20/S5deB9qAmQ1gAE6J.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDc5OTA0MiwxODYzNjU4MDYsNDYwNj
+eyJoaXN0b3J5IjpbLTMzOTg2MzgzOCwxODYzNjU4MDYsNDYwNj
 QzMTA4LC0xNDYwMjU3MzcyLDE3MDczMDY2MDMsLTYwMjk5Mjg5
 NiwtMjA1NTUzOTQ1MCwtNzMyMjc3MTE0LDEwMTg3NTA0MDgsNj
 IyMDIwMDQwLDE2NTM0NzIxMjMsLTY5NTU3OTIyNCwtMTAwMDU2
