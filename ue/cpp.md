@@ -1734,8 +1734,10 @@ void AEnemy::Die()
 ## 怎么样在敌人死亡后播放随机动画
 我们在代码中已经处理好了随机播放死亡动画的效果，通过Enemy中声明的DeathPose可以得到此时是哪一种死亡姿势
 ### 接下来我们在动画蓝图中处理播放动画的效果
+通过**事件蓝图初始化动画**，我们将Enemy提升为变量，此时即可访问我们在c++中Enemy类里面所声明的Deat'h'P
+![输入图片说明](/imgs/2024-08-20/SHOLAgRpRKYRMPtp.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUzNjAxMjkwMyw0NjA2NDMxMDgsLTE0Nj
+eyJoaXN0b3J5IjpbMTI3MTgzMjE4MSw0NjA2NDMxMDgsLTE0Nj
 AyNTczNzIsMTcwNzMwNjYwMywtNjAyOTkyODk2LC0yMDU1NTM5
 NDUwLC03MzIyNzcxMTQsMTAxODc1MDQwOCw2MjIwMjAwNDAsMT
 Y1MzQ3MjEyMywtNjk1NTc5MjI0LC0xMDAwNTY3NzQyLDMzMDQz
