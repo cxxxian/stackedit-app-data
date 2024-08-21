@@ -1978,13 +1978,7 @@ void AEnemy::Tick(float DeltaTime)
 	}
 }
 ```
-### 制作巡逻到某一个点后暂停行动一段时间
-在Enemy.h中创建变量以及回调函数
-```
-private:
-	FTimerHandle PatrolTimer;
-	void PatrolTimerFinished();
-```
+### 整理代码
 在Enemy.h的protected部分声明三个函数，使得代码复用性更高且管理起来更方便
 在Enemy.cpp实现如下：
 ```
@@ -2024,12 +2018,21 @@ AActor* AEnemy::ChoosePatrolTarget()
 	return nullptr;
 }
 ```
+### 制作巡逻到某一个点后暂停行动一段时间
+在Enemy.h中创建变量以及回调函数
+```
+private:
+	FTimerHandle PatrolTimer;
+	void PatrolTimerFinished();
+```
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ0NjUwMTI0Nyw0Mzc3ODUxMjQsLTIwMj
-k2ODM4MTMsMTAzNTcyNDE5OCwxMTgxOTUzODg3LC02NTg3MTU2
-MjQsNzYzNzY0MjkwLDE4MTE4Nzg5NTEsMTM3ODYwMDc3NSwtMT
-UwMDAyNTAsLTE2MjE3OTI5ODgsMTExOTc3MDEwMiwtMzAzMjY5
-ODAxLC0xNjY2NTU2NTY0LDQ5NzgyMDkyMyw3Nzc4OTEzOTAsNj
-QzMTc0NjAxLC0xMDc1MTM0NTIxLC00NjQ4OTQzMjUsLTI1NDIz
-OTE3M119
+eyJoaXN0b3J5IjpbNTY2ODgzODYwLDE0NDY1MDEyNDcsNDM3Nz
+g1MTI0LC0yMDI5NjgzODEzLDEwMzU3MjQxOTgsMTE4MTk1Mzg4
+NywtNjU4NzE1NjI0LDc2Mzc2NDI5MCwxODExODc4OTUxLDEzNz
+g2MDA3NzUsLTE1MDAwMjUwLC0xNjIxNzkyOTg4LDExMTk3NzAx
+MDIsLTMwMzI2OTgwMSwtMTY2NjU1NjU2NCw0OTc4MjA5MjMsNz
+c3ODkxMzkwLDY0MzE3NDYwMSwtMTA3NTEzNDUyMSwtNDY0ODk0
+MzI1XX0=
 -->
