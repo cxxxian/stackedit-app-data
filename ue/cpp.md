@@ -1985,12 +1985,47 @@ private:
 	FTimerHandle PatrolTimer;
 	void PatrolTimerFinished();
 ```
+bool AEnemy::InTargetRange(AActor* Target, double Radius)
+{
+	if (Target == nullptr)return false;
+	const double DistanceToTarget = (Target->GetActorLocation() - GetActorLocation()).Size();
+	DRAW_SPHERE_SingleFrame(GetActorLocation());
+	DRAW_SPHERE_SingleFrame(Target->GetActorLocation());
+	return DistanceToTarget <= Radius;
+}
+
+void AEnemy::MoveToTarget(AActor* Target)
+{
+	if (EnemyController == nullptr || Target == nullptr) return;
+	FAIMoveRequest MoveRequest;
+	MoveRequest.SetGoalActor(Target);
+	MoveRequest.SetAcceptanceRadius(15.f);
+	EnemyController->MoveTo(MoveRequest);
+
+}
+
+AActor* AEnemy::ChoosePatrolTarget()
+{
+	TArray<AActor*> VaildTargets;
+	for (auto Target : PatrolTargets) {
+		if (Target != PatrolTarget) {
+			VaildTargets.AddUnique(Target);
+		}
+	}
+
+	const int32 NumPatrolTargets = VaildTargets.Num();
+	if (NumPatrolTargets > 0) {
+		const int32 TargetSelection = FMath::RandRange(0, NumPatrolTargets - 1);
+		return VaildTargets[TargetSelection];
+	}
+	return nullptr;
+}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5MDI4NTQwMyw0Mzc3ODUxMjQsLTIwMj
-k2ODM4MTMsMTAzNTcyNDE5OCwxMTgxOTUzODg3LC02NTg3MTU2
-MjQsNzYzNzY0MjkwLDE4MTE4Nzg5NTEsMTM3ODYwMDc3NSwtMT
-UwMDAyNTAsLTE2MjE3OTI5ODgsMTExOTc3MDEwMiwtMzAzMjY5
-ODAxLC0xNjY2NTU2NTY0LDQ5NzgyMDkyMyw3Nzc4OTEzOTAsNj
-QzMTc0NjAxLC0xMDc1MTM0NTIxLC00NjQ4OTQzMjUsLTI1NDIz
-OTE3M119
+eyJoaXN0b3J5IjpbLTI5NTk2MDYsNDM3Nzg1MTI0LC0yMDI5Nj
+gzODEzLDEwMzU3MjQxOTgsMTE4MTk1Mzg4NywtNjU4NzE1NjI0
+LDc2Mzc2NDI5MCwxODExODc4OTUxLDEzNzg2MDA3NzUsLTE1MD
+AwMjUwLC0xNjIxNzkyOTg4LDExMTk3NzAxMDIsLTMwMzI2OTgw
+MSwtMTY2NjU1NjU2NCw0OTc4MjA5MjMsNzc3ODkxMzkwLDY0Mz
+E3NDYwMSwtMTA3NTEzNDUyMSwtNDY0ODk0MzI1LC0yNTQyMzkx
+NzNdfQ==
 -->
