@@ -2156,12 +2156,62 @@ void AEnemy::Tick(float DeltaTime)
 	}
 }
 ```
+对于函数PawnSeen，虽然它不像tick函数那样调用频繁，但是也是相对频繁，我们应当避免频繁使用cast
+```
+void AEnemy::PawnSeen(APawn* SeenPawn)
+{
+	if (Cast<SlashCharacter>(SeenPawn)) {
+	}
+}
+```
+所以引入Tag标签，通过在SlashCharacter.cpp添加一个标签并比较
+在SlashCharacter.cpp的begin play中，在一开始的即为玩家添加"SlashCharacter"的标签
+```
+void ASlashCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+	
+	Tags.Add(FName("SlashCharacter"));
+}
+```
+在Enemy.cpp中完善PawnSeen
+1. 如果此时状态在追逐，直接return，避免重复调用此方法
+2. 通过判断SeenPawn的tag来检查追逐对象
+3. 追逐的过程中需要把计时器给清零
+4. 看到玩家时将最大速度设置为300.f，即看见玩家跑过来
+5. 将SeenPawn赋值给CombatTarget并传入函数MoveToTarget
+```
+void AEnemy::PawnSeen(APawn* SeenPawn)
+{
+	if (EnemyState == EEnemyState::EES_Chasing) return;
+	if (SeenPawn->ActorHasTag(FName("SlashCharacter"))) {
+		EnemyState = EEnemyState::EES_Chasing;
+		GetWorldTimerManager().ClearTimer(PatrolTimer);
+		GetCharacterMovement()->MaxWalkSpeed = 300.f;
+		CombatTarget = SeenPawn;
+		MoveToTarget(CombatTarget);
+	}
+}
+```
+void AEnemy::CheckCombatTarget()
+{
+	//Outside combat radius, lose interest
+	if (!InTargetRange(CombatTarget, CombatRadius)) {
+		CombatTarget = nullptr;
+		if (HealthBarWidget) {
+			HealthBarWidget->SetVisibility(false);
+		}
+		EnemyState = EEnemyState::EES_Patrolling;
+		GetCharacterMovement()->MaxWalkSpeed = 125.f;
+		MoveToTarget(PatrolTarget);
+	}
+}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzgwMjk1MzYsLTYyNjMzNzU1MiwtMz
-E3ODE2NzE5LDE0NjA3ODg4MDYsNTgyODgwMzEwLDkxNjg2MzA5
-LC0xOTgxODEwODg3LDU2Njg4Mzg2MCwxNDQ2NTAxMjQ3LDQzNz
-c4NTEyNCwtMjAyOTY4MzgxMywxMDM1NzI0MTk4LDExODE5NTM4
-ODcsLTY1ODcxNTYyNCw3NjM3NjQyOTAsMTgxMTg3ODk1MSwxMz
-c4NjAwNzc1LC0xNTAwMDI1MCwtMTYyMTc5Mjk4OCwxMTE5Nzcw
-MTAyXX0=
+eyJoaXN0b3J5IjpbLTYyMDU1MDQ4MCwtNjI2MzM3NTUyLC0zMT
+c4MTY3MTksMTQ2MDc4ODgwNiw1ODI4ODAzMTAsOTE2ODYzMDks
+LTE5ODE4MTA4ODcsNTY2ODgzODYwLDE0NDY1MDEyNDcsNDM3Nz
+g1MTI0LC0yMDI5NjgzODEzLDEwMzU3MjQxOTgsMTE4MTk1Mzg4
+NywtNjU4NzE1NjI0LDc2Mzc2NDI5MCwxODExODc4OTUxLDEzNz
+g2MDA3NzUsLTE1MDAwMjUwLC0xNjIxNzkyOTg4LDExMTk3NzAx
+MDJdfQ==
 -->
