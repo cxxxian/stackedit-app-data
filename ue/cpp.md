@@ -1971,18 +1971,19 @@ void AEnemy::Tick(float DeltaTime)
 				FAIMoveRequest MoveRequest;
 				MoveRequest.SetGoalActor(PatrolTarget);
 				MoveRequest.SetAcceptanceRadius(15.f);
-				EnemyController->MoveTo(MoveRequest);//此时我们不需要
+				EnemyController->MoveTo(MoveRequest);//此时我们不需要声明上面的FNavPathSharedPtr NavPath，
+				//是因为我们刚刚目的是为了绘制debug球体进行观察
 			}
 		}
 	}
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1OTA4MzAzLDExODE5NTM4ODcsLTY1OD
-cxNTYyNCw3NjM3NjQyOTAsMTgxMTg3ODk1MSwxMzc4NjAwNzc1
-LC0xNTAwMDI1MCwtMTYyMTc5Mjk4OCwxMTE5NzcwMTAyLC0zMD
-MyNjk4MDEsLTE2NjY1NTY1NjQsNDk3ODIwOTIzLDc3Nzg5MTM5
-MCw2NDMxNzQ2MDEsLTEwNzUxMzQ1MjEsLTQ2NDg5NDMyNSwtMj
-U0MjM5MTczLDE4NjM2NTgwNiw0NjA2NDMxMDgsLTE0NjAyNTcz
-NzJdfQ==
+eyJoaXN0b3J5IjpbMTAzNTcyNDE5OCwxMTgxOTUzODg3LC02NT
+g3MTU2MjQsNzYzNzY0MjkwLDE4MTE4Nzg5NTEsMTM3ODYwMDc3
+NSwtMTUwMDAyNTAsLTE2MjE3OTI5ODgsMTExOTc3MDEwMiwtMz
+AzMjY5ODAxLC0xNjY2NTU2NTY0LDQ5NzgyMDkyMyw3Nzc4OTEz
+OTAsNjQzMTc0NjAxLC0xMDc1MTM0NTIxLC00NjQ4OTQzMjUsLT
+I1NDIzOTE3MywxODYzNjU4MDYsNDYwNjQzMTA4LC0xNDYwMjU3
+MzcyXX0=
 -->
