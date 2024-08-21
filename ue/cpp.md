@@ -1921,13 +1921,13 @@ void AEnemy::BeginPlay()
 ```
 在蓝图中放置一个target point并在实例中进行配置
 ![输入图片说明](/imgs/2024-08-21/Zoh4rkLYlbIP8BQS.png)
-zai'shi'li
+在实例中进行设置，可以分别为不同的敌人设置不同的巡逻点
 ![输入图片说明](/imgs/2024-08-21/LYlUzrm9QCO80ggQ.png)
 运行后：：：
 此时我们做到了ai寻路到targetPoint，仅是该点
 ![输入图片说明](/imgs/2024-08-21/SrhREBr0fcK7dc5e.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDM2OTIyMzksNzYzNzY0MjkwLDE4MT
+eyJoaXN0b3J5IjpbLTExNDE1NzUzNTEsNzYzNzY0MjkwLDE4MT
 E4Nzg5NTEsMTM3ODYwMDc3NSwtMTUwMDAyNTAsLTE2MjE3OTI5
 ODgsMTExOTc3MDEwMiwtMzAzMjY5ODAxLC0xNjY2NTU2NTY0LD
 Q5NzgyMDkyMyw3Nzc4OTEzOTAsNjQzMTc0NjAxLC0xMDc1MTM0
