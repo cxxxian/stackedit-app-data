@@ -1890,13 +1890,34 @@ AEnemy::AEnemy()
 ```
 ```
 #include "AIController.h"
+void AEnemy::BeginPlay()
+{
+	Super::BeginPlay();
+	if (HealthBarWidget) {
+		HealthBarWidget->SetVisibility(false);
+	}
+	
+	EnemyController = Cast<AAIController>(GetController());
+	if (EnemyController && PatrolTarget) {
+		FAIMoveRequest MoveRequest;
+		MoveRequest.SetGoalActor(PatrolTarget);
+		MoveRequest.SetAcceptanceRadius(15.f);
+		FNavPathSharedPtr NavPath;
+		EnemyController->MoveTo(MoveRequest, &NavPath);
+		TArray<FNavPathPoint>& PathPoints = NavPath->GetPathPoints();
+		for (auto& Point : PathPoints) {
+			const FVector& Location = Point.Location;
+			DrawDebugSphere(GetWorld(), Location, 12.f, 12, FColor::Green, false, 10.f);
+		}
+	}
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjA4MjE3ODgsMTgxMTg3ODk1MSwxMz
-c4NjAwNzc1LC0xNTAwMDI1MCwtMTYyMTc5Mjk4OCwxMTE5Nzcw
-MTAyLC0zMDMyNjk4MDEsLTE2NjY1NTY1NjQsNDk3ODIwOTIzLD
-c3Nzg5MTM5MCw2NDMxNzQ2MDEsLTEwNzUxMzQ1MjEsLTQ2NDg5
-NDMyNSwtMjU0MjM5MTczLDE4NjM2NTgwNiw0NjA2NDMxMDgsLT
-E0NjAyNTczNzIsMTcwNzMwNjYwMywtNjAyOTkyODk2LC0yMDU1
-NTM5NDUwXX0=
+eyJoaXN0b3J5IjpbODM3MjQzNDk2LDE4MTE4Nzg5NTEsMTM3OD
+YwMDc3NSwtMTUwMDAyNTAsLTE2MjE3OTI5ODgsMTExOTc3MDEw
+MiwtMzAzMjY5ODAxLC0xNjY2NTU2NTY0LDQ5NzgyMDkyMyw3Nz
+c4OTEzOTAsNjQzMTc0NjAxLC0xMDc1MTM0NTIxLC00NjQ4OTQz
+MjUsLTI1NDIzOTE3MywxODYzNjU4MDYsNDYwNjQzMTA4LC0xND
+YwMjU3MzcyLDE3MDczMDY2MDMsLTYwMjk5Mjg5NiwtMjA1NTUz
+OTQ1MF19
 -->
