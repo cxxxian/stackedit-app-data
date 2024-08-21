@@ -1921,8 +1921,10 @@ void AEnemy::BeginPlay()
 ```
 在蓝图中放置一个target point并在实例中进行配置
 ![输入图片说明](/imgs/2024-08-21/Zoh4rkLYlbIP8BQS.png)
+运行后：：：
+![输入图片说明](/imgs/2024-08-21/SrhREBr0fcK7dc5e.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQ0NzYwMTQ2LDE4MTE4Nzg5NTEsMTM3OD
+eyJoaXN0b3J5IjpbNzYzNzY0MjkwLDE4MTE4Nzg5NTEsMTM3OD
 YwMDc3NSwtMTUwMDAyNTAsLTE2MjE3OTI5ODgsMTExOTc3MDEw
 MiwtMzAzMjY5ODAxLC0xNjY2NTU2NTY0LDQ5NzgyMDkyMyw3Nz
 c4OTEzOTAsNjQzMTc0NjAxLC0xMDc1MTM0NTIxLC00NjQ4OTQz
