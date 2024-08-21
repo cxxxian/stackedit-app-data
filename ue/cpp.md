@@ -2105,8 +2105,15 @@ PawnSensing = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("PawnSensing"))
 PawnSensing->SightRadius = 4000.f;
 PawnSensing->SetPeripheralVisionAngle(45.f);
 ```
+制作敌人看见玩家的回调函数
+在Enemy.h中声明该函数
+```
+protected:
+UFUNCTION()
+void PawnSeen(APawn* SeenPawn);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTAxMzc1MzQsLTMxNzgxNjcxOSwxND
+eyJoaXN0b3J5IjpbLTEwMjY2MTc5MzUsLTMxNzgxNjcxOSwxND
 YwNzg4ODA2LDU4Mjg4MDMxMCw5MTY4NjMwOSwtMTk4MTgxMDg4
 Nyw1NjY4ODM4NjAsMTQ0NjUwMTI0Nyw0Mzc3ODUxMjQsLTIwMj
 k2ODM4MTMsMTAzNTcyNDE5OCwxMTgxOTUzODg3LC02NTg3MTU2
