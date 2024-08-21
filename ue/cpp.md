@@ -2028,24 +2028,21 @@ private:
 在Enemy.cpp进行函数实现以及调用
 综上：
 ```
-void AEnemy::PatrolTimerFinished()
+void AEnemy::PatrolTimerFinished()//用做稍后的延迟的回调函数
 {
 	MoveToTarget(PatrolTarget);
 }
+//在begin play即一开始，先调用MoveToTarget，移动到设置的patrolTarget
 void AEnemy::BeginPlay()
 {
-	Super::BeginPlay();
-	if (HealthBarWidget) {
-		HealthBarWidget->SetVisibility(false);
-	}
-	
+。。。省略
 	EnemyController = Cast<AAIController>(GetController());
 	MoveToTarget(PatrolTarget);
-
 }
+
 void AEnemy::Tick(float DeltaTime)
 {
-。
+。。。省略
 	if (InTargetRange(PatrolTarget, PatrolRadius)) {
 		PatrolTarget = ChoosePatrolTarget();
 		GetWorldTimerManager().SetTimer(PatrolTimer, this, &AEnemy::PatrolTimerFinished, 5.f);
@@ -2056,7 +2053,7 @@ void AEnemy::Tick(float DeltaTime)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODEwMzI5Mjc0LDU2Njg4Mzg2MCwxNDQ2NT
+eyJoaXN0b3J5IjpbLTI0MTEzMTA3LDU2Njg4Mzg2MCwxNDQ2NT
 AxMjQ3LDQzNzc4NTEyNCwtMjAyOTY4MzgxMywxMDM1NzI0MTk4
 LDExODE5NTM4ODcsLTY1ODcxNTYyNCw3NjM3NjQyOTAsMTgxMT
 g3ODk1MSwxMzc4NjAwNzc1LC0xNTAwMDI1MCwtMTYyMTc5Mjk4
