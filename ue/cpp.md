@@ -2098,15 +2098,19 @@ private:
 UPROPERTY(VisibleAnywhere)
 UPawnSensingComponent* PawnSensing;
 ```
+在Enemy.cpp中进行初始化
+```
+#include "Perception/PawnSensingComponent.h"
 PawnSensing = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("PawnSensing"));
-	PawnSensing->SightRadius = 4000.f;
-	PawnSensing->SetPeripheralVisionAngle(45.f);
+PawnSensing->SightRadius = 4000.f;
+PawnSensing->SetPeripheralVisionAngle(45.f);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2MzA4MDQ5MiwtMzE3ODE2NzE5LDE0Nj
-A3ODg4MDYsNTgyODgwMzEwLDkxNjg2MzA5LC0xOTgxODEwODg3
-LDU2Njg4Mzg2MCwxNDQ2NTAxMjQ3LDQzNzc4NTEyNCwtMjAyOT
-Y4MzgxMywxMDM1NzI0MTk4LDExODE5NTM4ODcsLTY1ODcxNTYy
-NCw3NjM3NjQyOTAsMTgxMTg3ODk1MSwxMzc4NjAwNzc1LC0xNT
-AwMDI1MCwtMTYyMTc5Mjk4OCwxMTE5NzcwMTAyLC0zMDMyNjk4
-MDFdfQ==
+eyJoaXN0b3J5IjpbLTExMTAxMzc1MzQsLTMxNzgxNjcxOSwxND
+YwNzg4ODA2LDU4Mjg4MDMxMCw5MTY4NjMwOSwtMTk4MTgxMDg4
+Nyw1NjY4ODM4NjAsMTQ0NjUwMTI0Nyw0Mzc3ODUxMjQsLTIwMj
+k2ODM4MTMsMTAzNTcyNDE5OCwxMTgxOTUzODg3LC02NTg3MTU2
+MjQsNzYzNzY0MjkwLDE4MTE4Nzg5NTEsMTM3ODYwMDc3NSwtMT
+UwMDAyNTAsLTE2MjE3OTI5ODgsMTExOTc3MDEwMiwtMzAzMjY5
+ODAxXX0=
 -->
