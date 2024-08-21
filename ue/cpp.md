@@ -1889,7 +1889,10 @@ AEnemy::AEnemy()
 	TArray<AActor*> PatrolTargets;
 ```
 在Enmey.cpp中，在BeginPlay的方法中制作敌人走向PatrolTarget的功能
-1. 将
+4. 将敌人的controller转化为AIController
+5. 声明一个FAIMoveRequest MoveRequest
+6. 将MoveRequest的目标actor设为PatrolTarget
+7. 将MoveRequest的AcceptanceRadius设为
 ```
 #include "AIController.h"
 void AEnemy::BeginPlay()
@@ -1915,7 +1918,7 @@ void AEnemy::BeginPlay()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2MjkyNzY2NSwxODExODc4OTUxLDEzNz
+eyJoaXN0b3J5IjpbLTM5NjM3MjY0NCwxODExODc4OTUxLDEzNz
 g2MDA3NzUsLTE1MDAwMjUwLC0xNjIxNzkyOTg4LDExMTk3NzAx
 MDIsLTMwMzI2OTgwMSwtMTY2NjU1NjU2NCw0OTc4MjA5MjMsNz
 c3ODkxMzkwLDY0MzE3NDYwMSwtMTA3NTEzNDUyMSwtNDY0ODk0
