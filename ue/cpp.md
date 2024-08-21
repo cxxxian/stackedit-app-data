@@ -1870,12 +1870,24 @@ AEnemy::AEnemy()
 ```
 ## 制作敌人巡逻系统
 在build.cs加入"**AIMoudle**"模块
+/**
+	* Navigation
+	**/
+	UPROPERTY()
+	class AAIController* EnemyController;
+
+	// Current patrol target
+	UPROPERTY(EditInstanceOnly, Category = "AI Navigation")
+	AActor* PatrolTarget;
+
+	UPROPERTY(EditInstanceOnly, Category = "AI Navigation")
+	TArray<AActor*> PatrolTargets;
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3ODYwMDc3NSwtMTUwMDAyNTAsLTE2Mj
-E3OTI5ODgsMTExOTc3MDEwMiwtMzAzMjY5ODAxLC0xNjY2NTU2
-NTY0LDQ5NzgyMDkyMyw3Nzc4OTEzOTAsNjQzMTc0NjAxLC0xMD
-c1MTM0NTIxLC00NjQ4OTQzMjUsLTI1NDIzOTE3MywxODYzNjU4
-MDYsNDYwNjQzMTA4LC0xNDYwMjU3MzcyLDE3MDczMDY2MDMsLT
-YwMjk5Mjg5NiwtMjA1NTUzOTQ1MCwtNzMyMjc3MTE0LDEwMTg3
-NTA0MDhdfQ==
+eyJoaXN0b3J5IjpbLTE0Mzc5MzEyLDEzNzg2MDA3NzUsLTE1MD
+AwMjUwLC0xNjIxNzkyOTg4LDExMTk3NzAxMDIsLTMwMzI2OTgw
+MSwtMTY2NjU1NjU2NCw0OTc4MjA5MjMsNzc3ODkxMzkwLDY0Mz
+E3NDYwMSwtMTA3NTEzNDUyMSwtNDY0ODk0MzI1LC0yNTQyMzkx
+NzMsMTg2MzY1ODA2LDQ2MDY0MzEwOCwtMTQ2MDI1NzM3MiwxNz
+A3MzA2NjAzLC02MDI5OTI4OTYsLTIwNTU1Mzk0NTAsLTczMjI3
+NzExNF19
 -->
