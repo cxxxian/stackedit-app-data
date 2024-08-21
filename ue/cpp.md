@@ -1892,7 +1892,9 @@ AEnemy::AEnemy()
 4. 将敌人的controller转化为AIController
 5. 声明一个FAIMoveRequest MoveRequest
 6. 将MoveRequest的目标actor设为PatrolTarget
-7. 将MoveRequest的AcceptanceRadius设为
+7. 将MoveRequest的AcceptanceRadius设为15，意为走到距离目标点15的地方结束
+8. FNavPathSharedPtr NavPath为共享指针声明的导航路径
+9. NavPath->GetPathPoints()返回的为TArray数组，使用debug画出这些d
 ```
 #include "AIController.h"
 void AEnemy::BeginPlay()
@@ -1918,11 +1920,11 @@ void AEnemy::BeginPlay()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5NjM3MjY0NCwxODExODc4OTUxLDEzNz
-g2MDA3NzUsLTE1MDAwMjUwLC0xNjIxNzkyOTg4LDExMTk3NzAx
-MDIsLTMwMzI2OTgwMSwtMTY2NjU1NjU2NCw0OTc4MjA5MjMsNz
-c3ODkxMzkwLDY0MzE3NDYwMSwtMTA3NTEzNDUyMSwtNDY0ODk0
-MzI1LC0yNTQyMzkxNzMsMTg2MzY1ODA2LDQ2MDY0MzEwOCwtMT
-Q2MDI1NzM3MiwxNzA3MzA2NjAzLC02MDI5OTI4OTYsLTIwNTU1
-Mzk0NTBdfQ==
+eyJoaXN0b3J5IjpbMzQwNDA3ODUyLDE4MTE4Nzg5NTEsMTM3OD
+YwMDc3NSwtMTUwMDAyNTAsLTE2MjE3OTI5ODgsMTExOTc3MDEw
+MiwtMzAzMjY5ODAxLC0xNjY2NTU2NTY0LDQ5NzgyMDkyMyw3Nz
+c4OTEzOTAsNjQzMTc0NjAxLC0xMDc1MTM0NTIxLC00NjQ4OTQz
+MjUsLTI1NDIzOTE3MywxODYzNjU4MDYsNDYwNjQzMTA4LC0xND
+YwMjU3MzcyLDE3MDczMDY2MDMsLTYwMjk5Mjg5NiwtMjA1NTUz
+OTQ1MF19
 -->
