@@ -1856,29 +1856,20 @@ void AEnemy::Die()
 ![输入图片说明](/imgs/2024-08-21/C0ZrPsIUZbjaJQoO.png)
 取消Yaw轴旋转
 ![输入图片说明](/imgs/2024-08-21/52rnnQ0tJNtFtSSb.png)
+在Enemy.cpp中的构造器中用程序声明以上操作
+```
+#include "GameFramework/CharacterMovementComponent.h"
 AEnemy::AEnemy()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
-
-	GetMesh()->SetCollisionObjectType(ECollisionChannel::ECC_WorldDynamic);
-	GetMesh()->SetCollisionResponseToChannel(ECollisionChannel::ECC_Visibility, ECollisionResponse::ECR_Block);
-	GetMesh()->SetCollisionResponseToChannel(ECollisionChannel::ECC_Camera, ECollisionResponse::ECR_Ignore);
-	GetCapsuleComponent()->SetCollisionResponseToChannel(ECollisionChannel::ECC_Camera, ECollisionResponse::ECR_Ignore);
-	GetMesh()->SetGenerateOverlapEvents(true);
-
-	Attributes = CreateDefaultSubobject<UAttributeComponent>(TEXT("Attributes"));
-	HealthBarWidget = CreateDefaultSubobject<UHealthBarComponent>(TEXT("HealthBar"));
-	HealthBarWidget->SetupAttachment(GetRootComponent());
-
+。。。省略
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationYaw = false;
 	bUseControllerRotationRoll = false;
 }
-
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk5MDAyODgzLC0xNjIxNzkyOTg4LDExMT
+eyJoaXN0b3J5IjpbLTE1MDAwMjUwLC0xNjIxNzkyOTg4LDExMT
 k3NzAxMDIsLTMwMzI2OTgwMSwtMTY2NjU1NjU2NCw0OTc4MjA5
 MjMsNzc3ODkxMzkwLDY0MzE3NDYwMSwtMTA3NTEzNDUyMSwtND
 Y0ODk0MzI1LC0yNTQyMzkxNzMsMTg2MzY1ODA2LDQ2MDY0MzEw
