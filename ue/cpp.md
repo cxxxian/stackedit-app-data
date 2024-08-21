@@ -1927,12 +1927,21 @@ void AEnemy::BeginPlay()
 运行后：：：
 此时我们做到了ai寻路到targetPoint，但仅是该点
 ![输入图片说明](/imgs/2024-08-21/SrhREBr0fcK7dc5e.png)
+### 对于Target Points（数组）
+在Enemy.cpp中将判断距离声明成一个方法
+```
+bool AEnemy::InTargetRange(AActor* Target, double Radius)
+{
+	const double DistanceToTarget = (Target->GetActorLocation() - GetActorLocation()).Size();
+	return DistanceToTarget <= Radius;
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1ODcxNTYyNCw3NjM3NjQyOTAsMTgxMT
-g3ODk1MSwxMzc4NjAwNzc1LC0xNTAwMDI1MCwtMTYyMTc5Mjk4
-OCwxMTE5NzcwMTAyLC0zMDMyNjk4MDEsLTE2NjY1NTY1NjQsND
-k3ODIwOTIzLDc3Nzg5MTM5MCw2NDMxNzQ2MDEsLTEwNzUxMzQ1
-MjEsLTQ2NDg5NDMyNSwtMjU0MjM5MTczLDE4NjM2NTgwNiw0Nj
-A2NDMxMDgsLTE0NjAyNTczNzIsMTcwNzMwNjYwMywtNjAyOTky
-ODk2XX0=
+eyJoaXN0b3J5IjpbMTE4MTk1Mzg4NywtNjU4NzE1NjI0LDc2Mz
+c2NDI5MCwxODExODc4OTUxLDEzNzg2MDA3NzUsLTE1MDAwMjUw
+LC0xNjIxNzkyOTg4LDExMTk3NzAxMDIsLTMwMzI2OTgwMSwtMT
+Y2NjU1NjU2NCw0OTc4MjA5MjMsNzc3ODkxMzkwLDY0MzE3NDYw
+MSwtMTA3NTEzNDUyMSwtNDY0ODk0MzI1LC0yNTQyMzkxNzMsMT
+g2MzY1ODA2LDQ2MDY0MzEwOCwtMTQ2MDI1NzM3MiwxNzA3MzA2
+NjAzXX0=
 -->
