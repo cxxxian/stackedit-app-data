@@ -2047,7 +2047,7 @@ void AEnemy::Tick(float DeltaTime)
 	if (InTargetRange(PatrolTarget, PatrolRadius)) {
 		PatrolTarget = ChoosePatrolTarget();
 		GetWorldTimerManager().SetTimer(PatrolTimer, this, &AEnemy::PatrolTimerFinished, 5.f);//该方法用于延迟
-		//每次延迟五秒钟后，调用回调函数PatrolTimerFinished，该方法里面
+		//每次延迟五秒钟后，调用回调函数PatrolTimerFinished，该方法里面是MoveToTarget(PatrolTarget);
 	}
 	
 }
@@ -2055,11 +2055,11 @@ void AEnemy::Tick(float DeltaTime)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzk0NDU3NTgyLDU2Njg4Mzg2MCwxNDQ2NT
-AxMjQ3LDQzNzc4NTEyNCwtMjAyOTY4MzgxMywxMDM1NzI0MTk4
-LDExODE5NTM4ODcsLTY1ODcxNTYyNCw3NjM3NjQyOTAsMTgxMT
-g3ODk1MSwxMzc4NjAwNzc1LC0xNTAwMDI1MCwtMTYyMTc5Mjk4
-OCwxMTE5NzcwMTAyLC0zMDMyNjk4MDEsLTE2NjY1NTY1NjQsND
-k3ODIwOTIzLDc3Nzg5MTM5MCw2NDMxNzQ2MDEsLTEwNzUxMzQ1
-MjFdfQ==
+eyJoaXN0b3J5IjpbLTE5ODE4MTA4ODcsNTY2ODgzODYwLDE0ND
+Y1MDEyNDcsNDM3Nzg1MTI0LC0yMDI5NjgzODEzLDEwMzU3MjQx
+OTgsMTE4MTk1Mzg4NywtNjU4NzE1NjI0LDc2Mzc2NDI5MCwxOD
+ExODc4OTUxLDEzNzg2MDA3NzUsLTE1MDAwMjUwLC0xNjIxNzky
+OTg4LDExMTk3NzAxMDIsLTMwMzI2OTgwMSwtMTY2NjU1NjU2NC
+w0OTc4MjA5MjMsNzc3ODkxMzkwLDY0MzE3NDYwMSwtMTA3NTEz
+NDUyMV19
 -->
