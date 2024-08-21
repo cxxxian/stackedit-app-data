@@ -2039,13 +2039,15 @@ void AEnemy::BeginPlay()
 	EnemyController = Cast<AAIController>(GetController());
 	MoveToTarget(PatrolTarget);
 }
-
+//之后的Tick函数中，使用InTargetRange进行距离的判断，
+//ChoosePatrolTarget进行巡逻点的选择
 void AEnemy::Tick(float DeltaTime)
 {
 。。。省略
 	if (InTargetRange(PatrolTarget, PatrolRadius)) {
 		PatrolTarget = ChoosePatrolTarget();
-		GetWorldTimerManager().SetTimer(PatrolTimer, this, &AEnemy::PatrolTimerFinished, 5.f);
+		GetWorldTimerManager().SetTimer(PatrolTimer, this, &AEnemy::PatrolTimerFinished, 5.f);//该方法用于延迟
+		//每次延迟五秒钟后，调用回调函数PatrolTimerFinished，该方法里面
 	}
 	
 }
@@ -2053,7 +2055,7 @@ void AEnemy::Tick(float DeltaTime)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0MTEzMTA3LDU2Njg4Mzg2MCwxNDQ2NT
+eyJoaXN0b3J5IjpbNzk0NDU3NTgyLDU2Njg4Mzg2MCwxNDQ2NT
 AxMjQ3LDQzNzc4NTEyNCwtMjAyOTY4MzgxMywxMDM1NzI0MTk4
 LDExODE5NTM4ODcsLTY1ODcxNTYyNCw3NjM3NjQyOTAsMTgxMT
 g3ODk1MSwxMzc4NjAwNzc1LC0xNTAwMDI1MCwtMTYyMTc5Mjk4
