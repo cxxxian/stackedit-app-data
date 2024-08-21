@@ -1856,13 +1856,33 @@ void AEnemy::Die()
 ![输入图片说明](/imgs/2024-08-21/C0ZrPsIUZbjaJQoO.png)
 取消Yaw轴旋转
 ![输入图片说明](/imgs/2024-08-21/52rnnQ0tJNtFtSSb.png)
+AEnemy::AEnemy()
+{
+ 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	PrimaryActorTick.bCanEverTick = true;
+
+	GetMesh()->SetCollisionObjectType(ECollisionChannel::ECC_WorldDynamic);
+	GetMesh()->SetCollisionResponseToChannel(ECollisionChannel::ECC_Visibility, ECollisionResponse::ECR_Block);
+	GetMesh()->SetCollisionResponseToChannel(ECollisionChannel::ECC_Camera, ECollisionResponse::ECR_Ignore);
+	GetCapsuleComponent()->SetCollisionResponseToChannel(ECollisionChannel::ECC_Camera, ECollisionResponse::ECR_Ignore);
+	GetMesh()->SetGenerateOverlapEvents(true);
+
+	Attributes = CreateDefaultSubobject<UAttributeComponent>(TEXT("Attributes"));
+	HealthBarWidget = CreateDefaultSubobject<UHealthBarComponent>(TEXT("HealthBar"));
+	HealthBarWidget->SetupAttachment(GetRootComponent());
+
+	GetCharacterMovement()->bOrientRotationToMovement = true;
+	bUseControllerRotationPitch = false;
+	bUseControllerRotationYaw = false;
+	bUseControllerRotationRoll = false;
+}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjE3OTI5ODgsMTExOTc3MDEwMiwtMz
-AzMjY5ODAxLC0xNjY2NTU2NTY0LDQ5NzgyMDkyMyw3Nzc4OTEz
-OTAsNjQzMTc0NjAxLC0xMDc1MTM0NTIxLC00NjQ4OTQzMjUsLT
-I1NDIzOTE3MywxODYzNjU4MDYsNDYwNjQzMTA4LC0xNDYwMjU3
-MzcyLDE3MDczMDY2MDMsLTYwMjk5Mjg5NiwtMjA1NTUzOTQ1MC
-wtNzMyMjc3MTE0LDEwMTg3NTA0MDgsNjIyMDIwMDQwLDE2NTM0
-NzIxMjNdfQ==
+eyJoaXN0b3J5IjpbMTk5MDAyODgzLC0xNjIxNzkyOTg4LDExMT
+k3NzAxMDIsLTMwMzI2OTgwMSwtMTY2NjU1NjU2NCw0OTc4MjA5
+MjMsNzc3ODkxMzkwLDY0MzE3NDYwMSwtMTA3NTEzNDUyMSwtND
+Y0ODk0MzI1LC0yNTQyMzkxNzMsMTg2MzY1ODA2LDQ2MDY0MzEw
+OCwtMTQ2MDI1NzM3MiwxNzA3MzA2NjAzLC02MDI5OTI4OTYsLT
+IwNTU1Mzk0NTAsLTczMjI3NzExNCwxMDE4NzUwNDA4LDYyMjAy
+MDA0MF19
 -->
