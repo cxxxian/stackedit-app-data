@@ -2024,6 +2024,10 @@ AActor* AEnemy::ChoosePatrolTarget()
 private:
 	FTimerHandle PatrolTimer;
 	void PatrolTimerFinished();
+	UPROPERTY(EditAnywhere, Category = "AI Navigation")
+	float WaitMin = 5.f;
+	UPROPERTY(EditAnywhere, Category = "AI Navigation")
+	float WaitMax = 10.f;
 ```
 在Enemy.cpp进行函数实现以及调用
 综上：
@@ -2085,11 +2089,11 @@ void AEnemy::CheckCombatTarget()
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDk0NzczOTY5LC0xOTgxODEwODg3LDU2Nj
-g4Mzg2MCwxNDQ2NTAxMjQ3LDQzNzc4NTEyNCwtMjAyOTY4Mzgx
-MywxMDM1NzI0MTk4LDExODE5NTM4ODcsLTY1ODcxNTYyNCw3Nj
-M3NjQyOTAsMTgxMTg3ODk1MSwxMzc4NjAwNzc1LC0xNTAwMDI1
-MCwtMTYyMTc5Mjk4OCwxMTE5NzcwMTAyLC0zMDMyNjk4MDEsLT
-E2NjY1NTY1NjQsNDk3ODIwOTIzLDc3Nzg5MTM5MCw2NDMxNzQ2
-MDFdfQ==
+eyJoaXN0b3J5IjpbOTE2ODYzMDksLTE5ODE4MTA4ODcsNTY2OD
+gzODYwLDE0NDY1MDEyNDcsNDM3Nzg1MTI0LC0yMDI5NjgzODEz
+LDEwMzU3MjQxOTgsMTE4MTk1Mzg4NywtNjU4NzE1NjI0LDc2Mz
+c2NDI5MCwxODExODc4OTUxLDEzNzg2MDA3NzUsLTE1MDAwMjUw
+LC0xNjIxNzkyOTg4LDExMTk3NzAxMDIsLTMwMzI2OTgwMSwtMT
+Y2NjU1NjU2NCw0OTc4MjA5MjMsNzc3ODkxMzkwLDY0MzE3NDYw
+MV19
 -->
