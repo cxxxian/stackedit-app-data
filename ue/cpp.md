@@ -1981,16 +1981,16 @@ void AEnemy::Tick(float DeltaTime)
 ### 制作巡逻到某一个点后暂停行动一段时间
 在Enemy.h中创建变量以及回调函数
 ```
-protected:
-	bool InTargetRange(AActor* Target, double Radius);
-	void MoveToTarget(AActor* Target);
+private:
+	FTimerHandle PatrolTimer;
+	void PatrolTimerFinished();
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MjE1MDkzNjksNDM3Nzg1MTI0LC0yMD
-I5NjgzODEzLDEwMzU3MjQxOTgsMTE4MTk1Mzg4NywtNjU4NzE1
-NjI0LDc2Mzc2NDI5MCwxODExODc4OTUxLDEzNzg2MDA3NzUsLT
-E1MDAwMjUwLC0xNjIxNzkyOTg4LDExMTk3NzAxMDIsLTMwMzI2
-OTgwMSwtMTY2NjU1NjU2NCw0OTc4MjA5MjMsNzc3ODkxMzkwLD
-Y0MzE3NDYwMSwtMTA3NTEzNDUyMSwtNDY0ODk0MzI1LC0yNTQy
-MzkxNzNdfQ==
+eyJoaXN0b3J5IjpbLTU5MDI4NTQwMyw0Mzc3ODUxMjQsLTIwMj
+k2ODM4MTMsMTAzNTcyNDE5OCwxMTgxOTUzODg3LC02NTg3MTU2
+MjQsNzYzNzY0MjkwLDE4MTE4Nzg5NTEsMTM3ODYwMDc3NSwtMT
+UwMDAyNTAsLTE2MjE3OTI5ODgsMTExOTc3MDEwMiwtMzAzMjY5
+ODAxLC0xNjY2NTU2NTY0LDQ5NzgyMDkyMyw3Nzc4OTEzOTAsNj
+QzMTc0NjAxLC0xMDc1MTM0NTIxLC00NjQ4OTQzMjUsLTI1NDIz
+OTE3M119
 -->
