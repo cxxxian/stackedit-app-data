@@ -1888,6 +1888,7 @@ AEnemy::AEnemy()
 	UPROPERTY(EditInstanceOnly, Category = "AI Navigation")
 	TArray<AActor*> PatrolTargets;
 ```
+### 对于Target Point
 在Enmey.cpp中，在BeginPlay的方法中制作敌人走向PatrolTarget的功能
 1. 将敌人的controller转化为AIController
 2. 声明一个FAIMoveRequest MoveRequest
@@ -1924,14 +1925,14 @@ void AEnemy::BeginPlay()
 在实例中进行设置，可以分别为不同的敌人设置不同的巡逻点
 ![输入图片说明](/imgs/2024-08-21/LYlUzrm9QCO80ggQ.png)
 运行后：：：
-此时我们做到了ai寻路到targetPoint，仅是该点
+此时我们做到了ai寻路到targetPoint，但仅是该点
 ![输入图片说明](/imgs/2024-08-21/SrhREBr0fcK7dc5e.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDE1NzUzNTEsNzYzNzY0MjkwLDE4MT
-E4Nzg5NTEsMTM3ODYwMDc3NSwtMTUwMDAyNTAsLTE2MjE3OTI5
-ODgsMTExOTc3MDEwMiwtMzAzMjY5ODAxLC0xNjY2NTU2NTY0LD
-Q5NzgyMDkyMyw3Nzc4OTEzOTAsNjQzMTc0NjAxLC0xMDc1MTM0
-NTIxLC00NjQ4OTQzMjUsLTI1NDIzOTE3MywxODYzNjU4MDYsND
-YwNjQzMTA4LC0xNDYwMjU3MzcyLDE3MDczMDY2MDMsLTYwMjk5
-Mjg5Nl19
+eyJoaXN0b3J5IjpbLTY1ODcxNTYyNCw3NjM3NjQyOTAsMTgxMT
+g3ODk1MSwxMzc4NjAwNzc1LC0xNTAwMDI1MCwtMTYyMTc5Mjk4
+OCwxMTE5NzcwMTAyLC0zMDMyNjk4MDEsLTE2NjY1NTY1NjQsND
+k3ODIwOTIzLDc3Nzg5MTM5MCw2NDMxNzQ2MDEsLTEwNzUxMzQ1
+MjEsLTQ2NDg5NDMyNSwtMjU0MjM5MTczLDE4NjM2NTgwNiw0Nj
+A2NDMxMDgsLTE0NjAyNTczNzIsMTcwNzMwNjYwMywtNjAyOTky
+ODk2XX0=
 -->
