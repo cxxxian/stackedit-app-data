@@ -1985,6 +1985,10 @@ private:
 	FTimerHandle PatrolTimer;
 	void PatrolTimerFinished();
 ```
+在Enemy.h的protected部分声明三个函数，使得代码复用性更高且管理起来更方便
+在Enemy.cpp实现如下：
+```
+//检查范围（用于xue'tiao'ying）
 bool AEnemy::InTargetRange(AActor* Target, double Radius)
 {
 	if (Target == nullptr)return false;
@@ -2012,7 +2016,6 @@ AActor* AEnemy::ChoosePatrolTarget()
 			VaildTargets.AddUnique(Target);
 		}
 	}
-
 	const int32 NumPatrolTargets = VaildTargets.Num();
 	if (NumPatrolTargets > 0) {
 		const int32 TargetSelection = FMath::RandRange(0, NumPatrolTargets - 1);
@@ -2020,12 +2023,13 @@ AActor* AEnemy::ChoosePatrolTarget()
 	}
 	return nullptr;
 }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI5NTk2MDYsNDM3Nzg1MTI0LC0yMDI5Nj
-gzODEzLDEwMzU3MjQxOTgsMTE4MTk1Mzg4NywtNjU4NzE1NjI0
-LDc2Mzc2NDI5MCwxODExODc4OTUxLDEzNzg2MDA3NzUsLTE1MD
-AwMjUwLC0xNjIxNzkyOTg4LDExMTk3NzAxMDIsLTMwMzI2OTgw
-MSwtMTY2NjU1NjU2NCw0OTc4MjA5MjMsNzc3ODkxMzkwLDY0Mz
-E3NDYwMSwtMTA3NTEzNDUyMSwtNDY0ODk0MzI1LC0yNTQyMzkx
-NzNdfQ==
+eyJoaXN0b3J5IjpbMTQ3Mzc1ODIyOCw0Mzc3ODUxMjQsLTIwMj
+k2ODM4MTMsMTAzNTcyNDE5OCwxMTgxOTUzODg3LC02NTg3MTU2
+MjQsNzYzNzY0MjkwLDE4MTE4Nzg5NTEsMTM3ODYwMDc3NSwtMT
+UwMDAyNTAsLTE2MjE3OTI5ODgsMTExOTc3MDEwMiwtMzAzMjY5
+ODAxLC0xNjY2NTU2NTY0LDQ5NzgyMDkyMyw3Nzc4OTEzOTAsNj
+QzMTc0NjAxLC0xMDc1MTM0NTIxLC00NjQ4OTQzMjUsLTI1NDIz
+OTE3M119
 -->
