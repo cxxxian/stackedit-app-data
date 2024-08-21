@@ -2067,7 +2067,8 @@ void AEnemy::CheckPatrolTarget()
 {
 	if (InTargetRange(PatrolTarget, PatrolRadius)) {
 		PatrolTarget = ChoosePatrolTarget();
-		GetWorldTimerManager().SetTimer(PatrolTimer, this, &AEnemy::PatrolTimerFinished, 5.f);
+		const float WaitTime = FMath::RandRange(WaitMin, WaitMax);
+		GetWorldTimerManager().SetTimer(PatrolTimer, this, &AEnemy::PatrolTimerFinished, WaitTime.f);
 	}
 }
 
@@ -2084,7 +2085,7 @@ void AEnemy::CheckCombatTarget()
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjI3NDc1NzEyLC0xOTgxODEwODg3LDU2Nj
+eyJoaXN0b3J5IjpbNDk0NzczOTY5LC0xOTgxODEwODg3LDU2Nj
 g4Mzg2MCwxNDQ2NTAxMjQ3LDQzNzc4NTEyNCwtMjAyOTY4Mzgx
 MywxMDM1NzI0MTk4LDExODE5NTM4ODcsLTY1ODcxNTYyNCw3Nj
 M3NjQyOTAsMTgxMTg3ODk1MSwxMzc4NjAwNzc1LC0xNTAwMDI1
