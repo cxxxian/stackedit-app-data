@@ -2118,9 +2118,15 @@ void AEnemy::PawnSeen(APawn* SeenPawn)
 {
 	UE_LOG(LogTemp, Warning, TEXT("Pawn Seen"));
 }
+void AEnemy::BeginPlay()
+{。。。省略
+	if (PawnSensing) {
+		PawnSensing->OnSeePawn.AddDynamic(this, &AEnemy::PawnSeen);
+	}
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUzNTIzNzc5MiwtMzE3ODE2NzE5LDE0Nj
+eyJoaXN0b3J5IjpbLTYyNjMzNzU1MiwtMzE3ODE2NzE5LDE0Nj
 A3ODg4MDYsNTgyODgwMzEwLDkxNjg2MzA5LC0xOTgxODEwODg3
 LDU2Njg4Mzg2MCwxNDQ2NTAxMjQ3LDQzNzc4NTEyNCwtMjAyOT
 Y4MzgxMywxMDM1NzI0MTk4LDExODE5NTM4ODcsLTY1ODcxNTYy
