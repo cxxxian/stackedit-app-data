@@ -1868,9 +1868,10 @@ AEnemy::AEnemy()
 	bUseControllerRotationRoll = false;
 }
 ```
-## zhi'zuo
+## 制作敌人巡逻系统
+在build.cs加入"**AIMoudle**"模块
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4MDE3NDE2NCwtMTUwMDAyNTAsLTE2Mj
+eyJoaXN0b3J5IjpbMTM3ODYwMDc3NSwtMTUwMDAyNTAsLTE2Mj
 E3OTI5ODgsMTExOTc3MDEwMiwtMzAzMjY5ODAxLC0xNjY2NTU2
 NTY0LDQ5NzgyMDkyMyw3Nzc4OTEzOTAsNjQzMTc0NjAxLC0xMD
 c1MTM0NTIxLC00NjQ4OTQzMjUsLTI1NDIzOTE3MywxODYzNjU4
