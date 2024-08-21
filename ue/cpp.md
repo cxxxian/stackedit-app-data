@@ -1936,12 +1936,53 @@ bool AEnemy::InTargetRange(AActor* Target, double Radius)
 	return DistanceToTarget <= Radius;
 }
 ```
+在Tick函数中，实现根据巡逻点随机巡逻的功能
+```
+void AEnemy::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	if (CombatTarget) {
+		if (!InTargetRange(CombatTarget, CombatRadius)) {
+			CombatTarget = nullptr;
+			if (HealthBarWidget) {
+				HealthBarWidget->SetVisibility(false);
+			}
+
+		}
+	}
+	if (PatrolTarget && EnemyController) {
+		if (InTargetRange(PatrolTarget, PatrolRadius)) {
+
+			TArray<AActor*> VaildTargets;
+			for (auto Target : PatrolTargets) {
+				if (Target != PatrolTarget) {
+					VaildTargets.AddUnique(Target);
+				}
+			}
+
+			const int32 NumPatrolTargets = VaildTargets.Num();
+			if (NumPatrolTargets > 0) {
+				const int32 TargetSelection = FMath::RandRange(0, NumPatrolTargets - 1);
+				AActor* Target = VaildTargets[TargetSelection];
+
+				PatrolTarget = Target;
+
+				FAIMoveRequest MoveRequest;
+				MoveRequest.SetGoalActor(PatrolTarget);
+				MoveRequest.SetAcceptanceRadius(15.f);
+				EnemyController->MoveTo(MoveRequest);
+			}
+		}
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4MTk1Mzg4NywtNjU4NzE1NjI0LDc2Mz
-c2NDI5MCwxODExODc4OTUxLDEzNzg2MDA3NzUsLTE1MDAwMjUw
-LC0xNjIxNzkyOTg4LDExMTk3NzAxMDIsLTMwMzI2OTgwMSwtMT
-Y2NjU1NjU2NCw0OTc4MjA5MjMsNzc3ODkxMzkwLDY0MzE3NDYw
-MSwtMTA3NTEzNDUyMSwtNDY0ODk0MzI1LC0yNTQyMzkxNzMsMT
-g2MzY1ODA2LDQ2MDY0MzEwOCwtMTQ2MDI1NzM3MiwxNzA3MzA2
-NjAzXX0=
+eyJoaXN0b3J5IjpbNDIwNDIyMjYxLDExODE5NTM4ODcsLTY1OD
+cxNTYyNCw3NjM3NjQyOTAsMTgxMTg3ODk1MSwxMzc4NjAwNzc1
+LC0xNTAwMDI1MCwtMTYyMTc5Mjk4OCwxMTE5NzcwMTAyLC0zMD
+MyNjk4MDEsLTE2NjY1NTY1NjQsNDk3ODIwOTIzLDc3Nzg5MTM5
+MCw2NDMxNzQ2MDEsLTEwNzUxMzQ1MjEsLTQ2NDg5NDMyNSwtMj
+U0MjM5MTczLDE4NjM2NTgwNiw0NjA2NDMxMDgsLTE0NjAyNTcz
+NzJdfQ==
 -->
