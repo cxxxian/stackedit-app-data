@@ -1979,12 +1979,18 @@ void AEnemy::Tick(float DeltaTime)
 }
 ```
 ### 制作巡逻到某一个点后暂停行动一段时间
+在Enemy.h中创建变量以及回调函数
+```
+protected:
+	bool InTargetRange(AActor* Target, double Radius);
+	void MoveToTarget(AActor* Target);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDM3Nzg1MTI0LC0yMDI5NjgzODEzLDEwMz
-U3MjQxOTgsMTE4MTk1Mzg4NywtNjU4NzE1NjI0LDc2Mzc2NDI5
-MCwxODExODc4OTUxLDEzNzg2MDA3NzUsLTE1MDAwMjUwLC0xNj
-IxNzkyOTg4LDExMTk3NzAxMDIsLTMwMzI2OTgwMSwtMTY2NjU1
-NjU2NCw0OTc4MjA5MjMsNzc3ODkxMzkwLDY0MzE3NDYwMSwtMT
-A3NTEzNDUyMSwtNDY0ODk0MzI1LC0yNTQyMzkxNzMsMTg2MzY1
-ODA2XX0=
+eyJoaXN0b3J5IjpbLTE3MjE1MDkzNjksNDM3Nzg1MTI0LC0yMD
+I5NjgzODEzLDEwMzU3MjQxOTgsMTE4MTk1Mzg4NywtNjU4NzE1
+NjI0LDc2Mzc2NDI5MCwxODExODc4OTUxLDEzNzg2MDA3NzUsLT
+E1MDAwMjUwLC0xNjIxNzkyOTg4LDExMTk3NzAxMDIsLTMwMzI2
+OTgwMSwtMTY2NjU1NjU2NCw0OTc4MjA5MjMsNzc3ODkxMzkwLD
+Y0MzE3NDYwMSwtMTA3NTEzNDUyMSwtNDY0ODk0MzI1LC0yNTQy
+MzkxNzNdfQ==
 -->
