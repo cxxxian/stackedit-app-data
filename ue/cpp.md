@@ -2193,6 +2193,8 @@ void AEnemy::PawnSeen(APawn* SeenPawn)
 	}
 }
 ```
+### 完善CheckCombatTarget使其远离一定距离会对玩家失去兴趣不再追逐
+```
 void AEnemy::CheckCombatTarget()
 {
 	//Outside combat radius, lose interest
@@ -2201,13 +2203,14 @@ void AEnemy::CheckCombatTarget()
 		if (HealthBarWidget) {
 			HealthBarWidget->SetVisibility(false);
 		}
-		EnemyState = EEnemyState::EES_Patrolling;
+		EnemyState = EEnemyState::EES_Patrolling;//将状态设回巡逻
 		GetCharacterMovement()->MaxWalkSpeed = 125.f;
-		MoveToTarget(PatrolTarget);
+		MoveToTarget(PatrolTarget);//回去巡逻点
 	}
 }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyMDU1MDQ4MCwtNjI2MzM3NTUyLC0zMT
+eyJoaXN0b3J5IjpbMTQyODM4MDQ0NywtNjI2MzM3NTUyLC0zMT
 c4MTY3MTksMTQ2MDc4ODgwNiw1ODI4ODAzMTAsOTE2ODYzMDks
 LTE5ODE4MTA4ODcsNTY2ODgzODYwLDE0NDY1MDEyNDcsNDM3Nz
 g1MTI0LC0yMDI5NjgzODEzLDEwMzU3MjQxOTgsMTE4MTk1Mzg4
