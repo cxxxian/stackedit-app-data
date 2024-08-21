@@ -2052,15 +2052,43 @@ void AEnemy::Tick(float DeltaTime)
 	
 }
 ```
-将Tick内的
+将Tick内的函数进一步提取
+```
+void AEnemy::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
 
+	CheckCombatTarget();
+	CheckPatrolTarget();
+	
+}
+
+void AEnemy::CheckPatrolTarget()
+{
+	if (InTargetRange(PatrolTarget, PatrolRadius)) {
+		PatrolTarget = ChoosePatrolTarget();
+		GetWorldTimerManager().SetTimer(PatrolTimer, this, &AEnemy::PatrolTimerFinished, 5.f);
+	}
+}
+
+void AEnemy::CheckCombatTarget()
+{
+	if (!InTargetRange(CombatTarget, CombatRadius)) {
+		CombatTarget = nullptr;
+		if (HealthBarWidget) {
+			HealthBarWidget->SetVisibility(false);
+		}
+
+	}
+}
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwMjE3NjkzMSwtMTk4MTgxMDg4Nyw1Nj
-Y4ODM4NjAsMTQ0NjUwMTI0Nyw0Mzc3ODUxMjQsLTIwMjk2ODM4
-MTMsMTAzNTcyNDE5OCwxMTgxOTUzODg3LC02NTg3MTU2MjQsNz
-YzNzY0MjkwLDE4MTE4Nzg5NTEsMTM3ODYwMDc3NSwtMTUwMDAy
-NTAsLTE2MjE3OTI5ODgsMTExOTc3MDEwMiwtMzAzMjY5ODAxLC
-0xNjY2NTU2NTY0LDQ5NzgyMDkyMyw3Nzc4OTEzOTAsNjQzMTc0
-NjAxXX0=
+eyJoaXN0b3J5IjpbNjI3NDc1NzEyLC0xOTgxODEwODg3LDU2Nj
+g4Mzg2MCwxNDQ2NTAxMjQ3LDQzNzc4NTEyNCwtMjAyOTY4Mzgx
+MywxMDM1NzI0MTk4LDExODE5NTM4ODcsLTY1ODcxNTYyNCw3Nj
+M3NjQyOTAsMTgxMTg3ODk1MSwxMzc4NjAwNzc1LC0xNTAwMDI1
+MCwtMTYyMTc5Mjk4OCwxMTE5NzcwMTAyLC0zMDMyNjk4MDEsLT
+E2NjY1NTY1NjQsNDk3ODIwOTIzLDc3Nzg5MTM5MCw2NDMxNzQ2
+MDFdfQ==
 -->
