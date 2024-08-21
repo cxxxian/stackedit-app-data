@@ -460,7 +460,7 @@ USphereComponent* Sphere;
 void AItem::BeginPlay()
 {
 	Super::BeginPlay();
-	Sphere->OnComponentBeginOverlap.AddDynamic(this, &AItem::OnSphereOverlap);//dan'b
+	Sphere->OnComponentBeginOverlap.AddDynamic(this, &AItem::OnSphereOverlap);//单波委托
 }
 void AItem::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
@@ -2089,11 +2089,11 @@ void AEnemy::CheckCombatTarget()
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTI0Mjg0MDcsOTE2ODYzMDksLTE5OD
-E4MTA4ODcsNTY2ODgzODYwLDE0NDY1MDEyNDcsNDM3Nzg1MTI0
-LC0yMDI5NjgzODEzLDEwMzU3MjQxOTgsMTE4MTk1Mzg4NywtNj
-U4NzE1NjI0LDc2Mzc2NDI5MCwxODExODc4OTUxLDEzNzg2MDA3
-NzUsLTE1MDAwMjUwLC0xNjIxNzkyOTg4LDExMTk3NzAxMDIsLT
-MwMzI2OTgwMSwtMTY2NjU1NjU2NCw0OTc4MjA5MjMsNzc3ODkx
-MzkwXX0=
+eyJoaXN0b3J5IjpbNTgyODgwMzEwLDkxNjg2MzA5LC0xOTgxOD
+EwODg3LDU2Njg4Mzg2MCwxNDQ2NTAxMjQ3LDQzNzc4NTEyNCwt
+MjAyOTY4MzgxMywxMDM1NzI0MTk4LDExODE5NTM4ODcsLTY1OD
+cxNTYyNCw3NjM3NjQyOTAsMTgxMTg3ODk1MSwxMzc4NjAwNzc1
+LC0xNTAwMDI1MCwtMTYyMTc5Mjk4OCwxMTE5NzcwMTAyLC0zMD
+MyNjk4MDEsLTE2NjY1NTY1NjQsNDk3ODIwOTIzLDc3Nzg5MTM5
+MF19
 -->
