@@ -1963,7 +1963,7 @@ void AEnemy::Tick(float DeltaTime)
 
 			const int32 NumPatrolTargets = VaildTargets.Num();
 			if (NumPatrolTargets > 0) {
-				const int32 TargetSelection = FMath::RandRange(0, NumPatrolTargets - 1);
+				const int32 TargetSelection = FMath::RandRange(0, NumPatrolTargets - 1);//随机
 				AActor* Target = VaildTargets[TargetSelection];
 
 				PatrolTarget = Target;
@@ -1979,11 +1979,11 @@ void AEnemy::Tick(float DeltaTime)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAzNTcyNDE5OCwxMTgxOTUzODg3LC02NT
-g3MTU2MjQsNzYzNzY0MjkwLDE4MTE4Nzg5NTEsMTM3ODYwMDc3
-NSwtMTUwMDAyNTAsLTE2MjE3OTI5ODgsMTExOTc3MDEwMiwtMz
-AzMjY5ODAxLC0xNjY2NTU2NTY0LDQ5NzgyMDkyMyw3Nzc4OTEz
-OTAsNjQzMTc0NjAxLC0xMDc1MTM0NTIxLC00NjQ4OTQzMjUsLT
-I1NDIzOTE3MywxODYzNjU4MDYsNDYwNjQzMTA4LC0xNDYwMjU3
-MzcyXX0=
+eyJoaXN0b3J5IjpbLTIwMjk2ODM4MTMsMTAzNTcyNDE5OCwxMT
+gxOTUzODg3LC02NTg3MTU2MjQsNzYzNzY0MjkwLDE4MTE4Nzg5
+NTEsMTM3ODYwMDc3NSwtMTUwMDAyNTAsLTE2MjE3OTI5ODgsMT
+ExOTc3MDEwMiwtMzAzMjY5ODAxLC0xNjY2NTU2NTY0LDQ5Nzgy
+MDkyMyw3Nzc4OTEzOTAsNjQzMTc0NjAxLC0xMDc1MTM0NTIxLC
+00NjQ4OTQzMjUsLTI1NDIzOTE3MywxODYzNjU4MDYsNDYwNjQz
+MTA4XX0=
 -->
