@@ -2025,14 +2025,42 @@ private:
 	FTimerHandle PatrolTimer;
 	void PatrolTimerFinished();
 ```
+在Enemy.cpp进行函数实现以及调用
+综上：
+```
+void AEnemy::PatrolTimerFinished()
+{
+	MoveToTarget(PatrolTarget);
+}
+void AEnemy::BeginPlay()
+{
+	Super::BeginPlay();
+	if (HealthBarWidget) {
+		HealthBarWidget->SetVisibility(false);
+	}
+	
+	EnemyController = Cast<AAIController>(GetController());
+	MoveToTarget(PatrolTarget);
+
+}
+void AEnemy::Tick(float DeltaTime)
+{
+。
+	if (InTargetRange(PatrolTarget, PatrolRadius)) {
+		PatrolTarget = ChoosePatrolTarget();
+		GetWorldTimerManager().SetTimer(PatrolTimer, this, &AEnemy::PatrolTimerFinished, 5.f);
+	}
+	
+}
+```
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTY2ODgzODYwLDE0NDY1MDEyNDcsNDM3Nz
-g1MTI0LC0yMDI5NjgzODEzLDEwMzU3MjQxOTgsMTE4MTk1Mzg4
-NywtNjU4NzE1NjI0LDc2Mzc2NDI5MCwxODExODc4OTUxLDEzNz
-g2MDA3NzUsLTE1MDAwMjUwLC0xNjIxNzkyOTg4LDExMTk3NzAx
-MDIsLTMwMzI2OTgwMSwtMTY2NjU1NjU2NCw0OTc4MjA5MjMsNz
-c3ODkxMzkwLDY0MzE3NDYwMSwtMTA3NTEzNDUyMSwtNDY0ODk0
-MzI1XX0=
+eyJoaXN0b3J5IjpbODEwMzI5Mjc0LDU2Njg4Mzg2MCwxNDQ2NT
+AxMjQ3LDQzNzc4NTEyNCwtMjAyOTY4MzgxMywxMDM1NzI0MTk4
+LDExODE5NTM4ODcsLTY1ODcxNTYyNCw3NjM3NjQyOTAsMTgxMT
+g3ODk1MSwxMzc4NjAwNzc1LC0xNTAwMDI1MCwtMTYyMTc5Mjk4
+OCwxMTE5NzcwMTAyLC0zMDMyNjk4MDEsLTE2NjY1NTY1NjQsND
+k3ODIwOTIzLDc3Nzg5MTM5MCw2NDMxNzQ2MDEsLTEwNzUxMzQ1
+MjFdfQ==
 -->
