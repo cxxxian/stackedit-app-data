@@ -1988,7 +1988,7 @@ private:
 在Enemy.h的protected部分声明三个函数，使得代码复用性更高且管理起来更方便
 在Enemy.cpp实现如下：
 ```
-//检查范围（用于xue'tiao'ying）
+//检查范围（用于血条隐藏或者敌人巡逻到该点的距离内后不再靠近）
 bool AEnemy::InTargetRange(AActor* Target, double Radius)
 {
 	if (Target == nullptr)return false;
@@ -1997,7 +1997,7 @@ bool AEnemy::InTargetRange(AActor* Target, double Radius)
 	DRAW_SPHERE_SingleFrame(Target->GetActorLocation());
 	return DistanceToTarget <= Radius;
 }
-
+//移动到Target位置
 void AEnemy::MoveToTarget(AActor* Target)
 {
 	if (EnemyController == nullptr || Target == nullptr) return;
@@ -2007,7 +2007,7 @@ void AEnemy::MoveToTarget(AActor* Target)
 	EnemyController->MoveTo(MoveRequest);
 
 }
-
+//随机选择Target点的方法
 AActor* AEnemy::ChoosePatrolTarget()
 {
 	TArray<AActor*> VaildTargets;
@@ -2025,7 +2025,7 @@ AActor* AEnemy::ChoosePatrolTarget()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ3Mzc1ODIyOCw0Mzc3ODUxMjQsLTIwMj
+eyJoaXN0b3J5IjpbMTQ0NjUwMTI0Nyw0Mzc3ODUxMjQsLTIwMj
 k2ODM4MTMsMTAzNTcyNDE5OCwxMTgxOTUzODg3LC02NTg3MTU2
 MjQsNzYzNzY0MjkwLDE4MTE4Nzg5NTEsMTM3ODYwMDc3NSwtMT
 UwMDAyNTAsLTE2MjE3OTI5ODgsMTExOTc3MDEwMiwtMzAzMjY5
