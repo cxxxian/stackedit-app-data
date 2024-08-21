@@ -1889,12 +1889,12 @@ AEnemy::AEnemy()
 	TArray<AActor*> PatrolTargets;
 ```
 在Enmey.cpp中，在BeginPlay的方法中制作敌人走向PatrolTarget的功能
-4. 将敌人的controller转化为AIController
-5. 声明一个FAIMoveRequest MoveRequest
-6. 将MoveRequest的目标actor设为PatrolTarget
-7. 将MoveRequest的AcceptanceRadius设为15，意为走到距离目标点15的地方结束
-8. FNavPathSharedPtr NavPath为共享指针声明的导航路径
-9. NavPath->GetPathPoints()返回的为TArray数组，使用debug画出这些d
+1. 将敌人的controller转化为AIController
+2. 声明一个FAIMoveRequest MoveRequest
+3. 将MoveRequest的目标actor设为PatrolTarget
+4. 将MoveRequest的AcceptanceRadius设为15，意为走到距离目标点15的地方结束
+5. FNavPathSharedPtr NavPath为共享指针声明的导航路径
+6. NavPath->GetPathPoints()返回的为TArray数组，使用debug画出这些点会发现它是寻路中生成的导航点，每两个点中间是一条直线
 ```
 #include "AIController.h"
 void AEnemy::BeginPlay()
@@ -1920,11 +1920,11 @@ void AEnemy::BeginPlay()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQwNDA3ODUyLDE4MTE4Nzg5NTEsMTM3OD
-YwMDc3NSwtMTUwMDAyNTAsLTE2MjE3OTI5ODgsMTExOTc3MDEw
-MiwtMzAzMjY5ODAxLC0xNjY2NTU2NTY0LDQ5NzgyMDkyMyw3Nz
-c4OTEzOTAsNjQzMTc0NjAxLC0xMDc1MTM0NTIxLC00NjQ4OTQz
-MjUsLTI1NDIzOTE3MywxODYzNjU4MDYsNDYwNjQzMTA4LC0xND
-YwMjU3MzcyLDE3MDczMDY2MDMsLTYwMjk5Mjg5NiwtMjA1NTUz
-OTQ1MF19
+eyJoaXN0b3J5IjpbLTE5NDg3ODA0NjMsMTgxMTg3ODk1MSwxMz
+c4NjAwNzc1LC0xNTAwMDI1MCwtMTYyMTc5Mjk4OCwxMTE5Nzcw
+MTAyLC0zMDMyNjk4MDEsLTE2NjY1NTY1NjQsNDk3ODIwOTIzLD
+c3Nzg5MTM5MCw2NDMxNzQ2MDEsLTEwNzUxMzQ1MjEsLTQ2NDg5
+NDMyNSwtMjU0MjM5MTczLDE4NjM2NTgwNiw0NjA2NDMxMDgsLT
+E0NjAyNTczNzIsMTcwNzMwNjYwMywtNjAyOTkyODk2LC0yMDU1
+NTM5NDUwXX0=
 -->
