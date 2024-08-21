@@ -1954,10 +1954,10 @@ void AEnemy::Tick(float DeltaTime)
 	if (PatrolTarget && EnemyController) {
 		if (InTargetRange(PatrolTarget, PatrolRadius)) {
 
-			TArray<AActor*> VaildTargets;
+			TArray<AActor*> VaildTargets;//有效巡逻点数组
 			for (auto Target : PatrolTargets) {
-				if (Target != PatrolTarget) {
-					VaildTargets.AddUnique(Target);
+				if (Target != PatrolTarget) {//将不是当前的巡逻点的剩下全部添加进该数组中
+					VaildTargets.AddUnique(Target);//防止随机到同一个巡逻点
 				}
 			}
 
@@ -1971,14 +1971,14 @@ void AEnemy::Tick(float DeltaTime)
 				FAIMoveRequest MoveRequest;
 				MoveRequest.SetGoalActor(PatrolTarget);
 				MoveRequest.SetAcceptanceRadius(15.f);
-				EnemyController->MoveTo(MoveRequest);
+				EnemyController->MoveTo(MoveRequest);//此时我们不需要
 			}
 		}
 	}
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDIwNDIyMjYxLDExODE5NTM4ODcsLTY1OD
+eyJoaXN0b3J5IjpbLTk1OTA4MzAzLDExODE5NTM4ODcsLTY1OD
 cxNTYyNCw3NjM3NjQyOTAsMTgxMTg3ODk1MSwxMzc4NjAwNzc1
 LC0xNTAwMDI1MCwtMTYyMTc5Mjk4OCwxMTE5NzcwMTAyLC0zMD
 MyNjk4MDEsLTE2NjY1NTY1NjQsNDk3ODIwOTIzLDc3Nzg5MTM5
