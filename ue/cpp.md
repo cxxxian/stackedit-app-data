@@ -2125,12 +2125,43 @@ void AEnemy::BeginPlay()
 	}
 }
 ```
+### 制作被看见后敌人攻击玩家
+在CharacterTypes.h中声明一个敌人状态枚举
+```
+UENUM(BlueprintType)
+enum class EEnemyState : uint8
+{
+	EES_Patrolling UMETA(DisplayName = "Patrolling"),
+	EES_Chasing UMETA(DisplayName = "Chasing"),
+	EES_Attacking UMETA(DisplayName = "Attacking")
+};
+```
+在Enemy.h中初始化状态为巡逻
+```
+EEnemyState EnemyState = EEnemyState::EES_Patrolling;
+```
+在Enemy.cpp中检查状态，如果不是巡逻状态则CheckCombatTarget()，如果在巡逻状态下则CheckPatrolTarget()。
+**注意此处**：枚举值是有默认值的，会随着定义的顺序**累加**，例如上面定义的EEnemyState，里面的枚举值：Patrolling为0，Chasing为1，Attacking为2。
+```
+void AEnemy::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	if (EnemyState > EEnemyState::EES_Patrolling) {
+	//所以这个if可以用比较大小来确定状态
+		CheckCombatTarget();
+	}
+	else {
+		CheckPatrolTarget();
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyNjMzNzU1MiwtMzE3ODE2NzE5LDE0Nj
-A3ODg4MDYsNTgyODgwMzEwLDkxNjg2MzA5LC0xOTgxODEwODg3
-LDU2Njg4Mzg2MCwxNDQ2NTAxMjQ3LDQzNzc4NTEyNCwtMjAyOT
-Y4MzgxMywxMDM1NzI0MTk4LDExODE5NTM4ODcsLTY1ODcxNTYy
-NCw3NjM3NjQyOTAsMTgxMTg3ODk1MSwxMzc4NjAwNzc1LC0xNT
-AwMDI1MCwtMTYyMTc5Mjk4OCwxMTE5NzcwMTAyLC0zMDMyNjk4
-MDFdfQ==
+eyJoaXN0b3J5IjpbLTEyMzgwMjk1MzYsLTYyNjMzNzU1MiwtMz
+E3ODE2NzE5LDE0NjA3ODg4MDYsNTgyODgwMzEwLDkxNjg2MzA5
+LC0xOTgxODEwODg3LDU2Njg4Mzg2MCwxNDQ2NTAxMjQ3LDQzNz
+c4NTEyNCwtMjAyOTY4MzgxMywxMDM1NzI0MTk4LDExODE5NTM4
+ODcsLTY1ODcxNTYyNCw3NjM3NjQyOTAsMTgxMTg3ODk1MSwxMz
+c4NjAwNzc1LC0xNTAwMDI1MCwtMTYyMTc5Mjk4OCwxMTE5Nzcw
+MTAyXX0=
 -->
