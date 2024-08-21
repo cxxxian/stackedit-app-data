@@ -1870,6 +1870,11 @@ AEnemy::AEnemy()
 ```
 ## 制作敌人巡逻系统
 在build.cs加入"**AIMoudle**"模块
+在Enemy.h中声明变量
+1. EnemyController为敌人的控制器
+2. PatrolTarget当前准备前往的巡逻点
+3. PatrolTargets为一个TArray数组存放着许多巡逻点
+```
 /**
 	* Navigation
 	**/
@@ -1882,12 +1887,13 @@ AEnemy::AEnemy()
 
 	UPROPERTY(EditInstanceOnly, Category = "AI Navigation")
 	TArray<AActor*> PatrolTargets;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Mzc5MzEyLDEzNzg2MDA3NzUsLTE1MD
-AwMjUwLC0xNjIxNzkyOTg4LDExMTk3NzAxMDIsLTMwMzI2OTgw
-MSwtMTY2NjU1NjU2NCw0OTc4MjA5MjMsNzc3ODkxMzkwLDY0Mz
-E3NDYwMSwtMTA3NTEzNDUyMSwtNDY0ODk0MzI1LC0yNTQyMzkx
-NzMsMTg2MzY1ODA2LDQ2MDY0MzEwOCwtMTQ2MDI1NzM3MiwxNz
-A3MzA2NjAzLC02MDI5OTI4OTYsLTIwNTU1Mzk0NTAsLTczMjI3
-NzExNF19
+eyJoaXN0b3J5IjpbMTgxMTg3ODk1MSwxMzc4NjAwNzc1LC0xNT
+AwMDI1MCwtMTYyMTc5Mjk4OCwxMTE5NzcwMTAyLC0zMDMyNjk4
+MDEsLTE2NjY1NTY1NjQsNDk3ODIwOTIzLDc3Nzg5MTM5MCw2ND
+MxNzQ2MDEsLTEwNzUxMzQ1MjEsLTQ2NDg5NDMyNSwtMjU0MjM5
+MTczLDE4NjM2NTgwNiw0NjA2NDMxMDgsLTE0NjAyNTczNzIsMT
+cwNzMwNjYwMywtNjAyOTkyODk2LC0yMDU1NTM5NDUwLC03MzIy
+NzcxMTRdfQ==
 -->
