@@ -2246,9 +2246,9 @@ void AEnemy::PawnSeen(APawn* SeenPawn)
 ```
 ## 继承
 由于玩家和敌人有高度重合的部分，攻击、受击、武器检测等
-所以我们将建立一个Cha'ra'c
+所以我们将建立一个基于Character类的c++类，称为BaseCharacter
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODc3ODg5MzAsMTk5MTM5OTE0OSwyMD
+eyJoaXN0b3J5IjpbLTE2MjI2NTA3NDQsMTk5MTM5OTE0OSwyMD
 czMTk0OTE2LDE0MjgzODA0NDcsLTYyNjMzNzU1MiwtMzE3ODE2
 NzE5LDE0NjA3ODg4MDYsNTgyODgwMzEwLDkxNjg2MzA5LC0xOT
 gxODEwODg3LDU2Njg4Mzg2MCwxNDQ2NTAxMjQ3LDQzNzc4NTEy
