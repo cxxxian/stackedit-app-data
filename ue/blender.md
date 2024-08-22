@@ -5,8 +5,9 @@
 按住G以及加上X/Y/Z可以根据指定轴进行平移
 S键进行缩放
 **导入进来时选择不创建材质，可以选择先前的材质进行应用**
+![输入图片说明](/imgs/2024-08-22/YFgchcssaNoK25nY.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjMwMDAwOTA4LDEwNzE1MzA1MTcsLTM1Nj
-U0NjczNl19
+eyJoaXN0b3J5IjpbMTQwMjQ1OTE1NiwyMzAwMDA5MDgsMTA3MT
+UzMDUxNywtMzU2NTQ2NzM2XX0=
 -->
