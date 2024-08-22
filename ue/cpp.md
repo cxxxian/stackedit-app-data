@@ -2226,12 +2226,30 @@ void AEnemy::CheckCombatTarget()
 	}
 }
 ```
+完善PawnSeen，添加if判断(EnemyState != EEnemyState::EES_Attacking)，如果攻击则不进行追逐
+```
+void AEnemy::PawnSeen(APawn* SeenPawn)
+{
+	if (EnemyState == EEnemyState::EES_Chasing) return;
+	if (SeenPawn->ActorHasTag(FName("SlashCharacter"))) {
+		
+		GetWorldTimerManager().ClearTimer(PatrolTimer);
+		GetCharacterMovement()->MaxWalkSpeed = 300.f;
+		CombatTarget = SeenPawn;
+		MoveToTarget(CombatTarget);
+		if (EnemyState != EEnemyState::EES_Attacking) {
+			EnemyState = EEnemyState::EES_Chasing;
+			UE_LOG(LogTemp, Warning, TEXT("pawn seen, chase player"));
+		}
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3MzE5NDkxNiwxNDI4MzgwNDQ3LC02Mj
-YzMzc1NTIsLTMxNzgxNjcxOSwxNDYwNzg4ODA2LDU4Mjg4MDMx
-MCw5MTY4NjMwOSwtMTk4MTgxMDg4Nyw1NjY4ODM4NjAsMTQ0Nj
-UwMTI0Nyw0Mzc3ODUxMjQsLTIwMjk2ODM4MTMsMTAzNTcyNDE5
-OCwxMTgxOTUzODg3LC02NTg3MTU2MjQsNzYzNzY0MjkwLDE4MT
-E4Nzg5NTEsMTM3ODYwMDc3NSwtMTUwMDAyNTAsLTE2MjE3OTI5
-ODhdfQ==
+eyJoaXN0b3J5IjpbMTk5MTM5OTE0OSwyMDczMTk0OTE2LDE0Mj
+gzODA0NDcsLTYyNjMzNzU1MiwtMzE3ODE2NzE5LDE0NjA3ODg4
+MDYsNTgyODgwMzEwLDkxNjg2MzA5LC0xOTgxODEwODg3LDU2Nj
+g4Mzg2MCwxNDQ2NTAxMjQ3LDQzNzc4NTEyNCwtMjAyOTY4Mzgx
+MywxMDM1NzI0MTk4LDExODE5NTM4ODcsLTY1ODcxNTYyNCw3Nj
+M3NjQyOTAsMTgxMTg3ODk1MSwxMzc4NjAwNzc1LC0xNTAwMDI1
+MF19
 -->
