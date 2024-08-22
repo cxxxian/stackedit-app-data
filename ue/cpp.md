@@ -2193,28 +2193,45 @@ void AEnemy::PawnSeen(APawn* SeenPawn)
 	}
 }
 ```
-### 完善CheckCombatTarget使其远离一定距离会对玩家失去兴趣不再追逐
+### 完善CheckCombatTarget，分成三种情况
+1. 超过大圈距离，敌人对玩家失去兴趣，处于巡逻状态
+2. 介于大圈与小圈距离，敌人开始追逐玩家
+3. 小于xiao'q
 ```
 void AEnemy::CheckCombatTarget()
 {
-	//Outside combat radius, lose interest
 	if (!InTargetRange(CombatTarget, CombatRadius)) {
+		//Outside combat radius, lose interest
 		CombatTarget = nullptr;
 		if (HealthBarWidget) {
 			HealthBarWidget->SetVisibility(false);
 		}
-		EnemyState = EEnemyState::EES_Patrolling;//将状态设回巡逻
+		EnemyState = EEnemyState::EES_Patrolling;
 		GetCharacterMovement()->MaxWalkSpeed = 125.f;
-		MoveToTarget(PatrolTarget);//回去巡逻点
+		MoveToTarget(PatrolTarget);
+		UE_LOG(LogTemp, Warning, TEXT("Lose Interest"));
+	}
+	else if (!InTargetRange(CombatTarget, AttackRadius) && EnemyState != EEnemyState::EES_Chasing) {
+		//outside attack range, chase character
+		EnemyState = EEnemyState::EES_Chasing;
+		GetCharacterMovement()->MaxWalkSpeed = 300.f;
+		MoveToTarget(CombatTarget);
+		UE_LOG(LogTemp, Warning, TEXT("Chase player"));
+	}
+	else if (InTargetRange(CombatTarget, AttackRadius) && EnemyState != EEnemyState::EES_Attacking) {
+		//inside attack range, attack character
+		EnemyState = EEnemyState::EES_Attacking;
+		//TODO: attack montage
+		UE_LOG(LogTemp, Warning, TEXT("attack"));
 	}
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyODM4MDQ0NywtNjI2MzM3NTUyLC0zMT
-c4MTY3MTksMTQ2MDc4ODgwNiw1ODI4ODAzMTAsOTE2ODYzMDks
-LTE5ODE4MTA4ODcsNTY2ODgzODYwLDE0NDY1MDEyNDcsNDM3Nz
-g1MTI0LC0yMDI5NjgzODEzLDEwMzU3MjQxOTgsMTE4MTk1Mzg4
-NywtNjU4NzE1NjI0LDc2Mzc2NDI5MCwxODExODc4OTUxLDEzNz
-g2MDA3NzUsLTE1MDAwMjUwLC0xNjIxNzkyOTg4LDExMTk3NzAx
-MDJdfQ==
+eyJoaXN0b3J5IjpbLTI3MTIwNTUwMiwxNDI4MzgwNDQ3LC02Mj
+YzMzc1NTIsLTMxNzgxNjcxOSwxNDYwNzg4ODA2LDU4Mjg4MDMx
+MCw5MTY4NjMwOSwtMTk4MTgxMDg4Nyw1NjY4ODM4NjAsMTQ0Nj
+UwMTI0Nyw0Mzc3ODUxMjQsLTIwMjk2ODM4MTMsMTAzNTcyNDE5
+OCwxMTgxOTUzODg3LC02NTg3MTU2MjQsNzYzNzY0MjkwLDE4MT
+E4Nzg5NTEsMTM3ODYwMDc3NSwtMTUwMDAyNTAsLTE2MjE3OTI5
+ODhdfQ==
 -->
