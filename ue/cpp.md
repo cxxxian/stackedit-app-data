@@ -2194,9 +2194,10 @@ void AEnemy::PawnSeen(APawn* SeenPawn)
 }
 ```
 ### 完善CheckCombatTarget，分成三种情况
+da'quan
 1. 超过大圈距离，敌人对玩家失去兴趣，处于巡逻状态
 2. 介于大圈与小圈距离，敌人开始追逐玩家
-3. 小于xiao'q
+3. 小于小圈距离，敌人开始攻击玩家
 ```
 void AEnemy::CheckCombatTarget()
 {
@@ -2227,11 +2228,11 @@ void AEnemy::CheckCombatTarget()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3MTIwNTUwMiwxNDI4MzgwNDQ3LC02Mj
-YzMzc1NTIsLTMxNzgxNjcxOSwxNDYwNzg4ODA2LDU4Mjg4MDMx
-MCw5MTY4NjMwOSwtMTk4MTgxMDg4Nyw1NjY4ODM4NjAsMTQ0Nj
-UwMTI0Nyw0Mzc3ODUxMjQsLTIwMjk2ODM4MTMsMTAzNTcyNDE5
-OCwxMTgxOTUzODg3LC02NTg3MTU2MjQsNzYzNzY0MjkwLDE4MT
-E4Nzg5NTEsMTM3ODYwMDc3NSwtMTUwMDAyNTAsLTE2MjE3OTI5
-ODhdfQ==
+eyJoaXN0b3J5IjpbLTE0NTc3MTM4NjMsMTQyODM4MDQ0NywtNj
+I2MzM3NTUyLC0zMTc4MTY3MTksMTQ2MDc4ODgwNiw1ODI4ODAz
+MTAsOTE2ODYzMDksLTE5ODE4MTA4ODcsNTY2ODgzODYwLDE0ND
+Y1MDEyNDcsNDM3Nzg1MTI0LC0yMDI5NjgzODEzLDEwMzU3MjQx
+OTgsMTE4MTk1Mzg4NywtNjU4NzE1NjI0LDc2Mzc2NDI5MCwxOD
+ExODc4OTUxLDEzNzg2MDA3NzUsLTE1MDAwMjUwLC0xNjIxNzky
+OTg4XX0=
 -->
