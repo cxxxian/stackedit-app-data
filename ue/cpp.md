@@ -2267,13 +2267,28 @@ void AEnemy::BeginPlay()
 	}
 }
 ```
-ci'shi
+此时Enemy死亡后手中的武器不会消失
+在Enemy.h中声明一个Destroyed()方法，该函数是Actor类的virtual方法
+```
+Private:
+virtual void Destroyed() override;
+``````
+在Enemy.cpp中实现，如果存在EquippedWeapon
+```
+void AEnemy::Destroyed()
+{
+	if (EquippedWeapon) {
+		EquippedWeapon->Destroy();
+	}
+}
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjczOTg0NywxNzE2OTg2NDgzLC0xNj
-IyNjUwNzQ0LDE5OTEzOTkxNDksMjA3MzE5NDkxNiwxNDI4Mzgw
-NDQ3LC02MjYzMzc1NTIsLTMxNzgxNjcxOSwxNDYwNzg4ODA2LD
-U4Mjg4MDMxMCw5MTY4NjMwOSwtMTk4MTgxMDg4Nyw1NjY4ODM4
-NjAsMTQ0NjUwMTI0Nyw0Mzc3ODUxMjQsLTIwMjk2ODM4MTMsMT
-AzNTcyNDE5OCwxMTgxOTUzODg3LC02NTg3MTU2MjQsNzYzNzY0
-MjkwXX0=
+eyJoaXN0b3J5IjpbMzMxNjIyODcxLDE3MTY5ODY0ODMsLTE2Mj
+I2NTA3NDQsMTk5MTM5OTE0OSwyMDczMTk0OTE2LDE0MjgzODA0
+NDcsLTYyNjMzNzU1MiwtMzE3ODE2NzE5LDE0NjA3ODg4MDYsNT
+gyODgwMzEwLDkxNjg2MzA5LC0xOTgxODEwODg3LDU2Njg4Mzg2
+MCwxNDQ2NTAxMjQ3LDQzNzc4NTEyNCwtMjAyOTY4MzgxMywxMD
+M1NzI0MTk4LDExODE5NTM4ODcsLTY1ODcxNTYyNCw3NjM3NjQy
+OTBdfQ==
 -->
