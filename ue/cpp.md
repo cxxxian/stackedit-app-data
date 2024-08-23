@@ -2283,13 +2283,48 @@ void AEnemy::Destroyed()
 	}
 }
 ```
+## 敌人攻击
+```
+void AEnemy::Attack()
+{
+	Super::Attack();
+	PlayAttackMontage();
+}
 
+void AEnemy::PlayAttackMontage()
+{
+	Super::PlayAttackMontage();
+
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if (AnimInstance && AttackMontage)
+	{
+		AnimInstance->Montage_Play(AttackMontage);
+		const int32 Selection = FMath::RandRange(0, 2);
+		FName SectionName = FName();
+		switch (Selection)
+		{
+		case 0:
+			SectionName = FName("Attack1");
+			break;
+		case 1:
+			SectionName = FName("Attack2");
+			break;
+		case 2:
+			SectionName = FName("Attack3");
+			break;
+		default:
+			break;
+		}
+		AnimInstance->Montage_JumpToSection(SectionName, AttackMontage);
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MjM5NzQ3NDgsMTcxNjk4NjQ4MywtMT
-YyMjY1MDc0NCwxOTkxMzk5MTQ5LDIwNzMxOTQ5MTYsMTQyODM4
-MDQ0NywtNjI2MzM3NTUyLC0zMTc4MTY3MTksMTQ2MDc4ODgwNi
-w1ODI4ODAzMTAsOTE2ODYzMDksLTE5ODE4MTA4ODcsNTY2ODgz
-ODYwLDE0NDY1MDEyNDcsNDM3Nzg1MTI0LC0yMDI5NjgzODEzLD
-EwMzU3MjQxOTgsMTE4MTk1Mzg4NywtNjU4NzE1NjI0LDc2Mzc2
-NDI5MF19
+eyJoaXN0b3J5IjpbMTkzNTk4NTUyMywtMTQyMzk3NDc0OCwxNz
+E2OTg2NDgzLC0xNjIyNjUwNzQ0LDE5OTEzOTkxNDksMjA3MzE5
+NDkxNiwxNDI4MzgwNDQ3LC02MjYzMzc1NTIsLTMxNzgxNjcxOS
+wxNDYwNzg4ODA2LDU4Mjg4MDMxMCw5MTY4NjMwOSwtMTk4MTgx
+MDg4Nyw1NjY4ODM4NjAsMTQ0NjUwMTI0Nyw0Mzc3ODUxMjQsLT
+IwMjk2ODM4MTMsMTAzNTcyNDE5OCwxMTgxOTUzODg3LC02NTg3
+MTU2MjRdfQ==
 -->
