@@ -2361,12 +2361,31 @@ void AEnemy::StartAttackTimer()
 	GetWorldTimerManager().SetTimer(AttackTimer, this, &AEnemy::Attack, AttackTime);
 }
 ```
+此方法在以下地方调用
+当得到允许攻击的条件时调用
+```
+void AEnemy::CheckCombatTarget()
+{
+	if (IsOutsideCombatRadius()) {
+		//Outside combat radius, lose interest
+		LoseInterest();
+		StartPatrolling();
+	}
+	else if (IsOutsideAttackRadius() && !IsChasing()) {
+		//outside attack range, chase character
+		ChaseTarget();
+	}
+	else if (IsInsideAttackRadius() && !IsAttacking()) {
+		StartAttackTimer();
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDYyNDQwMTYsMTE3NTQ0MDIyLC04MD
-U1NDcxODMsNTYwNzU0NzA3LDE5MzU5ODU1MjMsLTE0MjM5NzQ3
-NDgsMTcxNjk4NjQ4MywtMTYyMjY1MDc0NCwxOTkxMzk5MTQ5LD
-IwNzMxOTQ5MTYsMTQyODM4MDQ0NywtNjI2MzM3NTUyLC0zMTc4
-MTY3MTksMTQ2MDc4ODgwNiw1ODI4ODAzMTAsOTE2ODYzMDksLT
-E5ODE4MTA4ODcsNTY2ODgzODYwLDE0NDY1MDEyNDcsNDM3Nzg1
-MTI0XX0=
+eyJoaXN0b3J5IjpbLTEwNDE2ODA1NiwxMTc1NDQwMjIsLTgwNT
+U0NzE4Myw1NjA3NTQ3MDcsMTkzNTk4NTUyMywtMTQyMzk3NDc0
+OCwxNzE2OTg2NDgzLC0xNjIyNjUwNzQ0LDE5OTEzOTkxNDksMj
+A3MzE5NDkxNiwxNDI4MzgwNDQ3LC02MjYzMzc1NTIsLTMxNzgx
+NjcxOSwxNDYwNzg4ODA2LDU4Mjg4MDMxMCw5MTY4NjMwOSwtMT
+k4MTgxMDg4Nyw1NjY4ODM4NjAsMTQ0NjUwMTI0Nyw0Mzc3ODUx
+MjRdfQ==
 -->
