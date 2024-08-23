@@ -2351,7 +2351,8 @@ enum class EEnemyState : uint8
 ```
 在Enemy.cpp中实现方法
 主要工作是将敌人状态设为Attacking
-
+设置一个随机的AttackTime介于AttackMin和AttackMax之间
+所以使用此方法是会在随机时间后调用Attack方法，Attack方法用来使用攻击蒙太奇
 ```
 void AEnemy::StartAttackTimer()
 {
@@ -2361,7 +2362,7 @@ void AEnemy::StartAttackTimer()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjY2NjU0NzUsMTE3NTQ0MDIyLC04MD
+eyJoaXN0b3J5IjpbLTIwMDYyNDQwMTYsMTE3NTQ0MDIyLC04MD
 U1NDcxODMsNTYwNzU0NzA3LDE5MzU5ODU1MjMsLTE0MjM5NzQ3
 NDgsMTcxNjk4NjQ4MywtMTYyMjY1MDc0NCwxOTkxMzk5MTQ5LD
 IwNzMxOTQ5MTYsMTQyODM4MDQ0NywtNjI2MzM3NTUyLC0zMTc4
