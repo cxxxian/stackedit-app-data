@@ -2337,12 +2337,35 @@ enum class EEnemyState : uint8
 在函数的线程安全设置中
 获取property access的Enemy的EnemyState为蓝图的EnemyState赋值
 ![输入图片说明](/imgs/2024-08-23/vJHXbag3vidFrkZn.png)
+在Enemy.h中声明以下变量及方法
+```
+/** Combat **/
+	void StartAttackTimer();
+
+	FTimerHandle AttackTimer;
+
+	UPROPERTY(EditAnywhere, Category = Combat)
+	float AttackMin = 0.5f;
+	UPROPERTY(EditAnywhere, Category = Combat)
+	float AttackMax = 1.f;
+```
+在Enemy.cpp中实现方法
+主要工作是将敌人状态设为Attacking
+
+```
+void AEnemy::StartAttackTimer()
+{
+	EnemyState = EEnemyState::EES_Attacking;
+	const float AttackTime = FMath::RandRange(AttackMin, AttackMax);
+	GetWorldTimerManager().SetTimer(AttackTimer, this, &AEnemy::Attack, AttackTime);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3NTQ0MDIyLC04MDU1NDcxODMsNTYwNz
-U0NzA3LDE5MzU5ODU1MjMsLTE0MjM5NzQ3NDgsMTcxNjk4NjQ4
-MywtMTYyMjY1MDc0NCwxOTkxMzk5MTQ5LDIwNzMxOTQ5MTYsMT
-QyODM4MDQ0NywtNjI2MzM3NTUyLC0zMTc4MTY3MTksMTQ2MDc4
-ODgwNiw1ODI4ODAzMTAsOTE2ODYzMDksLTE5ODE4MTA4ODcsNT
-Y2ODgzODYwLDE0NDY1MDEyNDcsNDM3Nzg1MTI0LC0yMDI5Njgz
-ODEzXX0=
+eyJoaXN0b3J5IjpbLTE0NjY2NjU0NzUsMTE3NTQ0MDIyLC04MD
+U1NDcxODMsNTYwNzU0NzA3LDE5MzU5ODU1MjMsLTE0MjM5NzQ3
+NDgsMTcxNjk4NjQ4MywtMTYyMjY1MDc0NCwxOTkxMzk5MTQ5LD
+IwNzMxOTQ5MTYsMTQyODM4MDQ0NywtNjI2MzM3NTUyLC0zMTc4
+MTY3MTksMTQ2MDc4ODgwNiw1ODI4ODAzMTAsOTE2ODYzMDksLT
+E5ODE4MTA4ODcsNTY2ODgzODYwLDE0NDY1MDEyNDcsNDM3Nzg1
+MTI0XX0=
 -->
