@@ -2322,7 +2322,7 @@ void AEnemy::PlayAttackMontage()
 ```
 ## 完善敌人的状态
 在CharacterTypes.h中，完善敌人状态，加入Dead，和Engaged（正在挥剑），Attacking为在攻击范围内
-
+```
 UENUM(BlueprintType)
 enum class EEnemyState : uint8
 {
@@ -2331,10 +2331,14 @@ enum class EEnemyState : uint8
 	EES_Chasing UMETA(DisplayName = "Chasing"),
 	EES_Attacking UMETA(DisplayName = "Attacking"),
 	EES_Engaged UMETA(DisplayName = "Engaged")
-
 };
+```
+在动画蓝图中新建一个变量EnemyState
+在函数的线程安全设置中
+获取property access的Enemy的EnemyState为蓝图的EnemyState赋值
+![输入图片说明](/imgs/2024-08-23/vJHXbag3vidFrkZn.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0MTAxMDkxLC04MDU1NDcxODMsNTYwNz
+eyJoaXN0b3J5IjpbMTE3NTQ0MDIyLC04MDU1NDcxODMsNTYwNz
 U0NzA3LDE5MzU5ODU1MjMsLTE0MjM5NzQ3NDgsMTcxNjk4NjQ4
 MywtMTYyMjY1MDc0NCwxOTkxMzk5MTQ5LDIwNzMxOTQ5MTYsMT
 QyODM4MDQ0NywtNjI2MzM3NTUyLC0zMTc4MTY3MTksMTQ2MDc4
