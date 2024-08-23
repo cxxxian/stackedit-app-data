@@ -2384,12 +2384,30 @@ void AEnemy::ClearAttackTimer()
 {
 	GetWorldTimerManager().ClearTimer(AttackTimer);
 }
+void AEnemy::CheckCombatTarget()
+{
+	if (IsOutsideCombatRadius()) {
+		//Outside combat radius, lose interest
+		ClearAttackTimer();
+		LoseInterest();
+		if (IsEngaged()) { StartPatrolling(); }
+	}
+	else if (IsOutsideAttackRadius() && !IsChasing()) {
+		//outside attack range, chase character
+		ClearAttackTimer();
+		if (!IsEngaged()) { ChaseTarget(); }
+	}
+	else if (IsInsideAttackRadius() && !IsAttacking()) {
+		ClearAttackTimer();
+		StartAttackTimer();
+	}
+}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyODE1OTkwMCwtMTA0MTY4MDU2LDExNz
-U0NDAyMiwtODA1NTQ3MTgzLDU2MDc1NDcwNywxOTM1OTg1NTIz
-LC0xNDIzOTc0NzQ4LDE3MTY5ODY0ODMsLTE2MjI2NTA3NDQsMT
-k5MTM5OTE0OSwyMDczMTk0OTE2LDE0MjgzODA0NDcsLTYyNjMz
-NzU1MiwtMzE3ODE2NzE5LDE0NjA3ODg4MDYsNTgyODgwMzEwLD
-kxNjg2MzA5LC0xOTgxODEwODg3LDU2Njg4Mzg2MCwxNDQ2NTAx
-MjQ3XX0=
+eyJoaXN0b3J5IjpbLTEyNDIwMTAyNzgsLTEwNDE2ODA1NiwxMT
+c1NDQwMjIsLTgwNTU0NzE4Myw1NjA3NTQ3MDcsMTkzNTk4NTUy
+MywtMTQyMzk3NDc0OCwxNzE2OTg2NDgzLC0xNjIyNjUwNzQ0LD
+E5OTEzOTkxNDksMjA3MzE5NDkxNiwxNDI4MzgwNDQ3LC02MjYz
+Mzc1NTIsLTMxNzgxNjcxOSwxNDYwNzg4ODA2LDU4Mjg4MDMxMC
+w5MTY4NjMwOSwtMTk4MTgxMDg4Nyw1NjY4ODM4NjAsMTQ0NjUw
+MTI0N119
 -->
