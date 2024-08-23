@@ -2321,7 +2321,7 @@ void AEnemy::PlayAttackMontage()
 }
 ```
 ## 完善敌人的状态
-在CharacterTypes
+在CharacterTypes.h中，完善敌人状态，加入Dead，和Engaged（正在挥剑），Attacking为在攻击范围内
 UENUM(BlueprintType)
 enum class EEnemyState : uint8
 {
@@ -2333,11 +2333,11 @@ enum class EEnemyState : uint8
 
 };
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzgxOTc4MjQ5LDU2MDc1NDcwNywxOTM1OT
-g1NTIzLC0xNDIzOTc0NzQ4LDE3MTY5ODY0ODMsLTE2MjI2NTA3
-NDQsMTk5MTM5OTE0OSwyMDczMTk0OTE2LDE0MjgzODA0NDcsLT
-YyNjMzNzU1MiwtMzE3ODE2NzE5LDE0NjA3ODg4MDYsNTgyODgw
-MzEwLDkxNjg2MzA5LC0xOTgxODEwODg3LDU2Njg4Mzg2MCwxND
-Q2NTAxMjQ3LDQzNzc4NTEyNCwtMjAyOTY4MzgxMywxMDM1NzI0
-MTk4XX0=
+eyJoaXN0b3J5IjpbLTgwNTU0NzE4Myw1NjA3NTQ3MDcsMTkzNT
+k4NTUyMywtMTQyMzk3NDc0OCwxNzE2OTg2NDgzLC0xNjIyNjUw
+NzQ0LDE5OTEzOTkxNDksMjA3MzE5NDkxNiwxNDI4MzgwNDQ3LC
+02MjYzMzc1NTIsLTMxNzgxNjcxOSwxNDYwNzg4ODA2LDU4Mjg4
+MDMxMCw5MTY4NjMwOSwtMTk4MTgxMDg4Nyw1NjY4ODM4NjAsMT
+Q0NjUwMTI0Nyw0Mzc3ODUxMjQsLTIwMjk2ODM4MTMsMTAzNTcy
+NDE5OF19
 -->
