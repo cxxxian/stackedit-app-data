@@ -2246,13 +2246,16 @@ void AEnemy::PawnSeen(APawn* SeenPawn)
 ```
 ## 继承
 由于玩家和敌人有高度重合的部分，攻击、受击、武器检测等
-所以我们将建立一个基于Character类的c++类，称为BaseCharacter
+所以我们将建立一个基于Character类的c++类，称为BaseCharacter，将Enemy和玩家共同的方法都放在其中并继承重写
+## 敌人的武器装备
+UPROPERTY(EditAnywhere)
+TSubclassOf<class AWeapon> WeaponClass;
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjI2NTA3NDQsMTk5MTM5OTE0OSwyMD
-czMTk0OTE2LDE0MjgzODA0NDcsLTYyNjMzNzU1MiwtMzE3ODE2
-NzE5LDE0NjA3ODg4MDYsNTgyODgwMzEwLDkxNjg2MzA5LC0xOT
-gxODEwODg3LDU2Njg4Mzg2MCwxNDQ2NTAxMjQ3LDQzNzc4NTEy
-NCwtMjAyOTY4MzgxMywxMDM1NzI0MTk4LDExODE5NTM4ODcsLT
-Y1ODcxNTYyNCw3NjM3NjQyOTAsMTgxMTg3ODk1MSwxMzc4NjAw
-Nzc1XX0=
+eyJoaXN0b3J5IjpbMTcxNjk4NjQ4MywtMTYyMjY1MDc0NCwxOT
+kxMzk5MTQ5LDIwNzMxOTQ5MTYsMTQyODM4MDQ0NywtNjI2MzM3
+NTUyLC0zMTc4MTY3MTksMTQ2MDc4ODgwNiw1ODI4ODAzMTAsOT
+E2ODYzMDksLTE5ODE4MTA4ODcsNTY2ODgzODYwLDE0NDY1MDEy
+NDcsNDM3Nzg1MTI0LC0yMDI5NjgzODEzLDEwMzU3MjQxOTgsMT
+E4MTk1Mzg4NywtNjU4NzE1NjI0LDc2Mzc2NDI5MCwxODExODc4
+OTUxXX0=
 -->
