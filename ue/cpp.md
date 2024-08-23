@@ -2248,11 +2248,27 @@ void AEnemy::PawnSeen(APawn* SeenPawn)
 由于玩家和敌人有高度重合的部分，攻击、受击、武器检测等
 所以我们将建立一个基于Character类的c++类，称为BaseCharacter，将Enemy和玩家共同的方法都放在其中并继承重写
 ## 敌人的武器装备
+在Enemy.h中声明一个武器类
 ```
 UPROPERTY(EditAnywhere)
 TSubclassOf<class AWeapon> WeaponClass;
+```
+在Enemy.cpp的Begin Play中生成武器并且调用Equip方法将其添加到
+```
+void AEnemy::BeginPlay()
+{
+	Super::BeginPlay();
+。。。省略
+	UWorld* World = GetWorld();
+	if (World && WeaponClass) {
+		AWeapon* DefaultWeapon = World->SpawnActor<AWeapon>(WeaponClass);
+		DefaultWeapon->Equip(GetMesh(), FName("RightHandSocket"), this, this);
+		EquippedWeapon = DefaultWeapon;
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0NDg4MDI3LDE3MTY5ODY0ODMsLTE2Mj
+eyJoaXN0b3J5IjpbMTA0Njc3OTM3LDE3MTY5ODY0ODMsLTE2Mj
 I2NTA3NDQsMTk5MTM5OTE0OSwyMDczMTk0OTE2LDE0MjgzODA0
 NDcsLTYyNjMzNzU1MiwtMzE3ODE2NzE5LDE0NjA3ODg4MDYsNT
 gyODgwMzEwLDkxNjg2MzA5LC0xOTgxODEwODg3LDU2Njg4Mzg2
