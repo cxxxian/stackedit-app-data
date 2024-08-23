@@ -2320,12 +2320,24 @@ void AEnemy::PlayAttackMontage()
 	}
 }
 ```
+## 完善敌人的状态
+在CharacterTypes
+UENUM(BlueprintType)
+enum class EEnemyState : uint8
+{
+	EES_Dead UMETA(DisplayName = "Dead"),
+	EES_Patrolling UMETA(DisplayName = "Patrolling"),
+	EES_Chasing UMETA(DisplayName = "Chasing"),
+	EES_Attacking UMETA(DisplayName = "Attacking"),
+	EES_Engaged UMETA(DisplayName = "Engaged")
+
+};
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTYwNzU0NzA3LDE5MzU5ODU1MjMsLTE0Mj
-M5NzQ3NDgsMTcxNjk4NjQ4MywtMTYyMjY1MDc0NCwxOTkxMzk5
-MTQ5LDIwNzMxOTQ5MTYsMTQyODM4MDQ0NywtNjI2MzM3NTUyLC
-0zMTc4MTY3MTksMTQ2MDc4ODgwNiw1ODI4ODAzMTAsOTE2ODYz
-MDksLTE5ODE4MTA4ODcsNTY2ODgzODYwLDE0NDY1MDEyNDcsND
-M3Nzg1MTI0LC0yMDI5NjgzODEzLDEwMzU3MjQxOTgsMTE4MTk1
-Mzg4N119
+eyJoaXN0b3J5IjpbNzgxOTc4MjQ5LDU2MDc1NDcwNywxOTM1OT
+g1NTIzLC0xNDIzOTc0NzQ4LDE3MTY5ODY0ODMsLTE2MjI2NTA3
+NDQsMTk5MTM5OTE0OSwyMDczMTk0OTE2LDE0MjgzODA0NDcsLT
+YyNjMzNzU1MiwtMzE3ODE2NzE5LDE0NjA3ODg4MDYsNTgyODgw
+MzEwLDkxNjg2MzA5LC0xOTgxODEwODg3LDU2Njg4Mzg2MCwxND
+Q2NTAxMjQ3LDQzNzc4NTEyNCwtMjAyOTY4MzgxMywxMDM1NzI0
+MTk4XX0=
 -->
