@@ -2425,7 +2425,7 @@ UPROPERTY(EditAnywhere, Category = Combat)
 TArray<FName> AttackMontageSections;
 ```
 ![输入图片说明](/imgs/2024-08-24/Gg6GsKW8gJkgHmuc.png)
-完善BaseCharacter.cpp中的PlayAttackMontage，获得数组的大小b
+完善BaseCharacter.cpp中的PlayAttackMontage，获得数组的大小并既可以在0和数组大小直接进行随机
 ```
 void ABaseCharacter::PlayAttackMontage() {
 	if (AttackMontageSections.Num() < 0) return;
@@ -2435,11 +2435,11 @@ void ABaseCharacter::PlayAttackMontage() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzkxMTQxNDAxLDM2MTE2NjE5NiwtMTA0MT
-Y4MDU2LDExNzU0NDAyMiwtODA1NTQ3MTgzLDU2MDc1NDcwNywx
-OTM1OTg1NTIzLC0xNDIzOTc0NzQ4LDE3MTY5ODY0ODMsLTE2Mj
-I2NTA3NDQsMTk5MTM5OTE0OSwyMDczMTk0OTE2LDE0MjgzODA0
-NDcsLTYyNjMzNzU1MiwtMzE3ODE2NzE5LDE0NjA3ODg4MDYsNT
-gyODgwMzEwLDkxNjg2MzA5LC0xOTgxODEwODg3LDU2Njg4Mzg2
-MF19
+eyJoaXN0b3J5IjpbMTM5MDExNDU0NCwzNjExNjYxOTYsLTEwND
+E2ODA1NiwxMTc1NDQwMjIsLTgwNTU0NzE4Myw1NjA3NTQ3MDcs
+MTkzNTk4NTUyMywtMTQyMzk3NDc0OCwxNzE2OTg2NDgzLC0xNj
+IyNjUwNzQ0LDE5OTEzOTkxNDksMjA3MzE5NDkxNiwxNDI4Mzgw
+NDQ3LC02MjYzMzc1NTIsLTMxNzgxNjcxOSwxNDYwNzg4ODA2LD
+U4Mjg4MDMxMCw5MTY4NjMwOSwtMTk4MTgxMDg4Nyw1NjY4ODM4
+NjBdfQ==
 -->
