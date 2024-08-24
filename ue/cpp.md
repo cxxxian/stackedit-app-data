@@ -2474,8 +2474,8 @@ enum EDeathPose
 };
 ```
 ！！！此处由于先前蓝图中有根据DeathPose创建了蓝图的变量，并根据其来选择死亡的类型。所以此处DeathPose = Pose赋值即可。
+![输入图片说明](/imgs/2024-08-24/0YzYY1kGmopi5eln.png)
 然后在Die函数中调用PlayDeathMontage即可根据一系列流程最终将DeathPose传入蓝图中
-![输入图片说明](/imgs/2024-08-24/51e9lPVc7P0MtHMn.png)
 ```
 void AEnemy::Die()
 {
@@ -2491,11 +2491,11 @@ void AEnemy::Die()
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzE5NzM0NDYxLDE3OTM0Njc2LDE3MTU3OT
-U1NywxNDI1MjI0NjY5LDEzOTAxMTQ1NDQsMzYxMTY2MTk2LC0x
-MDQxNjgwNTYsMTE3NTQ0MDIyLC04MDU1NDcxODMsNTYwNzU0Nz
-A3LDE5MzU5ODU1MjMsLTE0MjM5NzQ3NDgsMTcxNjk4NjQ4Mywt
-MTYyMjY1MDc0NCwxOTkxMzk5MTQ5LDIwNzMxOTQ5MTYsMTQyOD
-M4MDQ0NywtNjI2MzM3NTUyLC0zMTc4MTY3MTksMTQ2MDc4ODgw
-Nl19
+eyJoaXN0b3J5IjpbLTExNzcwNzg3NzYsMTc5MzQ2NzYsMTcxNT
+c5NTU3LDE0MjUyMjQ2NjksMTM5MDExNDU0NCwzNjExNjYxOTYs
+LTEwNDE2ODA1NiwxMTc1NDQwMjIsLTgwNTU0NzE4Myw1NjA3NT
+Q3MDcsMTkzNTk4NTUyMywtMTQyMzk3NDc0OCwxNzE2OTg2NDgz
+LC0xNjIyNjUwNzQ0LDE5OTEzOTkxNDksMjA3MzE5NDkxNiwxND
+I4MzgwNDQ3LC02MjYzMzc1NTIsLTMxNzgxNjcxOSwxNDYwNzg4
+ODA2XX0=
 -->
