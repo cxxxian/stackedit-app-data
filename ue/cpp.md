@@ -2434,12 +2434,36 @@ void ABaseCharacter::PlayAttackMontage() {
 	PlayMontageSection(AttackMontage, AttackMontageSections[Selection]);
 }
 ```
+```
+int32 ABaseCharacter::PlayRandomMontageSection(UAnimMontage* Montage, const TArray<FName>& SectionNames)
+{
+	if (AttackMontageSections.Num() < 0) return;
+	const int32 MaxSectionIndex = SectionNames.Num() - 1;
+	const int32 Selection = FMath::RandRange(0, MaxSectionIndex);
+	PlayMontageSection(Montage, SectionNames[Selection]);
+	return Selection;
+}
+int32 ABaseCharacter::PlayAttackMontage() {
+	
+	return PlayRandomMontageSection(AttackMontage, AttackMontageSections);
+}
+
+int32 ABaseCharacter::PlayDeathMontage()
+{
+	return PlayRandomMontageSection(DeathMontage, DeathMontageSections);
+}
+
+bool ABaseCharacter::CanAttack()
+{
+	return false;
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5MDExNDU0NCwzNjExNjYxOTYsLTEwND
-E2ODA1NiwxMTc1NDQwMjIsLTgwNTU0NzE4Myw1NjA3NTQ3MDcs
-MTkzNTk4NTUyMywtMTQyMzk3NDc0OCwxNzE2OTg2NDgzLC0xNj
-IyNjUwNzQ0LDE5OTEzOTkxNDksMjA3MzE5NDkxNiwxNDI4Mzgw
-NDQ3LC02MjYzMzc1NTIsLTMxNzgxNjcxOSwxNDYwNzg4ODA2LD
-U4Mjg4MDMxMCw5MTY4NjMwOSwtMTk4MTgxMDg4Nyw1NjY4ODM4
-NjBdfQ==
+eyJoaXN0b3J5IjpbLTU0NzgzMTI5NiwxMzkwMTE0NTQ0LDM2MT
+E2NjE5NiwtMTA0MTY4MDU2LDExNzU0NDAyMiwtODA1NTQ3MTgz
+LDU2MDc1NDcwNywxOTM1OTg1NTIzLC0xNDIzOTc0NzQ4LDE3MT
+Y5ODY0ODMsLTE2MjI2NTA3NDQsMTk5MTM5OTE0OSwyMDczMTk0
+OTE2LDE0MjgzODA0NDcsLTYyNjMzNzU1MiwtMzE3ODE2NzE5LD
+E0NjA3ODg4MDYsNTgyODgwMzEwLDkxNjg2MzA5LC0xOTgxODEw
+ODg3XX0=
 -->
