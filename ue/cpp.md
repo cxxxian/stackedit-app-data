@@ -2458,7 +2458,6 @@ int32 AEnemy::PlayDeathMontage()
 	return Selection;
 }
 ```
-！！！此处由于先前蓝图中有根据DeathPose创建了蓝图的变量，并根据其来选择死亡的类型
 改成纯enum类
 ```
 UENUM(BlueprintType)
@@ -2474,12 +2473,28 @@ enum EDeathPose
 	EDP_MAX UMETA(DisplayName = "DefaultMAX")
 };
 ```
+！！！此处由于先前蓝图中有根据DeathPose创建了蓝图的变量，并根据其来选择死亡的类型。所以此处DeathPose = Pose赋值即可。
+然后在Die函数中调用PlayDeathMontage即可根据一系列流程最终将DeathPose传入蓝图中
+```
+void AEnemy::Die()
+{
+	EnemyState = EEnemyState::EES_Dead;
+	PlayDeathMontage();
+	ClearAttackTimer();
+	HideHealthBar();
+
+	DisableCapsule();
+	SetLifeSpan(DeathLifeSpan);
+	GetCharacterMovement()->bOrientRotationToMovement = false;
+}
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1NjU4OTU4MiwxNzE1Nzk1NTcsMTQyNT
-IyNDY2OSwxMzkwMTE0NTQ0LDM2MTE2NjE5NiwtMTA0MTY4MDU2
-LDExNzU0NDAyMiwtODA1NTQ3MTgzLDU2MDc1NDcwNywxOTM1OT
-g1NTIzLC0xNDIzOTc0NzQ4LDE3MTY5ODY0ODMsLTE2MjI2NTA3
-NDQsMTk5MTM5OTE0OSwyMDczMTk0OTE2LDE0MjgzODA0NDcsLT
-YyNjMzNzU1MiwtMzE3ODE2NzE5LDE0NjA3ODg4MDYsNTgyODgw
-MzEwXX0=
+eyJoaXN0b3J5IjpbMTc5MzQ2NzYsMTcxNTc5NTU3LDE0MjUyMj
+Q2NjksMTM5MDExNDU0NCwzNjExNjYxOTYsLTEwNDE2ODA1Niwx
+MTc1NDQwMjIsLTgwNTU0NzE4Myw1NjA3NTQ3MDcsMTkzNTk4NT
+UyMywtMTQyMzk3NDc0OCwxNzE2OTg2NDgzLC0xNjIyNjUwNzQ0
+LDE5OTEzOTkxNDksMjA3MzE5NDkxNiwxNDI4MzgwNDQ3LC02Mj
+YzMzc1NTIsLTMxNzgxNjcxOSwxNDYwNzg4ODA2LDU4Mjg4MDMx
+MF19
 -->
