@@ -2406,7 +2406,8 @@ void AEnemy::CheckCombatTarget()
 }
 ```
 ## 优化敌人以及玩家的动画
-由于敌人和玩家都需要攻击y动画的播放，我们可以之间在BaseCharacter.h中声明一个PlayMontageSection
+由于敌人和玩家都需要动画的播放，我们可以之间在BaseCharacter.h中声明一个PlayMontageSection的方法，用来跳转到指定片段的蒙太奇
+并在BaseCharacter.cpp实现如下
 ```
 void ABaseCharacter::PlayMontageSection(UAnimMontage* Montage, const FName& SectionName)
 {
@@ -2416,6 +2417,9 @@ void ABaseCharacter::PlayMontageSection(UAnimMontage* Montage, const FName& Sect
 		AnimInstance->Montage_JumpToSection(SectionName, Montage);
 	}
 }
+```
+此时即完善BaseCharacter.cpp中的PlayAttackMontage
+```
 void ABaseCharacter::PlayAttackMontage() {
 	if (AttackMontageSections.Num() < 0) return;
 	const int32 MaxSectionIndex = AttackMontageSections.Num() - 1;
@@ -2424,11 +2428,11 @@ void ABaseCharacter::PlayAttackMontage() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0ODA0ODExNiwzNjExNjYxOTYsLTEwND
-E2ODA1NiwxMTc1NDQwMjIsLTgwNTU0NzE4Myw1NjA3NTQ3MDcs
-MTkzNTk4NTUyMywtMTQyMzk3NDc0OCwxNzE2OTg2NDgzLC0xNj
-IyNjUwNzQ0LDE5OTEzOTkxNDksMjA3MzE5NDkxNiwxNDI4Mzgw
-NDQ3LC02MjYzMzc1NTIsLTMxNzgxNjcxOSwxNDYwNzg4ODA2LD
-U4Mjg4MDMxMCw5MTY4NjMwOSwtMTk4MTgxMDg4Nyw1NjY4ODM4
-NjBdfQ==
+eyJoaXN0b3J5IjpbLTU1NjU1NjI2LDM2MTE2NjE5NiwtMTA0MT
+Y4MDU2LDExNzU0NDAyMiwtODA1NTQ3MTgzLDU2MDc1NDcwNywx
+OTM1OTg1NTIzLC0xNDIzOTc0NzQ4LDE3MTY5ODY0ODMsLTE2Mj
+I2NTA3NDQsMTk5MTM5OTE0OSwyMDczMTk0OTE2LDE0MjgzODA0
+NDcsLTYyNjMzNzU1MiwtMzE3ODE2NzE5LDE0NjA3ODg4MDYsNT
+gyODgwMzEwLDkxNjg2MzA5LC0xOTgxODEwODg3LDU2Njg4Mzg2
+MF19
 -->
