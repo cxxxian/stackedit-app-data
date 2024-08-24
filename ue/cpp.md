@@ -2430,7 +2430,7 @@ TArray<FName> AttackMontageSections;
 ```
 int32 ABaseCharacter::PlayRandomMontageSection(UAnimMontage* Montage, const TArray<FName>& SectionNames)
 {
-	if (AttackMontageSections.Num() < 0) return;
+	if (AttackMontageSections.Num() < 0) return -1;
 	const int32 MaxSectionIndex = SectionNames.Num() - 1;
 	const int32 Selection = FMath::RandRange(0, MaxSectionIndex);
 	PlayMontageSection(Montage, SectionNames[Selection]);
@@ -2452,7 +2452,7 @@ bool ABaseCharacter::CanAttack()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2ODk5MjY1MSwxMzkwMTE0NTQ0LDM2MT
+eyJoaXN0b3J5IjpbMTQyNTIyNDY2OSwxMzkwMTE0NTQ0LDM2MT
 E2NjE5NiwtMTA0MTY4MDU2LDExNzU0NDAyMiwtODA1NTQ3MTgz
 LDU2MDc1NDcwNywxOTM1OTg1NTIzLC0xNDIzOTc0NzQ4LDE3MT
 Y5ODY0ODMsLTE2MjI2NTA3NDQsMTk5MTM5OTE0OSwyMDczMTk0
