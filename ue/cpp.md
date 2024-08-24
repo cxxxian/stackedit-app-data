@@ -2418,7 +2418,10 @@ void ABaseCharacter::PlayMontageSection(UAnimMontage* Montage, const FName& Sect
 	}
 }
 ```
-此时即完善BaseCharacter.cpp中的PlayAttackMontage
+此时即完善BaseCharacter.cpp中的PlayAttackMontage，可以将玩家以及敌人的此方法直接删除，因为玩家和敌人都已继承此方法，可以直接使用。
+原理是建立一个蓝图可编辑的TArray数组
+UPROPERTY(EditAnywhere, Category = Combat)
+	TArray<FName> AttackMontageSections;
 ```
 void ABaseCharacter::PlayAttackMontage() {
 	if (AttackMontageSections.Num() < 0) return;
@@ -2428,11 +2431,11 @@ void ABaseCharacter::PlayAttackMontage() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1NjU1NjI2LDM2MTE2NjE5NiwtMTA0MT
-Y4MDU2LDExNzU0NDAyMiwtODA1NTQ3MTgzLDU2MDc1NDcwNywx
-OTM1OTg1NTIzLC0xNDIzOTc0NzQ4LDE3MTY5ODY0ODMsLTE2Mj
-I2NTA3NDQsMTk5MTM5OTE0OSwyMDczMTk0OTE2LDE0MjgzODA0
-NDcsLTYyNjMzNzU1MiwtMzE3ODE2NzE5LDE0NjA3ODg4MDYsNT
-gyODgwMzEwLDkxNjg2MzA5LC0xOTgxODEwODg3LDU2Njg4Mzg2
-MF19
+eyJoaXN0b3J5IjpbLTEzNDQ1NDk5OTksMzYxMTY2MTk2LC0xMD
+QxNjgwNTYsMTE3NTQ0MDIyLC04MDU1NDcxODMsNTYwNzU0NzA3
+LDE5MzU5ODU1MjMsLTE0MjM5NzQ3NDgsMTcxNjk4NjQ4MywtMT
+YyMjY1MDc0NCwxOTkxMzk5MTQ5LDIwNzMxOTQ5MTYsMTQyODM4
+MDQ0NywtNjI2MzM3NTUyLC0zMTc4MTY3MTksMTQ2MDc4ODgwNi
+w1ODI4ODAzMTAsOTE2ODYzMDksLTE5ODE4MTA4ODcsNTY2ODgz
+ODYwXX0=
 -->
