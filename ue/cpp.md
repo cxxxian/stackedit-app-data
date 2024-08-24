@@ -2451,19 +2451,34 @@ int32 ABaseCharacter::PlayDeathMontage()
 int32 AEnemy::PlayDeathMontage()
 {
 	const int32 Selection = Super::PlayDeathMontage();
-	TEnumAsByte<EDeathPose> Pose(Selection);
+	TEnumAsByte<EDeathPose> Pose(Selection);//要使此句话不报错需要更改Enum类型
 	if (Pose < EDeathPose::EDP_MAX) {
 		DeathPose = Pose;
 	}
 	return Selection;
 }
 ```
+改成纯enum类
+```
+UENUM(BlueprintType)
+enum EDeathPose
+{
+	EDP_Death1 UMETA(DisplayName = "Death1"),
+	EDP_Death2 UMETA(DisplayName = "Death2"),
+	EDP_Death3 UMETA(DisplayName = "Death3"),
+	EDP_Death4 UMETA(DisplayName = "Death4"),
+	EDP_Death5 UMETA(DisplayName = "Death5"),
+	EDP_Death6 UMETA(DisplayName = "Death6"),
+
+	EDP_MAX UMETA(DisplayName = "DefaultMAX")
+};
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMzEwODA1NzEsMTQyNTIyNDY2OSwxMz
-kwMTE0NTQ0LDM2MTE2NjE5NiwtMTA0MTY4MDU2LDExNzU0NDAy
-MiwtODA1NTQ3MTgzLDU2MDc1NDcwNywxOTM1OTg1NTIzLC0xND
-IzOTc0NzQ4LDE3MTY5ODY0ODMsLTE2MjI2NTA3NDQsMTk5MTM5
-OTE0OSwyMDczMTk0OTE2LDE0MjgzODA0NDcsLTYyNjMzNzU1Mi
-wtMzE3ODE2NzE5LDE0NjA3ODg4MDYsNTgyODgwMzEwLDkxNjg2
-MzA5XX0=
+eyJoaXN0b3J5IjpbMTcxNTc5NTU3LDE0MjUyMjQ2NjksMTM5MD
+ExNDU0NCwzNjExNjYxOTYsLTEwNDE2ODA1NiwxMTc1NDQwMjIs
+LTgwNTU0NzE4Myw1NjA3NTQ3MDcsMTkzNTk4NTUyMywtMTQyMz
+k3NDc0OCwxNzE2OTg2NDgzLC0xNjIyNjUwNzQ0LDE5OTEzOTkx
+NDksMjA3MzE5NDkxNiwxNDI4MzgwNDQ3LC02MjYzMzc1NTIsLT
+MxNzgxNjcxOSwxNDYwNzg4ODA2LDU4Mjg4MDMxMCw5MTY4NjMw
+OV19
 -->
