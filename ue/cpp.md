@@ -2445,18 +2445,25 @@ int32 ABaseCharacter::PlayDeathMontage()
 {
 	return PlayRandomMontageSection(DeathMontage, DeathMontageSections);
 }
-
-bool ABaseCharacter::CanAttack()
+```
+在Enemy.cpp中override该方法
+```
+int32 AEnemy::PlayDeathMontage()
 {
-	return false;
+	const int32 Selection = Super::PlayDeathMontage();
+	TEnumAsByte<EDeathPose> Pose(Selection);
+	if (Pose < EDeathPose::EDP_MAX) {
+		DeathPose = Pose;
+	}
+	return Selection;
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyNTIyNDY2OSwxMzkwMTE0NTQ0LDM2MT
-E2NjE5NiwtMTA0MTY4MDU2LDExNzU0NDAyMiwtODA1NTQ3MTgz
-LDU2MDc1NDcwNywxOTM1OTg1NTIzLC0xNDIzOTc0NzQ4LDE3MT
-Y5ODY0ODMsLTE2MjI2NTA3NDQsMTk5MTM5OTE0OSwyMDczMTk0
-OTE2LDE0MjgzODA0NDcsLTYyNjMzNzU1MiwtMzE3ODE2NzE5LD
-E0NjA3ODg4MDYsNTgyODgwMzEwLDkxNjg2MzA5LC0xOTgxODEw
-ODg3XX0=
+eyJoaXN0b3J5IjpbLTEzMzEwODA1NzEsMTQyNTIyNDY2OSwxMz
+kwMTE0NTQ0LDM2MTE2NjE5NiwtMTA0MTY4MDU2LDExNzU0NDAy
+MiwtODA1NTQ3MTgzLDU2MDc1NDcwNywxOTM1OTg1NTIzLC0xND
+IzOTc0NzQ4LDE3MTY5ODY0ODMsLTE2MjI2NTA3NDQsMTk5MTM5
+OTE0OSwyMDczMTk0OTE2LDE0MjgzODA0NDcsLTYyNjMzNzU1Mi
+wtMzE3ODE2NzE5LDE0NjA3ODg4MDYsNTgyODgwMzEwLDkxNjg2
+MzA5XX0=
 -->
