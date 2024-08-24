@@ -2426,7 +2426,7 @@ TArray<FName> AttackMontageSections;
 ```
 ![输入图片说明](/imgs/2024-08-24/Gg6GsKW8gJkgHmuc.png)
 完善BaseCharacter.cpp中的PlayAttackMontage，建立PlayRandomMontageSection获得数组的大小并既可以在0和数组大小直接进行随机。
-将PlayAttackMontage返回值变为
+将PlayAttackMontage返回值改为int32
 ```
 int32 ABaseCharacter::PlayRandomMontageSection(UAnimMontage* Montage, const TArray<FName>& SectionNames)
 {
@@ -2452,11 +2452,11 @@ bool ABaseCharacter::CanAttack()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MDA4NzUyODAsMTM5MDExNDU0NCwzNj
-ExNjYxOTYsLTEwNDE2ODA1NiwxMTc1NDQwMjIsLTgwNTU0NzE4
-Myw1NjA3NTQ3MDcsMTkzNTk4NTUyMywtMTQyMzk3NDc0OCwxNz
-E2OTg2NDgzLC0xNjIyNjUwNzQ0LDE5OTEzOTkxNDksMjA3MzE5
-NDkxNiwxNDI4MzgwNDQ3LC02MjYzMzc1NTIsLTMxNzgxNjcxOS
-wxNDYwNzg4ODA2LDU4Mjg4MDMxMCw5MTY4NjMwOSwtMTk4MTgx
-MDg4N119
+eyJoaXN0b3J5IjpbMTc2ODk5MjY1MSwxMzkwMTE0NTQ0LDM2MT
+E2NjE5NiwtMTA0MTY4MDU2LDExNzU0NDAyMiwtODA1NTQ3MTgz
+LDU2MDc1NDcwNywxOTM1OTg1NTIzLC0xNDIzOTc0NzQ4LDE3MT
+Y5ODY0ODMsLTE2MjI2NTA3NDQsMTk5MTM5OTE0OSwyMDczMTk0
+OTE2LDE0MjgzODA0NDcsLTYyNjMzNzU1MiwtMzE3ODE2NzE5LD
+E0NjA3ODg4MDYsNTgyODgwMzEwLDkxNjg2MzA5LC0xOTgxODEw
+ODg3XX0=
 -->
