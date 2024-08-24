@@ -68,7 +68,7 @@ TEnumAsByte<EDeathPose> DeathPose;
 - **`EDeathPose`**：这是一个枚举类型，假设它的声明类似于 `enum EDeathPose { Dead, Dying, Reviving };`。
 - **`TEnumAsByte<EDeathPose>`**：这个模板类将 `EDeathPose` 枚举的存储空间压缩到 1 个字节。换句话说，`DeathPose` 这个变量只会占用 1 个字节的内存，而不是通常的 4 个字节。
 
-
+## TEnumAsByte
 ### 适用场景
 
 `TEnumAsByte` 常用于对内存敏感的场景，如网络数据包、存储大量对象的容器等。在这些场景下，节省的内存空间可以显著提高效率。
@@ -79,6 +79,11 @@ TEnumAsByte<EDeathPose> DeathPose;
 - **内存优化**：虽然可以节省内存，但在某些情况下，这种节省可能并不明显。因此，使用 `TEnumAsByte` 时需要权衡实际需求。
 
 总体来说，`TEnumAsByte` 是 Unreal Engine 提供的一个实用工具，帮助开发者优化枚举类型的内存占用。
+eg、
+```
+UPROPERTY(BlueprintReadOnly)
+TEnumAsByte<EDeathPose> DeathPose;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDIwOTIyMDJdfQ==
+eyJoaXN0b3J5IjpbMTk5NTE1MTI5M119
 -->
