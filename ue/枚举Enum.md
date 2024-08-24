@@ -84,6 +84,53 @@ eg、
 UPROPERTY(BlueprintReadOnly)
 TEnumAsByte<EDeathPose> DeathPose;
 ```
+
+`TEnumAsByte` 只能用于传统的 `enum`，而不能用于 `enum class`（即强类型枚举）。原因在于 `TEnumAsByte` 的设计与这两种枚举类型的特性之间存在一些不兼容之处。
+
+### 1. **传统 `enum`（如 `enum EDeathPose`）**
+
+传统的 `enum` 是不具备类型安全的，并且它的枚举成员直接暴露在全局命名空间中。因此，传统的 `enum` 可以隐式转换为其底层类型（通常是 `int`），这使得 `TEnumAsByte` 可以将其底层类型压缩为 `uint8`，以节省内存。
+
+例如：
+
+```cpp
+enum EDeathPose
+{
+    Dead,
+    Dying,
+    Reviving
+};
+
+TEnumAsByte<EDeathPose> DeathPose;
+```
+
+在这种情况下，`TEnumAsByte` 可以将 `EDeathPose` 枚举值存储为一个字节大小的变量，因为传统 `enum` 的类型可以直接被视为一个整数。
+
+### 2. **`enum class`（如 `enum class EActionState : uint8`）**
+
+`enum class` 是强类型（scoped）的枚举类型，设计初衷就是为了提供更好的类型安全。与传统 `enum` 不同的是，`enum class` 不能隐式转换为整数类型，并且其枚举成员不能直接在全局命名空间中使用，必须通过作用域（如 `EActionState::Idle`）来访问。
+
+由于 `TEnumAsByte` 需要枚举类型能够隐式转换为其底层整数类型，而 `enum class` 禁止这种隐式转换，因此 `TEnumAsByte` 无法与 `enum class` 一起使用。
+
+```cpp
+enum class EActionState : uint8
+{
+    Idle,
+    Walking,
+    Running,
+    Jumping
+};
+
+// 错误示例：无法将 `enum class` 与 `TEnumAsByte` 一起使用
+TEnumAsByte<EActionState> ActionState;
+```
+
+### 总结
+
+- **`TEnumAsByte` 适用于传统的 `enum`**：因为传统 `enum` 可以隐式转换为整数类型，允许 `TEnumAsByte` 将它们压缩为一个字节大小的存储类型。
+- **`TEnumAsByte` 不适用于 `enum class`**：因为 `enum class` 的强类型和类型安全特性，不允许隐式转换为整数，这与 `TEnumAsByte` 的设计不兼容。
+
+如果你想要在 `enum class` 中使用类似的功能（即控制底层类型的大小），你可以直接在声明 `enum class` 时指定底层类型，如 `: uint8`，这样可以确保它占用一个字节的存储空间，但你无法使用 `TEnumAsByte` 来进一步压缩或与之兼容。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk5NTE1MTI5M119
+eyJoaXN0b3J5IjpbLTE0MzM4NTAzMTZdfQ==
 -->
