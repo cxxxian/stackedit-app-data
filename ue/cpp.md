@@ -2405,12 +2405,30 @@ void AEnemy::CheckCombatTarget()
 	}
 }
 ```
+## 优化敌人以及玩家的动画
+由于敌人和玩家都需要攻击y动画的播放，我们可以之间在BaseCharacter.h中声明一个PlayMontageSection
+```
+void ABaseCharacter::PlayMontageSection(UAnimMontage* Montage, const FName& SectionName)
+{
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if (AnimInstance && Montage) {
+		AnimInstance->Montage_Play(Montage);
+		AnimInstance->Montage_JumpToSection(SectionName, Montage);
+	}
+}
+void ABaseCharacter::PlayAttackMontage() {
+	if (AttackMontageSections.Num() < 0) return;
+	const int32 MaxSectionIndex = AttackMontageSections.Num() - 1;
+	const int32 Selection = FMath::RandRange(0, MaxSectionIndex);
+	PlayMontageSection(AttackMontage, AttackMontageSections[Selection]);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzYxMTY2MTk2LC0xMDQxNjgwNTYsMTE3NT
-Q0MDIyLC04MDU1NDcxODMsNTYwNzU0NzA3LDE5MzU5ODU1MjMs
-LTE0MjM5NzQ3NDgsMTcxNjk4NjQ4MywtMTYyMjY1MDc0NCwxOT
-kxMzk5MTQ5LDIwNzMxOTQ5MTYsMTQyODM4MDQ0NywtNjI2MzM3
-NTUyLC0zMTc4MTY3MTksMTQ2MDc4ODgwNiw1ODI4ODAzMTAsOT
-E2ODYzMDksLTE5ODE4MTA4ODcsNTY2ODgzODYwLDE0NDY1MDEy
-NDddfQ==
+eyJoaXN0b3J5IjpbMTA0ODA0ODExNiwzNjExNjYxOTYsLTEwND
+E2ODA1NiwxMTc1NDQwMjIsLTgwNTU0NzE4Myw1NjA3NTQ3MDcs
+MTkzNTk4NTUyMywtMTQyMzk3NDc0OCwxNzE2OTg2NDgzLC0xNj
+IyNjUwNzQ0LDE5OTEzOTkxNDksMjA3MzE5NDkxNiwxNDI4Mzgw
+NDQ3LC02MjYzMzc1NTIsLTMxNzgxNjcxOSwxNDYwNzg4ODA2LD
+U4Mjg4MDMxMCw5MTY4NjMwOSwtMTk4MTgxMDg4Nyw1NjY4ODM4
+NjBdfQ==
 -->
