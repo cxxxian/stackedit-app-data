@@ -2392,7 +2392,7 @@ void AEnemy::CheckCombatTarget()
 		//Outside combat radius, lose interest
 		ClearAttackTimer();
 		LoseInterest();
-		if (IsEngaged()) { StartPatrolling(); }
+		if (!IsEngaged()) { StartPatrolling(); }
 	}
 	else if (IsOutsideAttackRadius() && !IsChasing()) {
 		//outside attack range, chase character
@@ -2491,11 +2491,11 @@ void AEnemy::Die()
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNzcwNzg3NzYsMTc5MzQ2NzYsMTcxNT
-c5NTU3LDE0MjUyMjQ2NjksMTM5MDExNDU0NCwzNjExNjYxOTYs
-LTEwNDE2ODA1NiwxMTc1NDQwMjIsLTgwNTU0NzE4Myw1NjA3NT
-Q3MDcsMTkzNTk4NTUyMywtMTQyMzk3NDc0OCwxNzE2OTg2NDgz
-LC0xNjIyNjUwNzQ0LDE5OTEzOTkxNDksMjA3MzE5NDkxNiwxND
-I4MzgwNDQ3LC02MjYzMzc1NTIsLTMxNzgxNjcxOSwxNDYwNzg4
-ODA2XX0=
+eyJoaXN0b3J5IjpbMjE5MzkxNTM3LC0xMTc3MDc4Nzc2LDE3OT
+M0Njc2LDE3MTU3OTU1NywxNDI1MjI0NjY5LDEzOTAxMTQ1NDQs
+MzYxMTY2MTk2LC0xMDQxNjgwNTYsMTE3NTQ0MDIyLC04MDU1ND
+cxODMsNTYwNzU0NzA3LDE5MzU5ODU1MjMsLTE0MjM5NzQ3NDgs
+MTcxNjk4NjQ4MywtMTYyMjY1MDc0NCwxOTkxMzk5MTQ5LDIwNz
+MxOTQ5MTYsMTQyODM4MDQ0NywtNjI2MzM3NTUyLC0zMTc4MTY3
+MTldfQ==
 -->
