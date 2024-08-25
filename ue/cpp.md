@@ -2490,12 +2490,33 @@ void AEnemy::Die()
 }
 ```
 此时Enemy攻击完一次玩家后，无法发动第二次攻击，除非我们走出范围重新调用CheckCombatTarget方法，我们将修复这个问题
+增加一个NoState状态，用来作为攻击后的状态重置
+```
+UENUM(BlueprintType)
+enum class EEnemyState : uint8
+{
+	EES_Dead UMETA(DisplayName = "Dead"),
+	EES_Patrolling UMETA(DisplayName = "Patrolling"),
+	EES_Chasing UMETA(DisplayName = "Chasing"),
+	EES_Attacking UMETA(DisplayName = "Attacking"),
+	EES_Engaged UMETA(DisplayName = "Engaged"),
+
+    EES_NoState UMETA(DisplayName = "NoState")
+};
+```
+```
+void AEnemy::AttackEnd()
+{
+	EnemyState = EEnemyState::EES_NoState;
+	CheckCombatTarget();
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAzNjkzMzE1NiwtMTYxODAzMzY2NSwyMT
-kzOTE1MzcsLTExNzcwNzg3NzYsMTc5MzQ2NzYsMTcxNTc5NTU3
-LDE0MjUyMjQ2NjksMTM5MDExNDU0NCwzNjExNjYxOTYsLTEwND
-E2ODA1NiwxMTc1NDQwMjIsLTgwNTU0NzE4Myw1NjA3NTQ3MDcs
-MTkzNTk4NTUyMywtMTQyMzk3NDc0OCwxNzE2OTg2NDgzLC0xNj
-IyNjUwNzQ0LDE5OTEzOTkxNDksMjA3MzE5NDkxNiwxNDI4Mzgw
-NDQ3XX0=
+eyJoaXN0b3J5IjpbLTIwOTI1MTk2MDksLTE2MTgwMzM2NjUsMj
+E5MzkxNTM3LC0xMTc3MDc4Nzc2LDE3OTM0Njc2LDE3MTU3OTU1
+NywxNDI1MjI0NjY5LDEzOTAxMTQ1NDQsMzYxMTY2MTk2LC0xMD
+QxNjgwNTYsMTE3NTQ0MDIyLC04MDU1NDcxODMsNTYwNzU0NzA3
+LDE5MzU5ODU1MjMsLTE0MjM5NzQ3NDgsMTcxNjk4NjQ4MywtMT
+YyMjY1MDc0NCwxOTkxMzk5MTQ5LDIwNzMxOTQ5MTYsMTQyODM4
+MDQ0N119
 -->
