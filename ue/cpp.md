@@ -2512,11 +2512,11 @@ void AEnemy::AttackEnd()
 	CheckCombatTarget();
 }
 ```
-此处通过动画通知来调用AttackEnd函数，AttackEnd在BaseCharacter中是
+此处通过动画通知来调用AttackEnd函数，AttackEnd在BaseCharacter中是BlueprintCallable状态，所以
 ![输入图片说明](/imgs/2024-08-25/uXIYHw4tUsKGXOe4.png)
 ![输入图片说明](/imgs/2024-08-25/xl9Bt1LznCUcH0qL.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTQwMDk1MTUsLTE2MTgwMzM2NjUsMj
+eyJoaXN0b3J5IjpbLTIwMTQ0NjE2NzAsLTE2MTgwMzM2NjUsMj
 E5MzkxNTM3LC0xMTc3MDc4Nzc2LDE3OTM0Njc2LDE3MTU3OTU1
 NywxNDI1MjI0NjY5LDEzOTAxMTQ1NDQsMzYxMTY2MTk2LC0xMD
 QxNjgwNTYsMTE3NTQ0MDIyLC04MDU1NDcxODMsNTYwNzU0NzA3
