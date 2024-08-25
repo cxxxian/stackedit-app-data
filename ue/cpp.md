@@ -2399,7 +2399,7 @@ void AEnemy::CheckCombatTarget()
 		ClearAttackTimer();
 		if (!IsEngaged()) { ChaseTarget(); }
 	}
-	else if (IsInsideAttackRadius() && !IsAttacking()) {
+	else if (CanAttack()) {
 		//ClearAttackTimer();此处无需重置，因为开启就会自动重置
 		StartAttackTimer();
 	}
@@ -2491,7 +2491,7 @@ void AEnemy::Die()
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NTM2MzM5NzksMjE5MzkxNTM3LC0xMT
+eyJoaXN0b3J5IjpbLTE2MTgwMzM2NjUsMjE5MzkxNTM3LC0xMT
 c3MDc4Nzc2LDE3OTM0Njc2LDE3MTU3OTU1NywxNDI1MjI0NjY5
 LDEzOTAxMTQ1NDQsMzYxMTY2MTk2LC0xMDQxNjgwNTYsMTE3NT
 Q0MDIyLC04MDU1NDcxODMsNTYwNzU0NzA3LDE5MzU5ODU1MjMs
