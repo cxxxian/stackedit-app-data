@@ -2504,7 +2504,7 @@ enum class EEnemyState : uint8
     EES_NoState UMETA(DisplayName = "NoState")
 };
 ```
-override BaseCharacter中的AttackEnd方法，将Enemy的状态重置并且重新调用CheckCombatTarget方法，这样在每次攻击结束后Enemy都会重新检查与玩家之间的e
+override BaseCharacter中的AttackEnd方法，将Enemy的状态重置并且重新调用CheckCombatTarget方法，这样在每次攻击结束后Enemy都会重新检查与玩家之间的距离，并作出相应的状态判断
 ```
 void AEnemy::AttackEnd()
 {
@@ -2512,12 +2512,15 @@ void AEnemy::AttackEnd()
 	CheckCombatTarget();
 }
 ```
+此处通过动画通知来调用AttackEnd函数，AttackEnd在BaseCharacter中是
+![输入图片说明](/imgs/2024-08-25/uXIYHw4tUsKGXOe4.png)
+![输入图片说明](/imgs/2024-08-25/xl9Bt1LznCUcH0qL.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU0NDE0NjQxMiwtMTYxODAzMzY2NSwyMT
-kzOTE1MzcsLTExNzcwNzg3NzYsMTc5MzQ2NzYsMTcxNTc5NTU3
-LDE0MjUyMjQ2NjksMTM5MDExNDU0NCwzNjExNjYxOTYsLTEwND
-E2ODA1NiwxMTc1NDQwMjIsLTgwNTU0NzE4Myw1NjA3NTQ3MDcs
-MTkzNTk4NTUyMywtMTQyMzk3NDc0OCwxNzE2OTg2NDgzLC0xNj
-IyNjUwNzQ0LDE5OTEzOTkxNDksMjA3MzE5NDkxNiwxNDI4Mzgw
-NDQ3XX0=
+eyJoaXN0b3J5IjpbLTE4NTQwMDk1MTUsLTE2MTgwMzM2NjUsMj
+E5MzkxNTM3LC0xMTc3MDc4Nzc2LDE3OTM0Njc2LDE3MTU3OTU1
+NywxNDI1MjI0NjY5LDEzOTAxMTQ1NDQsMzYxMTY2MTk2LC0xMD
+QxNjgwNTYsMTE3NTQ0MDIyLC04MDU1NDcxODMsNTYwNzU0NzA3
+LDE5MzU5ODU1MjMsLTE0MjM5NzQ3NDgsMTcxNjk4NjQ4MywtMT
+YyMjY1MDc0NCwxOTkxMzk5MTQ5LDIwNzMxOTQ5MTYsMTQyODM4
+MDQ0N119
 -->
