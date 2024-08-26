@@ -2527,13 +2527,38 @@ void ASlashCharacter::GetHit_Implementation(const FVector& ImpactPoint)
 }
 ```
 并且一开始我们的玩家是将其碰撞的对象类型设置为Pawn，但由于Enemy使用的Weapon和玩家一样，所以我们需要将玩家也设置成WorldDynamic，并根据敌人和武器的碰撞更细致地调节。
+但是此时将玩家设成WorldDynamic，在攻击过程中玩家的武器有
+```
+void AWeapon::BoxTrace(FHitResult& BoxHit)
+{
+	const FVector Start = BoxTraceStart->GetComponentLocation();
+	const FVector End = BoxTraceEnd->GetComponentLocation();
+
+	TArray<AActor*> ActorsToIgnore;
+	ActorsToIgnore.Add(GetOwner());
+
+	for (AActor* Actor : IgnoreActors) {
+		ActorsToIgnore.AddUnique(Actor);
+	}
+	UKismetSystemLibrary::BoxTraceSingle(
+		this, Start, End,
+		BoxTraceExtent,
+		BoxTraceStart->GetComponentRotation(),
+		ETraceTypeQuery::TraceTypeQuery1,
+		false,
+		ActorsToIgnore,
+		bShowBoxDebug ? EDrawDebugTrace::ForDuration : EDrawDebugTrace::None,
+		BoxHit, true);
+	IgnoreActors.AddUnique(BoxHit.GetActor());
+}
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjI1NTA1MzUsLTgzNTY5MjY1OSw3OD
-QwODgwMTUsLTE2MTgwMzM2NjUsMjE5MzkxNTM3LC0xMTc3MDc4
-Nzc2LDE3OTM0Njc2LDE3MTU3OTU1NywxNDI1MjI0NjY5LDEzOT
-AxMTQ1NDQsMzYxMTY2MTk2LC0xMDQxNjgwNTYsMTE3NTQ0MDIy
-LC04MDU1NDcxODMsNTYwNzU0NzA3LDE5MzU5ODU1MjMsLTE0Mj
-M5NzQ3NDgsMTcxNjk4NjQ4MywtMTYyMjY1MDc0NCwxOTkxMzk5
-MTQ5XX0=
+eyJoaXN0b3J5IjpbMTkzNjUxMTQ3MCwtMTMyMjU1MDUzNSwtOD
+M1NjkyNjU5LDc4NDA4ODAxNSwtMTYxODAzMzY2NSwyMTkzOTE1
+MzcsLTExNzcwNzg3NzYsMTc5MzQ2NzYsMTcxNTc5NTU3LDE0Mj
+UyMjQ2NjksMTM5MDExNDU0NCwzNjExNjYxOTYsLTEwNDE2ODA1
+NiwxMTc1NDQwMjIsLTgwNTU0NzE4Myw1NjA3NTQ3MDcsMTkzNT
+k4NTUyMywtMTQyMzk3NDc0OCwxNzE2OTg2NDgzLC0xNjIyNjUw
+NzQ0XX0=
 -->
