@@ -11,7 +11,9 @@
 ![输入图片说明](/imgs/2024-08-09/aEkc6Xdu6oqhpy5h.png)
 6.可以手动调节姿势，防止源人物与目标人物初始姿势不符合导致目标人物动画出错
 ![输入图片说明](/imgs/2024-08-10/BByvwsYhdxS7LKeP.png)
+## 当有根运动时
+![输入图片说明](/imgs/2024-08-26/DoRq5STjcc6MLgnF.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDc2MjA2MjMsNzc1NTk5NTczLC04ND
-UxNzAzMDhdfQ==
+eyJoaXN0b3J5IjpbMTQ3ODg0OTk2MywtMTEwNzYyMDYyMyw3Nz
+U1OTk1NzMsLTg0NTE3MDMwOF19
 -->
