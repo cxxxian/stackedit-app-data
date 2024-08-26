@@ -2526,9 +2526,9 @@ void ASlashCharacter::GetHit_Implementation(const FVector& ImpactPoint)
 	SpawnHitParticles(ImpactPoint);
 }
 ```
-并且一开始我们的玩家是将其碰撞的对象类型设置为Pawn，但由于Enemy使用的Weapon和玩家一样，所以我们需要将玩家也设置成
+并且一开始我们的玩家是将其碰撞的对象类型设置为Pawn，但由于Enemy使用的Weapon和玩家一样，所以我们需要将玩家也设置成WorldDynamic。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxOTM1OTUwMiw3ODQwODgwMTUsLTE2MT
+eyJoaXN0b3J5IjpbLTgzNTY5MjY1OSw3ODQwODgwMTUsLTE2MT
 gwMzM2NjUsMjE5MzkxNTM3LC0xMTc3MDc4Nzc2LDE3OTM0Njc2
 LDE3MTU3OTU1NywxNDI1MjI0NjY5LDEzOTAxMTQ1NDQsMzYxMT
 Y2MTk2LC0xMDQxNjgwNTYsMTE3NTQ0MDIyLC04MDU1NDcxODMs
