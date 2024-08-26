@@ -2516,9 +2516,9 @@ void AEnemy::AttackEnd()
 ![输入图片说明](/imgs/2024-08-25/uXIYHw4tUsKGXOe4.png)
 ![输入图片说明](/imgs/2024-08-25/xl9Bt1LznCUcH0qL.png)
 ## 制作玩家被攻击
-其实本质上的逻辑与玩家攻击敌人差不多，我们以及将Enemy和
+其实本质上的逻辑与玩家攻击敌人差不多，我们已经将Enemy和玩家的共同方法都制作进去了BaseCharacter中
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTIyNDM4NTcsNzg0MDg4MDE1LC0xNj
+eyJoaXN0b3J5IjpbLTExMjM0NTY3NjEsNzg0MDg4MDE1LC0xNj
 E4MDMzNjY1LDIxOTM5MTUzNywtMTE3NzA3ODc3NiwxNzkzNDY3
 NiwxNzE1Nzk1NTcsMTQyNTIyNDY2OSwxMzkwMTE0NTQ0LDM2MT
 E2NjE5NiwtMTA0MTY4MDU2LDExNzU0NDAyMiwtODA1NTQ3MTgz
