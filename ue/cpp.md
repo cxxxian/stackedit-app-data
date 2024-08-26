@@ -2515,9 +2515,10 @@ void AEnemy::AttackEnd()
 此处通过动画通知来调用AttackEnd函数，AttackEnd在BaseCharacter中是BlueprintCallable状态，所以蓝图可调用
 ![输入图片说明](/imgs/2024-08-25/uXIYHw4tUsKGXOe4.png)
 ![输入图片说明](/imgs/2024-08-25/xl9Bt1LznCUcH0qL.png)
-zhi
+## 制作玩家被攻击
+其实本质上的逻辑与玩家攻击敌人差不多，我们以及将Enemy和
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTcxNDY1MzIsNzg0MDg4MDE1LC0xNj
+eyJoaXN0b3J5IjpbLTEwMTIyNDM4NTcsNzg0MDg4MDE1LC0xNj
 E4MDMzNjY1LDIxOTM5MTUzNywtMTE3NzA3ODc3NiwxNzkzNDY3
 NiwxNzE1Nzk1NTcsMTQyNTIyNDY2OSwxMzkwMTE0NTQ0LDM2MT
 E2NjE5NiwtMTA0MTY4MDU2LDExNzU0NDAyMiwtODA1NTQ3MTgz
