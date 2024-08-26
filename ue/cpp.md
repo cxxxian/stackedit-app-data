@@ -2517,12 +2517,22 @@ void AEnemy::AttackEnd()
 ![输入图片说明](/imgs/2024-08-25/xl9Bt1LznCUcH0qL.png)
 ## 制作玩家被攻击
 其实本质上的逻辑与玩家攻击敌人差不多，我们已经将Enemy和玩家的共同方法都制作进去了BaseCharacter中
+所以此处玩家受击我们只需override GetHit方法
+此处先暂时只制作了粒子和音效
+```
+void ASlashCharacter::GetHit_Implementation(const FVector& ImpactPoint)
+{
+	PlayHitSound(ImpactPoint);
+	SpawnHitParticles(ImpactPoint);
+}
+```
+并且一开始我们的玩家是将其设置为Pawn
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjM0NTY3NjEsNzg0MDg4MDE1LC0xNj
-E4MDMzNjY1LDIxOTM5MTUzNywtMTE3NzA3ODc3NiwxNzkzNDY3
-NiwxNzE1Nzk1NTcsMTQyNTIyNDY2OSwxMzkwMTE0NTQ0LDM2MT
-E2NjE5NiwtMTA0MTY4MDU2LDExNzU0NDAyMiwtODA1NTQ3MTgz
-LDU2MDc1NDcwNywxOTM1OTg1NTIzLC0xNDIzOTc0NzQ4LDE3MT
-Y5ODY0ODMsLTE2MjI2NTA3NDQsMTk5MTM5OTE0OSwyMDczMTk0
-OTE2XX0=
+eyJoaXN0b3J5IjpbMjgwOTY3NTY1LDc4NDA4ODAxNSwtMTYxOD
+AzMzY2NSwyMTkzOTE1MzcsLTExNzcwNzg3NzYsMTc5MzQ2NzYs
+MTcxNTc5NTU3LDE0MjUyMjQ2NjksMTM5MDExNDU0NCwzNjExNj
+YxOTYsLTEwNDE2ODA1NiwxMTc1NDQwMjIsLTgwNTU0NzE4Myw1
+NjA3NTQ3MDcsMTkzNTk4NTUyMywtMTQyMzk3NDc0OCwxNzE2OT
+g2NDgzLC0xNjIyNjUwNzQ0LDE5OTEzOTkxNDksMjA3MzE5NDkx
+Nl19
 -->
