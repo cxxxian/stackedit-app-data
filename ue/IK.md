@@ -12,8 +12,10 @@
 6.可以手动调节姿势，防止源人物与目标人物初始姿势不符合导致目标人物动画出错
 ![输入图片说明](/imgs/2024-08-10/BByvwsYhdxS7LKeP.png)
 ## 当有根运动时
+导出时需要选择Root链
+并在细节面板中的平移模式选择全局缩放
 ![输入图片说明](/imgs/2024-08-26/DoRq5STjcc6MLgnF.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ3ODg0OTk2MywtMTEwNzYyMDYyMyw3Nz
-U1OTk1NzMsLTg0NTE3MDMwOF19
+eyJoaXN0b3J5IjpbLTQzNTExMTY0OSwxNDc4ODQ5OTYzLC0xMT
+A3NjIwNjIzLDc3NTU5OTU3MywtODQ1MTcwMzA4XX0=
 -->
