@@ -2527,7 +2527,8 @@ void ASlashCharacter::GetHit_Implementation(const FVector& ImpactPoint)
 }
 ```
 并且一开始我们的玩家是将其碰撞的对象类型设置为Pawn，但由于Enemy使用的Weapon和玩家一样，所以我们需要将玩家也设置成WorldDynamic，并根据敌人和武器的碰撞更细致地调节。
-但是此时将玩家设成WorldDynamic，在攻击过程中玩家的武器有
+但是此时将玩家设成WorldDynamic，在攻击过程中玩家的武器有与自己发生碰撞的可能性
+ActorsToIgnore.Add(GetOwner());将GetOwner()传入忽略数组，即意思是此武器的拥有者也会被忽略。
 ```
 void AWeapon::BoxTrace(FHitResult& BoxHit)
 {
@@ -2554,7 +2555,7 @@ void AWeapon::BoxTrace(FHitResult& BoxHit)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzNjUxMTQ3MCwtMTMyMjU1MDUzNSwtOD
+eyJoaXN0b3J5IjpbLTExMDgyMTcwNiwtMTMyMjU1MDUzNSwtOD
 M1NjkyNjU5LDc4NDA4ODAxNSwtMTYxODAzMzY2NSwyMTkzOTE1
 MzcsLTExNzcwNzg3NzYsMTc5MzQ2NzYsMTcxNTc5NTU3LDE0Mj
 UyMjQ2NjksMTM5MDExNDU0NCwzNjExNjYxOTYsLTEwNDE2ODA1
