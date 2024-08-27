@@ -2558,7 +2558,7 @@ void AWeapon::BoxTrace(FHitResult& BoxHit)
 
 如果我们攻击到一半时受击了，此时会调用HitReact蒙太奇，造成原本Attack蒙太奇里面的AttackEnd的动画通知没有被成功执行，所以我们没有回归到最初的Unoccupied（最初状态）的状态
 
-所以解决方法即是，制作一个HitReactEnd的函数以及通过动画通知来调用
+所以解决方法即是，**制作一个HitReactEnd的函数以及通过动画通知来调用**
 在EActionState添加一个状态HitReaction
 ```
 UENUM(BlueprintType)
@@ -2588,11 +2588,11 @@ void ASlashCharacter::HitReactEnd()
 在蒙太奇中建立轨道和相应的通知，通过动画通知来调用cpp里面的函数
 ![输入图片说明](/imgs/2024-08-27/WeFoo3NheCw2qfT8.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg0NjI5OTA0LC0xMTA4MjE3MDYsLTEzMj
-I1NTA1MzUsLTgzNTY5MjY1OSw3ODQwODgwMTUsLTE2MTgwMzM2
-NjUsMjE5MzkxNTM3LC0xMTc3MDc4Nzc2LDE3OTM0Njc2LDE3MT
-U3OTU1NywxNDI1MjI0NjY5LDEzOTAxMTQ1NDQsMzYxMTY2MTk2
-LC0xMDQxNjgwNTYsMTE3NTQ0MDIyLC04MDU1NDcxODMsNTYwNz
-U0NzA3LDE5MzU5ODU1MjMsLTE0MjM5NzQ3NDgsMTcxNjk4NjQ4
-M119
+eyJoaXN0b3J5IjpbNTMyOTM4NDAsLTExMDgyMTcwNiwtMTMyMj
+U1MDUzNSwtODM1NjkyNjU5LDc4NDA4ODAxNSwtMTYxODAzMzY2
+NSwyMTkzOTE1MzcsLTExNzcwNzg3NzYsMTc5MzQ2NzYsMTcxNT
+c5NTU3LDE0MjUyMjQ2NjksMTM5MDExNDU0NCwzNjExNjYxOTYs
+LTEwNDE2ODA1NiwxMTc1NDQwMjIsLTgwNTU0NzE4Myw1NjA3NT
+Q3MDcsMTkzNTk4NTUyMywtMTQyMzk3NDc0OCwxNzE2OTg2NDgz
+XX0=
 -->
