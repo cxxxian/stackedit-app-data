@@ -2554,9 +2554,23 @@ void AWeapon::BoxTrace(FHitResult& BoxHit)
 }
 ```
 ## 解决玩家在攻击的同时受击bug
-此问题是我们在攻击结束时，会调用一个AttackEnd的动画通知，如果我们攻击到一半时受击了，此时会调用HitReact蒙太奇，造成原本Attack蒙太奇里面的AttackEnd的动画通知没有被成功执行，所以我们没有回归到最初的Unoccupied（最初状态）的状态
+此问题是我们在攻击结束时，会调用一个AttackEnd的动画通知，此函数用来将玩家从Attacking状态转回Unoccupied
+
+如果我们攻击到一半时受击了，此时会调用HitReact蒙太奇，造成原本Attack蒙太奇里面的AttackEnd的动画通知没有被成功执行，所以我们没有回归到最初的Unoccupied（最初状态）的状态
+
+所以解决方法即是，制作一个HitReactEnd的函数以及通过动画通知来调用
+```
+UENUM(BlueprintType)
+enum class EActionState : uint8
+{
+	EAS_Unoccupied UMETA(DisplayName = "Unoccupied"),
+	EAS_HitReaction UMETA(DisplayName = "HitReaction"),
+	EAS_Attacking UMETA(DisplayName = "Attacking"),
+	EAS_EquippingWeapon UMETA(DisplayName = "EquippingWeapon")
+};
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0ODM4OTkyNCwtMTEwODIxNzA2LC0xMz
+eyJoaXN0b3J5IjpbLTE2ODUwMDk4NCwtMTEwODIxNzA2LC0xMz
 IyNTUwNTM1LC04MzU2OTI2NTksNzg0MDg4MDE1LC0xNjE4MDMz
 NjY1LDIxOTM5MTUzNywtMTE3NzA3ODc3NiwxNzkzNDY3NiwxNz
 E1Nzk1NTcsMTQyNTIyNDY2OSwxMzkwMTE0NTQ0LDM2MTE2NjE5
