@@ -2556,10 +2556,12 @@ void AWeapon::BoxTrace(FHitResult& BoxHit)
 ## 解决玩家在攻击的同时受击bug
 1. 此问题是我们在攻击结束时，会调用一个AttackEnd的动画通知，此函数用来将玩家从Attacking状态转回Unoccupied
 如果我们攻击到一半时受击了，此时会调用HitReact蒙太奇，造成原本Attack蒙太奇里面的AttackEnd的动画通知没有被成功执行，所以我们没有回归到最初的Unoccupied（最初状态）的状态
-2. 还有一个bug是在我们攻击过程中，如果我们攻击被打断，但是此时在动画中有一个EnableBoxCollision的通知，我们kai
+2. 还有一个bug是在我们攻击过程中，如果我们攻击被打断，但是此时在动画中有一个EnableBoxCollision的通知，我们开启后受击被打断之后将不会被关闭，导致我们走进敌人身边时如果敌人碰到我们的剑将会受到伤害。
 
-所以解决方法即是，**制作一个HitReactEnd的函数以及通过动画通知来调用**
+所以解决方法即是，
+1. **制作一个HitReactEnd的函数以及通过动画通知来调用**
 在EActionState添加一个状态HitReaction
+2. 在GetHit_Implementation将SetWeaponCollisionEnable改为NoCollision即可。
 ```
 UENUM(BlueprintType)
 enum class EActionState : uint8
@@ -2615,11 +2617,11 @@ void ABaseCharacter::GetHit_Implementation(const FVector& ImpactPoint, AActor* H
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjc5NzE4NzYzLDgxNjA0MjYzNywxODgxOT
-A4NTEsLTE0OTg0MjEzMTgsNTMyOTM4NDAsLTExMDgyMTcwNiwt
-MTMyMjU1MDUzNSwtODM1NjkyNjU5LDc4NDA4ODAxNSwtMTYxOD
-AzMzY2NSwyMTkzOTE1MzcsLTExNzcwNzg3NzYsMTc5MzQ2NzYs
-MTcxNTc5NTU3LDE0MjUyMjQ2NjksMTM5MDExNDU0NCwzNjExNj
-YxOTYsLTEwNDE2ODA1NiwxMTc1NDQwMjIsLTgwNTU0NzE4M119
-
+eyJoaXN0b3J5IjpbMTQ0NDQ4NzY1OSw4MTYwNDI2MzcsMTg4MT
+kwODUxLC0xNDk4NDIxMzE4LDUzMjkzODQwLC0xMTA4MjE3MDYs
+LTEzMjI1NTA1MzUsLTgzNTY5MjY1OSw3ODQwODgwMTUsLTE2MT
+gwMzM2NjUsMjE5MzkxNTM3LC0xMTc3MDc4Nzc2LDE3OTM0Njc2
+LDE3MTU3OTU1NywxNDI1MjI0NjY5LDEzOTAxMTQ1NDQsMzYxMT
+Y2MTk2LC0xMDQxNjgwNTYsMTE3NTQ0MDIyLC04MDU1NDcxODNd
+fQ==
 -->
