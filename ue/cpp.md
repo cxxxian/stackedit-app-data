@@ -2559,6 +2559,7 @@ void AWeapon::BoxTrace(FHitResult& BoxHit)
 如果我们攻击到一半时受击了，此时会调用HitReact蒙太奇，造成原本Attack蒙太奇里面的AttackEnd的动画通知没有被成功执行，所以我们没有回归到最初的Unoccupied（最初状态）的状态
 
 所以解决方法即是，制作一个HitReactEnd的函数以及通过动画通知来调用
+在EActionState添加一个状态HitReaction
 ```
 UENUM(BlueprintType)
 enum class EActionState : uint8
@@ -2569,12 +2570,27 @@ enum class EActionState : uint8
 	EAS_EquippingWeapon UMETA(DisplayName = "EquippingWeapon")
 };
 ```
+在玩家的GetHit_Implementation方法中将状态修改
+```
+void ASlashCharacter::GetHit_Implementation(const FVector& ImpactPoint)
+{
+	Super::GetHit_Implementation(ImpactPoint);
+	ActionState = EActionState::EAS_HitReaction;
+}
+```
+并创建一个新韩淑
+```
+void ASlashCharacter::HitReactEnd()
+{
+	ActionState = EActionState::EAS_Unoccupied;
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODUwMDk4NCwtMTEwODIxNzA2LC0xMz
-IyNTUwNTM1LC04MzU2OTI2NTksNzg0MDg4MDE1LC0xNjE4MDMz
-NjY1LDIxOTM5MTUzNywtMTE3NzA3ODc3NiwxNzkzNDY3NiwxNz
-E1Nzk1NTcsMTQyNTIyNDY2OSwxMzkwMTE0NTQ0LDM2MTE2NjE5
-NiwtMTA0MTY4MDU2LDExNzU0NDAyMiwtODA1NTQ3MTgzLDU2MD
-c1NDcwNywxOTM1OTg1NTIzLC0xNDIzOTc0NzQ4LDE3MTY5ODY0
-ODNdfQ==
+eyJoaXN0b3J5IjpbLTE4NjEyMDYzODIsLTExMDgyMTcwNiwtMT
+MyMjU1MDUzNSwtODM1NjkyNjU5LDc4NDA4ODAxNSwtMTYxODAz
+MzY2NSwyMTkzOTE1MzcsLTExNzcwNzg3NzYsMTc5MzQ2NzYsMT
+cxNTc5NTU3LDE0MjUyMjQ2NjksMTM5MDExNDU0NCwzNjExNjYx
+OTYsLTEwNDE2ODA1NiwxMTc1NDQwMjIsLTgwNTU0NzE4Myw1Nj
+A3NTQ3MDcsMTkzNTk4NTUyMywtMTQyMzk3NDc0OCwxNzE2OTg2
+NDgzXX0=
 -->
