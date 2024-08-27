@@ -2592,8 +2592,14 @@ void ASlashCharacter::HitReactEnd()
 如这种情况，当玩家背后受击时，会朝背后方向倒退，与从左往右受击应该倾倒的方向直接相反了
 ![输入图片说明](/imgs/2024-08-27/32LHrPF0NhuF9pfD.png)
 所以我们应该传入攻击者的向量来进行判断
+首先修改Interface.h的参数，添加一个AActor* Hitter
+```
+public:
+	UFUNCTION(BlueprintNativeEvent)
+	void GetHit(const FVector& ImpactPoint, AActor* Hitter);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk3NzE0MTU0LDE4ODE5MDg1MSwtMTQ5OD
+eyJoaXN0b3J5IjpbNTc2NjU4NDM3LDE4ODE5MDg1MSwtMTQ5OD
 QyMTMxOCw1MzI5Mzg0MCwtMTEwODIxNzA2LC0xMzIyNTUwNTM1
 LC04MzU2OTI2NTksNzg0MDg4MDE1LC0xNjE4MDMzNjY1LDIxOT
 M5MTUzNywtMTE3NzA3ODc3NiwxNzkzNDY3NiwxNzE1Nzk1NTcs
