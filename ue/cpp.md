@@ -2599,12 +2599,26 @@ public:
 	void GetHit(const FVector& ImpactPoint, AActor* Hitter);
 ```
 所以在BaseCharacter和Enemy和SlashCharacter中都要在相应的位置添加这个参数
+在BaseCharacter.cpp中将原本的DirectionHitReact(ImpactPoint)改成DirectionHitReact(Hitter->GetActorLocation())
+```
+void ABaseCharacter::GetHit_Implementation(const FVector& ImpactPoint, AActor* Hitter)
+{
+	if (IsAlive() && Hitter) {
+		DirectionHitReact(Hitter->GetActorLocation());
+	}
+	else {
+		Die();
+	}
+	PlayHitSound(ImpactPoint);
+	SpawnHitParticles(ImpactPoint);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE0NDM2ODQsMTg4MTkwODUxLC0xNDk4ND
-IxMzE4LDUzMjkzODQwLC0xMTA4MjE3MDYsLTEzMjI1NTA1MzUs
-LTgzNTY5MjY1OSw3ODQwODgwMTUsLTE2MTgwMzM2NjUsMjE5Mz
-kxNTM3LC0xMTc3MDc4Nzc2LDE3OTM0Njc2LDE3MTU3OTU1Nywx
-NDI1MjI0NjY5LDEzOTAxMTQ1NDQsMzYxMTY2MTk2LC0xMDQxNj
-gwNTYsMTE3NTQ0MDIyLC04MDU1NDcxODMsNTYwNzU0NzA3XX0=
+eyJoaXN0b3J5IjpbODE2MDQyNjM3LDE4ODE5MDg1MSwtMTQ5OD
+QyMTMxOCw1MzI5Mzg0MCwtMTEwODIxNzA2LC0xMzIyNTUwNTM1
+LC04MzU2OTI2NTksNzg0MDg4MDE1LC0xNjE4MDMzNjY1LDIxOT
+M5MTUzNywtMTE3NzA3ODc3NiwxNzkzNDY3NiwxNzE1Nzk1NTcs
+MTQyNTIyNDY2OSwxMzkwMTE0NTQ0LDM2MTE2NjE5NiwtMTA0MT
+Y4MDU2LDExNzU0NDAyMiwtODA1NTQ3MTgzLDU2MDc1NDcwN119
 
 -->
