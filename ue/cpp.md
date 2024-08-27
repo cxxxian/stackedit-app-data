@@ -2578,19 +2578,21 @@ void ASlashCharacter::GetHit_Implementation(const FVector& ImpactPoint)
 	ActionState = EActionState::EAS_HitReaction;
 }
 ```
-并创建一个新韩淑
+并创建一个函数用来将状态设回Unoccupied
 ```
 void ASlashCharacter::HitReactEnd()
 {
 	ActionState = EActionState::EAS_Unoccupied;
 }
 ```
+在蒙太奇中建立轨道和相应的通知，通过动画通知来调用cpp里面的函数
+![输入图片说明](/imgs/2024-08-27/WeFoo3NheCw2qfT8.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjEyMDYzODIsLTExMDgyMTcwNiwtMT
-MyMjU1MDUzNSwtODM1NjkyNjU5LDc4NDA4ODAxNSwtMTYxODAz
-MzY2NSwyMTkzOTE1MzcsLTExNzcwNzg3NzYsMTc5MzQ2NzYsMT
-cxNTc5NTU3LDE0MjUyMjQ2NjksMTM5MDExNDU0NCwzNjExNjYx
-OTYsLTEwNDE2ODA1NiwxMTc1NDQwMjIsLTgwNTU0NzE4Myw1Nj
-A3NTQ3MDcsMTkzNTk4NTUyMywtMTQyMzk3NDc0OCwxNzE2OTg2
-NDgzXX0=
+eyJoaXN0b3J5IjpbMjg0NjI5OTA0LC0xMTA4MjE3MDYsLTEzMj
+I1NTA1MzUsLTgzNTY5MjY1OSw3ODQwODgwMTUsLTE2MTgwMzM2
+NjUsMjE5MzkxNTM3LC0xMTc3MDc4Nzc2LDE3OTM0Njc2LDE3MT
+U3OTU1NywxNDI1MjI0NjY5LDEzOTAxMTQ1NDQsMzYxMTY2MTk2
+LC0xMDQxNjgwNTYsMTE3NTQ0MDIyLC04MDU1NDcxODMsNTYwNz
+U0NzA3LDE5MzU5ODU1MjMsLTE0MjM5NzQ3NDgsMTcxNjk4NjQ4
+M119
 -->
