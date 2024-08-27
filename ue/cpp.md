@@ -2588,13 +2588,15 @@ void ASlashCharacter::HitReactEnd()
 在蒙太奇中建立轨道和相应的通知，通过动画通知来调用cpp里面的函数
 ![输入图片说明](/imgs/2024-08-27/WeFoo3NheCw2qfT8.png)
 ## 优化受击判断
-先前我们是用**受击点**和**敌人**来进行向量的方向判断，将会造成
+先前我们是用**受击点**和**敌人**来进行向量的方向判断，将会造成以下：
+如这种情况，当玩家背后受击时，会朝背后方向倒退，与从左往右受击应该倾倒的方向z
+![输入图片说明](/imgs/2024-08-27/32LHrPF0NhuF9pfD.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTg0MjEzMTgsNTMyOTM4NDAsLTExMD
-gyMTcwNiwtMTMyMjU1MDUzNSwtODM1NjkyNjU5LDc4NDA4ODAx
-NSwtMTYxODAzMzY2NSwyMTkzOTE1MzcsLTExNzcwNzg3NzYsMT
-c5MzQ2NzYsMTcxNTc5NTU3LDE0MjUyMjQ2NjksMTM5MDExNDU0
-NCwzNjExNjYxOTYsLTEwNDE2ODA1NiwxMTc1NDQwMjIsLTgwNT
-U0NzE4Myw1NjA3NTQ3MDcsMTkzNTk4NTUyMywtMTQyMzk3NDc0
-OF19
+eyJoaXN0b3J5IjpbLTgyNDY5NDY2NiwtMTQ5ODQyMTMxOCw1Mz
+I5Mzg0MCwtMTEwODIxNzA2LC0xMzIyNTUwNTM1LC04MzU2OTI2
+NTksNzg0MDg4MDE1LC0xNjE4MDMzNjY1LDIxOTM5MTUzNywtMT
+E3NzA3ODc3NiwxNzkzNDY3NiwxNzE1Nzk1NTcsMTQyNTIyNDY2
+OSwxMzkwMTE0NTQ0LDM2MTE2NjE5NiwtMTA0MTY4MDU2LDExNz
+U0NDAyMiwtODA1NTQ3MTgzLDU2MDc1NDcwNywxOTM1OTg1NTIz
+XX0=
 -->
