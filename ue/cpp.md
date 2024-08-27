@@ -2572,9 +2572,10 @@ enum class EActionState : uint8
 ```
 在玩家的GetHit_Implementation方法中将状态修改
 ```
-void ASlashCharacter::GetHit_Implementation(const FVector& ImpactPoint)
+void ASlashCharacter::GetHit_Implementation(const FVector& ImpactPoint, AActor* Hitter)
 {
-	Super::GetHit_Implementation(ImpactPoint);
+	Super::GetHit_Implementation(ImpactPoint, Hitter);
+	SetWeaponCollisionEnable(ECollisionEnabled::NoCollision);
 	ActionState = EActionState::EAS_HitReaction;
 }
 ```
@@ -2614,11 +2615,11 @@ void ABaseCharacter::GetHit_Implementation(const FVector& ImpactPoint, AActor* H
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODE2MDQyNjM3LDE4ODE5MDg1MSwtMTQ5OD
-QyMTMxOCw1MzI5Mzg0MCwtMTEwODIxNzA2LC0xMzIyNTUwNTM1
-LC04MzU2OTI2NTksNzg0MDg4MDE1LC0xNjE4MDMzNjY1LDIxOT
-M5MTUzNywtMTE3NzA3ODc3NiwxNzkzNDY3NiwxNzE1Nzk1NTcs
-MTQyNTIyNDY2OSwxMzkwMTE0NTQ0LDM2MTE2NjE5NiwtMTA0MT
-Y4MDU2LDExNzU0NDAyMiwtODA1NTQ3MTgzLDU2MDc1NDcwN119
-
+eyJoaXN0b3J5IjpbLTExNjc0MjQ0MTUsODE2MDQyNjM3LDE4OD
+E5MDg1MSwtMTQ5ODQyMTMxOCw1MzI5Mzg0MCwtMTEwODIxNzA2
+LC0xMzIyNTUwNTM1LC04MzU2OTI2NTksNzg0MDg4MDE1LC0xNj
+E4MDMzNjY1LDIxOTM5MTUzNywtMTE3NzA3ODc3NiwxNzkzNDY3
+NiwxNzE1Nzk1NTcsMTQyNTIyNDY2OSwxMzkwMTE0NTQ0LDM2MT
+E2NjE5NiwtMTA0MTY4MDU2LDExNzU0NDAyMiwtODA1NTQ3MTgz
+XX0=
 -->
