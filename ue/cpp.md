@@ -2685,11 +2685,12 @@ FVector ABaseCharacter::GetRotationWarpTarget()
 }
 ```
 此时回到蓝图模块
-我们已经自己声明了Rotation函数，所以可以取消勾选Warp Rotation，我们希望重新建立一个Rotation的运动扭曲轨道
+我们已经自己声明了Rotation函数，所以将原本的TranslationWarping轨道的MotionWarping取消勾选Warp Rotation，我们希望重新建立一个Rotation的运动扭曲轨道
 ![输入图片说明](/imgs/2024-08-29/Fbs5MR2TDpk1t2A8.png)
+新建轨道，分为Translation和Rotation，将Translation的MotionWa'r
 ![输入图片说明](/imgs/2024-08-29/urPRapzxqkTUypAA.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjUwNDI0NTMwLC0yOTE1ODIzODYsODQwMT
+eyJoaXN0b3J5IjpbODE0Nzk2NDAxLC0yOTE1ODIzODYsODQwMT
 U4MTc2LC0xMzM0ODEwMzgwLDE0NTYwMTgzNTUsLTE2MzA1NjM0
 OTcsMTQ0NDQ4NzY1OSw4MTYwNDI2MzcsMTg4MTkwODUxLC0xND
 k4NDIxMzE4LDUzMjkzODQwLC0xMTA4MjE3MDYsLTEzMjI1NTA1
