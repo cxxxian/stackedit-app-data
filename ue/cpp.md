@@ -2628,12 +2628,25 @@ void ABaseCharacter::StopAttackMontage()
 	}
 }
 ```
+然后在Enemy.cpp中的GetHit_Implementation方法中使用，即可做到在受击过程中无法继续进行未完成的攻击
+```
+void AEnemy::GetHit_Implementation(const FVector& ImpactPoint, AActor* Hitter)
+{
+	Super::GetHit_Implementation(ImpactPoint, Hitter);
+	if(!IsDead()) ShowHealthBar();
+
+	ClearPatrolTimer();
+	ClearAttackTimer();
+	SetWeaponCollisionEnable(ECollisionEnabled::NoCollision);
+	StopAttackMontage();
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDAwNjYwNzYwLC0xNjMwNTYzNDk3LDE0ND
-Q0ODc2NTksODE2MDQyNjM3LDE4ODE5MDg1MSwtMTQ5ODQyMTMx
-OCw1MzI5Mzg0MCwtMTEwODIxNzA2LC0xMzIyNTUwNTM1LC04Mz
-U2OTI2NTksNzg0MDg4MDE1LC0xNjE4MDMzNjY1LDIxOTM5MTUz
-NywtMTE3NzA3ODc3NiwxNzkzNDY3NiwxNzE1Nzk1NTcsMTQyNT
-IyNDY2OSwxMzkwMTE0NTQ0LDM2MTE2NjE5NiwtMTA0MTY4MDU2
-XX0=
+eyJoaXN0b3J5IjpbLTQzNTMzMjU2MywtMTYzMDU2MzQ5NywxND
+Q0NDg3NjU5LDgxNjA0MjYzNywxODgxOTA4NTEsLTE0OTg0MjEz
+MTgsNTMyOTM4NDAsLTExMDgyMTcwNiwtMTMyMjU1MDUzNSwtOD
+M1NjkyNjU5LDc4NDA4ODAxNSwtMTYxODAzMzY2NSwyMTkzOTE1
+MzcsLTExNzcwNzg3NzYsMTc5MzQ2NzYsMTcxNTc5NTU3LDE0Mj
+UyMjQ2NjksMTM5MDExNDU0NCwzNjExNjYxOTYsLTEwNDE2ODA1
+Nl19
 -->
