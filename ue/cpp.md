@@ -2645,12 +2645,20 @@ void AEnemy::GetHit_Implementation(const FVector& ImpactPoint, AActor* Hitter)
 因为我们先前是直接将玩家的位置输送给运动扭曲的目的，所以会导致敌人运动完后离玩家太近的后果。
 ![输入图片说明](/imgs/2024-08-29/2mALIJjrEB0eZgsK.png)
 为了改进这个问题，我们可以自己在cpp中编写函数
+由于先前BaseCharacter没有声明过CombatTarget，所以我们在BaseCharacter.
+```
+UPROPERTY(BlueprintReadOnly, Category = Combat)
+AActor* CombatTarget;
+
+UPROPERTY(EditAnywhere, Category = Cmobat)
+double WarpTargetDistance = 75.f;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMzQ4MTAzODAsMTQ1NjAxODM1NSwtMT
-YzMDU2MzQ5NywxNDQ0NDg3NjU5LDgxNjA0MjYzNywxODgxOTA4
-NTEsLTE0OTg0MjEzMTgsNTMyOTM4NDAsLTExMDgyMTcwNiwtMT
-MyMjU1MDUzNSwtODM1NjkyNjU5LDc4NDA4ODAxNSwtMTYxODAz
-MzY2NSwyMTkzOTE1MzcsLTExNzcwNzg3NzYsMTc5MzQ2NzYsMT
-cxNTc5NTU3LDE0MjUyMjQ2NjksMTM5MDExNDU0NCwzNjExNjYx
-OTZdfQ==
+eyJoaXN0b3J5IjpbLTM4Njg2MTUzMSwtMTMzNDgxMDM4MCwxND
+U2MDE4MzU1LC0xNjMwNTYzNDk3LDE0NDQ0ODc2NTksODE2MDQy
+NjM3LDE4ODE5MDg1MSwtMTQ5ODQyMTMxOCw1MzI5Mzg0MCwtMT
+EwODIxNzA2LC0xMzIyNTUwNTM1LC04MzU2OTI2NTksNzg0MDg4
+MDE1LC0xNjE4MDMzNjY1LDIxOTM5MTUzNywtMTE3NzA3ODc3Ni
+wxNzkzNDY3NiwxNzE1Nzk1NTcsMTQyNTIyNDY2OSwxMzkwMTE0
+NTQ0XX0=
 -->
