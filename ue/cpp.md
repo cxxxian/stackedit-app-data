@@ -2635,14 +2635,14 @@ void AEnemy::GetHit_Implementation(const FVector& ImpactPoint, AActor* Hitter)
 	Super::GetHit_Implementation(ImpactPoint, Hitter);
 	if(!IsDead()) ShowHealthBar();
 
-	ClearPatrolTimer();
-	ClearAttackTimer();
+	ClearPatrolTimer();//清理巡逻时间
+	ClearAttackTimer();//清理攻击时间
 	SetWeaponCollisionEnable(ECollisionEnabled::NoCollision);
 	StopAttackMontage();
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzNTMzMjU2MywtMTYzMDU2MzQ5NywxND
+eyJoaXN0b3J5IjpbMTQ1NjAxODM1NSwtMTYzMDU2MzQ5NywxND
 Q0NDg3NjU5LDgxNjA0MjYzNywxODgxOTA4NTEsLTE0OTg0MjEz
 MTgsNTMyOTM4NDAsLTExMDgyMTcwNiwtMTMyMjU1MDUzNSwtOD
 M1NjkyNjU5LDc4NDA4ODAxNSwtMTYxODAzMzY2NSwyMTkzOTE1
