@@ -2693,11 +2693,12 @@ FVector ABaseCharacter::GetRotationWarpTarget()
 ![输入图片说明](/imgs/2024-08-29/BzrjqGJkyx0LysnW.png)
 ### 更新promax
 我们会发现使用四段动画通知敌人的行动还是会有点奇怪，所以我们可以使用tick函数来进行每帧的位置更新
-在BP_BaseEnemyde'lan'tu
+在BP_BaseEnemy的蓝图中进行使用
 ![输入图片说明](/imgs/2024-08-29/YJeG20Eu0SyJZV93.png)
 ![输入图片说明](/imgs/2024-08-29/oWZOuOqMOy5wwfNj.png)
+所以我们可以删除先前的动画通知了
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwMjU2MDQ5Myw2NzI4ODY1OTYsLTg4Nj
+eyJoaXN0b3J5IjpbLTc0NzE4NzEzOSw2NzI4ODY1OTYsLTg4Nj
 M3Mzc3MiwtMjkxNTgyMzg2LDg0MDE1ODE3NiwtMTMzNDgxMDM4
 MCwxNDU2MDE4MzU1LC0xNjMwNTYzNDk3LDE0NDQ0ODc2NTksOD
 E2MDQyNjM3LDE4ODE5MDg1MSwtMTQ5ODQyMTMxOCw1MzI5Mzg0
