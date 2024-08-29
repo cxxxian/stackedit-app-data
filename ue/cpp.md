@@ -2659,7 +2659,9 @@ AActor* CombatTarget;
 UPROPERTY(EditAnywhere, Category = Cmobat)
 double WarpTargetDistance = 75.f;
 ```
-在BaseCharacter.cpp
+在BaseCharacter.cpp实现如下
+1. 对于Rotation（即旋转），无需计算只需正常获得玩家的位置
+2. 对于Transform，则就是我们的目的所在，我们希望敌人能在合适的位置运动扭曲dao
 ```
 FVector ABaseCharacter::GetTranslationWarpTarget()
 {
@@ -2683,7 +2685,7 @@ FVector ABaseCharacter::GetRotationWarpTarget()
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDI5MzE0MTcsLTEzMzQ4MTAzODAsMT
+eyJoaXN0b3J5IjpbLTE5NDM4OTU3MzgsLTEzMzQ4MTAzODAsMT
 Q1NjAxODM1NSwtMTYzMDU2MzQ5NywxNDQ0NDg3NjU5LDgxNjA0
 MjYzNywxODgxOTA4NTEsLTE0OTg0MjEzMTgsNTMyOTM4NDAsLT
 ExMDgyMTcwNiwtMTMyMjU1MDUzNSwtODM1NjkyNjU5LDc4NDA4
