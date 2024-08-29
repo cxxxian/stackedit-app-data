@@ -2659,12 +2659,35 @@ AActor* CombatTarget;
 UPROPERTY(EditAnywhere, Category = Cmobat)
 double WarpTargetDistance = 75.f;
 ```
+在BaseCharacter.cpp
+```
+FVector ABaseCharacter::GetTranslationWarpTarget()
+{
+	if(CombatTarget == nullptr) return FVector();
+	const FVector CombatTargetLocation = CombatTarget->GetActorLocation();//受击者位置
+	const FVector Location = GetActorLocation();//攻击者位置
+
+	FVector TargetToMe = (Location - CombatTargetLocation).GetSafeNormal();
+	TargetToMe *= WarpTargetDistance;
+
+	return CombatTargetLocation + TargetToMe;
+}
+
+FVector ABaseCharacter::GetRotationWarpTarget()
+{
+	if (CombatTarget) {
+		return CombatTarget->GetActorLocation();
+	}
+	return FVector();
+}
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjg2MTY4NiwtMTMzNDgxMDM4MCwxND
-U2MDE4MzU1LC0xNjMwNTYzNDk3LDE0NDQ0ODc2NTksODE2MDQy
-NjM3LDE4ODE5MDg1MSwtMTQ5ODQyMTMxOCw1MzI5Mzg0MCwtMT
-EwODIxNzA2LC0xMzIyNTUwNTM1LC04MzU2OTI2NTksNzg0MDg4
-MDE1LC0xNjE4MDMzNjY1LDIxOTM5MTUzNywtMTE3NzA3ODc3Ni
-wxNzkzNDY3NiwxNzE1Nzk1NTcsMTQyNTIyNDY2OSwxMzkwMTE0
-NTQ0XX0=
+eyJoaXN0b3J5IjpbLTE2MDI5MzE0MTcsLTEzMzQ4MTAzODAsMT
+Q1NjAxODM1NSwtMTYzMDU2MzQ5NywxNDQ0NDg3NjU5LDgxNjA0
+MjYzNywxODgxOTA4NTEsLTE0OTg0MjEzMTgsNTMyOTM4NDAsLT
+ExMDgyMTcwNiwtMTMyMjU1MDUzNSwtODM1NjkyNjU5LDc4NDA4
+ODAxNSwtMTYxODAzMzY2NSwyMTkzOTE1MzcsLTExNzcwNzg3Nz
+YsMTc5MzQ2NzYsMTcxNTc5NTU3LDE0MjUyMjQ2NjksMTM5MDEx
+NDU0NF19
 -->
