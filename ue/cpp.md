@@ -2691,12 +2691,17 @@ FVector ABaseCharacter::GetRotationWarpTarget()
 ![输入图片说明](/imgs/2024-08-29/urPRapzxqkTUypAA.png)
 对应的Rotation的MotionWarping里面只勾选Rotation
 ![输入图片说明](/imgs/2024-08-29/BzrjqGJkyx0LysnW.png)
+### 更新promax
+我们会发现使用四段动画通知敌人的行动还是会有点奇怪，所以我们可以使用tick函数来进行每帧的位置更新
+在BP_BaseEnemyde'lan'tu
+![输入图片说明](/imgs/2024-08-29/YJeG20Eu0SyJZV93.png)
+![输入图片说明](/imgs/2024-08-29/oWZOuOqMOy5wwfNj.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjcyODg2NTk2LC04ODYzNzM3NzIsLTI5MT
-U4MjM4Niw4NDAxNTgxNzYsLTEzMzQ4MTAzODAsMTQ1NjAxODM1
-NSwtMTYzMDU2MzQ5NywxNDQ0NDg3NjU5LDgxNjA0MjYzNywxOD
-gxOTA4NTEsLTE0OTg0MjEzMTgsNTMyOTM4NDAsLTExMDgyMTcw
-NiwtMTMyMjU1MDUzNSwtODM1NjkyNjU5LDc4NDA4ODAxNSwtMT
-YxODAzMzY2NSwyMTkzOTE1MzcsLTExNzcwNzg3NzYsMTc5MzQ2
-NzZdfQ==
+eyJoaXN0b3J5IjpbMTkwMjU2MDQ5Myw2NzI4ODY1OTYsLTg4Nj
+M3Mzc3MiwtMjkxNTgyMzg2LDg0MDE1ODE3NiwtMTMzNDgxMDM4
+MCwxNDU2MDE4MzU1LC0xNjMwNTYzNDk3LDE0NDQ0ODc2NTksOD
+E2MDQyNjM3LDE4ODE5MDg1MSwtMTQ5ODQyMTMxOCw1MzI5Mzg0
+MCwtMTEwODIxNzA2LC0xMzIyNTUwNTM1LC04MzU2OTI2NTksNz
+g0MDg4MDE1LC0xNjE4MDMzNjY1LDIxOTM5MTUzNywtMTE3NzA3
+ODc3Nl19
 -->
