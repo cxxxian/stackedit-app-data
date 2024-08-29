@@ -2616,12 +2616,24 @@ void ABaseCharacter::GetHit_Implementation(const FVector& ImpactPoint, AActor* H
 	SpawnHitParticles(ImpactPoint);
 }
 ```
+## 运动扭曲
+细节请看运动扭曲篇章
+此时我们的敌人在攻击时受击，不会被打断，我们在Ba'se
+```
+void ABaseCharacter::StopAttackMontage()
+{
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if (AnimInstance) {
+		AnimInstance->Montage_Stop(0.25, AttackMontage);
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzA1NjM0OTcsMTQ0NDQ4NzY1OSw4MT
-YwNDI2MzcsMTg4MTkwODUxLC0xNDk4NDIxMzE4LDUzMjkzODQw
-LC0xMTA4MjE3MDYsLTEzMjI1NTA1MzUsLTgzNTY5MjY1OSw3OD
-QwODgwMTUsLTE2MTgwMzM2NjUsMjE5MzkxNTM3LC0xMTc3MDc4
-Nzc2LDE3OTM0Njc2LDE3MTU3OTU1NywxNDI1MjI0NjY5LDEzOT
-AxMTQ1NDQsMzYxMTY2MTk2LC0xMDQxNjgwNTYsMTE3NTQ0MDIy
+eyJoaXN0b3J5IjpbNjgwNTY0MTk1LC0xNjMwNTYzNDk3LDE0ND
+Q0ODc2NTksODE2MDQyNjM3LDE4ODE5MDg1MSwtMTQ5ODQyMTMx
+OCw1MzI5Mzg0MCwtMTEwODIxNzA2LC0xMzIyNTUwNTM1LC04Mz
+U2OTI2NTksNzg0MDg4MDE1LC0xNjE4MDMzNjY1LDIxOTM5MTUz
+NywtMTE3NzA3ODc3NiwxNzkzNDY3NiwxNzE1Nzk1NTcsMTQyNT
+IyNDY2OSwxMzkwMTE0NTQ0LDM2MTE2NjE5NiwtMTA0MTY4MDU2
 XX0=
 -->
