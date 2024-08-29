@@ -2618,7 +2618,7 @@ void ABaseCharacter::GetHit_Implementation(const FVector& ImpactPoint, AActor* H
 ```
 ## 运动扭曲
 细节请看运动扭曲篇章
-此时我们的敌人在攻击时受击，不会被打断，我们在Ba'se
+此时我们的敌人在攻击时受击，不会被打断，我们在BaseCharacter.cpp中制作一个StopAttackMontage方法，用来停止播放蒙太奇
 ```
 void ABaseCharacter::StopAttackMontage()
 {
@@ -2629,7 +2629,7 @@ void ABaseCharacter::StopAttackMontage()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjgwNTY0MTk1LC0xNjMwNTYzNDk3LDE0ND
+eyJoaXN0b3J5IjpbNDAwNjYwNzYwLC0xNjMwNTYzNDk3LDE0ND
 Q0ODc2NTksODE2MDQyNjM3LDE4ODE5MDg1MSwtMTQ5ODQyMTMx
 OCw1MzI5Mzg0MCwtMTEwODIxNzA2LC0xMzIyNTUwNTM1LC04Mz
 U2OTI2NTksNzg0MDg4MDE1LC0xNjE4MDMzNjY1LDIxOTM5MTUz
