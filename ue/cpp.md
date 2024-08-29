@@ -2661,7 +2661,7 @@ double WarpTargetDistance = 75.f;
 ```
 在BaseCharacter.cpp实现如下
 1. 对于Rotation（即旋转），无需计算只需正常获得玩家的位置
-2. 对于Transform，则就是我们的目的所在，我们希望敌人能在合适的位置运动扭曲dao
+2. 对于Transform，则就是我们的目的所在，我们希望敌人能在合适的位置运动扭曲到玩家的身边而不是直接根据玩家的坐标导致于太近的问题。
 ```
 FVector ABaseCharacter::GetTranslationWarpTarget()
 {
@@ -2685,11 +2685,11 @@ FVector ABaseCharacter::GetRotationWarpTarget()
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NDM4OTU3MzgsLTEzMzQ4MTAzODAsMT
-Q1NjAxODM1NSwtMTYzMDU2MzQ5NywxNDQ0NDg3NjU5LDgxNjA0
-MjYzNywxODgxOTA4NTEsLTE0OTg0MjEzMTgsNTMyOTM4NDAsLT
-ExMDgyMTcwNiwtMTMyMjU1MDUzNSwtODM1NjkyNjU5LDc4NDA4
-ODAxNSwtMTYxODAzMzY2NSwyMTkzOTE1MzcsLTExNzcwNzg3Nz
-YsMTc5MzQ2NzYsMTcxNTc5NTU3LDE0MjUyMjQ2NjksMTM5MDEx
-NDU0NF19
+eyJoaXN0b3J5IjpbOTU2NzEwNzc0LC0xMzM0ODEwMzgwLDE0NT
+YwMTgzNTUsLTE2MzA1NjM0OTcsMTQ0NDQ4NzY1OSw4MTYwNDI2
+MzcsMTg4MTkwODUxLC0xNDk4NDIxMzE4LDUzMjkzODQwLC0xMT
+A4MjE3MDYsLTEzMjI1NTA1MzUsLTgzNTY5MjY1OSw3ODQwODgw
+MTUsLTE2MTgwMzM2NjUsMjE5MzkxNTM3LC0xMTc3MDc4Nzc2LD
+E3OTM0Njc2LDE3MTU3OTU1NywxNDI1MjI0NjY5LDEzOTAxMTQ1
+NDRdfQ==
 -->
