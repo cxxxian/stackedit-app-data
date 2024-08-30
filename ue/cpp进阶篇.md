@@ -11,10 +11,11 @@ float ASlashCharacter::TakeDamage(float DamageAmount, FDamageEvent const& Damage
 	return DamageAmount;
 }
 ```
-我们建立好蓝图的界面后，希望通过cpp来控制数值
-所以新建c++类来作为蓝图的父类，
+我们建立好蓝图WBP_SlashOverlay的界面后，希望通过cpp来控制数值
+![输入图片说明](/imgs/2024-08-30/3eozFlssKP8dw0ej.png)
+所以新建c++类来作为蓝图的父类，新建类的名字为SlashOverlay
 ![输入图片说明](/imgs/2024-08-30/GQeYmjPXhzgCqKxg.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2NTY4NjM0MSwxODIyMDI4NDIyLDE3OD
-AyMDA5MjRdfQ==
+eyJoaXN0b3J5IjpbMjUzMzU5MTA2LDE4MjIwMjg0MjIsMTc4MD
+IwMDkyNF19
 -->
