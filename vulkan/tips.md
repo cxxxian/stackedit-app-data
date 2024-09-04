@@ -57,7 +57,24 @@ scss
 
 复制代码
 
-`CarNode (父节点) │ ├── BodyNode (子节点) │   └── Mesh (包含车身的几何体数据) │ ├── WheelNode1 (子节点) │   └── Mesh (包含车轮的几何体数据) │ ├── WheelNode2 (子节点) │   └── Mesh (包含车轮的几何体数据) │ ├── WheelNode3 (子节点) │   └── Mesh (包含车轮的几何体数据) │ └── WheelNode4 (子节点)     └── Mesh (包含车轮的几何体数据)`
+```
+CarNode (父节点) 
+│ 
+├── BodyNode (子节点) 
+│   └── Mesh (包含车身的几何体数据) 
+│ 
+├── WheelNode1 (子节点) 
+│   └── Mesh (包含车轮的几何体数据) 
+│ 
+├── WheelNode2 (子节点) 
+│   └── Mesh (包含车轮的几何体数据) 
+│ 
+├── WheelNode3 (子节点) 
+│   └── Mesh (包含车轮的几何体数据) 
+│ 
+└── WheelNode4 (子节点)     
+	└── Mesh (包含车轮的几何体数据)
+```
 
 -   `CarNode` 是汽车的根节点，它不包含 `Mesh`，但它有几个子节点。
 -   `BodyNode` 是 `CarNode` 的子节点，包含表示车身的 `Mesh`，即车身的几何体数据。
@@ -67,5 +84,5 @@ scss
 
 4o
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDE2MzE2MzksLTc5NzkwNDQyMl19
+eyJoaXN0b3J5IjpbLTkyOTk4NzMxNywtNzk3OTA0NDIyXX0=
 -->
