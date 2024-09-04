@@ -37,6 +37,35 @@
 ### 总结
 
 临时缓冲区和数据复制的使用是 Vulkan 中进行高效数据管理和渲染性能优化的关键步骤。通过这种方式，可以最大限度地利用 GPU 的性能，并减少 CPU 与 GPU 之间的数据传输开销。
+
+**关系：**
+
+-   每个 `Node` 可以包含一个 `Mesh`，也可以不包含任何 `Mesh`。
+-   `Mesh` 包含了一组 `Primitive`，而每个 `Primitive` 代表一个可独立绘制的几何体。
+-   一个 `Node` 可以有多个子节点（`children`），这些子节点可以有自己的 `Mesh` 或继承父节点的变换矩阵。
+
+**例子：**
+
+假设我们有一个表示汽车的3D模型，它包含以下部件：
+
+-   车身
+-   四个车轮
+
+这些部件在场景图中可以表示为以下节点结构：
+
+scss
+
+复制代码
+
+`CarNode (父节点) │ ├── BodyNode (子节点) │   └── Mesh (包含车身的几何体数据) │ ├── WheelNode1 (子节点) │   └── Mesh (包含车轮的几何体数据) │ ├── WheelNode2 (子节点) │   └── Mesh (包含车轮的几何体数据) │ ├── WheelNode3 (子节点) │   └── Mesh (包含车轮的几何体数据) │ └── WheelNode4 (子节点)     └── Mesh (包含车轮的几何体数据)`
+
+-   `CarNode` 是汽车的根节点，它不包含 `Mesh`，但它有几个子节点。
+-   `BodyNode` 是 `CarNode` 的子节点，包含表示车身的 `Mesh`，即车身的几何体数据。
+-   `WheelNode1` 到 `WheelNode4` 是表示四个车轮的子节点，每个节点都有自己的 `Mesh`，但这些 `Mesh` 可能共享相同的几何体数据，只是位置（变换矩阵）不同。
+
+当你渲染这个场景时，Vulkan会遍历场景图，从根节点开始递归地处理每个节点和它们的 `Mesh`，从而绘制出完整的汽车模型。
+
+4o
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5NzkwNDQyMl19
+eyJoaXN0b3J5IjpbLTIwMDE2MzE2MzksLTc5NzkwNDQyMl19
 -->
