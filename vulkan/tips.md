@@ -82,7 +82,8 @@ CarNode (父节点)
 
 当你渲染这个场景时，Vulkan会遍历场景图，从根节点开始递归地处理每个节点和它们的 `Mesh`，从而绘制出完整的汽车模型。
 
-4o
+v
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkyOTk4NzMxNywtNzk3OTA0NDIyXX0=
+eyJoaXN0b3J5IjpbLTMwMDE5Nzc2OCwtOTI5OTg3MzE3LC03OT
+c5MDQ0MjJdfQ==
 -->
