@@ -27,9 +27,12 @@
 
 
 ## temp
-把createVertex和createIndex方法做出形参，可以传入vertexBuffer和vertexBuffer2以及index
+1. 把createVertex和createIndex方法做出形参，可以传入vertexBuffer和vertexBuffer2以及indexBuffer。
+2. createCommandBuffer最后一段绑定管线和渲染也可以做一个函数传入？
+3. createpi
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgzMzYyNDY2OSwxNjQ3NzcxODA1LC03NT
-k4OTMwNl19
+eyJoaXN0b3J5IjpbLTE0ODY3MjUxMDQsMTY0Nzc3MTgwNSwtNz
+U5ODkzMDZdfQ==
 -->
