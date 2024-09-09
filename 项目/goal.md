@@ -25,6 +25,11 @@
     memcpy(data, vertices.data(), sizeof(vertices[0]) * vertices.size()); // 复制数据
     vkUnmapMemory(logicalDevice, stagingBufferMemory); // 解除映射
 
+
+## temp
+把createVertex和createIndex方法做出形参，可以传入vertexBuffer和vertexBuffer2以及index
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0Nzc3MTgwNSwtNzU5ODkzMDZdfQ==
+eyJoaXN0b3J5IjpbMTgzMzYyNDY2OSwxNjQ3NzcxODA1LC03NT
+k4OTMwNl19
 -->
