@@ -29,10 +29,10 @@
 ## temp
 1. 把createVertex和createIndex方法做出形参，可以传入vertexBuffer和vertexBuffer2以及indexBuffer。
 2. createCommandBuffer最后一段绑定管线和渲染也可以做一个函数传入？
-3. createpi
+3. createpipeline的函数太丑了，需要优化
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODY3MjUxMDQsMTY0Nzc3MTgwNSwtNz
+eyJoaXN0b3J5IjpbLTEwNzUzMzk1ODIsMTY0Nzc3MTgwNSwtNz
 U5ODkzMDZdfQ==
 -->
