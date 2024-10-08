@@ -3,7 +3,9 @@ render
 meshshadersystem
 
 函数vkCmdDrawMeshTasksNV在PCBModel
+
+我都是在渲染循环中完成的vkCmdDrawMeshTasksNV，例子里的draw，vkCmdDrawMeshTasksNV在外部完成的
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3MzQ5MjUyMCwxNzMyMTAxNTA3LDE2ND
-c3NzE4MDUsLTc1OTg5MzA2XX0=
+eyJoaXN0b3J5IjpbLTI3MzAzOTIxNSwtNDczNDkyNTIwLDE3Mz
+IxMDE1MDcsMTY0Nzc3MTgwNSwtNzU5ODkzMDZdfQ==
 -->
