@@ -80,8 +80,12 @@ void USlashOverlay::SetSoul(int32 Soul)
 ![输入图片说明](/imgs/2024-10-09/7zMMl7Ft7BMm4Ime.png)
 通过创建一个HUD类
 ![输入图片说明](/imgs/2024-10-09/vMO6ms1DkP4jB5pX.png)
+在该蓝图中的beginPlay将widget添加上去
+![输入图片说明](/imgs/2024-10-09/QTN7aJgFjmgxCPEl.png)
+最后在世界场景中，游戏模式的HUD将其改为我们自己的HUD
+![输入图片说明](/imgs/2024-10-09/cS1ydo3nhtFSiMWW.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE1NDM0OTg5LDE2MTQ1MzIwOSwtMzQ3Nz
-A2MTU5LDEyNDQ0Nzk5NjQsMjUzMzU5MTA2LDE4MjIwMjg0MjIs
-MTc4MDIwMDkyNF19
+eyJoaXN0b3J5IjpbLTg0MzE2NTY2NCwxNjE0NTMyMDksLTM0Nz
+cwNjE1OSwxMjQ0NDc5OTY0LDI1MzM1OTEwNiwxODIyMDI4NDIy
+LDE3ODAyMDA5MjRdfQ==
 -->
