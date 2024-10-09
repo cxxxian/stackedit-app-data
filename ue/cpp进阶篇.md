@@ -76,6 +76,7 @@ void USlashOverlay::SetSoul(int32 Soul)
 ```
 回到SlashOverlay的蓝图点击图表选择类设置，将父类修改为自己的c++类
 ![输入图片说明](/imgs/2024-10-09/sikQRNU2Y9AtH82J.png)
+### 蓝图做法
 在关卡蓝图中添加到视口即可在游戏画面中看见该widget，但是此处只针对当前关卡地图。
 ![输入图片说明](/imgs/2024-10-09/7zMMl7Ft7BMm4Ime.png)
 通过创建一个HUD类
@@ -84,8 +85,11 @@ void USlashOverlay::SetSoul(int32 Soul)
 ![输入图片说明](/imgs/2024-10-09/QTN7aJgFjmgxCPEl.png)
 最后在世界场景中，游戏模式的HUD将其改为我们自己的HUD
 ![输入图片说明](/imgs/2024-10-09/cS1ydo3nhtFSiMWW.png)
+### cpp做法
+新建一个c++的HUD类，取名为SlashHUD
+![输入图片说明](/imgs/2024-10-09/chnWzsq4LpNQh3pI.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg0MzE2NTY2NCwxNjE0NTMyMDksLTM0Nz
-cwNjE1OSwxMjQ0NDc5OTY0LDI1MzM1OTEwNiwxODIyMDI4NDIy
-LDE3ODAyMDA5MjRdfQ==
+eyJoaXN0b3J5IjpbLTc2ODAwOTA4NCwtODQzMTY1NjY0LDE2MT
+Q1MzIwOSwtMzQ3NzA2MTU5LDEyNDQ0Nzk5NjQsMjUzMzU5MTA2
+LDE4MjIwMjg0MjIsMTc4MDIwMDkyNF19
 -->
