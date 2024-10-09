@@ -97,8 +97,18 @@ private:
 将原本蓝图的HUD修改为以此为父类
 即可以在细节面板中看到此设置，将其改为我们的蓝图widget
 ![输入图片说明](/imgs/2024-10-09/C3PwuQviTc5CNScN.png)
+我们希望通过cpp来将widget添加到视口而不是用蓝图
+在SlashHUD.h，继承BeginPlay函数
+```
+protected:
+	virtual void BeginPlay() override;
+
+private:
+	UPROPERTY(EditDefaultsOnly, Category = Slash)
+	TSubclassOf<class USlashOverlay> SlashOverlayClass;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzNDkxOTAwNywtODQzMTY1NjY0LDE2MT
-Q1MzIwOSwtMzQ3NzA2MTU5LDEyNDQ0Nzk5NjQsMjUzMzU5MTA2
-LDE4MjIwMjg0MjIsMTc4MDIwMDkyNF19
+eyJoaXN0b3J5IjpbLTE4MjkzNTMzNDAsMTUzNDkxOTAwNywtOD
+QzMTY1NjY0LDE2MTQ1MzIwOSwtMzQ3NzA2MTU5LDEyNDQ0Nzk5
+NjQsMjUzMzU5MTA2LDE4MjIwMjg0MjIsMTc4MDIwMDkyNF19
 -->
