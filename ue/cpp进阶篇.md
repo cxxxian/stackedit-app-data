@@ -74,7 +74,9 @@ void USlashOverlay::SetSoul(int32 Soul)
 }
 
 ```
+回到SlashOverlay的蓝图点击图表选择类设置，将父类修改为自己的c++类
+![输入图片说明](/imgs/2024-10-09/sikQRNU2Y9AtH82J.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDIyNDk5MTMsMjUzMzU5MTA2LDE4Mj
-IwMjg0MjIsMTc4MDIwMDkyNF19
+eyJoaXN0b3J5IjpbMTI0NDQ3OTk2NCwyNTMzNTkxMDYsMTgyMj
+AyODQyMiwxNzgwMjAwOTI0XX0=
 -->
