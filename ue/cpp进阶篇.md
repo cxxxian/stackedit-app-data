@@ -78,9 +78,10 @@ void USlashOverlay::SetSoul(int32 Soul)
 ![输入图片说明](/imgs/2024-10-09/sikQRNU2Y9AtH82J.png)
 在关卡蓝图中添加到视口即可在游戏画面中看见该widget，但是此处只针对当前关卡地图。
 ![输入图片说明](/imgs/2024-10-09/7zMMl7Ft7BMm4Ime.png)
+通过创建一个HUD类
 ![输入图片说明](/imgs/2024-10-09/vMO6ms1DkP4jB5pX.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYxNDUzMjA5LC0zNDc3MDYxNTksMTI0ND
-Q3OTk2NCwyNTMzNTkxMDYsMTgyMjAyODQyMiwxNzgwMjAwOTI0
-XX0=
+eyJoaXN0b3J5IjpbMjE1NDM0OTg5LDE2MTQ1MzIwOSwtMzQ3Nz
+A2MTU5LDEyNDQ0Nzk5NjQsMjUzMzU5MTA2LDE4MjIwMjg0MjIs
+MTc4MDIwMDkyNF19
 -->
