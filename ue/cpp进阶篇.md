@@ -76,9 +76,9 @@ void USlashOverlay::SetSoul(int32 Soul)
 ```
 回到SlashOverlay的蓝图点击图表选择类设置，将父类修改为自己的c++类
 ![输入图片说明](/imgs/2024-10-09/sikQRNU2Y9AtH82J.png)
-在关卡蓝图中添加到视口即可在游戏画面中看见该widget
+在关卡蓝图中添加到视口即可在游戏画面中看见该widget，
 ![输入图片说明](/imgs/2024-10-09/7zMMl7Ft7BMm4Ime.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwOTg1NDcxNSwxMjQ0NDc5OTY0LDI1Mz
-M1OTEwNiwxODIyMDI4NDIyLDE3ODAyMDA5MjRdfQ==
+eyJoaXN0b3J5IjpbLTEwMDY1NzM3MTcsMTI0NDQ3OTk2NCwyNT
+MzNTkxMDYsMTgyMjAyODQyMiwxNzgwMjAwOTI0XX0=
 -->
