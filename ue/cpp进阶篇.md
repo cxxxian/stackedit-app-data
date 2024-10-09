@@ -88,14 +88,17 @@ void USlashOverlay::SetSoul(int32 Soul)
 ### cpp做法
 新建一个c++的HUD类，取名为SlashHUD
 ![输入图片说明](/imgs/2024-10-09/chnWzsq4LpNQh3pI.png)
-在SlashHUD，声明一个SlashOverlayClass，TSubclassOf用来限制class USlashOverlay
+在SlashHUD，声明一个SlashOverlayClass，TSubclassOf用来限制class USlashOverlay类型
 ```
 private:
 	UPROPERTY(EditDefaultsOnly, Category = Slash)
 	TSubclassOf<class USlashOverlay> SlashOverlayClass;
 ```
+将原本蓝图的HUD修改为以此为父类
+即
+![输入图片说明](/imgs/2024-10-09/C3PwuQviTc5CNScN.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODk4MzAwOTYsLTg0MzE2NTY2NCwxNj
-E0NTMyMDksLTM0NzcwNjE1OSwxMjQ0NDc5OTY0LDI1MzM1OTEw
-NiwxODIyMDI4NDIyLDE3ODAyMDA5MjRdfQ==
+eyJoaXN0b3J5IjpbLTMyOTI3ODc5NywtODQzMTY1NjY0LDE2MT
+Q1MzIwOSwtMzQ3NzA2MTU5LDEyNDQ0Nzk5NjQsMjUzMzU5MTA2
+LDE4MjIwMjg0MjIsMTc4MDIwMDkyNF19
 -->
