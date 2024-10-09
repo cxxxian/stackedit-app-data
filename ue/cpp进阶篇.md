@@ -95,10 +95,10 @@ private:
 	TSubclassOf<class USlashOverlay> SlashOverlayClass;
 ```
 将原本蓝图的HUD修改为以此为父类
-即
+即可以在细节面板中看到此设置，将其改为我们的蓝图widget
 ![输入图片说明](/imgs/2024-10-09/C3PwuQviTc5CNScN.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyOTI3ODc5NywtODQzMTY1NjY0LDE2MT
+eyJoaXN0b3J5IjpbMTUzNDkxOTAwNywtODQzMTY1NjY0LDE2MT
 Q1MzIwOSwtMzQ3NzA2MTU5LDEyNDQ0Nzk5NjQsMjUzMzU5MTA2
 LDE4MjIwMjg0MjIsMTc4MDIwMDkyNF19
 -->
