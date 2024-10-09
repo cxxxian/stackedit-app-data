@@ -107,8 +107,18 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = Slash)
 	TSubclassOf<class USlashOverlay> SlashOverlayClass;
 ```
+在SlashHUD.cpp实现，
+```
+#include "HUD/SlashOverlay.h"
+
+void ASlashHUD::BeginPlay()
+{
+	Super::BeginPlay();
+}
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjkzNTMzNDAsMTUzNDkxOTAwNywtOD
-QzMTY1NjY0LDE2MTQ1MzIwOSwtMzQ3NzA2MTU5LDEyNDQ0Nzk5
-NjQsMjUzMzU5MTA2LDE4MjIwMjg0MjIsMTc4MDIwMDkyNF19
+eyJoaXN0b3J5IjpbMTU5NzkzNDU3MiwxNTM0OTE5MDA3LC04ND
+MxNjU2NjQsMTYxNDUzMjA5LC0zNDc3MDYxNTksMTI0NDQ3OTk2
+NCwyNTMzNTkxMDYsMTgyMjAyODQyMiwxNzgwMjAwOTI0XX0=
 -->
