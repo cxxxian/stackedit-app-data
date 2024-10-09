@@ -36,7 +36,45 @@ private:
 	UPROPERTY(meta = (BindWidget))
 	class UTextBlock* SoulText;
 ```
+在SlashOverlay.cpp中完善方法，将百分比和数字赋值
+```
+#include "Components/ProgressBar.h"
+#include "Components/TextBlock.h"
+
+void USlashOverlay::SetHealthBarPercent(float Percent)
+{
+	if (HealthProgressBar) {
+		HealthProgressBar->SetPercent(Percent);
+	}
+}
+
+void USlashOverlay::SetStaminaBarPercent(float Percent)
+{
+	if (StaminaProgressBar) {
+		StaminaProgressBar->SetPercent(Percent);
+	}
+}
+
+void USlashOverlay::SetGold(int32 Gold)
+{
+	if (GoldText) {
+		const FString String = FString::Printf(TEXT("%d"), Gold);//转string
+		const FText Text = FText::FromString(String);//转text
+		GoldText->SetText(Text);
+	}
+}
+
+void USlashOverlay::SetSoul(int32 Soul)
+{
+	if (SoulText) {
+		const FString String = FString::Printf(TEXT("%d"), Soul);
+		const FText Text = FText::FromString(String);
+		SoulText->SetText(Text);
+	}
+}
+
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODUxMjU1NzU2LDI1MzM1OTEwNiwxODIyMD
-I4NDIyLDE3ODAyMDA5MjRdfQ==
+eyJoaXN0b3J5IjpbLTE1NDIyNDk5MTMsMjUzMzU5MTA2LDE4Mj
+IwMjg0MjIsMTc4MDIwMDkyNF19
 -->
