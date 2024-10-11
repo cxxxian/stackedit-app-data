@@ -18,55 +18,20 @@ uniform float u_time;     // 时间（加载后的秒数）
 ## gl_FragCoord
 
 就像 GLSL 有个默认输出值 `vec4 gl_FragColor` 一样，它也有一个默认输入值（ `vec4 gl_FragCoord` ）。`gl_FragCoord`存储了活动线程正在处理的**像素**或**屏幕碎片**的坐标。有了它我们就知道了屏幕上的哪一个线程正在运转。为什么我们不叫 `gl_FragCoord` uniform （统一值）呢？因为每个像素的坐标都不同，所以我们把它叫做 **varying**（变化值）。
-
+```
 #ifdef GL_ES
 precision mediump float;
 #endif
-
-4
-
-​
-
-5
-
 uniform vec2 u_resolution;
-
-6
-
 uniform vec2 u_mouse;
-
-7
-
 uniform float u_time;
-
-8
-
-​
-
-9
-
 void main() {
-
-10
-
     vec2 st = gl_FragCoord.xy/u_resolution;
-
-11
-
-    gl_FragColor = vec4(st.x,st.y,0.0,1.0);
-
-12
-
+	gl_FragColor = vec4(st.x,st.y,0.0,1.0);
 }
-
-13
-
-​
-
-△
-
+```
 上述代码中我们用 `gl_FragCoord.xy` 除以 `u_resolution`，对坐标进行了**规范化**。这样做是为了使所有的值落在 `0.0` 到 `1.0` 之间，这样就可以轻松把 X 或 Y 的值映射到红色或者绿色通道。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjgxNTEwODA1LDMxNDA3MDY5NiwtMjA4OD
-c0NjYxMl19
+eyJoaXN0b3J5IjpbMTI0MDgyODgxMiwzMTQwNzA2OTYsLTIwOD
+g3NDY2MTJdfQ==
 -->
