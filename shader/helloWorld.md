@@ -21,6 +21,20 @@ void main() {
     gl_FragColor = vec4(1,0,0,1);   // 出错
 }
 ```
+## try
+-   尝试另外写个函数，返回某个颜色，然后在 `main()` 里面使用这个函数。给个提示，这个函数应该长这样：
+
+```glsl
+vec4 red(){
+    return vec4(1.0,0.0,0.0,1.0);
+}
+```
+
+-   有很多种构造 `vec4` 类型的方式，试试看其他方式。下面就是其中一种方式：
+
+```glsl
+vec4 color = vec4(vec3(1.0,0.0,1.0),1.0);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0NTIzMDY4NV19
+eyJoaXN0b3J5IjpbLTIxMTA1Mzc2MzNdfQ==
 -->
