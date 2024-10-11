@@ -31,7 +31,7 @@ void main() {
 }
 ```
 ![输入图片说明](/imgs/2024-10-11/L4bspxPAdJkOpAQb.png)
-#
+### 当使用 `gl_FragCoord.xy` 时，表示获取一个 `vec2` 类型的向量，包含 `x` 和 `y` 两个分量。这通常用于需要二维坐标的场景，比如归一化坐标计算、纹理坐标、颜色渐变等
 ---
 - 在代码中，渐变是通过将 `st.x` 和 `st.y` 分别用作红色（`r`）和绿色（`g`）分量来实现的：
         
@@ -49,6 +49,6 @@ void main() {
 ---
 上述代码中我们用 `gl_FragCoord.xy` 除以 `u_resolution`，对坐标进行了**规范化**。这样做是为了使所有的值落在 `0.0` 到 `1.0` 之间，这样就可以轻松把 X 或 Y 的值映射到红色或者绿色通道。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE1MTQ0ODM5LDEyNDA4Mjg4MTIsMzE0MD
-cwNjk2LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbMTc0ODA1NjI0OCwxMjQwODI4ODEyLDMxND
+A3MDY5NiwtMjA4ODc0NjYxMl19
 -->
