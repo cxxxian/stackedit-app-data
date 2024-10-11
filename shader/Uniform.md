@@ -30,8 +30,9 @@ void main() {
 	gl_FragColor = vec4(st.x,st.y,0.0,1.0);
 }
 ```
+
 上述代码中我们用 `gl_FragCoord.xy` 除以 `u_resolution`，对坐标进行了**规范化**。这样做是为了使所有的值落在 `0.0` 到 `1.0` 之间，这样就可以轻松把 X 或 Y 的值映射到红色或者绿色通道。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0MDgyODgxMiwzMTQwNzA2OTYsLTIwOD
-g3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbNjkyMTY0OTU4LDEyNDA4Mjg4MTIsMzE0MD
+cwNjk2LC0yMDg4NzQ2NjEyXX0=
 -->
