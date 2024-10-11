@@ -30,9 +30,24 @@ void main() {
 	gl_FragColor = vec4(st.x,st.y,0.0,1.0);
 }
 ```
-
+![输入图片说明](/imgs/2024-10-11/L4bspxPAdJkOpAQb.png)
+---
+- 在代码中，渐变是通过将 `st.x` 和 `st.y` 分别用作红色（`r`）和绿色（`g`）分量来实现的：
+        
+        `gl_FragColor = vec4(st.x, st.y, 0.0, 1.0);`
+        
+    -   这意味着：
+        -   当片元靠近屏幕的左边（`x` 较小）时，红色分量 `st.x` 接近于 0，因此红色较弱。
+        -   当片元靠近屏幕的右边（`x` 较大）时，红色分量 `st.x` 接近于 1，因此红色较强。
+        -   同样，当片元靠近顶部（`y` 较大）时，绿色分量 `st.y` 接近于 1，导致绿色较强，而靠近底部时，绿色分量接近于 0，导致绿色较弱。
+-   **渐变效果的示意**:
+    
+    -   当 `x` 从 0 变化到 1 时，颜色从左到右逐渐变成红色。
+    -   当 `y` 从 0 变化到 1 时，颜色从底部到顶部逐渐变成绿色。
+    -   因此，结合 `x` 和 `y` 的变化，形成了一个从左下角（黑色）到右上角（亮绿色）的渐变效果。
+---
 上述代码中我们用 `gl_FragCoord.xy` 除以 `u_resolution`，对坐标进行了**规范化**。这样做是为了使所有的值落在 `0.0` 到 `1.0` 之间，这样就可以轻松把 X 或 Y 的值映射到红色或者绿色通道。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjkyMTY0OTU4LDEyNDA4Mjg4MTIsMzE0MD
-cwNjk2LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTQ0NTE2MjM5NiwxMjQwODI4ODEyLDMxND
+A3MDY5NiwtMjA4ODc0NjYxMl19
 -->
