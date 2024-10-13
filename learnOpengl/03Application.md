@@ -77,8 +77,29 @@ ResizeCallback mResizeCallback{ nullptr };
 ```
 void setResizeCallback(ResizeCallback callback) { mResizeCallback = callback; }
 ```
-4。
+4. 声明一个static的静态函数，用于相应glfw窗体变化
+此处使用static即可以做到不用类对象即可调用
+
+```
+
+	static void frameBufferSizeCallback(GLFWwindow* window, int width, int height);
+```
+在application.cpp实现如下
+```
+void Application::frameBufferSizeCallback(GLFWwindow* window, int width, int height)
+{
+	std::cout << "Resize" << std::endl;
+	if (Application::getInstance()->mResizeCallback != nullptr) {
+		Application::getInstance()->mResizeCallback(width, height);
+	}
+}
+```
+5. 最后在application中的init将静态函数设置到glfw的监听Resize监听当中
+```
+glfwSetFramebufferSizeCallback(mWindow, frameBufferSizeCallback);
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4NTczNzE2MywtNDg5OTQzODM4LDEzNT
+eyJoaXN0b3J5IjpbLTQ0Mjk5NTMxNywtNDg5OTQzODM4LDEzNT
 EwNzM4ODUsLTEyNjE3MzE2NjIsMTMxMTEzMjI3N119
 -->
