@@ -55,8 +55,10 @@ void Application::destroy()
 	glfwTerminate();
 }
 ```
-
+# 函数指针
+![输入图片说明](/imgs/2024-10-13/CNaydYLtOfCeBkqe.png)
+此例的My'F'u
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ1NDQ2NDY5OCwtMTI2MTczMTY2MiwxMz
-ExMTMyMjc3XX0=
+eyJoaXN0b3J5IjpbNjA0MjQ5NjE1LC0xMjYxNzMxNjYyLDEzMT
+ExMzIyNzddfQ==
 -->
