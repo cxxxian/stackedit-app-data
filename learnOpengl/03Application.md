@@ -69,11 +69,16 @@ void Application::destroy()
 ```
 using ResizeCallback = void(*)(int width, int height);
 ```
-2. 在声明一个ResizeCallback的成员变量
+2. 在private中声明一个ResizeCallback的成员变量
 ```
 ResizeCallback mResizeCallback{ nullptr };
 ```
+3. 在public中，声明一个setResizeCallback，设置窗体变化相应回调函数。这个用来在main中接受自己做的函数
+```
+void setResizeCallback(ResizeCallback callback) { mResizeCallback = callback; }
+```
+4。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODU3MjY5MTMwLC00ODk5NDM4MzgsMTM1MT
-A3Mzg4NSwtMTI2MTczMTY2MiwxMzExMTMyMjc3XX0=
+eyJoaXN0b3J5IjpbMTM4NTczNzE2MywtNDg5OTQzODM4LDEzNT
+EwNzM4ODUsLTEyNjE3MzE2NjIsMTMxMTEzMjI3N119
 -->
