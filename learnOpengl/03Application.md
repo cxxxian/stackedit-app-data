@@ -62,7 +62,8 @@ void Application::destroy()
 为了外界不破坏Application类的情况下，通过函数指针去将自己在main函数设计的函数传给Application
 ![输入图片说明](/imgs/2024-10-13/G7ETkU4hUHeio9aM.png)
 ![输入图片说明](/imgs/2024-10-13/VIUxM347q0kIqYQN.png)
-### 如何做一个回调函数
+## 如何做一个回调函数
+### 窗口变换例子
 ![输入图片说明](/imgs/2024-10-13/ntHIG4xCIvTcI34R.png)
 在application.h中
 1. 声明一个指针函数
@@ -109,8 +110,18 @@ void OnResize(int width, int height) {
 ```
 app->setResizeCallback(OnResize);
 ```
-
+### 键盘消息例子（调整了顺序）
+![输入图片说明](/imgs/2024-10-13/XWUMXkHwgsSR9YPc.png)
+1.
+```
+static void KeyCallBack(GLFWwindow* window, int key, int scancode, int action, int mods);
+```
+2. 键盘响应
+```
+glfwSetKeyCallback(mWindow, KeyCallBack); 
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5OTM5NjEwNCwtNDg5OTQzODM4LDEzNT
-EwNzM4ODUsLTEyNjE3MzE2NjIsMTMxMTEzMjI3N119
+eyJoaXN0b3J5IjpbMTk3NjcyNjExLDE2OTkzOTYxMDQsLTQ4OT
+k0MzgzOCwxMzUxMDczODg1LC0xMjYxNzMxNjYyLDEzMTExMzIy
+NzddfQ==
 -->
