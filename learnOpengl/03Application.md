@@ -64,8 +64,16 @@ void Application::destroy()
 ![输入图片说明](/imgs/2024-10-13/VIUxM347q0kIqYQN.png)
 ### 如何做一个回调函数
 ![输入图片说明](/imgs/2024-10-13/ntHIG4xCIvTcI34R.png)
-1. 
+在application.h中
+1. 声明一个指针函数
+```
+using ResizeCallback = void(*)(int width, int height);
+```
+2. 在声明一个ResizeCallback的成员变量
+```
+ResizeCallback mResizeCallback{ nullptr };
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMDk1NTY0MiwtNDg5OTQzODM4LDEzNT
-EwNzM4ODUsLTEyNjE3MzE2NjIsMTMxMTEzMjI3N119
+eyJoaXN0b3J5IjpbODU3MjY5MTMwLC00ODk5NDM4MzgsMTM1MT
+A3Mzg4NSwtMTI2MTczMTY2MiwxMzExMTMyMjc3XX0=
 -->
