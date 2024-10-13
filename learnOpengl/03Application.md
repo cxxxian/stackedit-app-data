@@ -106,12 +106,12 @@ void OnResize(int width, int height) {
     std::cout << "OnResize" << std::endl;
 }
 ```
-在main函数中
+在main函数中使用
 ```
 app->setResizeCallback(OnResize);
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ2Nzc3ODg0LC00ODk5NDM4MzgsMTM1MT
-A3Mzg4NSwtMTI2MTczMTY2MiwxMzExMTMyMjc3XX0=
+eyJoaXN0b3J5IjpbMTYzNjk3OTM2NSwtNDg5OTQzODM4LDEzNT
+EwNzM4ODUsLTEyNjE3MzE2NjIsMTMxMTEzMjI3N119
 -->
