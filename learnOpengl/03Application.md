@@ -62,7 +62,10 @@ void Application::destroy()
 为了外界不破坏Application类的情况下，通过函数指针去将自己在main函数设计的函数传给Application
 ![输入图片说明](/imgs/2024-10-13/G7ETkU4hUHeio9aM.png)
 ![输入图片说明](/imgs/2024-10-13/VIUxM347q0kIqYQN.png)
+### 如何做一个回调函数
+![输入图片说明](/imgs/2024-10-13/ntHIG4xCIvTcI34R.png)
+1. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4OTk0MzgzOCwxMzUxMDczODg1LC0xMj
-YxNzMxNjYyLDEzMTExMzIyNzddfQ==
+eyJoaXN0b3J5IjpbLTEwMDk1NTY0MiwtNDg5OTQzODM4LDEzNT
+EwNzM4ODUsLTEyNjE3MzE2NjIsMTMxMTEzMjI3N119
 -->
