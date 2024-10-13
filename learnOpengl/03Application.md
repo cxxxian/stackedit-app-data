@@ -130,9 +130,10 @@ KeyBoardCallback mKeyBoardCallback{ nullptr };
 ```
 5.
 ```
+void setKeyBoardCallback(KeyBoardCallback callback) { mKeyBoardCallback = callback; }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyOTgxMTU5OCwxNjk5Mzk2MTA0LC00OD
-k5NDM4MzgsMTM1MTA3Mzg4NSwtMTI2MTczMTY2MiwxMzExMTMy
-Mjc3XX0=
+eyJoaXN0b3J5IjpbMzg2NzEwOTAsMTY5OTM5NjEwNCwtNDg5OT
+QzODM4LDEzNTEwNzM4ODUsLTEyNjE3MzE2NjIsMTMxMTEzMjI3
+N119
 -->
