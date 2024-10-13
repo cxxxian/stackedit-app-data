@@ -73,7 +73,7 @@ using ResizeCallback = void(*)(int width, int height);
 ```
 ResizeCallback mResizeCallback{ nullptr };
 ```
-3. 在public中，声明一个setResizeCallback，设置窗体变化相应回调函数。这个用来在main中接受自己做的函数
+3. 在public中，声明一个setResizeCallback，设置窗体变化相应回调函数。这个用来在main中接受自己做的函数！！！
 ```
 void setResizeCallback(ResizeCallback callback) { mResizeCallback = callback; }
 ```
@@ -81,7 +81,6 @@ void setResizeCallback(ResizeCallback callback) { mResizeCallback = callback; }
 此处使用static即可以做到不用类对象即可调用
 
 ```
-
 	static void frameBufferSizeCallback(GLFWwindow* window, int width, int height);
 ```
 在application.cpp实现如下
@@ -112,6 +111,6 @@ app->setResizeCallback(OnResize);
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYzNjk3OTM2NSwtNDg5OTQzODM4LDEzNT
+eyJoaXN0b3J5IjpbMTY5OTM5NjEwNCwtNDg5OTQzODM4LDEzNT
 EwNzM4ODUsLTEyNjE3MzE2NjIsMTMxMTEzMjI3N119
 -->
