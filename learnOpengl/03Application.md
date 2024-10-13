@@ -57,8 +57,8 @@ void Application::destroy()
 ```
 # 函数指针
 ![输入图片说明](/imgs/2024-10-13/CNaydYLtOfCeBkqe.png)
-此例的My'F'u
+此例的MyFunc指的是两个形参是int类型的，返回类型也是int类型的
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjA0MjQ5NjE1LC0xMjYxNzMxNjYyLDEzMT
-ExMzIyNzddfQ==
+eyJoaXN0b3J5IjpbMTM1MTA3Mzg4NSwtMTI2MTczMTY2MiwxMz
+ExMTMyMjc3XX0=
 -->
