@@ -112,7 +112,7 @@ app->setResizeCallback(OnResize);
 ```
 ### 键盘消息例子（调整了顺序）
 ![输入图片说明](/imgs/2024-10-13/XWUMXkHwgsSR9YPc.png)
-1.
+1. static静态函数
 ```
 static void KeyCallBack(GLFWwindow* window, int key, int scancode, int action, int mods);
 ```
@@ -120,8 +120,19 @@ static void KeyCallBack(GLFWwindow* window, int key, int scancode, int action, i
 ```
 glfwSetKeyCallback(mWindow, KeyCallBack); 
 ```
+3.
+```
+using KeyBoardCallback = void(*)(int key, int action, int mods);
+```
+4. 
+```
+KeyBoardCallback mKeyBoardCallback{ nullptr };
+```
+5.
+```
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk3NjcyNjExLDE2OTkzOTYxMDQsLTQ4OT
-k0MzgzOCwxMzUxMDczODg1LC0xMjYxNzMxNjYyLDEzMTExMzIy
-NzddfQ==
+eyJoaXN0b3J5IjpbMTgyOTgxMTU5OCwxNjk5Mzk2MTA0LC00OD
+k5NDM4MzgsMTM1MTA3Mzg4NSwtMTI2MTczMTY2MiwxMzExMTMy
+Mjc3XX0=
 -->
