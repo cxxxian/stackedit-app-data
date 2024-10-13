@@ -58,8 +58,10 @@ void Application::destroy()
 # 函数指针
 ![输入图片说明](/imgs/2024-10-13/CNaydYLtOfCeBkqe.png)
 此例的MyFunc指的是两个形参是int类型的，返回类型也是int类型的
+## 此处目的
+为了外界不破坏Application类的情况下，通过函数指针去将自己在main函数设计的函数传给Application
 ![输入图片说明](/imgs/2024-10-13/G7ETkU4hUHeio9aM.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4NTY2MTAwMSwxMzUxMDczODg1LC0xMj
-YxNzMxNjYyLDEzMTExMzIyNzddfQ==
+eyJoaXN0b3J5IjpbNzQ1OTgxMDg3LDEzNTEwNzM4ODUsLTEyNj
+E3MzE2NjIsMTMxMTEzMjI3N119
 -->
