@@ -94,12 +94,24 @@ void Application::frameBufferSizeCallback(GLFWwindow* window, int width, int hei
 	}
 }
 ```
-5. 最后在application中的init将静态函数设置到glfw的监听Resize监听当中
+5. 最后在application中的init，将静态函数设置到glfw的监听Resize监听当中
 ```
 glfwSetFramebufferSizeCallback(mWindow, frameBufferSizeCallback);
 ```
+6. 所以最后在main.cpp中，
+制作自己的OnResize函数，会发现此处不需要调用window变量
+```
+void OnResize(int width, int height) {
+    GL_CALL(glViewport(0, 0, width, height));
+    std::cout << "OnResize" << std::endl;
+}
+```
+在main函数中
+```
+app->setResizeCallback(OnResize);
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0Mjk5NTMxNywtNDg5OTQzODM4LDEzNT
-EwNzM4ODUsLTEyNjE3MzE2NjIsMTMxMTEzMjI3N119
+eyJoaXN0b3J5IjpbNzQ2Nzc3ODg0LC00ODk5NDM4MzgsMTM1MT
+A3Mzg4NSwtMTI2MTczMTY2MiwxMzExMTMyMjc3XX0=
 -->
