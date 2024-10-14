@@ -7,8 +7,13 @@ GLuint vbo = 0;
 GL_CALL(glGenBuffers(1, &vbo));
 此时vbo值为1，
 GL_CALL(glDeleteBuffers(1, &vbo));
-销毁之后vbo就bu
+销毁之后vbo就不是1了，
+GLuint vboArr[] = { 0,0,0 };
+GL_CALL(glGenBuffers(3, vboArr));
+此时vboArr分别是1，2，3
+因为上面1号vbo被销毁了所以这边会重新生成一个1号
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjM5MjA1NDE4LC0xMTkxNDQ3ODk3LC0xNT
-M2MzY2OTU0LDY2OTQzMTIxOSwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTU5MzM0ODg0OSwtMTE5MTQ0Nzg5NywtMT
+UzNjM2Njk1NCw2Njk0MzEyMTksLTIwODg3NDY2MTJdfQ==
 -->
