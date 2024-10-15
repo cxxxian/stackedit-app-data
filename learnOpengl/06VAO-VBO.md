@@ -37,12 +37,16 @@ void prepare() {
 }
 ```
 # 多属性
+两种方法
+### 每种属性分别存储vbo
 ![输入图片说明](/imgs/2024-10-15/lwo4fHrIqAZABURB.png)
+### 所有属性存储为一个vbo
+![输入图片说明](/imgs/2024-10-15/oDOMkK7aLkssQaCZ.png)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3MTczMjc4OSwtMTExMDk5MzQ3NSwtMT
-A3NTU3NTAyOSwyNzMyNDg2NDAsMTkyOTkyNjk1NCw4Mzc5MzEy
-OSwtNTkzMzQ4ODQ5LC0xMTkxNDQ3ODk3LC0xNTM2MzY2OTU0LD
-Y2OTQzMTIxOSwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbNTc1NzkwNjUsLTExMTA5OTM0NzUsLTEwNz
+U1NzUwMjksMjczMjQ4NjQwLDE5Mjk5MjY5NTQsODM3OTMxMjks
+LTU5MzM0ODg0OSwtMTE5MTQ0Nzg5NywtMTUzNjM2Njk1NCw2Nj
+k0MzEyMTksLTIwODg3NDY2MTJdfQ==
 -->
