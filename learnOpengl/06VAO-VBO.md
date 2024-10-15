@@ -56,11 +56,13 @@ void prepare() {
 ## VAO总结描述
 ### 此处的信息可以分开放到不同的VBO也可以是同一个，只是一个例子
 ![输入图片说明](/imgs/2024-10-15/MGtlV336Fb4m1ZrD.png)
+![输入图片说明](/imgs/2024-10-15/etymHzpqTmBzwsxg.png)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NTgxNzMwODgsNTc1NzkwNjUsLTExMT
-A5OTM0NzUsLTEwNzU1NzUwMjksMjczMjQ4NjQwLDE5Mjk5MjY5
-NTQsODM3OTMxMjksLTU5MzM0ODg0OSwtMTE5MTQ0Nzg5NywtMT
-UzNjM2Njk1NCw2Njk0MzEyMTksLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbLTE5NzM0MzI0NiwtMTk1ODE3MzA4OCw1Nz
+U3OTA2NSwtMTExMDk5MzQ3NSwtMTA3NTU3NTAyOSwyNzMyNDg2
+NDAsMTkyOTkyNjk1NCw4Mzc5MzEyOSwtNTkzMzQ4ODQ5LC0xMT
+kxNDQ3ODk3LC0xNTM2MzY2OTU0LDY2OTQzMTIxOSwtMjA4ODc0
+NjYxMl19
 -->
