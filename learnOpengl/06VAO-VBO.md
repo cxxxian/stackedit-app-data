@@ -57,14 +57,14 @@ void prepare() {
 ### 此处的信息可以分开放到不同的VBO也可以是同一个，只是一个例子
 ![输入图片说明](/imgs/2024-10-15/MGtlV336Fb4m1ZrD.png)
 ![输入图片说明](/imgs/2024-10-15/etymHzpqTmBzwsxg.png)
-
+VAO中有很多个索引，index用来设置描述第几个属性
 ![输入图片说明](/imgs/2024-10-15/fQVGGw1Fx359HKWc.png)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTczOTg5NjEsLTE5NTgxNzMwODgsNT
-c1NzkwNjUsLTExMTA5OTM0NzUsLTEwNzU1NzUwMjksMjczMjQ4
-NjQwLDE5Mjk5MjY5NTQsODM3OTMxMjksLTU5MzM0ODg0OSwtMT
-E5MTQ0Nzg5NywtMTUzNjM2Njk1NCw2Njk0MzEyMTksLTIwODg3
-NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbLTY2MDA0NTI1MywtMTk1ODE3MzA4OCw1Nz
+U3OTA2NSwtMTExMDk5MzQ3NSwtMTA3NTU3NTAyOSwyNzMyNDg2
+NDAsMTkyOTkyNjk1NCw4Mzc5MzEyOSwtNTkzMzQ4ODQ5LC0xMT
+kxNDQ3ODk3LC0xNTM2MzY2OTU0LDY2OTQzMTIxOSwtMjA4ODc0
+NjYxMl19
 -->
