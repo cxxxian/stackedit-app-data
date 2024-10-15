@@ -15,6 +15,7 @@ GL_CALL(glGenBuffers(3, vboArr));
 因为上面1号vbo被销毁了所以这边会重新生成一个1号
 
 ![输入图片说明](/imgs/2024-10-15/FqvpJkOWIkLIPhhv.png)
+#  单属性
 ![输入图片说明](/imgs/2024-10-15/VL3rESofMkzpPw2S.png)
 ```
 void prepare() {
@@ -35,11 +36,13 @@ void prepare() {
     GL_CALL(glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW));
 }
 ```
+# 多属性
+![输入图片说明](/imgs/2024-10-15/lwo4fHrIqAZABURB.png)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNzU1NzUwMjksMjczMjQ4NjQwLDE5Mj
-k5MjY5NTQsODM3OTMxMjksLTU5MzM0ODg0OSwtMTE5MTQ0Nzg5
-NywtMTUzNjM2Njk1NCw2Njk0MzEyMTksLTIwODg3NDY2MTJdfQ
-==
+eyJoaXN0b3J5IjpbLTExMTA5OTM0NzUsLTEwNzU1NzUwMjksMj
+czMjQ4NjQwLDE5Mjk5MjY5NTQsODM3OTMxMjksLTU5MzM0ODg0
+OSwtMTE5MTQ0Nzg5NywtMTUzNjM2Njk1NCw2Njk0MzEyMTksLT
+IwODg3NDY2MTJdfQ==
 -->
