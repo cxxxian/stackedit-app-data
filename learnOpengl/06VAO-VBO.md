@@ -49,15 +49,15 @@ void prepare() {
 ![输入图片说明](/imgs/2024-10-15/CEMif7RVfrOkMZCt.png)
 多个VBO需要多增加一个i用来描述存储在几号VBO
 ![输入图片说明](/imgs/2024-10-15/af8jRJMZUcXGMppq.png)
-下面两张图：位置数据可以正常读取，但是颜色信息需要知道偏移量，即前面有三个位置信息的float。
+下面两张图：位置数据可以正常读取，但是颜色信息需要知道偏移量，即前面需要偏移三个位置信息的float。
 ![输入图片说明](/imgs/2024-10-15/A4sSvzt46Ds1vZPW.png)
 
 ![输入图片说明](/imgs/2024-10-15/zb0yhgD4Qte5js2m.png)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwNjQ2MTAyMiw1NzU3OTA2NSwtMTExMD
-k5MzQ3NSwtMTA3NTU3NTAyOSwyNzMyNDg2NDAsMTkyOTkyNjk1
-NCw4Mzc5MzEyOSwtNTkzMzQ4ODQ5LC0xMTkxNDQ3ODk3LC0xNT
-M2MzY2OTU0LDY2OTQzMTIxOSwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbNDcwMTQwMjc4LDU3NTc5MDY1LC0xMTEwOT
+kzNDc1LC0xMDc1NTc1MDI5LDI3MzI0ODY0MCwxOTI5OTI2OTU0
+LDgzNzkzMTI5LC01OTMzNDg4NDksLTExOTE0NDc4OTcsLTE1Mz
+YzNjY5NTQsNjY5NDMxMjE5LC0yMDg4NzQ2NjEyXX0=
 -->
