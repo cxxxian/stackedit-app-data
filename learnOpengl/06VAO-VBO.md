@@ -6,7 +6,7 @@
 GLuint vbo = 0;
 此时vbo是0，
 GL_CALL(glGenBuffers(1, &vbo));
-此时vbo值为1，//注意方法内的1是个数，和值不一样
+此时vbo值为1，//**注意方法内的1是个数，和值不一样**
 GL_CALL(glDeleteBuffers(1, &vbo));
 销毁之后vbo就不是1了，
 GLuint vboArr[] = { 0,0,0 };
@@ -41,7 +41,7 @@ void prepare() {
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4Mjk5Mzk5NSwtMTExMDk5MzQ3NSwtMT
+eyJoaXN0b3J5IjpbLTM3MTczMjc4OSwtMTExMDk5MzQ3NSwtMT
 A3NTU3NTAyOSwyNzMyNDg2NDAsMTkyOTkyNjk1NCw4Mzc5MzEy
 OSwtNTkzMzQ4ODQ5LC0xMTkxNDQ3ODk3LC0xNTM2MzY2OTU0LD
 Y2OTQzMTIxOSwtMjA4ODc0NjYxMl19
