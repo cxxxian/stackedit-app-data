@@ -60,11 +60,29 @@ void prepare() {
 VAO中有很多个索引，index用来设置描述第几个属性
 ![输入图片说明](/imgs/2024-10-15/fQVGGw1Fx359HKWc.png)
 ![输入图片说明](/imgs/2024-10-15/yTV90sL77pcvYVUz.png)
+```
+//4 生成vao
+    GLuint vao = 0;
+    glGenVertexArrays(1, &vao);
+    glBindVertexArray(vao);
+
+    //5 分别将位置/颜色属性的描述信息加入vao当中
+    glBindBuffer(GL_ARRAY_BUFFER, posVbo);//只有绑定了posVbo，下面的属性描述才会与此vbo相关
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);//将0转为指针
+
+    glBindBuffer(GL_ARRAY_BUFFER, colorVbo);//只有绑定了posVbo，下面的属性描述才会与此vbo相关
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+
+    //取消vao的bind
+    glBindVertexArray(0);
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1Nzc2MjA0MSwtNjYwMDQ1MjUzLC0xOT
-U4MTczMDg4LDU3NTc5MDY1LC0xMTEwOTkzNDc1LC0xMDc1NTc1
-MDI5LDI3MzI0ODY0MCwxOTI5OTI2OTU0LDgzNzkzMTI5LC01OT
-MzNDg4NDksLTExOTE0NDc4OTcsLTE1MzYzNjY5NTQsNjY5NDMx
-MjE5LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTcyODUxMDk1MSwtODU3NzYyMDQxLC02Nj
+AwNDUyNTMsLTE5NTgxNzMwODgsNTc1NzkwNjUsLTExMTA5OTM0
+NzUsLTEwNzU1NzUwMjksMjczMjQ4NjQwLDE5Mjk5MjY5NTQsOD
+M3OTMxMjksLTU5MzM0ODg0OSwtMTE5MTQ0Nzg5NywtMTUzNjM2
+Njk1NCw2Njk0MzEyMTksLTIwODg3NDY2MTJdfQ==
 -->
