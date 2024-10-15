@@ -14,8 +14,10 @@ GL_CALL(glGenBuffers(3, vboArr));
 此时vboArr分别是1，2，3
 因为上面1号vbo被销毁了所以这边会重新生成一个1号
 
+![输入图片说明](/imgs/2024-10-15/FqvpJkOWIkLIPhhv.png)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODM3OTMxMjksLTU5MzM0ODg0OSwtMTE5MT
-Q0Nzg5NywtMTUzNjM2Njk1NCw2Njk0MzEyMTksLTIwODg3NDY2
-MTJdfQ==
+eyJoaXN0b3J5IjpbMTkyOTkyNjk1NCw4Mzc5MzEyOSwtNTkzMz
+Q4ODQ5LC0xMTkxNDQ3ODk3LC0xNTM2MzY2OTU0LDY2OTQzMTIx
+OSwtMjA4ODc0NjYxMl19
 -->
