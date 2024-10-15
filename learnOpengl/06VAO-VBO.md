@@ -49,10 +49,11 @@ void prepare() {
 ![输入图片说明](/imgs/2024-10-15/CEMif7RVfrOkMZCt.png)
 多个VBO需要多增加一个i用来描述存储在几号VBO
 ![输入图片说明](/imgs/2024-10-15/af8jRJMZUcXGMppq.png)
+![输入图片说明](/imgs/2024-10-15/A4sSvzt46Ds1vZPW.png)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ3NjY2MDY2NSw1NzU3OTA2NSwtMTExMD
+eyJoaXN0b3J5IjpbMTcxNTM1MDUwMyw1NzU3OTA2NSwtMTExMD
 k5MzQ3NSwtMTA3NTU3NTAyOSwyNzMyNDg2NDAsMTkyOTkyNjk1
 NCw4Mzc5MzEyOSwtNTkzMzQ4ODQ5LC0xMTkxNDQ3ODk3LC0xNT
 M2MzY2OTU0LDY2OTQzMTIxOSwtMjA4ODc0NjYxMl19
