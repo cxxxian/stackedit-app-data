@@ -16,6 +16,7 @@ GL_CALL(glGenBuffers(3, vboArr));
 
 ![输入图片说明](/imgs/2024-10-15/FqvpJkOWIkLIPhhv.png)
 ![输入图片说明](/imgs/2024-10-15/VL3rESofMkzpPw2S.png)
+```
 void prepare() {
     float vertices[] = {
         -0.5f, -0.5f, 0.0f,
@@ -33,10 +34,12 @@ void prepare() {
     //3 向当前vbo传输数据，也是在开辟显存
     GL_CALL(glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW));
 }
+```
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5MTQ3NDU3NSwyNzMyNDg2NDAsMTkyOT
-kyNjk1NCw4Mzc5MzEyOSwtNTkzMzQ4ODQ5LC0xMTkxNDQ3ODk3
-LC0xNTM2MzY2OTU0LDY2OTQzMTIxOSwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTEwNzU1NzUwMjksMjczMjQ4NjQwLDE5Mj
+k5MjY5NTQsODM3OTMxMjksLTU5MzM0ODg0OSwtMTE5MTQ0Nzg5
+NywtMTUzNjM2Njk1NCw2Njk0MzEyMTksLTIwODg3NDY2MTJdfQ
+==
 -->
