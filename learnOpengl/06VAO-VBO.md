@@ -1,4 +1,5 @@
 ![输入图片说明](/imgs/2024-10-14/ckJoOAGeXvYbRpas.png)
+# VBO
 ![输入图片说明](/imgs/2024-10-14/BV7yPQmKIr8AtKBf.png)
 ![输入图片说明](/imgs/2024-10-14/oc4XWzWYxZHbeDKC.png)
 解释：
@@ -15,7 +16,7 @@ GL_CALL(glGenBuffers(3, vboArr));
 因为上面1号vbo被销毁了所以这边会重新生成一个1号
 
 ![输入图片说明](/imgs/2024-10-15/FqvpJkOWIkLIPhhv.png)
-#  单属性
+##  单属性
 ![输入图片说明](/imgs/2024-10-15/VL3rESofMkzpPw2S.png)
 ```
 void prepare() {
@@ -36,17 +37,20 @@ void prepare() {
     GL_CALL(glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW));
 }
 ```
-# 多属性
+## 多属性
 两种方法
 ### 每种属性分别存储vbo
 ![输入图片说明](/imgs/2024-10-15/lwo4fHrIqAZABURB.png)
 ### 所有属性存储为一个vbo
 ![输入图片说明](/imgs/2024-10-15/oDOMkK7aLkssQaCZ.png)
+# VAO
+![输入图片说明](/imgs/2024-10-15/dYhwYhWG9BFbFDwH.png)
+![输入图片说明](/imgs/2024-10-15/DWMQvAWZoH1aSj1e.png)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTc1NzkwNjUsLTExMTA5OTM0NzUsLTEwNz
-U1NzUwMjksMjczMjQ4NjQwLDE5Mjk5MjY5NTQsODM3OTMxMjks
-LTU5MzM0ODg0OSwtMTE5MTQ0Nzg5NywtMTUzNjM2Njk1NCw2Nj
-k0MzEyMTksLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbLTEwNTQ5ODMwNDAsNTc1NzkwNjUsLTExMT
+A5OTM0NzUsLTEwNzU1NzUwMjksMjczMjQ4NjQwLDE5Mjk5MjY5
+NTQsODM3OTMxMjksLTU5MzM0ODg0OSwtMTE5MTQ0Nzg5NywtMT
+UzNjM2Njk1NCw2Njk0MzEyMTksLTIwODg3NDY2MTJdfQ==
 -->
