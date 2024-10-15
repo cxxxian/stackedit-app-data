@@ -2,6 +2,7 @@
 ![输入图片说明](/imgs/2024-10-14/BV7yPQmKIr8AtKBf.png)
 ![输入图片说明](/imgs/2024-10-14/oc4XWzWYxZHbeDKC.png)
 解释：
+**创建一个vbo，还没有真正给分配显存**
 GLuint vbo = 0;
 此时vbo是0，
 GL_CALL(glGenBuffers(1, &vbo));
@@ -14,6 +15,7 @@ GL_CALL(glGenBuffers(3, vboArr));
 因为上面1号vbo被销毁了所以这边会重新生成一个1号
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5MzM0ODg0OSwtMTE5MTQ0Nzg5NywtMT
-UzNjM2Njk1NCw2Njk0MzEyMTksLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbODM3OTMxMjksLTU5MzM0ODg0OSwtMTE5MT
+Q0Nzg5NywtMTUzNjM2Njk1NCw2Njk0MzEyMTksLTIwODg3NDY2
+MTJdfQ==
 -->
