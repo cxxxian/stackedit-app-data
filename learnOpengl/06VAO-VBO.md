@@ -53,11 +53,14 @@ void prepare() {
 ![输入图片说明](/imgs/2024-10-15/A4sSvzt46Ds1vZPW.png)
 
 ![输入图片说明](/imgs/2024-10-15/zb0yhgD4Qte5js2m.png)
+## VAO总结描述
+### 此处的信息可以分开放到不同的VBO也可以是同一个，只是一个例子
+![输入图片说明](/imgs/2024-10-15/MGtlV336Fb4m1ZrD.png)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDcwMTQwMjc4LDU3NTc5MDY1LC0xMTEwOT
-kzNDc1LC0xMDc1NTc1MDI5LDI3MzI0ODY0MCwxOTI5OTI2OTU0
-LDgzNzkzMTI5LC01OTMzNDg4NDksLTExOTE0NDc4OTcsLTE1Mz
-YzNjY5NTQsNjY5NDMxMjE5LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTE5NTgxNzMwODgsNTc1NzkwNjUsLTExMT
+A5OTM0NzUsLTEwNzU1NzUwMjksMjczMjQ4NjQwLDE5Mjk5MjY5
+NTQsODM3OTMxMjksLTU5MzM0ODg0OSwtMTE5MTQ0Nzg5NywtMT
+UzNjM2Njk1NCw2Njk0MzEyMTksLTIwODg3NDY2MTJdfQ==
 -->
