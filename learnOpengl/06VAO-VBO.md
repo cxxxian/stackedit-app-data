@@ -16,9 +16,27 @@ GL_CALL(glGenBuffers(3, vboArr));
 
 ![输入图片说明](/imgs/2024-10-15/FqvpJkOWIkLIPhhv.png)
 ![输入图片说明](/imgs/2024-10-15/VL3rESofMkzpPw2S.png)
+void prepare() {
+    float vertices[] = {
+        -0.5f, -0.5f, 0.0f,
+        0.5f, -0.5f, 0.0f,
+        0.0f, 0.5f, 0.0f
+    };
+    //1 生成一个vbo
+    GLuint vbo = 0;
+    GL_CALL(glGenBuffers(1, &vbo));
+
+    //2 绑定当前vbo，到opengl状态机的当前vbo插槽上
+    //GL_ARRAY_BUFFER:表示当前vbo这个插槽
+    GL_CALL(glBindBuffer(GL_ARRAY_BUFFER, vbo));
+
+    //3 向当前vbo传输数据，也是在开辟显存
+    GL_CALL(glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW));
+}
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjczMjQ4NjQwLDE5Mjk5MjY5NTQsODM3OT
-MxMjksLTU5MzM0ODg0OSwtMTE5MTQ0Nzg5NywtMTUzNjM2Njk1
-NCw2Njk0MzEyMTksLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbLTQ5MTQ3NDU3NSwyNzMyNDg2NDAsMTkyOT
+kyNjk1NCw4Mzc5MzEyOSwtNTkzMzQ4ODQ5LC0xMTkxNDQ3ODk3
+LC0xNTM2MzY2OTU0LDY2OTQzMTIxOSwtMjA4ODc0NjYxMl19
 -->
