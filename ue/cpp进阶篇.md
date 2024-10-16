@@ -109,16 +109,24 @@ private:
 ```
 在SlashHUD.cpp实现，
 ```
-#include "HUD/SlashOverlay.h"
-
 void ASlashHUD::BeginPlay()
 {
 	Super::BeginPlay();
+
+	UWorld* World = GetWorld();
+	if (World) {
+		APlayerController* Controller = World->GetFirstPlayerController();
+		if (Controller && SlashOverlayClass) {
+			USlashOverlay* SlashOverlay = CreateWidget<USlashOverlay>(Controller, SlashOverlayClass);
+			SlashOverlay->AddToViewport();
+		}
+	}
 }
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5NzkzNDU3MiwxNTM0OTE5MDA3LC04ND
-MxNjU2NjQsMTYxNDUzMjA5LC0zNDc3MDYxNTksMTI0NDQ3OTk2
-NCwyNTMzNTkxMDYsMTgyMjAyODQyMiwxNzgwMjAwOTI0XX0=
+eyJoaXN0b3J5IjpbMTM0MzM5MzY0MSwxNTk3OTM0NTcyLDE1Mz
+Q5MTkwMDcsLTg0MzE2NTY2NCwxNjE0NTMyMDksLTM0NzcwNjE1
+OSwxMjQ0NDc5OTY0LDI1MzM1OTEwNiwxODIyMDI4NDIyLDE3OD
+AyMDA5MjRdfQ==
 -->
