@@ -59,7 +59,7 @@ void prepare() {
 ![输入图片说明](/imgs/2024-10-15/etymHzpqTmBzwsxg.png)
 VAO中有很多个索引，index用来设置描述第几个属性
 ![输入图片说明](/imgs/2024-10-15/fQVGGw1Fx359HKWc.png)
-
+## 将属性放进不同的VBO
 ![输入图片说明](/imgs/2024-10-15/yTV90sL77pcvYVUz.png)
 ```
 //4 生成vao
@@ -79,12 +79,13 @@ VAO中有很多个索引，index用来设置描述第几个属性
     //取消vao的bind
     glBindVertexArray(0);
 ```
+## 将属性放进同一个VBO
 ![输入图片说明](/imgs/2024-10-16/K3Pbtx4paikkVeUw.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODA3NDM3OTY3LC03Mjg1MTA5NTEsLTg1Nz
-c2MjA0MSwtNjYwMDQ1MjUzLC0xOTU4MTczMDg4LDU3NTc5MDY1
-LC0xMTEwOTkzNDc1LC0xMDc1NTc1MDI5LDI3MzI0ODY0MCwxOT
-I5OTI2OTU0LDgzNzkzMTI5LC01OTMzNDg4NDksLTExOTE0NDc4
-OTcsLTE1MzYzNjY5NTQsNjY5NDMxMjE5LC0yMDg4NzQ2NjEyXX
-0=
+eyJoaXN0b3J5IjpbMTU4MzU0Mzc5MCwtNzI4NTEwOTUxLC04NT
+c3NjIwNDEsLTY2MDA0NTI1MywtMTk1ODE3MzA4OCw1NzU3OTA2
+NSwtMTExMDk5MzQ3NSwtMTA3NTU3NTAyOSwyNzMyNDg2NDAsMT
+kyOTkyNjk1NCw4Mzc5MzEyOSwtNTkzMzQ4ODQ5LC0xMTkxNDQ3
+ODk3LC0xNTM2MzY2OTU0LDY2OTQzMTIxOSwtMjA4ODc0NjYxMl
+19
 -->
