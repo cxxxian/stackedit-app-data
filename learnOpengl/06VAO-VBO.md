@@ -81,11 +81,26 @@ VAO中有很多个索引，index用来设置描述第几个属性
 ```
 ## 将属性放进同一个VBO
 ![输入图片说明](/imgs/2024-10-16/K3Pbtx4paikkVeUw.png)
+```
+	GLuint vao = 0;
+    glGenVertexArrays(1, &vao);
+    glBindVertexArray(vao);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);//只有绑定了posVbo，下面的属性描述才会与此vbo相关
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);//此处的步长变成6 * sizeof(float)而不是3了
+
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);//可有可无因为上面已经绑定了这个vbo
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+
+    //取消vao的bind
+    glBindVertexArray(0);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4MzU0Mzc5MCwtNzI4NTEwOTUxLC04NT
-c3NjIwNDEsLTY2MDA0NTI1MywtMTk1ODE3MzA4OCw1NzU3OTA2
-NSwtMTExMDk5MzQ3NSwtMTA3NTU3NTAyOSwyNzMyNDg2NDAsMT
-kyOTkyNjk1NCw4Mzc5MzEyOSwtNTkzMzQ4ODQ5LC0xMTkxNDQ3
-ODk3LC0xNTM2MzY2OTU0LDY2OTQzMTIxOSwtMjA4ODc0NjYxMl
-19
+eyJoaXN0b3J5IjpbODY3MjYwNzkzLDE1ODM1NDM3OTAsLTcyOD
+UxMDk1MSwtODU3NzYyMDQxLC02NjAwNDUyNTMsLTE5NTgxNzMw
+ODgsNTc1NzkwNjUsLTExMTA5OTM0NzUsLTEwNzU1NzUwMjksMj
+czMjQ4NjQwLDE5Mjk5MjY5NTQsODM3OTMxMjksLTU5MzM0ODg0
+OSwtMTE5MTQ0Nzg5NywtMTUzNjM2Njk1NCw2Njk0MzEyMTksLT
+IwODg3NDY2MTJdfQ==
 -->
