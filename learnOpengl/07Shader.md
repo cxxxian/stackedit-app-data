@@ -9,8 +9,14 @@
 ![输入图片说明](/imgs/2024-10-17/sZt9j4e6kVbj5bgz.png)
 # Fragment Shader
 ![输入图片说明](/imgs/2024-10-17/ZUnSyAWn1WHGSJ1q.png)
+# Shader的编译
 ![输入图片说明](/imgs/2024-10-17/1ZoqeqyEmXG5gGWK.png)
+此处的glShaderSource
+
+ 1. const GLchar *const* string
+ 2. count用来记录String数组共有多少个字符串
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg3MTU2MDU5NywtODY3OTgzMjQ2LDQyNj
+eyJoaXN0b3J5IjpbMTgyNzY2NTg3NiwtODY3OTgzMjQ2LDQyNj
 ExNzg4OV19
 -->
