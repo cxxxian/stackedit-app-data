@@ -70,8 +70,30 @@ void prepareShader() {
 1. 创建一个program壳子
 2. 将vs和fs编译好的结果放到program这个壳子里面
 3. 执行program的连接操作，形成最终可执行shader程序
+```
+    //5 创建一个program壳子
+    GLuint program = 0;
+    program = glCreateProgram();
+
+    //6 将vs和fs编译好的结果放到program这个壳子里面
+    glAttachShader(program, vertex);
+    glAttachShader(program, fragment);
+
+    //7 执行program的连接操作，形成最终可执行shader程序
+    glLinkProgram(program);
+    //检查链接错误
+    glGetProgramiv(program, GL_LINK_STATUS, &success);
+    if (!success) {
+        glGetProgramInfoLog(program, 1024, NULL, infoLog);
+        std::cout << "Error: SHADER LINK ERROR" << "\n" << infoLog << std::endl;
+    }
+
+    //清理
+    glDeleteShader(vertex);
+    glDeleteShader(fragment);
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyODUzODM0MywtODY3OTgzMjQ2LDQyNj
-ExNzg4OV19
+eyJoaXN0b3J5IjpbLTcyNzc2OTM4MiwtODI4NTM4MzQzLC04Nj
+c5ODMyNDYsNDI2MTE3ODg5XX0=
 -->
