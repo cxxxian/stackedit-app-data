@@ -13,10 +13,11 @@
 ![输入图片说明](/imgs/2024-10-17/1ZoqeqyEmXG5gGWK.png)
 此处的glShaderSource
 
- 1. const GLchar *const* string
+ 1. const GLchar *const* string本意上是一个*string的数组
  2. count用来记录String数组共有多少个字符串
+ 3. 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyNzY2NTg3NiwtODY3OTgzMjQ2LDQyNj
-ExNzg4OV19
+eyJoaXN0b3J5IjpbNDcxOTczNTgwLC04Njc5ODMyNDYsNDI2MT
+E3ODg5XX0=
 -->
