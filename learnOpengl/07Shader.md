@@ -7,8 +7,9 @@
 ### gl_Position
 此处我们最终目的就是输出NDC坐标，此处由于我们的输入就已经是NDC坐标了，如果不是的话需要通过一些矩阵变换
 ![输入图片说明](/imgs/2024-10-17/sZt9j4e6kVbj5bgz.png)
-
+# Fragment Shader
+![输入图片说明](/imgs/2024-10-17/ZUnSyAWn1WHGSJ1q.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwMDIwMTY0NiwtODY3OTgzMjQ2LDQyNj
-ExNzg4OV19
+eyJoaXN0b3J5IjpbOTMxODgzMDQ3LC04Njc5ODMyNDYsNDI2MT
+E3ODg5XX0=
 -->
