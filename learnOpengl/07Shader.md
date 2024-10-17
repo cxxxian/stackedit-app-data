@@ -16,8 +16,9 @@
  1. const GLchar *const* string本意上是一个*string的数组
  2. count用来记录String数组共有多少个字符串
  3. *length用来记录每个字符串的长度，也是数组
+ 4. ![输入图片说明](/imgs/2024-10-17/8d8Uxlge27oOiS6M.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0ODc2NDY1LC04Njc5ODMyNDYsNDI2MT
-E3ODg5XX0=
+eyJoaXN0b3J5IjpbLTQ0MTY3NjExOCwtODY3OTgzMjQ2LDQyNj
+ExNzg4OV19
 -->
