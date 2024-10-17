@@ -67,8 +67,11 @@ void prepareShader() {
 ```
 # Shader的链接
 ![输入图片说明](/imgs/2024-10-17/8d8Uxlge27oOiS6M.png)
+1. 创建一个program壳子
+2. 将vs和fs编译好的结果放到program这个壳子里面
+3. 执行program的连接操作，形成最终可执行shader程序
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTk2NjU5NjAsLTg2Nzk4MzI0Niw0Mj
-YxMTc4ODldfQ==
+eyJoaXN0b3J5IjpbLTgyODUzODM0MywtODY3OTgzMjQ2LDQyNj
+ExNzg4OV19
 -->
