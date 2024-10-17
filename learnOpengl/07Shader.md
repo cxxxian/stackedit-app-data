@@ -9,7 +9,8 @@
 ![输入图片说明](/imgs/2024-10-17/sZt9j4e6kVbj5bgz.png)
 # Fragment Shader
 ![输入图片说明](/imgs/2024-10-17/ZUnSyAWn1WHGSJ1q.png)
+![输入图片说明](/imgs/2024-10-17/1ZoqeqyEmXG5gGWK.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTMxODgzMDQ3LC04Njc5ODMyNDYsNDI2MT
-E3ODg5XX0=
+eyJoaXN0b3J5IjpbMTg3MTU2MDU5NywtODY3OTgzMjQ2LDQyNj
+ExNzg4OV19
 -->
