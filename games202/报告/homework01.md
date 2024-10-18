@@ -68,7 +68,25 @@ float useShadowMap(sampler2D shadowMap, vec4 shadowCoord){
   }
 }
 ```
-3. 
+3. 完善main函数
+```
+void main(void) {
+  //归一化
+  vec3 shadowCoord = vPositionFromLight.xyz / vPositionFromLight.w;
+  //需要转化到NDC，才能在纹理uv坐标中使用
+  shadowCoord.xyz=(shadowCoord.xyz + 1.0) / 2.0;
+
+  float visibility;
+  visibility = useShadowMap(uShadowMap, vec4(shadowCoord, 1.0));
+  //visibility = PCF(uShadowMap, vec4(shadowCoord, 1.0));
+  //visibility = PCSS(uShadowMap, vec4(shadowCoord, 1.0));
+
+  vec3 phongColor = blinnPhong();
+
+  gl_FragColor = vec4(phongColor * visibility, 1.0);
+  //gl_FragColor = vec4(phongColor, 1.0);
+}
+```
 此时会存在自遮挡导致锯齿的问题，效果如下
 ![输入图片说明](/imgs/2024-10-18/CMKTir5lJTY04oEM.png)
 引入bias的概念，利用函数getBias得到合适的Bias值，在`if(cur_depth - bias >= shadow_depth + EPS)`判断中加入bias，可以有效解决锯齿问题
@@ -142,5 +160,5 @@ float PCF(sampler2D shadowMap, vec4 coords) {
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ1NDUxNTQ3XX0=
+eyJoaXN0b3J5IjpbMTE5NTMzNzgzOF19
 -->
