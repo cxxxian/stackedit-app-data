@@ -181,13 +181,13 @@ void main(void) {
 ![输入图片说明](/imgs/2024-10-18/ZLIG9E5XjEvCkrqc.png)
 ### 综上
 通过修改`Stride` 和`NUM_SAMPLES`，
-发现当`Stride`越小，阴影的边缘变得更清晰
-
+发现当`Stride`越小/大，阴影的边缘变得更清晰/模糊
+当`NUM_SAMPLES`越小/大，噪点约多/少
 ## 任务3：修正程序（Fixme）
 
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODAyNDcxMTFdfQ==
+eyJoaXN0b3J5IjpbLTcwMzU1NjIwMl19
 -->
