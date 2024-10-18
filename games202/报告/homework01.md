@@ -68,6 +68,7 @@ float useShadowMap(sampler2D shadowMap, vec4 shadowCoord){
   }
 }
 ```
+3. 
 此时会存在自遮挡导致锯齿的问题，效果如下
 ![输入图片说明](/imgs/2024-10-18/CMKTir5lJTY04oEM.png)
 引入bias的概念，利用函数getBias得到合适的Bias值，在`if(cur_depth - bias >= shadow_depth + EPS)`判断中加入bias，可以有效解决锯齿问题
@@ -132,11 +133,14 @@ float PCF(sampler2D shadowMap, vec4 coords) {
   return visibility / float(NUM_SAMPLES);
 }
 ```
+```
+
+```
 ## 任务3：修正程序（Fixme）
 
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTM4NDYzNzBdfQ==
+eyJoaXN0b3J5IjpbNjQ1NDUxNTQ3XX0=
 -->
