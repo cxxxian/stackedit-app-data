@@ -3,7 +3,7 @@
 ## 任务0：实验环境
 -   电脑品牌：惠普
 -   电脑型号：暗影精灵8pro
--   CPU型号：// 查看系统属性，类似i5-4210M之类
+-   CPU型号：12th Gen Intel(R) Core(TM) i7-12700H
     -   CPU核心（core）数量：
     -   CPU默频/睿频：// 例如：1.7/6.9 GHz
 -   内存规格：// 例如：DDR2-400
@@ -66,5 +66,5 @@
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzEwMTg4MjhdfQ==
+eyJoaXN0b3J5IjpbMTMxMDMyNDIzOV19
 -->
