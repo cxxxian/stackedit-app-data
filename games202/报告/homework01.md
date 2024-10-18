@@ -109,12 +109,34 @@ float useShadowMap(sampler2D shadowMap, vec4 shadowCoord){
 ![输入图片说明](/imgs/2024-10-18/xr9vvrtJ8CG7uctY.png)
 ## 任务2：PCF(Percentage Closer Filter)
 完善 phongFragment.glsl 中的 PCF(sampler2D shadowMap, vec4 shadowCoord, float filterSize) 函数
-
+```
+float PCF(sampler2D shadowMap, vec4 coords) {
+  // 1 给定步长，分辨率，初始输出值，卷积范围当前的深度
+  float Stride = 10.;
+  float shadowmapSize = 2048.;
+  float visibility = 0.;
+  float cur_depth = coords.z;
+  
+  //2 泊松采样得到采样点
+  //coords.xy 是从光源空间转换到阴影贴图空间的 2D 坐标，决定了在阴影贴图上采样的位置
+  poissonDiskSamples(coords.xy);
+  
+  //3 对每个点进行比较深度值并累加
+  for(int i = 0; i < NUM_SAMPLES; i++){
+    //Stride / shadowmapSize 来对泊松采样的偏移进行归一化
+    vec4 shadow_color = texture2D(shadowMap, coords.xy + poissonDisk[i] * Stride / shadowmapSize);
+    float shadow_depth = unpack(shadow_color);
+    float res = cur_depth < shadow_depth + EPS ? 1. : 0.;
+    visibility += res;
+  }
+  return visibility / float(NUM_SAMPLES);
+}
+```
 ## 任务3：修正程序（Fixme）
 
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzMTM0NTcwOF19
+eyJoaXN0b3J5IjpbLTE2OTM4NDYzNzBdfQ==
 -->
