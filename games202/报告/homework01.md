@@ -179,12 +179,15 @@ void main(void) {
 ![输入图片说明](/imgs/2024-10-18/XSvAvGW8sIlOIMqZ.png)
 当`Stride = 1.0，NUM_SAMPLES = 100`时，可以看到阴影的边缘变得清晰许多
 ![输入图片说明](/imgs/2024-10-18/ZLIG9E5XjEvCkrqc.png)
-### zong'sh
+### 综上
+通过修改`Stride` 和`NUM_SAMPLES`，
+发现当`Stride`越小，阴影的边缘变得更清晰
+
 ## 任务3：修正程序（Fixme）
 
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDA3MjE4ODBdfQ==
+eyJoaXN0b3J5IjpbLTEzODAyNDcxMTFdfQ==
 -->
