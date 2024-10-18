@@ -9,7 +9,7 @@
 -   内存规格：// 例如：DDR2-400
 -   内存容量：512G
 -   存储类型：// SSD/HDD，固盘或机械盘。
--   显卡型号：// 又叫GPU，例如：Nvidia GeForce 256
+-   显卡型号：Nvidia GeForce RTX 3060
 -   屏幕分辨率：1920*1080
 -   最大功率：280W
 -   操作系统：Windows11
@@ -66,5 +66,5 @@
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMxMDMyNDIzOV19
+eyJoaXN0b3J5IjpbMTE1NjUxNDg1OV19
 -->
