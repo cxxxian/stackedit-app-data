@@ -4,11 +4,11 @@
 -   电脑品牌：惠普
 -   电脑型号：暗影精灵8pro
 -   CPU型号：12th Gen Intel(R) Core(TM) i7-12700H
-    -   CPU核心（core）数量：
-    -   CPU默频/睿频：// 例如：1.7/6.9 GHz
+    -   CPU核心（core）数量：4
+    -   CPU默频/睿频：2.30 GHz
 -   内存规格：// 例如：DDR2-400
 -   内存容量：512G
--   存储类型：// SSD/HDD，固盘或机械盘。
+-   存储类型：SSDHDD
 -   显卡型号：Nvidia GeForce RTX 3060
 -   屏幕分辨率：1920*1080
 -   最大功率：280W
@@ -66,5 +66,5 @@
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1NjUxNDg1OV19
+eyJoaXN0b3J5IjpbMjA2NzQ3NjgwXX0=
 -->
