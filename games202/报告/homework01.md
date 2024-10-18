@@ -104,8 +104,10 @@ float useShadowMap(sampler2D shadowMap, vec4 shadowCoord){
   }
 }
 ```
+效果如下，发现当data取值为1.0时可以有效解决锯齿问题
 ![输入图片说明](/imgs/2024-10-18/5Vl5GcL66CmPyUSJ.png)
-## 任务2：调试示例（DebugDemo）
+![输入图片说明](/imgs/2024-10-18/xr9vvrtJ8CG7uctY.png)
+## 任务2：PCF(Percentage Closer Filter)
 
 -   IDEA中以下功能的热键：
     -   构建项目：Ctrl+F9
@@ -146,5 +148,5 @@ float useShadowMap(sampler2D shadowMap, vec4 shadowCoord){
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0MzQ4MzgwN119
+eyJoaXN0b3J5IjpbMTA2MzE3ODUwOF19
 -->
