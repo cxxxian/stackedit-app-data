@@ -126,8 +126,8 @@ float useShadowMap(sampler2D shadowMap, vec4 shadowCoord){
 }
 ```
 效果如下，发现当data取值为1.0时可以有效解决锯齿问题
-![输入图片说明](/imgs/2024-10-18/5Vl5GcL66CmPyUSJ.png =500x450)
-![输入图片说明](/imgs/2024-10-18/xr9vvrtJ8CG7uctY.png)
+![输入图片说明](/imgs/2024-10-18/5Vl5GcL66CmPyUSJ.png =550x400)
+![输入图片说明](/imgs/2024-10-18/xr9vvrtJ8CG7uctY.png =550x400)
 ## 任务2：PCF(Percentage Closer Filter)
 完善 phongFragment.glsl 中的 PCF(sampler2D shadowMap, vec4 shadowCoord, float filterSize) 函数
 ```
@@ -174,11 +174,11 @@ void main(void) {
 ```
 运行如下：
 当`Stride = 10.0，NUM_SAMPLES = 20`时，噪点较多，因为此时泊松采样数较少，此情况会随着`NUM_SAMPLES`的增多而改善
-![输入图片说明](/imgs/2024-10-18/hEni8o7AyCtoweQi.png)
+![输入图片说明](/imgs/2024-10-18/hEni8o7AyCtoweQi.png =600x400)
 当`Stride = 10.0，NUM_SAMPLES = 100`时，可以看到噪点明显变少很多
-![输入图片说明](/imgs/2024-10-18/XSvAvGW8sIlOIMqZ.png)
+![输入图片说明](/imgs/2024-10-18/XSvAvGW8sIlOIMqZ.png =600x400)
 当`Stride = 1.0，NUM_SAMPLES = 100`时，可以看到阴影的边缘变得清晰许多
-![输入图片说明](/imgs/2024-10-18/ZLIG9E5XjEvCkrqc.png)
+![输入图片说明](/imgs/2024-10-18/ZLIG9E5XjEvCkrqc.png =600x400)
 
 ### 综上
 通过修改`Stride` 和`NUM_SAMPLES`参数
@@ -190,7 +190,7 @@ void main(void) {
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODE1NzgwNTg0LDE3MjMzMTQ3MjgsLTgwOD
-g3Njg0OCwxNzIzMzE0NzI4LC0xMzE1MjcwNjY0LDE3MDgyNzIz
-NDJdfQ==
+eyJoaXN0b3J5IjpbLTExNDg0MTM3NzAsMTcyMzMxNDcyOCwtOD
+A4ODc2ODQ4LDE3MjMzMTQ3MjgsLTEzMTUyNzA2NjQsMTcwODI3
+MjM0Ml19
 -->
