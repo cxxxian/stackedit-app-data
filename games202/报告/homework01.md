@@ -69,7 +69,41 @@ float useShadowMap(sampler2D shadowMap, vec4 shadowCoord){
 }
 ```
 此时会存在自遮挡导致锯齿的问题，效果如下
-![输入图片说明](/imgs/2024-10-18/CMKTir5lJTY04oEM.png)引入
+![输入图片说明](/imgs/2024-10-18/CMKTir5lJTY04oEM.png)
+引入bias的概念，利用函数getbias
+```
+//  1 - dot(normal, lightDir)用来近似tan和sin
+float getBias(float data){
+  vec3 lightDir = normalize(uLightPos - vFragPos);
+  vec3 normal = normalize(vNormal);
+  float m = 200. / 2048. / 2.;
+  float bias = max(m , m * (1. - dot(normal, lightDir))) * data;
+  return bias;
+}
+
+//shadowMap: 提取来自方向光中创建的FBO中的深度信息
+//shadowCoord: 纹理图片上像素对应的坐标，main()中有对应的归一化坐标计算
+float useShadowMap(sampler2D shadowMap, vec4 shadowCoord){
+
+  //查询纹理图片对应坐标上的深度值，而实现深度值查询首先要查对应的颜色
+  //获取颜色值
+  //第一个参数: 图片纹理
+  //第二个参数: 纹理坐标
+  vec4 shadow_color = texture2D(shadowMap, shadowCoord.xy);
+  //将RGBA值转化成float
+  float shadow_depth = unpack(shadow_color);
+
+  float cur_depth = shadowCoord.z;
+
+  float data = 1.;
+  float bias = getBias(data);
+  if(cur_depth - bias >= shadow_depth + EPS){
+    return 0.;//不可视
+  }else{
+    return 1.0;
+  }
+}
+```
 ## 任务2：调试示例（DebugDemo）
 
 -   IDEA中以下功能的热键：
@@ -111,5 +145,5 @@ float useShadowMap(sampler2D shadowMap, vec4 shadowCoord){
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1ODI1OTUwMV19
+eyJoaXN0b3J5IjpbMTMzODEzMTU5Ml19
 -->
