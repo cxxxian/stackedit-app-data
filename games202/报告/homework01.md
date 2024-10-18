@@ -15,8 +15,38 @@
 -   操作系统：Windows11
 
 ## 任务1：Shadow Map
-
-
+完善DirectionalLight中的CalcLightMVP(translate, scale)函数
+```
+CalcLightMVP(translate, scale) {
+let lightMVP = mat4.create();
+let modelMatrix = mat4.create();
+let viewMatrix = mat4.create();
+let projectionMatrix = mat4.create();
+// Model transform
+//translate(输出的矩阵，处理的矩阵，vec3矩阵)
+mat4.translate(modelMatrix, modelMatrix, translate);
+mat4.scale(modelMatrix, modelMatrix, scale);
+// View transform
+//参数在engine定义
+//let lightPos = [0, 80, 80];
+//let focalPoint = [0, 0, 0];
+//let lightUp = [0, 1, 0]
+//focalPoint是lookat的方向
+mat4.lookAt(viewMatrix, this.lightPos, this.focalPoint, this.lightUp);
+// Projection transform
+//n 是近裁剪面，f 是远裁剪面
+var r = 100;
+var l = -100;
+var t = 100;
+var b = -100;
+var n = 1e-2;
+var f = 400;
+mat4.ortho(projectionMatrix, l, r, b, t, n, f);
+mat4.multiply(lightMVP, projectionMatrix, viewMatrix);
+mat4.multiply(lightMVP, lightMVP, modelMatrix);
+return lightMVP;
+}
+```
 ## 任务2：调试示例（DebugDemo）
 
 -   IDEA中以下功能的热键：
@@ -58,5 +88,5 @@
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxMDM2OTczNV19
+eyJoaXN0b3J5IjpbLTE2MDc0NzgyNzldfQ==
 -->
