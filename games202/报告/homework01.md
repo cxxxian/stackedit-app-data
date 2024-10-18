@@ -153,14 +153,34 @@ float PCF(sampler2D shadowMap, vec4 coords) {
   return visibility / float(NUM_SAMPLES);
 }
 ```
+使用main函数的第二行visibility
 ```
-将像素坐标归一化了
+void main(void) {
+  //归一化
+  vec3 shadowCoord = vPositionFromLight.xyz / vPositionFromLight.w;
+  //需要转化到NDC，才能在纹理uv坐标中使用
+  shadowCoord.xyz=(shadowCoord.xyz + 1.0) / 2.0;
+
+  float visibility;
+  //visibility = useShadowMap(uShadowMap, vec4(shadowCoord, 1.0));
+  visibility = PCF(uShadowMap, vec4(shadowCoord, 1.0));
+  //visibility = PCSS(uShadowMap, vec4(shadowCoord, 1.0));
+
+  vec3 phongColor = blinnPhong();
+
+  gl_FragColor = vec4(phongColor * visibility, 1.0);
+  //gl_FragColor = vec4(phongColor, 1.0);
+}
 ```
+运行如下：
+当Stride = 10.0，NUM_SAMPLES = 20时，噪点较多，
+![输入图片说明](/imgs/2024-10-18/hEni8o7AyCtoweQi.png)
+
 ## 任务3：修正程序（Fixme）
 
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjY2NDk2NF19
+eyJoaXN0b3J5IjpbMjEwOTM2Mjg4OV19
 -->
