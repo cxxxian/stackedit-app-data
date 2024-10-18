@@ -14,15 +14,8 @@
 -   最大功率：280W
 -   操作系统：Windows11
 
-## 任务1：HelloJava
--   类名改成HelloJava2后还可以运行吗？为什么？
--   Java程序的扩展名是什么？编译后的文件扩展名是什么？哪种是二进制文件？
--   IDE是什么的缩写？和IDEA什么关系？再举几个Java IDE的例子。
--   IDEA中源码出现红色波浪线、黄色波浪线分别是什么原因？
--   名词解释：
-    -   JDK：
-    -   JRE：
-    -   JVM：
+## 任务1：Shadow Map
+
 
 ## 任务2：调试示例（DebugDemo）
 
@@ -65,5 +58,5 @@
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNzUyODc2NzhdfQ==
+eyJoaXN0b3J5IjpbMTkxMDM2OTczNV19
 -->
