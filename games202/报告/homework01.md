@@ -89,8 +89,8 @@ void main(void) {
 ```
 此时会存在自遮挡导致锯齿的问题，效果如下
 ![输入图片说明](/imgs/2024-10-18/CMKTir5lJTY04oEM.png)
-![输入图片说明](https://github.com/cxxxian/stackedit-app-data/blob/master/imgs/2024-10-18/5Vl5GcL66CmPyUSJ.png)
 
+![输入图片说明](https://github.com/cxxxian/stackedit-app-data/blob/master/imgs/2024-10-18/5Vl5GcL66CmPyUSJ.png)
 4. 解决锯齿问题
 引入bias的概念，利用函数getBias得到合适的Bias值，在`if(cur_depth - bias >= shadow_depth + EPS)`判断中加入bias，可以有效解决锯齿问题
 ```
@@ -191,6 +191,6 @@ void main(void) {
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTUyNzA2NjQsMTcyMzMxNDcyOCwxNz
-A4MjcyMzQyXX0=
+eyJoaXN0b3J5IjpbLTEyMjU0NjkxNjQsLTEzMTUyNzA2NjQsMT
+cyMzMxNDcyOCwxNzA4MjcyMzQyXX0=
 -->
