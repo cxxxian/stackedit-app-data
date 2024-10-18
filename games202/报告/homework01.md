@@ -8,15 +8,13 @@
     -   CPU默频/睿频：2.30 GHz
 -   内存规格：// 例如：DDR2-400
 -   内存容量：512G
--   存储类型：SSDHDD
+-   存储类型：SSD
 -   显卡型号：Nvidia GeForce RTX 3060
 -   屏幕分辨率：1920*1080
 -   最大功率：280W
 -   操作系统：Windows11
 
 ## 任务1：HelloJava
-![输入图片说明](/imgs/2024-10-18/VRg8G3Za0XrOPaxO.png)
-
 -   类名改成HelloJava2后还可以运行吗？为什么？
 -   Java程序的扩展名是什么？编译后的文件扩展名是什么？哪种是二进制文件？
 -   IDE是什么的缩写？和IDEA什么关系？再举几个Java IDE的例子。
@@ -67,5 +65,5 @@
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjg4NDQ5NDMwXX0=
+eyJoaXN0b3J5IjpbLTExNzUyODc2NzhdfQ==
 -->
