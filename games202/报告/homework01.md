@@ -68,7 +68,8 @@ float useShadowMap(sampler2D shadowMap, vec4 shadowCoord){
   }
 }
 ```
-
+此时会存在自遮挡导致锯齿的问题，效果如下
+![输入图片说明](/imgs/2024-10-18/CMKTir5lJTY04oEM.png)引入
 ## 任务2：调试示例（DebugDemo）
 
 -   IDEA中以下功能的热键：
@@ -110,5 +111,5 @@ float useShadowMap(sampler2D shadowMap, vec4 shadowCoord){
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYxOTU3MzVdfQ==
+eyJoaXN0b3J5IjpbLTM1ODI1OTUwMV19
 -->
