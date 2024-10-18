@@ -173,7 +173,7 @@ void main(void) {
 }
 ```
 运行如下：
-当Stride = 10.0，NUM_SAMPLES = 20时，噪点较多，
+当`Stride = 10.0，NUM_SAMPLES = 20`时，噪点较多，因为此时泊松采样数较少，此情况会随着`NUM_SAMPLES`的增多而改善
 ![输入图片说明](/imgs/2024-10-18/hEni8o7AyCtoweQi.png)
 
 ## 任务3：修正程序（Fixme）
@@ -182,5 +182,5 @@ void main(void) {
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEwOTM2Mjg4OV19
+eyJoaXN0b3J5IjpbLTE4NTA4MTYwODldfQ==
 -->
