@@ -15,6 +15,7 @@
 -   操作系统：Windows11
 
 ## 任务1：HelloJava
+![输入图片说明](/imgs/2024-10-18/VRg8G3Za0XrOPaxO.png)
 
 -   类名改成HelloJava2后还可以运行吗？为什么？
 -   Java程序的扩展名是什么？编译后的文件扩展名是什么？哪种是二进制文件？
@@ -66,5 +67,5 @@
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2NzQ3NjgwXX0=
+eyJoaXN0b3J5IjpbNjg4NDQ5NDMwXX0=
 -->
