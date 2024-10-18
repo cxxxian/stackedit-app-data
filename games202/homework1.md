@@ -56,6 +56,18 @@ return lightMVP;
    ```
    - 这个变换处理物体本身在场景中的位置和大小（模型的世界空间坐标）。
    - 在阴影贴图中，我们需要将场景中的物体按其实际位置和大小投影到光源的视角下，所以模型矩阵不可或缺。
+**`mat4.translate(modelMatrix, modelMatrix, translate)`**
+    
+    -   这句代码是对模型矩阵 `modelMatrix` 进行**平移**变换。
+    -   `translate` 参数是一个三维向量（`[x, y, z]`），表示沿着x、y、z轴的平移量。
+    -   第一个 `modelMatrix` 是输入的矩阵，第二个 `modelMatrix` 是输出矩阵，它将被更新为应用了平移变换的新矩阵。
+    -   平移是指在空间中移动物体的位置。
+**`mat4.scale(modelMatrix, modelMatrix, scale)`**
+    
+    -   这句代码是对模型矩阵 `modelMatrix` 进行**缩放**变换。
+    -   `scale` 参数是一个三维向量（`[sx, sy, sz]`），表示在x、y、z轴上的缩放系数。
+    -   同样，第一个 `modelMatrix` 是输入的矩阵，第二个 `modelMatrix` 是输出矩阵，它将被更新为应用了缩放变换的新矩阵。
+    -   缩放是指在空间中改变物体的大小。
 
 2. **视图矩阵（View Matrix）**：
    ```javascript
@@ -64,6 +76,9 @@ return lightMVP;
    - 视图矩阵定义了**光源的位置和方向**。就像相机有一个视图矩阵一样，光源也有一个视图矩阵。这个矩阵将场景从世界坐标系转换为光源视角的坐标系。
    - `this.lightPos` 是光源的位置，`this.focalPoint` 是光源看向的目标点，而 `this.lightUp` 定义了光源的上方向。
    - 当我们从光源的角度投影场景时，这个矩阵确保所有物体相对于光源被正确定位。
+   - 这两句是使用 `mat4` 库（通常是GLSL或WebGL中的矩阵库）来对 `modelMatrix` 进行变换操作，具体是执行平移和缩放。
+
+
 
 3. **投影矩阵（Projection Matrix）**：
    ```javascript
@@ -96,5 +111,5 @@ mat4.multiply(lightMVP, lightMVP, modelMatrix);
   
 简而言之，`lightMVP` 矩阵让我们能够从光源的角度渲染场景，这个过程会生成一个深度图，这个图在后续渲染中用来判断哪些像素点处于阴影中。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzE2ODI1NzddfQ==
+eyJoaXN0b3J5IjpbLTE2NzMxNzYxMywtMjAzMTY4MjU3N119
 -->
