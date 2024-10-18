@@ -76,7 +76,6 @@ return lightMVP;
    - 视图矩阵定义了**光源的位置和方向**。就像相机有一个视图矩阵一样，光源也有一个视图矩阵。这个矩阵将场景从世界坐标系转换为光源视角的坐标系。
    - `this.lightPos` 是光源的位置，`this.focalPoint` 是光源看向的目标点，而 `this.lightUp` 定义了光源的上方向。
    - 当我们从光源的角度投影场景时，这个矩阵确保所有物体相对于光源被正确定位。
-   - 这两句是使用 `mat4` 库（通常是GLSL或WebGL中的矩阵库）来对 `modelMatrix` 进行变换操作，具体是执行平移和缩放。
 
 
 
@@ -111,5 +110,6 @@ mat4.multiply(lightMVP, lightMVP, modelMatrix);
   
 简而言之，`lightMVP` 矩阵让我们能够从光源的角度渲染场景，这个过程会生成一个深度图，这个图在后续渲染中用来判断哪些像素点处于阴影中。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzMxNzYxMywtMjAzMTY4MjU3N119
+eyJoaXN0b3J5IjpbLTQyMTMzOTM2NywtMTY3MzE3NjEzLC0yMD
+MxNjgyNTc3XX0=
 -->
