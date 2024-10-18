@@ -7,12 +7,12 @@
     -   CPU核心（core）数量：
     -   CPU默频/睿频：// 例如：1.7/6.9 GHz
 -   内存规格：// 例如：DDR2-400
--   内存容量：// 例如：320GB
+-   内存容量：512G
 -   存储类型：// SSD/HDD，固盘或机械盘。
 -   显卡型号：// 又叫GPU，例如：Nvidia GeForce 256
--   屏幕分辨率：// 水平x垂直像素数，类似800x600之类。
--   最大功率：// 可从电源标签查看
--   操作系统：// 类型和版本（例如：Win98、macOS 10.1 Puma、Ubuntu-8.04）
+-   屏幕分辨率：1920*1080
+-   最大功率：280W
+-   操作系统：Windows11
 
 ## 任务1：HelloJava
 
@@ -66,5 +66,5 @@
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3NzczMjE4NF19
+eyJoaXN0b3J5IjpbLTE2MzEwMTg4MjhdfQ==
 -->
