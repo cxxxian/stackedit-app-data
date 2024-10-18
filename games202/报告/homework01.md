@@ -15,7 +15,8 @@
 -   操作系统：Windows11
 
 ## 任务1：Shadow Map
-完善DirectionalLight中的CalcLightMVP(translate, scale)函数
+
+ 1. 完善DirectionalLight中的CalcLightMVP(translate, scale)函数
 ```
 CalcLightMVP(translate, scale) {
 let lightMVP = mat4.create();
@@ -46,6 +47,9 @@ mat4.multiply(lightMVP, projectionMatrix, viewMatrix);
 mat4.multiply(lightMVP, lightMVP, modelMatrix);
 return lightMVP;
 }
+```
+2. 完善phongFragment.glsl中的 useShadowMap(sampler2D shadowMap, vec4 shadowCoord) 函数
+```
 ```
 ## 任务2：调试示例（DebugDemo）
 
@@ -88,5 +92,5 @@ return lightMVP;
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDc0NzgyNzldfQ==
+eyJoaXN0b3J5IjpbLTk5ODIwMTI0M119
 -->
