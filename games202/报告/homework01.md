@@ -50,7 +50,25 @@ return lightMVP;
 ```
 2. 完善phongFragment.glsl中的 useShadowMap(sampler2D shadowMap, vec4 shadowCoord) 函数
 ```
+//shadowMap: 提取来自方向光中创建的FBO中的深度信息
+//shadowCoord: 纹理图片上像素对应的坐标，main()中有对应的归一化坐标计算
+float useShadowMap(sampler2D shadowMap, vec4 shadowCoord){
+  //查询纹理图片对应坐标上的深度值，而实现深度值查询首先要查对应的颜色
+  //获取颜色值
+  //第一个参数: 图片纹理
+  //第二个参数: 纹理坐标
+  vec4 shadow_color = texture2D(shadowMap, shadowCoord.xy);
+  //将RGBA值转化成float
+  float shadow_depth = unpack(shadow_color);
+  float cur_depth = shadowCoord.z;
+  if(cur_depth >= shadow_depth + EPS){
+    return 0.;//不可视
+  }else{
+    return 1.0;
+  }
+}
 ```
+
 ## 任务2：调试示例（DebugDemo）
 
 -   IDEA中以下功能的热键：
@@ -92,5 +110,5 @@ return lightMVP;
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk5ODIwMTI0M119
+eyJoaXN0b3J5IjpbMTYxOTU3MzVdfQ==
 -->
