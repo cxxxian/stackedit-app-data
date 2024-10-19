@@ -125,7 +125,8 @@ float useShadowMap(sampler2D shadowMap, vec4 shadowCoord){
   }
 }
 ```
-效果如下，发现当data取值为1.0时可以有效解决锯齿问题
+### 效果如下，
+发现当data取值为1.0时可以有效解决锯齿问题
 ![输入图片说明](/imgs/2024-10-18/5Vl5GcL66CmPyUSJ.png =550x400)
 ![输入图片说明](/imgs/2024-10-18/xr9vvrtJ8CG7uctY.png =550x400)
 ## 任务2：PCF(Percentage Closer Filter)
@@ -172,14 +173,14 @@ void main(void) {
   //gl_FragColor = vec4(phongColor, 1.0);
 }
 ```
-运行如下（泊松采样）：
+### 运行如下（泊松采样）：
 当`Stride = 10.0，NUM_SAMPLES = 20`时，噪点较多，因为此时泊松采样数较少，此情况会随着`NUM_SAMPLES`的增多而改善
 ![输入图片说明](/imgs/2024-10-18/hEni8o7AyCtoweQi.png =600x400)
 当`Stride = 10.0，NUM_SAMPLES = 100`时，可以看到噪点明显变少很多
 ![输入图片说明](/imgs/2024-10-18/XSvAvGW8sIlOIMqZ.png =600x400)
 当`Stride = 1.0，NUM_SAMPLES = 100`时，可以看到阴影的边缘变得清晰许多
 ![输入图片说明](/imgs/2024-10-18/ZLIG9E5XjEvCkrqc.png =600x400)
-使用均匀圆盘采样：
+### 使用均匀圆盘采样：
 `Stride = 10.0，NUM_SAMPLES = 100`
 ![输入图片说明](/imgs/2024-10-19/IjDLU5TxIASNJPr0.png =600x350)
 
@@ -189,7 +190,7 @@ void main(void) {
 当`NUM_SAMPLES`越小/大，噪点约多/少
 泊松采样的效果会比均匀圆盘来的好
 
-EPS
+### 关于EPS数据
 ![输入图片说明](/imgs/2024-10-19/dlDCu1X9zLQd7bBk.png =600x420)
 ![输入图片说明](/imgs/2024-10-19/e8TxiSBCr3xVA7vN.png =600x350)
 ## 任务3：修正程序（Fixme）
@@ -198,7 +199,7 @@ EPS
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzM2ODA0MTU4LDI1ODQxMzA5NiwtMTE0OD
-QxMzc3MCwxNzIzMzE0NzI4LC04MDg4NzY4NDgsMTcyMzMxNDcy
-OCwtMTMxNTI3MDY2NCwxNzA4MjcyMzQyXX0=
+eyJoaXN0b3J5IjpbMTE4NDIzMzE2NSwyNTg0MTMwOTYsLTExND
+g0MTM3NzAsMTcyMzMxNDcyOCwtODA4ODc2ODQ4LDE3MjMzMTQ3
+MjgsLTEzMTUyNzA2NjQsMTcwODI3MjM0Ml19
 -->
