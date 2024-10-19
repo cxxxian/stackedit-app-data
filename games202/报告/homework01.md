@@ -198,14 +198,38 @@ void main(void) {
 发现EPS主要作用变化在模型上的阴影
 ## 任务3：PCSS(Percentage Closer Soft Shadow)
 1. 完善 phongFragment.glsl 中的 findBlocker(sampler2D shadowMap, vec2 uv, float zReceiver)
+float findBlocker( sampler2D shadowMap,  vec2 uv, float zReceiver ) {
+  // zReceiver就是当前coords的z值，PCSS调用findBlocker时会赋值
+  int blockerNum = 0;
+  float block_depth = 0.;
+  float shadowmapSize = 2048.;
+  float Stride = 50.;
 
+  // 泊松采样得到采样点
+  poissonDiskSamples(uv);
+
+  // 判断是否是blocker并累加
+  for(int i = 0; i < NUM_SAMPLES; i++){
+    vec4 shadow_color = texture2D(shadowMap, uv + poissonDisk[i] * Stride / shadowmapSize);
+    float shadow_depth = unpack(shadow_color);
+    if(zReceiver > shadow_depth + 0.01){//在阴影内
+      blockerNum++;
+      block_depth += shadow_depth;
+    }//else什么都不做
+  }
+  //在场景被光照到的地方，需要也给一个返回值，不然环境是全黑的
+  if(blockerNum == 0){
+    return 1.;
+  }
+  return float(block_depth) / float(blockerNum);
+}
 
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTEyNzA3MjUsMTExNTUzMDcwNiwtMj
-ExNDgxODIzOSwyNTg0MTMwOTYsLTExNDg0MTM3NzAsMTcyMzMx
-NDcyOCwtODA4ODc2ODQ4LDE3MjMzMTQ3MjgsLTEzMTUyNzA2Nj
-QsMTcwODI3MjM0Ml19
+eyJoaXN0b3J5IjpbLTE0NTI4MzkxNjgsLTE2OTEyNzA3MjUsMT
+ExNTUzMDcwNiwtMjExNDgxODIzOSwyNTg0MTMwOTYsLTExNDg0
+MTM3NzAsMTcyMzMxNDcyOCwtODA4ODc2ODQ4LDE3MjMzMTQ3Mj
+gsLTEzMTUyNzA2NjQsMTcwODI3MjM0Ml19
 -->
