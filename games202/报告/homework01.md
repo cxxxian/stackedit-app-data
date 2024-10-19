@@ -187,13 +187,14 @@ void main(void) {
 通过修改`Stride` 和`NUM_SAMPLES`参数
 发现当`Stride`越小/大，阴影的边缘变得更清晰/模糊
 当`NUM_SAMPLES`越小/大，噪点约多/少
+泊松采样的效果会比均匀圆盘来的好
 ## 任务3：修正程序（Fixme）
 
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5ODgyMzgzOSwtMTE0ODQxMzc3MCwxNz
-IzMzE0NzI4LC04MDg4NzY4NDgsMTcyMzMxNDcyOCwtMTMxNTI3
-MDY2NCwxNzA4MjcyMzQyXX0=
+eyJoaXN0b3J5IjpbMjU4NDEzMDk2LC0xMTQ4NDEzNzcwLDE3Mj
+MzMTQ3MjgsLTgwODg3Njg0OCwxNzIzMzE0NzI4LC0xMzE1Mjcw
+NjY0LDE3MDgyNzIzNDJdfQ==
 -->
