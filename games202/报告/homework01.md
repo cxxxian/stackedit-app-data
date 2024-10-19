@@ -172,13 +172,14 @@ void main(void) {
   //gl_FragColor = vec4(phongColor, 1.0);
 }
 ```
-运行如下：
+运行如下（泊松采样）：
 当`Stride = 10.0，NUM_SAMPLES = 20`时，噪点较多，因为此时泊松采样数较少，此情况会随着`NUM_SAMPLES`的增多而改善
 ![输入图片说明](/imgs/2024-10-18/hEni8o7AyCtoweQi.png =600x400)
 当`Stride = 10.0，NUM_SAMPLES = 100`时，可以看到噪点明显变少很多
 ![输入图片说明](/imgs/2024-10-18/XSvAvGW8sIlOIMqZ.png =600x400)
 当`Stride = 1.0，NUM_SAMPLES = 100`时，可以看到阴影的边缘变得清晰许多
 ![输入图片说明](/imgs/2024-10-18/ZLIG9E5XjEvCkrqc.png =600x400)
+使用均匀圆盘采样
 ![输入图片说明](/imgs/2024-10-19/IjDLU5TxIASNJPr0.png =600x350)
 
 ### 综上
@@ -191,7 +192,7 @@ void main(void) {
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgwNjY2NDU5MywtMTE0ODQxMzc3MCwxNz
+eyJoaXN0b3J5IjpbLTgwNDc3OTU2MiwtMTE0ODQxMzc3MCwxNz
 IzMzE0NzI4LC04MDg4NzY4NDgsMTcyMzMxNDcyOCwtMTMxNTI3
 MDY2NCwxNzA4MjcyMzQyXX0=
 -->
