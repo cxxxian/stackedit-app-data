@@ -226,13 +226,44 @@ float findBlocker( sampler2D shadowMap,  vec2 uv, float zReceiver ) {
   return float(block_depth) / float(blockerNum);
 }
 ```
+2. 完善PCSS(sampler2D shadowMap, vec4 shadowCoord) 函数
+```
+float PCSS(sampler2D shadowMap, vec4 coords){
 
+  // STEP 1: avgblocker depth
+  float d_Blocker = findBlocker(shadowMap, coords.xy, coords.z);
+  float w_Light = 1.;
+  float d_Receiver = coords.z;
+
+  // STEP 2: penumbra size
+  // 根据公式计算wpenumbra
+  float w_penumbra = w_Light * (d_Receiver - d_Blocker) / d_Blocker;
+
+  // STEP 3: filtering
+  // PCF，只不过比PCF多了一重w_prenumbra加入了d_Receiber的影响
+  float Stride = 20.;
+  float shadowmapSize = 2048.;
+  float visibility = 0.;
+  float cur_depth = coords.z;
+
+  //泊松采样已经在findBlocker中进行
+
+  for(int i = 0; i < NUM_SAMPLES; i++){
+    vec4 shadow_color = texture2D(shadowMap, coords.xy + poissonDisk[i] * Stride / shadowmapSize * w_penumbra);
+    float shadow_depth = unpack(shadow_color);
+    float res = cur_depth <= shadow_depth + 0.01 ? 1. : 0.;
+    visibility += res;
+  }
+  
+  return visibility / float(NUM_SAMPLES);
+}
+```
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDkyMjkyMjg0LC0xNjkxMjcwNzI1LDExMT
-U1MzA3MDYsLTIxMTQ4MTgyMzksMjU4NDEzMDk2LC0xMTQ4NDEz
-NzcwLDE3MjMzMTQ3MjgsLTgwODg3Njg0OCwxNzIzMzE0NzI4LC
-0xMzE1MjcwNjY0LDE3MDgyNzIzNDJdfQ==
+eyJoaXN0b3J5IjpbLTEyNjIyODY4NzgsLTE2OTEyNzA3MjUsMT
+ExNTUzMDcwNiwtMjExNDgxODIzOSwyNTg0MTMwOTYsLTExNDg0
+MTM3NzAsMTcyMzMxNDcyOCwtODA4ODc2ODQ4LDE3MjMzMTQ3Mj
+gsLTEzMTUyNzA2NjQsMTcwODI3MjM0Ml19
 -->
