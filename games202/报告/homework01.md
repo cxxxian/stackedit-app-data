@@ -130,7 +130,7 @@ float useShadowMap(sampler2D shadowMap, vec4 shadowCoord){
 ![输入图片说明](/imgs/2024-10-18/5Vl5GcL66CmPyUSJ.png =550x400)
 ![输入图片说明](/imgs/2024-10-18/xr9vvrtJ8CG7uctY.png =550x400)
 ## 任务2：PCF(Percentage Closer Filter)
-完善 phongFragment.glsl 中的 PCF(sampler2D shadowMap, vec4 shadowCoord, float filterSize) 函数
+1. 完善 phongFragment.glsl 中的 PCF(sampler2D shadowMap, vec4 shadowCoord, float filterSize) 函数
 ```
 float PCF(sampler2D shadowMap, vec4 coords) {
   // 1 给定步长，分辨率，初始输出值，卷积范围当前的深度
@@ -154,7 +154,7 @@ float PCF(sampler2D shadowMap, vec4 coords) {
   return visibility / float(NUM_SAMPLES);
 }
 ```
-使用main函数的第二行visibility
+2. 使用main函数的第二行visibility
 ```
 void main(void) {
   //归一化
@@ -197,14 +197,15 @@ void main(void) {
 ![输入图片说明](/imgs/2024-10-19/e8TxiSBCr3xVA7vN.png =600x350)
 发现EPS主要作用变化在模型上的阴影
 ## 任务3：PCSS(Percentage Closer Soft Shadow)
+1. 完善 phongFragment.glsl 中的 findBlocker(sampler2D shadowMap, vec2 uv, float zReceiver)
 
 
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTExNTUzMDcwNiwtMjExNDgxODIzOSwyNT
-g0MTMwOTYsLTExNDg0MTM3NzAsMTcyMzMxNDcyOCwtODA4ODc2
-ODQ4LDE3MjMzMTQ3MjgsLTEzMTUyNzA2NjQsMTcwODI3MjM0Ml
-19
+eyJoaXN0b3J5IjpbLTE2OTEyNzA3MjUsMTExNTUzMDcwNiwtMj
+ExNDgxODIzOSwyNTg0MTMwOTYsLTExNDg0MTM3NzAsMTcyMzMx
+NDcyOCwtODA4ODc2ODQ4LDE3MjMzMTQ3MjgsLTEzMTUyNzA2Nj
+QsMTcwODI3MjM0Ml19
 -->
