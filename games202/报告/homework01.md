@@ -6,7 +6,6 @@
 -   CPU型号：12th Gen Intel(R) Core(TM) i7-12700H
     -   CPU核心（core）数量：4
     -   CPU默频/睿频：2.30 GHz
--   内存规格：// 例如：DDR2-400
 -   内存容量：512G
 -   存储类型：SSD
 -   显卡型号：Nvidia GeForce RTX 3060
@@ -263,7 +262,7 @@ float PCSS(sampler2D shadowMap, vec4 coords){
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMzczMDQ0NTksLTE2OTEyNzA3MjUsMT
+eyJoaXN0b3J5IjpbLTE5NTgwNDkxODcsLTE2OTEyNzA3MjUsMT
 ExNTUzMDcwNiwtMjExNDgxODIzOSwyNTg0MTMwOTYsLTExNDg0
 MTM3NzAsMTcyMzMxNDcyOCwtODA4ODc2ODQ4LDE3MjMzMTQ3Mj
 gsLTEzMTUyNzA2NjQsMTcwODI3MjM0Ml19
