@@ -196,13 +196,15 @@ void main(void) {
 当`EPS = 0.01`时
 ![输入图片说明](/imgs/2024-10-19/e8TxiSBCr3xVA7vN.png =600x350)
 发现EPS主要作用变化在模型上的阴影
-## 任务3：修正程序（Fixme）
+## 任务3：PCSS(Percentage Closer Soft Shadow)
+
 
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMTQ4MTgyMzksMjU4NDEzMDk2LC0xMT
-Q4NDEzNzcwLDE3MjMzMTQ3MjgsLTgwODg3Njg0OCwxNzIzMzE0
-NzI4LC0xMzE1MjcwNjY0LDE3MDgyNzIzNDJdfQ==
+eyJoaXN0b3J5IjpbMTExNTUzMDcwNiwtMjExNDgxODIzOSwyNT
+g0MTMwOTYsLTExNDg0MTM3NzAsMTcyMzMxNDcyOCwtODA4ODc2
+ODQ4LDE3MjMzMTQ3MjgsLTEzMTUyNzA2NjQsMTcwODI3MjM0Ml
+19
 -->
