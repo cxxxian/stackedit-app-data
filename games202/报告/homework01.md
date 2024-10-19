@@ -190,7 +190,7 @@ void main(void) {
 泊松采样的效果会比均匀圆盘来的好
 
 EPS
-![输入图片说明](/imgs/2024-10-19/dlDCu1X9zLQd7bBk.png =600x400)
+![输入图片说明](/imgs/2024-10-19/dlDCu1X9zLQd7bBk.png =600x420)
 ![输入图片说明](/imgs/2024-10-19/e8TxiSBCr3xVA7vN.png =600x350)
 ## 任务3：修正程序（Fixme）
 
@@ -198,7 +198,7 @@ EPS
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwOTc3NjcwOCwyNTg0MTMwOTYsLTExND
-g0MTM3NzAsMTcyMzMxNDcyOCwtODA4ODc2ODQ4LDE3MjMzMTQ3
-MjgsLTEzMTUyNzA2NjQsMTcwODI3MjM0Ml19
+eyJoaXN0b3J5IjpbNzM2ODA0MTU4LDI1ODQxMzA5NiwtMTE0OD
+QxMzc3MCwxNzIzMzE0NzI4LC04MDg4NzY4NDgsMTcyMzMxNDcy
+OCwtMTMxNTI3MDY2NCwxNzA4MjcyMzQyXX0=
 -->
