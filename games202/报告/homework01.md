@@ -179,6 +179,7 @@ void main(void) {
 ![输入图片说明](/imgs/2024-10-18/XSvAvGW8sIlOIMqZ.png =600x400)
 当`Stride = 1.0，NUM_SAMPLES = 100`时，可以看到阴影的边缘变得清晰许多
 ![输入图片说明](/imgs/2024-10-18/ZLIG9E5XjEvCkrqc.png =600x400)
+![输入图片说明](/imgs/2024-10-19/IjDLU5TxIASNJPr0.png =600x350)
 
 ### 综上
 通过修改`Stride` 和`NUM_SAMPLES`参数
@@ -190,7 +191,7 @@ void main(void) {
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDg0MTM3NzAsMTcyMzMxNDcyOCwtOD
-A4ODc2ODQ4LDE3MjMzMTQ3MjgsLTEzMTUyNzA2NjQsMTcwODI3
-MjM0Ml19
+eyJoaXN0b3J5IjpbLTgwNjY2NDU5MywtMTE0ODQxMzc3MCwxNz
+IzMzE0NzI4LC04MDg4NzY4NDgsMTcyMzMxNDcyOCwtMTMxNTI3
+MDY2NCwxNzA4MjcyMzQyXX0=
 -->
