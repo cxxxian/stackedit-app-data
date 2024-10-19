@@ -258,11 +258,12 @@ float PCSS(sampler2D shadowMap, vec4 coords){
   return visibility / float(NUM_SAMPLES);
 }
 ```
+![输入图片说明](/imgs/2024-10-19/BFAW6FC1IAq6afUi.png =600x350)
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjIyODY4NzgsLTE2OTEyNzA3MjUsMT
+eyJoaXN0b3J5IjpbLTEwMzczMDQ0NTksLTE2OTEyNzA3MjUsMT
 ExNTUzMDcwNiwtMjExNDgxODIzOSwyNTg0MTMwOTYsLTExNDg0
 MTM3NzAsMTcyMzMxNDcyOCwtODA4ODc2ODQ4LDE3MjMzMTQ3Mj
 gsLTEzMTUyNzA2NjQsMTcwODI3MjM0Ml19
