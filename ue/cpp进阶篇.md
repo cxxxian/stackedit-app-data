@@ -124,9 +124,29 @@ void ASlashHUD::BeginPlay()
 }
 ```
 ### 让SlashCharacter可以访问到我们的SlashOverlay
+在SlashCharacter.cpp的beginPlay中，将SlashOverlay和character联系起来。
+通过cast投射，默认的APlayerController和ASlashHUDshi'fang'wen'bu
+```
+void ASlashCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+	
+	Tags.Add(FName("EngageableTarget"));
+	APlayerController* PlayerController = Cast<APlayerController>(GetController());
+	if (PlayerController) {
+		ASlashHUD* SlashHUD = Cast<ASlashHUD>(PlayerController->GetHUD());
+		if (SlashHUD) {
+			USlashOverlay* SlashOverlay = SlashHUD->GetSlashOverlay();
+			if (SlashOverlay) {
+				SlashOverlay->SetHealthBarPercent(.5f);
+			}
+		}
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3NTU0NDEzMCwxMzQzMzkzNjQxLDE1OT
-c5MzQ1NzIsMTUzNDkxOTAwNywtODQzMTY1NjY0LDE2MTQ1MzIw
-OSwtMzQ3NzA2MTU5LDEyNDQ0Nzk5NjQsMjUzMzU5MTA2LDE4Mj
-IwMjg0MjIsMTc4MDIwMDkyNF19
+eyJoaXN0b3J5IjpbMjE0MzgyMzM2LDEzNDMzOTM2NDEsMTU5Nz
+kzNDU3MiwxNTM0OTE5MDA3LC04NDMxNjU2NjQsMTYxNDUzMjA5
+LC0zNDc3MDYxNTksMTI0NDQ3OTk2NCwyNTMzNTkxMDYsMTgyMj
+AyODQyMiwxNzgwMjAwOTI0XX0=
 -->
