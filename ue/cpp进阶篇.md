@@ -140,17 +140,20 @@ void ASlashCharacter::BeginPlay()
 	if (PlayerController) {
 		ASlashHUD* SlashHUD = Cast<ASlashHUD>(PlayerController->GetHUD());
 		if (SlashHUD) {
-			USlashOverlay* SlashOverlay = SlashHUD->GetSlashOverlay();
-			if (SlashOverlay) {
-				SlashOverlay->SetHealthBarPercent(.5f);
+			SlashOverlay = SlashHUD->GetSlashOverlay();
+			if (SlashOverlay && Attributes) {
+				SlashOverlay->SetHealthBarPercent(Attributes->GetHealthPercent());
+				SlashOverlay->SetStaminaBarPercent(1.f);
+				SlashOverlay->SetGold(0);
+				SlashOverlay->SetSoul(0);
 			}
 		}
 	}
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Mzg2MTI1ODgsMTM0MzM5MzY0MSwxNT
-k3OTM0NTcyLDE1MzQ5MTkwMDcsLTg0MzE2NTY2NCwxNjE0NTMy
-MDksLTM0NzcwNjE1OSwxMjQ0NDc5OTY0LDI1MzM1OTEwNiwxOD
-IyMDI4NDIyLDE3ODAyMDA5MjRdfQ==
+eyJoaXN0b3J5IjpbMjk5NjgzNzksLTE3Mzg2MTI1ODgsMTM0Mz
+M5MzY0MSwxNTk3OTM0NTcyLDE1MzQ5MTkwMDcsLTg0MzE2NTY2
+NCwxNjE0NTMyMDksLTM0NzcwNjE1OSwxMjQ0NDc5OTY0LDI1Mz
+M1OTEwNiwxODIyMDI4NDIyLDE3ODAyMDA5MjRdfQ==
 -->
