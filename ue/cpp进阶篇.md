@@ -105,7 +105,11 @@ protected:
 
 private:
 	UPROPERTY(EditDefaultsOnly, Category = Slash)
-	TSubclassOf<class USlashOverlay> SlashOverlayClass;
+	TSubclassOf<USlashOverlay> SlashOverlayClass;
+
+	USlashOverlay* SlashOverlay;
+public:
+	FORCEINLINE USlashOverlay* GetSlashOverlay() const { return SlashOverlay; }
 ```
 在SlashHUD.cpp实现，
 ```
@@ -117,7 +121,7 @@ void ASlashHUD::BeginPlay()
 	if (World) {
 		APlayerController* Controller = World->GetFirstPlayerController();
 		if (Controller && SlashOverlayClass) {
-			USlashOverlay* SlashOverlay = CreateWidget<USlashOverlay>(Controller, SlashOverlayClass);
+			SlashOverlay = CreateWidget<USlashOverlay>(Controller, SlashOverlayClass);
 			SlashOverlay->AddToViewport();
 		}
 	}
@@ -145,7 +149,7 @@ void ASlashCharacter::BeginPlay()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTQ0MzkwOTIsMTM0MzM5MzY0MSwxNT
+eyJoaXN0b3J5IjpbLTE3Mzg2MTI1ODgsMTM0MzM5MzY0MSwxNT
 k3OTM0NTcyLDE1MzQ5MTkwMDcsLTg0MzE2NTY2NCwxNjE0NTMy
 MDksLTM0NzcwNjE1OSwxMjQ0NDc5OTY0LDI1MzM1OTEwNiwxOD
 IyMDI4NDIyLDE3ODAyMDA5MjRdfQ==
