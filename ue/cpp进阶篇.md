@@ -130,6 +130,8 @@ void ASlashHUD::BeginPlay()
 ### 让SlashCharacter可以访问到我们的SlashOverlay
 在SlashCharacter.cpp的beginPlay中，将SlashOverlay和character联系起来。
 通过cast投射，默认的APlayerController和ASlashHUD是访问不到我们自己设置的东西。
+在SlashCharacter.h中声明一个USlashOverlay* SlashOverlay；
+然后再SlashCharacter.cpp如下实现：
 ```
 void ASlashCharacter::BeginPlay()
 {
@@ -152,8 +154,8 @@ void ASlashCharacter::BeginPlay()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjk5NjgzNzksLTE3Mzg2MTI1ODgsMTM0Mz
-M5MzY0MSwxNTk3OTM0NTcyLDE1MzQ5MTkwMDcsLTg0MzE2NTY2
-NCwxNjE0NTMyMDksLTM0NzcwNjE1OSwxMjQ0NDc5OTY0LDI1Mz
-M1OTEwNiwxODIyMDI4NDIyLDE3ODAyMDA5MjRdfQ==
+eyJoaXN0b3J5IjpbOTkwMjgwNDEzLC0xNzM4NjEyNTg4LDEzND
+MzOTM2NDEsMTU5NzkzNDU3MiwxNTM0OTE5MDA3LC04NDMxNjU2
+NjQsMTYxNDUzMjA5LC0zNDc3MDYxNTksMTI0NDQ3OTk2NCwyNT
+MzNTkxMDYsMTgyMjAyODQyMiwxNzgwMjAwOTI0XX0=
 -->
