@@ -2495,13 +2495,12 @@ void AEnemy::Die()
 UENUM(BlueprintType)
 enum class EEnemyState : uint8
 {
+	EES_NoState UMETA(DisplayName = "NoState"),
 	EES_Dead UMETA(DisplayName = "Dead"),
 	EES_Patrolling UMETA(DisplayName = "Patrolling"),
 	EES_Chasing UMETA(DisplayName = "Chasing"),
 	EES_Attacking UMETA(DisplayName = "Attacking"),
-	EES_Engaged UMETA(DisplayName = "Engaged"),
-
-    EES_NoState UMETA(DisplayName = "NoState")
+	EES_Engaged UMETA(DisplayName = "Engaged")
 };
 ```
 override BaseCharacter中的AttackEnd方法，将Enemy的状态重置并且重新调用CheckCombatTarget方法，这样在每次攻击结束后Enemy都会重新检查与玩家之间的距离，并作出相应的状态判断
@@ -2700,5 +2699,5 @@ FVector ABaseCharacter::GetRotationWarpTarget()
 此时要在BP_Paladin的蓝图中进行父类的tick方法继承
 ![输入图片说明](/imgs/2024-08-29/WiS5d9vgR6x4M7X7.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjM5ODk2OTBdfQ==
+eyJoaXN0b3J5IjpbMTIyNzY0NjQ4MCwtMTgyMzk4OTY5MF19
 -->
