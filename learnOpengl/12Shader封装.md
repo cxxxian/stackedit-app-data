@@ -57,6 +57,8 @@ void main()
     FragColor = vec4(color, 1.0f);
 }
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5MzA0MzY3MiwtMzAzNTQ1MDg3XX0=
+eyJoaXN0b3J5IjpbMTgyNDIwOTk4LDE4OTMwNDM2NzIsLTMwMz
+U0NTA4N119
 -->
