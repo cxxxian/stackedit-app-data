@@ -170,9 +170,35 @@ void render(){
     shader->end();
 }
 ```
+以下为错误检查的封装
 ```
+void Shader::checkShaderErrors(GLuint target, std::string type)
+{
+    int success = 0;
+    char infoLog[1024];
+    if (type == "COMPILE") {
+        glGetShaderiv(target, GL_COMPILE_STATUS, &success);
+        if (!success) {
+            glGetShaderInfoLog(target, 1024, NULL, infoLog);
+            std::cout << "Error: SHADER COMPILE ERROR" << "\n" << infoLog << std::endl;
+        }
+        glCompileShader(target);
+        //检查fragment编译结果
+        glGetShaderiv(target, GL_COMPILE_STATUS, &success);
+    }
+    else if (type == "LINK") {
+        glGetProgramiv(target, GL_LINK_STATUS, &success);
+        if (!success) {
+            glGetProgramInfoLog(target, 1024, NULL, infoLog);
+            std::cout << "Error: SHADER LINK ERROR" << "\n" << infoLog << std::endl;
+        }
+    }
+    else {
+        std::cout << "Error: Check shader errors Type is wrong" << std::endl;
+    }
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDE1MDcwMzYsMzY1ODYxNzMyLDEwNj
-E3MDE2MTEsMTg5MzA0MzY3MiwtMzAzNTQ1MDg3XX0=
+eyJoaXN0b3J5IjpbNTM5Njc0NTE0LDM2NTg2MTczMiwxMDYxNz
+AxNjExLDE4OTMwNDM2NzIsLTMwMzU0NTA4N119
 -->
