@@ -36,7 +36,27 @@ void Shader::end()
 }
 
 ```
-f
+分别建立vertex.glsl和fragment.glsl
+```
+#version 460 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aColor;
+out vec3 color;
+void main()
+{
+    gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
+    color = aColor;
+    }
+```
+```
+#version 330 core
+out vec4 FragColor;
+in vec3 color;
+void main()
+{
+    FragColor = vec4(color, 1.0f);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODk5NTc3MjksLTMwMzU0NTA4N119
+eyJoaXN0b3J5IjpbMTg5MzA0MzY3MiwtMzAzNTQ1MDg3XX0=
 -->
