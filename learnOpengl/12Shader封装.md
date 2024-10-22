@@ -145,7 +145,30 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
     glDeleteShader(fragment);
 }
 ```
+完成以上封装之后，我们直接在main.cpp中
+`Shader *shader = nullptr;`
+```
+void prepareShader() {
+    shader = new Shader("assets/shaders/vertex.glsl", "assets/shaders/fragment.glsl");
+}
+```
+```
+void render(){
+    //执行opengl画布清理操作
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    //1 绑定当前的program
+    shader->begin();
+    //2 绑定当前的vao
+    glBindVertexArray(vao);
+    //3 发出绘制指令
+    //glDrawArrays(GL_LINE_STRIP, 0, 6);
+    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+    shader->end();
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2MTcwMTYxMSwxODkzMDQzNjcyLC0zMD
-M1NDUwODddfQ==
+eyJoaXN0b3J5IjpbMTQxNDMyNzg5MSwxMDYxNzAxNjExLDE4OT
+MwNDM2NzIsLTMwMzU0NTA4N119
 -->
