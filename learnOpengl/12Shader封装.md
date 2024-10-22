@@ -147,11 +147,13 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 ```
 完成以上封装之后，我们直接在main.cpp中
 `Shader *shader = nullptr;`
+然后调用shader构造函数
 ```
 void prepareShader() {
     shader = new Shader("assets/shaders/vertex.glsl", "assets/shaders/fragment.glsl");
 }
 ```
+使用刚刚写的begin和end，使用end这样我们就可以使用多个shader
 ```
 void render(){
     //执行opengl画布清理操作
@@ -169,6 +171,6 @@ void render(){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxNDMyNzg5MSwxMDYxNzAxNjExLDE4OT
-MwNDM2NzIsLTMwMzU0NTA4N119
+eyJoaXN0b3J5IjpbMzY1ODYxNzMyLDEwNjE3MDE2MTEsMTg5Mz
+A0MzY3MiwtMzAzNTQ1MDg3XX0=
 -->
