@@ -26,7 +26,9 @@ in vec3 aPos;
 ![输入图片说明](/imgs/2024-10-23/opnmygIOSyWXHtDl.png)
 ![输入图片说明](/imgs/2024-10-23/03DSXGjREaSWkO1J.png)
 ![输入图片说明](/imgs/2024-10-23/im4pWGswALBlNcNu.png)
+![输入图片说明](/imgs/2024-10-23/uZS1RM7F7Dry3u65.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDA3Njg5NDUsLTMyODM4MTQ2NSw0Nj
-I2MzIwOTQsMjA5NTA2NjA0NywxNzk3ODU1MDUyXX0=
+eyJoaXN0b3J5IjpbNTE0MDUyMzA4LC0xMzQwNzY4OTQ1LC0zMj
+gzODE0NjUsNDYyNjMyMDk0LDIwOTUwNjYwNDcsMTc5Nzg1NTA1
+Ml19
 -->
