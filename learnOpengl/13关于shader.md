@@ -27,8 +27,11 @@ in vec3 aPos;
 ![输入图片说明](/imgs/2024-10-23/03DSXGjREaSWkO1J.png)
 ![输入图片说明](/imgs/2024-10-23/im4pWGswALBlNcNu.png)
 ![输入图片说明](/imgs/2024-10-23/uZS1RM7F7Dry3u65.png)
+eg.
+uniform int a;
+glUniform1i(location, 数值);
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTE0MDUyMzA4LC0xMzQwNzY4OTQ1LC0zMj
-gzODE0NjUsNDYyNjMyMDk0LDIwOTUwNjYwNDcsMTc5Nzg1NTA1
-Ml19
+eyJoaXN0b3J5IjpbODY5NTc3NjMsLTEzNDA3Njg5NDUsLTMyOD
+M4MTQ2NSw0NjI2MzIwOTQsMjA5NTA2NjA0NywxNzk3ODU1MDUy
+XX0=
 -->
