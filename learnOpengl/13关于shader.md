@@ -28,10 +28,12 @@ in vec3 aPos;
 ![输入图片说明](/imgs/2024-10-23/im4pWGswALBlNcNu.png)
 ![输入图片说明](/imgs/2024-10-23/uZS1RM7F7Dry3u65.png)
 eg.
+```
 uniform int a;
-glUniform1i(location, 数值);
+glUniform1i(。。。);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODY5NTc3NjMsLTEzNDA3Njg5NDUsLTMyOD
-M4MTQ2NSw0NjI2MzIwOTQsMjA5NTA2NjA0NywxNzk3ODU1MDUy
-XX0=
+eyJoaXN0b3J5IjpbLTkxODEzMDkwMiwtMTM0MDc2ODk0NSwtMz
+I4MzgxNDY1LDQ2MjYzMjA5NCwyMDk1MDY2MDQ3LDE3OTc4NTUw
+NTJdfQ==
 -->
