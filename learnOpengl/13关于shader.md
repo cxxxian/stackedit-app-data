@@ -49,7 +49,8 @@ void Shader::setFloat(std::string& name, float value)
     GL_CALL(glUniform1f(location, value));
 }
 ```
-为了实现三角形忽明忽暗的效果，我们可以在vs或者fs里操作，此处
+为了实现三角形忽明忽暗的效果，我们可以在vs或者fs里操作，此处针对vs操作。、
+创建uniform变量并以此对color进行操作
 ```
 #version 460 core
 layout (location = 0) in vec3 aPos;
@@ -66,7 +67,7 @@ void main()
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzUwMzEyNDMzLC05MTgxMzA5MDIsLTEzND
-A3Njg5NDUsLTMyODM4MTQ2NSw0NjI2MzIwOTQsMjA5NTA2NjA0
-NywxNzk3ODU1MDUyXX0=
+eyJoaXN0b3J5IjpbMjA1NTY1MDM1NCwtOTE4MTMwOTAyLC0xMz
+QwNzY4OTQ1LC0zMjgzODE0NjUsNDYyNjMyMDk0LDIwOTUwNjYw
+NDcsMTc5Nzg1NTA1Ml19
 -->
