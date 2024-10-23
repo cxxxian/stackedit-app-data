@@ -103,12 +103,13 @@ void main()
 **vs和fs内的uniform如果重名，两个都会发生作用，相当于一个**
 # 练习
 ![输入图片说明](/imgs/2024-10-23/VG6iCXOcuZEiZaTd.png)
-
+out一个position给fs，并把aPos赋值给position
 ![输入图片说明](/imgs/2024-10-23/hhUR03ZTkIRyLtD5.png)
+把position作为颜色输出
 ![输入图片说明](/imgs/2024-10-23/LIrWpj8wLm4y01pE.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyMDE0NTk2OSwtMTU3MTA2NDAyNCwtMT
-A2NjA2NzY2OSwtOTE4MTMwOTAyLC0xMzQwNzY4OTQ1LC0zMjgz
-ODE0NjUsNDYyNjMyMDk0LDIwOTUwNjYwNDcsMTc5Nzg1NTA1Ml
-19
+eyJoaXN0b3J5IjpbLTEyMDg2MzM5MjAsLTE1NzEwNjQwMjQsLT
+EwNjYwNjc2NjksLTkxODEzMDkwMiwtMTM0MDc2ODk0NSwtMzI4
+MzgxNDY1LDQ2MjYzMjA5NCwyMDk1MDY2MDQ3LDE3OTc4NTUwNT
+JdfQ==
 -->
