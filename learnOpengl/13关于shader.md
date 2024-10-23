@@ -25,7 +25,8 @@ in vec3 aPos;
 ## uniform
 ![输入图片说明](/imgs/2024-10-23/opnmygIOSyWXHtDl.png)
 ![输入图片说明](/imgs/2024-10-23/03DSXGjREaSWkO1J.png)
+![输入图片说明](/imgs/2024-10-23/im4pWGswALBlNcNu.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyODM4MTQ2NSw0NjI2MzIwOTQsMjA5NT
-A2NjA0NywxNzk3ODU1MDUyXX0=
+eyJoaXN0b3J5IjpbLTEzNDA3Njg5NDUsLTMyODM4MTQ2NSw0Nj
+I2MzIwOTQsMjA5NTA2NjA0NywxNzk3ODU1MDUyXX0=
 -->
