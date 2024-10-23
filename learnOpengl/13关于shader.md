@@ -109,9 +109,10 @@ out一个position给fs，并把aPos赋值给position
 ![输入图片说明](/imgs/2024-10-23/LIrWpj8wLm4y01pE.png)
 ![输入图片说明](/imgs/2024-10-23/bcjsWudOlsUcuaGt.png)
 ![输入图片说明](/imgs/2024-10-23/mSpNMKqWTcYdgmce.png)
+![输入图片说明](/imgs/2024-10-23/2HUDjlu7b3venmfo.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEwNjI0MjcwNSwtMTIwODYzMzkyMCwtMT
-U3MTA2NDAyNCwtMTA2NjA2NzY2OSwtOTE4MTMwOTAyLC0xMzQw
-NzY4OTQ1LC0zMjgzODE0NjUsNDYyNjMyMDk0LDIwOTUwNjYwND
-csMTc5Nzg1NTA1Ml19
+eyJoaXN0b3J5IjpbMjAzMDE2NjI0NSwyMTA2MjQyNzA1LC0xMj
+A4NjMzOTIwLC0xNTcxMDY0MDI0LC0xMDY2MDY3NjY5LC05MTgx
+MzA5MDIsLTEzNDA3Njg5NDUsLTMyODM4MTQ2NSw0NjI2MzIwOT
+QsMjA5NTA2NjA0NywxNzk3ODU1MDUyXX0=
 -->
