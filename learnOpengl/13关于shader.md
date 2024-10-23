@@ -49,9 +49,24 @@ void Shader::setFloat(std::string& name, float value)
     GL_CALL(glUniform1f(location, value));
 }
 ```
+为了实现三角形忽明忽暗的效果，我们可以在vs或者fs里操作，此处
+```
+#version 460 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aColor;
+out vec3 color;
+
+uniform float time;
+
+void main()
+{
+    gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
+    color = aColor * (sin(time) + 1.0) / 2.0;
+}
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDYyNzM2NzcsLTkxODEzMDkwMiwtMT
-M0MDc2ODk0NSwtMzI4MzgxNDY1LDQ2MjYzMjA5NCwyMDk1MDY2
-MDQ3LDE3OTc4NTUwNTJdfQ==
+eyJoaXN0b3J5IjpbMzUwMzEyNDMzLC05MTgxMzA5MDIsLTEzND
+A3Njg5NDUsLTMyODM4MTQ2NSw0NjI2MzIwOTQsMjA5NTA2NjA0
+NywxNzk3ODU1MDUyXX0=
 -->
