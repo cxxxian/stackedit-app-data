@@ -66,7 +66,7 @@ void main()
 }
 ```
 在render中使用方法，注意要在useProgram之后！！！（即我们做的shader->begin()函数），这样才是对该program进行操作。
-
+glfwGetTime()y
 ```
 void render(){
     //执行opengl画布清理操作
@@ -86,7 +86,7 @@ void render(){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3MjczMTcwMCwtOTE4MTMwOTAyLC0xMz
+eyJoaXN0b3J5IjpbLTEzOTE4MjA4MSwtOTE4MTMwOTAyLC0xMz
 QwNzY4OTQ1LC0zMjgzODE0NjUsNDYyNjMyMDk0LDIwOTUwNjYw
 NDcsMTc5Nzg1NTA1Ml19
 -->
