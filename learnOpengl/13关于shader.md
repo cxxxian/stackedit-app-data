@@ -65,9 +65,28 @@ void main()
     color = aColor * (sin(time) + 1.0) / 2.0;
 }
 ```
+在render中使用方法，注意要在useProgram之后！！！（即我们做的shader->begin()函数），这样才是对该program进行操作。
 
+```
+void render(){
+    //执行opengl画布清理操作
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    //1 绑定当前的program
+    shader->begin();
+
+    shader->setFloat("time", glfwGetTime());
+    //2 绑定当前的vao
+    glBindVertexArray(vao);
+    //3 发出绘制指令
+    //glDrawArrays(GL_LINE_STRIP, 0, 6);
+    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+    shader->end();
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1NTY1MDM1NCwtOTE4MTMwOTAyLC0xMz
+eyJoaXN0b3J5IjpbMTY3MjczMTcwMCwtOTE4MTMwOTAyLC0xMz
 QwNzY4OTQ1LC0zMjgzODE0NjUsNDYyNjMyMDk0LDIwOTUwNjYw
 NDcsMTc5Nzg1NTA1Ml19
 -->
