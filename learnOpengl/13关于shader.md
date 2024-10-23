@@ -9,11 +9,19 @@
 ![输入图片说明](/imgs/2024-10-23/1DC6tig6fG5BKJyH.png)
 属性编号是从上到下分配的
 两种顺序会得到不同的location值
+posLocation = 0
+colorLocation = 1
 ```
 in vec3 aPos;
 in vec3 aColor;
 ```
+posLocation = 1
+colorLocation = 0
+```
+in vec3 aColor;
+in vec3 aPos;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4NjE0ODYzNywyMDk1MDY2MDQ3LDE3OT
+eyJoaXN0b3J5IjpbMTQ4Mjg5NDcwMiwyMDk1MDY2MDQ3LDE3OT
 c4NTUwNTJdfQ==
 -->
