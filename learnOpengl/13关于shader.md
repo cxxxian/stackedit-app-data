@@ -85,8 +85,18 @@ void render(){
     shader->end();
 }
 ```
+#version 330 core
+out vec4 FragColor;
+
+uniform float time;
+
+in vec3 color;
+void main()
+{
+    FragColor = vec4(color * (sin(time) + 1.0) / 2.0, 1.0f);
+}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3ODkwMTU4MiwtOTE4MTMwOTAyLC0xMz
-QwNzY4OTQ1LC0zMjgzODE0NjUsNDYyNjMyMDk0LDIwOTUwNjYw
-NDcsMTc5Nzg1NTA1Ml19
+eyJoaXN0b3J5IjpbMzkzMjQzOTA2LC05MTgxMzA5MDIsLTEzND
+A3Njg5NDUsLTMyODM4MTQ2NSw0NjI2MzIwOTQsMjA5NTA2NjA0
+NywxNzk3ODU1MDUyXX0=
 -->
