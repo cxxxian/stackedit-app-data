@@ -110,6 +110,7 @@ out一个position给fs，并把aPos赋值给position
 ![输入图片说明](/imgs/2024-10-23/bcjsWudOlsUcuaGt.png)
 ![输入图片说明](/imgs/2024-10-23/mSpNMKqWTcYdgmce.png)
 ![输入图片说明](/imgs/2024-10-23/2HUDjlu7b3venmfo.png)
+```
 void Shader::setVector3(const std::string& name, float x, float y, float z)
 {
     //1 通过名称拿到Uniform变量位置location
@@ -128,8 +129,9 @@ void Shader::setVector3(const std::string& name, const float* values)
     //第二个参数：你当前要更新的uniform变量如果是数组，数组里面包括多少个向量vec3
     GL_CALL(glUniform3fv(location, 1, values));
 }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ0NDAxOTM1MSwyMDMwMTY2MjQ1LDIxMD
+eyJoaXN0b3J5IjpbLTc1OTQyNzA4NSwyMDMwMTY2MjQ1LDIxMD
 YyNDI3MDUsLTEyMDg2MzM5MjAsLTE1NzEwNjQwMjQsLTEwNjYw
 Njc2NjksLTkxODEzMDkwMiwtMTM0MDc2ODk0NSwtMzI4MzgxND
 Y1LDQ2MjYzMjA5NCwyMDk1MDY2MDQ3LDE3OTc4NTUwNTJdfQ==
