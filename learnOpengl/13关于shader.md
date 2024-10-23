@@ -99,9 +99,10 @@ void main()
     FragColor = vec4(color * (sin(time) + 1.0) / 2.0, 1.0f);
 }
 ```
-！！
+！！！
+vs和fs内的uniform如果重名，两个都会发生作用，相当于一个
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwNDY5OTgzMywtMTA2NjA2NzY2OSwtOT
-E4MTMwOTAyLC0xMzQwNzY4OTQ1LC0zMjgzODE0NjUsNDYyNjMy
-MDk0LDIwOTUwNjYwNDcsMTc5Nzg1NTA1Ml19
+eyJoaXN0b3J5IjpbLTE0MjQ5NDU1OTUsLTEwNjYwNjc2NjksLT
+kxODEzMDkwMiwtMTM0MDc2ODk0NSwtMzI4MzgxNDY1LDQ2MjYz
+MjA5NCwyMDk1MDY2MDQ3LDE3OTc4NTUwNTJdfQ==
 -->
