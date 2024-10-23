@@ -108,8 +108,9 @@ out一个position给fs，并把aPos赋值给position
 把position作为颜色输出
 ![输入图片说明](/imgs/2024-10-23/LIrWpj8wLm4y01pE.png)
 ![输入图片说明](/imgs/2024-10-23/bcjsWudOlsUcuaGt.png)
+![输入图片说明](/imgs/2024-10-23/mSpNMKqWTcYdgmce.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3MzY3MTM2NCwtMTIwODYzMzkyMCwtMT
+eyJoaXN0b3J5IjpbMjEwNjI0MjcwNSwtMTIwODYzMzkyMCwtMT
 U3MTA2NDAyNCwtMTA2NjA2NzY2OSwtOTE4MTMwOTAyLC0xMzQw
 NzY4OTQ1LC0zMjgzODE0NjUsNDYyNjMyMDk0LDIwOTUwNjYwND
 csMTc5Nzg1NTA1Ml19
