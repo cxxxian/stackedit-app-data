@@ -34,12 +34,12 @@ glUniform1i(。。。);
 ```
 
 ### uniform的使用
-在shader.h中声明函数用来设置参数（）
+在shader.h中声明函数用来设置参数（制作此方法的主要原因是因为我们不想把mProgram暴露为public，所以制作此函数用来设置value给mProgram）
 ```
 void setFloat(std::string& name, float value);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjQ2NzYwMTUsLTkxODEzMDkwMiwtMT
+eyJoaXN0b3J5IjpbLTE4OTg0Njk4MTgsLTkxODEzMDkwMiwtMT
 M0MDc2ODk0NSwtMzI4MzgxNDY1LDQ2MjYzMjA5NCwyMDk1MDY2
 MDQ3LDE3OTc4NTUwNTJdfQ==
 -->
