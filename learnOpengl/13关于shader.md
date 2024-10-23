@@ -32,8 +32,10 @@ eg.
 uniform int a;
 glUniform1i(。。。);
 ```
+
+### uniform的使用
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkxODEzMDkwMiwtMTM0MDc2ODk0NSwtMz
-I4MzgxNDY1LDQ2MjYzMjA5NCwyMDk1MDY2MDQ3LDE3OTc4NTUw
-NTJdfQ==
+eyJoaXN0b3J5IjpbNDcwNTM1NzkyLC05MTgxMzA5MDIsLTEzND
+A3Njg5NDUsLTMyODM4MTQ2NSw0NjI2MzIwOTQsMjA5NTA2NjA0
+NywxNzk3ODU1MDUyXX0=
 -->
