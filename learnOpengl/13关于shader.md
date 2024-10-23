@@ -22,7 +22,8 @@ colorLocation = 0
 in vec3 aColor;
 in vec3 aPos;
 ```
+## uniform
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2MTQwMTM5MCwyMDk1MDY2MDQ3LDE3OT
-c4NTUwNTJdfQ==
+eyJoaXN0b3J5IjpbLTEyMzkxNTk0MTIsMjA5NTA2NjA0NywxNz
+k3ODU1MDUyXX0=
 -->
