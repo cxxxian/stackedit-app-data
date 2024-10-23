@@ -38,8 +38,20 @@ glUniform1i(。。。);
 ```
 void setFloat(std::string& name, float value);
 ```
+在cpp实现如下
+```
+void Shader::setFloat(std::string& name, float value)
+{
+    //1 通过名称拿到Uniform变量位置location
+    GLuint location = GL_CALL(glGetUniformLocation(mProgram, name.c_str()));
+
+    //2 通过location更新Uniform变量的值
+    GL_CALL(glUniform1f(location, value));
+}
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4OTg0Njk4MTgsLTkxODEzMDkwMiwtMT
+eyJoaXN0b3J5IjpbLTEzNDYyNzM2NzcsLTkxODEzMDkwMiwtMT
 M0MDc2ODk0NSwtMzI4MzgxNDY1LDQ2MjYzMjA5NCwyMDk1MDY2
 MDQ3LDE3OTc4NTUwNTJdfQ==
 -->
