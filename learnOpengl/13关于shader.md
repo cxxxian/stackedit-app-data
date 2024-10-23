@@ -103,9 +103,11 @@ void main()
 **vs和fs内的uniform如果重名，两个都会发生作用，相当于一个**
 # 练习
 ![输入图片说明](/imgs/2024-10-23/VG6iCXOcuZEiZaTd.png)
+
 ![输入图片说明](/imgs/2024-10-23/hhUR03ZTkIRyLtD5.png)
+![输入图片说明](/imgs/2024-10-23/LIrWpj8wLm4y01pE.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3NzM3Nzk5MSwtMTU3MTA2NDAyNCwtMT
+eyJoaXN0b3J5IjpbLTgyMDE0NTk2OSwtMTU3MTA2NDAyNCwtMT
 A2NjA2NzY2OSwtOTE4MTMwOTAyLC0xMzQwNzY4OTQ1LC0zMjgz
 ODE0NjUsNDYyNjMyMDk0LDIwOTUwNjYwNDcsMTc5Nzg1NTA1Ml
 19
