@@ -110,9 +110,28 @@ out一个position给fs，并把aPos赋值给position
 ![输入图片说明](/imgs/2024-10-23/bcjsWudOlsUcuaGt.png)
 ![输入图片说明](/imgs/2024-10-23/mSpNMKqWTcYdgmce.png)
 ![输入图片说明](/imgs/2024-10-23/2HUDjlu7b3venmfo.png)
+void Shader::setVector3(const std::string& name, float x, float y, float z)
+{
+    //1 通过名称拿到Uniform变量位置location
+    GLuint location = GL_CALL(glGetUniformLocation(mProgram, name.c_str()));
+
+    //2 通过location更新Uniform变量的值
+    GL_CALL(glUniform3f(location, x, y, z));
+}
+
+void Shader::setVector3(const std::string& name, const float* values)
+{
+    //1 通过名称拿到Uniform变量位置location
+    GLuint location = GL_CALL(glGetUniformLocation(mProgram, name.c_str()));
+
+    //2 通过location更新Uniform变量的值
+    //第二个参数：你当前要更新的uniform变量如果是数组，数组里面包括多少个向量vec3
+    GL_CALL(glUniform3fv(location, 1, values));
+}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzMDE2NjI0NSwyMTA2MjQyNzA1LC0xMj
-A4NjMzOTIwLC0xNTcxMDY0MDI0LC0xMDY2MDY3NjY5LC05MTgx
-MzA5MDIsLTEzNDA3Njg5NDUsLTMyODM4MTQ2NSw0NjI2MzIwOT
-QsMjA5NTA2NjA0NywxNzk3ODU1MDUyXX0=
+eyJoaXN0b3J5IjpbMTQ0NDAxOTM1MSwyMDMwMTY2MjQ1LDIxMD
+YyNDI3MDUsLTEyMDg2MzM5MjAsLTE1NzEwNjQwMjQsLTEwNjYw
+Njc2NjksLTkxODEzMDkwMiwtMTM0MDc2ODk0NSwtMzI4MzgxND
+Y1LDQ2MjYzMjA5NCwyMDk1MDY2MDQ3LDE3OTc4NTUwNTJdfQ==
+
 -->
