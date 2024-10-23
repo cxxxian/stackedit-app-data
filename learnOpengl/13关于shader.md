@@ -33,7 +33,7 @@ uniform int a;
 glUniform1i(。。。);
 ```
 
-### uniform的使用
+## uniform的使用
 在shader.h中声明函数用来设置参数（制作此方法的主要原因是因为我们不想把mProgram暴露为public，所以制作此函数用来设置value给mProgram）
 ```
 void setFloat(std::string& name, float value);
@@ -49,7 +49,8 @@ void Shader::setFloat(std::string& name, float value)
     GL_CALL(glUniform1f(location, value));
 }
 ```
-为了实现三角形忽明忽暗的效果，我们可以在vs或者fs里操作，此处针对vs操作。、
+为了实现三角形忽明忽暗的效果，我们可以在vs或者fs里操作，
+### 此处针对vs操作。
 创建uniform变量并以此对color进行操作
 ```
 #version 460 core
@@ -85,6 +86,8 @@ void render(){
     shader->end();
 }
 ```
+### fs的改法
+```
 #version 330 core
 out vec4 FragColor;
 
@@ -95,8 +98,9 @@ void main()
 {
     FragColor = vec4(color * (sin(time) + 1.0) / 2.0, 1.0f);
 }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzkzMjQzOTA2LC05MTgxMzA5MDIsLTEzND
-A3Njg5NDUsLTMyODM4MTQ2NSw0NjI2MzIwOTQsMjA5NTA2NjA0
-NywxNzk3ODU1MDUyXX0=
+eyJoaXN0b3J5IjpbLTEwNjYwNjc2NjksLTkxODEzMDkwMiwtMT
+M0MDc2ODk0NSwtMzI4MzgxNDY1LDQ2MjYzMjA5NCwyMDk1MDY2
+MDQ3LDE3OTc4NTUwNTJdfQ==
 -->
