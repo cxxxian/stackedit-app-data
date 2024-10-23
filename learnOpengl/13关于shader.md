@@ -23,7 +23,8 @@ in vec3 aColor;
 in vec3 aPos;
 ```
 ## uniform
+![输入图片说明](/imgs/2024-10-23/opnmygIOSyWXHtDl.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzkxNTk0MTIsMjA5NTA2NjA0NywxNz
-k3ODU1MDUyXX0=
+eyJoaXN0b3J5IjpbNDYyNjMyMDk0LDIwOTUwNjYwNDcsMTc5Nz
+g1NTA1Ml19
 -->
