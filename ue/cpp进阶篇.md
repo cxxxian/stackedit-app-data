@@ -154,10 +154,10 @@ void ASlashCharacter::BeginPlay()
 }
 ```
 # Echo死亡
-ba
+把敌人死亡逻辑换到BaseCharacter里面，给Echo添加死亡状态Type，继承即可
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMzMzM5MjkyOCw5OTAyODA0MTMsLTE3Mz
+eyJoaXN0b3J5IjpbMTAwNDg5NjQ0Nyw5OTAyODA0MTMsLTE3Mz
 g2MTI1ODgsMTM0MzM5MzY0MSwxNTk3OTM0NTcyLDE1MzQ5MTkw
 MDcsLTg0MzE2NTY2NCwxNjE0NTMyMDksLTM0NzcwNjE1OSwxMj
 Q0NDc5OTY0LDI1MzM1OTEwNiwxODIyMDI4NDIyLDE3ODAyMDA5
