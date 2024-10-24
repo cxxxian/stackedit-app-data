@@ -155,13 +155,13 @@ void ASlashCharacter::BeginPlay()
 ```
 # Echo死亡
 把敌人死亡逻辑换到BaseCharacter里面，给Echo添加死亡状态Type，继承即可
-ci
+此处通过这个linked anim graph，把cpp的状态连接到动画蓝图上
 ![输入图片说明](/imgs/2024-10-24/ZfziwwnL7hpwiwf1.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTExNDAwMDQ5OSwxMDA0ODk2NDQ3LDk5MD
-I4MDQxMywtMTczODYxMjU4OCwxMzQzMzkzNjQxLDE1OTc5MzQ1
-NzIsMTUzNDkxOTAwNywtODQzMTY1NjY0LDE2MTQ1MzIwOSwtMz
-Q3NzA2MTU5LDEyNDQ0Nzk5NjQsMjUzMzU5MTA2LDE4MjIwMjg0
-MjIsMTc4MDIwMDkyNF19
+eyJoaXN0b3J5IjpbMjM5Mzc1NTM2LDEwMDQ4OTY0NDcsOTkwMj
+gwNDEzLC0xNzM4NjEyNTg4LDEzNDMzOTM2NDEsMTU5NzkzNDU3
+MiwxNTM0OTE5MDA3LC04NDMxNjU2NjQsMTYxNDUzMjA5LC0zND
+c3MDYxNTksMTI0NDQ3OTk2NCwyNTMzNTkxMDYsMTgyMjAyODQy
+MiwxNzgwMjAwOTI0XX0=
 -->
