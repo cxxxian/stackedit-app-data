@@ -173,11 +173,22 @@ void ABaseCharacter::Die()
 	PlayDeathMontage();
 }
 ```
+然后在Enemy.cpp中
+如果CombatTarget被设为nullptr即代表死亡，直接return
+```
+void AEnemy::Attack()
+{	
+	Super::Attack();
+	if (CombatTarget == nullptr)return;
 
+	EnemyState = EEnemyState::EES_Engaged;
+	PlayAttackMontage();
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzM4OTY2MzY5LDIzOTM3NTUzNiwxMDA0OD
-k2NDQ3LDk5MDI4MDQxMywtMTczODYxMjU4OCwxMzQzMzkzNjQx
-LDE1OTc5MzQ1NzIsMTUzNDkxOTAwNywtODQzMTY1NjY0LDE2MT
-Q1MzIwOSwtMzQ3NzA2MTU5LDEyNDQ0Nzk5NjQsMjUzMzU5MTA2
-LDE4MjIwMjg0MjIsMTc4MDIwMDkyNF19
+eyJoaXN0b3J5IjpbMTg5NTY5MTA3NiwzMzg5NjYzNjksMjM5Mz
+c1NTM2LDEwMDQ4OTY0NDcsOTkwMjgwNDEzLC0xNzM4NjEyNTg4
+LDEzNDMzOTM2NDEsMTU5NzkzNDU3MiwxNTM0OTE5MDA3LC04ND
+MxNjU2NjQsMTYxNDUzMjA5LC0zNDc3MDYxNTksMTI0NDQ3OTk2
+NCwyNTMzNTkxMDYsMTgyMjAyODQyMiwxNzgwMjAwOTI0XX0=
 -->
