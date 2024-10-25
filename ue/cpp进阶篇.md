@@ -157,11 +157,27 @@ void ASlashCharacter::BeginPlay()
 把敌人死亡逻辑换到BaseCharacter里面，给Echo添加死亡状态Type，继承即可
 此处通过这个linked anim graph，把cpp的状态连接到动画蓝图上
 ![输入图片说明](/imgs/2024-10-24/ZfziwwnL7hpwiwf1.png)
+## 解决echo死亡后敌人仍然攻击
+在BaseCharacter.cpp中，在Die函数中添加Tag，并在Attack中利用Tag进行判断
+```
+void ABaseCharacter::Attack()
+{
+	if (CombatTarget && CombatTarget->ActorHasTag(FName("Dead"))) {
+		CombatTarget = nullptr;
+	}
+}
+
+void ABaseCharacter::Die()
+{
+	Tags.Add(FName("Dead"));
+	PlayDeathMontage();
+}
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjM5Mzc1NTM2LDEwMDQ4OTY0NDcsOTkwMj
-gwNDEzLC0xNzM4NjEyNTg4LDEzNDMzOTM2NDEsMTU5NzkzNDU3
-MiwxNTM0OTE5MDA3LC04NDMxNjU2NjQsMTYxNDUzMjA5LC0zND
-c3MDYxNTksMTI0NDQ3OTk2NCwyNTMzNTkxMDYsMTgyMjAyODQy
-MiwxNzgwMjAwOTI0XX0=
+eyJoaXN0b3J5IjpbMzM4OTY2MzY5LDIzOTM3NTUzNiwxMDA0OD
+k2NDQ3LDk5MDI4MDQxMywtMTczODYxMjU4OCwxMzQzMzkzNjQx
+LDE1OTc5MzQ1NzIsMTUzNDkxOTAwNywtODQzMTY1NjY0LDE2MT
+Q1MzIwOSwtMzQ3NzA2MTU5LDEyNDQ0Nzk5NjQsMjUzMzU5MTA2
+LDE4MjIwMjg0MjIsMTc4MDIwMDkyNF19
 -->
