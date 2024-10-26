@@ -360,13 +360,14 @@ switch (objMaterial) {
 let floorTransform = setTransform(0, 0, -30, 4, 4, 4, 0, 0, 0);
 let obj1Transform = setTransform(0, 0, 0, 20, 20, 20, 0, 0, 0);
 let obj2Transform = setTransform(40, 0, -40, 10, 10, 10, 0, 0, 0);
+
 ```
 
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM0NDI4ODg0MywtMTQwOTg1MzY1MywxOD
+eyJoaXN0b3J5IjpbLTM2MDU5MDg0MSwtMTQwOTg1MzY1MywxOD
 gxNjMxOTkxLC0xNzUwMzYzODM0LC0xOTU4MDQ5MTg3LC0xNjkx
 MjcwNzI1LDExMTU1MzA3MDYsLTIxMTQ4MTgyMzksMjU4NDEzMD
 k2LC0xMTQ4NDEzNzcwLDE3MjMzMTQ3MjgsLTgwODg3Njg0OCwx
