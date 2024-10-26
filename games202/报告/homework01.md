@@ -325,13 +325,22 @@ constructor(translate = [0, 0, 0], scale = [1, 1, 1], rotate = [0, 0, 0]) {
 	this.rotate = rotate;
 }
 ```
+constructor(translate = [0, 0, 0], scale = [1, 1, 1], rotate = [0, 0, 0]) {
+
+this.translate = translate;
+
+this.scale = scale;
+
+this.rotate = rotate;
+
+}
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDI0MzYxMTEsMTg4MTYzMTk5MSwtMT
-c1MDM2MzgzNCwtMTk1ODA0OTE4NywtMTY5MTI3MDcyNSwxMTE1
-NTMwNzA2LC0yMTE0ODE4MjM5LDI1ODQxMzA5NiwtMTE0ODQxMz
-c3MCwxNzIzMzE0NzI4LC04MDg4NzY4NDgsMTcyMzMxNDcyOCwt
-MTMxNTI3MDY2NCwxNzA4MjcyMzQyXX0=
+eyJoaXN0b3J5IjpbNjg5MjgyNTA5LDE4ODE2MzE5OTEsLTE3NT
+AzNjM4MzQsLTE5NTgwNDkxODcsLTE2OTEyNzA3MjUsMTExNTUz
+MDcwNiwtMjExNDgxODIzOSwyNTg0MTMwOTYsLTExNDg0MTM3Nz
+AsMTcyMzMxNDcyOCwtODA4ODc2ODQ4LDE3MjMzMTQ3MjgsLTEz
+MTUyNzA2NjQsMTcwODI3MjM0Ml19
 -->
