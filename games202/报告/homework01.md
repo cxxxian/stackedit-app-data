@@ -481,7 +481,8 @@ for(let i = 0; i < renderer.lights.length; i++){
 	...
 }
 ```
-以上即为支持多光源的参数支持，将原本的一个光源改为通过for循环添加多个，接下来我们只需往上添加光源
+以上即为支持多光源的参数支持，将原本的一个光源改为通过for循环添加多个，
+接下来我们在engine.js中添加光源
 防止过亮下调光源亮度
 ```
 // Add lights
@@ -497,16 +498,17 @@ let lightPos2 = [90, 90, 0];
 const directionLight2 = new DirectionalLight(2500, [1, 1, 1], lightPos2, focalPoint, lightUp, true, renderer.gl);
 renderer.addLight(directionLight2);
 ```
+
 ![输入图片说明](/imgs/2024-10-26/YFEwA9Zw3Ip3fMXs.png =600x350)
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzE5ODI0Nzg2LC0xNTU4Njk1NjQ4LDEzNz
-kyNTY2NCwyMDM2OTU0MzAwLC0xOTI5OTgxMTI3LDEzODgxOTQ3
-NTcsLTQ3MTE4Mjc4OSwtNjczNTMwNjQ5LDEzNDc4MTc3OTYsLT
-UwOTAxNzA2OCwxMjc1MDczMTI5LDEyOTEwNjUyNDksNjM1NjEz
-MjYzLC0xNDA5ODUzNjUzLDE4ODE2MzE5OTEsLTE3NTAzNjM4Mz
-QsLTE5NTgwNDkxODcsLTE2OTEyNzA3MjUsMTExNTUzMDcwNiwt
-MjExNDgxODIzOV19
+eyJoaXN0b3J5IjpbMTQ4NzA3OTg3OCwzMTk4MjQ3ODYsLTE1NT
+g2OTU2NDgsMTM3OTI1NjY0LDIwMzY5NTQzMDAsLTE5Mjk5ODEx
+MjcsMTM4ODE5NDc1NywtNDcxMTgyNzg5LC02NzM1MzA2NDksMT
+M0NzgxNzc5NiwtNTA5MDE3MDY4LDEyNzUwNzMxMjksMTI5MTA2
+NTI0OSw2MzU2MTMyNjMsLTE0MDk4NTM2NTMsMTg4MTYzMTk5MS
+wtMTc1MDM2MzgzNCwtMTk1ODA0OTE4NywtMTY5MTI3MDcyNSwx
+MTE1NTMwNzA2XX0=
 -->
