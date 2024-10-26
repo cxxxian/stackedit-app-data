@@ -543,22 +543,20 @@ for (let i = 0; i < this.meshes.length; i++) {
 	this.meshes[i].material.uniforms.uLightPos = { type: '3fv', value: this.lights[l].entity.lightPos }; // 光源方向计算、光源强度衰减
 	this.meshes[i].draw(this.camera);
 }
-
 //还原Additional Pass的设置
-
 gl.disable(gl.BLEND);
-
 }
+```
 ![输入图片说明](/imgs/2024-10-26/YFEwA9Zw3Ip3fMXs.png =600x350)
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0NDY0NzM0MywzMTk4MjQ3ODYsLTE1NT
-g2OTU2NDgsMTM3OTI1NjY0LDIwMzY5NTQzMDAsLTE5Mjk5ODEx
-MjcsMTM4ODE5NDc1NywtNDcxMTgyNzg5LC02NzM1MzA2NDksMT
-M0NzgxNzc5NiwtNTA5MDE3MDY4LDEyNzUwNzMxMjksMTI5MTA2
-NTI0OSw2MzU2MTMyNjMsLTE0MDk4NTM2NTMsMTg4MTYzMTk5MS
-wtMTc1MDM2MzgzNCwtMTk1ODA0OTE4NywtMTY5MTI3MDcyNSwx
-MTE1NTMwNzA2XX0=
+eyJoaXN0b3J5IjpbMTM2MzE5OTE5LDMxOTgyNDc4NiwtMTU1OD
+Y5NTY0OCwxMzc5MjU2NjQsMjAzNjk1NDMwMCwtMTkyOTk4MTEy
+NywxMzg4MTk0NzU3LC00NzExODI3ODksLTY3MzUzMDY0OSwxMz
+Q3ODE3Nzk2LC01MDkwMTcwNjgsMTI3NTA3MzEyOSwxMjkxMDY1
+MjQ5LDYzNTYxMzI2MywtMTQwOTg1MzY1MywxODgxNjMxOTkxLC
+0xNzUwMzYzODM0LC0xOTU4MDQ5MTg3LC0xNjkxMjcwNzI1LDEx
+MTU1MzA3MDZdfQ==
 -->
