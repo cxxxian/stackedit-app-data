@@ -384,7 +384,8 @@ function degrees2Radians(degrees){
 	return 3.1415927 / 180 * degrees;
 }
 ```
-11. WebGLRender.js中加入旋转循环，此处针对顶点数大于8的mesh进行旋转，是因为地面的顶点数为6，就可以做到只旋转人物而不旋转地面
+11. WebGLRender.js中加入旋转循环，此处针对顶点数大于8的mesh进行旋转，是因为地面的顶点数为6，就可以做到只旋转人物而不旋转地面.
+degrees2Radians(10)此函数是我们刚刚做的角度转弧度制，在此处输入我们希望旋转的角度即可
 ```
 for (let i = 0; i < this.meshes.length; i++) {
 	if(this.meshes[i].mesh.count > 8){
@@ -397,10 +398,10 @@ for (let i = 0; i < this.meshes.length; i++) {
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3NTA3MzEyOSwxMjkxMDY1MjQ5LDYzNT
-YxMzI2MywtMTQwOTg1MzY1MywxODgxNjMxOTkxLC0xNzUwMzYz
-ODM0LC0xOTU4MDQ5MTg3LC0xNjkxMjcwNzI1LDExMTU1MzA3MD
-YsLTIxMTQ4MTgyMzksMjU4NDEzMDk2LC0xMTQ4NDEzNzcwLDE3
-MjMzMTQ3MjgsLTgwODg3Njg0OCwxNzIzMzE0NzI4LC0xMzE1Mj
-cwNjY0LDE3MDgyNzIzNDJdfQ==
+eyJoaXN0b3J5IjpbNDMxODg5MDQzLDEyNzUwNzMxMjksMTI5MT
+A2NTI0OSw2MzU2MTMyNjMsLTE0MDk4NTM2NTMsMTg4MTYzMTk5
+MSwtMTc1MDM2MzgzNCwtMTk1ODA0OTE4NywtMTY5MTI3MDcyNS
+wxMTE1NTMwNzA2LC0yMTE0ODE4MjM5LDI1ODQxMzA5NiwtMTE0
+ODQxMzc3MCwxNzIzMzE0NzI4LC04MDg4NzY4NDgsMTcyMzMxND
+cyOCwtMTMxNTI3MDY2NCwxNzA4MjcyMzQyXX0=
 -->
