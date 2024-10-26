@@ -308,17 +308,28 @@ async function buildPhongMaterial(color, specular, light, translate, scale, rota
 4. 同理ShadowMaterial.js也需添加
 ```
 constructor(light, translate, scale, rotate, vertexShader, fragmentShader) {
-let lightMVP = light.CalcLightMVP(translate, scale, rotate);
+	let lightMVP = light.CalcLightMVP(translate, scale, rotate);
 ...
 }
+async function buildShadowMaterial(light, translate, scale, rotate, vertexPath, fragmentPath) {
+	let vertexShader = await getShaderString(vertexPath);
+	let fragmentShader = await getShaderString(fragmentPath);
+	return new ShadowMaterial(light, translate, scale, rotate, vertexShader, fragmentShader);
+}
 ```
+constructor(translate = [0, 0, 0], scale = [1, 1, 1], rotate = [0, 0, 0]) {
+	this.translate = translate;
+	this.scale = scale;
+	this.rotate = rotate;
+
+}
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2OTI0MDczNiwxODgxNjMxOTkxLC0xNz
-UwMzYzODM0LC0xOTU4MDQ5MTg3LC0xNjkxMjcwNzI1LDExMTU1
-MzA3MDYsLTIxMTQ4MTgyMzksMjU4NDEzMDk2LC0xMTQ4NDEzNz
-cwLDE3MjMzMTQ3MjgsLTgwODg3Njg0OCwxNzIzMzE0NzI4LC0x
-MzE1MjcwNjY0LDE3MDgyNzIzNDJdfQ==
+eyJoaXN0b3J5IjpbNzQwMDM5ODk3LDE4ODE2MzE5OTEsLTE3NT
+AzNjM4MzQsLTE5NTgwNDkxODcsLTE2OTEyNzA3MjUsMTExNTUz
+MDcwNiwtMjExNDgxODIzOSwyNTg0MTMwOTYsLTExNDg0MTM3Nz
+AsMTcyMzMxNDcyOCwtODA4ODc2ODQ4LDE3MjMzMTQ3MjgsLTEz
+MTUyNzA2NjQsMTcwODI3MjM0Ml19
 -->
