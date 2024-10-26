@@ -497,16 +497,16 @@ let lightPos2 = [90, 90, 0];
 const directionLight2 = new DirectionalLight(2500, [1, 1, 1], lightPos2, focalPoint, lightUp, true, renderer.gl);
 renderer.addLight(directionLight2);
 ```
-![输入图片说明](/imgs/2024-10-26/YFEwA9Zw3Ip3fMXs.png = 600x50)
+![输入图片说明](/imgs/2024-10-26/YFEwA9Zw3Ip3fMXs.png =600x350)
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY5NjA3NDM2NSwtMTU1ODY5NTY0OCwxMz
-c5MjU2NjQsMjAzNjk1NDMwMCwtMTkyOTk4MTEyNywxMzg4MTk0
-NzU3LC00NzExODI3ODksLTY3MzUzMDY0OSwxMzQ3ODE3Nzk2LC
-01MDkwMTcwNjgsMTI3NTA3MzEyOSwxMjkxMDY1MjQ5LDYzNTYx
-MzI2MywtMTQwOTg1MzY1MywxODgxNjMxOTkxLC0xNzUwMzYzOD
-M0LC0xOTU4MDQ5MTg3LC0xNjkxMjcwNzI1LDExMTU1MzA3MDYs
-LTIxMTQ4MTgyMzldfQ==
+eyJoaXN0b3J5IjpbMzE5ODI0Nzg2LC0xNTU4Njk1NjQ4LDEzNz
+kyNTY2NCwyMDM2OTU0MzAwLC0xOTI5OTgxMTI3LDEzODgxOTQ3
+NTcsLTQ3MTE4Mjc4OSwtNjczNTMwNjQ5LDEzNDc4MTc3OTYsLT
+UwOTAxNzA2OCwxMjc1MDczMTI5LDEyOTEwNjUyNDksNjM1NjEz
+MjYzLC0xNDA5ODUzNjUzLDE4ODE2MzE5OTEsLTE3NTAzNjM4Mz
+QsLTE5NTgwNDkxODcsLTE2OTEyNzA3MjUsMTExNTUzMDcwNiwt
+MjExNDgxODIzOV19
 -->
