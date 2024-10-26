@@ -498,6 +498,7 @@ let lightPos2 = [90, 90, 0];
 const directionLight2 = new DirectionalLight(2500, [1, 1, 1], lightPos2, focalPoint, lightUp, true, renderer.gl);
 renderer.addLight(directionLight2);
 ```
+在WebGLRenderer.js中进行多光源间混合
 ```
 // Draw light
 // TODO: Support all kinds of transform
@@ -552,7 +553,7 @@ gl.disable(gl.BLEND);
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2MzE5OTE5LDMxOTgyNDc4NiwtMTU1OD
+eyJoaXN0b3J5IjpbOTAxMDY5MTE4LDMxOTgyNDc4NiwtMTU1OD
 Y5NTY0OCwxMzc5MjU2NjQsMjAzNjk1NDMwMCwtMTkyOTk4MTEy
 NywxMzg4MTk0NzU3LC00NzExODI3ODksLTY3MzUzMDY0OSwxMz
 Q3ODE3Nzk2LC01MDkwMTcwNjgsMTI3NTA3MzEyOSwxMjkxMDY1
