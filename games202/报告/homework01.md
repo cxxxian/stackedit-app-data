@@ -465,6 +465,7 @@ async function buildPhongMaterial(color, specular, light, translate, scale, rota
 	return new PhongMaterial(color, specular, light, translate, scale, rotate, vertexShader, fragmentShader, lightIndex);
 }
 ```
+loadOBJ.js中添加参数lightIndex
 ```
 //let light = renderer.lights[0].entity;
 //原本只添加第一个light的材质，改成添加所有light的材质，并添加旋转参数
@@ -480,15 +481,16 @@ for(let i = 0; i < renderer.lights.length; i++){
 	...
 }
 ```
+以上即为支持多光源的参数支持，将原本的一个光源gai'wei接下来我们只需往上添加光源
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzEyNDY5NDcwLC0xOTI5OTgxMTI3LDEzOD
-gxOTQ3NTcsLTQ3MTE4Mjc4OSwtNjczNTMwNjQ5LDEzNDc4MTc3
-OTYsLTUwOTAxNzA2OCwxMjc1MDczMTI5LDEyOTEwNjUyNDksNj
-M1NjEzMjYzLC0xNDA5ODUzNjUzLDE4ODE2MzE5OTEsLTE3NTAz
-NjM4MzQsLTE5NTgwNDkxODcsLTE2OTEyNzA3MjUsMTExNTUzMD
-cwNiwtMjExNDgxODIzOSwyNTg0MTMwOTYsLTExNDg0MTM3NzAs
-MTcyMzMxNDcyOF19
+eyJoaXN0b3J5IjpbLTE1NDUxMTIzMzAsLTE5Mjk5ODExMjcsMT
+M4ODE5NDc1NywtNDcxMTgyNzg5LC02NzM1MzA2NDksMTM0Nzgx
+Nzc5NiwtNTA5MDE3MDY4LDEyNzUwNzMxMjksMTI5MTA2NTI0OS
+w2MzU2MTMyNjMsLTE0MDk4NTM2NTMsMTg4MTYzMTk5MSwtMTc1
+MDM2MzgzNCwtMTk1ODA0OTE4NywtMTY5MTI3MDcyNSwxMTE1NT
+MwNzA2LC0yMTE0ODE4MjM5LDI1ODQxMzA5NiwtMTE0ODQxMzc3
+MCwxNzIzMzE0NzI4XX0=
 -->
