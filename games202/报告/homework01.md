@@ -411,7 +411,7 @@ if (this.lights[l].entity.hasShadowMap == true) {
 		let translation = this.shadowMeshes[i].mesh.transform.translate;
 		let scale = this.shadowMeshes[i].mesh.transform.scale;
 		let rotation = this.shadowMeshes[i].mesh.transform.rotate;
-		let lightMVP = this.lights[l].entity.CalcLightMVP(translation, rotation, scale);
+		let lightMVP = this.lights[l].entity.CalcLightMVP(translation, scale, rotation);
 		this.shadowMeshes[i].material.uniforms.uLightMVP = { type: 'matrix4fv', 		value: lightMVP };
 		this.shadowMeshes[i].draw(this.camera);
 	}
@@ -425,7 +425,7 @@ for (let i = 0; i < this.meshes.length; i++) {
 	let translation = this.meshes[i].mesh.transform.translate;
 	let rotation = this.meshes[i].mesh.transform.rotate;
 	let scale = this.meshes[i].mesh.transform.scale;
-	let lightMVP = this.lights[l].entity.CalcLightMVP(translation, rotation, scale);
+	let lightMVP = this.lights[l].entity.CalcLightMVP(translation, scale, rotation);
 	this.meshes[i].material.uniforms.uLightMVP = { type: 'matrix4fv', value: lightMVP };
 	this.meshes[i].material.uniforms.uLightPos = { type: '3fv', value: 		this.lights[l].entity.lightPos }; // 光源方向计算、光源强度衰减
 	this.meshes[i].draw(this.camera);
@@ -436,11 +436,11 @@ for (let i = 0; i < this.meshes.length; i++) {
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3MzUzMDY0OSwxMzQ3ODE3Nzk2LC01MD
-kwMTcwNjgsMTI3NTA3MzEyOSwxMjkxMDY1MjQ5LDYzNTYxMzI2
-MywtMTQwOTg1MzY1MywxODgxNjMxOTkxLC0xNzUwMzYzODM0LC
-0xOTU4MDQ5MTg3LC0xNjkxMjcwNzI1LDExMTU1MzA3MDYsLTIx
-MTQ4MTgyMzksMjU4NDEzMDk2LC0xMTQ4NDEzNzcwLDE3MjMzMT
-Q3MjgsLTgwODg3Njg0OCwxNzIzMzE0NzI4LC0xMzE1MjcwNjY0
-LDE3MDgyNzIzNDJdfQ==
+eyJoaXN0b3J5IjpbLTIwMTc3MjU3OTMsLTY3MzUzMDY0OSwxMz
+Q3ODE3Nzk2LC01MDkwMTcwNjgsMTI3NTA3MzEyOSwxMjkxMDY1
+MjQ5LDYzNTYxMzI2MywtMTQwOTg1MzY1MywxODgxNjMxOTkxLC
+0xNzUwMzYzODM0LC0xOTU4MDQ5MTg3LC0xNjkxMjcwNzI1LDEx
+MTU1MzA3MDYsLTIxMTQ4MTgyMzksMjU4NDEzMDk2LC0xMTQ4ND
+EzNzcwLDE3MjMzMTQ3MjgsLTgwODg3Njg0OCwxNzIzMzE0NzI4
+LC0xMzE1MjcwNjY0XX0=
 -->
