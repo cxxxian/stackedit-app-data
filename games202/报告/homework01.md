@@ -384,10 +384,10 @@ function degrees2Radians(degrees){
 	return 3.1415927 / 180 * degrees;
 }
 ```
-11. WebGLRender.js中加入旋转循环，此处针对顶点数大于10的mesh进行旋转，是因为地面的顶点数为6
+11. WebGLRender.js中加入旋转循环，此处针对顶点数大于8的mesh进行旋转，是因为地面的顶点数为6，就可以做到只旋转人物而不旋转地面
 ```
 for (let i = 0; i < this.meshes.length; i++) {
-	if(this.meshes[i].mesh.count > 10){
+	if(this.meshes[i].mesh.count > 8){
 		this.meshes[i].mesh.transform.rotate[1] = this.meshes[i].mesh.transform.rotate[1] + degrees2Radians(10) * deltaime;
 	}
 }
@@ -397,10 +397,10 @@ for (let i = 0; i < this.meshes.length; i++) {
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcwNTUxMTYwLDEyOTEwNjUyNDksNjM1Nj
-EzMjYzLC0xNDA5ODUzNjUzLDE4ODE2MzE5OTEsLTE3NTAzNjM4
-MzQsLTE5NTgwNDkxODcsLTE2OTEyNzA3MjUsMTExNTUzMDcwNi
-wtMjExNDgxODIzOSwyNTg0MTMwOTYsLTExNDg0MTM3NzAsMTcy
-MzMxNDcyOCwtODA4ODc2ODQ4LDE3MjMzMTQ3MjgsLTEzMTUyNz
-A2NjQsMTcwODI3MjM0Ml19
+eyJoaXN0b3J5IjpbMTI3NTA3MzEyOSwxMjkxMDY1MjQ5LDYzNT
+YxMzI2MywtMTQwOTg1MzY1MywxODgxNjMxOTkxLC0xNzUwMzYz
+ODM0LC0xOTU4MDQ5MTg3LC0xNjkxMjcwNzI1LDExMTU1MzA3MD
+YsLTIxMTQ4MTgyMzksMjU4NDEzMDk2LC0xMTQ4NDEzNzcwLDE3
+MjMzMTQ3MjgsLTgwODg3Njg0OCwxNzIzMzE0NzI4LC0xMzE1Mj
+cwNjY0LDE3MDgyNzIzNDJdfQ==
 -->
