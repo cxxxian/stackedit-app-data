@@ -350,7 +350,7 @@ let Rotation = [transform.modelRotateX, transform.modelRotateY, transform.modelR
 let light = renderer.lights[0].entity;
 switch (objMaterial) {
 	case 'PhongMaterial':
-	material = buildPhongMaterial(colorMap, mat.specular.toArray(), light, Translation, Scale, "./src/shaders/phongShader/phongVertex.glsl", "./src/shaders/phongShader/phongFragment.glsl");
+	material = buildPhongMaterial(colorMap, mat.specular.toArray(), light, Translation, Scale, Rotation, "./src/shaders/phongShader/phongVertex.glsl", "./src/shaders/phongShader/phongFragment.glsl");
 	shadowMaterial = buildShadowMaterial(light, Translation, Scale, Rotation, "./src/shaders/shadowShader/shadowVertex.glsl", "./src/shaders/shadowShader/shadowFragment.glsl");
 	break;
 }
@@ -397,9 +397,10 @@ for (let i = 0; i < this.meshes.length; i++) {
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjM1NjEzMjYzLC0xNDA5ODUzNjUzLDE4OD
-E2MzE5OTEsLTE3NTAzNjM4MzQsLTE5NTgwNDkxODcsLTE2OTEy
-NzA3MjUsMTExNTUzMDcwNiwtMjExNDgxODIzOSwyNTg0MTMwOT
-YsLTExNDg0MTM3NzAsMTcyMzMxNDcyOCwtODA4ODc2ODQ4LDE3
-MjMzMTQ3MjgsLTEzMTUyNzA2NjQsMTcwODI3MjM0Ml19
+eyJoaXN0b3J5IjpbMTI5MTA2NTI0OSw2MzU2MTMyNjMsLTE0MD
+k4NTM2NTMsMTg4MTYzMTk5MSwtMTc1MDM2MzgzNCwtMTk1ODA0
+OTE4NywtMTY5MTI3MDcyNSwxMTE1NTMwNzA2LC0yMTE0ODE4Mj
+M5LDI1ODQxMzA5NiwtMTE0ODQxMzc3MCwxNzIzMzE0NzI4LC04
+MDg4NzY4NDgsMTcyMzMxNDcyOCwtMTMxNTI3MDY2NCwxNzA4Mj
+cyMzQyXX0=
 -->
