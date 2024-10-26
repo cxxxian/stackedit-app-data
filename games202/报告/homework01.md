@@ -384,14 +384,28 @@ function degrees2Radians(degrees){
 	return 3.1415927 / 180 * degrees;
 }
 ```
+11. 
+```
+for (let i = 0; i < this.meshes.length; i++) {
+
+if(this.meshes[i].mesh.count > 10)
+
+{
+
+this.meshes[i].mesh.transform.rotate[1] = this.meshes[i].mesh.transform.rotate[1] + degrees2Radians(10) * deltaime;
+
+}
+
+}
+`
 
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjA1NDI5MDAsLTE0MDk4NTM2NTMsMT
-g4MTYzMTk5MSwtMTc1MDM2MzgzNCwtMTk1ODA0OTE4NywtMTY5
-MTI3MDcyNSwxMTE1NTMwNzA2LC0yMTE0ODE4MjM5LDI1ODQxMz
-A5NiwtMTE0ODQxMzc3MCwxNzIzMzE0NzI4LC04MDg4NzY4NDgs
-MTcyMzMxNDcyOCwtMTMxNTI3MDY2NCwxNzA4MjcyMzQyXX0=
+eyJoaXN0b3J5IjpbODUwODYzMzQ4LC0xNDA5ODUzNjUzLDE4OD
+E2MzE5OTEsLTE3NTAzNjM4MzQsLTE5NTgwNDkxODcsLTE2OTEy
+NzA3MjUsMTExNTUzMDcwNiwtMjExNDgxODIzOSwyNTg0MTMwOT
+YsLTExNDg0MTM3NzAsMTcyMzMxNDcyOCwtODA4ODc2ODQ4LDE3
+MjMzMTQ3MjgsLTEzMTUyNzA2NjQsMTcwODI3MjM0Ml19
 -->
