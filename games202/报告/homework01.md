@@ -467,22 +467,52 @@ async function buildPhongMaterial(color, specular, light, translate, scale, rota
 ```
 ```
 //let light = renderer.lights[0].entity;
+
 //原本只添加第一个light的材质，改成添加所有light的材质，并添加旋转参数
+
 for(let i = 0; i < renderer.lights.length; i++){
-	let light = renderer.lights[i].entity;
-	switch (objMaterial) {
-		case 'PhongMaterial':
-		//Edit Start 添加旋转参数、光源索引参数
-		material = buildPhongMaterial(colorMap, mat.specular.toArray(), light, Translation, Scale, 	Rotation, i, "./src/shaders/phongShader/phongVertex.glsl", 		"./src/shaders/phongShader/phongFragment.glsl");
-		shadowMaterial = buildShadowMaterial(light, Translation, Scale, Rotation, i, "./src/shaders/shadowShader/shadowVertex.glsl", "./src/shaders/shadowShader/shadowFragment.glsl");
+
+let light = renderer.lights[i].entity;
+
+switch (objMaterial) {
+
+case 'PhongMaterial':
+
+//Edit Start 添加旋转参数、光源索引参数
+
+material = buildPhongMaterial(colorMap, mat.specular.toArray(), light, Translation, Rotation, Scale, i, "./src/shaders/phongShader/phongVertex.glsl", "./src/shaders/phongShader/phongFragment.glsl");
+
+shadowMaterial = buildShadowMaterial(light, Translation, Rotation, Scale, i, "./src/shaders/shadowShader/shadowVertex.glsl", "./src/shaders/shadowShader/shadowFragment.glsl");
+
+//Edit End
+
 break;
+
+}
+
+material.then((data) => {
+
+let meshRender = new MeshRender(renderer.gl, mesh, data);
+
+renderer.addMeshRender(meshRender);
+
+});
+
+shadowMaterial.then((data) => {
+
+let shadowMeshRender = new MeshRender(renderer.gl, mesh, data);
+
+renderer.addShadowMeshRender(shadowMeshRender);
+
+});
+
 }
 ```
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwOTY2NjIzOTMsLTE5Mjk5ODExMjcsMT
+eyJoaXN0b3J5IjpbLTE4MDc4MzQ0NTEsLTE5Mjk5ODExMjcsMT
 M4ODE5NDc1NywtNDcxMTgyNzg5LC02NzM1MzA2NDksMTM0Nzgx
 Nzc5NiwtNTA5MDE3MDY4LDEyNzUwNzMxMjksMTI5MTA2NTI0OS
 w2MzU2MTMyNjMsLTE0MDk4NTM2NTMsMTg4MTYzMTk5MSwtMTc1
