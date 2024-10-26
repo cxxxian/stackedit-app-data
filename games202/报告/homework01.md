@@ -396,24 +396,51 @@ for (let i = 0; i < this.meshes.length; i++) {
 ![输入图片说明](/imgs/2024-10-26/GBzcKFsztW8oRCTO.png =600x380)
 但是此处我们会发现阴影并没有跟着人物模型进行旋转，是因为没有更新lightMVP矩阵，导致物体变动并没有反映在ShadowMap上。
 12. 更新lightMVP
-先在WebGLRenderer.js进行shadowMap的清除工作。
+先在WebGLRenderer.js进行shadowMap的清除工作。然后在两个Pass（Shadow pass/ Camera pass）中进行lightMVP矩阵d
 ```
 for (let l = 0; l < this.lights.length; l++) {
 	gl.bindFramebuffer(gl.FRAMEBUFFER, this.lights[l].entity.fbo); // 绑定到当前光源的framebuffer
 	gl.clearColor(1.0, 1.0, 1.0, 1.0); // shadowmap默认白色（无遮挡，解决地面边缘产生阴影的问题
 	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT); // 清除shadowmap上一帧的颜色、深度缓存，否则会一直叠加每一帧的结果
+
+// Shadow pass
+if (this.lights[l].entity.hasShadowMap == true) {
+	for (let i = 0; i < this.shadowMeshes.length; i++) {
+		//每帧更新shader中uniforms的LightMVP
+		this.gl.useProgram(this.shadowMeshes[i].shader.program.glShaderProgram);
+		let translation = this.shadowMeshes[i].mesh.transform.translate;
+		let scale = this.shadowMeshes[i].mesh.transform.scale;
+		let rotation = this.shadowMeshes[i].mesh.transform.rotate;
+		let lightMVP = this.lights[l].entity.CalcLightMVP(translation, rotation, scale);
+		this.shadowMeshes[i].material.uniforms.uLightMVP = { type: 'matrix4fv', 		value: lightMVP };
+		this.shadowMeshes[i].draw(this.camera);
+	}
+}
+
+// Camera pass
+for (let i = 0; i < this.meshes.length; i++) {
+	this.gl.useProgram(this.meshes[i].shader.program.glShaderProgram);
+	// 每帧更新shader中uniforms参数
+	// this.gl.uniform3fv(this.meshes[i].shader.program.uniforms.uLightPos, 	this.lights[l].entity.lightPos); //这里改用下面写法
+	let translation = this.meshes[i].mesh.transform.translate;
+	let rotation = this.meshes[i].mesh.transform.rotate;
+	let scale = this.meshes[i].mesh.transform.scale;
+	let lightMVP = this.lights[l].entity.CalcLightMVP(translation, rotation, scale);
+	this.meshes[i].material.uniforms.uLightMVP = { type: 'matrix4fv', value: lightMVP };
+	this.meshes[i].material.uniforms.uLightPos = { type: '3fv', value: 		this.lights[l].entity.lightPos }; // 光源方向计算、光源强度衰减
+	this.meshes[i].draw(this.camera);
+}
 ```
 
-gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT); // 清除shadowmap上一帧的颜色、深度缓存，否则会一直叠加每一帧的结果
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0NzgxNzc5NiwtNTA5MDE3MDY4LDEyNz
-UwNzMxMjksMTI5MTA2NTI0OSw2MzU2MTMyNjMsLTE0MDk4NTM2
-NTMsMTg4MTYzMTk5MSwtMTc1MDM2MzgzNCwtMTk1ODA0OTE4Ny
-wtMTY5MTI3MDcyNSwxMTE1NTMwNzA2LC0yMTE0ODE4MjM5LDI1
-ODQxMzA5NiwtMTE0ODQxMzc3MCwxNzIzMzE0NzI4LC04MDg4Nz
-Y4NDgsMTcyMzMxNDcyOCwtMTMxNTI3MDY2NCwxNzA4MjcyMzQy
-XX0=
+eyJoaXN0b3J5IjpbMTI1NDkyODUxNSwxMzQ3ODE3Nzk2LC01MD
+kwMTcwNjgsMTI3NTA3MzEyOSwxMjkxMDY1MjQ5LDYzNTYxMzI2
+MywtMTQwOTg1MzY1MywxODgxNjMxOTkxLC0xNzUwMzYzODM0LC
+0xOTU4MDQ5MTg3LC0xNjkxMjcwNzI1LDExMTU1MzA3MDYsLTIx
+MTQ4MTgyMzksMjU4NDEzMDk2LC0xMTQ4NDEzNzcwLDE3MjMzMT
+Q3MjgsLTgwODg3Njg0OCwxNzIzMzE0NzI4LC0xMzE1MjcwNjY0
+LDE3MDgyNzIzNDJdfQ==
 -->
