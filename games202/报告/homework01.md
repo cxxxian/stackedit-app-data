@@ -481,16 +481,16 @@ for(let i = 0; i < renderer.lights.length; i++){
 	...
 }
 ```
-以上即为支持多光源的参数支持，将原本的一个光源gai'wei接下来我们只需往上添加光源
+以上即为支持多光源的参数支持，将原本的一个光源改为通过for循环添加多个，接下来我们只需往上添加光源
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDUxMTIzMzAsLTE5Mjk5ODExMjcsMT
-M4ODE5NDc1NywtNDcxMTgyNzg5LC02NzM1MzA2NDksMTM0Nzgx
-Nzc5NiwtNTA5MDE3MDY4LDEyNzUwNzMxMjksMTI5MTA2NTI0OS
-w2MzU2MTMyNjMsLTE0MDk4NTM2NTMsMTg4MTYzMTk5MSwtMTc1
-MDM2MzgzNCwtMTk1ODA0OTE4NywtMTY5MTI3MDcyNSwxMTE1NT
-MwNzA2LC0yMTE0ODE4MjM5LDI1ODQxMzA5NiwtMTE0ODQxMzc3
-MCwxNzIzMzE0NzI4XX0=
+eyJoaXN0b3J5IjpbMjAzNjk1NDMwMCwtMTkyOTk4MTEyNywxMz
+g4MTk0NzU3LC00NzExODI3ODksLTY3MzUzMDY0OSwxMzQ3ODE3
+Nzk2LC01MDkwMTcwNjgsMTI3NTA3MzEyOSwxMjkxMDY1MjQ5LD
+YzNTYxMzI2MywtMTQwOTg1MzY1MywxODgxNjMxOTkxLC0xNzUw
+MzYzODM0LC0xOTU4MDQ5MTg3LC0xNjkxMjcwNzI1LDExMTU1Mz
+A3MDYsLTIxMTQ4MTgyMzksMjU4NDEzMDk2LC0xMTQ4NDEzNzcw
+LDE3MjMzMTQ3MjhdfQ==
 -->
