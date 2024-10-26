@@ -295,18 +295,26 @@ mat4.rotateZ(modelMatrix, modelMatrix, rotate[2])
 3. 在PhongMaterial.js中加入旋转参数
 ```
 constructor(color, specular, light, translate, scale, rotate, vertexShader, fragmentShader) {
-let lightMVP = light.CalcLightMVP(translate, scale, rotate);
-let lightIntensity = light.mat.GetIntensity();
+	let lightMVP = light.CalcLightMVP(translate, scale, rotate);
+	let lightIntensity = light.mat.GetIntensity();
 ...
+}
+async function buildPhongMaterial(color, specular, light, translate, scale, rotate, vertexPath, fragmentPath) {
+	let vertexShader = await getShaderString(vertexPath);
+	let fragmentShader = await getShaderString(fragmentPath);
+	return new PhongMaterial(color, specular, light, translate, scale, rotate, vertexShader, fragmentShader);
+
+  
+
 }
 ```
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyMDQ3MTEwOSwxODgxNjMxOTkxLC0xNz
-UwMzYzODM0LC0xOTU4MDQ5MTg3LC0xNjkxMjcwNzI1LDExMTU1
-MzA3MDYsLTIxMTQ4MTgyMzksMjU4NDEzMDk2LC0xMTQ4NDEzNz
-cwLDE3MjMzMTQ3MjgsLTgwODg3Njg0OCwxNzIzMzE0NzI4LC0x
-MzE1MjcwNjY0LDE3MDgyNzIzNDJdfQ==
+eyJoaXN0b3J5IjpbLTE2NzI3NjQyMTAsMTg4MTYzMTk5MSwtMT
+c1MDM2MzgzNCwtMTk1ODA0OTE4NywtMTY5MTI3MDcyNSwxMTE1
+NTMwNzA2LC0yMTE0ODE4MjM5LDI1ODQxMzA5NiwtMTE0ODQxMz
+c3MCwxNzIzMzE0NzI4LC04MDg4NzY4NDgsMTcyMzMxNDcyOCwt
+MTMxNTI3MDY2NCwxNzA4MjcyMzQyXX0=
 -->
