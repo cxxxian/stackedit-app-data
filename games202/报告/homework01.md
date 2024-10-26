@@ -432,16 +432,31 @@ for (let i = 0; i < this.meshes.length; i++) {
 ```
 ![输入图片说明](/imgs/2024-10-26/WlJU0GnBAbTtyTYs.png =600x380)
 ### 多光源
-
+在Me'trial
+```
+constructor(uniforms, attribs, vsSrc, fsSrc, frameBuffer, lightIndex) {
+	this.uniforms = uniforms;
+	this.attribs = attribs;
+	this.#vsSrc = vsSrc;
+	this.#fsSrc = fsSrc;
+	this.#flatten_uniforms = ['uViewMatrix','uModelMatrix', 'uProjectionMatrix', 'uCameraPos', 'uLightPos'];
+	for (let k in uniforms) {
+		this.#flatten_uniforms.push(k);
+	}
+	this.#flatten_attribs = attribs;
+	this.frameBuffer = frameBuffer;
+	this.lightIndex = lightIndex;
+}
+```
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4ODE5NDc1NywtNDcxMTgyNzg5LC02Nz
-M1MzA2NDksMTM0NzgxNzc5NiwtNTA5MDE3MDY4LDEyNzUwNzMx
-MjksMTI5MTA2NTI0OSw2MzU2MTMyNjMsLTE0MDk4NTM2NTMsMT
-g4MTYzMTk5MSwtMTc1MDM2MzgzNCwtMTk1ODA0OTE4NywtMTY5
-MTI3MDcyNSwxMTE1NTMwNzA2LC0yMTE0ODE4MjM5LDI1ODQxMz
-A5NiwtMTE0ODQxMzc3MCwxNzIzMzE0NzI4LC04MDg4NzY4NDgs
-MTcyMzMxNDcyOF19
+eyJoaXN0b3J5IjpbMzM1ODA5MTM5LDEzODgxOTQ3NTcsLTQ3MT
+E4Mjc4OSwtNjczNTMwNjQ5LDEzNDc4MTc3OTYsLTUwOTAxNzA2
+OCwxMjc1MDczMTI5LDEyOTEwNjUyNDksNjM1NjEzMjYzLC0xND
+A5ODUzNjUzLDE4ODE2MzE5OTEsLTE3NTAzNjM4MzQsLTE5NTgw
+NDkxODcsLTE2OTEyNzA3MjUsMTExNTUzMDcwNiwtMjExNDgxOD
+IzOSwyNTg0MTMwOTYsLTExNDg0MTM3NzAsMTcyMzMxNDcyOCwt
+ODA4ODc2ODQ4XX0=
 -->
