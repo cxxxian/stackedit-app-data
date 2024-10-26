@@ -355,13 +355,20 @@ switch (objMaterial) {
 	break;
 }
 ```
+8. 以上我们准备好了支持旋转的模型变换需要修改的部分，去engine.js中把Rotation参数补齐
+```
+let floorTransform = setTransform(0, 0, -30, 4, 4, 4, 0, 0, 0);
+let obj1Transform = setTransform(0, 0, 0, 20, 20, 20, 0, 0, 0);
+let obj2Transform = setTransform(40, 0, -40, 10, 10, 10, 0, 0, 0);
+```
+
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDk4NTM2NTMsMTg4MTYzMTk5MSwtMT
-c1MDM2MzgzNCwtMTk1ODA0OTE4NywtMTY5MTI3MDcyNSwxMTE1
-NTMwNzA2LC0yMTE0ODE4MjM5LDI1ODQxMzA5NiwtMTE0ODQxMz
-c3MCwxNzIzMzE0NzI4LC04MDg4NzY4NDgsMTcyMzMxNDcyOCwt
-MTMxNTI3MDY2NCwxNzA4MjcyMzQyXX0=
+eyJoaXN0b3J5IjpbLTM0NDI4ODg0MywtMTQwOTg1MzY1MywxOD
+gxNjMxOTkxLC0xNzUwMzYzODM0LC0xOTU4MDQ5MTg3LC0xNjkx
+MjcwNzI1LDExMTU1MzA3MDYsLTIxMTQ4MTgyMzksMjU4NDEzMD
+k2LC0xMTQ4NDEzNzcwLDE3MjMzMTQ3MjgsLTgwODg3Njg0OCwx
+NzIzMzE0NzI4LC0xMzE1MjcwNjY0LDE3MDgyNzIzNDJdfQ==
 -->
