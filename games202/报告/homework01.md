@@ -191,7 +191,7 @@ void main(void) {
 
 ### 关于EPS数据的讨论
 当`EPS = 0.001`时
-![输入图片说明](/imgs/2024-10-19/dlDCu1X9zLQd7bBk.png =550x420)
+![输入图片说明](/imgs/2024-10-19/dlDCu1X9zLQd7bBk.png =580x420)
 当`EPS = 0.01`时
 ![输入图片说明](/imgs/2024-10-19/e8TxiSBCr3xVA7vN.png =600x350)
 发现EPS主要作用变化在模型上的阴影
@@ -262,9 +262,9 @@ float PCSS(sampler2D shadowMap, vec4 coords){
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwMjg0ODE4OSwtMTk1ODA0OTE4NywtMT
-Y5MTI3MDcyNSwxMTE1NTMwNzA2LC0yMTE0ODE4MjM5LDI1ODQx
-MzA5NiwtMTE0ODQxMzc3MCwxNzIzMzE0NzI4LC04MDg4NzY4ND
-gsMTcyMzMxNDcyOCwtMTMxNTI3MDY2NCwxNzA4MjcyMzQyXX0=
+eyJoaXN0b3J5IjpbLTE3NTAzNjM4MzQsLTE5NTgwNDkxODcsLT
+E2OTEyNzA3MjUsMTExNTUzMDcwNiwtMjExNDgxODIzOSwyNTg0
+MTMwOTYsLTExNDg0MTM3NzAsMTcyMzMxNDcyOCwtODA4ODc2OD
+Q4LDE3MjMzMTQ3MjgsLTEzMTUyNzA2NjQsMTcwODI3MjM0Ml19
 
 -->
