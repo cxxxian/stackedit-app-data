@@ -482,16 +482,30 @@ for(let i = 0; i < renderer.lights.length; i++){
 }
 ```
 以上即为支持多光源的参数支持，将原本的一个光源改为通过for循环添加多个，接下来我们只需往上添加光源
+防止过亮调整光源亮度
+```
+// Add lights
+// light - is open shadow map == true
+let lightPos1 = [0, 80, 80];
+let focalPoint = [0, 0, 0];
+let lightUp = [0, 1, 0]
+//第一个光源的亮度
+const directionLight = new DirectionalLight(2500, [1, 1, 1], lightPos1, focalPoint, lightUp, true, renderer.gl);
+renderer.addLight(directionLight);
+//添加第二个光源
+let lightPos2 = [90, 90, 0];
+const directionLight2 = new DirectionalLight(2500, [1, 1, 1], lightPos2, focalPoint, lightUp, true, renderer.gl);
+renderer.addLight(directionLight2);
 ```
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MjQzNTA2OTQsMjAzNjk1NDMwMCwtMT
-kyOTk4MTEyNywxMzg4MTk0NzU3LC00NzExODI3ODksLTY3MzUz
-MDY0OSwxMzQ3ODE3Nzk2LC01MDkwMTcwNjgsMTI3NTA3MzEyOS
-wxMjkxMDY1MjQ5LDYzNTYxMzI2MywtMTQwOTg1MzY1MywxODgx
-NjMxOTkxLC0xNzUwMzYzODM0LC0xOTU4MDQ5MTg3LC0xNjkxMj
-cwNzI1LDExMTU1MzA3MDYsLTIxMTQ4MTgyMzksMjU4NDEzMDk2
-LC0xMTQ4NDEzNzcwXX0=
+eyJoaXN0b3J5IjpbMTU0NzgwODk4NSwyMDM2OTU0MzAwLC0xOT
+I5OTgxMTI3LDEzODgxOTQ3NTcsLTQ3MTE4Mjc4OSwtNjczNTMw
+NjQ5LDEzNDc4MTc3OTYsLTUwOTAxNzA2OCwxMjc1MDczMTI5LD
+EyOTEwNjUyNDksNjM1NjEzMjYzLC0xNDA5ODUzNjUzLDE4ODE2
+MzE5OTEsLTE3NTAzNjM4MzQsLTE5NTgwNDkxODcsLTE2OTEyNz
+A3MjUsMTExNTUzMDcwNiwtMjExNDgxODIzOSwyNTg0MTMwOTYs
+LTExNDg0MTM3NzBdfQ==
 -->
