@@ -257,7 +257,7 @@ float PCSS(sampler2D shadowMap, vec4 coords){
   return visibility / float(NUM_SAMPLES);
 }
 ```
-![输入图片说明](/imgs/2024-10-19/BFAW6FC1IAq6afUi.png =600x)
+![输入图片说明](/imgs/2024-10-19/BFAW6FC1IAq6afUi.png =600x380)
 ## 任务4：Bonus
 ### 多光源 ShadowMap
 1. engine.js中，在原有的transform基础上添加Rotate的参数
@@ -393,7 +393,7 @@ for (let i = 0; i < this.meshes.length; i++) {
 	}
 }
 ```
-![输入图片说明](/imgs/2024-10-26/GBzcKFsztW8oRCTO.png =600x)
+![输入图片说明](/imgs/2024-10-26/GBzcKFsztW8oRCTO.png =600x380)
 但是此处我们会发现阴影并没有跟着人物模型进行旋转，是因为没有更新lightMVP矩阵，导致物体变动并没有反映在ShadowMap上。
 12. 更新lightMVP
 先在WebGLRenderer.js进行shadowMap的清除工作。然后在两个Pass（Shadow pass/ Camera pass）中进行lightMVP矩阵的更新
@@ -437,11 +437,11 @@ for (let i = 0; i < this.meshes.length; i++) {
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQ3MjQ5MjAsLTY3MzUzMDY0OSwxMzQ3OD
-E3Nzk2LC01MDkwMTcwNjgsMTI3NTA3MzEyOSwxMjkxMDY1MjQ5
-LDYzNTYxMzI2MywtMTQwOTg1MzY1MywxODgxNjMxOTkxLC0xNz
-UwMzYzODM0LC0xOTU4MDQ5MTg3LC0xNjkxMjcwNzI1LDExMTU1
-MzA3MDYsLTIxMTQ4MTgyMzksMjU4NDEzMDk2LC0xMTQ4NDEzNz
-cwLDE3MjMzMTQ3MjgsLTgwODg3Njg0OCwxNzIzMzE0NzI4LC0x
-MzE1MjcwNjY0XX0=
+eyJoaXN0b3J5IjpbLTc4NTQ4MjUyNiwtNjczNTMwNjQ5LDEzND
+c4MTc3OTYsLTUwOTAxNzA2OCwxMjc1MDczMTI5LDEyOTEwNjUy
+NDksNjM1NjEzMjYzLC0xNDA5ODUzNjUzLDE4ODE2MzE5OTEsLT
+E3NTAzNjM4MzQsLTE5NTgwNDkxODcsLTE2OTEyNzA3MjUsMTEx
+NTUzMDcwNiwtMjExNDgxODIzOSwyNTg0MTMwOTYsLTExNDg0MT
+M3NzAsMTcyMzMxNDcyOCwtODA4ODc2ODQ4LDE3MjMzMTQ3Mjgs
+LTEzMTUyNzA2NjRdfQ==
 -->
