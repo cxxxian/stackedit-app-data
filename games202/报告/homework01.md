@@ -465,15 +465,28 @@ async function buildPhongMaterial(color, specular, light, translate, scale, rota
 	return new PhongMaterial(color, specular, light, translate, scale, rotate, vertexShader, fragmentShader, lightIndex);
 }
 ```
+```
+//let light = renderer.lights[0].entity;
+//原本只添加第一个light的材质，改成添加所有light的材质，并添加旋转参数
+for(let i = 0; i < renderer.lights.length; i++){
+	let light = renderer.lights[i].entity;
+	switch (objMaterial) {
+		case 'PhongMaterial':
+		//Edit Start 添加旋转参数、光源索引参数
+		material = buildPhongMaterial(colorMap, mat.specular.toArray(), light, Translation, Scale, 	Rotation, i, "./src/shaders/phongShader/phongVertex.glsl", 		"./src/shaders/phongShader/phongFragment.glsl");
+		shadowMaterial = buildShadowMaterial(light, Translation, Scale, Rotation, i, "./src/shaders/shadowShader/shadowVertex.glsl", "./src/shaders/shadowShader/shadowFragment.glsl");
+break;
+}
+```
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5Mjk5ODExMjcsMTM4ODE5NDc1NywtND
-cxMTgyNzg5LC02NzM1MzA2NDksMTM0NzgxNzc5NiwtNTA5MDE3
-MDY4LDEyNzUwNzMxMjksMTI5MTA2NTI0OSw2MzU2MTMyNjMsLT
-E0MDk4NTM2NTMsMTg4MTYzMTk5MSwtMTc1MDM2MzgzNCwtMTk1
-ODA0OTE4NywtMTY5MTI3MDcyNSwxMTE1NTMwNzA2LC0yMTE0OD
-E4MjM5LDI1ODQxMzA5NiwtMTE0ODQxMzc3MCwxNzIzMzE0NzI4
-LC04MDg4NzY4NDhdfQ==
+eyJoaXN0b3J5IjpbLTIwOTY2NjIzOTMsLTE5Mjk5ODExMjcsMT
+M4ODE5NDc1NywtNDcxMTgyNzg5LC02NzM1MzA2NDksMTM0Nzgx
+Nzc5NiwtNTA5MDE3MDY4LDEyNzUwNzMxMjksMTI5MTA2NTI0OS
+w2MzU2MTMyNjMsLTE0MDk4NTM2NTMsMTg4MTYzMTk5MSwtMTc1
+MDM2MzgzNCwtMTk1ODA0OTE4NywtMTY5MTI3MDcyNSwxMTE1NT
+MwNzA2LC0yMTE0ODE4MjM5LDI1ODQxMzA5NiwtMTE0ODQxMzc3
+MCwxNzIzMzE0NzI4XX0=
 -->
