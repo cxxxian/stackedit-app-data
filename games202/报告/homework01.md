@@ -193,7 +193,7 @@ void main(void) {
 当`EPS = 0.001`时
 ![输入图片说明](/imgs/2024-10-19/dlDCu1X9zLQd7bBk.png =580x420)
 当`EPS = 0.01`时
-![输入图片说明](/imgs/2024-10-19/e8TxiSBCr3xVA7vN.png =600x350)
+![输入图片说明](/imgs/2024-10-19/e8TxiSBCr3xVA7vN.png =600x400)
 发现EPS主要作用变化在模型上的阴影
 ## 任务3：PCSS(Percentage Closer Soft Shadow)
 
@@ -257,7 +257,7 @@ float PCSS(sampler2D shadowMap, vec4 coords){
   return visibility / float(NUM_SAMPLES);
 }
 ```
-![输入图片说明](/imgs/2024-10-19/BFAW6FC1IAq6afUi.png =600x350)
+![输入图片说明](/imgs/2024-10-19/BFAW6FC1IAq6afUi.png =600x)
 ## 任务4：Bonus
 ### 多光源 ShadowMap
 1. engine.js中，在原有的transform基础上添加Rotate的参数
@@ -393,7 +393,7 @@ for (let i = 0; i < this.meshes.length; i++) {
 	}
 }
 ```
-![输入图片说明](/imgs/2024-10-26/GBzcKFsztW8oRCTO.png =600x380)
+![输入图片说明](/imgs/2024-10-26/GBzcKFsztW8oRCTO.png =600x)
 但是此处我们会发现阴影并没有跟着人物模型进行旋转，是因为没有更新lightMVP矩阵，导致物体变动并没有反映在ShadowMap上。
 12. 更新lightMVP
 先在WebGLRenderer.js进行shadowMap的清除工作。然后在两个Pass（Shadow pass/ Camera pass）中进行lightMVP矩阵的更新
@@ -431,16 +431,17 @@ for (let i = 0; i < this.meshes.length; i++) {
 	this.meshes[i].draw(this.camera);
 }
 ```
+![输入图片说明](/imgs/2024-10-26/WlJU0GnBAbTtyTYs.png =600x)
 
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTc3MjU3OTMsLTY3MzUzMDY0OSwxMz
-Q3ODE3Nzk2LC01MDkwMTcwNjgsMTI3NTA3MzEyOSwxMjkxMDY1
-MjQ5LDYzNTYxMzI2MywtMTQwOTg1MzY1MywxODgxNjMxOTkxLC
-0xNzUwMzYzODM0LC0xOTU4MDQ5MTg3LC0xNjkxMjcwNzI1LDEx
-MTU1MzA3MDYsLTIxMTQ4MTgyMzksMjU4NDEzMDk2LC0xMTQ4ND
-EzNzcwLDE3MjMzMTQ3MjgsLTgwODg3Njg0OCwxNzIzMzE0NzI4
-LC0xMzE1MjcwNjY0XX0=
+eyJoaXN0b3J5IjpbMzQ3MjQ5MjAsLTY3MzUzMDY0OSwxMzQ3OD
+E3Nzk2LC01MDkwMTcwNjgsMTI3NTA3MzEyOSwxMjkxMDY1MjQ5
+LDYzNTYxMzI2MywtMTQwOTg1MzY1MywxODgxNjMxOTkxLC0xNz
+UwMzYzODM0LC0xOTU4MDQ5MTg3LC0xNjkxMjcwNzI1LDExMTU1
+MzA3MDYsLTIxMTQ4MTgyMzksMjU4NDEzMDk2LC0xMTQ4NDEzNz
+cwLDE3MjMzMTQ3MjgsLTgwODg3Njg0OCwxNzIzMzE0NzI4LC0x
+MzE1MjcwNjY0XX0=
 -->
