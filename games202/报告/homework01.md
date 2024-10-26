@@ -324,23 +324,20 @@ constructor(translate = [0, 0, 0], scale = [1, 1, 1], rotate = [0, 0, 0]) {
 	this.scale = scale;
 	this.rotate = rotate;
 }
+
+const modelTranslation = [transform.modelTransX, transform.modelTransY, transform.modelTransZ];
+const modelScale = [transform.modelScaleX, transform.modelScaleY, transform.modelScaleZ];
+const modelRatation = [transform.modelRotateX, transform.modelRotateY, transform.modelRotateZ];
+let meshTrans = new TRSTransform(modelTranslation, modelScale, modelRatation);
+this.transform = meshTrans;
 ```
-constructor(translate = [0, 0, 0], scale = [1, 1, 1], rotate = [0, 0, 0]) {
-
-this.translate = translate;
-
-this.scale = scale;
-
-this.rotate = rotate;
-
-}
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjg5MjgyNTA5LDE4ODE2MzE5OTEsLTE3NT
-AzNjM4MzQsLTE5NTgwNDkxODcsLTE2OTEyNzA3MjUsMTExNTUz
-MDcwNiwtMjExNDgxODIzOSwyNTg0MTMwOTYsLTExNDg0MTM3Nz
-AsMTcyMzMxNDcyOCwtODA4ODc2ODQ4LDE3MjMzMTQ3MjgsLTEz
-MTUyNzA2NjQsMTcwODI3MjM0Ml19
+eyJoaXN0b3J5IjpbLTUyNTIxNzg0OCwxODgxNjMxOTkxLC0xNz
+UwMzYzODM0LC0xOTU4MDQ5MTg3LC0xNjkxMjcwNzI1LDExMTU1
+MzA3MDYsLTIxMTQ4MTgyMzksMjU4NDEzMDk2LC0xMTQ4NDEzNz
+cwLDE3MjMzMTQ3MjgsLTgwODg3Njg0OCwxNzIzMzE0NzI4LC0x
+MzE1MjcwNjY0LDE3MDgyNzIzNDJdfQ==
 -->
