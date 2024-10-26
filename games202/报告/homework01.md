@@ -498,13 +498,63 @@ let lightPos2 = [90, 90, 0];
 const directionLight2 = new DirectionalLight(2500, [1, 1, 1], lightPos2, focalPoint, lightUp, true, renderer.gl);
 renderer.addLight(directionLight2);
 ```
+```
+// Draw light
+// TODO: Support all kinds of transform
+//灯光围绕原点旋转
+let lightRotateSpeed = [10, 80]//灯光速度
+let lightPos = this.lights[l].entity.lightPos;
+lightPos = vec3.rotateY(lightPos, lightPos, this.lights[l].entity.focalPoint, degrees2Radians(lightRotateSpeed[l]) * deltaime);
+this.lights[l].entity.lightPos = lightPos; //给DirectionalLight的lightPos赋值新的位置，CalcLightMVP计算LightMVP需要用到
+this.lights[l].meshRender.mesh.transform.translate = lightPos;
+this.lights[l].meshRender.draw(this.camera);
 
+// Shadow pass
+if (this.lights[l].entity.hasShadowMap == true) {
+	for (let i = 0; i < this.shadowMeshes.length; i++) {
+	if(this.shadowMeshes[i].material.lightIndex != l) {continue;}// 是当前光源的材质才绘制，否则跳过
+		//每帧更新shader中uniforms的LightMVP
+
+	this.gl.useProgram(this.shadowMeshes[i].shader.program.glShaderProgram);
+	let translation = this.shadowMeshes[i].mesh.transform.translate;
+	let scale = this.shadowMeshes[i].mesh.transform.scale;
+	let rotation = this.shadowMeshes[i].mesh.transform.rotate;
+	let lightMVP = this.lights[l].entity.CalcLightMVP(translation, scale, rotation);
+	this.shadowMeshes[i].material.uniforms.uLightMVP = { type: 'matrix4fv', value: lightMVP };
+this.shadowMeshes[i].draw(this.camera);
+	}
+}
+if(l != 0){
+	// 开启混合，把Additional Pass混合到Base Pass结果上，否则会覆盖Base Pass的渲染结果
+	gl.enable(gl.BLEND);
+	gl.blendFunc(gl.ONE, gl.ONE);
+}
+// Camera pass
+for (let i = 0; i < this.meshes.length; i++) {
+	if(this.meshes[i].material.lightIndex != l) {continue;}// 是当前光源的材质才绘制，否则跳过
+	this.gl.useProgram(this.meshes[i].shader.program.glShaderProgram);
+	// 每帧更新shader中uniforms参数
+	//this.gl.uniform3fv(this.meshes[i].shader.program.uniforms.uLightPos, 	this.lights[l].entity.lightPos); //这里改用下面写法
+	let translation = this.meshes[i].mesh.transform.translate;
+	let scale = this.meshes[i].mesh.transform.scale;
+	let rotation = this.meshes[i].mesh.transform.rotate;
+	let lightMVP = this.lights[l].entity.CalcLightMVP(translation, scale, rotation);
+	this.meshes[i].material.uniforms.uLightMVP = { type: 'matrix4fv', value: lightMVP };
+	this.meshes[i].material.uniforms.uLightPos = { type: '3fv', value: this.lights[l].entity.lightPos }; // 光源方向计算、光源强度衰减
+	this.meshes[i].draw(this.camera);
+}
+
+//还原Additional Pass的设置
+
+gl.disable(gl.BLEND);
+
+}
 ![输入图片说明](/imgs/2024-10-26/YFEwA9Zw3Ip3fMXs.png =600x350)
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4NzA3OTg3OCwzMTk4MjQ3ODYsLTE1NT
+eyJoaXN0b3J5IjpbLTI0NDY0NzM0MywzMTk4MjQ3ODYsLTE1NT
 g2OTU2NDgsMTM3OTI1NjY0LDIwMzY5NTQzMDAsLTE5Mjk5ODEx
 MjcsMTM4ODE5NDc1NywtNDcxMTgyNzg5LC02NzM1MzA2NDksMT
 M0NzgxNzc5NiwtNTA5MDE3MDY4LDEyNzUwNzMxMjksMTI5MTA2
