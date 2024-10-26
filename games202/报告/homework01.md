@@ -303,16 +303,13 @@ async function buildPhongMaterial(color, specular, light, translate, scale, rota
 	let vertexShader = await getShaderString(vertexPath);
 	let fragmentShader = await getShaderString(fragmentPath);
 	return new PhongMaterial(color, specular, light, translate, scale, rotate, vertexShader, fragmentShader);
-
-  
-
 }
 ```
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzI3NjQyMTAsMTg4MTYzMTk5MSwtMT
+eyJoaXN0b3J5IjpbLTE1OTg0OTI3MzIsMTg4MTYzMTk5MSwtMT
 c1MDM2MzgzNCwtMTk1ODA0OTE4NywtMTY5MTI3MDcyNSwxMTE1
 NTMwNzA2LC0yMTE0ODE4MjM5LDI1ODQxMzA5NiwtMTE0ODQxMz
 c3MCwxNzIzMzE0NzI4LC04MDg4NzY4NDgsMTcyMzMxNDcyOCwt
