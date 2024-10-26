@@ -448,15 +448,45 @@ constructor(uniforms, attribs, vsSrc, fsSrc, frameBuffer, lightIndex) {
 	this.lightIndex = lightIndex;
 }
 ```
+class ShadowMaterial extends Material {
+	constructor(light, translate, scale, rotate, lightIndex, vertexShader, fragmentShader) {
+		let lightMVP = light.CalcLightMVP(translate, scale, rotate);
+		super({
+'uLightMVP': { type: 'matrix4fv', value: lightMVP }
+
+}, [], vertexShader, fragmentShader, light.fbo, lightIndex);
+
+}
+
+}
+
+  
+
+async function buildShadowMaterial(light, translate, scale, rotate, lightIndex, vertexPath, fragmentPath) {
+
+  
+  
+
+let vertexShader = await getShaderString(vertexPath);
+
+let fragmentShader = await getShaderString(fragmentPath);
+
+  
+
+return new ShadowMaterial(light, translate, scale, rotate, lightIndex, vertexShader, fragmentShader);
+
+  
+
+}
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTY3NjE5NiwxMzg4MTk0NzU3LC00NzExOD
-I3ODksLTY3MzUzMDY0OSwxMzQ3ODE3Nzk2LC01MDkwMTcwNjgs
-MTI3NTA3MzEyOSwxMjkxMDY1MjQ5LDYzNTYxMzI2MywtMTQwOT
-g1MzY1MywxODgxNjMxOTkxLC0xNzUwMzYzODM0LC0xOTU4MDQ5
-MTg3LC0xNjkxMjcwNzI1LDExMTU1MzA3MDYsLTIxMTQ4MTgyMz
-ksMjU4NDEzMDk2LC0xMTQ4NDEzNzcwLDE3MjMzMTQ3MjgsLTgw
-ODg3Njg0OF19
+eyJoaXN0b3J5IjpbLTEwOTc2MzM5NjcsMTM4ODE5NDc1NywtND
+cxMTgyNzg5LC02NzM1MzA2NDksMTM0NzgxNzc5NiwtNTA5MDE3
+MDY4LDEyNzUwNzMxMjksMTI5MTA2NTI0OSw2MzU2MTMyNjMsLT
+E0MDk4NTM2NTMsMTg4MTYzMTk5MSwtMTc1MDM2MzgzNCwtMTk1
+ODA0OTE4NywtMTY5MTI3MDcyNSwxMTE1NTMwNzA2LC0yMTE0OD
+E4MjM5LDI1ODQxMzA5NiwtMTE0ODQxMzc3MCwxNzIzMzE0NzI4
+LC04MDg4NzY4NDhdfQ==
 -->
