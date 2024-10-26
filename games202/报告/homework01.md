@@ -460,12 +460,16 @@ constructor(color, specular, light, translate, scale, rotate, lightIndex, vertex
 		'uLightMVP': { type: 'matrix4fv', value: lightMVP },
 	}, [], vertexShader, fragmentShader, null, lightIndex);
 }
+async function buildPhongMaterial(color, specular, light, translate, scale, rotate, lightIndex, vertexPath, fragmentPath) {
+	...
+	return new PhongMaterial(color, specular, light, translate, scale, rotate, vertexShader, fragmentShader, lightIndex);
+}
 ```
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjY5MzI5NTAsMTM4ODE5NDc1NywtND
+eyJoaXN0b3J5IjpbLTE5Mjk5ODExMjcsMTM4ODE5NDc1NywtND
 cxMTgyNzg5LC02NzM1MzA2NDksMTM0NzgxNzc5NiwtNTA5MDE3
 MDY4LDEyNzUwNzMxMjksMTI5MTA2NTI0OSw2MzU2MTMyNjMsLT
 E0MDk4NTM2NTMsMTg4MTYzMTk5MSwtMTc1MDM2MzgzNCwtMTk1
