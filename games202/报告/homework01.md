@@ -373,14 +373,18 @@ prevTime = now;
 }
 requestAnimationFrame(mainLoop);
 ```
+9. 因为Render需要参数，所以请WebGLRender.js中添加接收时间的参数
+``` 
+render(time, deltaime) { }
+```
 
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MDY2MDIwMDgsLTE0MDk4NTM2NTMsMT
-g4MTYzMTk5MSwtMTc1MDM2MzgzNCwtMTk1ODA0OTE4NywtMTY5
-MTI3MDcyNSwxMTE1NTMwNzA2LC0yMTE0ODE4MjM5LDI1ODQxMz
-A5NiwtMTE0ODQxMzc3MCwxNzIzMzE0NzI4LC04MDg4NzY4NDgs
-MTcyMzMxNDcyOCwtMTMxNTI3MDY2NCwxNzA4MjcyMzQyXX0=
+eyJoaXN0b3J5IjpbMzg0NzU2Nzk0LC0xNDA5ODUzNjUzLDE4OD
+E2MzE5OTEsLTE3NTAzNjM4MzQsLTE5NTgwNDkxODcsLTE2OTEy
+NzA3MjUsMTExNTUzMDcwNiwtMjExNDgxODIzOSwyNTg0MTMwOT
+YsLTExNDg0MTM3NzAsMTcyMzMxNDcyOCwtODA4ODc2ODQ4LDE3
+MjMzMTQ3MjgsLTEzMTUyNzA2NjQsMTcwODI3MjM0Ml19
 -->
