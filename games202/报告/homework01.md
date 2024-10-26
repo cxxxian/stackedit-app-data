@@ -377,15 +377,21 @@ requestAnimationFrame(mainLoop);
 ``` 
 render(time, deltaime) { }
 ```
-10. 在engi
+10. 在engine.js中添加一个方法用来实现角度转弧度制，因为控制旋转时接受的时弧度参数，我们希望使用角度
+```
+//角度转弧度
+function degrees2Radians(degrees){
+	return 3.1415927 / 180 * degrees;
+}
+```
 
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExNDQwOTc1MCwtMTQwOTg1MzY1MywxOD
-gxNjMxOTkxLC0xNzUwMzYzODM0LC0xOTU4MDQ5MTg3LC0xNjkx
-MjcwNzI1LDExMTU1MzA3MDYsLTIxMTQ4MTgyMzksMjU4NDEzMD
-k2LC0xMTQ4NDEzNzcwLDE3MjMzMTQ3MjgsLTgwODg3Njg0OCwx
-NzIzMzE0NzI4LC0xMzE1MjcwNjY0LDE3MDgyNzIzNDJdfQ==
+eyJoaXN0b3J5IjpbLTEyNjA1NDI5MDAsLTE0MDk4NTM2NTMsMT
+g4MTYzMTk5MSwtMTc1MDM2MzgzNCwtMTk1ODA0OTE4NywtMTY5
+MTI3MDcyNSwxMTE1NTMwNzA2LC0yMTE0ODE4MjM5LDI1ODQxMz
+A5NiwtMTE0ODQxMzc3MCwxNzIzMzE0NzI4LC04MDg4NzY4NDgs
+MTcyMzMxNDcyOCwtMTMxNTI3MDY2NCwxNzA4MjcyMzQyXX0=
 -->
