@@ -384,28 +384,22 @@ function degrees2Radians(degrees){
 	return 3.1415927 / 180 * degrees;
 }
 ```
-11. 
+11. WebGLRender.js
 ```
 for (let i = 0; i < this.meshes.length; i++) {
-
-if(this.meshes[i].mesh.count > 10)
-
-{
-
-this.meshes[i].mesh.transform.rotate[1] = this.meshes[i].mesh.transform.rotate[1] + degrees2Radians(10) * deltaime;
-
+	if(this.meshes[i].mesh.count > 10){
+		this.meshes[i].mesh.transform.rotate[1] = 		this.meshes[i].mesh.transform.rotate[1] + degrees2Radians(10) * deltaime;
+	}
 }
-
-}
-`
+```
 
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODUwODYzMzQ4LC0xNDA5ODUzNjUzLDE4OD
-E2MzE5OTEsLTE3NTAzNjM4MzQsLTE5NTgwNDkxODcsLTE2OTEy
-NzA3MjUsMTExNTUzMDcwNiwtMjExNDgxODIzOSwyNTg0MTMwOT
-YsLTExNDg0MTM3NzAsMTcyMzMxNDcyOCwtODA4ODc2ODQ4LDE3
-MjMzMTQ3MjgsLTEzMTUyNzA2NjQsMTcwODI3MjM0Ml19
+eyJoaXN0b3J5IjpbMTAyNTY5MjU2OCwtMTQwOTg1MzY1MywxOD
+gxNjMxOTkxLC0xNzUwMzYzODM0LC0xOTU4MDQ5MTg3LC0xNjkx
+MjcwNzI1LDExMTU1MzA3MDYsLTIxMTQ4MTgyMzksMjU4NDEzMD
+k2LC0xMTQ4NDEzNzcwLDE3MjMzMTQ3MjgsLTgwODg3Njg0OCwx
+NzIzMzE0NzI4LC0xMzE1MjcwNjY0LDE3MDgyNzIzNDJdfQ==
 -->
