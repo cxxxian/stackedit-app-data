@@ -341,6 +341,8 @@ mat4.rotateX(modelMatrix, modelMatrix, this.mesh.transform.rotate[0])
 mat4.rotateY(modelMatrix, modelMatrix, this.mesh.transform.rotate[1])
 mat4.rotateZ(modelMatrix, modelMatrix, this.mesh.transform.rotate[2])
 ```
+7. loadOBJ.js中添加旋转参数
+```
 let material, shadowMaterial;
 let Translation = [transform.modelTransX, transform.modelTransY, transform.modelTransZ];
 let Scale = [transform.modelScaleX, transform.modelScaleY, transform.modelScaleZ];
@@ -349,17 +351,15 @@ let light = renderer.lights[0].entity;
 switch (objMaterial) {
 	case 'PhongMaterial':
 	material = buildPhongMaterial(colorMap, mat.specular.toArray(), light, Translation, Scale, "./src/shaders/phongShader/phongVertex.glsl", "./src/shaders/phongShader/phongFragment.glsl");
-
 	shadowMaterial = buildShadowMaterial(light, Translation, Scale, Rotation, "./src/shaders/shadowShader/shadowVertex.glsl", "./src/shaders/shadowShader/shadowFragment.glsl");
-
-break;
-
+	break;
 }
+```
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzI1MDQwNzEsMTg4MTYzMTk5MSwtMT
+eyJoaXN0b3J5IjpbLTE0MDk4NTM2NTMsMTg4MTYzMTk5MSwtMT
 c1MDM2MzgzNCwtMTk1ODA0OTE4NywtMTY5MTI3MDcyNSwxMTE1
 NTMwNzA2LC0yMTE0ODE4MjM5LDI1ODQxMzA5NiwtMTE0ODQxMz
 c3MCwxNzIzMzE0NzI4LC04MDg4NzY4NDgsMTcyMzMxNDcyOCwt
