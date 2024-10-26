@@ -258,13 +258,17 @@ float PCSS(sampler2D shadowMap, vec4 coords){
 }
 ```
 ![输入图片说明](/imgs/2024-10-19/BFAW6FC1IAq6afUi.png =600x350)
+## 任务4：Bonus
+1. 多光源 ShadowMap
+
+
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NTAzNjM4MzQsLTE5NTgwNDkxODcsLT
-E2OTEyNzA3MjUsMTExNTUzMDcwNiwtMjExNDgxODIzOSwyNTg0
-MTMwOTYsLTExNDg0MTM3NzAsMTcyMzMxNDcyOCwtODA4ODc2OD
-Q4LDE3MjMzMTQ3MjgsLTEzMTUyNzA2NjQsMTcwODI3MjM0Ml19
-
+eyJoaXN0b3J5IjpbLTgyNDQ0NTgzOSwtMTc1MDM2MzgzNCwtMT
+k1ODA0OTE4NywtMTY5MTI3MDcyNSwxMTE1NTMwNzA2LC0yMTE0
+ODE4MjM5LDI1ODQxMzA5NiwtMTE0ODQxMzc3MCwxNzIzMzE0Nz
+I4LC04MDg4NzY4NDgsMTcyMzMxNDcyOCwtMTMxNTI3MDY2NCwx
+NzA4MjcyMzQyXX0=
 -->
