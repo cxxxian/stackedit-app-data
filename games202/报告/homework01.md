@@ -331,13 +331,23 @@ const modelRatation = [transform.modelRotateX, transform.modelRotateY, transform
 let meshTrans = new TRSTransform(modelTranslation, modelScale, modelRatation);
 this.transform = meshTrans;
 ```
+6. MeshRender.js添加旋转
+```
+// Model transform
+mat4.identity(modelMatrix);
+mat4.translate(modelMatrix, modelMatrix, this.mesh.transform.translate);
+mat4.scale(modelMatrix, modelMatrix, this.mesh.transform.scale);
+mat4.rotateX(modelMatrix, modelMatrix, this.mesh.transform.rotate[0])
+mat4.rotateY(modelMatrix, modelMatrix, this.mesh.transform.rotate[1])
+mat4.rotateZ(modelMatrix, modelMatrix, this.mesh.transform.rotate[2])
+```
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUyNTIxNzg0OCwxODgxNjMxOTkxLC0xNz
-UwMzYzODM0LC0xOTU4MDQ5MTg3LC0xNjkxMjcwNzI1LDExMTU1
-MzA3MDYsLTIxMTQ4MTgyMzksMjU4NDEzMDk2LC0xMTQ4NDEzNz
-cwLDE3MjMzMTQ3MjgsLTgwODg3Njg0OCwxNzIzMzE0NzI4LC0x
-MzE1MjcwNjY0LDE3MDgyNzIzNDJdfQ==
+eyJoaXN0b3J5IjpbLTExMzYyMDU1OTUsMTg4MTYzMTk5MSwtMT
+c1MDM2MzgzNCwtMTk1ODA0OTE4NywtMTY5MTI3MDcyNSwxMTE1
+NTMwNzA2LC0yMTE0ODE4MjM5LDI1ODQxMzA5NiwtMTE0ODQxMz
+c3MCwxNzIzMzE0NzI4LC04MDg4NzY4NDgsMTcyMzMxNDcyOCwt
+MTMxNTI3MDY2NCwxNzA4MjcyMzQyXX0=
 -->
