@@ -394,16 +394,15 @@ for (let i = 0; i < this.meshes.length; i++) {
 }
 ```
 ![输入图片说明](/imgs/2024-10-26/GBzcKFsztW8oRCTO.png =600x380)
-
-da
+但是此处我们会发现阴影并没有跟着人物模型进行旋转，是因为
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDE0MzI3MTAsMTI3NTA3MzEyOSwxMj
-kxMDY1MjQ5LDYzNTYxMzI2MywtMTQwOTg1MzY1MywxODgxNjMx
-OTkxLC0xNzUwMzYzODM0LC0xOTU4MDQ5MTg3LC0xNjkxMjcwNz
-I1LDExMTU1MzA3MDYsLTIxMTQ4MTgyMzksMjU4NDEzMDk2LC0x
-MTQ4NDEzNzcwLDE3MjMzMTQ3MjgsLTgwODg3Njg0OCwxNzIzMz
-E0NzI4LC0xMzE1MjcwNjY0LDE3MDgyNzIzNDJdfQ==
+eyJoaXN0b3J5IjpbLTUwOTAxNzA2OCwxMjc1MDczMTI5LDEyOT
+EwNjUyNDksNjM1NjEzMjYzLC0xNDA5ODUzNjUzLDE4ODE2MzE5
+OTEsLTE3NTAzNjM4MzQsLTE5NTgwNDkxODcsLTE2OTEyNzA3Mj
+UsMTExNTUzMDcwNiwtMjExNDgxODIzOSwyNTg0MTMwOTYsLTEx
+NDg0MTM3NzAsMTcyMzMxNDcyOCwtODA4ODc2ODQ4LDE3MjMzMT
+Q3MjgsLTEzMTUyNzA2NjQsMTcwODI3MjM0Ml19
 -->
