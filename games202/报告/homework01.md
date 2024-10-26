@@ -448,6 +448,7 @@ constructor(uniforms, attribs, vsSrc, fsSrc, frameBuffer, lightIndex) {
 	this.lightIndex = lightIndex;
 }
 ```
+ShadowMaterial.js中添加lightIndex参数
 ```
 class ShadowMaterial extends Material {
 	constructor(light, translate, scale, rotate, lightIndex, vertexShader, fragmentShader) {
@@ -467,11 +468,11 @@ async function buildShadowMaterial(light, translate, scale, rotate, lightIndex, 
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjUxNDg0ODY1LDEzODgxOTQ3NTcsLTQ3MT
-E4Mjc4OSwtNjczNTMwNjQ5LDEzNDc4MTc3OTYsLTUwOTAxNzA2
-OCwxMjc1MDczMTI5LDEyOTEwNjUyNDksNjM1NjEzMjYzLC0xND
-A5ODUzNjUzLDE4ODE2MzE5OTEsLTE3NTAzNjM4MzQsLTE5NTgw
-NDkxODcsLTE2OTEyNzA3MjUsMTExNTUzMDcwNiwtMjExNDgxOD
-IzOSwyNTg0MTMwOTYsLTExNDg0MTM3NzAsMTcyMzMxNDcyOCwt
-ODA4ODc2ODQ4XX0=
+eyJoaXN0b3J5IjpbLTc4ODUyOTg1MywxMzg4MTk0NzU3LC00Nz
+ExODI3ODksLTY3MzUzMDY0OSwxMzQ3ODE3Nzk2LC01MDkwMTcw
+NjgsMTI3NTA3MzEyOSwxMjkxMDY1MjQ5LDYzNTYxMzI2MywtMT
+QwOTg1MzY1MywxODgxNjMxOTkxLC0xNzUwMzYzODM0LC0xOTU4
+MDQ5MTg3LC0xNjkxMjcwNzI1LDExMTU1MzA3MDYsLTIxMTQ4MT
+gyMzksMjU4NDEzMDk2LC0xMTQ4NDEzNzcwLDE3MjMzMTQ3Mjgs
+LTgwODg3Njg0OF19
 -->
