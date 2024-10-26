@@ -274,9 +274,7 @@ function setTransform(t_x, t_y, t_z, s_x, s_y, s_z, r_x, r_y, r_z) {
 		modelRotateX: r_x,
 		modelRotateY: r_y,
 		modelRotateZ: r_z,
-
-};
-
+	};
 }
 ```
 
@@ -284,7 +282,7 @@ function setTransform(t_x, t_y, t_z, s_x, s_y, s_z, r_x, r_y, r_z) {
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4MTMzMzU3NiwtMTc1MDM2MzgzNCwtMT
+eyJoaXN0b3J5IjpbLTM5NDA4MTI2MCwtMTc1MDM2MzgzNCwtMT
 k1ODA0OTE4NywtMTY5MTI3MDcyNSwxMTE1NTMwNzA2LC0yMTE0
 ODE4MjM5LDI1ODQxMzA5NiwtMTE0ODQxMzc3MCwxNzIzMzE0Nz
 I4LC04MDg4NzY4NDgsMTcyMzMxNDcyOCwtMTMxNTI3MDY2NCwx
