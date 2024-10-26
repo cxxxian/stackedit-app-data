@@ -384,7 +384,7 @@ function degrees2Radians(degrees){
 	return 3.1415927 / 180 * degrees;
 }
 ```
-11. WebGLRender.js
+11. WebGLRender.js中加入旋转循环，此处针对顶点数大于10的me's
 ```
 for (let i = 0; i < this.meshes.length; i++) {
 	if(this.meshes[i].mesh.count > 10){
@@ -397,10 +397,10 @@ for (let i = 0; i < this.meshes.length; i++) {
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI5MTA2NTI0OSw2MzU2MTMyNjMsLTE0MD
-k4NTM2NTMsMTg4MTYzMTk5MSwtMTc1MDM2MzgzNCwtMTk1ODA0
-OTE4NywtMTY5MTI3MDcyNSwxMTE1NTMwNzA2LC0yMTE0ODE4Mj
-M5LDI1ODQxMzA5NiwtMTE0ODQxMzc3MCwxNzIzMzE0NzI4LC04
-MDg4NzY4NDgsMTcyMzMxNDcyOCwtMTMxNTI3MDY2NCwxNzA4Mj
-cyMzQyXX0=
+eyJoaXN0b3J5IjpbLTE0NDI4NjM0MTcsMTI5MTA2NTI0OSw2Mz
+U2MTMyNjMsLTE0MDk4NTM2NTMsMTg4MTYzMTk5MSwtMTc1MDM2
+MzgzNCwtMTk1ODA0OTE4NywtMTY5MTI3MDcyNSwxMTE1NTMwNz
+A2LC0yMTE0ODE4MjM5LDI1ODQxMzA5NiwtMTE0ODQxMzc3MCwx
+NzIzMzE0NzI4LC04MDg4NzY4NDgsMTcyMzMxNDcyOCwtMTMxNT
+I3MDY2NCwxNzA4MjcyMzQyXX0=
 -->
