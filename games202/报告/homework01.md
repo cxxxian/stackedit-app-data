@@ -432,7 +432,7 @@ for (let i = 0; i < this.meshes.length; i++) {
 ```
 ![输入图片说明](/imgs/2024-10-26/WlJU0GnBAbTtyTYs.png =600x380)
 ### 多光源
-在Me'trial
+在Metrial.js中添加一个lightIndex用来区分不同光源
 ```
 constructor(uniforms, attribs, vsSrc, fsSrc, frameBuffer, lightIndex) {
 	this.uniforms = uniforms;
@@ -452,11 +452,11 @@ constructor(uniforms, attribs, vsSrc, fsSrc, frameBuffer, lightIndex) {
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzM1ODA5MTM5LDEzODgxOTQ3NTcsLTQ3MT
-E4Mjc4OSwtNjczNTMwNjQ5LDEzNDc4MTc3OTYsLTUwOTAxNzA2
-OCwxMjc1MDczMTI5LDEyOTEwNjUyNDksNjM1NjEzMjYzLC0xND
-A5ODUzNjUzLDE4ODE2MzE5OTEsLTE3NTAzNjM4MzQsLTE5NTgw
-NDkxODcsLTE2OTEyNzA3MjUsMTExNTUzMDcwNiwtMjExNDgxOD
-IzOSwyNTg0MTMwOTYsLTExNDg0MTM3NzAsMTcyMzMxNDcyOCwt
-ODA4ODc2ODQ4XX0=
+eyJoaXN0b3J5IjpbOTY3NjE5NiwxMzg4MTk0NzU3LC00NzExOD
+I3ODksLTY3MzUzMDY0OSwxMzQ3ODE3Nzk2LC01MDkwMTcwNjgs
+MTI3NTA3MzEyOSwxMjkxMDY1MjQ5LDYzNTYxMzI2MywtMTQwOT
+g1MzY1MywxODgxNjMxOTkxLC0xNzUwMzYzODM0LC0xOTU4MDQ5
+MTg3LC0xNjkxMjcwNzI1LDExMTU1MzA3MDYsLTIxMTQ4MTgyMz
+ksMjU4NDEzMDk2LC0xMTQ4NDEzNzcwLDE3MjMzMTQ3MjgsLTgw
+ODg3Njg0OF19
 -->
