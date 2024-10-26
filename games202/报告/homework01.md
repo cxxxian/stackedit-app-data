@@ -263,13 +263,7 @@ float PCSS(sampler2D shadowMap, vec4 coords){
 ```
 function setTransform(t_x, t_y, t_z, s_x, s_y, s_z, r_x, r_y, r_z) {
 	return {
-		modelTransX: t_x,
-		modelTransY: t_y,
-		modelTransZ: t_z,
-		modelScaleX: s_x,
-		modelScaleY: s_y,
-		modelScaleZ: s_z,
-		
+		...
 		modelRotateX: r_x,
 		modelRotateY: r_y,
 		modelRotateZ: r_z,
@@ -435,16 +429,7 @@ for (let i = 0; i < this.meshes.length; i++) {
 在Metrial.js中添加一个lightIndex用来区分不同光源
 ```
 constructor(uniforms, attribs, vsSrc, fsSrc, frameBuffer, lightIndex) {
-	this.uniforms = uniforms;
-	this.attribs = attribs;
-	this.#vsSrc = vsSrc;
-	this.#fsSrc = fsSrc;
-	this.#flatten_uniforms = ['uViewMatrix','uModelMatrix', 'uProjectionMatrix', 'uCameraPos', 'uLightPos'];
-	for (let k in uniforms) {
-		this.#flatten_uniforms.push(k);
-	}
-	this.#flatten_attribs = attribs;
-	this.frameBuffer = frameBuffer;
+	...
 	this.lightIndex = lightIndex;
 }
 ```
@@ -459,8 +444,7 @@ class ShadowMaterial extends Material {
 	}
 }
 async function buildShadowMaterial(light, translate, scale, rotate, lightIndex, vertexPath, fragmentPath) {
-	let vertexShader = await getShaderString(vertexPath);
-	let fragmentShader = await getShaderString(fragmentPath);
+	...
 	return new ShadowMaterial(light, translate, scale, rotate, lightIndex, vertexShader, fragmentShader);
 }
 ```
@@ -468,11 +452,11 @@ async function buildShadowMaterial(light, translate, scale, rotate, lightIndex, 
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4ODUyOTg1MywxMzg4MTk0NzU3LC00Nz
-ExODI3ODksLTY3MzUzMDY0OSwxMzQ3ODE3Nzk2LC01MDkwMTcw
-NjgsMTI3NTA3MzEyOSwxMjkxMDY1MjQ5LDYzNTYxMzI2MywtMT
-QwOTg1MzY1MywxODgxNjMxOTkxLC0xNzUwMzYzODM0LC0xOTU4
-MDQ5MTg3LC0xNjkxMjcwNzI1LDExMTU1MzA3MDYsLTIxMTQ4MT
-gyMzksMjU4NDEzMDk2LC0xMTQ4NDEzNzcwLDE3MjMzMTQ3Mjgs
-LTgwODg3Njg0OF19
+eyJoaXN0b3J5IjpbMjAwNTA0OTMxLDEzODgxOTQ3NTcsLTQ3MT
+E4Mjc4OSwtNjczNTMwNjQ5LDEzNDc4MTc3OTYsLTUwOTAxNzA2
+OCwxMjc1MDczMTI5LDEyOTEwNjUyNDksNjM1NjEzMjYzLC0xND
+A5ODUzNjUzLDE4ODE2MzE5OTEsLTE3NTAzNjM4MzQsLTE5NTgw
+NDkxODcsLTE2OTEyNzA3MjUsMTExNTUzMDcwNiwtMjExNDgxOD
+IzOSwyNTg0MTMwOTYsLTExNDg0MTM3NzAsMTcyMzMxNDcyOCwt
+ODA4ODc2ODQ4XX0=
 -->
