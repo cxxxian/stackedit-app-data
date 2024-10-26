@@ -360,16 +360,27 @@ switch (objMaterial) {
 let floorTransform = setTransform(0, 0, -30, 4, 4, 4, 0, 0, 0);
 let obj1Transform = setTransform(0, 0, 0, 20, 20, 20, 0, 0, 0);
 let obj2Transform = setTransform(40, 0, -40, 10, 10, 10, 0, 0, 0);
-
+```
+且为了得到时间的概念，我们需要在渲染主循环中进行时间的获取
+```
+let prevTime = 0;
+function mainLoop(now) {
+cameraControls.update();
+let deltaime = (now - prevTime) / 1000;
+renderer.render(now, deltaime);
+requestAnimationFrame(mainLoop);
+prevTime = now;
+}
+requestAnimationFrame(mainLoop);
 ```
 
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2MDU5MDg0MSwtMTQwOTg1MzY1MywxOD
-gxNjMxOTkxLC0xNzUwMzYzODM0LC0xOTU4MDQ5MTg3LC0xNjkx
-MjcwNzI1LDExMTU1MzA3MDYsLTIxMTQ4MTgyMzksMjU4NDEzMD
-k2LC0xMTQ4NDEzNzcwLDE3MjMzMTQ3MjgsLTgwODg3Njg0OCwx
-NzIzMzE0NzI4LC0xMzE1MjcwNjY0LDE3MDgyNzIzNDJdfQ==
+eyJoaXN0b3J5IjpbLTE4MDY2MDIwMDgsLTE0MDk4NTM2NTMsMT
+g4MTYzMTk5MSwtMTc1MDM2MzgzNCwtMTk1ODA0OTE4NywtMTY5
+MTI3MDcyNSwxMTE1NTMwNzA2LC0yMTE0ODE4MjM5LDI1ODQxMz
+A5NiwtMTE0ODQxMzc3MCwxNzIzMzE0NzI4LC04MDg4NzY4NDgs
+MTcyMzMxNDcyOCwtMTMxNTI3MDY2NCwxNzA4MjcyMzQyXX0=
 -->
