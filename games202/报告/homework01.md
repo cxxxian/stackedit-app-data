@@ -431,13 +431,13 @@ for (let i = 0; i < this.meshes.length; i++) {
 	this.meshes[i].draw(this.camera);
 }
 ```
-![输入图片说明](/imgs/2024-10-26/WlJU0GnBAbTtyTYs.png =600x)
+![输入图片说明](/imgs/2024-10-26/WlJU0GnBAbTtyTYs.png =600x380)
 
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4NTQ4MjUyNiwtNjczNTMwNjQ5LDEzND
+eyJoaXN0b3J5IjpbMTE1NDUyMTQ5NSwtNjczNTMwNjQ5LDEzND
 c4MTc3OTYsLTUwOTAxNzA2OCwxMjc1MDczMTI5LDEyOTEwNjUy
 NDksNjM1NjEzMjYzLC0xNDA5ODUzNjUzLDE4ODE2MzE5OTEsLT
 E3NTAzNjM4MzQsLTE5NTgwNDkxODcsLTE2OTEyNzA3MjUsMTEx
