@@ -196,7 +196,6 @@ void main(void) {
 ![输入图片说明](/imgs/2024-10-19/e8TxiSBCr3xVA7vN.png =600x400)
 发现EPS主要作用变化在模型上的阴影
 ## 任务3：PCSS(Percentage Closer Soft Shadow)
-
 1. 完善 phongFragment.glsl 中的 findBlocker(sampler2D shadowMap, vec2 uv, float zReceiver)
 ```
 float findBlocker( sampler2D shadowMap,  vec2 uv, float zReceiver ) {
@@ -259,7 +258,7 @@ float PCSS(sampler2D shadowMap, vec4 coords){
 ```
 ![输入图片说明](/imgs/2024-10-19/BFAW6FC1IAq6afUi.png =600x380)
 ## 任务4：Bonus
-### 多光源 ShadowMap
+### 动态物体
 1. engine.js中，在原有的transform基础上添加Rotate的参数
 ```
 function setTransform(t_x, t_y, t_z, s_x, s_y, s_z, r_x, r_y, r_z) {
@@ -432,12 +431,12 @@ for (let i = 0; i < this.meshes.length; i++) {
 }
 ```
 ![输入图片说明](/imgs/2024-10-26/WlJU0GnBAbTtyTYs.png =600x380)
-
+### 多光源 ShadowMap
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1NDUyMTQ5NSwtNjczNTMwNjQ5LDEzND
+eyJoaXN0b3J5IjpbLTQ3MTE4Mjc4OSwtNjczNTMwNjQ5LDEzND
 c4MTc3OTYsLTUwOTAxNzA2OCwxMjc1MDczMTI5LDEyOTEwNjUy
 NDksNjM1NjEzMjYzLC0xNDA5ODUzNjUzLDE4ODE2MzE5OTEsLT
 E3NTAzNjM4MzQsLTE5NTgwNDkxODcsLTE2OTEyNzA3MjUsMTEx
