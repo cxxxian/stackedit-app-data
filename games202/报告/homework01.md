@@ -462,7 +462,7 @@ constructor(color, specular, light, translate, scale, rotate, lightIndex, vertex
 }
 async function buildPhongMaterial(color, specular, light, translate, scale, rotate, lightIndex, vertexPath, fragmentPath) {
 	...
-	return new PhongMaterial(color, specular, light, translate, scale, rotate, lightIndex， vertexShader, fragmentShader);
+	return new PhongMaterial(color, specular, light, translate, scale, rotate, lightIndex, vertexShader, fragmentShader);
 }
 ```
 loadOBJ.js中添加参数lightIndex
@@ -501,11 +501,11 @@ renderer.addLight(directionLight2);
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ3NDc0NDk2LDEzNzkyNTY2NCwyMDM2OT
-U0MzAwLC0xOTI5OTgxMTI3LDEzODgxOTQ3NTcsLTQ3MTE4Mjc4
-OSwtNjczNTMwNjQ5LDEzNDc4MTc3OTYsLTUwOTAxNzA2OCwxMj
-c1MDczMTI5LDEyOTEwNjUyNDksNjM1NjEzMjYzLC0xNDA5ODUz
-NjUzLDE4ODE2MzE5OTEsLTE3NTAzNjM4MzQsLTE5NTgwNDkxOD
-csLTE2OTEyNzA3MjUsMTExNTUzMDcwNiwtMjExNDgxODIzOSwy
-NTg0MTMwOTZdfQ==
+eyJoaXN0b3J5IjpbLTE1NTg2OTU2NDgsMTM3OTI1NjY0LDIwMz
+Y5NTQzMDAsLTE5Mjk5ODExMjcsMTM4ODE5NDc1NywtNDcxMTgy
+Nzg5LC02NzM1MzA2NDksMTM0NzgxNzc5NiwtNTA5MDE3MDY4LD
+EyNzUwNzMxMjksMTI5MTA2NTI0OSw2MzU2MTMyNjMsLTE0MDk4
+NTM2NTMsMTg4MTYzMTk5MSwtMTc1MDM2MzgzNCwtMTk1ODA0OT
+E4NywtMTY5MTI3MDcyNSwxMTE1NTMwNzA2LC0yMTE0ODE4MjM5
+LDI1ODQxMzA5Nl19
 -->
