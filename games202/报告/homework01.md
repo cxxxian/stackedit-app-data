@@ -448,30 +448,28 @@ async function buildShadowMaterial(light, translate, scale, rotate, lightIndex, 
 	return new ShadowMaterial(light, translate, scale, rotate, lightIndex, vertexShader, fragmentShader);
 }
 ```
+同样PhongMaterial中添加lightIndex参数
+```
 constructor(color, specular, light, translate, scale, rotate, lightIndex, vertexShader, fragmentShader) {
 	let lightMVP = light.CalcLightMVP(translate, scale, rotate);
 	let lightIntensity = light.mat.GetIntensity();
 	super({
 		...
 		// Shadow
-'uShadowMap': { type: 'texture', value: light.fbo },
-
-'uLightMVP': { type: 'matrix4fv', value: lightMVP },
-
-  
-
-}, [], vertexShader, fragmentShader, null, lightIndex);
-
+		'uShadowMap': { type: 'texture', value: light.fbo },
+		'uLightMVP': { type: 'matrix4fv', value: lightMVP },
+	}, [], vertexShader, fragmentShader, null, lightIndex);
 }
+```
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxNjU2OTA4NCwxMzg4MTk0NzU3LC00Nz
-ExODI3ODksLTY3MzUzMDY0OSwxMzQ3ODE3Nzk2LC01MDkwMTcw
-NjgsMTI3NTA3MzEyOSwxMjkxMDY1MjQ5LDYzNTYxMzI2MywtMT
-QwOTg1MzY1MywxODgxNjMxOTkxLC0xNzUwMzYzODM0LC0xOTU4
-MDQ5MTg3LC0xNjkxMjcwNzI1LDExMTU1MzA3MDYsLTIxMTQ4MT
-gyMzksMjU4NDEzMDk2LC0xMTQ4NDEzNzcwLDE3MjMzMTQ3Mjgs
-LTgwODg3Njg0OF19
+eyJoaXN0b3J5IjpbLTE0NjY5MzI5NTAsMTM4ODE5NDc1NywtND
+cxMTgyNzg5LC02NzM1MzA2NDksMTM0NzgxNzc5NiwtNTA5MDE3
+MDY4LDEyNzUwNzMxMjksMTI5MTA2NTI0OSw2MzU2MTMyNjMsLT
+E0MDk4NTM2NTMsMTg4MTYzMTk5MSwtMTc1MDM2MzgzNCwtMTk1
+ODA0OTE4NywtMTY5MTI3MDcyNSwxMTE1NTMwNzA2LC0yMTE0OD
+E4MjM5LDI1ODQxMzA5NiwtMTE0ODQxMzc3MCwxNzIzMzE0NzI4
+LC04MDg4NzY4NDhdfQ==
 -->
