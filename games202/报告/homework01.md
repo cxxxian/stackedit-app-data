@@ -396,7 +396,7 @@ for (let i = 0; i < this.meshes.length; i++) {
 ![输入图片说明](/imgs/2024-10-26/GBzcKFsztW8oRCTO.png =600x380)
 但是此处我们会发现阴影并没有跟着人物模型进行旋转，是因为没有更新lightMVP矩阵，导致物体变动并没有反映在ShadowMap上。
 12. 更新lightMVP
-先在WebGLRenderer.js进行shadowMap的清除工作。然后在两个Pass（Shadow pass/ Camera pass）中进行lightMVP矩阵d
+先在WebGLRenderer.js进行shadowMap的清除工作。然后在两个Pass（Shadow pass/ Camera pass）中进行lightMVP矩阵的更新
 ```
 for (let l = 0; l < this.lights.length; l++) {
 	gl.bindFramebuffer(gl.FRAMEBUFFER, this.lights[l].entity.fbo); // 绑定到当前光源的framebuffer
@@ -436,7 +436,7 @@ for (let i = 0; i < this.meshes.length; i++) {
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1NDkyODUxNSwxMzQ3ODE3Nzk2LC01MD
+eyJoaXN0b3J5IjpbLTY3MzUzMDY0OSwxMzQ3ODE3Nzk2LC01MD
 kwMTcwNjgsMTI3NTA3MzEyOSwxMjkxMDY1MjQ5LDYzNTYxMzI2
 MywtMTQwOTg1MzY1MywxODgxNjMxOTkxLC0xNzUwMzYzODM0LC
 0xOTU4MDQ5MTg3LC0xNjkxMjcwNzI1LDExMTU1MzA3MDYsLTIx
