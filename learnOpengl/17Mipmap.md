@@ -44,7 +44,7 @@ for (int level = 0; true; ++level) {
 
     }
 ```
-然后在vertex.glsl中，添加时间并利用时间进行缩放，此处要去main中绑定time
+然后在vertex.glsl中，添加时间并利用时间进行缩放，此处要去main中绑定time：`shader->setFloat("time", glfwGetTime());`
 ```
 #version 460 core
 layout (location = 0) in vec3 aPos;
@@ -67,10 +67,10 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk4NjI1NTMxLDI1NDQ2MTk4NCwxNDI1Mz
-MzNzEzLC03Mjk4NzY3MTksNjIxMzg0OTI2LC00NDEzOTYxMzks
-LTY1NTA4ODY2NSwtNDM4NjU5ODUxLC02MTExNjAzLDEyNzkyOT
-A1NDYsLTQ1NzgxODU3MiwtMTA0MTk4MDA2MCwtMTAzNjI2MzY3
-OSwtMTQ4NTc3Njg2NCwtMTAxMzI1MjA0MywyMDc3NDcyMjk4XX
-0=
+eyJoaXN0b3J5IjpbLTQ1NTQ1NzEwOCwyNTQ0NjE5ODQsMTQyNT
+MzMzcxMywtNzI5ODc2NzE5LDYyMTM4NDkyNiwtNDQxMzk2MTM5
+LC02NTUwODg2NjUsLTQzODY1OTg1MSwtNjExMTYwMywxMjc5Mj
+kwNTQ2LC00NTc4MTg1NzIsLTEwNDE5ODAwNjAsLTEwMzYyNjM2
+NzksLTE0ODU3NzY4NjQsLTEwMTMyNTIwNDMsMjA3NzQ3MjI5OF
+19
 -->
