@@ -11,9 +11,9 @@
 ![输入图片说明](/imgs/2024-10-27/baSgPHlSpSA93fhy.png)
 ![输入图片说明](/imgs/2024-10-27/YxneQRLSI775uahU.png)
 ![输入图片说明](/imgs/2024-10-27/OcdNimEhaKxJ7PV2.png)
-此处用dot计算是因为贴图可能是歪的，如果是正的那当然可以直接比较dx和dy之间的差值，但是歪的话，dx可能值会是（10，30）这种。需要dot计算出斜边长度 
+此处用dot计算是因为贴图可能是歪的，如果是正的那当然可以直接比较dx和dy（例如（10，0）和（20，0）之间相差10）之间的差值，但是歪的话，dx可能值会是（10，30）这种。需要dot计算出斜边长度 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTc0NjcyMjAsMTI3OTI5MDU0NiwtND
-U3ODE4NTcyLC0xMDQxOTgwMDYwLC0xMDM2MjYzNjc5LC0xNDg1
-Nzc2ODY0LC0xMDEzMjUyMDQzLDIwNzc0NzIyOThdfQ==
+eyJoaXN0b3J5IjpbLTYxMTE2MDMsMTI3OTI5MDU0NiwtNDU3OD
+E4NTcyLC0xMDQxOTgwMDYwLC0xMDM2MjYzNjc5LC0xNDg1Nzc2
+ODY0LC0xMDEzMjUyMDQzLDIwNzc0NzIyOThdfQ==
 -->
