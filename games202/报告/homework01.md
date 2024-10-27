@@ -356,13 +356,13 @@ let obj2Transform = setTransform(40, 0, -40, 10, 10, 10, 0, 0, 0);
 ```
 且为了得到时间的概念，我们需要在渲染主循环中进行时间的获取
 ```
-let prevTime = 0;
+let preTime = 0;
 function mainLoop(now) {
 cameraControls.update();
-let deltaime = (now - prevTime) / 1000;
+let deltaime = (now - preTime) / 1000;
 renderer.render(now, deltaime);
 requestAnimationFrame(mainLoop);
-prevTime = now;
+preTime = now;
 }
 requestAnimationFrame(mainLoop);
 ```
@@ -554,11 +554,11 @@ gl.disable(gl.BLEND);
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc5OTE3MjEwMCw5MjYxMTE5NTgsMzE5OD
-I0Nzg2LC0xNTU4Njk1NjQ4LDEzNzkyNTY2NCwyMDM2OTU0MzAw
-LC0xOTI5OTgxMTI3LDEzODgxOTQ3NTcsLTQ3MTE4Mjc4OSwtNj
-czNTMwNjQ5LDEzNDc4MTc3OTYsLTUwOTAxNzA2OCwxMjc1MDcz
-MTI5LDEyOTEwNjUyNDksNjM1NjEzMjYzLC0xNDA5ODUzNjUzLD
-E4ODE2MzE5OTEsLTE3NTAzNjM4MzQsLTE5NTgwNDkxODcsLTE2
-OTEyNzA3MjVdfQ==
+eyJoaXN0b3J5IjpbMTk2OTg0OTYyOCwxNzk5MTcyMTAwLDkyNj
+ExMTk1OCwzMTk4MjQ3ODYsLTE1NTg2OTU2NDgsMTM3OTI1NjY0
+LDIwMzY5NTQzMDAsLTE5Mjk5ODExMjcsMTM4ODE5NDc1NywtND
+cxMTgyNzg5LC02NzM1MzA2NDksMTM0NzgxNzc5NiwtNTA5MDE3
+MDY4LDEyNzUwNzMxMjksMTI5MTA2NTI0OSw2MzU2MTMyNjMsLT
+E0MDk4NTM2NTMsMTg4MTYzMTk5MSwtMTc1MDM2MzgzNCwtMTk1
+ODA0OTE4N119
 -->
