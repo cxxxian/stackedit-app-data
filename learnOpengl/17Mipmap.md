@@ -44,7 +44,7 @@ for (int level = 0; true; ++level) {
 
     }
 ```
-然后在vertex.glsl中，添加时间并利用时间进行缩放，
+然后在vertex.glsl中，添加时间并利用时间进行缩放，此处要去main中绑定time
 ```
 #version 460 core
 layout (location = 0) in vec3 aPos;
@@ -67,7 +67,7 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODMyMzM1OTk1LDI1NDQ2MTk4NCwxNDI1Mz
+eyJoaXN0b3J5IjpbNjk4NjI1NTMxLDI1NDQ2MTk4NCwxNDI1Mz
 MzNzEzLC03Mjk4NzY3MTksNjIxMzg0OTI2LC00NDEzOTYxMzks
 LTY1NTA4ODY2NSwtNDM4NjU5ODUxLC02MTExNjAzLDEyNzkyOT
 A1NDYsLTQ1NzgxODU3MiwtMTA0MTk4MDA2MCwtMTAzNjI2MzY3
