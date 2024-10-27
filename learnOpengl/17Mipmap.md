@@ -19,13 +19,13 @@
 使用除了0之外的level，OpenGL认定你开启使用了Mipmap，必须准备好一直到`1*1`的层级，否则会报错
 即是最后生成了`2*1`的图片，也需要再生成一个`1*1`的
 ![输入图片说明](/imgs/2024-10-27/iPDOZZqgzvfNfVOK.png)
-使用同一张图片（data），只改变width和height，比如一张`256*256`的图片，width和height传入`128*128`，这样OpenGL会只选择左下角那块`128*128`d
+使用同一张图片（data），只改变width和height，比如一张`256*256`的图片，width和height传入`128*128`，这样OpenGL会只选择左下角那块`128*128`的部分
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDE2MDkwMDYzLDYyMTM4NDkyNiwtNDQxMz
-k2MTM5LC02NTUwODg2NjUsLTQzODY1OTg1MSwtNjExMTYwMywx
-Mjc5MjkwNTQ2LC00NTc4MTg1NzIsLTEwNDE5ODAwNjAsLTEwMz
-YyNjM2NzksLTE0ODU3NzY4NjQsLTEwMTMyNTIwNDMsMjA3NzQ3
-MjI5OF19
+eyJoaXN0b3J5IjpbLTcyOTg3NjcxOSw2MjEzODQ5MjYsLTQ0MT
+M5NjEzOSwtNjU1MDg4NjY1LC00Mzg2NTk4NTEsLTYxMTE2MDMs
+MTI3OTI5MDU0NiwtNDU3ODE4NTcyLC0xMDQxOTgwMDYwLC0xMD
+M2MjYzNjc5LC0xNDg1Nzc2ODY0LC0xMDEzMjUyMDQzLDIwNzc0
+NzIyOThdfQ==
 -->
