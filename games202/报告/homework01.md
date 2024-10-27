@@ -358,11 +358,11 @@ let obj2Transform = setTransform(40, 0, -40, 10, 10, 10, 0, 0, 0);
 ```
 let preTime = 0;
 function mainLoop(now) {
-cameraControls.update();
-let deltaime = (now - preTime) / 1000;
-renderer.render(now, deltaime);
-requestAnimationFrame(mainLoop);
-preTime = now;
+	cameraControls.update();
+	let deltaime = (now - preTime) / 1000;
+	renderer.render(now, deltaime);
+	requestAnimationFrame(mainLoop);
+	preTime = now;
 }
 requestAnimationFrame(mainLoop);
 ```
@@ -554,7 +554,7 @@ gl.disable(gl.BLEND);
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2OTg0OTYyOCwxNzk5MTcyMTAwLDkyNj
+eyJoaXN0b3J5IjpbLTQwODc2ODcwMCwxNzk5MTcyMTAwLDkyNj
 ExMTk1OCwzMTk4MjQ3ODYsLTE1NTg2OTU2NDgsMTM3OTI1NjY0
 LDIwMzY5NTQzMDAsLTE5Mjk5ODExMjcsMTM4ODE5NDc1NywtND
 cxMTgyNzg5LC02NzM1MzA2NDksMTM0NzgxNzc5NiwtNTA5MDE3
