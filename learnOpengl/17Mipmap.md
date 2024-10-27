@@ -41,7 +41,6 @@ for (int level = 0; true; ++level) {
         //3 计算下一次循环的宽度/高度，除二
         width = width > 1 ? width / 2 : 1;
         height = height > 1 ? height / 2 : 1;
-
     }
 ```
 然后在vertex.glsl中，添加时间并利用时间进行缩放，此处要去main中绑定time：`shader->setFloat("time", glfwGetTime());`
@@ -82,10 +81,10 @@ void main()
     //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MTU4MDM2ODAsMjU0NDYxOTg0LDE0Mj
-UzMzM3MTMsLTcyOTg3NjcxOSw2MjEzODQ5MjYsLTQ0MTM5NjEz
-OSwtNjU1MDg4NjY1LC00Mzg2NTk4NTEsLTYxMTE2MDMsMTI3OT
-I5MDU0NiwtNDU3ODE4NTcyLC0xMDQxOTgwMDYwLC0xMDM2MjYz
-Njc5LC0xNDg1Nzc2ODY0LC0xMDEzMjUyMDQzLDIwNzc0NzIyOT
-hdfQ==
+eyJoaXN0b3J5IjpbNjA3NDg5NDg2LDI1NDQ2MTk4NCwxNDI1Mz
+MzNzEzLC03Mjk4NzY3MTksNjIxMzg0OTI2LC00NDEzOTYxMzks
+LTY1NTA4ODY2NSwtNDM4NjU5ODUxLC02MTExNjAzLDEyNzkyOT
+A1NDYsLTQ1NzgxODU3MiwtMTA0MTk4MDA2MCwtMTAzNjI2MzY3
+OSwtMTQ4NTc3Njg2NCwtMTAxMzI1MjA0MywyMDc3NDcyMjk4XX
+0=
 -->
