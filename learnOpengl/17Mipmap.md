@@ -44,11 +44,33 @@ for (int level = 0; true; ++level) {
 
     }
 ```
+然后在vertex.glsl中，添加时间并利用时间进行缩放，
+```
+#version 460 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aColor;
+layout (location = 2) in vec2 aUV;
+out vec3 color;
+out vec2 uv;
+
+uniform float time;
+void main()
+{
+    //1 当前三角形的顶点，缩放的比例
+    float scale = 1.0 / time;
+    //2 使用scale对顶点位置进行缩放
+    vec3 sPos = aPos * scale;
+    //3 向后传输位置信息
+    gl_Position = vec4(sPos, 1.0);
+    color = aColor;
+    uv = aUV;
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4ODQyMDk5MywyNTQ0NjE5ODQsMTQyNT
-MzMzcxMywtNzI5ODc2NzE5LDYyMTM4NDkyNiwtNDQxMzk2MTM5
-LC02NTUwODg2NjUsLTQzODY1OTg1MSwtNjExMTYwMywxMjc5Mj
-kwNTQ2LC00NTc4MTg1NzIsLTEwNDE5ODAwNjAsLTEwMzYyNjM2
-NzksLTE0ODU3NzY4NjQsLTEwMTMyNTIwNDMsMjA3NzQ3MjI5OF
-19
+eyJoaXN0b3J5IjpbODMyMzM1OTk1LDI1NDQ2MTk4NCwxNDI1Mz
+MzNzEzLC03Mjk4NzY3MTksNjIxMzg0OTI2LC00NDEzOTYxMzks
+LTY1NTA4ODY2NSwtNDM4NjU5ODUxLC02MTExNjAzLDEyNzkyOT
+A1NDYsLTQ1NzgxODU3MiwtMTA0MTk4MDA2MCwtMTAzNjI2MzY3
+OSwtMTQ4NTc3Njg2NCwtMTAxMzI1MjA0MywyMDc3NDcyMjk4XX
+0=
 -->
