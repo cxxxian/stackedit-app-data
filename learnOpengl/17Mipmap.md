@@ -66,8 +66,22 @@ void main()
     uv = aUV;
 }
 ```
+最后最重要的一点！！！
+我们原本是这样用的`glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);`
+但是这样的过滤方式并不会用上mipmap，我们需要zi'you'x
+```
+//4 设置纹理过滤方式
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    //****重要****
+    //GL_NEAREST 在单个mipmap上采用最邻近采样
+    // GL_LINER
+    //MIPMAP_LINEAR 在两层mipmap之间采用线性插值
+    //MIPMAP_NEAREST 
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_LINEAR);
+    //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1NTQ1NzEwOCwyNTQ0NjE5ODQsMTQyNT
+eyJoaXN0b3J5IjpbLTY4MDYxODk2MiwyNTQ0NjE5ODQsMTQyNT
 MzMzcxMywtNzI5ODc2NzE5LDYyMTM4NDkyNiwtNDQxMzk2MTM5
 LC02NTUwODg2NjUsLTQzODY1OTg1MSwtNjExMTYwMywxMjc5Mj
 kwNTQ2LC00NTc4MTg1NzIsLTEwNDE5ODAwNjAsLTEwMzYyNjM2
