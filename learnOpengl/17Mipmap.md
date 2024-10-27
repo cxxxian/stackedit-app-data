@@ -1,8 +1,6 @@
-![输入图片说明](/imgs/2024-10-27/zZoncz4fMeu2pcvD.png)
-![输入图片说明](/imgs/2024-10-27/t61wDm806Hu5Z6QK.png)
-![输入图片说明](/imgs/2024-10-27/GIVq7zBX867ZbloH.png)
+![输入图片说明](/imgs/2024-10-27/HXXMESHfOhzZ7TBM.png)
 # Goal
-![输入图片说明](/imgs/2024-10-27/DxKyRWokyVhYJSve.png)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3NzQ3MjI5OF19
+eyJoaXN0b3J5IjpbMTk5MDI2MjU1NSwyMDc3NDcyMjk4XX0=
 -->
