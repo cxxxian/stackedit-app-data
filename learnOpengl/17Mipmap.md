@@ -22,13 +22,13 @@
 使用同一张图片（data），只改变width和height，比如一张`256*256`的图片，width和height传入`128*128`，这样OpenGL会只选择左下角那块`128*128`的部分
 ## 手动生成mipmap层级
 ![输入图片说明](/imgs/2024-10-27/fCyrCrJ96z4eDn6R.png)
-## 三角形随时间变小s's's's's's's's's's's's's's's's's's's
+## 三角形随时间变小
 ![输入图片说明](/imgs/2024-10-27/EY9G9rShjdL29bn1.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTA0MDU4OTMsMTQyNTMzMzcxMywtNz
-I5ODc2NzE5LDYyMTM4NDkyNiwtNDQxMzk2MTM5LC02NTUwODg2
-NjUsLTQzODY1OTg1MSwtNjExMTYwMywxMjc5MjkwNTQ2LC00NT
-c4MTg1NzIsLTEwNDE5ODAwNjAsLTEwMzYyNjM2NzksLTE0ODU3
-NzY4NjQsLTEwMTMyNTIwNDMsMjA3NzQ3MjI5OF19
+eyJoaXN0b3J5IjpbMjU0NDYxOTg0LDE0MjUzMzM3MTMsLTcyOT
+g3NjcxOSw2MjEzODQ5MjYsLTQ0MTM5NjEzOSwtNjU1MDg4NjY1
+LC00Mzg2NTk4NTEsLTYxMTE2MDMsMTI3OTI5MDU0NiwtNDU3OD
+E4NTcyLC0xMDQxOTgwMDYwLC0xMDM2MjYzNjc5LC0xNDg1Nzc2
+ODY0LC0xMDEzMjUyMDQzLDIwNzc0NzIyOThdfQ==
 -->
