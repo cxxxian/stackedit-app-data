@@ -24,11 +24,31 @@
 ![输入图片说明](/imgs/2024-10-27/fCyrCrJ96z4eDn6R.png)
 ## 三角形随时间变小
 ![输入图片说明](/imgs/2024-10-27/EY9G9rShjdL29bn1.png)
+在texture的构造函数中
+将原本的glTexImage2D改为
+```
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+```
+自己设置级别的level。此做法用来：遍历每个mipmap的层级，为每个级别的mipmap填充图片数据
+```
+for (int level = 0; true; ++level) {
+        //1 将当前级别的mipmap对应的数据发往gpu端
+        glTexImage2D(GL_TEXTURE_2D, level, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+        //2 判断是否退出循环
+        if (width == 1 && height == 1) {
+            break;
+        }
+        //3 计算下一次循环的宽度/高度，除二
+        width = width > 1 ? width / 2 : 1;
+        height = height > 1 ? height / 2 : 1;
 
+    }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjU0NDYxOTg0LDE0MjUzMzM3MTMsLTcyOT
-g3NjcxOSw2MjEzODQ5MjYsLTQ0MTM5NjEzOSwtNjU1MDg4NjY1
-LC00Mzg2NTk4NTEsLTYxMTE2MDMsMTI3OTI5MDU0NiwtNDU3OD
-E4NTcyLC0xMDQxOTgwMDYwLC0xMDM2MjYzNjc5LC0xNDg1Nzc2
-ODY0LC0xMDEzMjUyMDQzLDIwNzc0NzIyOThdfQ==
+eyJoaXN0b3J5IjpbMTI4ODQyMDk5MywyNTQ0NjE5ODQsMTQyNT
+MzMzcxMywtNzI5ODc2NzE5LDYyMTM4NDkyNiwtNDQxMzk2MTM5
+LC02NTUwODg2NjUsLTQzODY1OTg1MSwtNjExMTYwMywxMjc5Mj
+kwNTQ2LC00NTc4MTg1NzIsLTEwNDE5ODAwNjAsLTEwMzYyNjM2
+NzksLTE0ODU3NzY4NjQsLTEwMTMyNTIwNDMsMjA3NzQ3MjI5OF
+19
 -->
