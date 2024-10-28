@@ -192,13 +192,13 @@ void AEnemy::Attack()
 ```
 virtual void SetOverlappingItem(class AItem* Item);
 ```
-我们删除先前在SlashCharacter.h中定义的内联函数，使用新she
+我们删除先前在SlashCharacter.h中定义的内联函数，使用新声明的接口
 ```
 FORCEINLINE void SetOverlappingItem(AItem* Item) { OverlappingItem = Item; }
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTgyODQzMTI2LDY0ODA2NjAwNCwxODk1Nj
+eyJoaXN0b3J5IjpbMzUwNDU4OTc4LDY0ODA2NjAwNCwxODk1Nj
 kxMDc2LDMzODk2NjM2OSwyMzkzNzU1MzYsMTAwNDg5NjQ0Nyw5
 OTAyODA0MTMsLTE3Mzg2MTI1ODgsMTM0MzM5MzY0MSwxNTk3OT
 M0NTcyLDE1MzQ5MTkwMDcsLTg0MzE2NTY2NCwxNjE0NTMyMDks
