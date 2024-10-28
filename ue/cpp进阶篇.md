@@ -188,14 +188,16 @@ void AEnemy::Attack()
 # 灵魂球
 制作一个以Item为父类的c++类，叫Soul
 ## 创建一个接口用来处理Pickup的东西
-`
+在PickupInterface.h中声明一个虚函数并在cpp实现，但是不补充任何内容，因为目的只是为了做一个接口
+```
 virtual void SetOverlappingItem(class AItem* Item);
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTEyOTk2NTEsNjQ4MDY2MDA0LDE4OT
-U2OTEwNzYsMzM4OTY2MzY5LDIzOTM3NTUzNiwxMDA0ODk2NDQ3
-LDk5MDI4MDQxMywtMTczODYxMjU4OCwxMzQzMzkzNjQxLDE1OT
-c5MzQ1NzIsMTUzNDkxOTAwNywtODQzMTY1NjY0LDE2MTQ1MzIw
-OSwtMzQ3NzA2MTU5LDEyNDQ0Nzk5NjQsMjUzMzU5MTA2LDE4Mj
-IwMjg0MjIsMTc4MDIwMDkyNF19
+eyJoaXN0b3J5IjpbLTQyODI2MjUwOCw2NDgwNjYwMDQsMTg5NT
+Y5MTA3NiwzMzg5NjYzNjksMjM5Mzc1NTM2LDEwMDQ4OTY0NDcs
+OTkwMjgwNDEzLC0xNzM4NjEyNTg4LDEzNDMzOTM2NDEsMTU5Nz
+kzNDU3MiwxNTM0OTE5MDA3LC04NDMxNjU2NjQsMTYxNDUzMjA5
+LC0zNDc3MDYxNTksMTI0NDQ3OTk2NCwyNTMzNTkxMDYsMTgyMj
+AyODQyMiwxNzgwMjAwOTI0XX0=
 -->
