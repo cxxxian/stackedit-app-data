@@ -188,6 +188,7 @@ void AEnemy::Attack()
 # 灵魂球
 制作一个以Item为父类的c++类，叫Soul
 ## 创建一个接口用来处理Pickup的东西
+此事情的目的是为了避免先前在Item中使用SlashCharacter类
 在PickupInterface.h中声明一个虚函数并在cpp实现，但是不补充任何内容，因为目的只是为了做一个接口
 ```
 virtual void SetOverlappingItem(class AItem* Item);
@@ -215,10 +216,10 @@ void ASlashCharacter::SetOverlappingItem(AItem* Item)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODU1NzgyNDgsNjQ4MDY2MDA0LDE4OT
-U2OTEwNzYsMzM4OTY2MzY5LDIzOTM3NTUzNiwxMDA0ODk2NDQ3
-LDk5MDI4MDQxMywtMTczODYxMjU4OCwxMzQzMzkzNjQxLDE1OT
-c5MzQ1NzIsMTUzNDkxOTAwNywtODQzMTY1NjY0LDE2MTQ1MzIw
-OSwtMzQ3NzA2MTU5LDEyNDQ0Nzk5NjQsMjUzMzU5MTA2LDE4Mj
-IwMjg0MjIsMTc4MDIwMDkyNF19
+eyJoaXN0b3J5IjpbLTE5NTY5OTUzMTYsLTIwODU1NzgyNDgsNj
+Q4MDY2MDA0LDE4OTU2OTEwNzYsMzM4OTY2MzY5LDIzOTM3NTUz
+NiwxMDA0ODk2NDQ3LDk5MDI4MDQxMywtMTczODYxMjU4OCwxMz
+QzMzkzNjQxLDE1OTc5MzQ1NzIsMTUzNDkxOTAwNywtODQzMTY1
+NjY0LDE2MTQ1MzIwOSwtMzQ3NzA2MTU5LDEyNDQ0Nzk5NjQsMj
+UzMzU5MTA2LDE4MjIwMjg0MjIsMTc4MDIwMDkyNF19
 -->
