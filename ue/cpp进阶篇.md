@@ -198,15 +198,20 @@ FORCEINLINE void SetOverlappingItem(AItem* Item) { OverlappingItem = Item; }
 ```
 ```
 #include "Interfaces/PickupInterface.h"
-
+class SLASH_API ASlashCharacter : public ABaseCharacter, public IPickupInterface
+{
+	GENERATED_BODY()
+	...
 virtual void SetOverlappingItem(AItem* Item) override;
+	...
+}
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQyNjI3NTM1LDY0ODA2NjAwNCwxODk1Nj
-kxMDc2LDMzODk2NjM2OSwyMzkzNzU1MzYsMTAwNDg5NjQ0Nyw5
-OTAyODA0MTMsLTE3Mzg2MTI1ODgsMTM0MzM5MzY0MSwxNTk3OT
-M0NTcyLDE1MzQ5MTkwMDcsLTg0MzE2NTY2NCwxNjE0NTMyMDks
-LTM0NzcwNjE1OSwxMjQ0NDc5OTY0LDI1MzM1OTEwNiwxODIyMD
-I4NDIyLDE3ODAyMDA5MjRdfQ==
+eyJoaXN0b3J5IjpbLTE3OTYyMTc0MDIsNjQ4MDY2MDA0LDE4OT
+U2OTEwNzYsMzM4OTY2MzY5LDIzOTM3NTUzNiwxMDA0ODk2NDQ3
+LDk5MDI4MDQxMywtMTczODYxMjU4OCwxMzQzMzkzNjQxLDE1OT
+c5MzQ1NzIsMTUzNDkxOTAwNywtODQzMTY1NjY0LDE2MTQ1MzIw
+OSwtMzQ3NzA2MTU5LDEyNDQ0Nzk5NjQsMjUzMzU5MTA2LDE4Mj
+IwMjg0MjIsMTc4MDIwMDkyNF19
 -->
