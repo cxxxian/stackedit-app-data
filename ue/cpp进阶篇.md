@@ -228,10 +228,10 @@ void ASlashCharacter::SetOverlappingItem(AItem* Item)
 ```
 void AItem::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	IPickupInterface* HitInterface = Cast<IPickupInterface>(OtherActor);
-	if (HitInterface)
+	IPickupInterface* PickupInterface = Cast<IPickupInterface>(OtherActor);
+	if (PickupInterface)
 	{
-		HitInterface->SetOverlappingItem(this);
+		PickupInterface->SetOverlappingItem(this);
 	}
 }
 ```
@@ -243,11 +243,11 @@ virtual void AddSouls(class ASoul* Soul);
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEyODkxNDUzMSwtMzQyNTMyNzg0LC0yMD
-g1NTc4MjQ4LDY0ODA2NjAwNCwxODk1NjkxMDc2LDMzODk2NjM2
-OSwyMzkzNzU1MzYsMTAwNDg5NjQ0Nyw5OTAyODA0MTMsLTE3Mz
-g2MTI1ODgsMTM0MzM5MzY0MSwxNTk3OTM0NTcyLDE1MzQ5MTkw
-MDcsLTg0MzE2NTY2NCwxNjE0NTMyMDksLTM0NzcwNjE1OSwxMj
-Q0NDc5OTY0LDI1MzM1OTEwNiwxODIyMDI4NDIyLDE3ODAyMDA5
-MjRdfQ==
+eyJoaXN0b3J5IjpbLTEyOTQwNzkzMzgsLTM0MjUzMjc4NCwtMj
+A4NTU3ODI0OCw2NDgwNjYwMDQsMTg5NTY5MTA3NiwzMzg5NjYz
+NjksMjM5Mzc1NTM2LDEwMDQ4OTY0NDcsOTkwMjgwNDEzLC0xNz
+M4NjEyNTg4LDEzNDMzOTM2NDEsMTU5NzkzNDU3MiwxNTM0OTE5
+MDA3LC04NDMxNjU2NjQsMTYxNDUzMjA5LC0zNDc3MDYxNTksMT
+I0NDQ3OTk2NCwyNTMzNTkxMDYsMTgyMjAyODQyMiwxNzgwMjAw
+OTI0XX0=
 -->
