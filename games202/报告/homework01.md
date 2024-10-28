@@ -128,6 +128,7 @@ float useShadowMap(sampler2D shadowMap, vec4 shadowCoord){
 发现当data取值为1.0时可以有效解决锯齿问题
 ![输入图片说明](/imgs/2024-10-18/5Vl5GcL66CmPyUSJ.png =550x400)
 ![输入图片说明](/imgs/2024-10-18/xr9vvrtJ8CG7uctY.png =550x400)
+
 ## 任务2：PCF(Percentage Closer Filter)
 1. 完善 phongFragment.glsl 中的 PCF(sampler2D shadowMap, vec4 shadowCoord, float filterSize) 函数
 ```
