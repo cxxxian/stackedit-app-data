@@ -1,40 +1,119 @@
+# **机器学习实验一**
 ### 1. **封面**
-   - 题目：实验名称
-   - 个人信息：作者姓名、学号、专业、日期等
+   - 题目：贝叶斯分类器
+   - 作者姓名：蔡俊贤
+   - 学号：202202300407
+   - 专业：数字媒体技术
+   - 日期：2024/10/28
 
-### 2. **摘要**
-   - 简要描述实验目的、方法和主要结论，通常在150-250字之间。
+### 2. **实验目的**
+   - 探讨贝叶斯分类器在鸢尾花数据集上的表现。
+   - 验证贝叶斯分类器的分类效果。
 
 ### 3. **引言**
-   - 介绍实验的背景和动机。
-   - 问题描述：明确要解决的问题或要回答的研究问题。
-   - 文献综述：对相关领域的现有工作进行简要回顾，说明实验在该领域的创新或改进之处。
+   - 实验的背景和动机：主要是自己动手实操实现贝叶斯分类器使得课堂掌握的知识更加深刻。
+   - 问题描述：探讨贝叶斯分类器在鸢尾花数据集上的表现以及验证贝叶斯分类器的分类效果。
 
 ### 4. **实验方法**
-   - **数据集**：说明所使用的数据集，包括数据的来源、特点、预处理方式等。
-   - **模型选择**：介绍所使用的机器学习模型（如线性回归、决策树、神经网络等），并简要解释其工作原理。
-   - **评估指标**：明确用于评估模型性能的指标（如准确率、精度、召回率、F1值等）。
-   - **超参数设置**：列出实验中使用的超参数及其设置方式，说明如何优化或选择超参数。
+   - **数据集**：数据集来源`http://download.tensorflow.org/data/iris_training.csv`，内含一百五十个数据以及四种特征值。
+   - **模型选择**：模型选择为贝叶斯分类器，其核心思想是：根据已知的输入特征，计算各类别的后验概率，然后选择具有最高后验概率的类别作为预测结果。
+   - **评估指标**：准确率、精度、召回率、F1值。
 
 ### 5. **实验过程**
-   - **数据预处理**：说明数据如何被清理、处理或转换，包含处理缺失值、标准化等步骤。
-   - **特征工程**：列出从原始数据中提取的特征，解释特征选择过程。
-   - **模型训练**：详细描述模型训练的过程，训练数据与测试数据的划分方式（如交叉验证、留出法等）。
-   - **实验环境**：列出所使用的硬件设备、软件环境、编程语言及库。
+   - **预先准备的库以及导入**：
+	
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import confusion_matrix
+from sklearn.model_selection import train_test_split, learning_curve
+from sklearn.metrics import accuracy_score, precision_score,recall_score, f1_score
+```
+
+   - **读取并处理数据**：
+```python
+# 读取并处理数据
+data = pd.read_csv('iris.csv', header=None)
+x = data.drop([4], axis=1).drop([0], axis=0)
+x = np.array(x, dtype=float)
+y = pd.Categorical(data[4]).codes[1:151]
+```
+
+   - **划分训练集和测试集（按照70%和30%划分，以及创建和训练分类器）**：
+
+```python
+# 划分训练集和测试集
+x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.7, random_state=14)
+print('训练数据集样本数目：%d，测试数据集样本数目：%d' % (x_train.shape[0], x_test.shape[0]))
+
+# 创建和训练高斯朴素贝叶斯分类器
+clf = GaussianNB()
+ir = clf.fit(x_train, y_train)
+```
+
+   - **根据得到的参数进行计算评估**：
+```python
+# 评估模型性能
+y_pred_test = ir.predict(x_test)
+acc_test = accuracy_score(y_test, y_pred_test)
+precision_test = precision_score(y_test, y_pred_test, average='weighted')
+recall_test = recall_score(y_test, y_pred_test, average='weighted')
+f1_test = f1_score(y_test, y_pred_test, average='weighted')
+
+print('测试集准确率：%.3f' % acc_test)
+print('测试集精确率：%.3f' % precision_test)
+print('测试集召回率：%.3f' % recall_test)
+print('测试集 F1 分数：%.3f' % f1_test)
+```
+   - **进行可视化的绘制**：
+部分代码如下：
+```python
+# 设置图形参数和绘图
+mpl.rcParams['font.sans-serif'] = [u'SimHei']
+mpl.rcParams['axes.unicode_minus'] = False
+cm_light = mpl.colors.ListedColormap(['#77E0A0', '#FF8080', '#A0A0FF'])
+cm_dark = mpl.colors.ListedColormap(['g', 'r', 'b'])
+
+plt.figure(figsize=(10, 6))
+plt.pcolormesh(p1, p2, y_hat.reshape(p1.shape), shading='auto', cmap=cm_light, alpha=0.5)
+scatter = plt.scatter(p_test[:, 0], p_test[:, 1], c=y_test_p, edgecolors='k', s=80, cmap=cm_dark, label=data[4].unique())
+plt.xlabel(u'花萼长度', fontsize=14)
+plt.ylabel(u'花萼宽度', fontsize=14)
+plt.title(u'GaussianNB对鸢尾花数据的分类结果', fontsize=16)
+plt.grid(True)
+plt.xlim(p1_min, p1_max)
+plt.ylim(p2_min, p2_max)
+
+# 绘制学习曲线
+plt.figure(figsize=(10, 6))
+plt.title("对于GaussianNB的学习曲线")
+plt.xlabel("Training Examples")
+plt.ylabel("Score")
+plt.ylim(0, 1.1)
+plt.grid()
+```
+
 
 ### 6. **实验结果**
-   - **结果展示**：通过表格、图表等方式清晰地展示实验结果，包括训练集和测试集的性能表现。
-   - **分析与讨论**：解释结果的意义，分析模型的优缺点，讨论可能导致结果的因素（如过拟合、数据集偏差等），并提出改进建议。
+
+   - **结果展示**：
+
+![image-20241028212455787](https://s2.loli.net/2024/10/28/WiGr7Kp8ZXR9tvc.png)
+
+![image-20241028212520933](https://s2.loli.net/2024/10/28/cADmJjQIiXPpvUt.png)
+
+![image-20241028212802727](https://s2.loli.net/2024/10/28/PgToVQ6fE2nJ7St.png)
 
 ### 7. **结论**
-   - 总结实验中得到的主要发现，回顾实验的目标和结果，说明该工作对研究领域的贡献或局限性。
-   - 提出未来可能的研究方向。
 
-### 8. **参考文献**
-   - 列出所有引用的文献，格式应符合期刊或会议的要求（如APA、IEEE等格式）。
+分析如下：
 
+   - **准确率**：根据准确率达到了95.6%说明 大部分样本都被正确分类了。
+   - **精确率**：根据精准率达到了96.1%，显示出在正类预测中，有较高比例是正确的。
+   - **召回率**：根据召回率达到了95.6%，表明模型能成功识别出大多数真实的正类样本。
+   - **混淆矩阵分析**：对于类别一和类别三都正确判断成功了，类别二正确分类了15个样本，担忧两个被误判为了类别三。总体上区分精确度较为优秀。
 
-### 实验报告的写作技巧
-- **简洁清晰**：确保每个部分内容简洁明了，避免冗长的描述。
-- **逻辑结构**：使用逻辑清晰的标题和副标题，将每个步骤或阶段清晰地呈现出来。
-- **数据可视化**：使用图表直观展示数据和结果，增强实验的说服力。
+综上所述，高斯朴素贝叶斯分类器在鸢尾花数据集上的分类性能较优异。
