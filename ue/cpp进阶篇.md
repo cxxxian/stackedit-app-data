@@ -206,9 +206,16 @@ virtual void SetOverlappingItem(AItem* Item) override;
 	...
 }
 ```
+在SlashCharacter.cpp中实现方法
+```
+void ASlashCharacter::SetOverlappingItem(AItem* Item)
+{
+	OverlappingItem = Item;
+}
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTYyMTc0MDIsNjQ4MDY2MDA0LDE4OT
+eyJoaXN0b3J5IjpbLTIwODU1NzgyNDgsNjQ4MDY2MDA0LDE4OT
 U2OTEwNzYsMzM4OTY2MzY5LDIzOTM3NTUzNiwxMDA0ODk2NDQ3
 LDk5MDI4MDQxMywtMTczODYxMjU4OCwxMzQzMzkzNjQxLDE1OT
 c5MzQ1NzIsMTUzNDkxOTAwNywtODQzMTY1NjY0LDE2MTQ1MzIw
