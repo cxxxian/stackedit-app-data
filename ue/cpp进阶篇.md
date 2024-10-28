@@ -188,7 +188,7 @@ void AEnemy::Attack()
 # 灵魂球
 制作一个以Item为父类的c++类，叫Soul
 ## 创建一个接口用来处理Pickup的东西
-此事情的目的是为了避免先前在Item中使用SlashCharacter类，
+此事情的目的是为了避免先前在Item中使用SlashCharacter类，如下：
 ```
 void AItem::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
@@ -224,12 +224,22 @@ void ASlashCharacter::SetOverlappingItem(AItem* Item)
 	OverlappingItem = Item;
 }
 ```
+```
+void AItem::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	IPickupInterface* HitInterface = Cast<IPickupInterface>(OtherActor);
+	if (HitInterface)
+	{
+		HitInterface->SetOverlappingItem(this);
+	}
+}
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUyNTQ0OTQ1LC0yMDg1NTc4MjQ4LDY0OD
-A2NjAwNCwxODk1NjkxMDc2LDMzODk2NjM2OSwyMzkzNzU1MzYs
-MTAwNDg5NjQ0Nyw5OTAyODA0MTMsLTE3Mzg2MTI1ODgsMTM0Mz
-M5MzY0MSwxNTk3OTM0NTcyLDE1MzQ5MTkwMDcsLTg0MzE2NTY2
-NCwxNjE0NTMyMDksLTM0NzcwNjE1OSwxMjQ0NDc5OTY0LDI1Mz
-M1OTEwNiwxODIyMDI4NDIyLDE3ODAyMDA5MjRdfQ==
+eyJoaXN0b3J5IjpbLTIxNzM4ODIyOSwtMjA4NTU3ODI0OCw2ND
+gwNjYwMDQsMTg5NTY5MTA3NiwzMzg5NjYzNjksMjM5Mzc1NTM2
+LDEwMDQ4OTY0NDcsOTkwMjgwNDEzLC0xNzM4NjEyNTg4LDEzND
+MzOTM2NDEsMTU5NzkzNDU3MiwxNTM0OTE5MDA3LC04NDMxNjU2
+NjQsMTYxNDUzMjA5LC0zNDc3MDYxNTksMTI0NDQ3OTk2NCwyNT
+MzNTkxMDYsMTgyMjAyODQyMiwxNzgwMjAwOTI0XX0=
 -->
