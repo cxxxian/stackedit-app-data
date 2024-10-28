@@ -224,6 +224,7 @@ void ASlashCharacter::SetOverlappingItem(AItem* Item)
 	OverlappingItem = Item;
 }
 ```
+最后我们可以在Item.cpp中修改成IPickupInterface，就可以完美避免之间使用SlashCharacter，而且也更加灵活了
 ```
 void AItem::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
@@ -236,7 +237,7 @@ void AItem::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNzM4ODIyOSwtMjA4NTU3ODI0OCw2ND
+eyJoaXN0b3J5IjpbLTM0MjUzMjc4NCwtMjA4NTU3ODI0OCw2ND
 gwNjYwMDQsMTg5NTY5MTA3NiwzMzg5NjYzNjksMjM5Mzc1NTM2
 LDEwMDQ4OTY0NDcsOTkwMjgwNDEzLC0xNzM4NjEyNTg4LDEzND
 MzOTM2NDEsMTU5NzkzNDU3MiwxNTM0OTE5MDA3LC04NDMxNjU2
