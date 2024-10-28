@@ -240,14 +240,33 @@ void AItem::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 virtual void AddSouls(class ASoul* Soul);
 ```
 并实现但不写任何东西，去到SlashCharacter中override
+```
+void ASlashCharacter::AddSouls(ASoul* Soul)
+{
+	UE_LOG(LogTemp, Warning, TEXT("ASlashCharacter::AddSouls"));
+}
+```
+在Soul.cpp中重写OnSphereOverlap方法，此时和Soul重叠就会触发AddSouls函数
+```
+#include "Interfaces//PickupInterface.h"
 
+void ASoul::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+
+	IPickupInterface* PickupInterface = Cast<IPickupInterface>(OtherActor);
+	if (PickupInterface)
+	{
+		PickupInterface->AddSouls(this);
+	}
+}
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTQwNzkzMzgsLTM0MjUzMjc4NCwtMj
-A4NTU3ODI0OCw2NDgwNjYwMDQsMTg5NTY5MTA3NiwzMzg5NjYz
-NjksMjM5Mzc1NTM2LDEwMDQ4OTY0NDcsOTkwMjgwNDEzLC0xNz
-M4NjEyNTg4LDEzNDMzOTM2NDEsMTU5NzkzNDU3MiwxNTM0OTE5
-MDA3LC04NDMxNjU2NjQsMTYxNDUzMjA5LC0zNDc3MDYxNTksMT
-I0NDQ3OTk2NCwyNTMzNTkxMDYsMTgyMjAyODQyMiwxNzgwMjAw
-OTI0XX0=
+eyJoaXN0b3J5IjpbLTE3MDE1NzQwNzAsLTEyOTQwNzkzMzgsLT
+M0MjUzMjc4NCwtMjA4NTU3ODI0OCw2NDgwNjYwMDQsMTg5NTY5
+MTA3NiwzMzg5NjYzNjksMjM5Mzc1NTM2LDEwMDQ4OTY0NDcsOT
+kwMjgwNDEzLC0xNzM4NjEyNTg4LDEzNDMzOTM2NDEsMTU5Nzkz
+NDU3MiwxNTM0OTE5MDA3LC04NDMxNjU2NjQsMTYxNDUzMjA5LC
+0zNDc3MDYxNTksMTI0NDQ3OTk2NCwyNTMzNTkxMDYsMTgyMjAy
+ODQyMl19
 -->
