@@ -247,7 +247,7 @@ void ASlashCharacter::AddSouls(ASoul* Soul)
 }
 ```
 在Soul.cpp中重写OnSphereOverlap方法，此时和Soul重叠就会触发AddSouls函数。而且此时PickupInterface是主角调用的，也侧面展示了接口灵活性。
-
+捡起Soul后Destroy消灭
 ```
 #include "Interfaces//PickupInterface.h"
 
@@ -264,11 +264,11 @@ void ASoul::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjU4NTk1NDQ4LC0xMjk0MDc5MzM4LC0zND
-I1MzI3ODQsLTIwODU1NzgyNDgsNjQ4MDY2MDA0LDE4OTU2OTEw
-NzYsMzM4OTY2MzY5LDIzOTM3NTUzNiwxMDA0ODk2NDQ3LDk5MD
-I4MDQxMywtMTczODYxMjU4OCwxMzQzMzkzNjQxLDE1OTc5MzQ1
-NzIsMTUzNDkxOTAwNywtODQzMTY1NjY0LDE2MTQ1MzIwOSwtMz
-Q3NzA2MTU5LDEyNDQ0Nzk5NjQsMjUzMzU5MTA2LDE4MjIwMjg0
-MjJdfQ==
+eyJoaXN0b3J5IjpbLTE4MDI2MTcxNTQsLTEyOTQwNzkzMzgsLT
+M0MjUzMjc4NCwtMjA4NTU3ODI0OCw2NDgwNjYwMDQsMTg5NTY5
+MTA3NiwzMzg5NjYzNjksMjM5Mzc1NTM2LDEwMDQ4OTY0NDcsOT
+kwMjgwNDEzLC0xNzM4NjEyNTg4LDEzNDMzOTM2NDEsMTU5Nzkz
+NDU3MiwxNTM0OTE5MDA3LC04NDMxNjU2NjQsMTYxNDUzMjA5LC
+0zNDc3MDYxNTksMTI0NDQ3OTk2NCwyNTMzNTkxMDYsMTgyMjAy
+ODQyMl19
 -->
