@@ -19,6 +19,8 @@ void main()
     uv = aUV;
 }
 ```
+OpenGL的矩阵存储为列优先，GLM也恰好是列优先，所以不需要转置
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDk3NTk1ODIsLTczODA3ODEyXX0=
+eyJoaXN0b3J5IjpbLTE4NzY2NDY0ODksLTE1NDk3NTk1ODIsLT
+czODA3ODEyXX0=
 -->
