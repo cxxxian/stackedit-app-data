@@ -79,7 +79,7 @@ int main() {
     return 0;
 }
 ```
-最后去`render`中通过`setMatrix4x4`把`transform`传给`vertex.glsl`
+最后去`render`中通过`setMatrix4x4()`把`transform`传给`vertex.glsl`
 ```
 void render(){
     //执行opengl画布清理操作
@@ -103,7 +103,7 @@ void render(){
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTA4MjQ5MTAsLTE4MjM4ODI0MzksMT
-M2MTU0MTIwNywtMTg3NjY0NjQ4OSwtMTU0OTc1OTU4MiwtNzM4
-MDc4MTJdfQ==
+eyJoaXN0b3J5IjpbMTMxMzEwNjg2NywtMTgyMzg4MjQzOSwxMz
+YxNTQxMjA3LC0xODc2NjQ2NDg5LC0xNTQ5NzU5NTgyLC03Mzgw
+NzgxMl19
 -->
