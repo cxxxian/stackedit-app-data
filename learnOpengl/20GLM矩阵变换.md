@@ -80,7 +80,7 @@ int main() {
 }
 ```
 最后去`render`中通过`setMatrix4x4()`把`transform`传给`vertex.glsl`
-这里把	shader->setMatrix4x4放在render里面是因为正常在游戏中矩阵都是每一帧都更新的
+这里把`shader->setMatrix4x4`放在render里面是因为正常在游戏中矩阵都是每一帧都更新的，需要每一帧都传入矩阵
 ```
 void render(){
     //执行opengl画布清理操作
@@ -104,7 +104,7 @@ void render(){
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyODg0OTAyOCwtNTU5Nzc4NTMxLDEzMT
+eyJoaXN0b3J5IjpbMTUwNzQ1ODc3MSwtNTU5Nzc4NTMxLDEzMT
 MxMDY4NjcsLTE4MjM4ODI0MzksMTM2MTU0MTIwNywtMTg3NjY0
 NjQ4OSwtMTU0OTc1OTU4MiwtNzM4MDc4MTJdfQ==
 -->
