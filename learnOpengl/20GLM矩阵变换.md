@@ -41,12 +41,68 @@ glm::mat4 transform(1.0);
 void doTransform() {
     //构建一个旋转矩阵，绕z轴旋转45度
     //rotate必须得到一个float类型的参数，跟template有关系
+    //且rotate传的是弧度而不是角度，需要调用glm::radians()
     transform = glm::rotate(glm::mat4(1.0f), glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
 }
 ```
+在main中使用doTransform()进行旋转cao
+```
+int main() {
+
+    if (!app->init(800, 600)) {
+        return -1;
+    }
+    app->setResizeCallback(OnResize);
+    app->setKeyBoardCallback(OnKey);
+    //注册窗口变化监听
+    //glfwSetFramebufferSizeCallback(window, framebufferSizeCallback);
+    //glfwSetKeyCallback(window, KeyCallBack);
+
+    //设置opengl视口以及清理颜色
+    glViewport(0, 0, 800, 600);
+    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+
+    prepareShader();
+    //prepareInterleavedBuffer();
+    //prepareVAOForGLTriangles();
+    prepareVAO();
+    prepareTexture();
+
+    doTransform();
+
+    while (app->update()) {
+        render();
+        //渲染操作
+    }
+    app->destroy();
+    delete texture;
+    return 0;
+}
+```
+```
+void render(){
+    //执行opengl画布清理操作
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    //1 绑定当前的program
+    shader->begin();
+
+    shader->setInt("sampler", 0);//此处值为0是因为我们的纹理绑定在0号位上
+    shader->setMatrix4x4("transform", transform);
+
+    //2 绑定当前的vao
+    glBindVertexArray(vao);
+    //3 发出绘制指令
+    //glDrawArrays(GL_LINE_STRIP, 0, 6);
+    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+    shader->end();
+}
+```
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1OTA3NDYyOSwtMTgyMzg4MjQzOSwxMz
+eyJoaXN0b3J5IjpbMTg4MzExNjkyNywtMTgyMzg4MjQzOSwxMz
 YxNTQxMjA3LC0xODc2NjQ2NDg5LC0xNTQ5NzU5NTgyLC03Mzgw
 NzgxMl19
 -->
