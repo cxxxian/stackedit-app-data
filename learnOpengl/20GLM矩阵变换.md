@@ -1,4 +1,4 @@
-目标是变换三角形，在vertex.glsl中操作顶点。
+目标是变换三角形，在`vertex.glsl`中操作顶点。
 因为三个顶点会旋转同样的角度，所以可以共用一个旋转矩阵，即声明`uniform mat4 transform;`，`position = transform * position`即可以做到旋转变化
 ```
 #version 460 core
@@ -20,5 +20,5 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE0NTM4MzIxOCwtNzM4MDc4MTJdfQ==
+eyJoaXN0b3J5IjpbLTE1NDk3NTk1ODIsLTczODA3ODEyXX0=
 -->
