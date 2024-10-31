@@ -79,6 +79,7 @@ int main() {
     return 0;
 }
 ```
+最后去`render`中把`transform`传给`vertex.glsl`
 ```
 void render(){
     //执行opengl画布清理操作
@@ -102,7 +103,7 @@ void render(){
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNzE2MjA5ODUsLTE4MjM4ODI0MzksMT
-M2MTU0MTIwNywtMTg3NjY0NjQ4OSwtMTU0OTc1OTU4MiwtNzM4
-MDc4MTJdfQ==
+eyJoaXN0b3J5IjpbODkzMDE5MzE0LC0xODIzODgyNDM5LDEzNj
+E1NDEyMDcsLTE4NzY2NDY0ODksLTE1NDk3NTk1ODIsLTczODA3
+ODEyXX0=
 -->
