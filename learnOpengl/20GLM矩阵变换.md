@@ -41,7 +41,7 @@ glm::mat4 transform(1.0);
 void doTransform() {
     //构建一个旋转矩阵，绕z轴旋转45度
     //rotate必须得到一个float类型的参数，跟template有关系
-    //且rotate传的是弧度而不是角度，需要调用glm::radians()
+    //且rotate传的是弧度而不是角度，需要调用glm::radians()，而且radians()也是模板函数，需要传入float
     transform = glm::rotate(glm::mat4(1.0f), glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
 }
 ```
@@ -103,7 +103,7 @@ void render(){
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMxMzEwNjg2NywtMTgyMzg4MjQzOSwxMz
-YxNTQxMjA3LC0xODc2NjQ2NDg5LC0xNTQ5NzU5NTgyLC03Mzgw
-NzgxMl19
+eyJoaXN0b3J5IjpbLTU1OTc3ODUzMSwxMzEzMTA2ODY3LC0xOD
+IzODgyNDM5LDEzNjE1NDEyMDcsLTE4NzY2NDY0ODksLTE1NDk3
+NTk1ODIsLTczODA3ODEyXX0=
 -->
