@@ -45,7 +45,7 @@ void doTransform() {
     transform = glm::rotate(glm::mat4(1.0f), glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
 }
 ```
-在main中使用doTransform()进行旋转cao
+在`main`中使用`doTransform()`进行旋转操作，只旋转一次所以把方法放在`while`外面
 ```
 int main() {
 
@@ -102,7 +102,7 @@ void render(){
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4MzExNjkyNywtMTgyMzg4MjQzOSwxMz
-YxNTQxMjA3LC0xODc2NjQ2NDg5LC0xNTQ5NzU5NTgyLC03Mzgw
-NzgxMl19
+eyJoaXN0b3J5IjpbLTEyNzE2MjA5ODUsLTE4MjM4ODI0MzksMT
+M2MTU0MTIwNywtMTg3NjY0NjQ4OSwtMTU0OTc1OTU4MiwtNzM4
+MDc4MTJdfQ==
 -->
