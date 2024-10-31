@@ -19,6 +19,8 @@ void main()
     uv = aUV;
 }
 ```
+在shader.cpp中制作一个setMatrix
+```
 void Shader::setMatrix(const std::string& name, glm::mat4 value)
 {
     //1 通过名称拿到Uniform变量位置location
@@ -26,10 +28,10 @@ void Shader::setMatrix(const std::string& name, glm::mat4 value)
     //2 通过location更新Uniform变量的值
     //第二个参数：传n个矩阵；第三个参数：传的是否需要转置；第四个参数：指向value的指针
     glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(value));
-
 }
+```
 OpenGL的矩阵存储为列优先，GLM也恰好是列优先，所以不需要转置
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg0MTA0NDk4MiwtMTg3NjY0NjQ4OSwtMT
+eyJoaXN0b3J5IjpbLTU4MTU5ODM5NiwtMTg3NjY0NjQ4OSwtMT
 U0OTc1OTU4MiwtNzM4MDc4MTJdfQ==
 -->
