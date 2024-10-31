@@ -21,7 +21,7 @@ void main()
 ```
 在shader.cpp中制作一个`setMatrix()`用来传输矩阵到shader中
 ```
-void Shader::setMatrix(const std::string& name, glm::mat4 value)
+void Shader::setMatrix4x4(const std::string& name, glm::mat4 value)
 {
     //1 通过名称拿到Uniform变量位置location
     GLuint location = GL_CALL(glGetUniformLocation(mProgram, name.c_str()));
@@ -32,6 +32,6 @@ void Shader::setMatrix(const std::string& name, glm::mat4 value)
 ```
 OpenGL的矩阵存储为列优先，GLM也恰好是列优先，所以不需要转置
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2MTU0MTIwNywtMTg3NjY0NjQ4OSwtMT
-U0OTc1OTU4MiwtNzM4MDc4MTJdfQ==
+eyJoaXN0b3J5IjpbLTE4MjM4ODI0MzksMTM2MTU0MTIwNywtMT
+g3NjY0NjQ4OSwtMTU0OTc1OTU4MiwtNzM4MDc4MTJdfQ==
 -->
