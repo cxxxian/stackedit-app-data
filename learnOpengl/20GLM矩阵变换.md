@@ -36,7 +36,7 @@ OpenGL的矩阵存储为列优先，GLM也恰好是列优先，所以不需要�
 ```
 glm::mat4 transform(1.0);
 ```
-制作一个函数用来构建旋转矩阵
+制作一个函数用来做旋转操作
 ```
 void doTransform() {
     //构建一个旋转矩阵，绕z轴旋转45度
@@ -46,7 +46,7 @@ void doTransform() {
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg4MjcyMjU2LC0xODIzODgyNDM5LDEzNj
-E1NDEyMDcsLTE4NzY2NDY0ODksLTE1NDk3NTk1ODIsLTczODA3
-ODEyXX0=
+eyJoaXN0b3J5IjpbLTQ1OTA3NDYyOSwtMTgyMzg4MjQzOSwxMz
+YxNTQxMjA3LC0xODc2NjQ2NDg5LC0xNTQ5NzU5NTgyLC03Mzgw
+NzgxMl19
 -->
