@@ -38,7 +38,7 @@ glm::mat4 transform(1.0);
 ```
 制作一个函数用来做旋转操作
 ```
-void doTransform() {
+void doRotationTransform() {
     //构建一个旋转矩阵，绕z轴旋转45度
     //rotate必须得到一个float类型的参数，跟template有关系
     //且rotate传的是弧度而不是角度，需要调用glm::radians()，而且radians()也是模板函数，需要传入float
@@ -68,7 +68,7 @@ int main() {
     prepareVAO();
     prepareTexture();
 
-    doTransform();
+    doRotationTransform();
 
     while (app->update()) {
         render();
@@ -102,9 +102,24 @@ void render(){
 }
 ```
 
+```
+void doTranslationTransform() {
+    //构建一个旋转矩阵，绕z轴旋转45度
+    //rotate必须得到一个float类型的参数，跟template有关系
+    //且rotate传的是弧度而不是角度，需要调用glm::radians()，而且radians()也是模板函数，需要传入float
+    transform = glm::translate(glm::mat4(1.0f), glm::vec3(0.5f, 0.0f, 0.0f));
+}
+void doScaleTransform() {
+    //构建一个旋转矩阵，绕z轴旋转45度
+    //rotate必须得到一个float类型的参数，跟template有关系
+    //且rotate传的是弧度而不是角度，需要调用glm::radians()，而且radians()也是模板函数，需要传入float
+    transform = glm::scale(glm::mat4(1.0f), glm::vec3(0.5f, 0.5f, 1.0f));
+}
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwNzQ1ODc3MSwtNTU5Nzc4NTMxLDEzMT
-MxMDY4NjcsLTE4MjM4ODI0MzksMTM2MTU0MTIwNywtMTg3NjY0
-NjQ4OSwtMTU0OTc1OTU4MiwtNzM4MDc4MTJdfQ==
+eyJoaXN0b3J5IjpbMTMxMTgwMzM4MCwxNTA3NDU4NzcxLC01NT
+k3Nzg1MzEsMTMxMzEwNjg2NywtMTgyMzg4MjQzOSwxMzYxNTQx
+MjA3LC0xODc2NjQ2NDg5LC0xNTQ5NzU5NTgyLC03MzgwNzgxMl
+19
 -->
