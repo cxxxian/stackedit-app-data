@@ -151,7 +151,7 @@ while (app->update()) {
 ```
 此处需要**注意的点**：虽然angle每次都累加2.0f，但它并不会转得越来越快，因为它每次都会从初始矩阵开始执行此旋转。
 主要原因是：
-
+在vertex.glsl中，我们每次都用transform * position，transform在此处的值是旋转矩阵，
 ```
 uniform mat4 transform;
 
@@ -165,7 +165,7 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg3NDc2MTIxLDYxOTM2ODM2MCwxNjA3Mj
+eyJoaXN0b3J5IjpbLTg3MzkwMDg3LDYxOTM2ODM2MCwxNjA3Mj
 UxMDgyLDE1MDc0NTg3NzEsLTU1OTc3ODUzMSwxMzEzMTA2ODY3
 LC0xODIzODgyNDM5LDEzNjE1NDEyMDcsLTE4NzY2NDY0ODksLT
 E1NDk3NTk1ODIsLTczODA3ODEyXX0=
