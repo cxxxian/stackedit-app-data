@@ -153,8 +153,13 @@ while (app->update()) {
 主要原因是：
 在`vertex.glsl`中，我们每次都用`transform * position`，`transform`在此处的值是旋转矩阵，`position`为三角形一开始的位置，所以是每次都从初始矩阵开始执行此旋转。
 ```
+#version 460 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aColor;
+layout (location = 2) in vec2 aUV;
+out vec3 color;
+out vec2 uv;
 uniform mat4 transform;
-
 void main()
 {
     vec4 position = vec4(aPos, 1.0);
@@ -165,7 +170,7 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0ODYyMTg4OSw2MTkzNjgzNjAsMTYwNz
+eyJoaXN0b3J5IjpbMTkyOTA2Njg3MSw2MTkzNjgzNjAsMTYwNz
 I1MTA4MiwxNTA3NDU4NzcxLC01NTk3Nzg1MzEsMTMxMzEwNjg2
 NywtMTgyMzg4MjQzOSwxMzYxNTQxMjA3LC0xODc2NjQ2NDg5LC
 0xNTQ5NzU5NTgyLC03MzgwNzgxMl19
