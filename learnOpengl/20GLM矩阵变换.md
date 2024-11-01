@@ -178,10 +178,15 @@ void main()
 需要区分于单纯的矩阵相乘，它平移后不会以原点进行旋转，而是按照自己本地坐标系的中心点为基准进行旋转
 ![输入图片说明](/imgs/2024-11-01/Okq7wJgSbUCt23Gp.png)
 ![输入图片说明](/imgs/2024-11-01/POVtpitfaccw51Fc.png)
+void doTransform() {
+    //目标1：旋转的三角形
+    float angle = 1.0f;
+    transform = glm::rotate(transform, glm::radians(angle), glm::vec3(0.0f, 0.0f, 1.0f));
+}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjYzMTA5ODQ1LDE4NDAyODUxMTQsLTU2Mz
-gxNTAzMywxOTI5MDY2ODcxLDYxOTM2ODM2MCwxNjA3MjUxMDgy
-LDE1MDc0NTg3NzEsLTU1OTc3ODUzMSwxMzEzMTA2ODY3LC0xOD
-IzODgyNDM5LDEzNjE1NDEyMDcsLTE4NzY2NDY0ODksLTE1NDk3
-NTk1ODIsLTczODA3ODEyXX0=
+eyJoaXN0b3J5IjpbMjczNDA3MTY4LDI2MzEwOTg0NSwxODQwMj
+g1MTE0LC01NjM4MTUwMzMsMTkyOTA2Njg3MSw2MTkzNjgzNjAs
+MTYwNzI1MTA4MiwxNTA3NDU4NzcxLC01NTk3Nzg1MzEsMTMxMz
+EwNjg2NywtMTgyMzg4MjQzOSwxMzYxNTQxMjA3LC0xODc2NjQ2
+NDg5LC0xNTQ5NzU5NTgyLC03MzgwNzgxMl19
 -->
