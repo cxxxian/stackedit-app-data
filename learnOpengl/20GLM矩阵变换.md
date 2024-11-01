@@ -220,31 +220,20 @@ while (app->update()) {
 ### 目标3：先旋转一次再每帧平移
 ```
 void preTransform() {
-    //目标2：先平移再叠加旋转
-    //transform = glm::translate(transform, glm::vec3(0.6f, 0.0f, 0.0f));
-
     //目标3：先做一个旋转，只旋转一次
     transform = glm::rotate(transform, glm::radians(45.0f), glm::vec3(0.0f, 0.0f, 1.0f));
 }
 void doTransform() {
-    //目标1：旋转的三角形
-    //float angle = 1.0f;
-    //transform = glm::rotate(transform, glm::radians(angle), glm::vec3(0.0f, 0.0f, 1.0f));
-
-    //目标2：先平移再叠加旋转
-    float angle = 1.0f;
-    //transform = glm::rotate(transform, glm::radians(angle), glm::vec3(0.0f, 0.0f, 1.0f));
-
     // 目标3：先旋转再平移
     transform = glm::translate(transform, glm::vec3(0.001f, 0.0f, 0.0f));
 }
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxNjQwMDc1OCwtMTc4MTMwNjU4NywxMD
-A4NDYzMTA0LDI2MzEwOTg0NSwxODQwMjg1MTE0LC01NjM4MTUw
-MzMsMTkyOTA2Njg3MSw2MTkzNjgzNjAsMTYwNzI1MTA4MiwxNT
-A3NDU4NzcxLC01NTk3Nzg1MzEsMTMxMzEwNjg2NywtMTgyMzg4
-MjQzOSwxMzYxNTQxMjA3LC0xODc2NjQ2NDg5LC0xNTQ5NzU5NT
-gyLC03MzgwNzgxMl19
+eyJoaXN0b3J5IjpbODIwODI1NjI5LC0xNzgxMzA2NTg3LDEwMD
+g0NjMxMDQsMjYzMTA5ODQ1LDE4NDAyODUxMTQsLTU2MzgxNTAz
+MywxOTI5MDY2ODcxLDYxOTM2ODM2MCwxNjA3MjUxMDgyLDE1MD
+c0NTg3NzEsLTU1OTc3ODUzMSwxMzEzMTA2ODY3LC0xODIzODgy
+NDM5LDEzNjE1NDEyMDcsLTE4NzY2NDY0ODksLTE1NDk3NTk1OD
+IsLTczODA3ODEyXX0=
 -->
