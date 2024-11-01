@@ -149,10 +149,24 @@ while (app->update()) {
         //渲染操作
 }
 ```
-此处需要z
+此处需要**注意的点**：虽然angle每次都累加2.0f，但它并不会转得越来越快，因为它每次都会从初始矩阵开始执行此旋转。
+主要原因是：
+
+```
+uniform mat4 transform;
+
+void main()
+{
+    vec4 position = vec4(aPos, 1.0);
+    position = transform * position;
+    gl_Position = position;
+    color = aColor;
+    uv = aUV;
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1ODM1OTYwMiw2MTkzNjgzNjAsMTYwNz
-I1MTA4MiwxNTA3NDU4NzcxLC01NTk3Nzg1MzEsMTMxMzEwNjg2
-NywtMTgyMzg4MjQzOSwxMzYxNTQxMjA3LC0xODc2NjQ2NDg5LC
-0xNTQ5NzU5NTgyLC03MzgwNzgxMl19
+eyJoaXN0b3J5IjpbLTg3NDc2MTIxLDYxOTM2ODM2MCwxNjA3Mj
+UxMDgyLDE1MDc0NTg3NzEsLTU1OTc3ODUzMSwxMzEzMTA2ODY3
+LC0xODIzODgyNDM5LDEzNjE1NDEyMDcsLTE4NzY2NDY0ODksLT
+E1NDk3NTk1ODIsLTczODA3ODEyXX0=
 -->
