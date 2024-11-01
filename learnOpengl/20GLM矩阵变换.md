@@ -117,6 +117,8 @@ void doScaleTransform() {
     transform = glm::scale(glm::mat4(1.0f), glm::vec3(0.5f, 0.5f, 1.0f));
 }
 ```
+矩阵复合变换
+```
 void doTransform() {
 
     glm::mat4 rotateMat = glm::rotate(glm::mat4(1.0f), glm::radians(45.0f), glm::vec3(0.0, 0.0, 1.0));
@@ -124,9 +126,10 @@ void doTransform() {
     // 先旋转后移动，从右到左看
     transform = translateMat * rotateMat;
 }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExMjM0ODQ2MywxNjA3MjUxMDgyLDE1MD
-c0NTg3NzEsLTU1OTc3ODUzMSwxMzEzMTA2ODY3LC0xODIzODgy
-NDM5LDEzNjE1NDEyMDcsLTE4NzY2NDY0ODksLTE1NDk3NTk1OD
-IsLTczODA3ODEyXX0=
+eyJoaXN0b3J5IjpbNjE5MzY4MzYwLDE2MDcyNTEwODIsMTUwNz
+Q1ODc3MSwtNTU5Nzc4NTMxLDEzMTMxMDY4NjcsLTE4MjM4ODI0
+MzksMTM2MTU0MTIwNywtMTg3NjY0NjQ4OSwtMTU0OTc1OTU4Mi
+wtNzM4MDc4MTJdfQ==
 -->
