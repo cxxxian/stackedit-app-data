@@ -197,6 +197,7 @@ while (app->update()) {
 }
 ```
 ### 目标2：先平移再叠加旋转
+目标是先平移，然后每帧进行旋转，所以需要制作两个函数，一个`preTransform()`在`while`之前调用进行一次平移，`doTransform()在while中调用进行每帧旋转
 ```
 void preTransform() {
     //目标2：先平移再叠加旋转
@@ -212,17 +213,17 @@ void doTransform() {
     transform = glm::rotate(transform, glm::radians(angle), glm::vec3(0.0f, 0.0f, 1.0f));
 }
 ```
+```
 preTransform();
-    while (app->update()) {
-
-        doTransform();
-        render();
-
-        //渲染操作
-    }
+while (app->update()) {
+	doTransform();
+    render();
+    //渲染操作
+}
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI5ODEyMjMyNCwxMDA4NDYzMTA0LDI2Mz
+eyJoaXN0b3J5IjpbMTkyNTAxNjYwOCwxMDA4NDYzMTA0LDI2Mz
 EwOTg0NSwxODQwMjg1MTE0LC01NjM4MTUwMzMsMTkyOTA2Njg3
 MSw2MTkzNjgzNjAsMTYwNzI1MTA4MiwxNTA3NDU4NzcxLC01NT
 k3Nzg1MzEsMTMxMzEwNjg2NywtMTgyMzg4MjQzOSwxMzYxNTQx
