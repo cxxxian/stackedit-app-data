@@ -132,9 +132,27 @@ void doTransform() {
 }
 ```
 ## 持续旋转
+制作一个`doRotation()`函数
+```
+float angle = 0.0f;
+void doRotation() {
+    angle += 2.0f;
+    //每一帧都会“重新”构建一个旋转矩阵
+    transform = glm::rotate(glm::mat4(1.0f), glm::radians(angle), glm::vec3(0.0, 0.0, 1.0));
+}
+```
+在main函数中的while循环中调用它。
+```
+while (app->update()) {
+        doRotation();
+        render();
+        //渲染操作
+}
+```
+此处需要z
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNzEyOTI1NDcsNjE5MzY4MzYwLDE2MD
-cyNTEwODIsMTUwNzQ1ODc3MSwtNTU5Nzc4NTMxLDEzMTMxMDY4
-NjcsLTE4MjM4ODI0MzksMTM2MTU0MTIwNywtMTg3NjY0NjQ4OS
-wtMTU0OTc1OTU4MiwtNzM4MDc4MTJdfQ==
+eyJoaXN0b3J5IjpbLTI1ODM1OTYwMiw2MTkzNjgzNjAsMTYwNz
+I1MTA4MiwxNTA3NDU4NzcxLC01NTk3Nzg1MzEsMTMxMzEwNjg2
+NywtMTgyMzg4MjQzOSwxMzYxNTQxMjA3LC0xODc2NjQ2NDg5LC
+0xNTQ5NzU5NTgyLC03MzgwNzgxMl19
 -->
