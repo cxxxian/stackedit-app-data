@@ -228,12 +228,19 @@ void doTransform() {
     transform = glm::translate(transform, glm::vec3(0.001f, 0.0f, 0.0f));
 }
 ```
-
+```
+preTransform();
+while (app->update()) {
+	doTransform();
+	render();
+	//渲染操作
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODIwODI1NjI5LC0xNzgxMzA2NTg3LDEwMD
-g0NjMxMDQsMjYzMTA5ODQ1LDE4NDAyODUxMTQsLTU2MzgxNTAz
-MywxOTI5MDY2ODcxLDYxOTM2ODM2MCwxNjA3MjUxMDgyLDE1MD
-c0NTg3NzEsLTU1OTc3ODUzMSwxMzEzMTA2ODY3LC0xODIzODgy
-NDM5LDEzNjE1NDEyMDcsLTE4NzY2NDY0ODksLTE1NDk3NTk1OD
-IsLTczODA3ODEyXX0=
+eyJoaXN0b3J5IjpbLTk2MzIxNTIzOSwtMTc4MTMwNjU4NywxMD
+A4NDYzMTA0LDI2MzEwOTg0NSwxODQwMjg1MTE0LC01NjM4MTUw
+MzMsMTkyOTA2Njg3MSw2MTkzNjgzNjAsMTYwNzI1MTA4MiwxNT
+A3NDU4NzcxLC01NTk3Nzg1MzEsMTMxMzEwNjg2NywtMTgyMzg4
+MjQzOSwxMzYxNTQxMjA3LC0xODc2NjQ2NDg5LC0xNTQ5NzU5NT
+gyLC03MzgwNzgxMl19
 -->
