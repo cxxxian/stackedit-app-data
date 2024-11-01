@@ -205,9 +205,6 @@ void preTransform() {
     transform = glm::translate(transform, glm::vec3(0.6f, 0.0f, 0.0f));
 }
 void doTransform() {
-    //目标1：旋转的三角形
-    //float angle = 1.0f;
-    //transform = glm::rotate(transform, glm::radians(angle), glm::vec3(0.0f, 0.0f, 1.0f));
     //目标2：先平移再叠加旋转
     float angle = 1.0f;
     transform = glm::rotate(transform, glm::radians(angle), glm::vec3(0.0f, 0.0f, 1.0f));
@@ -223,10 +220,10 @@ while (app->update()) {
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgwNzMyMjQyMiwxMDA4NDYzMTA0LDI2Mz
-EwOTg0NSwxODQwMjg1MTE0LC01NjM4MTUwMzMsMTkyOTA2Njg3
-MSw2MTkzNjgzNjAsMTYwNzI1MTA4MiwxNTA3NDU4NzcxLC01NT
-k3Nzg1MzEsMTMxMzEwNjg2NywtMTgyMzg4MjQzOSwxMzYxNTQx
-MjA3LC0xODc2NjQ2NDg5LC0xNTQ5NzU5NTgyLC03MzgwNzgxMl
-19
+eyJoaXN0b3J5IjpbLTE3MzU1NDU1ODEsMTAwODQ2MzEwNCwyNj
+MxMDk4NDUsMTg0MDI4NTExNCwtNTYzODE1MDMzLDE5MjkwNjY4
+NzEsNjE5MzY4MzYwLDE2MDcyNTEwODIsMTUwNzQ1ODc3MSwtNT
+U5Nzc4NTMxLDEzMTMxMDY4NjcsLTE4MjM4ODI0MzksMTM2MTU0
+MTIwNywtMTg3NjY0NjQ4OSwtMTU0OTc1OTU4MiwtNzM4MDc4MT
+JdfQ==
 -->
