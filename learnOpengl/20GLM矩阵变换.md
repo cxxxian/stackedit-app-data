@@ -178,6 +178,7 @@ void main()
 需要区分于单纯的矩阵相乘，它平移后不会以原点进行旋转，而是按照自己本地坐标系的中心点为基准进行旋转
 ![输入图片说明](/imgs/2024-11-01/Okq7wJgSbUCt23Gp.png)
 ![输入图片说明](/imgs/2024-11-01/POVtpitfaccw51Fc.png)
+### 目标1：旋转的三角形
 修改doTransform函数，注意这时候第一个参数不是单位矩阵而是transform
 ```
 void doTransform() {
@@ -195,10 +196,28 @@ while (app->update()) {
         //渲染操作
 }
 ```
+### 目标2：先平移再叠加旋转
+```
+void preTransform() {
+    //目标2：先平移再叠加旋转
+
+    transform = glm::translate(transform, glm::vec3(0.6f, 0.0f, 0.0f));
+}
+void doTransform() {
+    //目标1：旋转的三角形
+    //float angle = 1.0f;
+    //transform = glm::rotate(transform, glm::radians(angle), glm::vec3(0.0f, 0.0f, 1.0f));
+    //目标2：先平移再叠加旋转
+    float angle = 1.0f;
+    transform = glm::rotate(transform, glm::radians(angle), glm::vec3(0.0f, 0.0f, 1.0f));
+}
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwODQ2MzEwNCwyNjMxMDk4NDUsMTg0MD
-I4NTExNCwtNTYzODE1MDMzLDE5MjkwNjY4NzEsNjE5MzY4MzYw
-LDE2MDcyNTEwODIsMTUwNzQ1ODc3MSwtNTU5Nzc4NTMxLDEzMT
-MxMDY4NjcsLTE4MjM4ODI0MzksMTM2MTU0MTIwNywtMTg3NjY0
-NjQ4OSwtMTU0OTc1OTU4MiwtNzM4MDc4MTJdfQ==
+eyJoaXN0b3J5IjpbLTEwNjU5NTYxMzAsMTAwODQ2MzEwNCwyNj
+MxMDk4NDUsMTg0MDI4NTExNCwtNTYzODE1MDMzLDE5MjkwNjY4
+NzEsNjE5MzY4MzYwLDE2MDcyNTEwODIsMTUwNzQ1ODc3MSwtNT
+U5Nzc4NTMxLDEzMTMxMDY4NjcsLTE4MjM4ODI0MzksMTM2MTU0
+MTIwNywtMTg3NjY0NjQ4OSwtMTU0OTc1OTU4MiwtNzM4MDc4MT
+JdfQ==
 -->
