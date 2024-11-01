@@ -171,11 +171,11 @@ void main()
 ```
 # 叠加变换（重要）
 ![输入图片说明](/imgs/2024-11-01/WZ4LNnUOuxpqwReW.png)
-第一个`rotate`方法的第一个参数为glm::mat4(1.0f)，说明是以单位矩阵为基础进行变换，其实也就相当于按照世界坐标系
-第二个translate方法的第一个参数为transform，即是以transform的本地坐标进行变换
+第一个`rotate`方法的第一个参数为`glm::mat4(1.0f)`，说明是以单位矩阵为基础进行变换，其实也就相当于按照世界坐标系
+第二个`translate`方法的第一个参数为`transform`，即是以`transform`的本地坐标进行变换
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODE4NTgzODMzLDE5MjkwNjY4NzEsNjE5Mz
-Y4MzYwLDE2MDcyNTEwODIsMTUwNzQ1ODc3MSwtNTU5Nzc4NTMx
-LDEzMTMxMDY4NjcsLTE4MjM4ODI0MzksMTM2MTU0MTIwNywtMT
-g3NjY0NjQ4OSwtMTU0OTc1OTU4MiwtNzM4MDc4MTJdfQ==
+eyJoaXN0b3J5IjpbLTEwMTMwNjIwNDcsMTkyOTA2Njg3MSw2MT
+kzNjgzNjAsMTYwNzI1MTA4MiwxNTA3NDU4NzcxLC01NTk3Nzg1
+MzEsMTMxMzEwNjg2NywtMTgyMzg4MjQzOSwxMzYxNTQxMjA3LC
+0xODc2NjQ2NDg5LC0xNTQ5NzU5NTgyLC03MzgwNzgxMl19
 -->
