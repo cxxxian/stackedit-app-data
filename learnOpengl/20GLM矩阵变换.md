@@ -178,15 +178,29 @@ void main()
 需要区分于单纯的矩阵相乘，它平移后不会以原点进行旋转，而是按照自己本地坐标系的中心点为基准进行旋转
 ![输入图片说明](/imgs/2024-11-01/Okq7wJgSbUCt23Gp.png)
 ![输入图片说明](/imgs/2024-11-01/POVtpitfaccw51Fc.png)
+修改doTransform函数，注意这时候第一个参数不是单位矩阵而是transform
+```
 void doTransform() {
     //目标1：旋转的三角形
     float angle = 1.0f;
     transform = glm::rotate(transform, glm::radians(angle), glm::vec3(0.0f, 0.0f, 1.0f));
 }
+```
+这时候我们在main的while中调用此函数，会发现它能持续转动
+与之前的
+```
+while (app->update()) {
+
+        doTransform();
+        render();
+
+        //渲染操作
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjczNDA3MTY4LDI2MzEwOTg0NSwxODQwMj
-g1MTE0LC01NjM4MTUwMzMsMTkyOTA2Njg3MSw2MTkzNjgzNjAs
-MTYwNzI1MTA4MiwxNTA3NDU4NzcxLC01NTk3Nzg1MzEsMTMxMz
-EwNjg2NywtMTgyMzg4MjQzOSwxMzYxNTQxMjA3LC0xODc2NjQ2
-NDg5LC0xNTQ5NzU5NTgyLC03MzgwNzgxMl19
+eyJoaXN0b3J5IjpbMTIwODcxNTk1NywyNjMxMDk4NDUsMTg0MD
+I4NTExNCwtNTYzODE1MDMzLDE5MjkwNjY4NzEsNjE5MzY4MzYw
+LDE2MDcyNTEwODIsMTUwNzQ1ODc3MSwtNTU5Nzc4NTMxLDEzMT
+MxMDY4NjcsLTE4MjM4ODI0MzksMTM2MTU0MTIwNywtMTg3NjY0
+NjQ4OSwtMTU0OTc1OTU4MiwtNzM4MDc4MTJdfQ==
 -->
