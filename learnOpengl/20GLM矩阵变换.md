@@ -37,6 +37,7 @@ OpenGL的矩阵存储为列优先，GLM也恰好是列优先，所以不需要�
 ```
 glm::mat4 transform(1.0);
 ```
+## 矩阵旋转
 制作一个函数用来做旋转操作
 ```
 void doRotationTransform() {
@@ -102,6 +103,7 @@ void render(){
     shader->end();
 }
 ```
+## 矩阵平移和缩放
 制作平移和缩放操作。
 效果分别为按照x轴平移0.5f，和在xy轴执行缩小0.5倍
 ```
@@ -118,6 +120,7 @@ void doScaleTransform() {
     transform = glm::scale(glm::mat4(1.0f), glm::vec3(0.5f, 0.5f, 1.0f));
 }
 ```
+## 矩阵复合变换
 矩阵复合变换
 ```
 void doTransform() {
@@ -128,8 +131,9 @@ void doTransform() {
     transform = translateMat * rotateMat;
 }
 ```
+## 持续旋转
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTM5OTM3MTUsNjE5MzY4MzYwLDE2MD
+eyJoaXN0b3J5IjpbLTEzNzEyOTI1NDcsNjE5MzY4MzYwLDE2MD
 cyNTEwODIsMTUwNzQ1ODc3MSwtNTU5Nzc4NTMxLDEzMTMxMDY4
 NjcsLTE4MjM4ODI0MzksMTM2MTU0MTIwNywtMTg3NjY0NjQ4OS
 wtMTU0OTc1OTU4MiwtNzM4MDc4MTJdfQ==
