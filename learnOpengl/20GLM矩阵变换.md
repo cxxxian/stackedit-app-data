@@ -117,10 +117,16 @@ void doScaleTransform() {
     transform = glm::scale(glm::mat4(1.0f), glm::vec3(0.5f, 0.5f, 1.0f));
 }
 ```
+void doTransform() {
 
+    glm::mat4 rotateMat = glm::rotate(glm::mat4(1.0f), glm::radians(45.0f), glm::vec3(0.0, 0.0, 1.0));
+    glm::mat4 translateMat = glm::translate(glm::mat4(1.0f), glm::vec3(0.5f, 0.0f, 0.0f));
+    // 先旋转后移动，从右到左看
+    transform = translateMat * rotateMat;
+}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYwNzI1MTA4MiwxNTA3NDU4NzcxLC01NT
-k3Nzg1MzEsMTMxMzEwNjg2NywtMTgyMzg4MjQzOSwxMzYxNTQx
-MjA3LC0xODc2NjQ2NDg5LC0xNTQ5NzU5NTgyLC03MzgwNzgxMl
-19
+eyJoaXN0b3J5IjpbMjExMjM0ODQ2MywxNjA3MjUxMDgyLDE1MD
+c0NTg3NzEsLTU1OTc3ODUzMSwxMzEzMTA2ODY3LC0xODIzODgy
+NDM5LDEzNjE1NDEyMDcsLTE4NzY2NDY0ODksLTE1NDk3NTk1OD
+IsLTczODA3ODEyXX0=
 -->
