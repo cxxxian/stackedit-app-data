@@ -87,7 +87,7 @@ void main(void) {
 }
 ```
 此时会存在自遮挡导致锯齿的问题，效果如下
-![输入图片说明](/imgs/2024-10-18/CMKTir5lJTY04oEM.png =550x400)
+![输入图片说明](/imgs/2024-10-18/CMKTir5lJTY04oEM.png)
 
 4. 解决锯齿问题
 引入bias的概念，利用函数getBias得到合适的Bias值，在`if(cur_depth - bias >= shadow_depth + EPS)`判断中加入bias，可以有效解决锯齿问题
@@ -126,8 +126,8 @@ float useShadowMap(sampler2D shadowMap, vec4 shadowCoord){
 ```
 ### 效果如下，
 发现当data取值为1.0时可以有效解决锯齿问题
-![输入图片说明](/imgs/2024-10-18/5Vl5GcL66CmPyUSJ.png =550x400)
-![输入图片说明](/imgs/2024-10-18/xr9vvrtJ8CG7uctY.png =550x400)
+![输入图片说明](/imgs/2024-10-18/5Vl5GcL66CmPyUSJ.png)
+![输入图片说明](/imgs/2024-10-18/xr9vvrtJ8CG7uctY.png)
 
 ## 任务2：PCF(Percentage Closer Filter)
 1. 完善 phongFragment.glsl 中的 PCF(sampler2D shadowMap, vec4 shadowCoord, float filterSize) 函数
@@ -175,11 +175,11 @@ void main(void) {
 ```
 ### 运行如下（泊松采样）：
 当`Stride = 10.0，NUM_SAMPLES = 20`时，噪点较多，因为此时泊松采样数较少，此情况会随着`NUM_SAMPLES`的增多而改善
-![输入图片说明](/imgs/2024-10-18/hEni8o7AyCtoweQi.png =600x400)
+![输入图片说明](/imgs/2024-10-18/hEni8o7AyCtoweQi.png)
 当`Stride = 10.0，NUM_SAMPLES = 100`时，可以看到噪点明显变少很多
-![输入图片说明](/imgs/2024-10-18/XSvAvGW8sIlOIMqZ.png =600x400)
+![输入图片说明](/imgs/2024-10-18/XSvAvGW8sIlOIMqZ.png)
 当`Stride = 1.0，NUM_SAMPLES = 100`时，可以看到阴影的边缘变得清晰许多
-![输入图片说明](/imgs/2024-10-18/ZLIG9E5XjEvCkrqc.png =600x400)
+![输入图片说明](/imgs/2024-10-18/ZLIG9E5XjEvCkrqc.png)
 ### 使用均匀圆盘采样：
 `Stride = 10.0，NUM_SAMPLES = 100`
 ![输入图片说明](/imgs/2024-10-19/IjDLU5TxIASNJPr0.png =600x350)
@@ -555,11 +555,11 @@ gl.disable(gl.BLEND);
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwODc2ODcwMCwyNDk0NjY1MjUsLTQwOD
-c2ODcwMCwxNzk5MTcyMTAwLDkyNjExMTk1OCwzMTk4MjQ3ODYs
-LTE1NTg2OTU2NDgsMTM3OTI1NjY0LDIwMzY5NTQzMDAsLTE5Mj
-k5ODExMjcsMTM4ODE5NDc1NywtNDcxMTgyNzg5LC02NzM1MzA2
-NDksMTM0NzgxNzc5NiwtNTA5MDE3MDY4LDEyNzUwNzMxMjksMT
-I5MTA2NTI0OSw2MzU2MTMyNjMsLTE0MDk4NTM2NTMsMTg4MTYz
-MTk5MV19
+eyJoaXN0b3J5IjpbLTgxNDc4Njk4OCwtNDA4NzY4NzAwLDI0OT
+Q2NjUyNSwtNDA4NzY4NzAwLDE3OTkxNzIxMDAsOTI2MTExOTU4
+LDMxOTgyNDc4NiwtMTU1ODY5NTY0OCwxMzc5MjU2NjQsMjAzNj
+k1NDMwMCwtMTkyOTk4MTEyNywxMzg4MTk0NzU3LC00NzExODI3
+ODksLTY3MzUzMDY0OSwxMzQ3ODE3Nzk2LC01MDkwMTcwNjgsMT
+I3NTA3MzEyOSwxMjkxMDY1MjQ5LDYzNTYxMzI2MywtMTQwOTg1
+MzY1M119
 -->
