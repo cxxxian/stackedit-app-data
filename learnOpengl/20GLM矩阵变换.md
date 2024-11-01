@@ -101,7 +101,7 @@ void render(){
     shader->end();
 }
 ```
-
+制作平移和缩放操作
 ```
 void doTranslationTransform() {
     //构建一个旋转矩阵，绕z轴旋转45度
@@ -118,7 +118,7 @@ void doScaleTransform() {
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMxMTgwMzM4MCwxNTA3NDU4NzcxLC01NT
+eyJoaXN0b3J5IjpbMjAyMjU3NjY5MiwxNTA3NDU4NzcxLC01NT
 k3Nzg1MzEsMTMxMzEwNjg2NywtMTgyMzg4MjQzOSwxMzYxNTQx
 MjA3LC0xODc2NjQ2NDg5LC0xNTQ5NzU5NTgyLC03MzgwNzgxMl
 19
