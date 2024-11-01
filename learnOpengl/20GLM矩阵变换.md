@@ -175,10 +175,10 @@ void main()
 第二个`translate`方法的第一个参数为`transform`，即是以`transform`的本地坐标进行变换
 ![输入图片说明](/imgs/2024-11-01/Wl5PQJFnJaYdMoQJ.png)
 所以可以发现，此处一个**很重要的现象**：
-需要区分于单纯的矩阵相乘，它平移后不会以原点进行旋转，而是按照自己ben'di'zuo'bi
+需要区分于单纯的矩阵相乘，它平移后不会以原点进行旋转，而是按照自己本地坐标系的中心点为基准进行旋转
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzUxMzg5MDQ0LDE5MjkwNjY4NzEsNjE5Mz
-Y4MzYwLDE2MDcyNTEwODIsMTUwNzQ1ODc3MSwtNTU5Nzc4NTMx
-LDEzMTMxMDY4NjcsLTE4MjM4ODI0MzksMTM2MTU0MTIwNywtMT
-g3NjY0NjQ4OSwtMTU0OTc1OTU4MiwtNzM4MDc4MTJdfQ==
+eyJoaXN0b3J5IjpbLTU2MzgxNTAzMywxOTI5MDY2ODcxLDYxOT
+M2ODM2MCwxNjA3MjUxMDgyLDE1MDc0NTg3NzEsLTU1OTc3ODUz
+MSwxMzEzMTA2ODY3LC0xODIzODgyNDM5LDEzNjE1NDEyMDcsLT
+E4NzY2NDY0ODksLTE1NDk3NTk1ODIsLTczODA3ODEyXX0=
 -->
