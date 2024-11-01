@@ -1,3 +1,4 @@
+# 矩阵变换
 目标是变换三角形，在`vertex.glsl`中操作顶点。
 因为三个顶点会旋转同样的角度，所以可以共用一个旋转矩阵，即声明`uniform mat4 transform;`，`position = transform * position`即可以做到旋转变化
 ```
@@ -128,8 +129,8 @@ void doTransform() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjE5MzY4MzYwLDE2MDcyNTEwODIsMTUwNz
-Q1ODc3MSwtNTU5Nzc4NTMxLDEzMTMxMDY4NjcsLTE4MjM4ODI0
-MzksMTM2MTU0MTIwNywtMTg3NjY0NjQ4OSwtMTU0OTc1OTU4Mi
-wtNzM4MDc4MTJdfQ==
+eyJoaXN0b3J5IjpbLTEyOTM5OTM3MTUsNjE5MzY4MzYwLDE2MD
+cyNTEwODIsMTUwNzQ1ODc3MSwtNTU5Nzc4NTMxLDEzMTMxMDY4
+NjcsLTE4MjM4ODI0MzksMTM2MTU0MTIwNywtMTg3NjY0NjQ4OS
+wtMTU0OTc1OTU4MiwtNzM4MDc4MTJdfQ==
 -->
