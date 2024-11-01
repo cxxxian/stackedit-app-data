@@ -186,8 +186,8 @@ void doTransform() {
     transform = glm::rotate(transform, glm::radians(angle), glm::vec3(0.0f, 0.0f, 1.0f));
 }
 ```
-这时候我们在main的while中调用此函数，会发现它能持续转动
-与之前的
+这时候我们在`main`的`while`中调用此函数，会发现它能持续转动
+与之前的`doRotation`区分，此处我们是在`transform`的基础上进行旋转，。
 ```
 while (app->update()) {
 
@@ -198,9 +198,9 @@ while (app->update()) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwODcxNTk1NywyNjMxMDk4NDUsMTg0MD
-I4NTExNCwtNTYzODE1MDMzLDE5MjkwNjY4NzEsNjE5MzY4MzYw
-LDE2MDcyNTEwODIsMTUwNzQ1ODc3MSwtNTU5Nzc4NTMxLDEzMT
-MxMDY4NjcsLTE4MjM4ODI0MzksMTM2MTU0MTIwNywtMTg3NjY0
-NjQ4OSwtMTU0OTc1OTU4MiwtNzM4MDc4MTJdfQ==
+eyJoaXN0b3J5IjpbLTEwMjc5ODA4LDI2MzEwOTg0NSwxODQwMj
+g1MTE0LC01NjM4MTUwMzMsMTkyOTA2Njg3MSw2MTkzNjgzNjAs
+MTYwNzI1MTA4MiwxNTA3NDU4NzcxLC01NTk3Nzg1MzEsMTMxMz
+EwNjg2NywtMTgyMzg4MjQzOSwxMzYxNTQxMjA3LC0xODc2NjQ2
+NDg5LC0xNTQ5NzU5NTgyLC03MzgwNzgxMl19
 -->
