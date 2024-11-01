@@ -237,11 +237,23 @@ while (app->update()) {
 	//渲染操作
 }
 ```
+### 目标4：先做缩放再每帧平移
+如下面，x轴缩小0.5倍，那么最后平移也会被缩小0.5倍
+```
+void preTransform() {
+    //目标4：先做一次缩放，缩放只做一次
+    transform = glm::scale(transform, glm::vec3(0.5f, 1.0f, 1.0f));
+}
+void doTransform() {
+    //目标4：先做一次缩放，再叠加平移
+    transform = glm::translate(transform, glm::vec3(0.001f, 0.0f, 0.0f));
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTM5ODMxNDQwLC0xNzgxMzA2NTg3LDEwMD
-g0NjMxMDQsMjYzMTA5ODQ1LDE4NDAyODUxMTQsLTU2MzgxNTAz
-MywxOTI5MDY2ODcxLDYxOTM2ODM2MCwxNjA3MjUxMDgyLDE1MD
-c0NTg3NzEsLTU1OTc3ODUzMSwxMzEzMTA2ODY3LC0xODIzODgy
-NDM5LDEzNjE1NDEyMDcsLTE4NzY2NDY0ODksLTE1NDk3NTk1OD
-IsLTczODA3ODEyXX0=
+eyJoaXN0b3J5IjpbLTc2OTk4NjYwMyw1Mzk4MzE0NDAsLTE3OD
+EzMDY1ODcsMTAwODQ2MzEwNCwyNjMxMDk4NDUsMTg0MDI4NTEx
+NCwtNTYzODE1MDMzLDE5MjkwNjY4NzEsNjE5MzY4MzYwLDE2MD
+cyNTEwODIsMTUwNzQ1ODc3MSwtNTU5Nzc4NTMxLDEzMTMxMDY4
+NjcsLTE4MjM4ODI0MzksMTM2MTU0MTIwNywtMTg3NjY0NjQ4OS
+wtMTU0OTc1OTU4MiwtNzM4MDc4MTJdfQ==
 -->
