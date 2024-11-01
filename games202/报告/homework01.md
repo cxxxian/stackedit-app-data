@@ -182,7 +182,7 @@ void main(void) {
 ![输入图片说明](/imgs/2024-10-18/ZLIG9E5XjEvCkrqc.png)
 ### 使用均匀圆盘采样：
 `Stride = 10.0，NUM_SAMPLES = 100`
-![输入图片说明](/imgs/2024-10-19/IjDLU5TxIASNJPr0.png =600x350)
+![输入图片说明](/imgs/2024-10-19/IjDLU5TxIASNJPr0.png)
 
 ### 综上
 通过修改`Stride` 和`NUM_SAMPLES`参数
@@ -192,9 +192,9 @@ void main(void) {
 
 ### 关于EPS数据的讨论
 当`EPS = 0.001`时
-![输入图片说明](/imgs/2024-10-19/dlDCu1X9zLQd7bBk.png =580x420)
+![输入图片说明](/imgs/2024-10-19/dlDCu1X9zLQd7bBk.png)
 当`EPS = 0.01`时
-![输入图片说明](/imgs/2024-10-19/e8TxiSBCr3xVA7vN.png =600x400)
+![输入图片说明](/imgs/2024-10-19/e8TxiSBCr3xVA7vN.png)
 发现EPS主要作用变化在模型上的阴影
 ## 任务3：PCSS(Percentage Closer Soft Shadow)
 1. 完善 phongFragment.glsl 中的 findBlocker(sampler2D shadowMap, vec2 uv, float zReceiver)
@@ -257,7 +257,7 @@ float PCSS(sampler2D shadowMap, vec4 coords){
   return visibility / float(NUM_SAMPLES);
 }
 ```
-![输入图片说明](/imgs/2024-10-19/BFAW6FC1IAq6afUi.png =600x380)
+![输入图片说明](/imgs/2024-10-19/BFAW6FC1IAq6afUi.png)
 ## 任务4：Bonus
 ### 动态物体
 1. engine.js中，在原有的transform基础上添加Rotate的参数
@@ -387,7 +387,7 @@ for (let i = 0; i < this.meshes.length; i++) {
 	}
 }
 ```
-![输入图片说明](/imgs/2024-10-26/GBzcKFsztW8oRCTO.png =600x380)
+![输入图片说明](/imgs/2024-10-26/GBzcKFsztW8oRCTO.png)
 但是此处我们会发现阴影并没有跟着人物模型进行旋转，是因为没有更新lightMVP矩阵，导致物体变动并没有反映在ShadowMap上。
 12. 更新lightMVP
 先在WebGLRenderer.js进行shadowMap的清除工作。然后在两个Pass（Shadow pass/ Camera pass）中进行lightMVP矩阵的更新
@@ -425,7 +425,7 @@ for (let i = 0; i < this.meshes.length; i++) {
 	this.meshes[i].draw(this.camera);
 }
 ```
-![输入图片说明](/imgs/2024-10-26/WlJU0GnBAbTtyTYs.png =600x380)
+![输入图片说明](/imgs/2024-10-26/WlJU0GnBAbTtyTYs.png)
 
 ### 多光源
 在Metrial.js中添加一个lightIndex用来区分不同光源
@@ -550,16 +550,16 @@ for (let i = 0; i < this.meshes.length; i++) {
 gl.disable(gl.BLEND);
 }
 ```
-![输入图片说明](/imgs/2024-10-26/YFEwA9Zw3Ip3fMXs.png =600x350)
+![输入图片说明](/imgs/2024-10-26/YFEwA9Zw3Ip3fMXs.png)
 ## 实验总结
 
 -   请简述实验的心得体会。欢迎对实验形式、内容提出意见和建议。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgxNDc4Njk4OCwtNDA4NzY4NzAwLDI0OT
-Q2NjUyNSwtNDA4NzY4NzAwLDE3OTkxNzIxMDAsOTI2MTExOTU4
-LDMxOTgyNDc4NiwtMTU1ODY5NTY0OCwxMzc5MjU2NjQsMjAzNj
-k1NDMwMCwtMTkyOTk4MTEyNywxMzg4MTk0NzU3LC00NzExODI3
-ODksLTY3MzUzMDY0OSwxMzQ3ODE3Nzk2LC01MDkwMTcwNjgsMT
-I3NTA3MzEyOSwxMjkxMDY1MjQ5LDYzNTYxMzI2MywtMTQwOTg1
-MzY1M119
+eyJoaXN0b3J5IjpbLTYxMjMzNDMxLC00MDg3Njg3MDAsMjQ5ND
+Y2NTI1LC00MDg3Njg3MDAsMTc5OTE3MjEwMCw5MjYxMTE5NTgs
+MzE5ODI0Nzg2LC0xNTU4Njk1NjQ4LDEzNzkyNTY2NCwyMDM2OT
+U0MzAwLC0xOTI5OTgxMTI3LDEzODgxOTQ3NTcsLTQ3MTE4Mjc4
+OSwtNjczNTMwNjQ5LDEzNDc4MTc3OTYsLTUwOTAxNzA2OCwxMj
+c1MDczMTI5LDEyOTEwNjUyNDksNjM1NjEzMjYzLC0xNDA5ODUz
+NjUzXX0=
 -->
