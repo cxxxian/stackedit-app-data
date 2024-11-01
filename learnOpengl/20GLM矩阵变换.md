@@ -201,7 +201,6 @@ while (app->update()) {
 ```
 void preTransform() {
     //目标2：先平移再叠加旋转
-
     transform = glm::translate(transform, glm::vec3(0.6f, 0.0f, 0.0f));
 }
 void doTransform() {
@@ -220,7 +219,7 @@ while (app->update()) {
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MzU1NDU1ODEsMTAwODQ2MzEwNCwyNj
+eyJoaXN0b3J5IjpbLTE3ODEzMDY1ODcsMTAwODQ2MzEwNCwyNj
 MxMDk4NDUsMTg0MDI4NTExNCwtNTYzODE1MDMzLDE5MjkwNjY4
 NzEsNjE5MzY4MzYwLDE2MDcyNTEwODIsMTUwNzQ1ODc3MSwtNT
 U5Nzc4NTMxLDEzMTMxMDY4NjcsLTE4MjM4ODI0MzksMTM2MTU0
