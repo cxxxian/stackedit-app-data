@@ -351,7 +351,8 @@ void UAttributeComponent::AddGold(int32 NumberOfGold)
 	Gold += NumberOfGold;
 }
 ```
-翻回我们之前在SlashCharacter.cpp中zuo'd
+翻回我们之前在SlashCharacter.cpp中做的方法，我们发现这里的参数是`ASoul* Soul`，这说明我们可以到Soul中进行价值的声明，这里传进来可以是一个或者十个或者一百个，
+这说明在面对不同的敌人可以对他们的Soul值进行不同的声明！！！
 ```
 void ASlashCharacter::AddSouls(ASoul* Soul)
 {
@@ -359,11 +360,11 @@ void ASlashCharacter::AddSouls(ASoul* Soul)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzY3Mjg0MzMsLTEyODEyMjg1MTcsMT
-U3NDYwMTI2OCw3MTg4MjA0NzMsLTE0NTg3NzQwNDgsMTg5MjE4
-NTg1NiwtMTgwMjYxNzE1NCwtMTI5NDA3OTMzOCwtMzQyNTMyNz
-g0LC0yMDg1NTc4MjQ4LDY0ODA2NjAwNCwxODk1NjkxMDc2LDMz
-ODk2NjM2OSwyMzkzNzU1MzYsMTAwNDg5NjQ0Nyw5OTAyODA0MT
-MsLTE3Mzg2MTI1ODgsMTM0MzM5MzY0MSwxNTk3OTM0NTcyLDE1
-MzQ5MTkwMDddfQ==
+eyJoaXN0b3J5IjpbMTQ0MTU4NDU4OCwtMTI4MTIyODUxNywxNT
+c0NjAxMjY4LDcxODgyMDQ3MywtMTQ1ODc3NDA0OCwxODkyMTg1
+ODU2LC0xODAyNjE3MTU0LC0xMjk0MDc5MzM4LC0zNDI1MzI3OD
+QsLTIwODU1NzgyNDgsNjQ4MDY2MDA0LDE4OTU2OTEwNzYsMzM4
+OTY2MzY5LDIzOTM3NTUzNiwxMDA0ODk2NDQ3LDk5MDI4MDQxMy
+wtMTczODYxMjU4OCwxMzQzMzkzNjQxLDE1OTc5MzQ1NzIsMTUz
+NDkxOTAwN119
 -->
