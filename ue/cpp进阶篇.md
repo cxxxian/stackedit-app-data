@@ -275,16 +275,21 @@ virtual void SpawnPickupSystem();
 ```
 然后我们就能进入Item.cpp中，导入`NiagaraFunctionLibrary.h`头文件，使用`SpawnSystemAtLocation`函数
 ```
-
+void AItem::SpawnPickupSystem()
+{
+	if (PickupEffect) {
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, PickupEffect, GetActorLocation());
+	}
+}
 ```
 最后去蓝图中选择此Effect
 ![输入图片说明](/imgs/2024-11-02/iJDK3MqFUJuOku6a.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQyMTQ5OTA1NSwxODkyMTg1ODU2LC0xOD
-AyNjE3MTU0LC0xMjk0MDc5MzM4LC0zNDI1MzI3ODQsLTIwODU1
-NzgyNDgsNjQ4MDY2MDA0LDE4OTU2OTEwNzYsMzM4OTY2MzY5LD
-IzOTM3NTUzNiwxMDA0ODk2NDQ3LDk5MDI4MDQxMywtMTczODYx
-MjU4OCwxMzQzMzkzNjQxLDE1OTc5MzQ1NzIsMTUzNDkxOTAwNy
-wtODQzMTY1NjY0LDE2MTQ1MzIwOSwtMzQ3NzA2MTU5LDEyNDQ0
-Nzk5NjRdfQ==
+eyJoaXN0b3J5IjpbLTE3NTMxMTQxMTIsMTg5MjE4NTg1NiwtMT
+gwMjYxNzE1NCwtMTI5NDA3OTMzOCwtMzQyNTMyNzg0LC0yMDg1
+NTc4MjQ4LDY0ODA2NjAwNCwxODk1NjkxMDc2LDMzODk2NjM2OS
+wyMzkzNzU1MzYsMTAwNDg5NjQ0Nyw5OTAyODA0MTMsLTE3Mzg2
+MTI1ODgsMTM0MzM5MzY0MSwxNTk3OTM0NTcyLDE1MzQ5MTkwMD
+csLTg0MzE2NTY2NCwxNjE0NTMyMDksLTM0NzcwNjE1OSwxMjQ0
+NDc5OTY0XX0=
 -->
