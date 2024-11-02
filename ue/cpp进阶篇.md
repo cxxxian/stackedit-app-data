@@ -306,12 +306,29 @@ USoundBase* PickupSound;
 
 virtual void SpawnPickupSound();
 ```
+```
+#include "Kismet/GameplayStatics.h"
+void AItem::SpawnPickupSound()
+{
+	if (PickupSound) {
+		UGameplayStatics::SpawnSoundAtLocation(this, PickupSound, GetActorLocation());
+	}
+}
+```
+```
+void ASoul::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{。。。
+	SpawnPickupSystem();
+	SpawnPickupSound();
+	Destroy();
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzE4ODIwNDczLC0xNDU4Nzc0MDQ4LDE4OT
-IxODU4NTYsLTE4MDI2MTcxNTQsLTEyOTQwNzkzMzgsLTM0MjUz
-Mjc4NCwtMjA4NTU3ODI0OCw2NDgwNjYwMDQsMTg5NTY5MTA3Ni
-wzMzg5NjYzNjksMjM5Mzc1NTM2LDEwMDQ4OTY0NDcsOTkwMjgw
-NDEzLC0xNzM4NjEyNTg4LDEzNDMzOTM2NDEsMTU5NzkzNDU3Mi
-wxNTM0OTE5MDA3LC04NDMxNjU2NjQsMTYxNDUzMjA5LC0zNDc3
-MDYxNTldfQ==
+eyJoaXN0b3J5IjpbLTE5OTA4MDA0ODQsNzE4ODIwNDczLC0xND
+U4Nzc0MDQ4LDE4OTIxODU4NTYsLTE4MDI2MTcxNTQsLTEyOTQw
+NzkzMzgsLTM0MjUzMjc4NCwtMjA4NTU3ODI0OCw2NDgwNjYwMD
+QsMTg5NTY5MTA3NiwzMzg5NjYzNjksMjM5Mzc1NTM2LDEwMDQ4
+OTY0NDcsOTkwMjgwNDEzLC0xNzM4NjEyNTg4LDEzNDMzOTM2ND
+EsMTU5NzkzNDU3MiwxNTM0OTE5MDA3LC04NDMxNjU2NjQsMTYx
+NDUzMjA5XX0=
 -->
