@@ -286,10 +286,10 @@ void ASoul::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 	Destroy();
 }
 ```
-最后去蓝图中选择此
+最后去蓝图中选择此Effect
 ![输入图片说明](/imgs/2024-11-02/iJDK3MqFUJuOku6a.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzNzcwNjEyOSwtMTgwMjYxNzE1NCwtMT
+eyJoaXN0b3J5IjpbMTg5MjE4NTg1NiwtMTgwMjYxNzE1NCwtMT
 I5NDA3OTMzOCwtMzQyNTMyNzg0LC0yMDg1NTc4MjQ4LDY0ODA2
 NjAwNCwxODk1NjkxMDc2LDMzODk2NjM2OSwyMzkzNzU1MzYsMT
 AwNDg5NjQ0Nyw5OTAyODA0MTMsLTE3Mzg2MTI1ODgsMTM0MzM5
