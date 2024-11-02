@@ -263,37 +263,28 @@ void ASoul::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 }
 ```
 ## 捡拾灵魂球效果
-在Soul.h中声明一个PickupEffect
+在Item.h中声明一个PickupEffect
 ```
 private:
 	UPROPERTY(EditAnywhere)
 	class UNiagaraSystem* PickupEffect;
 ```
-然后我们就能进入Soul.cpp中，导入`NiagaraFunctionLibrary.h`头文件，使用`SpawnSystemAtLocation`函数
+在Item.h中声明一个virtual的函数用来spawn捡起的效果
 ```
-#include "NiagaraFunctionLibrary.h"
+virtual void SpawnPickupSystem();
+```
+然后我们就能进入Item.cpp中，导入`NiagaraFunctionLibrary.h`头文件，使用`SpawnSystemAtLocation`函数
+```
 
-void ASoul::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
-{
-	IPickupInterface* PickupInterface = Cast<IPickupInterface>(OtherActor);
-	if (PickupInterface)
-	{
-		PickupInterface->AddSouls(this);
-	}
-	if (PickupEffect) {
-		UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, PickupEffect, GetActorLocation());
-	}
-	Destroy();
-}
 ```
 最后去蓝图中选择此Effect
 ![输入图片说明](/imgs/2024-11-02/iJDK3MqFUJuOku6a.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5MjE4NTg1NiwtMTgwMjYxNzE1NCwtMT
-I5NDA3OTMzOCwtMzQyNTMyNzg0LC0yMDg1NTc4MjQ4LDY0ODA2
-NjAwNCwxODk1NjkxMDc2LDMzODk2NjM2OSwyMzkzNzU1MzYsMT
-AwNDg5NjQ0Nyw5OTAyODA0MTMsLTE3Mzg2MTI1ODgsMTM0MzM5
-MzY0MSwxNTk3OTM0NTcyLDE1MzQ5MTkwMDcsLTg0MzE2NTY2NC
-wxNjE0NTMyMDksLTM0NzcwNjE1OSwxMjQ0NDc5OTY0LDI1MzM1
-OTEwNl19
+eyJoaXN0b3J5IjpbLTQyMTQ5OTA1NSwxODkyMTg1ODU2LC0xOD
+AyNjE3MTU0LC0xMjk0MDc5MzM4LC0zNDI1MzI3ODQsLTIwODU1
+NzgyNDgsNjQ4MDY2MDA0LDE4OTU2OTEwNzYsMzM4OTY2MzY5LD
+IzOTM3NTUzNiwxMDA0ODk2NDQ3LDk5MDI4MDQxMywtMTczODYx
+MjU4OCwxMzQzMzkzNjQxLDE1OTc5MzQ1NzIsMTUzNDkxOTAwNy
+wtODQzMTY1NjY0LDE2MTQ1MzIwOSwtMzQ3NzA2MTU5LDEyNDQ0
+Nzk5NjRdfQ==
 -->
