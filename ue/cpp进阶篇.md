@@ -378,13 +378,25 @@ void ASlashCharacter::AddSouls(ASoul* Soul)
 	}
 }
 ```
-
+## 补齐Gold的逻辑
+在PickupInterface.h中依照AddSouls做一个AddGold
+```
+public:
+	virtual void SetOverlappingItem(class AItem* Item);
+	virtual void AddSouls(class ASoul* Soul);
+	virtual void AddGold(class ATreasure* Gold);
+```
+在SlashCharacter.h中也按照AddSouls做一个AddGold
+```
+virtual void AddSouls(ASoul* Soul) override;
+virtual void AddGold(ATreasure* Gold) override;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjQ0NDQ1MDIsMTc1MTE4NjQzMSwtMT
-I4MTIyODUxNywxNTc0NjAxMjY4LDcxODgyMDQ3MywtMTQ1ODc3
-NDA0OCwxODkyMTg1ODU2LC0xODAyNjE3MTU0LC0xMjk0MDc5Mz
-M4LC0zNDI1MzI3ODQsLTIwODU1NzgyNDgsNjQ4MDY2MDA0LDE4
-OTU2OTEwNzYsMzM4OTY2MzY5LDIzOTM3NTUzNiwxMDA0ODk2ND
-Q3LDk5MDI4MDQxMywtMTczODYxMjU4OCwxMzQzMzkzNjQxLDE1
-OTc5MzQ1NzJdfQ==
+eyJoaXN0b3J5IjpbMTQ3NTA5MDgyOCwxNzUxMTg2NDMxLC0xMj
+gxMjI4NTE3LDE1NzQ2MDEyNjgsNzE4ODIwNDczLC0xNDU4Nzc0
+MDQ4LDE4OTIxODU4NTYsLTE4MDI2MTcxNTQsLTEyOTQwNzkzMz
+gsLTM0MjUzMjc4NCwtMjA4NTU3ODI0OCw2NDgwNjYwMDQsMTg5
+NTY5MTA3NiwzMzg5NjYzNjksMjM5Mzc1NTM2LDEwMDQ4OTY0ND
+csOTkwMjgwNDEzLC0xNzM4NjEyNTg4LDEzNDMzOTM2NDEsMTU5
+NzkzNDU3Ml19
 -->
