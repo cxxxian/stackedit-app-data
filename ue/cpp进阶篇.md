@@ -262,14 +262,15 @@ void ASoul::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 	Destroy();
 }
 ```
-
+## 捡拾灵魂球效果
+在Soul.h中声明一个PickupEffect
 ```
 private:
 	UPROPERTY(EditAnywhere)
 	class UNiagaraSystem* PickupEffect;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzMTE0NDQ3MiwtMTgwMjYxNzE1NCwtMT
+eyJoaXN0b3J5IjpbLTY4MzA4MTQ3NiwtMTgwMjYxNzE1NCwtMT
 I5NDA3OTMzOCwtMzQyNTMyNzg0LC0yMDg1NTc4MjQ4LDY0ODA2
 NjAwNCwxODk1NjkxMDc2LDMzODk2NjM2OSwyMzkzNzU1MzYsMT
 AwNDg5NjQ0Nyw5OTAyODA0MTMsLTE3Mzg2MTI1ODgsMTM0MzM5
