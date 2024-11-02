@@ -335,16 +335,35 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = "Actor Attributes")
 	int32 Souls;
 public:
-
+	void AddSouls(int32 NumberOfSouls);
+	void AddGold(int32 NumberOfGold);
 	FORCEINLINE int32 GetGold() const { return Gold; }
 	FORCEINLINE int32 GetSouls() const { return Souls; }
 ```
+然后去到AttributeComponent.cpp中实现：
+```
+void UAttributeComponent::AddSouls(int32 NumberOfSouls)
+{
+	Souls += NumberOfSouls;
+}
+void UAttributeComponent::AddGold(int32 NumberOfGold)
+{
+	Gold += NumberOfGold;
+}
+```
+翻回我们之前在SlashCharacter.cpp中zuo'd
+```
+void ASlashCharacter::AddSouls(ASoul* Soul)
+{
+	UE_LOG(LogTemp, Warning, TEXT("ASlashCharacter::AddSouls"));
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTI3OTA1NzczLC0xMjgxMjI4NTE3LDE1Nz
-Q2MDEyNjgsNzE4ODIwNDczLC0xNDU4Nzc0MDQ4LDE4OTIxODU4
-NTYsLTE4MDI2MTcxNTQsLTEyOTQwNzkzMzgsLTM0MjUzMjc4NC
-wtMjA4NTU3ODI0OCw2NDgwNjYwMDQsMTg5NTY5MTA3NiwzMzg5
-NjYzNjksMjM5Mzc1NTM2LDEwMDQ4OTY0NDcsOTkwMjgwNDEzLC
-0xNzM4NjEyNTg4LDEzNDMzOTM2NDEsMTU5NzkzNDU3MiwxNTM0
-OTE5MDA3XX0=
+eyJoaXN0b3J5IjpbLTIxMzY3Mjg0MzMsLTEyODEyMjg1MTcsMT
+U3NDYwMTI2OCw3MTg4MjA0NzMsLTE0NTg3NzQwNDgsMTg5MjE4
+NTg1NiwtMTgwMjYxNzE1NCwtMTI5NDA3OTMzOCwtMzQyNTMyNz
+g0LC0yMDg1NTc4MjQ4LDY0ODA2NjAwNCwxODk1NjkxMDc2LDMz
+ODk2NjM2OSwyMzkzNzU1MzYsMTAwNDg5NjQ0Nyw5OTAyODA0MT
+MsLTE3Mzg2MTI1ODgsMTM0MzM5MzY0MSwxNTk3OTM0NTcyLDE1
+MzQ5MTkwMDddfQ==
 -->
