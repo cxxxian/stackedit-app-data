@@ -326,7 +326,7 @@ void ASoul::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 }
 ```
 # 制作Gold和Souls数量计算
-到A
+到AttributeComponent.h中进行变量声明，此component专门用来声明角色身上的属性
 ```
 private:
 	UPROPERTY(VisibleAnywhere, Category = "Actor Attributes")
@@ -339,11 +339,11 @@ public:
 	FORCEINLINE int32 GetSouls() const { return Souls; }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyMzUxOTE0NywxNTc0NjAxMjY4LDcxOD
-gyMDQ3MywtMTQ1ODc3NDA0OCwxODkyMTg1ODU2LC0xODAyNjE3
-MTU0LC0xMjk0MDc5MzM4LC0zNDI1MzI3ODQsLTIwODU1NzgyND
-gsNjQ4MDY2MDA0LDE4OTU2OTEwNzYsMzM4OTY2MzY5LDIzOTM3
-NTUzNiwxMDA0ODk2NDQ3LDk5MDI4MDQxMywtMTczODYxMjU4OC
-wxMzQzMzkzNjQxLDE1OTc5MzQ1NzIsMTUzNDkxOTAwNywtODQz
-MTY1NjY0XX0=
+eyJoaXN0b3J5IjpbLTEyODEyMjg1MTcsMTU3NDYwMTI2OCw3MT
+g4MjA0NzMsLTE0NTg3NzQwNDgsMTg5MjE4NTg1NiwtMTgwMjYx
+NzE1NCwtMTI5NDA3OTMzOCwtMzQyNTMyNzg0LC0yMDg1NTc4Mj
+Q4LDY0ODA2NjAwNCwxODk1NjkxMDc2LDMzODk2NjM2OSwyMzkz
+NzU1MzYsMTAwNDg5NjQ0Nyw5OTAyODA0MTMsLTE3Mzg2MTI1OD
+gsMTM0MzM5MzY0MSwxNTk3OTM0NTcyLDE1MzQ5MTkwMDcsLTg0
+MzE2NTY2NF19
 -->
