@@ -359,7 +359,7 @@ void ASlashCharacter::AddSouls(ASoul* Soul)
 	UE_LOG(LogTemp, Warning, TEXT("ASlashCharacter::AddSouls"));
 }
 ```
-所以我们回到Soul.h中，声明一个Souls，这里的Souls和上面AttributeComponent的Souls可不一样，前者是Soul类中的Souls，用来增加不同敌人不同Souls的复用性，而AttributeComponent中的Souls是用来计算玩家身上拥有多少个Sou'l's
+所以我们回到Soul.h中，声明一个Souls，这里的Souls和上面AttributeComponent的Souls可不一样，前者是Soul类中的Souls，用来增加不同敌人不同Souls的复用性，而AttributeComponent中的Souls是用来计算玩家身上拥有多少个Souls数量
 ```
 private:
 	UPROPERTY(EditAnywhere, Category = "Soul Properties")
@@ -368,7 +368,7 @@ public:
 	FORCEINLINE int32 GetSouls() const { return Souls; }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwNTk4MTE5NiwtMTI4MTIyODUxNywxNT
+eyJoaXN0b3J5IjpbMTc1MTE4NjQzMSwtMTI4MTIyODUxNywxNT
 c0NjAxMjY4LDcxODgyMDQ3MywtMTQ1ODc3NDA0OCwxODkyMTg1
 ODU2LC0xODAyNjE3MTU0LC0xMjk0MDc5MzM4LC0zNDI1MzI3OD
 QsLTIwODU1NzgyNDgsNjQ4MDY2MDA0LDE4OTU2OTEwNzYsMzM4
