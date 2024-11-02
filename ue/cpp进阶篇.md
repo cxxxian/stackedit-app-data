@@ -269,11 +269,12 @@ private:
 	UPROPERTY(EditAnywhere)
 	class UNiagaraSystem* PickupEffect;
 ```
+然后我们就能进入Soul.cpp中，导入`NiagaraFunctionLibrary.h`头文件，使用`SpawnSystemAtLocation`函数
+```
 #include "NiagaraFunctionLibrary.h"
 
 void ASoul::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-
 	IPickupInterface* PickupInterface = Cast<IPickupInterface>(OtherActor);
 	if (PickupInterface)
 	{
@@ -284,8 +285,9 @@ void ASoul::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 	}
 	Destroy();
 }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE2Mzg2ODM5MCwtMTgwMjYxNzE1NCwtMT
+eyJoaXN0b3J5IjpbMTY0NTI3NjkxMCwtMTgwMjYxNzE1NCwtMT
 I5NDA3OTMzOCwtMzQyNTMyNzg0LC0yMDg1NTc4MjQ4LDY0ODA2
 NjAwNCwxODk1NjkxMDc2LDMzODk2NjM2OSwyMzkzNzU1MzYsMT
 AwNDg5NjQ0Nyw5OTAyODA0MTMsLTE3Mzg2MTI1ODgsMTM0MzM5
