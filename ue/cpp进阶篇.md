@@ -384,19 +384,28 @@ void ASlashCharacter::AddSouls(ASoul* Soul)
 public:
 	virtual void SetOverlappingItem(class AItem* Item);
 	virtual void AddSouls(class ASoul* Soul);
-	virtual void AddGold(class ATreasure* Gold);
+	virtual void AddGold(class ATreasure* Treasure);
 ```
 在SlashCharacter.h中也按照AddSouls override 一个AddGold
 ```
 virtual void AddSouls(ASoul* Soul) override;
-virtual void AddGold(ATreasure* Gold) override;
+virtual void AddGold(ATreasure* Treasure) override;
+```
+并且去SlashCharacter.cpp中实现
+```
+void ASlashCharacter::AddGold(ATreasure* Treasure)
+{
+	if (Attributes) {
+		Attributes->AddGold(Treasure->GetGold());
+	}
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDE5MTc2NTAsMTc1MTE4NjQzMSwtMT
-I4MTIyODUxNywxNTc0NjAxMjY4LDcxODgyMDQ3MywtMTQ1ODc3
-NDA0OCwxODkyMTg1ODU2LC0xODAyNjE3MTU0LC0xMjk0MDc5Mz
-M4LC0zNDI1MzI3ODQsLTIwODU1NzgyNDgsNjQ4MDY2MDA0LDE4
-OTU2OTEwNzYsMzM4OTY2MzY5LDIzOTM3NTUzNiwxMDA0ODk2ND
-Q3LDk5MDI4MDQxMywtMTczODYxMjU4OCwxMzQzMzkzNjQxLDE1
-OTc5MzQ1NzJdfQ==
+eyJoaXN0b3J5IjpbMjEzMzY0MzIwOCwxNzUxMTg2NDMxLC0xMj
+gxMjI4NTE3LDE1NzQ2MDEyNjgsNzE4ODIwNDczLC0xNDU4Nzc0
+MDQ4LDE4OTIxODU4NTYsLTE4MDI2MTcxNTQsLTEyOTQwNzkzMz
+gsLTM0MjUzMjc4NCwtMjA4NTU3ODI0OCw2NDgwNjYwMDQsMTg5
+NTY5MTA3NiwzMzg5NjYzNjksMjM5Mzc1NTM2LDEwMDQ4OTY0ND
+csOTkwMjgwNDEzLC0xNzM4NjEyNTg4LDEzNDMzOTM2NDEsMTU5
+NzkzNDU3Ml19
 -->
