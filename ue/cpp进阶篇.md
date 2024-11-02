@@ -282,10 +282,25 @@ void AItem::SpawnPickupSystem()
 	}
 }
 ```
+然后到Soul.cpp中的重叠球的方法中调用此方法
+```
+void ASoul::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+
+	IPickupInterface* PickupInterface = Cast<IPickupInterface>(OtherActor);
+	if (PickupInterface)
+	{
+		PickupInterface->AddSouls(this);
+	}
+	SpawnPickupSystem();
+	
+	Destroy();
+}
+```
 最后去蓝图中选择此Effect
 ![输入图片说明](/imgs/2024-11-02/iJDK3MqFUJuOku6a.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NTMxMTQxMTIsMTg5MjE4NTg1NiwtMT
+eyJoaXN0b3J5IjpbLTE0NTg3NzQwNDgsMTg5MjE4NTg1NiwtMT
 gwMjYxNzE1NCwtMTI5NDA3OTMzOCwtMzQyNTMyNzg0LC0yMDg1
 NTc4MjQ4LDY0ODA2NjAwNCwxODk1NjkxMDc2LDMzODk2NjM2OS
 wyMzkzNzU1MzYsMTAwNDg5NjQ0Nyw5OTAyODA0MTMsLTE3Mzg2
