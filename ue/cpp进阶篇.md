@@ -386,17 +386,17 @@ public:
 	virtual void AddSouls(class ASoul* Soul);
 	virtual void AddGold(class ATreasure* Gold);
 ```
-在SlashCharacter.h中也按照AddSouls重载一个AddGold
+在SlashCharacter.h中也按照AddSouls override 一个AddGold
 ```
 virtual void AddSouls(ASoul* Soul) override;
 virtual void AddGold(ATreasure* Gold) override;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQ1MTY2NjEwLDE3NTExODY0MzEsLTEyOD
-EyMjg1MTcsMTU3NDYwMTI2OCw3MTg4MjA0NzMsLTE0NTg3NzQw
-NDgsMTg5MjE4NTg1NiwtMTgwMjYxNzE1NCwtMTI5NDA3OTMzOC
-wtMzQyNTMyNzg0LC0yMDg1NTc4MjQ4LDY0ODA2NjAwNCwxODk1
-NjkxMDc2LDMzODk2NjM2OSwyMzkzNzU1MzYsMTAwNDg5NjQ0Ny
-w5OTAyODA0MTMsLTE3Mzg2MTI1ODgsMTM0MzM5MzY0MSwxNTk3
-OTM0NTcyXX0=
+eyJoaXN0b3J5IjpbLTE1NDE5MTc2NTAsMTc1MTE4NjQzMSwtMT
+I4MTIyODUxNywxNTc0NjAxMjY4LDcxODgyMDQ3MywtMTQ1ODc3
+NDA0OCwxODkyMTg1ODU2LC0xODAyNjE3MTU0LC0xMjk0MDc5Mz
+M4LC0zNDI1MzI3ODQsLTIwODU1NzgyNDgsNjQ4MDY2MDA0LDE4
+OTU2OTEwNzYsMzM4OTY2MzY5LDIzOTM3NTUzNiwxMDA0ODk2ND
+Q3LDk5MDI4MDQxMywtMTczODYxMjU4OCwxMzQzMzkzNjQxLDE1
+OTc5MzQ1NzJdfQ==
 -->
