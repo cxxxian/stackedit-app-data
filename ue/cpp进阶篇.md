@@ -315,20 +315,22 @@ void AItem::SpawnPickupSound()
 	}
 }
 ```
+同样回去Soul.cpp中调用
 ```
 void ASoul::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
-{。。。
+{
+	...
 	SpawnPickupSystem();
 	SpawnPickupSound();
 	Destroy();
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTA4MDA0ODQsNzE4ODIwNDczLC0xND
-U4Nzc0MDQ4LDE4OTIxODU4NTYsLTE4MDI2MTcxNTQsLTEyOTQw
-NzkzMzgsLTM0MjUzMjc4NCwtMjA4NTU3ODI0OCw2NDgwNjYwMD
-QsMTg5NTY5MTA3NiwzMzg5NjYzNjksMjM5Mzc1NTM2LDEwMDQ4
-OTY0NDcsOTkwMjgwNDEzLC0xNzM4NjEyNTg4LDEzNDMzOTM2ND
-EsMTU5NzkzNDU3MiwxNTM0OTE5MDA3LC04NDMxNjU2NjQsMTYx
-NDUzMjA5XX0=
+eyJoaXN0b3J5IjpbMTU3NDYwMTI2OCw3MTg4MjA0NzMsLTE0NT
+g3NzQwNDgsMTg5MjE4NTg1NiwtMTgwMjYxNzE1NCwtMTI5NDA3
+OTMzOCwtMzQyNTMyNzg0LC0yMDg1NTc4MjQ4LDY0ODA2NjAwNC
+wxODk1NjkxMDc2LDMzODk2NjM2OSwyMzkzNzU1MzYsMTAwNDg5
+NjQ0Nyw5OTAyODA0MTMsLTE3Mzg2MTI1ODgsMTM0MzM5MzY0MS
+wxNTk3OTM0NTcyLDE1MzQ5MTkwMDcsLTg0MzE2NTY2NCwxNjE0
+NTMyMDldfQ==
 -->
