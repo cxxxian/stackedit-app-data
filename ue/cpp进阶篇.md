@@ -325,12 +325,25 @@ void ASoul::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 	Destroy();
 }
 ```
+# 制作Gold和Souls数量计算
+到A
+```
+private:
+	UPROPERTY(VisibleAnywhere, Category = "Actor Attributes")
+	int32 Gold;
+
+	UPROPERTY(VisibleAnywhere, Category = "Actor Attributes")
+	int32 Souls;
+public:
+	FORCEINLINE int32 GetGold() const { return Gold; }
+	FORCEINLINE int32 GetSouls() const { return Souls; }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3NDYwMTI2OCw3MTg4MjA0NzMsLTE0NT
-g3NzQwNDgsMTg5MjE4NTg1NiwtMTgwMjYxNzE1NCwtMTI5NDA3
-OTMzOCwtMzQyNTMyNzg0LC0yMDg1NTc4MjQ4LDY0ODA2NjAwNC
-wxODk1NjkxMDc2LDMzODk2NjM2OSwyMzkzNzU1MzYsMTAwNDg5
-NjQ0Nyw5OTAyODA0MTMsLTE3Mzg2MTI1ODgsMTM0MzM5MzY0MS
-wxNTk3OTM0NTcyLDE1MzQ5MTkwMDcsLTg0MzE2NTY2NCwxNjE0
-NTMyMDldfQ==
+eyJoaXN0b3J5IjpbMTgyMzUxOTE0NywxNTc0NjAxMjY4LDcxOD
+gyMDQ3MywtMTQ1ODc3NDA0OCwxODkyMTg1ODU2LC0xODAyNjE3
+MTU0LC0xMjk0MDc5MzM4LC0zNDI1MzI3ODQsLTIwODU1NzgyND
+gsNjQ4MDY2MDA0LDE4OTU2OTEwNzYsMzM4OTY2MzY5LDIzOTM3
+NTUzNiwxMDA0ODk2NDQ3LDk5MDI4MDQxMywtMTczODYxMjU4OC
+wxMzQzMzkzNjQxLDE1OTc5MzQ1NzIsMTUzNDkxOTAwNywtODQz
+MTY1NjY0XX0=
 -->
