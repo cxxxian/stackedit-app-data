@@ -369,6 +369,8 @@ public:
 ```
 然后，我们终于可以用上了，去SlashCharacter.cpp中，使用刚刚做的函数
 ```
+#include "I/Soul.h"
+#include "I/Treasure.h"
 void ASlashCharacter::AddSouls(ASoul* Soul)
 {
 	if (Attributes) {
@@ -377,7 +379,7 @@ void ASlashCharacter::AddSouls(ASoul* Soul)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTExNDQ4NzI5NiwxNzUxMTg2NDMxLC0xMj
+eyJoaXN0b3J5IjpbLTY1NjM2MTM0OCwxNzUxMTg2NDMxLC0xMj
 gxMjI4NTE3LDE1NzQ2MDEyNjgsNzE4ODIwNDczLC0xNDU4Nzc0
 MDQ4LDE4OTIxODU4NTYsLTE4MDI2MTcxNTQsLTEyOTQwNzkzMz
 gsLTM0MjUzMjc4NCwtMjA4NTU3ODI0OCw2NDgwNjYwMDQsMTg5
