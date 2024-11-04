@@ -415,9 +415,6 @@ void AEnemy::SpawnSoul()
 	UWorld* World = GetWorld();
 	if (World && SoulClass && Attributes) {
 		ASoul* SpawnedSoul = World->SpawnActor<ASoul>(SoulClass, GetActorLocation(), GetActorRotation());
-		if (SpawnedSoul) {
-			SpawnedSoul->SetSouls(Attributes->GetSouls());
-		}
 	}
 }
 ```
@@ -432,9 +429,10 @@ void AEnemy::SpawnSoul()
 {
 	UWorld* World = GetWorld();
 	if (World && SoulClass && Attributes) {
-		const FVector SpawnLocation = GetActorLocation() + FVector(0.f, 0.f, 75.f);
-		ASoul* SpawnedSoul = World->SpawnActor<ASoul>(SoulClass, SpawnLocation, GetActorRotation());
-		SpawnedSoul->SetSouls(Attributes->GetSouls());
+		ASoul* SpawnedSoul = World->SpawnActor<ASoul>(SoulClass, GetActorLocation(), GetActorRotation());
+		if (SpawnedSoul) {
+			SpawnedSoul->SetSouls(Attributes->GetSouls());
+		}
 	}
 }
 ```
@@ -443,7 +441,7 @@ void AEnemy::SpawnSoul()
 并且，我们之前对AttributeComponent中将Gold和Souls设为EditAnywhere，此处就可以很方便的针对每个敌人进行赋值！！！
 ![输入图片说明](/imgs/2024-11-04/0uI8KRcyx88E9MhY.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjU3NzQwMDEsNDMxNzAzNjI2LC00Nj
+eyJoaXN0b3J5IjpbLTE2NzY0NTI1MTksNDMxNzAzNjI2LC00Nj
 g5MzI2NjYsMjAwNzEyNDEzOSwtODEwODM1OTI2LDE1NTkyMTcz
 NTQsLTIyMzAzOTk0OSwtMTM4NDcwMDMwMSwyMTMzNjQzMjA4LD
 E3NTExODY0MzEsLTEyODEyMjg1MTcsMTU3NDYwMTI2OCw3MTg4
