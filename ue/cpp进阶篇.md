@@ -438,8 +438,10 @@ void AEnemy::SpawnSoul()
 ```
 最后我们去Enemy蓝图中将BP_Soul添加上去
 ![输入图片说明](/imgs/2024-11-04/DPIgJWpVFCKiPmhn.png)
+并且，我们之前对AttributeComponent中将Gold和Souls设为EditAnywhere，此处就可以很方便的针对每个敌人进行赋值！！！
+![输入图片说明](/imgs/2024-11-04/0uI8KRcyx88E9MhY.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEyMjAyOTc3NCw0MzE3MDM2MjYsLTQ2OD
+eyJoaXN0b3J5IjpbMjA3MzE2NjI0NSw0MzE3MDM2MjYsLTQ2OD
 kzMjY2NiwyMDA3MTI0MTM5LC04MTA4MzU5MjYsMTU1OTIxNzM1
 NCwtMjIzMDM5OTQ5LC0xMzg0NzAwMzAxLDIxMzM2NDMyMDgsMT
 c1MTE4NjQzMSwtMTI4MTIyODUxNywxNTc0NjAxMjY4LDcxODgy
