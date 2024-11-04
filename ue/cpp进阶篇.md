@@ -408,6 +408,8 @@ void ASlashCharacter::AddGold(ATreasure* Treasure)
 UPROPERTY(EditAnywhere, Category = Combat)
 TSubclassOf<class Soul> SoulClass;
 ```
+在Enemy.cpp中做一个SpawnSoul()函数，并在Die()函数的最后调用
+```
 void AEnemy::SpawnSoul()
 {
 	UWorld* World = GetWorld();
@@ -416,12 +418,13 @@ void AEnemy::SpawnSoul()
 		World->SpawnActor<ASoul>(SoulClass, SpawnLocation, GetActorRotation());
 	}
 }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzExMTY5ODEsMTU1OTIxNzM1NCwtMj
-IzMDM5OTQ5LC0xMzg0NzAwMzAxLDIxMzM2NDMyMDgsMTc1MTE4
-NjQzMSwtMTI4MTIyODUxNywxNTc0NjAxMjY4LDcxODgyMDQ3My
-wtMTQ1ODc3NDA0OCwxODkyMTg1ODU2LC0xODAyNjE3MTU0LC0x
-Mjk0MDc5MzM4LC0zNDI1MzI3ODQsLTIwODU1NzgyNDgsNjQ4MD
-Y2MDA0LDE4OTU2OTEwNzYsMzM4OTY2MzY5LDIzOTM3NTUzNiwx
-MDA0ODk2NDQ3XX0=
+eyJoaXN0b3J5IjpbLTgxMDgzNTkyNiwxNTU5MjE3MzU0LC0yMj
+MwMzk5NDksLTEzODQ3MDAzMDEsMjEzMzY0MzIwOCwxNzUxMTg2
+NDMxLC0xMjgxMjI4NTE3LDE1NzQ2MDEyNjgsNzE4ODIwNDczLC
+0xNDU4Nzc0MDQ4LDE4OTIxODU4NTYsLTE4MDI2MTcxNTQsLTEy
+OTQwNzkzMzgsLTM0MjUzMjc4NCwtMjA4NTU3ODI0OCw2NDgwNj
+YwMDQsMTg5NTY5MTA3NiwzMzg5NjYzNjksMjM5Mzc1NTM2LDEw
+MDQ4OTY0NDddfQ==
 -->
