@@ -408,12 +408,20 @@ void ASlashCharacter::AddGold(ATreasure* Treasure)
 UPROPERTY(EditAnywhere, Category = Combat)
 TSubclassOf<class Soul> SoulClass;
 ```
+void AEnemy::SpawnSoul()
+{
+	UWorld* World = GetWorld();
+	if (World && SoulClass) {
+		const FVector SpawnLocation = GetActorLocation() + FVector(0.f, 0.f, 75.f);
+		World->SpawnActor<ASoul>(SoulClass, SpawnLocation, GetActorRotation());
+	}
+}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU1OTIxNzM1NCwtMjIzMDM5OTQ5LC0xMz
-g0NzAwMzAxLDIxMzM2NDMyMDgsMTc1MTE4NjQzMSwtMTI4MTIy
-ODUxNywxNTc0NjAxMjY4LDcxODgyMDQ3MywtMTQ1ODc3NDA0OC
-wxODkyMTg1ODU2LC0xODAyNjE3MTU0LC0xMjk0MDc5MzM4LC0z
-NDI1MzI3ODQsLTIwODU1NzgyNDgsNjQ4MDY2MDA0LDE4OTU2OT
-EwNzYsMzM4OTY2MzY5LDIzOTM3NTUzNiwxMDA0ODk2NDQ3LDk5
-MDI4MDQxM119
+eyJoaXN0b3J5IjpbLTE2MzExMTY5ODEsMTU1OTIxNzM1NCwtMj
+IzMDM5OTQ5LC0xMzg0NzAwMzAxLDIxMzM2NDMyMDgsMTc1MTE4
+NjQzMSwtMTI4MTIyODUxNywxNTc0NjAxMjY4LDcxODgyMDQ3My
+wtMTQ1ODc3NDA0OCwxODkyMTg1ODU2LC0xODAyNjE3MTU0LC0x
+Mjk0MDc5MzM4LC0zNDI1MzI3ODQsLTIwODU1NzgyNDgsNjQ4MD
+Y2MDA0LDE4OTU2OTEwNzYsMzM4OTY2MzY5LDIzOTM3NTUzNiwx
+MDA0ODk2NDQ3XX0=
 -->
