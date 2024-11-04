@@ -424,12 +424,24 @@ void AEnemy::SpawnSoul()
 ```
 FORCEINLINE void SetSouls(int32 NumberOfSouls){ Souls = NumberOfSouls; }
 ```
+回到Enemy.cpp做出完善，为生成的Souls进行赋值
+```
+void AEnemy::SpawnSoul()
+{
+	UWorld* World = GetWorld();
+	if (World && SoulClass && Attributes) {
+		const FVector SpawnLocation = GetActorLocation() + FVector(0.f, 0.f, 75.f);
+		ASoul* SpawnedSoul = World->SpawnActor<ASoul>(SoulClass, SpawnLocation, GetActorRotation());
+		SpawnedSoul->SetSouls(Attributes->GetSouls());
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NjU2MDM3OTgsLTgxMDgzNTkyNiwxNT
-U5MjE3MzU0LC0yMjMwMzk5NDksLTEzODQ3MDAzMDEsMjEzMzY0
-MzIwOCwxNzUxMTg2NDMxLC0xMjgxMjI4NTE3LDE1NzQ2MDEyNj
-gsNzE4ODIwNDczLC0xNDU4Nzc0MDQ4LDE4OTIxODU4NTYsLTE4
-MDI2MTcxNTQsLTEyOTQwNzkzMzgsLTM0MjUzMjc4NCwtMjA4NT
-U3ODI0OCw2NDgwNjYwMDQsMTg5NTY5MTA3NiwzMzg5NjYzNjks
-MjM5Mzc1NTM2XX0=
+eyJoaXN0b3J5IjpbMjAwNzEyNDEzOSwtODEwODM1OTI2LDE1NT
+kyMTczNTQsLTIyMzAzOTk0OSwtMTM4NDcwMDMwMSwyMTMzNjQz
+MjA4LDE3NTExODY0MzEsLTEyODEyMjg1MTcsMTU3NDYwMTI2OC
+w3MTg4MjA0NzMsLTE0NTg3NzQwNDgsMTg5MjE4NTg1NiwtMTgw
+MjYxNzE1NCwtMTI5NDA3OTMzOCwtMzQyNTMyNzg0LC0yMDg1NT
+c4MjQ4LDY0ODA2NjAwNCwxODk1NjkxMDc2LDMzODk2NjM2OSwy
+MzkzNzU1MzZdfQ==
 -->
