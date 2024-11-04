@@ -329,10 +329,10 @@ void ASoul::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 到AttributeComponent.h中进行变量声明，此component专门用来声明角色身上的属性
 ```
 private:
-	UPROPERTY(VisibleAnywhere, Category = "Actor Attributes")
+	UPROPERTY(EditAnywhere, Category = "Actor Attributes")
 	int32 Gold;
 
-	UPROPERTY(VisibleAnywhere, Category = "Actor Attributes")
+	UPROPERTY(EditAnywhere, Category = "Actor Attributes")
 	int32 Souls;
 public:
 	void AddSouls(int32 NumberOfSouls);
@@ -437,11 +437,11 @@ void AEnemy::SpawnSoul()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2ODkzMjY2NiwyMDA3MTI0MTM5LC04MT
-A4MzU5MjYsMTU1OTIxNzM1NCwtMjIzMDM5OTQ5LC0xMzg0NzAw
-MzAxLDIxMzM2NDMyMDgsMTc1MTE4NjQzMSwtMTI4MTIyODUxNy
-wxNTc0NjAxMjY4LDcxODgyMDQ3MywtMTQ1ODc3NDA0OCwxODky
-MTg1ODU2LC0xODAyNjE3MTU0LC0xMjk0MDc5MzM4LC0zNDI1Mz
-I3ODQsLTIwODU1NzgyNDgsNjQ4MDY2MDA0LDE4OTU2OTEwNzYs
-MzM4OTY2MzY5XX0=
+eyJoaXN0b3J5IjpbNDMxNzAzNjI2LC00Njg5MzI2NjYsMjAwNz
+EyNDEzOSwtODEwODM1OTI2LDE1NTkyMTczNTQsLTIyMzAzOTk0
+OSwtMTM4NDcwMDMwMSwyMTMzNjQzMjA4LDE3NTExODY0MzEsLT
+EyODEyMjg1MTcsMTU3NDYwMTI2OCw3MTg4MjA0NzMsLTE0NTg3
+NzQwNDgsMTg5MjE4NTg1NiwtMTgwMjYxNzE1NCwtMTI5NDA3OT
+MzOCwtMzQyNTMyNzg0LC0yMDg1NTc4MjQ4LDY0ODA2NjAwNCwx
+ODk1NjkxMDc2XX0=
 -->
