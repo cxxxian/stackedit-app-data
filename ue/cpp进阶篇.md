@@ -413,7 +413,7 @@ TSubclassOf<class ASoul> SoulClass;
 void AEnemy::SpawnSoul()
 {
 	UWorld* World = GetWorld();
-	if (World && SoulClass && Attributes) {
+	if (World && SoulClass) {
 		ASoul* SpawnedSoul = World->SpawnActor<ASoul>(SoulClass, GetActorLocation(), GetActorRotation());
 	}
 }
@@ -441,11 +441,11 @@ void AEnemy::SpawnSoul()
 并且，我们之前对AttributeComponent中将Gold和Souls设为EditAnywhere，此处就可以很方便的针对每个敌人进行赋值！！！
 ![输入图片说明](/imgs/2024-11-04/0uI8KRcyx88E9MhY.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzY0NTI1MTksNDMxNzAzNjI2LC00Nj
-g5MzI2NjYsMjAwNzEyNDEzOSwtODEwODM1OTI2LDE1NTkyMTcz
-NTQsLTIyMzAzOTk0OSwtMTM4NDcwMDMwMSwyMTMzNjQzMjA4LD
-E3NTExODY0MzEsLTEyODEyMjg1MTcsMTU3NDYwMTI2OCw3MTg4
-MjA0NzMsLTE0NTg3NzQwNDgsMTg5MjE4NTg1NiwtMTgwMjYxNz
-E1NCwtMTI5NDA3OTMzOCwtMzQyNTMyNzg0LC0yMDg1NTc4MjQ4
-LDY0ODA2NjAwNF19
+eyJoaXN0b3J5IjpbLTcyNzQyMzE4NCw0MzE3MDM2MjYsLTQ2OD
+kzMjY2NiwyMDA3MTI0MTM5LC04MTA4MzU5MjYsMTU1OTIxNzM1
+NCwtMjIzMDM5OTQ5LC0xMzg0NzAwMzAxLDIxMzM2NDMyMDgsMT
+c1MTE4NjQzMSwtMTI4MTIyODUxNywxNTc0NjAxMjY4LDcxODgy
+MDQ3MywtMTQ1ODc3NDA0OCwxODkyMTg1ODU2LC0xODAyNjE3MT
+U0LC0xMjk0MDc5MzM4LC0zNDI1MzI3ODQsLTIwODU1NzgyNDgs
+NjQ4MDY2MDA0XX0=
 -->
