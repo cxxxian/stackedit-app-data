@@ -440,13 +440,15 @@ void AEnemy::SpawnSoul()
 ![输入图片说明](/imgs/2024-11-04/DPIgJWpVFCKiPmhn.png)
 并且，我们之前对AttributeComponent中将Gold和Souls设为EditAnywhere，此处就可以很方便的针对每个敌人进行赋值！！！
 ![输入图片说明](/imgs/2024-11-04/0uI8KRcyx88E9MhY.png)
-##
+## 发现bug
+在Soul生成的一瞬间我们已经在灵魂球的重叠框中，此时会被捡拾起来但是不会累加值，我们只需要将灵魂球的重叠框做的小一点就好了！
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTMwOTU5MzU4LC03Mjc0MjMxODQsNDMxNz
-AzNjI2LC00Njg5MzI2NjYsMjAwNzEyNDEzOSwtODEwODM1OTI2
-LDE1NTkyMTczNTQsLTIyMzAzOTk0OSwtMTM4NDcwMDMwMSwyMT
-MzNjQzMjA4LDE3NTExODY0MzEsLTEyODEyMjg1MTcsMTU3NDYw
-MTI2OCw3MTg4MjA0NzMsLTE0NTg3NzQwNDgsMTg5MjE4NTg1Ni
-wtMTgwMjYxNzE1NCwtMTI5NDA3OTMzOCwtMzQyNTMyNzg0LC0y
-MDg1NTc4MjQ4XX0=
+eyJoaXN0b3J5IjpbLTc0MDY2NjM4OCwtNzI3NDIzMTg0LDQzMT
+cwMzYyNiwtNDY4OTMyNjY2LDIwMDcxMjQxMzksLTgxMDgzNTky
+NiwxNTU5MjE3MzU0LC0yMjMwMzk5NDksLTEzODQ3MDAzMDEsMj
+EzMzY0MzIwOCwxNzUxMTg2NDMxLC0xMjgxMjI4NTE3LDE1NzQ2
+MDEyNjgsNzE4ODIwNDczLC0xNDU4Nzc0MDQ4LDE4OTIxODU4NT
+YsLTE4MDI2MTcxNTQsLTEyOTQwNzkzMzgsLTM0MjUzMjc4NCwt
+MjA4NTU3ODI0OF19
 -->
