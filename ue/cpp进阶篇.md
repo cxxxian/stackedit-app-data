@@ -291,10 +291,11 @@ void ASoul::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 	if (PickupInterface)
 	{
 		PickupInterface->AddSouls(this);
+		SpawnPickupSystem();
+
+		Destroy();
 	}
-	SpawnPickupSystem();
 	
-	Destroy();
 }
 ```
 最后去蓝图中选择此Effect
@@ -403,11 +404,11 @@ void ASlashCharacter::AddGold(ATreasure* Treasure)
 最后，可以去蓝图中点击灵魂球直接给它设置Souls的价值！！！
 ![输入图片说明](/imgs/2024-11-02/mMUvdP6YnGsVP9rM.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODQ3MDAzMDEsMjEzMzY0MzIwOCwxNz
-UxMTg2NDMxLC0xMjgxMjI4NTE3LDE1NzQ2MDEyNjgsNzE4ODIw
-NDczLC0xNDU4Nzc0MDQ4LDE4OTIxODU4NTYsLTE4MDI2MTcxNT
-QsLTEyOTQwNzkzMzgsLTM0MjUzMjc4NCwtMjA4NTU3ODI0OCw2
-NDgwNjYwMDQsMTg5NTY5MTA3NiwzMzg5NjYzNjksMjM5Mzc1NT
-M2LDEwMDQ4OTY0NDcsOTkwMjgwNDEzLC0xNzM4NjEyNTg4LDEz
-NDMzOTM2NDFdfQ==
+eyJoaXN0b3J5IjpbODIyNDk3ODYxLC0xMzg0NzAwMzAxLDIxMz
+M2NDMyMDgsMTc1MTE4NjQzMSwtMTI4MTIyODUxNywxNTc0NjAx
+MjY4LDcxODgyMDQ3MywtMTQ1ODc3NDA0OCwxODkyMTg1ODU2LC
+0xODAyNjE3MTU0LC0xMjk0MDc5MzM4LC0zNDI1MzI3ODQsLTIw
+ODU1NzgyNDgsNjQ4MDY2MDA0LDE4OTU2OTEwNzYsMzM4OTY2Mz
+Y5LDIzOTM3NTUzNiwxMDA0ODk2NDQ3LDk5MDI4MDQxMywtMTcz
+ODYxMjU4OF19
 -->
