@@ -406,7 +406,7 @@ void ASlashCharacter::AddGold(ATreasure* Treasure)
 去Enemy.h中声明SoulClass，提供更灵活的设计，不同的敌人可以去各自的蓝图中设置Soul的数值
 ```
 UPROPERTY(EditAnywhere, Category = Combat)
-TSubclassOf<class Soul> SoulClass;
+TSubclassOf<class ASoul> SoulClass;
 ```
 在Enemy.cpp中做一个SpawnSoul()函数，并在Die()函数的最后调用
 ```
@@ -437,11 +437,11 @@ void AEnemy::SpawnSoul()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwNzEyNDEzOSwtODEwODM1OTI2LDE1NT
-kyMTczNTQsLTIyMzAzOTk0OSwtMTM4NDcwMDMwMSwyMTMzNjQz
-MjA4LDE3NTExODY0MzEsLTEyODEyMjg1MTcsMTU3NDYwMTI2OC
-w3MTg4MjA0NzMsLTE0NTg3NzQwNDgsMTg5MjE4NTg1NiwtMTgw
-MjYxNzE1NCwtMTI5NDA3OTMzOCwtMzQyNTMyNzg0LC0yMDg1NT
-c4MjQ4LDY0ODA2NjAwNCwxODk1NjkxMDc2LDMzODk2NjM2OSwy
-MzkzNzU1MzZdfQ==
+eyJoaXN0b3J5IjpbLTQ2ODkzMjY2NiwyMDA3MTI0MTM5LC04MT
+A4MzU5MjYsMTU1OTIxNzM1NCwtMjIzMDM5OTQ5LC0xMzg0NzAw
+MzAxLDIxMzM2NDMyMDgsMTc1MTE4NjQzMSwtMTI4MTIyODUxNy
+wxNTc0NjAxMjY4LDcxODgyMDQ3MywtMTQ1ODc3NDA0OCwxODky
+MTg1ODU2LC0xODAyNjE3MTU0LC0xMjk0MDc5MzM4LC0zNDI1Mz
+I3ODQsLTIwODU1NzgyNDgsNjQ4MDY2MDA0LDE4OTU2OTEwNzYs
+MzM4OTY2MzY5XX0=
 -->
