@@ -415,16 +415,17 @@ void AEnemy::SpawnSoul()
 	UWorld* World = GetWorld();
 	if (World && SoulClass) {
 		const FVector SpawnLocation = GetActorLocation() + FVector(0.f, 0.f, 75.f);
-		World->SpawnActor<ASoul>(SoulClass, SpawnLocation, GetActorRotation());
+		ASoul* SpawnedSoul = World->SpawnActor<ASoul>(SoulClass, SpawnLocation, GetActorRotation());
 	}
 }
 ```
+co
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgxMDgzNTkyNiwxNTU5MjE3MzU0LC0yMj
-MwMzk5NDksLTEzODQ3MDAzMDEsMjEzMzY0MzIwOCwxNzUxMTg2
-NDMxLC0xMjgxMjI4NTE3LDE1NzQ2MDEyNjgsNzE4ODIwNDczLC
-0xNDU4Nzc0MDQ4LDE4OTIxODU4NTYsLTE4MDI2MTcxNTQsLTEy
-OTQwNzkzMzgsLTM0MjUzMjc4NCwtMjA4NTU3ODI0OCw2NDgwNj
-YwMDQsMTg5NTY5MTA3NiwzMzg5NjYzNjksMjM5Mzc1NTM2LDEw
-MDQ4OTY0NDddfQ==
+eyJoaXN0b3J5IjpbMTY3OTcwNzM4MCwtODEwODM1OTI2LDE1NT
+kyMTczNTQsLTIyMzAzOTk0OSwtMTM4NDcwMDMwMSwyMTMzNjQz
+MjA4LDE3NTExODY0MzEsLTEyODEyMjg1MTcsMTU3NDYwMTI2OC
+w3MTg4MjA0NzMsLTE0NTg3NzQwNDgsMTg5MjE4NTg1NiwtMTgw
+MjYxNzE1NCwtMTI5NDA3OTMzOCwtMzQyNTMyNzg0LC0yMDg1NT
+c4MjQ4LDY0ODA2NjAwNCwxODk1NjkxMDc2LDMzODk2NjM2OSwy
+MzkzNzU1MzZdfQ==
 -->
