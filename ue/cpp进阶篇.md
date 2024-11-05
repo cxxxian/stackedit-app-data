@@ -442,14 +442,24 @@ void AEnemy::SpawnSoul()
 ![输入图片说明](/imgs/2024-11-04/0uI8KRcyx88E9MhY.png)
 ## 发现bug
 在Soul生成的一瞬间我们已经在灵魂球的重叠框中，此时会被捡拾起来但是不会累加值，我们只需要将灵魂球的重叠框做的小一点就好了！
-
+# Dodge
+新建操作映射
+![输入图片说明](/imgs/2024-11-05/kwSduZ5ZbU2sLPGq.png)
+在SlashCharacter.h中声明函数
+```
+void Dodge();
+```
+并在
+```
+void ASlashCharacter::Dodge(){}
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNzcyMDkzMTgsLTc0MDY2NjM4OCwtNz
-I3NDIzMTg0LDQzMTcwMzYyNiwtNDY4OTMyNjY2LDIwMDcxMjQx
-MzksLTgxMDgzNTkyNiwxNTU5MjE3MzU0LC0yMjMwMzk5NDksLT
-EzODQ3MDAzMDEsMjEzMzY0MzIwOCwxNzUxMTg2NDMxLC0xMjgx
-MjI4NTE3LDE1NzQ2MDEyNjgsNzE4ODIwNDczLC0xNDU4Nzc0MD
-Q4LDE4OTIxODU4NTYsLTE4MDI2MTcxNTQsLTEyOTQwNzkzMzgs
-LTM0MjUzMjc4NF19
+eyJoaXN0b3J5IjpbMjQ5Mzk2NDE4LC03NDA2NjYzODgsLTcyNz
+QyMzE4NCw0MzE3MDM2MjYsLTQ2ODkzMjY2NiwyMDA3MTI0MTM5
+LC04MTA4MzU5MjYsMTU1OTIxNzM1NCwtMjIzMDM5OTQ5LC0xMz
+g0NzAwMzAxLDIxMzM2NDMyMDgsMTc1MTE4NjQzMSwtMTI4MTIy
+ODUxNywxNTc0NjAxMjY4LDcxODgyMDQ3MywtMTQ1ODc3NDA0OC
+wxODkyMTg1ODU2LC0xODAyNjE3MTU0LC0xMjk0MDc5MzM4LC0z
+NDI1MzI3ODRdfQ==
 -->
