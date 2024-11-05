@@ -474,8 +474,15 @@ void ABaseCharacter::PlayDodgeMontage()
 	PlayMontageSection(DodgeMontage, FName("Default"));
 }
 ```
+最后我们回到SlashCharacter.h中，调用父类方法即可。
+```
+void ASlashCharacter::Dodge()
+{
+	PlayDodgeMontage();
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDA4ODY1ODQsLTc0MDY2NjM4OCwtNz
+eyJoaXN0b3J5IjpbLTE5MDgxNjQxNDMsLTc0MDY2NjM4OCwtNz
 I3NDIzMTg0LDQzMTcwMzYyNiwtNDY4OTMyNjY2LDIwMDcxMjQx
 MzksLTgxMDgzNTkyNiwxNTU5MjE3MzU0LC0yMjMwMzk5NDksLT
 EzODQ3MDAzMDEsMjEzMzY0MzIwOCwxNzUxMTg2NDMxLC0xMjgx
