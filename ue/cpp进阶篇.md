@@ -482,7 +482,7 @@ void ASlashCharacter::Dodge()
 }
 ```
 ### Dodge状态修复
-
+因为我们希望在Dodge的过程中不会被打断
 在CharacterTypes.h枚举类中添加一个Dodge状态
 ```
 EAS_Dodge UMETA(DisplayName = "Dodge")
@@ -510,11 +510,11 @@ void ASlashCharacter::DodgeEnd()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTU3NDg3ODYsLTE5MDgxNjQxNDMsLTc0MD
-Y2NjM4OCwtNzI3NDIzMTg0LDQzMTcwMzYyNiwtNDY4OTMyNjY2
-LDIwMDcxMjQxMzksLTgxMDgzNTkyNiwxNTU5MjE3MzU0LC0yMj
-MwMzk5NDksLTEzODQ3MDAzMDEsMjEzMzY0MzIwOCwxNzUxMTg2
-NDMxLC0xMjgxMjI4NTE3LDE1NzQ2MDEyNjgsNzE4ODIwNDczLC
-0xNDU4Nzc0MDQ4LDE4OTIxODU4NTYsLTE4MDI2MTcxNTQsLTEy
-OTQwNzkzMzhdfQ==
+eyJoaXN0b3J5IjpbLTEwNzk3MzI3MjgsLTE5MDgxNjQxNDMsLT
+c0MDY2NjM4OCwtNzI3NDIzMTg0LDQzMTcwMzYyNiwtNDY4OTMy
+NjY2LDIwMDcxMjQxMzksLTgxMDgzNTkyNiwxNTU5MjE3MzU0LC
+0yMjMwMzk5NDksLTEzODQ3MDAzMDEsMjEzMzY0MzIwOCwxNzUx
+MTg2NDMxLC0xMjgxMjI4NTE3LDE1NzQ2MDEyNjgsNzE4ODIwND
+czLC0xNDU4Nzc0MDQ4LDE4OTIxODU4NTYsLTE4MDI2MTcxNTQs
+LTEyOTQwNzkzMzhdfQ==
 -->
