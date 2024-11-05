@@ -461,9 +461,14 @@ void ASlashCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	PlayerInputComponent->BindAction(FName("Dodge"), IE_Pressed, this, &ASlashCharacter::Dodge);
 }
 ```
+我们去到BaseCharacter.h中声明Dodge蒙太奇，以防以后我们敌人也想制作dodge效果，ci'c
+```
 virtual void PlayDodgeMontage();
+UPROPERTY(EditDefaultsOnly, Category = Combat)
+UAnimMontage* DodgeMontage;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk3NzQyODE0OSwtNzQwNjY2Mzg4LC03Mj
+eyJoaXN0b3J5IjpbMTgxNDUyNDA5OSwtNzQwNjY2Mzg4LC03Mj
 c0MjMxODQsNDMxNzAzNjI2LC00Njg5MzI2NjYsMjAwNzEyNDEz
 OSwtODEwODM1OTI2LDE1NTkyMTczNTQsLTIyMzAzOTk0OSwtMT
 M4NDcwMDMwMSwyMTMzNjQzMjA4LDE3NTExODY0MzEsLTEyODEy
