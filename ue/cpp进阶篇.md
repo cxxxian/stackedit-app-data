@@ -495,8 +495,13 @@ void ASlashCharacter::Dodge()
 	ActionState = EActionState::EAS_Dodge;
 }
 ```
+我们去BaseCharacter.h中做这个事
+```
+UFUNCTION(BlueprintCallable)
+virtual void DodgeEnd();
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODEyMTAyODI4LC0xOTA4MTY0MTQzLC03ND
+eyJoaXN0b3J5IjpbOTk4MzU0MzYzLC0xOTA4MTY0MTQzLC03ND
 A2NjYzODgsLTcyNzQyMzE4NCw0MzE3MDM2MjYsLTQ2ODkzMjY2
 NiwyMDA3MTI0MTM5LC04MTA4MzU5MjYsMTU1OTIxNzM1NCwtMj
 IzMDM5OTQ5LC0xMzg0NzAwMzAxLDIxMzM2NDMyMDgsMTc1MTE4
