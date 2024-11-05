@@ -482,6 +482,7 @@ void ASlashCharacter::Dodge()
 }
 ```
 ### Dodge状态修复
+
 在CharacterTypes.h枚举类中添加一个Dodge状态
 ```
 EAS_Dodge UMETA(DisplayName = "Dodge")
@@ -500,13 +501,20 @@ void ASlashCharacter::Dodge()
 UFUNCTION(BlueprintCallable)
 virtual void DodgeEnd();
 ```
-并在cpp中实现，但是我们什么都不补充，而是去SlashCharacter.h中进行override
+并在cpp中实现，但是我们什么都不补充，而是去SlashCharacter.h中进行override并实现
+```
+void ASlashCharacter::DodgeEnd()
+{
+	Super::DodgeEnd();
+	ActionState = EActionState::EAS_Unoccupied;
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjU1ODc1NzMsLTE5MDgxNjQxNDMsLT
-c0MDY2NjM4OCwtNzI3NDIzMTg0LDQzMTcwMzYyNiwtNDY4OTMy
-NjY2LDIwMDcxMjQxMzksLTgxMDgzNTkyNiwxNTU5MjE3MzU0LC
-0yMjMwMzk5NDksLTEzODQ3MDAzMDEsMjEzMzY0MzIwOCwxNzUx
-MTg2NDMxLC0xMjgxMjI4NTE3LDE1NzQ2MDEyNjgsNzE4ODIwND
-czLC0xNDU4Nzc0MDQ4LDE4OTIxODU4NTYsLTE4MDI2MTcxNTQs
-LTEyOTQwNzkzMzhdfQ==
+eyJoaXN0b3J5IjpbOTU3NDg3ODYsLTE5MDgxNjQxNDMsLTc0MD
+Y2NjM4OCwtNzI3NDIzMTg0LDQzMTcwMzYyNiwtNDY4OTMyNjY2
+LDIwMDcxMjQxMzksLTgxMDgzNTkyNiwxNTU5MjE3MzU0LC0yMj
+MwMzk5NDksLTEzODQ3MDAzMDEsMjEzMzY0MzIwOCwxNzUxMTg2
+NDMxLC0xMjgxMjI4NTE3LDE1NzQ2MDEyNjgsNzE4ODIwNDczLC
+0xNDU4Nzc0MDQ4LDE4OTIxODU4NTYsLTE4MDI2MTcxNTQsLTEy
+OTQwNzkzMzhdfQ==
 -->
