@@ -461,18 +461,25 @@ void ASlashCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	PlayerInputComponent->BindAction(FName("Dodge"), IE_Pressed, this, &ASlashCharacter::Dodge);
 }
 ```
-我们去到BaseCharacter.h中声明Dodge蒙太奇，以防以后我们敌人也想制作dodge效果，ci'c
+我们去到BaseCharacter.h中声明Dodge蒙太奇，以防以后我们敌人也想制作dodge效果，此处dodge只有一个动画不需要随机，声明为void即可
 ```
 virtual void PlayDodgeMontage();
 UPROPERTY(EditDefaultsOnly, Category = Combat)
 UAnimMontage* DodgeMontage;
 ```
+到BaseCharacter.cpp中完善方法
+```
+void ABaseCharacter::PlayDodgeMontage()
+{
+	PlayMontageSection(DodgeMontage, FName("Default"));
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxNDUyNDA5OSwtNzQwNjY2Mzg4LC03Mj
-c0MjMxODQsNDMxNzAzNjI2LC00Njg5MzI2NjYsMjAwNzEyNDEz
-OSwtODEwODM1OTI2LDE1NTkyMTczNTQsLTIyMzAzOTk0OSwtMT
-M4NDcwMDMwMSwyMTMzNjQzMjA4LDE3NTExODY0MzEsLTEyODEy
-Mjg1MTcsMTU3NDYwMTI2OCw3MTg4MjA0NzMsLTE0NTg3NzQwND
-gsMTg5MjE4NTg1NiwtMTgwMjYxNzE1NCwtMTI5NDA3OTMzOCwt
-MzQyNTMyNzg0XX0=
+eyJoaXN0b3J5IjpbLTExMDA4ODY1ODQsLTc0MDY2NjM4OCwtNz
+I3NDIzMTg0LDQzMTcwMzYyNiwtNDY4OTMyNjY2LDIwMDcxMjQx
+MzksLTgxMDgzNTkyNiwxNTU5MjE3MzU0LC0yMjMwMzk5NDksLT
+EzODQ3MDAzMDEsMjEzMzY0MzIwOCwxNzUxMTg2NDMxLC0xMjgx
+MjI4NTE3LDE1NzQ2MDEyNjgsNzE4ODIwNDczLC0xNDU4Nzc0MD
+Q4LDE4OTIxODU4NTYsLTE4MDI2MTcxNTQsLTEyOTQwNzkzMzgs
+LTM0MjUzMjc4NF19
 -->
