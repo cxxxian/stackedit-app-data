@@ -486,12 +486,21 @@ void ASlashCharacter::Dodge()
 ```
 EAS_Dodge UMETA(DisplayName = "Dodge")
 ```
+在Dodge开始的时候将状态设为Dodge，那就意味着我们也需要一个从Dodge设置回Unoccupied的函数
+```
+void ASlashCharacter::Dodge()
+{
+	if (ActionState != EActionState::EAS_Unoccupied)return;
+	PlayDodgeMontage();
+	ActionState = EActionState::EAS_Dodge;
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMzY0NTQ3NzEsLTE5MDgxNjQxNDMsLT
-c0MDY2NjM4OCwtNzI3NDIzMTg0LDQzMTcwMzYyNiwtNDY4OTMy
-NjY2LDIwMDcxMjQxMzksLTgxMDgzNTkyNiwxNTU5MjE3MzU0LC
-0yMjMwMzk5NDksLTEzODQ3MDAzMDEsMjEzMzY0MzIwOCwxNzUx
-MTg2NDMxLC0xMjgxMjI4NTE3LDE1NzQ2MDEyNjgsNzE4ODIwND
-czLC0xNDU4Nzc0MDQ4LDE4OTIxODU4NTYsLTE4MDI2MTcxNTQs
-LTEyOTQwNzkzMzhdfQ==
+eyJoaXN0b3J5IjpbODEyMTAyODI4LC0xOTA4MTY0MTQzLC03ND
+A2NjYzODgsLTcyNzQyMzE4NCw0MzE3MDM2MjYsLTQ2ODkzMjY2
+NiwyMDA3MTI0MTM5LC04MTA4MzU5MjYsMTU1OTIxNzM1NCwtMj
+IzMDM5OTQ5LC0xMzg0NzAwMzAxLDIxMzM2NDMyMDgsMTc1MTE4
+NjQzMSwtMTI4MTIyODUxNywxNTc0NjAxMjY4LDcxODgyMDQ3My
+wtMTQ1ODc3NDA0OCwxODkyMTg1ODU2LC0xODAyNjE3MTU0LC0x
+Mjk0MDc5MzM4XX0=
 -->
