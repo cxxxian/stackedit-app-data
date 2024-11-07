@@ -17,6 +17,7 @@ vec3 Le = GetGBufferuShadow(uv) * uLightRadiance;
 return Le;
 }
 ```
+根据渲染方程解出直接光照信息
 ```
 void main() {
 float s = InitRand(gl_FragCoord.xy);
@@ -33,5 +34,5 @@ gl_FragColor = vec4(vec3(color.rgb), 1.0);
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMjMyMjc1NzddfQ==
+eyJoaXN0b3J5IjpbNzY1MzcxNzA1XX0=
 -->
