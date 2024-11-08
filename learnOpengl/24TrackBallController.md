@@ -105,8 +105,10 @@ void TrackBallCameraControl::yaw(float angle)
 ```
 # 鼠标中键平移
 ![输入图片说明](/imgs/2024-11-08/3XZfScHP5iM7MGwR.png)
+private:
+	float mMoveSpeed = 0.005f;
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzMzc1MzkwMywxMjc4Njc1MTYwLC0xOT
-UwNjIwMzIzLDEzMzc4NDkwNjcsOTEwMzcwNjkzLDE0ODQxMTUx
-MDcsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbOTgzNTgzMjQwLC04MzM3NTM5MDMsMTI3OD
+Y3NTE2MCwtMTk1MDYyMDMyMywxMzM3ODQ5MDY3LDkxMDM3MDY5
+MywxNDg0MTE1MTA3LC0yMDg4NzQ2NjEyXX0=
 -->
