@@ -90,7 +90,20 @@ void render(){
 }
 ```
 最后运行，我们就可以移动三角形的`pitch`角，因为目前我们只做了`pitch`角函数并且在`onCursor`函数调用
+`yaw`角方向实现如下：
+与`pitch`角方向多更新`mRight`向量，因为移动`pitch`角度不会影响到`mRight`，而`yaw`会
+```
+void TrackBallCameraControl::yaw(float angle)
+{
+	//绕着世界坐标系的y轴旋转
+	auto mat = glm::rotate(glm::mat4(1.0f), glm::radians(angle), glm::vec3(0.0f, 1.0f, 0.0f));
+	mCamera->mUp = mat * glm::vec4(mCamera->mUp, 0.0f);//vec4给到vec3，给了xyz
+	mCamera->mRight = mat * glm::vec4(mCamera->mRight, 0.0f);//vec4给到vec3，给了xyz
+	mCamera->mPosition = mat * glm::vec4(mCamera->mPosition, 1.0f);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NTA2MjAzMjMsMTMzNzg0OTA2Nyw5MT
-AzNzA2OTMsMTQ4NDExNTEwNywtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbMTI3ODY3NTE2MCwtMTk1MDYyMDMyMywxMz
+M3ODQ5MDY3LDkxMDM3MDY5MywxNDg0MTE1MTA3LC0yMDg4NzQ2
+NjEyXX0=
 -->
