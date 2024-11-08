@@ -57,7 +57,17 @@ void TrackBallCameraControl::pitch(float angle)
 }
 
 ```
+此时理一遍main中关于camera和cameraControl的使用
+引入头文件以及声明camera和cameraControl
+```
+//引入相机+控制器
+#include "application/camera/perspectiveCamera.h"
+#include "application/camera/trackBallCameraControl.h"
+
+PerspectiveCamera* camera = nullptr;
+TrackBallCameraControl* cameraControl = nullptr;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTYwMzQxMzM4LDkxMDM3MDY5MywxNDg0MT
+eyJoaXN0b3J5IjpbLTE4NzM4MDcyLDkxMDM3MDY5MywxNDg0MT
 E1MTA3LC0yMDg4NzQ2NjEyXX0=
 -->
