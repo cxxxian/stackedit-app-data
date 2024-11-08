@@ -89,8 +89,8 @@ void render(){
 	...
 }
 ```
-最后运行，w'm
+最后运行，我们就可以移动三角形的pitch角，因为目前我们只做了pitch角
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg4Mjg3OTUyMiwxMzM3ODQ5MDY3LDkxMD
+eyJoaXN0b3J5IjpbLTc0OTA4ODY3NSwxMzM3ODQ5MDY3LDkxMD
 M3MDY5MywxNDg0MTE1MTA3LC0yMDg4NzQ2NjEyXX0=
 -->
