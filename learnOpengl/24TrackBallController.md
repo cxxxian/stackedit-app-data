@@ -104,9 +104,9 @@ void TrackBallCameraControl::yaw(float angle)
 }
 ```
 # 鼠标中键平移
-
+![输入图片说明](/imgs/2024-11-08/3XZfScHP5iM7MGwR.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjg1MzY0MTAsMTI3ODY3NTE2MCwtMT
-k1MDYyMDMyMywxMzM3ODQ5MDY3LDkxMDM3MDY5MywxNDg0MTE1
-MTA3LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTgzMzc1MzkwMywxMjc4Njc1MTYwLC0xOT
+UwNjIwMzIzLDEzMzc4NDkwNjcsOTEwMzcwNjkzLDE0ODQxMTUx
+MDcsLTIwODg3NDY2MTJdfQ==
 -->
