@@ -76,7 +76,20 @@ void prepareCamera() {
     cameraControl->setCamera(camera);
 }
 ```
+然后我们在`render`中，利用`camera`的`getViewMatrix()`和`getProjectionMatrix()`进行`shader`绑定
+```
+void render(){
+	...
+    shader->begin();
+
+    shader->setInt("sampler", 0);//此处值为0是因为我们的纹理绑定在0号位上
+    shader->setMatrix4x4("transform", transform);
+    shader->setMatrix4x4("viewMatrix", camera->getViewMatrix());
+    shader->setMatrix4x4("projectionMatrix", camera->getProjectionMatrix());
+	...
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYxMjQ4MTA1Niw5MTAzNzA2OTMsMTQ4ND
+eyJoaXN0b3J5IjpbMTMzNzg0OTA2Nyw5MTAzNzA2OTMsMTQ4ND
 ExNTEwNywtMjA4ODc0NjYxMl19
 -->
