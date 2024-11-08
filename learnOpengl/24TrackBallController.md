@@ -103,8 +103,10 @@ void TrackBallCameraControl::yaw(float angle)
 	mCamera->mPosition = mat * glm::vec4(mCamera->mPosition, 1.0f);
 }
 ```
+# 鼠标中键平移
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTA0MDkxNjEsMTI3ODY3NTE2MCwtMT
+eyJoaXN0b3J5IjpbLTEyMjg1MzY0MTAsMTI3ODY3NTE2MCwtMT
 k1MDYyMDMyMywxMzM3ODQ5MDY3LDkxMDM3MDY5MywxNDg0MTE1
 MTA3LC0yMDg4NzQ2NjEyXX0=
 -->
