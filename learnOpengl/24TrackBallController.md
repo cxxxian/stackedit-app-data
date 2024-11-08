@@ -89,8 +89,8 @@ void render(){
 	...
 }
 ```
-最后运行，我们就可以移动三角形的pitch角，因为目前我们只做了pitch角
+最后运行，我们就可以移动三角形的`pitch`角，因为目前我们只做了`pitch`角函数并且在`onCursor`函数调用
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc0OTA4ODY3NSwxMzM3ODQ5MDY3LDkxMD
-M3MDY5MywxNDg0MTE1MTA3LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTE5NTA2MjAzMjMsMTMzNzg0OTA2Nyw5MT
+AzNzA2OTMsMTQ4NDExNTEwNywtMjA4ODc0NjYxMl19
 -->
