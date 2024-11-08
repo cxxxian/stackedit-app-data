@@ -57,8 +57,8 @@ void TrackBallCameraControl::pitch(float angle)
 }
 
 ```
-此时理一遍main中关于camera和cameraControl的使用
-引入头文件以及声明camera和cameraControl
+此时理一遍`main`中关于`camera`和`cameraControl`的使用
+引入头文件以及声明`camera`和`cameraControl`
 ```
 //引入相机+控制器
 #include "application/camera/perspectiveCamera.h"
@@ -67,7 +67,16 @@ void TrackBallCameraControl::pitch(float angle)
 PerspectiveCamera* camera = nullptr;
 TrackBallCameraControl* cameraControl = nullptr;
 ```
+使用PerspectiveCamera的构造矩阵声明一个camera，使用TrackBallCameraControl声明一个cameraControl，并且将刚刚的camera利用方法setCamera(camera)传入
+```
+void prepareCamera() {
+    camera = new PerspectiveCamera(60.f, (float)app->getWidth() / (float)app->getHeight(), 0.1f, 1000.0f);
+
+    cameraControl = new TrackBallCameraControl();
+    cameraControl->setCamera(camera);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzM4MDcyLDkxMDM3MDY5MywxNDg0MT
-E1MTA3LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTMxOTA1NzkyOCw5MTAzNzA2OTMsMTQ4ND
+ExNTEwNywtMjA4ODc0NjYxMl19
 -->
