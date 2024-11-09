@@ -226,7 +226,7 @@ void OnScroll(double offset) {
     cameraControl->onScroll(offset);
 }
 ```
-zuiho
+最后最后，将`OnScroll`传入我们先前准备好的`setScrollCallback`
 ```
 int main() {
 	...
@@ -238,9 +238,9 @@ int main() {
     ...
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTYwMDEwMDAsMTczNTUyODAzLDgyMDc4OD
-Q0OSwzNDQzMDk2MDgsLTE1MzMwOTY1MDMsLTE1Mjc1OTA1Nywt
-ODMzNzUzOTAzLDEyNzg2NzUxNjAsLTE5NTA2MjAzMjMsMTMzNz
-g0OTA2Nyw5MTAzNzA2OTMsMTQ4NDExNTEwNywtMjA4ODc0NjYx
-Ml19
+eyJoaXN0b3J5IjpbMTEyNzA2MTAzMiwxNzM1NTI4MDMsODIwNz
+g4NDQ5LDM0NDMwOTYwOCwtMTUzMzA5NjUwMywtMTUyNzU5MDU3
+LC04MzM3NTM5MDMsMTI3ODY3NTE2MCwtMTk1MDYyMDMyMywxMz
+M3ODQ5MDY3LDkxMDM3MDY5MywxNDg0MTE1MTA3LC0yMDg4NzQ2
+NjEyXX0=
 -->
