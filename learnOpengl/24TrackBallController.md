@@ -192,20 +192,22 @@ void TrackBallCameraControl::onScroll(float offset)
 ```
 static void scrollCallBack(GLFWwindow* window, double xoffset, double yoffset);
 ```
-
+声明一个函数指针，
 ```
 using ScrollCallback = void(*)(double offset);
 ```
+利用函数指针声明一个变量
 ```
 ScrollCallback mScrollCallback{ nullptr };
 ```
+声明一个`setScrollCallback`
 ```
 void setScrollCallback(ScrollCallback callback) { mScrollCallback = callback; }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODk1MTA1NzY1LDE3MzU1MjgwMyw4MjA3OD
-g0NDksMzQ0MzA5NjA4LC0xNTMzMDk2NTAzLC0xNTI3NTkwNTcs
-LTgzMzc1MzkwMywxMjc4Njc1MTYwLC0xOTUwNjIwMzIzLDEzMz
-c4NDkwNjcsOTEwMzcwNjkzLDE0ODQxMTUxMDcsLTIwODg3NDY2
-MTJdfQ==
+eyJoaXN0b3J5IjpbMTA5ODc5NjEsMTczNTUyODAzLDgyMDc4OD
+Q0OSwzNDQzMDk2MDgsLTE1MzMwOTY1MDMsLTE1Mjc1OTA1Nywt
+ODMzNzUzOTAzLDEyNzg2NzUxNjAsLTE5NTA2MjAzMjMsMTMzNz
+g0OTA2Nyw5MTAzNzA2OTMsMTQ4NDExNTEwNywtMjA4ODc0NjYx
+Ml19
 -->
