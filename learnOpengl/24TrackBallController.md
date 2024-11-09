@@ -215,8 +215,13 @@ void Application::scrollCallBack(GLFWwindow* window, double xoffset, double yoff
 	}
 }
 ```
+到`application.cpp`的`init`方法中绑定
+```
+//鼠标滚轮消息
+glfwSetScrollCallback(window, scrollCallBack);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1OTk4OTk0NiwxNzM1NTI4MDMsODIwNz
+eyJoaXN0b3J5IjpbMTIwMDI4NDA0NywxNzM1NTI4MDMsODIwNz
 g4NDQ5LDM0NDMwOTYwOCwtMTUzMzA5NjUwMywtMTUyNzU5MDU3
 LC04MzM3NTM5MDMsMTI3ODY3NTE2MCwtMTk1MDYyMDMyMywxMz
 M3ODQ5MDY3LDkxMDM3MDY5MywxNDg0MTE1MTA3LC0yMDg4NzQ2
