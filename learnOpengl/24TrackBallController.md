@@ -130,9 +130,11 @@ else if (mMiddleMouseDown) {
 ![输入图片说明](/imgs/2024-11-09/MMAbgxNtnAGgDQyo.png)
 ![输入图片说明](/imgs/2024-11-09/X2LpSiNNKrsLBdeg.png)
 ![输入图片说明](/imgs/2024-11-09/qeOYHJRsZzUGvtQv.png)
+``
+virtual void scale(float deltaScale);
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzMxNzAxOTIsMzQ0MzA5NjA4LC0xNTMzMD
-k2NTAzLC0xNTI3NTkwNTcsLTgzMzc1MzkwMywxMjc4Njc1MTYw
-LC0xOTUwNjIwMzIzLDEzMzc4NDkwNjcsOTEwMzcwNjkzLDE0OD
-QxMTUxMDcsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbMTQwODg2MzMwNywzNDQzMDk2MDgsLTE1Mz
+MwOTY1MDMsLTE1Mjc1OTA1NywtODMzNzUzOTAzLDEyNzg2NzUx
+NjAsLTE5NTA2MjAzMjMsMTMzNzg0OTA2Nyw5MTAzNzA2OTMsMT
+Q4NDExNTEwNywtMjA4ODc0NjYxMl19
 -->
