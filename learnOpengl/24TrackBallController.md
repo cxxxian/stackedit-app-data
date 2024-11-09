@@ -170,7 +170,7 @@ void OrthographicCamera::scale(float deltaScale)
 virtual void onScroll(float offset);//+1,-1
 ```
 然后因为只有`trackBallController`需要，游戏相机并不需要这个功能，所以我们到`trackBallController.h`中`override`这个函数，
-但在此之前，我们需要回到cameraControl中，设计一个用来调整缩放速度的系数，这样使得更简洁以及调节性更高
+但在此之前，我们需要回到`cameraControl`中，设计一个用来调整缩放速度的系数，这样使得更简洁以及调节性更高
 ```
 public:
 	void setScaleSppeed(float s) { mScaleSpeed = s; }
@@ -178,10 +178,17 @@ protected:
 	//6 记录相机缩放的速度
 	float mScaleSpeed = 0.2f;
 ```
+最后到`trackBallController.cpp`中实现这个`onScroll`函数
+```
+void TrackBallCameraControl::onScroll(float offset)
+{
+	mCamera->scale(mScaleSpeed * offset);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwNjE3ODIyNCwxNzM1NTI4MDMsODIwNz
-g4NDQ5LDM0NDMwOTYwOCwtMTUzMzA5NjUwMywtMTUyNzU5MDU3
-LC04MzM3NTM5MDMsMTI3ODY3NTE2MCwtMTk1MDYyMDMyMywxMz
-M3ODQ5MDY3LDkxMDM3MDY5MywxNDg0MTE1MTA3LC0yMDg4NzQ2
-NjEyXX0=
+eyJoaXN0b3J5IjpbNjI5NDc0NDAwLDE3MzU1MjgwMyw4MjA3OD
+g0NDksMzQ0MzA5NjA4LC0xNTMzMDk2NTAzLC0xNTI3NTkwNTcs
+LTgzMzc1MzkwMywxMjc4Njc1MTYwLC0xOTUwNjIwMzIzLDEzMz
+c4NDkwNjcsOTEwMzcwNjkzLDE0ODQxMTUxMDcsLTIwODg3NDY2
+MTJdfQ==
 -->
