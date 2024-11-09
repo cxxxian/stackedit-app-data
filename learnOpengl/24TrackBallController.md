@@ -185,9 +185,9 @@ void TrackBallCameraControl::onScroll(float offset)
 	mCamera->scale(mScaleSpeed * offset);
 }
 ```
-以上我们在`camera`和`cameraControl`实现了`scale和onScroll`函数，最后我们去Applicationzhong
+以上我们在`camera`和`cameraControl`实现了`scale和onScroll`函数，最后我们去`Application`中加入鼠标滚动的响应
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NjU5MTQyNTYsMTczNTUyODAzLDgyMD
+eyJoaXN0b3J5IjpbLTE0NjUwMzI4NTgsMTczNTUyODAzLDgyMD
 c4ODQ0OSwzNDQzMDk2MDgsLTE1MzMwOTY1MDMsLTE1Mjc1OTA1
 NywtODMzNzUzOTAzLDEyNzg2NzUxNjAsLTE5NTA2MjAzMjMsMT
 MzNzg0OTA2Nyw5MTAzNzA2OTMsMTQ4NDExNTEwNywtMjA4ODc0
