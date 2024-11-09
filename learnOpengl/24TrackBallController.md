@@ -164,8 +164,14 @@ void OrthographicCamera::scale(float deltaScale)
 	mScale += deltaScale;
 }
 ```
+以上就完成了对于缩放效果的设计，但是现在还没和鼠标扯上关系
+到cameraControl.h中声明一个虚函数onScroll(float offset)
+```
+virtual void onScroll(float offset);//+1,-1
+```
+然后因为
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTc5NzMwNTc1LDgyMDc4ODQ0OSwzNDQzMD
+eyJoaXN0b3J5IjpbMjcwNzg4NzAwLDgyMDc4ODQ0OSwzNDQzMD
 k2MDgsLTE1MzMwOTY1MDMsLTE1Mjc1OTA1NywtODMzNzUzOTAz
 LDEyNzg2NzUxNjAsLTE5NTA2MjAzMjMsMTMzNzg0OTA2Nyw5MT
 AzNzA2OTMsMTQ4NDExNTEwNywtMjA4ODc0NjYxMl19
