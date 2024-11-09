@@ -165,7 +165,7 @@ void OrthographicCamera::scale(float deltaScale)
 }
 ```
 以上就完成了对于缩放效果的设计，但是现在还没和鼠标扯上关系
-到cameraControl.h中声明一个虚函数onScroll(float offset)
+到cameraControl.h中声明一个虚函数`onScroll(float offset)`
 ```
 virtual void onScroll(float offset);//+1,-1
 ```
@@ -185,10 +185,11 @@ void TrackBallCameraControl::onScroll(float offset)
 	mCamera->scale(mScaleSpeed * offset);
 }
 ```
+以上我们在`camera`和`cameraControl`实现了`scale和onScroll`函数，最后我们去Applicationzhong
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjI5NDc0NDAwLDE3MzU1MjgwMyw4MjA3OD
-g0NDksMzQ0MzA5NjA4LC0xNTMzMDk2NTAzLC0xNTI3NTkwNTcs
-LTgzMzc1MzkwMywxMjc4Njc1MTYwLC0xOTUwNjIwMzIzLDEzMz
-c4NDkwNjcsOTEwMzcwNjkzLDE0ODQxMTUxMDcsLTIwODg3NDY2
-MTJdfQ==
+eyJoaXN0b3J5IjpbLTE3NjU5MTQyNTYsMTczNTUyODAzLDgyMD
+c4ODQ0OSwzNDQzMDk2MDgsLTE1MzMwOTY1MDMsLTE1Mjc1OTA1
+NywtODMzNzUzOTAzLDEyNzg2NzUxNjAsLTE5NTA2MjAzMjMsMT
+MzNzg0OTA2Nyw5MTAzNzA2OTMsMTQ4NDExNTEwNywtMjA4ODc0
+NjYxMl19
 -->
