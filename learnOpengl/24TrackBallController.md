@@ -120,8 +120,10 @@ else if (mMiddleMouseDown) {
 		mCamera->mPosition -= mCamera->mRight * deltaX;
 }
 ```
+# 鼠标中键滚轮缩放
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1Mjc1OTA1NywtODMzNzUzOTAzLDEyNz
-g2NzUxNjAsLTE5NTA2MjAzMjMsMTMzNzg0OTA2Nyw5MTAzNzA2
-OTMsMTQ4NDExNTEwNywtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbMTAzMjM1Mzc1LC0xNTI3NTkwNTcsLTgzMz
+c1MzkwMywxMjc4Njc1MTYwLC0xOTUwNjIwMzIzLDEzMzc4NDkw
+NjcsOTEwMzcwNjkzLDE0ODQxMTUxMDcsLTIwODg3NDY2MTJdfQ
+==
 -->
