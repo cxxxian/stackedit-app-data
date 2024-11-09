@@ -204,10 +204,21 @@ ScrollCallback mScrollCallback{ nullptr };
 ```
 void setScrollCallback(ScrollCallback callback) { mScrollCallback = callback; }
 ```
+在application.cpp中实现
+```
+//滚动消息的xoffset没有意义
+void Application::scrollCallBack(GLFWwindow* window, double xoffset, double yoffset)
+{
+	Application* self = (Application*)glfwGetWindowUserPointer(window);
+	if (self->mScrollCallback != nullptr) {
+		self->mScrollCallback(yoffset);
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA5ODc5NjEsMTczNTUyODAzLDgyMDc4OD
-Q0OSwzNDQzMDk2MDgsLTE1MzMwOTY1MDMsLTE1Mjc1OTA1Nywt
-ODMzNzUzOTAzLDEyNzg2NzUxNjAsLTE5NTA2MjAzMjMsMTMzNz
-g0OTA2Nyw5MTAzNzA2OTMsMTQ4NDExNTEwNywtMjA4ODc0NjYx
-Ml19
+eyJoaXN0b3J5IjpbLTEyMDg0MjQ4MTgsMTczNTUyODAzLDgyMD
+c4ODQ0OSwzNDQzMDk2MDgsLTE1MzMwOTY1MDMsLTE1Mjc1OTA1
+NywtODMzNzUzOTAzLDEyNzg2NzUxNjAsLTE5NTA2MjAzMjMsMT
+MzNzg0OTA2Nyw5MTAzNzA2OTMsMTQ4NDExNTEwNywtMjA4ODc0
+NjYxMl19
 -->
