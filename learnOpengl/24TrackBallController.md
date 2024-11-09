@@ -220,11 +220,11 @@ void Application::scrollCallBack(GLFWwindow* window, double xoffset, double yoff
 //鼠标滚轮消息
 glfwSetScrollCallback(window, scrollCallBack);
 ```
-最后我们将
+最后我们将鼠标滚轮加入到主流程当中（`main.cpp`）
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzMwOTg5ODAwLDE3MzU1MjgwMyw4MjA3OD
-g0NDksMzQ0MzA5NjA4LC0xNTMzMDk2NTAzLC0xNTI3NTkwNTcs
-LTgzMzc1MzkwMywxMjc4Njc1MTYwLC0xOTUwNjIwMzIzLDEzMz
-c4NDkwNjcsOTEwMzcwNjkzLDE0ODQxMTUxMDcsLTIwODg3NDY2
-MTJdfQ==
+eyJoaXN0b3J5IjpbLTE2NTUwNjkzMDIsMTczNTUyODAzLDgyMD
+c4ODQ0OSwzNDQzMDk2MDgsLTE1MzMwOTY1MDMsLTE1Mjc1OTA1
+NywtODMzNzUzOTAzLDEyNzg2NzUxNjAsLTE5NTA2MjAzMjMsMT
+MzNzg0OTA2Nyw5MTAzNzA2OTMsMTQ4NDExNTEwNywtMjA4ODc0
+NjYxMl19
 -->
