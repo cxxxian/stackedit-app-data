@@ -243,7 +243,7 @@ int main() {
 OrthographicCamera* camera = nullptr;
 ```
 此处！！！size需要大于三，why？
-因为我们的mPosition在三的位置！涉及到裁剪问题
+因为我们的mPosition在三的位置！涉及到裁剪问题小于三的话摄像机就在包围盒里面了看不到三角形
 ![输入图片说明](/imgs/2024-11-09/1jtaZpIgoCy0m0QJ.png)
 ```
 void prepareCamera() {
@@ -256,7 +256,7 @@ void prepareCamera() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc4MzE2MTM1MywtNjY0OTEyMzMyLC00MT
+eyJoaXN0b3J5IjpbLTMyMzk4MzAyNiwtNjY0OTEyMzMyLC00MT
 I0MjU3MDQsMTczNTUyODAzLDgyMDc4ODQ0OSwzNDQzMDk2MDgs
 LTE1MzMwOTY1MDMsLTE1Mjc1OTA1NywtODMzNzUzOTAzLDEyNz
 g2NzUxNjAsLTE5NTA2MjAzMjMsMTMzNzg0OTA2Nyw5MTAzNzA2
