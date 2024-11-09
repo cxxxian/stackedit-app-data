@@ -122,14 +122,17 @@ else if (mMiddleMouseDown) {
 ```
 # 鼠标中键滚轮缩放
 ![输入图片说明](/imgs/2024-11-09/CnCZ27pnwFKivWJU.png)
+### 缩放策略：
+透视相机：沿着front向量运动摄像机，所以会存在透过物体的可能
+正交相机：变化投影盒的大小，所以放大只会wu'xian
 ![输入图片说明](/imgs/2024-11-09/gE2xoolnPVjfPXEz.png)
 ![输入图片说明](/imgs/2024-11-09/B0VUfo098XCrKz4i.png)
 ![输入图片说明](/imgs/2024-11-09/MMAbgxNtnAGgDQyo.png)
 ![输入图片说明](/imgs/2024-11-09/X2LpSiNNKrsLBdeg.png)
 ![输入图片说明](/imgs/2024-11-09/qeOYHJRsZzUGvtQv.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQ0MzA5NjA4LC0xNTMzMDk2NTAzLC0xNT
-I3NTkwNTcsLTgzMzc1MzkwMywxMjc4Njc1MTYwLC0xOTUwNjIw
-MzIzLDEzMzc4NDkwNjcsOTEwMzcwNjkzLDE0ODQxMTUxMDcsLT
-IwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbLTYwNDU2Nzk4NCwzNDQzMDk2MDgsLTE1Mz
+MwOTY1MDMsLTE1Mjc1OTA1NywtODMzNzUzOTAzLDEyNzg2NzUx
+NjAsLTE5NTA2MjAzMjMsMTMzNzg0OTA2Nyw5MTAzNzA2OTMsMT
+Q4NDExNTEwNywtMjA4ODc0NjYxMl19
 -->
