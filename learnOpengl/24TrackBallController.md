@@ -134,8 +134,9 @@ else if (mMiddleMouseDown) {
 ```
 virtual void scale(float deltaScale);
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIzMjc2ODY1NSwzNDQzMDk2MDgsLTE1Mz
+eyJoaXN0b3J5IjpbMTY4MTIwNzY0NywzNDQzMDk2MDgsLTE1Mz
 MwOTY1MDMsLTE1Mjc1OTA1NywtODMzNzUzOTAzLDEyNzg2NzUx
 NjAsLTE5NTA2MjAzMjMsMTMzNzg0OTA2Nyw5MTAzNzA2OTMsMT
 Q4NDExNTEwNywtMjA4ODc0NjYxMl19
