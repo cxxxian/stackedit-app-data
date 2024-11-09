@@ -130,10 +130,12 @@ else if (mMiddleMouseDown) {
 ![输入图片说明](/imgs/2024-11-09/MMAbgxNtnAGgDQyo.png)
 ![输入图片说明](/imgs/2024-11-09/X2LpSiNNKrsLBdeg.png)
 ![输入图片说明](/imgs/2024-11-09/qeOYHJRsZzUGvtQv.png)
-``
+到camera.h中声明一个scale方法，
+```
 virtual void scale(float deltaScale);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwODg2MzMwNywzNDQzMDk2MDgsLTE1Mz
+eyJoaXN0b3J5IjpbLTIzMjc2ODY1NSwzNDQzMDk2MDgsLTE1Mz
 MwOTY1MDMsLTE1Mjc1OTA1NywtODMzNzUzOTAzLDEyNzg2NzUx
 NjAsLTE5NTA2MjAzMjMsMTMzNzg0OTA2Nyw5MTAzNzA2OTMsMT
 Q4NDExNTEwNywtMjA4ODc0NjYxMl19
