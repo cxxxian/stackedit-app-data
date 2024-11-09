@@ -146,9 +146,10 @@ void PerspectiveCamera::scale(float deltaScale)
 	mPosition += (front * deltaScale);
 }
 ```
+`orthographicCamera.h`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMDM5NTgzNTQsMzQ0MzA5NjA4LC0xNT
-MzMDk2NTAzLC0xNTI3NTkwNTcsLTgzMzc1MzkwMywxMjc4Njc1
-MTYwLC0xOTUwNjIwMzIzLDEzMzc4NDkwNjcsOTEwMzcwNjkzLD
-E0ODQxMTUxMDcsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbMjc1MTI3NzksMzQ0MzA5NjA4LC0xNTMzMD
+k2NTAzLC0xNTI3NTkwNTcsLTgzMzc1MzkwMywxMjc4Njc1MTYw
+LC0xOTUwNjIwMzIzLDEzMzc4NDkwNjcsOTEwMzcwNjkzLDE0OD
+QxMTUxMDcsLTIwODg3NDY2MTJdfQ==
 -->
