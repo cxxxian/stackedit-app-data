@@ -146,10 +146,10 @@ void PerspectiveCamera::scale(float deltaScale)
 	mPosition += (front * deltaScale);
 }
 ```
-`orthographicCamera.h`
+`orthographicCamera.h`中同样`override scale`函数
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjc1MTI3NzksMzQ0MzA5NjA4LC0xNTMzMD
-k2NTAzLC0xNTI3NTkwNTcsLTgzMzc1MzkwMywxMjc4Njc1MTYw
-LC0xOTUwNjIwMzIzLDEzMzc4NDkwNjcsOTEwMzcwNjkzLDE0OD
-QxMTUxMDcsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbLTgxNDk2MzgyMCwzNDQzMDk2MDgsLTE1Mz
+MwOTY1MDMsLTE1Mjc1OTA1NywtODMzNzUzOTAzLDEyNzg2NzUx
+NjAsLTE5NTA2MjAzMjMsMTMzNzg0OTA2Nyw5MTAzNzA2OTMsMT
+Q4NDExNTEwNywtMjA4ODc0NjYxMl19
 -->
