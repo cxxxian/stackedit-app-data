@@ -130,16 +130,15 @@ else if (mMiddleMouseDown) {
 ![输入图片说明](/imgs/2024-11-09/MMAbgxNtnAGgDQyo.png)
 ![输入图片说明](/imgs/2024-11-09/X2LpSiNNKrsLBdeg.png)
 ![输入图片说明](/imgs/2024-11-09/qeOYHJRsZzUGvtQv.png)
-到camera.h中声明一个scale方法，
+到`camera.h`中声明一个`scale`方法，
 ```
 virtual void scale(float deltaScale);
 ```
-perspectiveCamera.h中
-override scale函数
+`perspectiveCamera.h`中`override scale`函数
 ```
 void scale(float deltaScale) override;
 ```
-并到perspectiveCamera.cpp中实现
+并到`perspectiveCamera.cpp`中实现
 ```
 void PerspectiveCamera::scale(float deltaScale)
 {
@@ -148,8 +147,8 @@ void PerspectiveCamera::scale(float deltaScale)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3NTU3NTY4MCwzNDQzMDk2MDgsLTE1Mz
-MwOTY1MDMsLTE1Mjc1OTA1NywtODMzNzUzOTAzLDEyNzg2NzUx
-NjAsLTE5NTA2MjAzMjMsMTMzNzg0OTA2Nyw5MTAzNzA2OTMsMT
-Q4NDExNTEwNywtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTEwMDM5NTgzNTQsMzQ0MzA5NjA4LC0xNT
+MzMDk2NTAzLC0xNTI3NTkwNTcsLTgzMzc1MzkwMywxMjc4Njc1
+MTYwLC0xOTUwNjIwMzIzLDEzMzc4NDkwNjcsOTEwMzcwNjkzLD
+E0ODQxMTUxMDcsLTIwODg3NDY2MTJdfQ==
 -->
