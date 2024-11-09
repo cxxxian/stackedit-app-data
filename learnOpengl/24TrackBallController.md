@@ -242,7 +242,7 @@ int main() {
 ```
 OrthographicCamera* camera = nullptr;
 ```
-
+此处！！！size需要大于三，why？
 ```
 void prepareCamera() {
     float size = 8.0f;
@@ -254,9 +254,9 @@ void prepareCamera() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2NDkxMjMzMiwtNDEyNDI1NzA0LDE3Mz
-U1MjgwMyw4MjA3ODg0NDksMzQ0MzA5NjA4LC0xNTMzMDk2NTAz
-LC0xNTI3NTkwNTcsLTgzMzc1MzkwMywxMjc4Njc1MTYwLC0xOT
-UwNjIwMzIzLDEzMzc4NDkwNjcsOTEwMzcwNjkzLDE0ODQxMTUx
-MDcsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbMTQ4Mzk4MzkxNCwtNjY0OTEyMzMyLC00MT
+I0MjU3MDQsMTczNTUyODAzLDgyMDc4ODQ0OSwzNDQzMDk2MDgs
+LTE1MzMwOTY1MDMsLTE1Mjc1OTA1NywtODMzNzUzOTAzLDEyNz
+g2NzUxNjAsLTE5NTA2MjAzMjMsMTMzNzg0OTA2Nyw5MTAzNzA2
+OTMsMTQ4NDExNTEwNywtMjA4ODc0NjYxMl19
 -->
