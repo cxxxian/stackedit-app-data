@@ -124,15 +124,15 @@ else if (mMiddleMouseDown) {
 ![输入图片说明](/imgs/2024-11-09/CnCZ27pnwFKivWJU.png)
 ### 缩放策略：
 透视相机：沿着front向量运动摄像机，所以会存在透过物体的可能
-正交相机：变化投影盒的大小，所以放大只会wu'xian
+正交相机：变化投影盒的大小，所以放大只会无限放大物体并不会透过它
 ![输入图片说明](/imgs/2024-11-09/gE2xoolnPVjfPXEz.png)
 ![输入图片说明](/imgs/2024-11-09/B0VUfo098XCrKz4i.png)
 ![输入图片说明](/imgs/2024-11-09/MMAbgxNtnAGgDQyo.png)
 ![输入图片说明](/imgs/2024-11-09/X2LpSiNNKrsLBdeg.png)
 ![输入图片说明](/imgs/2024-11-09/qeOYHJRsZzUGvtQv.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwNDU2Nzk4NCwzNDQzMDk2MDgsLTE1Mz
-MwOTY1MDMsLTE1Mjc1OTA1NywtODMzNzUzOTAzLDEyNzg2NzUx
-NjAsLTE5NTA2MjAzMjMsMTMzNzg0OTA2Nyw5MTAzNzA2OTMsMT
-Q4NDExNTEwNywtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbNzMxNzAxOTIsMzQ0MzA5NjA4LC0xNTMzMD
+k2NTAzLC0xNTI3NTkwNTcsLTgzMzc1MzkwMywxMjc4Njc1MTYw
+LC0xOTUwNjIwMzIzLDEzMzc4NDkwNjcsOTEwMzcwNjkzLDE0OD
+QxMTUxMDcsLTIwODg3NDY2MTJdfQ==
 -->
