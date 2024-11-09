@@ -221,10 +221,26 @@ void Application::scrollCallBack(GLFWwindow* window, double xoffset, double yoff
 glfwSetScrollCallback(window, scrollCallBack);
 ```
 最后我们将鼠标滚轮加入到主流程当中（`main.cpp`）
+```
+void OnScroll(double offset) {
+    cameraControl->onScroll(offset);
+}
+```
+zuiho
+```
+int main() {
+	...
+    app->setResizeCallback(OnResize);
+    app->setKeyBoardCallback(OnKey);
+    app->setMouseCallback(OnMouse);
+    app->setCursorCallback(OnCursor);
+    app->setScrollCallback(OnScroll);
+    ...
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NTUwNjkzMDIsMTczNTUyODAzLDgyMD
-c4ODQ0OSwzNDQzMDk2MDgsLTE1MzMwOTY1MDMsLTE1Mjc1OTA1
-NywtODMzNzUzOTAzLDEyNzg2NzUxNjAsLTE5NTA2MjAzMjMsMT
-MzNzg0OTA2Nyw5MTAzNzA2OTMsMTQ4NDExNTEwNywtMjA4ODc0
-NjYxMl19
+eyJoaXN0b3J5IjpbNTYwMDEwMDAsMTczNTUyODAzLDgyMDc4OD
+Q0OSwzNDQzMDk2MDgsLTE1MzMwOTY1MDMsLTE1Mjc1OTA1Nywt
+ODMzNzUzOTAzLDEyNzg2NzUxNjAsLTE5NTA2MjAzMjMsMTMzNz
+g0OTA2Nyw5MTAzNzA2OTMsMTQ4NDExNTEwNywtMjA4ODc0NjYx
+Ml19
 -->
