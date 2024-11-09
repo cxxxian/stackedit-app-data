@@ -186,10 +186,14 @@ void TrackBallCameraControl::onScroll(float offset)
 }
 ```
 以上我们在`camera`和`cameraControl`实现了`scale和onScroll`函数，最后我们去`Application`中加入鼠标滚动的响应
+老样子，重新盘一遍：
+```
+static void scrollCallBack(GLFWwindow* window, double xoffset, double yoffset);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjUwMzI4NTgsMTczNTUyODAzLDgyMD
-c4ODQ0OSwzNDQzMDk2MDgsLTE1MzMwOTY1MDMsLTE1Mjc1OTA1
-NywtODMzNzUzOTAzLDEyNzg2NzUxNjAsLTE5NTA2MjAzMjMsMT
-MzNzg0OTA2Nyw5MTAzNzA2OTMsMTQ4NDExNTEwNywtMjA4ODc0
-NjYxMl19
+eyJoaXN0b3J5IjpbMjA2OTUyODkxOSwxNzM1NTI4MDMsODIwNz
+g4NDQ5LDM0NDMwOTYwOCwtMTUzMzA5NjUwMywtMTUyNzU5MDU3
+LC04MzM3NTM5MDMsMTI3ODY3NTE2MCwtMTk1MDYyMDMyMywxMz
+M3ODQ5MDY3LDkxMDM3MDY5MywxNDg0MTE1MTA3LC0yMDg4NzQ2
+NjEyXX0=
 -->
