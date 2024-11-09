@@ -146,10 +146,28 @@ void PerspectiveCamera::scale(float deltaScale)
 	mPosition += (front * deltaScale);
 }
 ```
-`orthographicCamera.h`中同样`override scale`函数
+`orthographicCamera.h`中同样`override scale`函数，并且声明一个mScale进行累加
+```
+private:
+	float mScale{ 0.0f };
+```
+利用`scale`对`getProjectionMatrix()`的包围盒进行缩放
+```
+glm::mat4 OrthographicCamera::getProjectionMatrix()
+{
+	float scale = std::pow(2.0f, mScale);
+	return glm::ortho(mLeft * scale, mRight * scale, mTop * scale, mBottom * scale, mNear, mFar);
+}
+
+void OrthographicCamera::scale(float deltaScale)
+{
+	mScale += deltaScale;
+}
+
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgxNDk2MzgyMCwzNDQzMDk2MDgsLTE1Mz
-MwOTY1MDMsLTE1Mjc1OTA1NywtODMzNzUzOTAzLDEyNzg2NzUx
-NjAsLTE5NTA2MjAzMjMsMTMzNzg0OTA2Nyw5MTAzNzA2OTMsMT
-Q4NDExNTEwNywtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbODIwNzg4NDQ5LDM0NDMwOTYwOCwtMTUzMz
+A5NjUwMywtMTUyNzU5MDU3LC04MzM3NTM5MDMsMTI3ODY3NTE2
+MCwtMTk1MDYyMDMyMywxMzM3ODQ5MDY3LDkxMDM3MDY5MywxND
+g0MTE1MTA3LC0yMDg4NzQ2NjEyXX0=
 -->
