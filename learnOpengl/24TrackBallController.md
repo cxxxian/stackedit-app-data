@@ -169,9 +169,9 @@ void OrthographicCamera::scale(float deltaScale)
 ```
 virtual void onScroll(float offset);//+1,-1
 ```
-然后因为
+然后因为只有`trackBallController`需要，游戏相机并不需要这个功能，所以我们到`trackBallController.h`中`override`这个函数
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjcwNzg4NzAwLDgyMDc4ODQ0OSwzNDQzMD
+eyJoaXN0b3J5IjpbMTczNTUyODAzLDgyMDc4ODQ0OSwzNDQzMD
 k2MDgsLTE1MzMwOTY1MDMsLTE1Mjc1OTA1NywtODMzNzUzOTAz
 LDEyNzg2NzUxNjAsLTE5NTA2MjAzMjMsMTMzNzg0OTA2Nyw5MT
 AzNzA2OTMsMTQ4NDExNTEwNywtMjA4ODc0NjYxMl19
