@@ -238,9 +238,23 @@ int main() {
     ...
 ```
 至此，收工结束！
-xiang
+想要测试一下正交投影相机，步骤如下：
+```
+OrthographicCamera* camera = nullptr;
+```
+
+```
+void prepareCamera() {
+    float size = 8.0f;
+    camera = new OrthographicCamera(-size, size, size, -size, size, -size);
+    //camera = new PerspectiveCamera(60.f, (float)app->getWidth() / (float)app->getHeight(), 0.1f, 1000.0f);
+
+    cameraControl = new TrackBallCameraControl();
+    cameraControl->setCamera(camera);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1NjgxMDcxNSwtNDEyNDI1NzA0LDE3Mz
+eyJoaXN0b3J5IjpbLTY2NDkxMjMzMiwtNDEyNDI1NzA0LDE3Mz
 U1MjgwMyw4MjA3ODg0NDksMzQ0MzA5NjA4LC0xNTMzMDk2NTAz
 LC0xNTI3NTkwNTcsLTgzMzc1MzkwMywxMjc4Njc1MTYwLC0xOT
 UwNjIwMzIzLDEzMzc4NDkwNjcsOTEwMzcwNjkzLDE0ODQxMTUx
