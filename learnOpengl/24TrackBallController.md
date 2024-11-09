@@ -218,7 +218,7 @@ void Application::scrollCallBack(GLFWwindow* window, double xoffset, double yoff
 到`application.cpp`的`init`方法中绑定`scrollCallBack`
 ```
 //鼠标滚轮消息
-glfwSetScrollCallback(window, scrollCallBack);
+glfwSetScrollCallback(mWindow, scrollCallBack);
 ```
 最后我们将鼠标滚轮加入到主流程当中（`main.cpp`）
 ```
@@ -237,8 +237,9 @@ int main() {
     app->setScrollCallback(OnScroll);
     ...
 ```
+至此，收工结束！
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEyNzA2MTAzMiwxNzM1NTI4MDMsODIwNz
+eyJoaXN0b3J5IjpbLTQxMjQyNTcwNCwxNzM1NTI4MDMsODIwNz
 g4NDQ5LDM0NDMwOTYwOCwtMTUzMzA5NjUwMywtMTUyNzU5MDU3
 LC04MzM3NTM5MDMsMTI3ODY3NTE2MCwtMTk1MDYyMDMyMywxMz
 M3ODQ5MDY3LDkxMDM3MDY5MywxNDg0MTE1MTA3LC0yMDg4NzQ2
