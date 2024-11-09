@@ -121,9 +121,10 @@ else if (mMiddleMouseDown) {
 }
 ```
 # 鼠标中键滚轮缩放
+![输入图片说明](/imgs/2024-11-09/CnCZ27pnwFKivWJU.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAzMjM1Mzc1LC0xNTI3NTkwNTcsLTgzMz
-c1MzkwMywxMjc4Njc1MTYwLC0xOTUwNjIwMzIzLDEzMzc4NDkw
-NjcsOTEwMzcwNjkzLDE0ODQxMTUxMDcsLTIwODg3NDY2MTJdfQ
-==
+eyJoaXN0b3J5IjpbLTE1MzMwOTY1MDMsLTE1Mjc1OTA1NywtOD
+MzNzUzOTAzLDEyNzg2NzUxNjAsLTE5NTA2MjAzMjMsMTMzNzg0
+OTA2Nyw5MTAzNzA2OTMsMTQ4NDExNTEwNywtMjA4ODc0NjYxMl
+19
 -->
