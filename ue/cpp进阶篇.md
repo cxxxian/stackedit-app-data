@@ -595,12 +595,15 @@ void UAttributeComponent::RegenStamina(float DeltaTime)
 	Stamina = FMath::Clamp(Stamina + StaminaRegenRate * DeltaTime, 0.f, MaxStamina);
 }
 ```
+我们去到`SlashCharacter.h`中声明Tick函数（原本应该有的但是被我们删掉了）
+```
+virtual void Tick(float DeltaTime) override;
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTU2MDczMjAsMTIyODc3MTYxOCwtMT
-MxMTYyNDAxMywtMTY2NjUwNDkxMywtMjkzODc4Mzc0LC0yMTQ2
-OTk0OTk4LC0xMDc5NzMyNzI4LC0xOTA4MTY0MTQzLC03NDA2Nj
-YzODgsLTcyNzQyMzE4NCw0MzE3MDM2MjYsLTQ2ODkzMjY2Niwy
-MDA3MTI0MTM5LC04MTA4MzU5MjYsMTU1OTIxNzM1NCwtMjIzMD
-M5OTQ5LC0xMzg0NzAwMzAxLDIxMzM2NDMyMDgsMTc1MTE4NjQz
-MSwtMTI4MTIyODUxN119
+eyJoaXN0b3J5IjpbOTA4MjQyNDA0LC0xMDU1NjA3MzIwLDEyMj
+g3NzE2MTgsLTEzMTE2MjQwMTMsLTE2NjY1MDQ5MTMsLTI5Mzg3
+ODM3NCwtMjE0Njk5NDk5OCwtMTA3OTczMjcyOCwtMTkwODE2ND
+E0MywtNzQwNjY2Mzg4LC03Mjc0MjMxODQsNDMxNzAzNjI2LC00
+Njg5MzI2NjYsMjAwNzEyNDEzOSwtODEwODM1OTI2LDE1NTkyMT
+czNTQsLTIyMzAzOTk0OSwtMTM4NDcwMDMwMSwyMTMzNjQzMjA4
+LDE3NTExODY0MzFdfQ==
 -->
