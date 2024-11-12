@@ -538,8 +538,19 @@ float UAttributeComponent::GetStaminaPercent()
 	return Stamina / MaxStamina;
 }
 ```
+在SlashCharacter.cpp中wan's
+```
+void ASlashCharacter::Dodge()
+{
+	if (ActionState != EActionState::EAS_Unoccupied)return;
+	if (Attributes && Attributes->GetStaminaPercent() > 0.f) {
+		PlayDodgeMontage();
+		ActionState = EActionState::EAS_Dodge;
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMxNTI5MzgwMywtMjkzODc4Mzc0LC0yMT
+eyJoaXN0b3J5IjpbLTk5NTE2NTA5OSwtMjkzODc4Mzc0LC0yMT
 Q2OTk0OTk4LC0xMDc5NzMyNzI4LC0xOTA4MTY0MTQzLC03NDA2
 NjYzODgsLTcyNzQyMzE4NCw0MzE3MDM2MjYsLTQ2ODkzMjY2Ni
 wyMDA3MTI0MTM5LC04MTA4MzU5MjYsMTU1OTIxNzM1NCwtMjIz
