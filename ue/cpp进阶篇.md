@@ -516,7 +516,7 @@ void ASlashCharacter::DodgeEnd()
 perfect，以上就完成了Dodge功能
 ![输入图片说明](/imgs/2024-11-05/Sscaj8nNiiqifYMu.png)
 # 耐力消耗
-在attributeComponent.h中模仿health建立stamina
+在attributeComponent.h中模仿health建立有关stamina的变量和方法
 ```
 private:
 UPROPERTY(EditAnywhere, Category = "Actor Attributes")
@@ -527,11 +527,11 @@ public:
 float GetStaminaPercent();
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTk5MzQwNTEsLTIxNDY5OTQ5OTgsLT
-EwNzk3MzI3MjgsLTE5MDgxNjQxNDMsLTc0MDY2NjM4OCwtNzI3
-NDIzMTg0LDQzMTcwMzYyNiwtNDY4OTMyNjY2LDIwMDcxMjQxMz
-ksLTgxMDgzNTkyNiwxNTU5MjE3MzU0LC0yMjMwMzk5NDksLTEz
-ODQ3MDAzMDEsMjEzMzY0MzIwOCwxNzUxMTg2NDMxLC0xMjgxMj
-I4NTE3LDE1NzQ2MDEyNjgsNzE4ODIwNDczLC0xNDU4Nzc0MDQ4
-LDE4OTIxODU4NTZdfQ==
+eyJoaXN0b3J5IjpbLTI5Mzg3ODM3NCwtMjE0Njk5NDk5OCwtMT
+A3OTczMjcyOCwtMTkwODE2NDE0MywtNzQwNjY2Mzg4LC03Mjc0
+MjMxODQsNDMxNzAzNjI2LC00Njg5MzI2NjYsMjAwNzEyNDEzOS
+wtODEwODM1OTI2LDE1NTkyMTczNTQsLTIyMzAzOTk0OSwtMTM4
+NDcwMDMwMSwyMTMzNjQzMjA4LDE3NTExODY0MzEsLTEyODEyMj
+g1MTcsMTU3NDYwMTI2OCw3MTg4MjA0NzMsLTE0NTg3NzQwNDgs
+MTg5MjE4NTg1Nl19
 -->
