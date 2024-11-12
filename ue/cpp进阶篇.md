@@ -565,12 +565,25 @@ bool ASlashCharacter::HasEnoughStamina()
 	return Attributes && Attributes->GetStamina() > Attributes->GetDodgeCost();
 }
 ```
+以及在dodge函数中进行耐力的消耗
+```
+void ASlashCharacter::Dodge()
+{
+	if (IsOccupied() && !HasEnoughStamina())return;
+
+	PlayDodgeMontage();
+	ActionState = EActionState::EAS_Dodge;
+	if (Attributes) {
+		Attributes->UseStamina(Attributes->GetDodgeCost());
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIyODc3MTYxOCwtMTMxMTYyNDAxMywtMT
-Y2NjUwNDkxMywtMjkzODc4Mzc0LC0yMTQ2OTk0OTk4LC0xMDc5
-NzMyNzI4LC0xOTA4MTY0MTQzLC03NDA2NjYzODgsLTcyNzQyMz
-E4NCw0MzE3MDM2MjYsLTQ2ODkzMjY2NiwyMDA3MTI0MTM5LC04
-MTA4MzU5MjYsMTU1OTIxNzM1NCwtMjIzMDM5OTQ5LC0xMzg0Nz
-AwMzAxLDIxMzM2NDMyMDgsMTc1MTE4NjQzMSwtMTI4MTIyODUx
-NywxNTc0NjAxMjY4XX0=
+eyJoaXN0b3J5IjpbMTY3MzUyNTg2NSwxMjI4NzcxNjE4LC0xMz
+ExNjI0MDEzLC0xNjY2NTA0OTEzLC0yOTM4NzgzNzQsLTIxNDY5
+OTQ5OTgsLTEwNzk3MzI3MjgsLTE5MDgxNjQxNDMsLTc0MDY2Nj
+M4OCwtNzI3NDIzMTg0LDQzMTcwMzYyNiwtNDY4OTMyNjY2LDIw
+MDcxMjQxMzksLTgxMDgzNTkyNiwxNTU5MjE3MzU0LC0yMjMwMz
+k5NDksLTEzODQ3MDAzMDEsMjEzMzY0MzIwOCwxNzUxMTg2NDMx
+LC0xMjgxMjI4NTE3XX0=
 -->
