@@ -600,13 +600,29 @@ void UAttributeComponent::RegenStamina(float DeltaTime)
 virtual void Tick(float DeltaTime) override;
 ```
 `SlashCharacter.cpp`实现：
-
+```
+void ASlashCharacter::Tick(float DeltaTime)
+{
+	if (Attributes && SlashOverlay) {
+		Attributes->RegenStamina(DeltaTime);
+		SlashOverlay->SetStaminaBarPercent(Attributes->GetStaminaPercent());
+	}
+}
+```
+要使用Tick函数还有这个重要前提，在构造函数中把`bCanEverTick`改成`true`
+```
+ASlashCharacter::ASlashCharacter()
+{
+	PrimaryActorTick.bCanEverTick = true;
+	...
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDY1MTk3OTksLTEwNTU2MDczMjAsMT
-IyODc3MTYxOCwtMTMxMTYyNDAxMywtMTY2NjUwNDkxMywtMjkz
-ODc4Mzc0LC0yMTQ2OTk0OTk4LC0xMDc5NzMyNzI4LC0xOTA4MT
-Y0MTQzLC03NDA2NjYzODgsLTcyNzQyMzE4NCw0MzE3MDM2MjYs
-LTQ2ODkzMjY2NiwyMDA3MTI0MTM5LC04MTA4MzU5MjYsMTU1OT
-IxNzM1NCwtMjIzMDM5OTQ5LC0xMzg0NzAwMzAxLDIxMzM2NDMy
-MDgsMTc1MTE4NjQzMV19
+eyJoaXN0b3J5IjpbLTQ0OTU0OTE3MSwtMTA1NTYwNzMyMCwxMj
+I4NzcxNjE4LC0xMzExNjI0MDEzLC0xNjY2NTA0OTEzLC0yOTM4
+NzgzNzQsLTIxNDY5OTQ5OTgsLTEwNzk3MzI3MjgsLTE5MDgxNj
+QxNDMsLTc0MDY2NjM4OCwtNzI3NDIzMTg0LDQzMTcwMzYyNiwt
+NDY4OTMyNjY2LDIwMDcxMjQxMzksLTgxMDgzNTkyNiwxNTU5Mj
+E3MzU0LC0yMjMwMzk5NDksLTEzODQ3MDAzMDEsMjEzMzY0MzIw
+OCwxNzUxMTg2NDMxXX0=
 -->
