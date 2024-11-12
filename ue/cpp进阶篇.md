@@ -590,19 +590,18 @@ public:
 ```
 在`attributeComponent.cpp`的Tick函数进行每帧调用回复
 ```
-void UAttributeComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+void UAttributeComponent::RegenStamina(float DeltaTime)
 {
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
 	Stamina = FMath::Clamp(Stamina + StaminaRegenRate * DeltaTime, 0.f, MaxStamina);
 }
+
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MTcwNTY2NDYsMTIyODc3MTYxOCwtMT
-MxMTYyNDAxMywtMTY2NjUwNDkxMywtMjkzODc4Mzc0LC0yMTQ2
-OTk0OTk4LC0xMDc5NzMyNzI4LC0xOTA4MTY0MTQzLC03NDA2Nj
-YzODgsLTcyNzQyMzE4NCw0MzE3MDM2MjYsLTQ2ODkzMjY2Niwy
-MDA3MTI0MTM5LC04MTA4MzU5MjYsMTU1OTIxNzM1NCwtMjIzMD
-M5OTQ5LC0xMzg0NzAwMzAxLDIxMzM2NDMyMDgsMTc1MTE4NjQz
-MSwtMTI4MTIyODUxN119
+eyJoaXN0b3J5IjpbNTg4MTMyMzU3LDEyMjg3NzE2MTgsLTEzMT
+E2MjQwMTMsLTE2NjY1MDQ5MTMsLTI5Mzg3ODM3NCwtMjE0Njk5
+NDk5OCwtMTA3OTczMjcyOCwtMTkwODE2NDE0MywtNzQwNjY2Mz
+g4LC03Mjc0MjMxODQsNDMxNzAzNjI2LC00Njg5MzI2NjYsMjAw
+NzEyNDEzOSwtODEwODM1OTI2LDE1NTkyMTczNTQsLTIyMzAzOT
+k0OSwtMTM4NDcwMDMwMSwyMTMzNjQzMjA4LDE3NTExODY0MzEs
+LTEyODEyMjg1MTddfQ==
 -->
