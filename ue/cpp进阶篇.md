@@ -584,20 +584,21 @@ void ASlashCharacter::Dodge()
 UPROPERTY(EditAnywhere, Category = "Actor Attributes")
 float StaminaRegenRate = 8.f;
 ```
-在`attributeComponent.cpp`的Tick函数进行mei'zhen'diao'y
+在`attributeComponent.cpp`的Tick函数进行每帧调用回复
+```
 void UAttributeComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	Stamina = FMath::Clamp(Stamina + StaminaRegenRate * DeltaTime, 0.f, MaxStamina);
 }
-
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk3NzE3NTQ3NSwxMjI4NzcxNjE4LC0xMz
-ExNjI0MDEzLC0xNjY2NTA0OTEzLC0yOTM4NzgzNzQsLTIxNDY5
-OTQ5OTgsLTEwNzk3MzI3MjgsLTE5MDgxNjQxNDMsLTc0MDY2Nj
-M4OCwtNzI3NDIzMTg0LDQzMTcwMzYyNiwtNDY4OTMyNjY2LDIw
-MDcxMjQxMzksLTgxMDgzNTkyNiwxNTU5MjE3MzU0LC0yMjMwMz
-k5NDksLTEzODQ3MDAzMDEsMjEzMzY0MzIwOCwxNzUxMTg2NDMx
-LC0xMjgxMjI4NTE3XX0=
+eyJoaXN0b3J5IjpbODkzODczNTcyLDEyMjg3NzE2MTgsLTEzMT
+E2MjQwMTMsLTE2NjY1MDQ5MTMsLTI5Mzg3ODM3NCwtMjE0Njk5
+NDk5OCwtMTA3OTczMjcyOCwtMTkwODE2NDE0MywtNzQwNjY2Mz
+g4LC03Mjc0MjMxODQsNDMxNzAzNjI2LC00Njg5MzI2NjYsMjAw
+NzEyNDEzOSwtODEwODM1OTI2LDE1NTkyMTczNTQsLTIyMzAzOT
+k0OSwtMTM4NDcwMDMwMSwyMTMzNjQzMjA4LDE3NTExODY0MzEs
+LTEyODEyMjg1MTddfQ==
 -->
