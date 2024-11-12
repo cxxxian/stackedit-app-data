@@ -549,14 +549,20 @@ void ASlashCharacter::Dodge()
 	}
 }
 ```
-UPROPERTY(EditAnywhere, Category = "Actor Attributes")
+在`attributeComponent.h`声明`DodgeCost`，并且我们需要一个public的方法来获取cost
+```
+private:
+	UPROPERTY(EditAnywhere, Category = "Actor Attributes")
 	float DodgeCost = 14.f;
+public:
+	FORCEINLINE int32 GetDodgeCost() const { return DodgeCost; }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3NTI3NTcyOSwtMTY2NjUwNDkxMywtMj
-kzODc4Mzc0LC0yMTQ2OTk0OTk4LC0xMDc5NzMyNzI4LC0xOTA4
-MTY0MTQzLC03NDA2NjYzODgsLTcyNzQyMzE4NCw0MzE3MDM2Mj
-YsLTQ2ODkzMjY2NiwyMDA3MTI0MTM5LC04MTA4MzU5MjYsMTU1
-OTIxNzM1NCwtMjIzMDM5OTQ5LC0xMzg0NzAwMzAxLDIxMzM2ND
-MyMDgsMTc1MTE4NjQzMSwtMTI4MTIyODUxNywxNTc0NjAxMjY4
-LDcxODgyMDQ3M119
+eyJoaXN0b3J5IjpbLTEzMTE2MjQwMTMsLTE2NjY1MDQ5MTMsLT
+I5Mzg3ODM3NCwtMjE0Njk5NDk5OCwtMTA3OTczMjcyOCwtMTkw
+ODE2NDE0MywtNzQwNjY2Mzg4LC03Mjc0MjMxODQsNDMxNzAzNj
+I2LC00Njg5MzI2NjYsMjAwNzEyNDEzOSwtODEwODM1OTI2LDE1
+NTkyMTczNTQsLTIyMzAzOTk0OSwtMTM4NDcwMDMwMSwyMTMzNj
+QzMjA4LDE3NTExODY0MzEsLTEyODEyMjg1MTcsMTU3NDYwMTI2
+OCw3MTg4MjA0NzNdfQ==
 -->
