@@ -516,7 +516,7 @@ void ASlashCharacter::DodgeEnd()
 perfect，以上就完成了Dodge功能
 ![输入图片说明](/imgs/2024-11-05/Sscaj8nNiiqifYMu.png)
 # 耐力消耗
-在attributeComponent.h中模仿health建立有关stamina的变量和方法
+在`attributeComponent.h`中模仿`health`建立有关`stamina`的变量和方法
 ```
 private:
 UPROPERTY(EditAnywhere, Category = "Actor Attributes")
@@ -527,8 +527,19 @@ public:
 void UseStamina(float StaminaCost);
 float GetStaminaPercent();
 ```
+在`attributeComponent.cpp`中实现
+```
+void UAttributeComponent::UseStamina(float StaminaCost)
+{
+	Stamina = FMath::Clamp(Stamina - StaminaCost, 0.f, MaxStamina);
+}
+float UAttributeComponent::GetStaminaPercent()
+{
+	return Stamina / MaxStamina;
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwNzY4MTAwMiwtMjkzODc4Mzc0LC0yMT
+eyJoaXN0b3J5IjpbMTMxNTI5MzgwMywtMjkzODc4Mzc0LC0yMT
 Q2OTk0OTk4LC0xMDc5NzMyNzI4LC0xOTA4MTY0MTQzLC03NDA2
 NjYzODgsLTcyNzQyMzE4NCw0MzE3MDM2MjYsLTQ2ODkzMjY2Ni
 wyMDA3MTI0MTM5LC04MTA4MzU5MjYsMTU1OTIxNzM1NCwtMjIz
