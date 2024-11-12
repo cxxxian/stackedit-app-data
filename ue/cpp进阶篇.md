@@ -580,7 +580,7 @@ void ASlashCharacter::Dodge()
 }
 ```
 当然耐力既然消耗那也就需要回复
-在`attributeComponent.h`中声明一个回复的数值
+在`attributeComponent.h`中声明一个回复的数值和方法
 ```
 private:
 	UPROPERTY(EditAnywhere, Category = "Actor Attributes")
@@ -596,11 +596,11 @@ void UAttributeComponent::RegenStamina(float DeltaTime)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE0MTU5ODQ0MiwxMjI4NzcxNjE4LC0xMz
-ExNjI0MDEzLC0xNjY2NTA0OTEzLC0yOTM4NzgzNzQsLTIxNDY5
-OTQ5OTgsLTEwNzk3MzI3MjgsLTE5MDgxNjQxNDMsLTc0MDY2Nj
-M4OCwtNzI3NDIzMTg0LDQzMTcwMzYyNiwtNDY4OTMyNjY2LDIw
-MDcxMjQxMzksLTgxMDgzNTkyNiwxNTU5MjE3MzU0LC0yMjMwMz
-k5NDksLTEzODQ3MDAzMDEsMjEzMzY0MzIwOCwxNzUxMTg2NDMx
-LC0xMjgxMjI4NTE3XX0=
+eyJoaXN0b3J5IjpbLTEwNTU2MDczMjAsMTIyODc3MTYxOCwtMT
+MxMTYyNDAxMywtMTY2NjUwNDkxMywtMjkzODc4Mzc0LC0yMTQ2
+OTk0OTk4LC0xMDc5NzMyNzI4LC0xOTA4MTY0MTQzLC03NDA2Nj
+YzODgsLTcyNzQyMzE4NCw0MzE3MDM2MjYsLTQ2ODkzMjY2Niwy
+MDA3MTI0MTM5LC04MTA4MzU5MjYsMTU1OTIxNzM1NCwtMjIzMD
+M5OTQ5LC0xMzg0NzAwMzAxLDIxMzM2NDMyMDgsMTc1MTE4NjQz
+MSwtMTI4MTIyODUxN119
 -->
