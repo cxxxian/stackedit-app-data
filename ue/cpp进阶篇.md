@@ -582,8 +582,11 @@ void ASlashCharacter::Dodge()
 当然耐力既然消耗那也就需要回复
 在`attributeComponent.h`中声明一个回复的数值
 ```
-UPROPERTY(EditAnywhere, Category = "Actor Attributes")
-float StaminaRegenRate = 8.f;
+private:
+	UPROPERTY(EditAnywhere, Category = "Actor Attributes")
+	float StaminaRegenRate = 8.f;
+public:
+	void RegenStamina(float DeltaTime);
 ```
 在`attributeComponent.cpp`的Tick函数进行每帧调用回复
 ```
@@ -595,7 +598,7 @@ void UAttributeComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTgxNjEwMzcsMTIyODc3MTYxOCwtMT
+eyJoaXN0b3J5IjpbLTE1MTcwNTY2NDYsMTIyODc3MTYxOCwtMT
 MxMTYyNDAxMywtMTY2NjUwNDkxMywtMjkzODc4Mzc0LC0yMTQ2
 OTk0OTk4LC0xMDc5NzMyNzI4LC0xOTA4MTY0MTQzLC03NDA2Nj
 YzODgsLTcyNzQyMzE4NCw0MzE3MDM2MjYsLTQ2ODkzMjY2Niwy
