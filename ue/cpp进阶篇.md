@@ -565,11 +565,12 @@ bool ASlashCharacter::HasEnoughStamina()
 	return Attributes && Attributes->GetStamina() > Attributes->GetDodgeCost();
 }
 ```
-以及在dodge函数中进行耐力的消耗，以及在对应UI进行衰减
+以及在dodge函数中进行耐力的消耗，以及在对应UI进行衰减。
+`IsOccupied() || !HasEnoughStamina()`注意这里应该用`or而不是and
 ```
 void ASlashCharacter::Dodge()
 {
-	if (IsOccupied() && !HasEnoughStamina())return;
+	if (IsOccupied() || !HasEnoughStamina())return;
 
 	PlayDodgeMontage();
 	ActionState = EActionState::EAS_Dodge;
@@ -618,11 +619,11 @@ ASlashCharacter::ASlashCharacter()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0OTU0OTE3MSwtMTA1NTYwNzMyMCwxMj
-I4NzcxNjE4LC0xMzExNjI0MDEzLC0xNjY2NTA0OTEzLC0yOTM4
-NzgzNzQsLTIxNDY5OTQ5OTgsLTEwNzk3MzI3MjgsLTE5MDgxNj
-QxNDMsLTc0MDY2NjM4OCwtNzI3NDIzMTg0LDQzMTcwMzYyNiwt
-NDY4OTMyNjY2LDIwMDcxMjQxMzksLTgxMDgzNTkyNiwxNTU5Mj
-E3MzU0LC0yMjMwMzk5NDksLTEzODQ3MDAzMDEsMjEzMzY0MzIw
-OCwxNzUxMTg2NDMxXX0=
+eyJoaXN0b3J5IjpbLTE0NzQ0NTQ3NjgsLTQ0OTU0OTE3MSwtMT
+A1NTYwNzMyMCwxMjI4NzcxNjE4LC0xMzExNjI0MDEzLC0xNjY2
+NTA0OTEzLC0yOTM4NzgzNzQsLTIxNDY5OTQ5OTgsLTEwNzk3Mz
+I3MjgsLTE5MDgxNjQxNDMsLTc0MDY2NjM4OCwtNzI3NDIzMTg0
+LDQzMTcwMzYyNiwtNDY4OTMyNjY2LDIwMDcxMjQxMzksLTgxMD
+gzNTkyNiwxNTU5MjE3MzU0LC0yMjMwMzk5NDksLTEzODQ3MDAz
+MDEsMjEzMzY0MzIwOF19
 -->
