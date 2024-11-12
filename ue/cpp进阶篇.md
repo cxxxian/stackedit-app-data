@@ -549,7 +549,7 @@ void ASlashCharacter::Dodge()
 	}
 }
 ```
-在`attributeComponent.h`声明`DodgeCost`，并且我们需要一个public的方法来获取cost
+在`attributeComponent.h`声明`DodgeCost`，并且我们需要一个public的方法来获取`cost`和`Stamina`
 ```
 private:
 	UPROPERTY(EditAnywhere, Category = "Actor Attributes")
@@ -559,7 +559,7 @@ public:
 	FORCEINLINE int32 GetStamina() const { return Stamina; }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0OTM2OTMwOCwtMTMxMTYyNDAxMywtMT
+eyJoaXN0b3J5IjpbLTc2MDQ5NTQzOSwtMTMxMTYyNDAxMywtMT
 Y2NjUwNDkxMywtMjkzODc4Mzc0LC0yMTQ2OTk0OTk4LC0xMDc5
 NzMyNzI4LC0xOTA4MTY0MTQzLC03NDA2NjYzODgsLTcyNzQyMz
 E4NCw0MzE3MDM2MjYsLTQ2ODkzMjY2NiwyMDA3MTI0MTM5LC04
