@@ -565,7 +565,7 @@ bool ASlashCharacter::HasEnoughStamina()
 	return Attributes && Attributes->GetStamina() > Attributes->GetDodgeCost();
 }
 ```
-以及在dodge函数中进行耐力的消耗
+以及在dodge函数中进行耐力的消耗，以及在对应UI进行衰减
 ```
 void ASlashCharacter::Dodge()
 {
@@ -573,8 +573,9 @@ void ASlashCharacter::Dodge()
 
 	PlayDodgeMontage();
 	ActionState = EActionState::EAS_Dodge;
-	if (Attributes) {
+	if (Attributes && SlashOverlay) {
 		Attributes->UseStamina(Attributes->GetDodgeCost());
+		SlashOverlay->SetStaminaBarPercent(Attributes->GetStaminaPercent());
 	}
 }
 ```
@@ -594,11 +595,11 @@ void UAttributeComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODkzODczNTcyLDEyMjg3NzE2MTgsLTEzMT
-E2MjQwMTMsLTE2NjY1MDQ5MTMsLTI5Mzg3ODM3NCwtMjE0Njk5
-NDk5OCwtMTA3OTczMjcyOCwtMTkwODE2NDE0MywtNzQwNjY2Mz
-g4LC03Mjc0MjMxODQsNDMxNzAzNjI2LC00Njg5MzI2NjYsMjAw
-NzEyNDEzOSwtODEwODM1OTI2LDE1NTkyMTczNTQsLTIyMzAzOT
-k0OSwtMTM4NDcwMDMwMSwyMTMzNjQzMjA4LDE3NTExODY0MzEs
-LTEyODEyMjg1MTddfQ==
+eyJoaXN0b3J5IjpbLTEzNTgxNjEwMzcsMTIyODc3MTYxOCwtMT
+MxMTYyNDAxMywtMTY2NjUwNDkxMywtMjkzODc4Mzc0LC0yMTQ2
+OTk0OTk4LC0xMDc5NzMyNzI4LC0xOTA4MTY0MTQzLC03NDA2Nj
+YzODgsLTcyNzQyMzE4NCw0MzE3MDM2MjYsLTQ2ODkzMjY2Niwy
+MDA3MTI0MTM5LC04MTA4MzU5MjYsMTU1OTIxNzM1NCwtMjIzMD
+M5OTQ5LC0xMzg0NzAwMzAxLDIxMzM2NDMyMDgsMTc1MTE4NjQz
+MSwtMTI4MTIyODUxN119
 -->
