@@ -515,12 +515,23 @@ void ASlashCharacter::DodgeEnd()
 然后去动画蓝图通过动画通知调用函数。
 perfect，以上就完成了Dodge功能
 ![输入图片说明](/imgs/2024-11-05/Sscaj8nNiiqifYMu.png)
+# 耐力消耗
+在attributeComponent.h中模仿health建立stamina
+```
+private:
+UPROPERTY(EditAnywhere, Category = "Actor Attributes")
+float Stamina;
+UPROPERTY(EditAnywhere, Category = "Actor Attributes")
+float MaxStamina;
+public:
+float GetStaminaPercent();
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNDY5OTQ5OTgsLTEwNzk3MzI3MjgsLT
-E5MDgxNjQxNDMsLTc0MDY2NjM4OCwtNzI3NDIzMTg0LDQzMTcw
-MzYyNiwtNDY4OTMyNjY2LDIwMDcxMjQxMzksLTgxMDgzNTkyNi
-wxNTU5MjE3MzU0LC0yMjMwMzk5NDksLTEzODQ3MDAzMDEsMjEz
-MzY0MzIwOCwxNzUxMTg2NDMxLC0xMjgxMjI4NTE3LDE1NzQ2MD
-EyNjgsNzE4ODIwNDczLC0xNDU4Nzc0MDQ4LDE4OTIxODU4NTYs
-LTE4MDI2MTcxNTRdfQ==
+eyJoaXN0b3J5IjpbLTE0NTk5MzQwNTEsLTIxNDY5OTQ5OTgsLT
+EwNzk3MzI3MjgsLTE5MDgxNjQxNDMsLTc0MDY2NjM4OCwtNzI3
+NDIzMTg0LDQzMTcwMzYyNiwtNDY4OTMyNjY2LDIwMDcxMjQxMz
+ksLTgxMDgzNTkyNiwxNTU5MjE3MzU0LC0yMjMwMzk5NDksLTEz
+ODQ3MDAzMDEsMjEzMzY0MzIwOCwxNzUxMTg2NDMxLC0xMjgxMj
+I4NTE3LDE1NzQ2MDEyNjgsNzE4ODIwNDczLC0xNDU4Nzc0MDQ4
+LDE4OTIxODU4NTZdfQ==
 -->
