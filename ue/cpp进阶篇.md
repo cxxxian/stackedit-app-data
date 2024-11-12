@@ -558,8 +558,15 @@ public:
 	FORCEINLINE int32 GetDodgeCost() const { return DodgeCost; }
 	FORCEINLINE int32 GetStamina() const { return Stamina; }
 ```
+我们就可以回去`SlashCharacter.cpp`中完善方法，`Attributes->GetStamina() > Attributes->GetDodgeCost()`才能翻滚
+```
+bool ASlashCharacter::HasEnoughStamina()
+{
+	return Attributes && Attributes->GetStamina() > Attributes->GetDodgeCost();
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2MDQ5NTQzOSwtMTMxMTYyNDAxMywtMT
+eyJoaXN0b3J5IjpbMTIyODc3MTYxOCwtMTMxMTYyNDAxMywtMT
 Y2NjUwNDkxMywtMjkzODc4Mzc0LC0yMTQ2OTk0OTk4LC0xMDc5
 NzMyNzI4LC0xOTA4MTY0MTQzLC03NDA2NjYzODgsLTcyNzQyMz
 E4NCw0MzE3MDM2MjYsLTQ2ODkzMjY2NiwyMDA3MTI0MTM5LC04
