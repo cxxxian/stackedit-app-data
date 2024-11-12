@@ -584,8 +584,16 @@ void ASlashCharacter::Dodge()
 UPROPERTY(EditAnywhere, Category = "Actor Attributes")
 float StaminaRegenRate = 8.f;
 ```
+在`attributeComponent.cpp`的Tick函数进行mei'zhen'diao'y
+void UAttributeComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+{
+	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+	Stamina = FMath::Clamp(Stamina + StaminaRegenRate * DeltaTime, 0.f, MaxStamina);
+}
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA5NDA2NjIwNywxMjI4NzcxNjE4LC0xMz
+eyJoaXN0b3J5IjpbMTk3NzE3NTQ3NSwxMjI4NzcxNjE4LC0xMz
 ExNjI0MDEzLC0xNjY2NTA0OTEzLC0yOTM4NzgzNzQsLTIxNDY5
 OTQ5OTgsLTEwNzk3MzI3MjgsLTE5MDgxNjQxNDMsLTc0MDY2Nj
 M4OCwtNzI3NDIzMTg0LDQzMTcwMzYyNiwtNDY4OTMyNjY2LDIw
