@@ -566,7 +566,7 @@ bool ASlashCharacter::HasEnoughStamina()
 }
 ```
 以及在dodge函数中进行耐力的消耗，以及在对应UI进行衰减。
-`IsOccupied() || !HasEnoughStamina()`注意这里应该用`or而不是and
+`IsOccupied() || !HasEnoughStamina()`注意这里应该用`or`而不是`and`
 ```
 void ASlashCharacter::Dodge()
 {
@@ -619,11 +619,11 @@ ASlashCharacter::ASlashCharacter()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzQ0NTQ3NjgsLTQ0OTU0OTE3MSwtMT
-A1NTYwNzMyMCwxMjI4NzcxNjE4LC0xMzExNjI0MDEzLC0xNjY2
-NTA0OTEzLC0yOTM4NzgzNzQsLTIxNDY5OTQ5OTgsLTEwNzk3Mz
-I3MjgsLTE5MDgxNjQxNDMsLTc0MDY2NjM4OCwtNzI3NDIzMTg0
-LDQzMTcwMzYyNiwtNDY4OTMyNjY2LDIwMDcxMjQxMzksLTgxMD
-gzNTkyNiwxNTU5MjE3MzU0LC0yMjMwMzk5NDksLTEzODQ3MDAz
-MDEsMjEzMzY0MzIwOF19
+eyJoaXN0b3J5IjpbMTcyMTA5NzU0NCwtNDQ5NTQ5MTcxLC0xMD
+U1NjA3MzIwLDEyMjg3NzE2MTgsLTEzMTE2MjQwMTMsLTE2NjY1
+MDQ5MTMsLTI5Mzg3ODM3NCwtMjE0Njk5NDk5OCwtMTA3OTczMj
+cyOCwtMTkwODE2NDE0MywtNzQwNjY2Mzg4LC03Mjc0MjMxODQs
+NDMxNzAzNjI2LC00Njg5MzI2NjYsMjAwNzEyNDEzOSwtODEwOD
+M1OTI2LDE1NTkyMTczNTQsLTIyMzAzOTk0OSwtMTM4NDcwMDMw
+MSwyMTMzNjQzMjA4XX0=
 -->
