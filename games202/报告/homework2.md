@@ -1,4 +1,5 @@
 ## 实现对场景直接光照的着色(考虑阴影)
+在src\shaders\ssrShader\ssrFragment.glsl
 ```
 //BRDF项
 vec3 EvalDiffuse(vec3 wi, vec3 wo, vec2 uv) {
@@ -98,6 +99,52 @@ void main() {
   gl_FragColor = vec4(vec3(color.rgb), 1.0);
 }
 ```
+往main中加入for循环启用RayMarch效果
+```
+#define SAMPLE_NUM 1
+
+void main() {
+  float s = InitRand(gl_FragCoord.xy);
+  vec3 L = vec3(0.0);
+  // L = GetGBufferDiffuse(GetScreenCoordinate(vPosWorld.xyz));
+
+  vec3 worldPos = vPosWorld.xyz;
+  vec2 screenUV = GetScreenCoordinate(vPosWorld.xyz);
+  vec3 wi = normalize(uLightDir);
+  vec3 wo = normalize(uCameraPos - worldPos);
+
+  // 直接光照
+  L = EvalDiffuse(wi, wo, screenUV) * EvalDirectionalLight(screenUV);
+
+  // Screen Space Ray Tracing 的反射测试
+  // L = (GetGBufferDiffuse(screenUV) + EvalReflect(wi, wo, screenUV))/2.;
+
+  vec3 L_ind = vec3(0.0);
+  for(int i = 0; i < SAMPLE_NUM; i++){
+    float pdf;
+    vec3 localDir = SampleHemisphereCos(s, pdf);
+    vec3 normal = GetGBufferNormalWorld(screenUV);
+    vec3 b1, b2;
+    LocalBasis(normal, b1, b2);
+    vec3 dir = normalize(mat3(b1, b2, normal) * localDir);
+
+    vec3 position_1;
+    if(RayMarch(worldPos, dir, position_1)){
+      vec2 hitScreenUV = GetScreenCoordinate(position_1);
+      L_ind += EvalDiffuse(dir, wo, screenUV) / pdf * EvalDiffuse(wi, dir, hitScreenUV) * EvalDirectionalLight(hitScreenUV);
+    }
+  }
+
+  L_ind /= float(SAMPLE_NUM);
+
+  L = L + L_ind;
+
+  vec3 color = pow(clamp(L, vec3(0.0), vec3(1.0)), vec3(1.0 / 2.2));
+  gl_FragColor = vec4(vec3(color.rgb), 1.0);
+}
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUzNDA1NTI3OCw3NjUzNzE3MDVdfQ==
+eyJoaXN0b3J5IjpbMTA1NzIwOTQ3NywtNTM0MDU1Mjc4LDc2NT
+M3MTcwNV19
 -->
