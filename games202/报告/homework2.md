@@ -33,6 +33,32 @@ vec3 color = pow(clamp(L, vec3(0.0), vec3(1.0)), vec3(1.0 / 2.2));
 gl_FragColor = vec4(vec3(color.rgb), 1.0);
 }
 ```
+```
+bool RayMarch(vec3 ori, vec3 dir, out vec3 hitPos) {
+	//ori: 光线的起始位置。
+	//dir: 光线的方向，一个单位向量。
+	float step = 0.05;
+	//光线行进的最大次数
+	const int totalStepTimes = 150;
+	int curStepTimes = 0;
+	vec3 stepDir = normalize(dir) * step;
+	vec3 curPos = ori;
+for(int curStepTimes = 0; curStepTimes < totalStepTimes; curStepTimes++)
+{
+	//将当前光线位置 curPos 转换为屏幕空间坐标
+	vec2 screenUV = GetScreenCoordinate(curPos);
+	//获取当前光线位置在深度图中的深度值
+	float rayDepth = GetDepth(curPos);
+	//获取 G-Buffer 中对应位置的深度值
+	float gBufferDepth = GetGBufferDepth(screenUV);
+	if(rayDepth - gBufferDepth > 0.0001){
+		hitPos = curPos;
+		return true;
+	}
+	curPos += stepDir;
+}
+return false;
+}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzY1MzcxNzA1XX0=
+eyJoaXN0b3J5IjpbLTExMzYwNzcxNTUsNzY1MzcxNzA1XX0=
 -->
