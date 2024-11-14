@@ -1,5 +1,5 @@
 ## 实现对场景直接光照的着色(考虑阴影)
-在src\shaders\ssrShader\ssrFragment.glsl
+在ssrFragment.glsl中
 ```
 //BRDF项
 vec3 EvalDiffuse(vec3 wi, vec3 wo, vec2 uv) {
@@ -18,7 +18,7 @@ vec3 Le = GetGBufferuShadow(uv) * uLightRadiance;
 return Le;
 }
 ```
-根据渲染方程解出直接光照信息
+在ssrFragment.glsl中，根据渲染方程解出直接光照信息
 ```
 void main() {
 float s = InitRand(gl_FragCoord.xy);
@@ -37,6 +37,7 @@ gl_FragColor = vec4(vec3(color.rgb), 1.0);
 ## Screen Space Ray Tracing
 RayMarch目的是求光线与物体交点，原理就是模拟光线从给定一个起点沿着某个方向每次步进一定的距离，用步进后光线的深度对比光线所在的屏幕坐标的场景物体深度，若光线深度大于场景物体深度，则相交，实现如下：
 (需要设定最大步进次数，避免不相交时计算没有退出条件的问题，另一方面也可以把RayMarch的性能消耗在一定程度上做限制，步进太远还没有交点时，就认为没有交点。)
+在ssrFragment.glsl中
 ```
 bool RayMarch(vec3 ori, vec3 dir, out vec3 hitPos) {
 	//ori: 光线的起始位置。
@@ -64,7 +65,7 @@ bool RayMarch(vec3 ori, vec3 dir, out vec3 hitPos) {
 	return false;
 }
 ```
-一个专门用来测试SSR的函数。
+一个专门用来测试SSR的函数。在ssrFragment.glsl中
 ```
 // test Screen Space Ray Tracing 
 vec3 EvalReflect(vec3 wi, vec3 wo, vec2 uv) {
@@ -80,7 +81,7 @@ vec3 EvalReflect(vec3 wi, vec3 wo, vec2 uv) {
   }
 }
 ```
-最后在main函数中把之前实现的直接光照换成要测SSR的函数
+最后在main函数中把之前实现的直接光照换成要测SSR的函数，在ssrFragment.glsl中
 ```
 //ssrFragment.glsl
 void main() {
@@ -99,7 +100,7 @@ void main() {
   gl_FragColor = vec4(vec3(color.rgb), 1.0);
 }
 ```
-往main中加入for循环启用RayMarch效果
+在ssrFragment.glsl中，往main中加入for循环启用RayMarch效果
 ```
 #define SAMPLE_NUM 1
 
@@ -145,6 +146,6 @@ void main() {
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1NzIwOTQ3NywtNTM0MDU1Mjc4LDc2NT
+eyJoaXN0b3J5IjpbMTM1NTYyMTA1NiwtNTM0MDU1Mjc4LDc2NT
 M3MTcwNV19
 -->
