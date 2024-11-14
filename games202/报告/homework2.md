@@ -144,8 +144,9 @@ void main() {
   gl_FragColor = vec4(vec3(color.rgb), 1.0);
 }
 ```
-
+### Bonus 1：实现Mipmap优化的 Screen Space Ray Tracing（Hiz优化）
+### 深度图的Mipmap生成
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1NTYyMTA1NiwtNTM0MDU1Mjc4LDc2NT
-M3MTcwNV19
+eyJoaXN0b3J5IjpbLTEzMDE3ODY2NDAsMTM1NTYyMTA1NiwtNT
+M0MDU1Mjc4LDc2NTM3MTcwNV19
 -->
