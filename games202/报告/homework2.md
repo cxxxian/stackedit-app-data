@@ -35,6 +35,7 @@ gl_FragColor = vec4(vec3(color.rgb), 1.0);
 ```
 ## Screen Space Ray Tracing
 RayMarch目的是求光线与物体交点，原理就是模拟光线从给定一个起点沿着某个方向每次步进一定的距离，用步进后光线的深度对比光线所在的屏幕坐标的场景物体深度，若光线深度大于场景物体深度，则相交，实现如下：
+(需要设定最大步进次数，避免不相交时计算没有退出条件的问题，另一方面也可以把RayMarch的性能消耗在一定程度上做限制，步进太远还没有交点时，就认为没有交点。)
 ```
 bool RayMarch(vec3 ori, vec3 dir, out vec3 hitPos) {
 	//ori: 光线的起始位置。
@@ -63,5 +64,5 @@ bool RayMarch(vec3 ori, vec3 dir, out vec3 hitPos) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzE1NjE2NjUsNzY1MzcxNzA1XX0=
+eyJoaXN0b3J5IjpbMTM4NzcyODY1Myw3NjUzNzE3MDVdfQ==
 -->
