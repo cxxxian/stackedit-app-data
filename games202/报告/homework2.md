@@ -43,22 +43,22 @@ bool RayMarch(vec3 ori, vec3 dir, out vec3 hitPos) {
 	int curStepTimes = 0;
 	vec3 stepDir = normalize(dir) * step;
 	vec3 curPos = ori;
-for(int curStepTimes = 0; curStepTimes < totalStepTimes; curStepTimes++)
-{
-	//将当前光线位置 curPos 转换为屏幕空间坐标
-	vec2 screenUV = GetScreenCoordinate(curPos);
-	//获取当前光线位置在深度图中的深度值
-	float rayDepth = GetDepth(curPos);
-	//获取 G-Buffer 中对应位置的深度值
-	float gBufferDepth = GetGBufferDepth(screenUV);
-	if(rayDepth - gBufferDepth > 0.0001){
-		hitPos = curPos;
-		return true;
+	for(int curStepTimes = 0; curStepTimes < totalStepTimes; curStepTimes++)
+	{
+		//将当前光线位置 curPos 转换为屏幕空间坐标
+		vec2 screenUV = GetScreenCoordinate(curPos);
+		//获取当前光线位置在深度图中的深度值
+		float rayDepth = GetDepth(curPos);
+		//获取 G-Buffer 中对应位置的深度值
+		float gBufferDepth = GetGBufferDepth(screenUV);
+		if(rayDepth - gBufferDepth > 0.0001){
+			hitPos = curPos;
+			return true;
+		}
+		curPos += stepDir;
 	}
-	curPos += stepDir;
-}
-return false;
+	return false;
 }
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMzYwNzcxNTUsNzY1MzcxNzA1XX0=
+eyJoaXN0b3J5IjpbMjA0MjcwNDA1LDc2NTM3MTcwNV19
 -->
