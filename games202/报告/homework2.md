@@ -153,7 +153,39 @@ var windowHeight;
 var mipMapLevel;
 var depthMeshRender;
 ```
+在engine.js中注释掉原本的初始化，改为webgl2
+```
+//engine.js
+
+// Init gl
+// gl = canvas.getContext('webgl');
+// if (!gl) {
+//  alert('Unable to initialize WebGL. Your browser or machine may not support it.');
+//  return;
+// }
+// gl.getExtension('OES_texture_float');
+// gl_draw_buffers = gl.getExtension('WEBGL_draw_buffers');
+// var maxdb = gl.getParameter(gl_draw_buffers.MAX_DRAW_BUFFERS_WEBGL);
+// console.log('MAX_DRAW_BUFFERS_WEBGL: ' + maxdb);
+
+// Edit Start
+windowWidth = window.screen.width;
+windowHeight = window.screen.height;
+
+gl = canvas.getContext('webgl2');
+if (!gl) {
+    alert('Unable to initialize WebGL. Your browser or machine may not support it.');
+    return;
+}
+
+let ext = gl.getExtension('EXT_color_buffer_float')
+if (!ext) {
+    alert("Need EXT_color_buffer_float");
+    return;
+}
+// Edit End
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzY0NDcxNTM0LDEzNTU2MjEwNTYsLTUzND
-A1NTI3OCw3NjUzNzE3MDVdfQ==
+eyJoaXN0b3J5IjpbMjM0ODUyOTI1LDM2NDQ3MTUzNCwxMzU1Nj
+IxMDU2LC01MzQwNTUyNzgsNzY1MzcxNzA1XX0=
 -->
