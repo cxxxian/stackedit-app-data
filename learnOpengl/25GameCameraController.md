@@ -19,7 +19,7 @@ private:
 	float mPitch = {0.0f};
 };
 ```
-`GameCameraControl.cpp`实现如下：
+`GameCameraControl.cpp`实现如下，`mPitch`用来做上下抬头的限制：
 ```
 #include "gameCameraControl.h"
 
@@ -65,5 +65,5 @@ void GameCameraControl::yaw(float angle)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUzOTQ1NzkyM119
+eyJoaXN0b3J5IjpbMTAwODQ3Njk0OF19
 -->
