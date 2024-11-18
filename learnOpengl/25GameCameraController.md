@@ -67,6 +67,9 @@ void GameCameraControl::yaw(float angle)
 # 键盘移动
 ![输入图片说明](/imgs/2024-11-18/Zum6dc7T5CkRyiAV.png)
 ![输入图片说明](/imgs/2024-11-18/hP09EbvgBFy5L7fI.png)
+按情况来逐一分析，
+第三列的情况，需要进行`direction`的单位归一化，因为我们都是对单位向量进行操作，自然希望也得到一个单位向量
+第四列的话`direction`为0需要特殊判断，否则归一化除0会出问题
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwODEwMDE1NDldfQ==
+eyJoaXN0b3J5IjpbMTc5ODU4NjI0M119
 -->
