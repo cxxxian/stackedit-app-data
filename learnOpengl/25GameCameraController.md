@@ -1,4 +1,4 @@
-# 旋转
+# 鼠标右键旋转
 ![输入图片说明](/imgs/2024-11-18/dUFty3H3vhqjkISX.png)
 创建`GameCameraControl.h`和`GameCameraControl.cpp`
 ```
@@ -64,6 +64,7 @@ void GameCameraControl::yaw(float angle)
 	mCamera->mRight = mat * glm::vec4(mCamera->mRight, 0.0f);
 }
 ```
+# 键盘移动
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwODQ3Njk0OF19
+eyJoaXN0b3J5IjpbMTA2MzMzMzQyNF19
 -->
