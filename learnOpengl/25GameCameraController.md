@@ -65,6 +65,8 @@ void GameCameraControl::yaw(float angle)
 }
 ```
 # 键盘移动
+![输入图片说明](/imgs/2024-11-18/Zum6dc7T5CkRyiAV.png)
+![输入图片说明](/imgs/2024-11-18/hP09EbvgBFy5L7fI.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2MzMzMzQyNF19
+eyJoaXN0b3J5IjpbLTEwODEwMDE1NDldfQ==
 -->
