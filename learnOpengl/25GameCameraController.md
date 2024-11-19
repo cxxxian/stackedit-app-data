@@ -70,6 +70,29 @@ void GameCameraControl::yaw(float angle)
 按情况来逐一分析，
 第三列的情况，需要进行`direction`的单位归一化，因为我们都是对单位向量进行操作，自然希望也得到一个单位向量
 第四列的话`direction`为0需要特殊判断，否则归一化除0会出问题
+```
+#pragma once
+
+#include "cameraControl.h"
+
+class GameCameraControl :public CameraControl {
+public:
+	GameCameraControl();
+	~GameCameraControl();
+
+	void onCursor(double xpos, double ypos) override;
+	void update() override;
+
+	void setSpeed(float s) { mSpeed = s; }
+private:
+	void pitch(float angle);
+	void yaw(float angle);
+
+private:
+	float mPitch{ 0.0f };
+	float mSpeed{ 0.1f };
+};
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc5ODU4NjI0M119
+eyJoaXN0b3J5IjpbMjI5OTMwMTYzLDE3OTg1ODYyNDNdfQ==
 -->
