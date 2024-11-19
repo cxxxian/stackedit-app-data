@@ -72,7 +72,6 @@ void GameCameraControl::yaw(float angle)
 第四列的话`direction`为0需要特殊判断，否则归一化除0会出问题
 ```
 #pragma once
-
 #include "cameraControl.h"
 
 class GameCameraControl :public CameraControl {
@@ -94,5 +93,6 @@ private:
 };
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjI5OTMwMTYzLDE3OTg1ODYyNDNdfQ==
+eyJoaXN0b3J5IjpbMTI2Nzc1ODc3LDIyOTkzMDE2MywxNzk4NT
+g2MjQzXX0=
 -->
