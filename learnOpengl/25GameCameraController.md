@@ -92,7 +92,35 @@ private:
 	float mSpeed{ 0.1f };
 };
 ```
+```
+void GameCameraControl::update()
+{
+	//最终移动方向
+	glm::vec3 direction(0.0f);
+
+	auto front = glm::cross(mCamera->mUp, mCamera->mRight);
+	auto right = mCamera->mRight;
+
+	if (mKeyMap[GLFW_KEY_W]) {
+		direction += front;
+	}
+	if (mKeyMap[GLFW_KEY_S]) {
+		direction -= front;
+	}
+	if (mKeyMap[GLFW_KEY_A]) {
+		direction -= right;
+	}
+	if (mKeyMap[GLFW_KEY_D]) {
+		direction += right;
+	}
+	//此时direction有可能不为1的长度，也有可能是0的长度
+	if (glm::length(direction) != 0) {
+		direction = glm::normalize(direction);
+		mCamera->mPosition += direction * mSpeed;
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2Nzc1ODc3LDIyOTkzMDE2MywxNzk4NT
-g2MjQzXX0=
+eyJoaXN0b3J5IjpbLTEwOTI2MTI4NTYsMjI5OTMwMTYzLDE3OT
+g1ODYyNDNdfQ==
 -->
