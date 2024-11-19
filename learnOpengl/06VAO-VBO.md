@@ -4,14 +4,14 @@
 ![输入图片说明](/imgs/2024-10-14/oc4XWzWYxZHbeDKC.png)
 解释：
 **创建一个vbo，还没有真正给分配显存**
-GLuint vbo = 0;
+`GLuint vbo = 0;`
 此时vbo是0，
-GL_CALL(glGenBuffers(1, &vbo));
+`GL_CALL(glGenBuffers(1, &vbo));`
 此时vbo值为1，//**注意方法内的1是个数，和值不一样**
-GL_CALL(glDeleteBuffers(1, &vbo));
+`GL_CALL(glDeleteBuffers(1, &vbo));`
 销毁之后vbo就不是1了，
-GLuint vboArr[] = { 0,0,0 };
-GL_CALL(glGenBuffers(3, vboArr));
+`GLuint vboArr[] = { 0,0,0 };`
+`GL_CALL(glGenBuffers(3, vboArr));`
 此时vboArr分别是1，2，3
 因为上面1号vbo被销毁了所以这边会重新生成一个1号
 
@@ -103,10 +103,11 @@ VAO中有很多个索引，index用来设置描述第几个属性
 ![输入图片说明](/imgs/2024-10-16/4wV17Pdv4LJX8Bmn.png)
 ![输入图片说明](/imgs/2024-10-16/NCMuTfhkL1fPXhCZ.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMxMDE5NTk5LC0xNTM1ODA5MDA3LDg2Nz
-I2MDc5MywxNTgzNTQzNzkwLC03Mjg1MTA5NTEsLTg1Nzc2MjA0
-MSwtNjYwMDQ1MjUzLC0xOTU4MTczMDg4LDU3NTc5MDY1LC0xMT
-EwOTkzNDc1LC0xMDc1NTc1MDI5LDI3MzI0ODY0MCwxOTI5OTI2
-OTU0LDgzNzkzMTI5LC01OTMzNDg4NDksLTExOTE0NDc4OTcsLT
-E1MzYzNjY5NTQsNjY5NDMxMjE5LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTIwNDMzNDg0NTEsLTMxMDE5NTk5LC0xNT
+M1ODA5MDA3LDg2NzI2MDc5MywxNTgzNTQzNzkwLC03Mjg1MTA5
+NTEsLTg1Nzc2MjA0MSwtNjYwMDQ1MjUzLC0xOTU4MTczMDg4LD
+U3NTc5MDY1LC0xMTEwOTkzNDc1LC0xMDc1NTc1MDI5LDI3MzI0
+ODY0MCwxOTI5OTI2OTU0LDgzNzkzMTI5LC01OTMzNDg4NDksLT
+ExOTE0NDc4OTcsLTE1MzYzNjY5NTQsNjY5NDMxMjE5LC0yMDg4
+NzQ2NjEyXX0=
 -->
