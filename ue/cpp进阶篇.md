@@ -635,12 +635,18 @@ ASlashCharacter::ASlashCharacter()
 5. 动画状态机按照老样子设计即可
 ![输入图片说明](/imgs/2024-11-20/bpnViejbHAZwNnmn.png)
 6. 在死亡动画，由于我们希望的是多个敌人可以灵活使用的模板
+我们选择sequence player
+![输入图片说明](/imgs/2024-11-20/Fjy9AkYixApNAJlv.png)
+在右侧面板中我们可以将其sequence公开为引脚
+![输入图片说明](/imgs/2024-11-20/FHfPCI5FFIUIF74P.png)
+把引脚公开为变量
+![输入图片说明](/imgs/2024-11-20/AVp2huIkFeATCHIX.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTU0MjU2OTE5LDE3MzcwNDQzODksMTEzOT
-YxNDMxLC0yNzU3NTk1NTAsLTE5MTMzMTEwNzIsMTcyMTA5NzU0
-NCwtNDQ5NTQ5MTcxLC0xMDU1NjA3MzIwLDEyMjg3NzE2MTgsLT
-EzMTE2MjQwMTMsLTE2NjY1MDQ5MTMsLTI5Mzg3ODM3NCwtMjE0
-Njk5NDk5OCwtMTA3OTczMjcyOCwtMTkwODE2NDE0MywtNzQwNj
-Y2Mzg4LC03Mjc0MjMxODQsNDMxNzAzNjI2LC00Njg5MzI2NjYs
-MjAwNzEyNDEzOV19
+eyJoaXN0b3J5IjpbLTQ1MzM0NTM5OSwxNzM3MDQ0Mzg5LDExMz
+k2MTQzMSwtMjc1NzU5NTUwLC0xOTEzMzExMDcyLDE3MjEwOTc1
+NDQsLTQ0OTU0OTE3MSwtMTA1NTYwNzMyMCwxMjI4NzcxNjE4LC
+0xMzExNjI0MDEzLC0xNjY2NTA0OTEzLC0yOTM4NzgzNzQsLTIx
+NDY5OTQ5OTgsLTEwNzk3MzI3MjgsLTE5MDgxNjQxNDMsLTc0MD
+Y2NjM4OCwtNzI3NDIzMTg0LDQzMTcwMzYyNiwtNDY4OTMyNjY2
+LDIwMDcxMjQxMzldfQ==
 -->
