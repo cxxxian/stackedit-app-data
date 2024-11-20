@@ -195,8 +195,10 @@ int main() {
 ### uv值分析
 ![输入图片说明](/imgs/2024-11-20/kvNhu9aQcU0bvnS9.png)
 ### 索引值分析
+此处不需要等于 `i < latitude, j < long`，是因为，我们通过p1，可以知道p2，p3，p4.
+![输入图片说明](/imgs/2024-11-20/Ba5qJ15CVUxRnnYo.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzNjY5Mjc0LDE4ODIwMTQwNzAsLTIwMz
-kxMDQ4MDUsLTczMjc0NzAsLTM1NjI1OTk0NSwxMDI4MDQ0MTAx
-LC0xOTU3OTkwODQsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbLTQwODg5NDQwNSwxNTM2NjkyNzQsMTg4Mj
+AxNDA3MCwtMjAzOTEwNDgwNSwtNzMyNzQ3MCwtMzU2MjU5OTQ1
+LDEwMjgwNDQxMDEsLTE5NTc5OTA4NCwtMjA4ODc0NjYxMl19
 -->
