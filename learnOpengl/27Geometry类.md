@@ -184,10 +184,14 @@ int main() {
 ![输入图片说明](/imgs/2024-11-20/jZCCAaqMtWofLJZG.png)
 ![输入图片说明](/imgs/2024-11-20/cxaje47wVFc5vSOg.png)
 ![输入图片说明](/imgs/2024-11-20/QBIsPXH4NAq211Yt.png)
-纬线只需要0-180度，
+纬线只需要0-180度，经线0-360度，就可以确定球上的每一个顶点的值
 ![输入图片说明](/imgs/2024-11-20/dM6dsgL7VLgTTZyK.png)
+此处注意我们的 `i <= latitude, j <= long`，为什么要取等，这样是数据冗余的。
+原因：
+ru'xia
+![输入图片说明](/imgs/2024-11-20/dcSRo15azmXF0sOG.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2Njg2NDM3NywtMjAzOTEwNDgwNSwtNz
+eyJoaXN0b3J5IjpbMTQxODA3OTYxMSwtMjAzOTEwNDgwNSwtNz
 MyNzQ3MCwtMzU2MjU5OTQ1LDEwMjgwNDQxMDEsLTE5NTc5OTA4
 NCwtMjA4ODc0NjYxMl19
 -->
