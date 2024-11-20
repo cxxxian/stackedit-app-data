@@ -12,9 +12,13 @@ float ASlashCharacter::TakeDamage(float DamageAmount, FDamageEvent const& Damage
 }
 ```
 我们建立好蓝图WBP_SlashOverlay的界面后，希望通过cpp来控制数值
+
 ![输入图片说明](/imgs/2024-08-30/3eozFlssKP8dw0ej.png)
+
 所以新建c++类来作为蓝图的父类，新建类的名字为SlashOverlay
+
 ![输入图片说明](/imgs/2024-08-30/GQeYmjPXhzgCqKxg.png)
+
 在SlashOverlay.h中，将需要用的的变量全部声明，名字对应蓝图中的变量方便于用meta = (BindWidget)绑定
 ```
 public:
@@ -75,19 +79,31 @@ void USlashOverlay::SetSoul(int32 Soul)
 
 ```
 回到SlashOverlay的蓝图点击图表选择类设置，将父类修改为自己的c++类
+
 ![输入图片说明](/imgs/2024-10-09/sikQRNU2Y9AtH82J.png)
+
 ### 蓝图做法
 在关卡蓝图中添加到视口即可在游戏画面中看见该widget，但是此处只针对当前关卡地图。
+
 ![输入图片说明](/imgs/2024-10-09/7zMMl7Ft7BMm4Ime.png)
+
 通过创建一个HUD类
+
 ![输入图片说明](/imgs/2024-10-09/vMO6ms1DkP4jB5pX.png)
+
 在该蓝图中的beginPlay将widget添加上去
+
 ![输入图片说明](/imgs/2024-10-09/QTN7aJgFjmgxCPEl.png)
+
 最后在世界场景中，游戏模式的HUD将其改为我们自己的HUD
+
 ![输入图片说明](/imgs/2024-10-09/cS1ydo3nhtFSiMWW.png)
+
 ### cpp做法
 新建一个c++的HUD类，取名为SlashHUD
+
 ![输入图片说明](/imgs/2024-10-09/chnWzsq4LpNQh3pI.png)
+
 在SlashHUD，声明一个SlashOverlayClass，TSubclassOf用来限制class USlashOverlay类型
 ```
 private:
@@ -96,7 +112,9 @@ private:
 ```
 将原本蓝图的HUD修改为以此为父类
 即可以在细节面板中看到此设置，将其改为我们的蓝图widget
+
 ![输入图片说明](/imgs/2024-10-09/C3PwuQviTc5CNScN.png)
+
 我们希望通过cpp来将widget添加到视口而不是用蓝图
 在SlashHUD.h，继承BeginPlay函数
 ```
@@ -156,7 +174,9 @@ void ASlashCharacter::BeginPlay()
 # Echo死亡
 把敌人死亡逻辑换到BaseCharacter里面，给Echo添加死亡状态Type，继承即可
 此处通过这个linked anim graph，把cpp的状态连接到动画蓝图上
+
 ![输入图片说明](/imgs/2024-10-24/ZfziwwnL7hpwiwf1.png)
+
 ## 解决echo死亡后敌人仍然攻击
 在BaseCharacter.cpp中，在Die函数中添加Tag，并在Attack中利用Tag进行判断
 ```
@@ -298,7 +318,9 @@ void ASoul::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 }
 ```
 最后去蓝图中选择此Effect
+
 ![输入图片说明](/imgs/2024-11-02/iJDK3MqFUJuOku6a.png)
+
 我们还希望加入捡拾的音效，在Item.h中制作一个变量以及函数用来播放声音
 ```
 UPROPERTY(EditAnywhere)
@@ -401,7 +423,9 @@ void ASlashCharacter::AddGold(ATreasure* Treasure)
 }
 ```
 最后，可以去蓝图中点击灵魂球直接给它设置Souls的价值！！！
+
 ![输入图片说明](/imgs/2024-11-02/mMUvdP6YnGsVP9rM.png)
+
 # 敌人掉落Soul
 去Enemy.h中声明SoulClass，提供更灵活的设计，不同的敌人可以去各自的蓝图中设置Soul的数值
 ```
@@ -437,14 +461,20 @@ void AEnemy::SpawnSoul()
 }
 ```
 最后我们去Enemy蓝图中将BP_Soul添加上去
+
 ![输入图片说明](/imgs/2024-11-04/DPIgJWpVFCKiPmhn.png)
+
 并且，我们之前对AttributeComponent中将Gold和Souls设为EditAnywhere，此处就可以很方便的针对每个敌人进行赋值！！！
+
 ![输入图片说明](/imgs/2024-11-04/0uI8KRcyx88E9MhY.png)
+
 ## 发现bug
 在Soul生成的一瞬间我们已经在灵魂球的重叠框中，此时会被捡拾起来但是不会累加值，我们只需要将灵魂球的重叠框做的小一点就好了！
 # Dodge
 新建操作映射
+
 ![输入图片说明](/imgs/2024-11-05/kwSduZ5ZbU2sLPGq.png)
+
 在SlashCharacter.h中声明函数
 ```
 void Dodge();
@@ -688,11 +718,11 @@ ASlashCharacter::ASlashCharacter()
 
 ![输入图片说明](/imgs/2024-11-20/1F63yIruvqABgEHF.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MjYwODUwMTQsLTIwMTE3NjM2MCwtMT
-c2Mzg2MTg5MCwyMTEyODM3MzU3LDQyMDYxNDE0OSwtNDUzMzQ1
-Mzk5LDE3MzcwNDQzODksMTEzOTYxNDMxLC0yNzU3NTk1NTAsLT
-E5MTMzMTEwNzIsMTcyMTA5NzU0NCwtNDQ5NTQ5MTcxLC0xMDU1
-NjA3MzIwLDEyMjg3NzE2MTgsLTEzMTE2MjQwMTMsLTE2NjY1MD
-Q5MTMsLTI5Mzg3ODM3NCwtMjE0Njk5NDk5OCwtMTA3OTczMjcy
-OCwtMTkwODE2NDE0M119
+eyJoaXN0b3J5IjpbNzM2ODI4NTUwLC0yMDExNzYzNjAsLTE3Nj
+M4NjE4OTAsMjExMjgzNzM1Nyw0MjA2MTQxNDksLTQ1MzM0NTM5
+OSwxNzM3MDQ0Mzg5LDExMzk2MTQzMSwtMjc1NzU5NTUwLC0xOT
+EzMzExMDcyLDE3MjEwOTc1NDQsLTQ0OTU0OTE3MSwtMTA1NTYw
+NzMyMCwxMjI4NzcxNjE4LC0xMzExNjI0MDEzLC0xNjY2NTA0OT
+EzLC0yOTM4NzgzNzQsLTIxNDY5OTQ5OTgsLTEwNzk3MzI3Mjgs
+LTE5MDgxNjQxNDNdfQ==
 -->
