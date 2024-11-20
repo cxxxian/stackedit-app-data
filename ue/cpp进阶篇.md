@@ -655,9 +655,9 @@ ASlashCharacter::ASlashCharacter()
 ![输入图片说明](/imgs/2024-11-20/YDlZQsXTKie9mFD9.png)
 补充刚刚的坑，在这里我们进行blender space的赋值。
 ![输入图片说明](/imgs/2024-11-20/ArZXGLQBJbD9Hc4Z.png)
-小提一嘴，为什么我们刚刚dead'pose
+小提一嘴，为什么我们刚刚deadpose不用这样
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1NzkwMzA0OCwtMTc2Mzg2MTg5MCwyMT
+eyJoaXN0b3J5IjpbMTI4NjU1MzM3MCwtMTc2Mzg2MTg5MCwyMT
 EyODM3MzU3LDQyMDYxNDE0OSwtNDUzMzQ1Mzk5LDE3MzcwNDQz
 ODksMTEzOTYxNDMxLC0yNzU3NTk1NTAsLTE5MTMzMTEwNzIsMT
 cyMTA5NzU0NCwtNDQ5NTQ5MTcxLC0xMDU1NjA3MzIwLDEyMjg3
