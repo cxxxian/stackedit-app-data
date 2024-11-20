@@ -656,8 +656,10 @@ ASlashCharacter::ASlashCharacter()
 补充刚刚的坑，在这里我们进行blender space的赋值。
 ![输入图片说明](/imgs/2024-11-20/ArZXGLQBJbD9Hc4Z.png)
 小提一嘴，为什么我们刚刚deadpose不用这样
+其实这里也是可以赋值的，但是我们看不到我们自己取的名字，无法知道是1还是6
+![输入图片说明](/imgs/2024-11-20/1F63yIruvqABgEHF.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4NjU1MzM3MCwtMTc2Mzg2MTg5MCwyMT
+eyJoaXN0b3J5IjpbLTIwMTE3NjM2MCwtMTc2Mzg2MTg5MCwyMT
 EyODM3MzU3LDQyMDYxNDE0OSwtNDUzMzQ1Mzk5LDE3MzcwNDQz
 ODksMTEzOTYxNDMxLC0yNzU3NTk1NTAsLTE5MTMzMTEwNzIsMT
 cyMTA5NzU0NCwtNDQ5NTQ5MTcxLC0xMDU1NjA3MzIwLDEyMjg3
