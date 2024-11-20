@@ -646,7 +646,7 @@ ASlashCharacter::ASlashCharacter()
 7. 对于blend space， 我们用blend space player。
 总的来说反正就是避免直接用专属动画，都用这种播放器来代替。
 ![输入图片说明](/imgs/2024-11-20/7WSOjs7ae3qEbLoU.png)
-这里同样可以把b'le
+这里同样可以把blend space像刚刚那样暴露出来，但我们可以尝试另一种做法，等会介绍
 ![输入图片说明](/imgs/2024-11-20/XXtMUfUC73vBXl5M.png)
 ## 创建子类
 用我们刚刚的模板创建子类动画蓝图，骨骼就用paladin
@@ -654,11 +654,11 @@ ASlashCharacter::ASlashCharacter()
 进来后我们就可以看得到我们刚刚做的变量，很不错
 ![输入图片说明](/imgs/2024-11-20/YDlZQsXTKie9mFD9.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0NzY4ODQxOCwtMTc2Mzg2MTg5MCwyMT
-EyODM3MzU3LDQyMDYxNDE0OSwtNDUzMzQ1Mzk5LDE3MzcwNDQz
-ODksMTEzOTYxNDMxLC0yNzU3NTk1NTAsLTE5MTMzMTEwNzIsMT
-cyMTA5NzU0NCwtNDQ5NTQ5MTcxLC0xMDU1NjA3MzIwLDEyMjg3
-NzE2MTgsLTEzMTE2MjQwMTMsLTE2NjY1MDQ5MTMsLTI5Mzg3OD
-M3NCwtMjE0Njk5NDk5OCwtMTA3OTczMjcyOCwtMTkwODE2NDE0
-MywtNzQwNjY2Mzg4XX0=
+eyJoaXN0b3J5IjpbLTE4OTg4ODQxMzcsLTE3NjM4NjE4OTAsMj
+ExMjgzNzM1Nyw0MjA2MTQxNDksLTQ1MzM0NTM5OSwxNzM3MDQ0
+Mzg5LDExMzk2MTQzMSwtMjc1NzU5NTUwLC0xOTEzMzExMDcyLD
+E3MjEwOTc1NDQsLTQ0OTU0OTE3MSwtMTA1NTYwNzMyMCwxMjI4
+NzcxNjE4LC0xMzExNjI0MDEzLC0xNjY2NTA0OTEzLC0yOTM4Nz
+gzNzQsLTIxNDY5OTQ5OTgsLTEwNzk3MzI3MjgsLTE5MDgxNjQx
+NDMsLTc0MDY2NjM4OF19
 -->
