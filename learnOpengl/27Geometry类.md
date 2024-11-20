@@ -24,13 +24,11 @@ private:
 	uint32_t mIndicesCount{ 0 };
 };
 ```
+先基础实现一下：
 ```
 #include "geometry.h"
 
-Geometry::Geometry()
-{
-}
-
+Geometry::Geometry(){}
 Geometry::~Geometry()
 {
 	if (mVao != 0) {
@@ -46,7 +44,6 @@ Geometry::~Geometry()
 		glDeleteBuffers(1, &mEbo);
 	}
 }
-
 Geometry* Geometry::createBox(float size)
 {
 	Geometry* geometry = new Geometry();
@@ -60,6 +57,6 @@ Geometry* Geometry::createSphere(float size)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI5NDk1NzM2MCwtMTk1Nzk5MDg0LC0yMD
-g4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbNTIwNjAwNjI3LC0xOTU3OTkwODQsLTIwOD
+g3NDY2MTJdfQ==
 -->
