@@ -135,8 +135,8 @@ Geometry* Geometry::createBox(float size)
 	return geometry;
 }
 ```
-最后到main.cpp中
-
+最后到`main.cpp`中
+先声明`geometry`，然后我们用`createBox`赋值，最后在`render`中绑定`vao`
 ```
 Geometry* geometry = nullptr;
 void prepareVAO() {
@@ -153,7 +153,9 @@ void render(){
     shader->end();
 }
 ```
+就可以看到立方体了，不过此时我们还没开启深度检测
+![输入图片说明](/imgs/2024-11-20/tVtV6GX8Bq7XemJc.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTU1MTcyMjcsMTAyODA0NDEwMSwtMTk1Nz
-k5MDg0LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTg5MTg3MTMxOSwxMDI4MDQ0MTAxLC0xOT
+U3OTkwODQsLTIwODg3NDY2MTJdfQ==
 -->
