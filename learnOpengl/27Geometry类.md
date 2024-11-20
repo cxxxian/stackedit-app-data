@@ -184,14 +184,15 @@ int main() {
 ![输入图片说明](/imgs/2024-11-20/jZCCAaqMtWofLJZG.png)
 ![输入图片说明](/imgs/2024-11-20/cxaje47wVFc5vSOg.png)
 ![输入图片说明](/imgs/2024-11-20/QBIsPXH4NAq211Yt.png)
-纬线只需要0-180度，经线0-360度，就可以确定球上的每一个顶点的值
+**纬线只需要0-180度，经线0-360度**，就可以确定球上的每一个顶点的值
+`glm::pi<float>()`是派的值
 ![输入图片说明](/imgs/2024-11-20/dM6dsgL7VLgTTZyK.png)
 此处注意我们的 `i <= latitude, j <= long`，为什么要取等，这样是数据冗余的。
 原因：
 如下图，我们最左边的一列和最右边一列其实是同一条经线，但是但是，两边需要存储的uv值其实是有区别的，虽然是数据冗余，但是我们可以更方便地进行uv绑定
 ![输入图片说明](/imgs/2024-11-20/dcSRo15azmXF0sOG.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIzMTM1OTQyMywtMjAzOTEwNDgwNSwtNz
-MyNzQ3MCwtMzU2MjU5OTQ1LDEwMjgwNDQxMDEsLTE5NTc5OTA4
-NCwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTE1NzE0NjEzNzIsLTIwMzkxMDQ4MDUsLT
+czMjc0NzAsLTM1NjI1OTk0NSwxMDI4MDQ0MTAxLC0xOTU3OTkw
+ODQsLTIwODg3NDY2MTJdfQ==
 -->
