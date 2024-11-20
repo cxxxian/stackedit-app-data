@@ -155,7 +155,8 @@ void render(){
 ```
 就可以看到立方体了，不过此时我们还没开启深度检测
 ![输入图片说明](/imgs/2024-11-20/tVtV6GX8Bq7XemJc.png)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg5MTg3MTMxOSwxMDI4MDQ0MTAxLC0xOT
+eyJoaXN0b3J5IjpbLTM1NjI1OTk0NSwxMDI4MDQ0MTAxLC0xOT
 U3OTkwODQsLTIwODg3NDY2MTJdfQ==
 -->
