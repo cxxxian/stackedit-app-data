@@ -155,8 +155,33 @@ void render(){
 ```
 就可以看到立方体了，不过此时我们还没开启深度检测
 ![输入图片说明](/imgs/2024-11-20/tVtV6GX8Bq7XemJc.png)
+复习一遍深度测试流程
+void prepareState() {
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
+}
+void render(){
+    //执行opengl画布清理操作
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    //1 绑定当前的program
+    shader->begin();
+
+    shader->setInt("sampler", 0);//此处值为0是因为我们的纹理绑定在0号位上
+    shader->setMatrix4x4("transform", transform);
+    shader->setMatrix4x4("viewMatrix", camera->getViewMatrix());
+    shader->setMatrix4x4("projectionMatrix", camera->getProjectionMatrix());
+
+    //2 绑定当前的vao
+    glBindVertexArray(geometry->getVao());
+    //3 发出绘制指令
+    //glDrawArrays(GL_LINE_STRIP, 0, 6);
+    glDrawElements(GL_TRIANGLES, geometry->getIndicesCount(), GL_UNSIGNED_INT, 0);
+
+    shader->end();
+}
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1NjI1OTk0NSwxMDI4MDQ0MTAxLC0xOT
-U3OTkwODQsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbNjcwNjA3MjkyLC0zNTYyNTk5NDUsMTAyOD
+A0NDEwMSwtMTk1Nzk5MDg0LC0yMDg4NzQ2NjEyXX0=
 -->
