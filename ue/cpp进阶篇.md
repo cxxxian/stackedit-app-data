@@ -622,35 +622,51 @@ ASlashCharacter::ASlashCharacter()
 我们会有各式各样的敌人，我们用模板就可以复用动画蓝图的功能
 右键->动画->动画蓝图。
 选择模板创建
+
 ![输入图片说明](/imgs/2024-11-20/fFlyFhXwsWKJucJA.png)
+
 所以我们现在重新理一遍paladin的动画蓝图逻辑并且移植过来
 1. 第一步就是重载函数蓝图线程安全更新动画
+
 ![输入图片说明](/imgs/2024-11-20/1OvGa26pLFRmscpS.png)
+
 2. 声明变量
+
 ![输入图片说明](/imgs/2024-11-20/LXx0MI8iqgmPHrUt.png)
+
 3. 初始化基础变量包括（角色、移动）
+
 ![输入图片说明](/imgs/2024-11-20/XhUqgbHHjH6fiBGe.png)
+
 4. 剩余变量利用线程更新赋值
+
 ![输入图片说明](/imgs/2024-11-20/JNoEWcWVj9XJHi8f.png)
+
 5. 动画状态机按照老样子设计即可
 
 ![输入图片说明](/imgs/2024-11-20/bpnViejbHAZwNnmn.png)
+
 6. 在死亡动画，由于我们希望的是多个敌人可以灵活使用的模板
 我们选择sequence player
 
 ![输入图片说明](/imgs/2024-11-20/Fjy9AkYixApNAJlv.png)
+
 在右侧面板中我们可以将其sequence公开为引脚
 
 ![输入图片说明](/imgs/2024-11-20/FHfPCI5FFIUIF74P.png)
+
 把引脚公开为变量
 
 ![输入图片说明](/imgs/2024-11-20/AVp2huIkFeATCHIX.png)
+
 把这些变量修改名字一一对应
 
 ![输入图片说明](/imgs/2024-11-20/0491XrDWxcyVg9te.png)
+
 7. 对于blend space， 我们用blend space player。
 总的来说反正就是避免直接用专属动画，都用这种播放器来代替。
 ![输入图片说明](/imgs/2024-11-20/7WSOjs7ae3qEbLoU.png)
+
 这里同样可以把blend space像刚刚那样暴露出来，但我们可以尝试另一种做法，等会介绍
 
 ![输入图片说明](/imgs/2024-11-20/XXtMUfUC73vBXl5M.png)
@@ -658,22 +674,25 @@ ASlashCharacter::ASlashCharacter()
 用我们刚刚的模板创建子类动画蓝图，骨骼就用paladin
 
 ![输入图片说明](/imgs/2024-11-20/DVwrXhilnkob3t03.png)
+
 进来后我们就可以看得到我们刚刚做的变量，很不错
 
 ![输入图片说明](/imgs/2024-11-20/YDlZQsXTKie9mFD9.png)
+
 补充刚刚的坑，在这里我们进行blender space的赋值。
 
 ![输入图片说明](/imgs/2024-11-20/ArZXGLQBJbD9Hc4Z.png)
+
 小提一嘴，为什么我们刚刚deadpose不用这样
 其实这里也是可以赋值的，但是我们看不到我们自己取的名字，无法知道是1还是6
 
 ![输入图片说明](/imgs/2024-11-20/1F63yIruvqABgEHF.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODEyOTk5MzIwLC0yMDExNzYzNjAsLTE3Nj
-M4NjE4OTAsMjExMjgzNzM1Nyw0MjA2MTQxNDksLTQ1MzM0NTM5
-OSwxNzM3MDQ0Mzg5LDExMzk2MTQzMSwtMjc1NzU5NTUwLC0xOT
-EzMzExMDcyLDE3MjEwOTc1NDQsLTQ0OTU0OTE3MSwtMTA1NTYw
-NzMyMCwxMjI4NzcxNjE4LC0xMzExNjI0MDEzLC0xNjY2NTA0OT
-EzLC0yOTM4NzgzNzQsLTIxNDY5OTQ5OTgsLTEwNzk3MzI3Mjgs
-LTE5MDgxNjQxNDNdfQ==
+eyJoaXN0b3J5IjpbLTE0MjYwODUwMTQsLTIwMTE3NjM2MCwtMT
+c2Mzg2MTg5MCwyMTEyODM3MzU3LDQyMDYxNDE0OSwtNDUzMzQ1
+Mzk5LDE3MzcwNDQzODksMTEzOTYxNDMxLC0yNzU3NTk1NTAsLT
+E5MTMzMTEwNzIsMTcyMTA5NzU0NCwtNDQ5NTQ5MTcxLC0xMDU1
+NjA3MzIwLDEyMjg3NzE2MTgsLTEzMTE2MjQwMTMsLTE2NjY1MD
+Q5MTMsLTI5Mzg3ODM3NCwtMjE0Njk5NDk5OCwtMTA3OTczMjcy
+OCwtMTkwODE2NDE0M119
 -->
