@@ -156,7 +156,7 @@ void render(){
 就可以看到立方体了，不过此时我们还没开启深度检测
 ![输入图片说明](/imgs/2024-11-20/tVtV6GX8Bq7XemJc.png)
 复习一遍深度测试流程
-制作`prepareState()`用来开启深度测试，在`main`函数中调用，最重要的是，别忘记清理深度缓存信息
+制作`prepareState()`用来开启深度测试，在`main`函数中调用，**最重要的是，别忘记清理深度缓存信息**
 ```
 void prepareState() {
     glEnable(GL_DEPTH_TEST);
@@ -179,7 +179,8 @@ int main() {
 	...
 }
 ```
+![输入图片说明](/imgs/2024-11-20/02ldfXzuYfLfTwL6.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNzk4NzUzNiwtMzU2MjU5OTQ1LDEwMj
-gwNDQxMDEsLTE5NTc5OTA4NCwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTczMjc0NzAsLTM1NjI1OTk0NSwxMDI4MD
+Q0MTAxLC0xOTU3OTkwODQsLTIwODg3NDY2MTJdfQ==
 -->
