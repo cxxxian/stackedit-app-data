@@ -198,10 +198,105 @@ int main() {
 此处不需要等于 `i < latitude, j < long`，是因为，我们通过p1，可以知道p2，p3，p4。
 举一反三，到m+7的时候，我们就可以得到m+8，不用再算以m+8为基础的了
 ![输入图片说明](/imgs/2024-11-20/Ba5qJ15CVUxRnnYo.png)
-###
+### 代码实现
+```
+Geometry* Geometry::createSphere(float radius)
+{
+	Geometry* geometry = new Geometry();
+	//目标：1 位置 2 uv 3 索引
+	//1 主要变量声明
+	std::vector<GLfloat> positions{};
+	std::vector<GLfloat> uvs{};
+	std::vector<GLint> indices{};
+
+	//声明纬线与经线的数量
+	int numLatLines = 60;//纬线
+	int numLongLines = 60;//经线
+	
+	//2 通过两层循环（纬线在外，经线在内）->位置、uv
+	for (int i = 0; i <= numLatLines; i++) {
+		for (int j = 0; j <= numLongLines; j++) {
+			float phi = i * glm::pi<float>() / numLatLines;
+			float theta = j * 2 * glm::pi<float>() / numLongLines;
+
+			float y = radius * cos(phi);
+			float x = radius * sin(phi) * cos(theta);
+			float z = radius * sin(phi) * sin(theta);
+
+			positions.push_back(x);
+			positions.push_back(y);
+			positions.push_back(z);
+
+			float u = 1.0 - (float)j / (float)numLongLines;
+			float v = 1.0 - (float)i / (float)numLatLines;
+
+			uvs.push_back(u);
+			uvs.push_back(v);
+		}
+	}
+	//3 通过两层循环（没有=号）->顶点索引
+	for (int i = 0; i < numLatLines; i++) {
+		for (int j = 0; j < numLongLines; j++) {
+			int p1 = i * (numLongLines + 1) + j;
+			int p2 = p1 + numLongLines + 1;
+			int p3 = p1 + 1;
+			int p4 = p2 + 1;
+
+			//顺时针
+			indices.push_back(p1);
+			indices.push_back(p2);
+			indices.push_back(p3);
+
+			indices.push_back(p3);
+			indices.push_back(p2);
+			indices.push_back(p4);
+		}
+	}
+
+	//2 VBO创建
+	GLuint& posVbo = geometry->mPosVbo, uvVbo = geometry->mUvVbo;
+	glGenBuffers(1, &posVbo);
+	glBindBuffer(GL_ARRAY_BUFFER, posVbo);
+	glBufferData(GL_ARRAY_BUFFER, positions.size() * sizeof(float), positions.data(), GL_STATIC_DRAW);
+
+	glGenBuffers(1, &uvVbo);
+	glBindBuffer(GL_ARRAY_BUFFER, uvVbo);
+	glBufferData(GL_ARRAY_BUFFER, uvs.size() * sizeof(float), uvs.data(), GL_STATIC_DRAW);
+
+	//3 EBO创建
+	glGenBuffers(1, &geometry->mEbo);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, geometry->mEbo);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(GLuint), indices.data(), GL_STATIC_DRAW);
+
+	//4 VAO创建
+	glGenVertexArrays(1, &geometry->mVao);
+	glBindVertexArray(geometry->mVao);
+
+	//5 绑定vbo ebo 加入属性描述信息
+	//5.1 加入位置属性描述信息
+	glBindBuffer(GL_ARRAY_BUFFER, posVbo);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, (void*)0);
+
+	//5.2  加入uv属性描述信息
+	glBindBuffer(GL_ARRAY_BUFFER, uvVbo);
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, (void*)0);
+
+	//5.3 加入ebo到当前的vao
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, geometry->mEbo);
+
+	glBindVertexArray(0);
+
+	geometry->mIndicesCount = indices.size();
+
+	//生成vbo和vao
+	return geometry;
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk3NzA2MTY1OSwtMjAwMTE2NDA2NiwxNT
-M2NjkyNzQsMTg4MjAxNDA3MCwtMjAzOTEwNDgwNSwtNzMyNzQ3
-MCwtMzU2MjU5OTQ1LDEwMjgwNDQxMDEsLTE5NTc5OTA4NCwtMj
-A4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTIwMDk2ODMxMTcsLTIwMDExNjQwNjYsMT
+UzNjY5Mjc0LDE4ODIwMTQwNzAsLTIwMzkxMDQ4MDUsLTczMjc0
+NzAsLTM1NjI1OTk0NSwxMDI4MDQ0MTAxLC0xOTU3OTkwODQsLT
+IwODg3NDY2MTJdfQ==
 -->
