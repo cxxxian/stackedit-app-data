@@ -195,10 +195,12 @@ int main() {
 ### uv值分析
 ![输入图片说明](/imgs/2024-11-20/kvNhu9aQcU0bvnS9.png)
 ### 索引值分析
-此处不需要等于 `i < latitude, j < long`，是因为，我们通过p1，可以知道p2，p3，p4.
+此处不需要等于 `i < latitude, j < long`，是因为，我们通过p1，可以知道p2，p3，p4。
+举一反三，到m+7的时候，我们就可以得到m+8，不用再算以m+8为基础的了
 ![输入图片说明](/imgs/2024-11-20/Ba5qJ15CVUxRnnYo.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwODg5NDQwNSwxNTM2NjkyNzQsMTg4Mj
-AxNDA3MCwtMjAzOTEwNDgwNSwtNzMyNzQ3MCwtMzU2MjU5OTQ1
-LDEwMjgwNDQxMDEsLTE5NTc5OTA4NCwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTIwMDExNjQwNjYsMTUzNjY5Mjc0LDE4OD
+IwMTQwNzAsLTIwMzkxMDQ4MDUsLTczMjc0NzAsLTM1NjI1OTk0
+NSwxMDI4MDQ0MTAxLC0xOTU3OTkwODQsLTIwODg3NDY2MTJdfQ
+==
 -->
