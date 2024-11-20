@@ -180,9 +180,11 @@ int main() {
 }
 ```
 ![输入图片说明](/imgs/2024-11-20/02ldfXzuYfLfTwL6.png)
-#
+# 球体
+![输入图片说明](/imgs/2024-11-20/jZCCAaqMtWofLJZG.png)
+![输入图片说明](/imgs/2024-11-20/cxaje47wVFc5vSOg.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyOTM3Nzc1LC03MzI3NDcwLC0zNTYyNT
-k5NDUsMTAyODA0NDEwMSwtMTk1Nzk5MDg0LC0yMDg4NzQ2NjEy
-XX0=
+eyJoaXN0b3J5IjpbMTkzMDUyODM3NCwtNzMyNzQ3MCwtMzU2Mj
+U5OTQ1LDEwMjgwNDQxMDEsLTE5NTc5OTA4NCwtMjA4ODc0NjYx
+Ml19
 -->
