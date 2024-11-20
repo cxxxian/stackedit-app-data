@@ -1,5 +1,6 @@
 ![输入图片说明](/imgs/2024-11-20/BJZMhf09N3OgxPwj.png)
 ![输入图片说明](/imgs/2024-11-20/K6uoexsFgZ9dulge.png)
+```
 #pragma once
 #include "core.h"
 
@@ -22,8 +23,43 @@ private:
 
 	uint32_t mIndicesCount{ 0 };
 };
+```
+```
+#include "geometry.h"
+
+Geometry::Geometry()
+{
+}
+
+Geometry::~Geometry()
+{
+	if (mVao != 0) {
+		glDeleteVertexArrays(1, &mVao);
+	}
+	if (mPosVbo != 0) {
+		glDeleteBuffers(1, &mPosVbo);
+	}
+	if (mUvVbo != 0) {
+		glDeleteBuffers(1, &mUvVbo);
+	}
+	if (mEbo != 0) {
+		glDeleteBuffers(1, &mEbo);
+	}
+}
+
+Geometry* Geometry::createBox(float size)
+{
+	Geometry* geometry = new Geometry();
+	return geometry;
+}
+Geometry* Geometry::createSphere(float size)
+{
+	Geometry* geometry = new Geometry();
+	return geometry;
+}
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODY5NjkyODQsLTE5NTc5OTA4NCwtMj
-A4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTI5NDk1NzM2MCwtMTk1Nzk5MDg0LC0yMD
+g4NzQ2NjEyXX0=
 -->
