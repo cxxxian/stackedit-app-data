@@ -188,10 +188,10 @@ int main() {
 ![输入图片说明](/imgs/2024-11-20/dM6dsgL7VLgTTZyK.png)
 此处注意我们的 `i <= latitude, j <= long`，为什么要取等，这样是数据冗余的。
 原因：
-ru'xia
+如下图，我们最左边的一列和最右边一列其实是同一条经线，但是但是，lian
 ![输入图片说明](/imgs/2024-11-20/dcSRo15azmXF0sOG.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxODA3OTYxMSwtMjAzOTEwNDgwNSwtNz
+eyJoaXN0b3J5IjpbLTgzNDgyNjI5MCwtMjAzOTEwNDgwNSwtNz
 MyNzQ3MCwtMzU2MjU5OTQ1LDEwMjgwNDQxMDEsLTE5NTc5OTA4
 NCwtMjA4ODc0NjYxMl19
 -->
