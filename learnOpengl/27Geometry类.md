@@ -183,8 +183,9 @@ int main() {
 # 球体
 ![输入图片说明](/imgs/2024-11-20/jZCCAaqMtWofLJZG.png)
 ![输入图片说明](/imgs/2024-11-20/cxaje47wVFc5vSOg.png)
+![输入图片说明](/imgs/2024-11-20/QBIsPXH4NAq211Yt.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzMDUyODM3NCwtNzMyNzQ3MCwtMzU2Mj
-U5OTQ1LDEwMjgwNDQxMDEsLTE5NTc5OTA4NCwtMjA4ODc0NjYx
-Ml19
+eyJoaXN0b3J5IjpbLTIwMzkxMDQ4MDUsLTczMjc0NzAsLTM1Nj
+I1OTk0NSwxMDI4MDQ0MTAxLC0xOTU3OTkwODQsLTIwODg3NDY2
+MTJdfQ==
 -->
