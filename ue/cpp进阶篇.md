@@ -626,10 +626,14 @@ ASlashCharacter::ASlashCharacter()
 所以我们现在重新理一遍paladin的动画蓝图逻辑并且移植过来
 1. 第一步就是重载函数蓝图线程安全更新动画
 ![输入图片说明](/imgs/2024-11-20/1OvGa26pLFRmscpS.png)
-2. 初始化基础变量包括（角色、移动）
+2. 声明变量
+![输入图片说明](/imgs/2024-11-20/LXx0MI8iqgmPHrUt.png)
+3. 初始化基础变量包括（角色、移动）
 ![输入图片说明](/imgs/2024-11-20/XhUqgbHHjH6fiBGe.png)
+4. 剩余变量利用线程更新赋值
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTU0MDkwMzMyLC0yNzU3NTk1NTAsLTE5MT
+eyJoaXN0b3J5IjpbMTEzOTYxNDMxLC0yNzU3NTk1NTAsLTE5MT
 MzMTEwNzIsMTcyMTA5NzU0NCwtNDQ5NTQ5MTcxLC0xMDU1NjA3
 MzIwLDEyMjg3NzE2MTgsLTEzMTE2MjQwMTMsLTE2NjY1MDQ5MT
 MsLTI5Mzg3ODM3NCwtMjE0Njk5NDk5OCwtMTA3OTczMjcyOCwt
