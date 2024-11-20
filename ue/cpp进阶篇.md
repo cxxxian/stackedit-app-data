@@ -541,10 +541,13 @@ void ASlashCharacter::DodgeEnd()
 ```
 我们怎么调用这个DodgeEnd呢
 动画通知！！！
+
 ![输入图片说明](/imgs/2024-11-05/tQhDewPK9nCrsMtM.png)
+
 然后去动画蓝图通过动画通知调用函数。
 perfect，以上就完成了Dodge功能
 ![输入图片说明](/imgs/2024-11-05/Sscaj8nNiiqifYMu.png)
+
 # 耐力消耗
 在`attributeComponent.h`中模仿`health`建立有关`stamina`的变量和方法
 ```
@@ -718,7 +721,7 @@ ASlashCharacter::ASlashCharacter()
 
 ![输入图片说明](/imgs/2024-11-20/1F63yIruvqABgEHF.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzM2ODI4NTUwLC0yMDExNzYzNjAsLTE3Nj
+eyJoaXN0b3J5IjpbLTIzNTYwMDEyLC0yMDExNzYzNjAsLTE3Nj
 M4NjE4OTAsMjExMjgzNzM1Nyw0MjA2MTQxNDksLTQ1MzM0NTM5
 OSwxNzM3MDQ0Mzg5LDExMzk2MTQzMSwtMjc1NzU5NTUwLC0xOT
 EzMzExMDcyLDE3MjEwOTc1NDQsLTQ0OTU0OTE3MSwtMTA1NTYw
