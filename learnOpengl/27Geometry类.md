@@ -134,9 +134,26 @@ Geometry* Geometry::createBox(float size)
 	glBindVertexArray(0);
 	return geometry;
 }
+```
+最后到main.cpp中
 
 ```
+Geometry* geometry = nullptr;
+void prepareVAO() {
+    geometry = Geometry::createBox(6.0f);
+}
+void render(){
+	...
+    //2 绑定当前的vao
+    glBindVertexArray(geometry->getVao());
+    //3 发出绘制指令
+    //glDrawArrays(GL_LINE_STRIP, 0, 6);
+    glDrawElements(GL_TRIANGLES, geometry->getIndicesCount(), GL_UNSIGNED_INT, 0);
+
+    shader->end();
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjIzMjE4OTc0LDEwMjgwNDQxMDEsLTE5NT
-c5OTA4NCwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbOTU1MTcyMjcsMTAyODA0NDEwMSwtMTk1Nz
+k5MDg0LC0yMDg4NzQ2NjEyXX0=
 -->
