@@ -632,9 +632,11 @@ ASlashCharacter::ASlashCharacter()
 ![输入图片说明](/imgs/2024-11-20/XhUqgbHHjH6fiBGe.png)
 4. 剩余变量利用线程更新赋值
 ![输入图片说明](/imgs/2024-11-20/JNoEWcWVj9XJHi8f.png)
-
+5. 动画状态机按照老样子设计即可
+![输入图片说明](/imgs/2024-11-20/bpnViejbHAZwNnmn.png)
+6. 在死亡动画，由于我们希望的是多个敌人可以灵活使用的模板
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTkwOTY1Mzk1LDE3MzcwNDQzODksMTEzOT
+eyJoaXN0b3J5IjpbOTU0MjU2OTE5LDE3MzcwNDQzODksMTEzOT
 YxNDMxLC0yNzU3NTk1NTAsLTE5MTMzMTEwNzIsMTcyMTA5NzU0
 NCwtNDQ5NTQ5MTcxLC0xMDU1NjA3MzIwLDEyMjg3NzE2MTgsLT
 EzMTE2MjQwMTMsLTE2NjY1MDQ5MTMsLTI5Mzg3ODM3NCwtMjE0
