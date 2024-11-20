@@ -252,8 +252,8 @@ Geometry* Geometry::createSphere(float radius)
 			indices.push_back(p4);
 		}
 	}
-
-	//2 VBO创建
+	
+	//2 生成vbo和vao
 	GLuint& posVbo = geometry->mPosVbo, uvVbo = geometry->mUvVbo;
 	glGenBuffers(1, &posVbo);
 	glBindBuffer(GL_ARRAY_BUFFER, posVbo);
@@ -290,13 +290,13 @@ Geometry* Geometry::createSphere(float radius)
 
 	geometry->mIndicesCount = indices.size();
 
-	//生成vbo和vao
+	
 	return geometry;
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDk2ODMxMTcsLTIwMDExNjQwNjYsMT
-UzNjY5Mjc0LDE4ODIwMTQwNzAsLTIwMzkxMDQ4MDUsLTczMjc0
-NzAsLTM1NjI1OTk0NSwxMDI4MDQ0MTAxLC0xOTU3OTkwODQsLT
-IwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbLTY5MDMxNzE4OSwtMjAwMTE2NDA2NiwxNT
+M2NjkyNzQsMTg4MjAxNDA3MCwtMjAzOTEwNDgwNSwtNzMyNzQ3
+MCwtMzU2MjU5OTQ1LDEwMjgwNDQxMDEsLTE5NTc5OTA4NCwtMj
+A4ODc0NjYxMl19
 -->
