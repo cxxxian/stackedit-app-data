@@ -194,8 +194,9 @@ int main() {
 ![输入图片说明](/imgs/2024-11-20/dcSRo15azmXF0sOG.png)
 ### uv值分析
 ![输入图片说明](/imgs/2024-11-20/kvNhu9aQcU0bvnS9.png)
+### 索引值分析
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4MjAxNDA3MCwtMjAzOTEwNDgwNSwtNz
-MyNzQ3MCwtMzU2MjU5OTQ1LDEwMjgwNDQxMDEsLTE5NTc5OTA4
-NCwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbMTUzNjY5Mjc0LDE4ODIwMTQwNzAsLTIwMz
+kxMDQ4MDUsLTczMjc0NzAsLTM1NjI1OTk0NSwxMDI4MDQ0MTAx
+LC0xOTU3OTkwODQsLTIwODg3NDY2MTJdfQ==
 -->
