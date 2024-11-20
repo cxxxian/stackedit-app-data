@@ -56,8 +56,8 @@ Geometry* Geometry::createSphere(float size)
 	return geometry;
 }
 ```
-
+# 立方体
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1MDM3MDUyMSwtMTk1Nzk5MDg0LC0yMD
+eyJoaXN0b3J5IjpbMTAyODA0NDEwMSwtMTk1Nzk5MDg0LC0yMD
 g4NzQ2NjEyXX0=
 -->
