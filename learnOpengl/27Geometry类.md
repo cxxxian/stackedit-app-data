@@ -184,8 +184,10 @@ int main() {
 ![输入图片说明](/imgs/2024-11-20/jZCCAaqMtWofLJZG.png)
 ![输入图片说明](/imgs/2024-11-20/cxaje47wVFc5vSOg.png)
 ![输入图片说明](/imgs/2024-11-20/QBIsPXH4NAq211Yt.png)
+纬线只需要0-180度，
+![输入图片说明](/imgs/2024-11-20/dM6dsgL7VLgTTZyK.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzkxMDQ4MDUsLTczMjc0NzAsLTM1Nj
-I1OTk0NSwxMDI4MDQ0MTAxLC0xOTU3OTkwODQsLTIwODg3NDY2
-MTJdfQ==
+eyJoaXN0b3J5IjpbLTU2Njg2NDM3NywtMjAzOTEwNDgwNSwtNz
+MyNzQ3MCwtMzU2MjU5OTQ1LDEwMjgwNDQxMDEsLTE5NTc5OTA4
+NCwtMjA4ODc0NjYxMl19
 -->
