@@ -181,6 +181,7 @@ int main() {
 ```
 ![输入图片说明](/imgs/2024-11-20/02ldfXzuYfLfTwL6.png)
 # 球体
+### 位置分析
 ![输入图片说明](/imgs/2024-11-20/jZCCAaqMtWofLJZG.png)
 ![输入图片说明](/imgs/2024-11-20/cxaje47wVFc5vSOg.png)
 ![输入图片说明](/imgs/2024-11-20/QBIsPXH4NAq211Yt.png)
@@ -191,9 +192,10 @@ int main() {
 原因：
 如下图，我们最左边的一列和最右边一列其实是同一条经线，但是但是，两边需要存储的uv值其实是有区别的，虽然是数据冗余，但是我们可以更方便地进行uv绑定
 ![输入图片说明](/imgs/2024-11-20/dcSRo15azmXF0sOG.png)
-
+### uv值分析
+![输入图片说明](/imgs/2024-11-20/kvNhu9aQcU0bvnS9.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwNzI3MTg4NiwtMjAzOTEwNDgwNSwtNz
+eyJoaXN0b3J5IjpbMTg4MjAxNDA3MCwtMjAzOTEwNDgwNSwtNz
 MyNzQ3MCwtMzU2MjU5OTQ1LDEwMjgwNDQxMDEsLTE5NTc5OTA4
 NCwtMjA4ODc0NjYxMl19
 -->
