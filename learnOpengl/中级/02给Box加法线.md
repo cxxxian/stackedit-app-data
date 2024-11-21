@@ -108,8 +108,17 @@ private:
 	GLuint mNormalVbo{ 0 };
 	GLuint mEbo{ 0 };
 ```
-当然我们就去析构
+当然我们就去析构函数中删除这个vbo
+```
+Geometry::~Geometry()
+{
+	...
+	if (mNormalVbo != 0) {
+		glDeleteBuffers(1, &mNormalVbo);
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3MzQyMzM4MywtNzY3NTE0OTMxLDEwNT
-Y1NTg3MTldfQ==
+eyJoaXN0b3J5IjpbNzEwMDgwNzI0LC03Njc1MTQ5MzEsMTA1Nj
+U1ODcxOV19
 -->
