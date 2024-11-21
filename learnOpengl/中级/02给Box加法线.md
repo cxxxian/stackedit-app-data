@@ -135,7 +135,7 @@ Geometry* Geometry::createBox(float size)
 
 	//5.3  加入normal属性描述信息
 	glBindBuffer(GL_ARRAY_BUFFER, normalVbo);
-	glEnableVertexAttribArray(1);
+	glEnableVertexAttribArray(2);
 	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, (void*)0);
 	...
 	return geometry;
@@ -193,6 +193,6 @@ void main()
 
 ![输入图片说明](/imgs/2024-11-21/gVnhbLe8x10nZWKU.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQwNDM0OTkxLC0xMTUwOTc5MzUsNzEwMD
-gwNzI0LC03Njc1MTQ5MzEsMTA1NjU1ODcxOV19
+eyJoaXN0b3J5IjpbLTg2NjgzNDM1NCwtMTE1MDk3OTM1LDcxMD
+A4MDcyNCwtNzY3NTE0OTMxLDEwNTY1NTg3MTldfQ==
 -->
