@@ -118,10 +118,13 @@ Geometry::~Geometry()
 	}
 }
 ```
+既然我们有了`normal`数据，创建并绑`vbo`到`vao`中
 ```
 Geometry* Geometry::createBox(float size)
 {
 	...
+	GLuint& posVbo = geometry->mPosVbo, uvVbo = geometry->mUvVbo, normalVbo = geometry->mNormalVbo;
+	
 	glGenBuffers(1, &normalVbo);
 	glBindBuffer(GL_ARRAY_BUFFER, normalVbo);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(normals), normals, GL_STATIC_DRAW);
@@ -130,12 +133,11 @@ Geometry* Geometry::createBox(float size)
 	glBindBuffer(GL_ARRAY_BUFFER, normalVbo);
 	glEnableVertexAttribArray(1);
 	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, (void*)0);
-
-
+	...
 	return geometry;
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMDAxMzI3NzUsNzEwMDgwNzI0LC03Nj
-c1MTQ5MzEsMTA1NjU1ODcxOV19
+eyJoaXN0b3J5IjpbLTExNTA5NzkzNSw3MTAwODA3MjQsLTc2Nz
+UxNDkzMSwxMDU2NTU4NzE5XX0=
 -->
