@@ -167,7 +167,7 @@ void main()
     normal = aNormal;
 }
 ```
-然后去`fragment.glsl`接一下
+然后去`fragment.glsl`用`in`接一下法线，将颜色归一和夹值后输出为颜色
 ```
 #version 330 core
 out vec4 FragColor;
@@ -193,6 +193,6 @@ void main()
 
 ![输入图片说明](/imgs/2024-11-21/gVnhbLe8x10nZWKU.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDA0MDQ5MiwtMTE1MDk3OTM1LDcxMD
-A4MDcyNCwtNzY3NTE0OTMxLDEwNTY1NTg3MTldfQ==
+eyJoaXN0b3J5IjpbNDQwNDM0OTkxLC0xMTUwOTc5MzUsNzEwMD
+gwNzI0LC03Njc1MTQ5MzEsMTA1NjU1ODcxOV19
 -->
