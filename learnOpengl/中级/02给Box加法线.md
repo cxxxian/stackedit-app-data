@@ -99,7 +99,17 @@ float normals[] = {
 		-1.0f, 0.0f, 0.0f
 	};
 ```
+去geometry.h中，添加一个`mNormalVbo`
+```
+private:
+	GLuint mVao{ 0 };
+	GLuint mPosVbo{ 0 };
+	GLuint mUvVbo{ 0 };
+	GLuint mNormalVbo{ 0 };
+	GLuint mEbo{ 0 };
+```
+当然我们就去析构
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTAyODY4ODAsLTc2NzUxNDkzMSwxMD
-U2NTU4NzE5XX0=
+eyJoaXN0b3J5IjpbMTU3MzQyMzM4MywtNzY3NTE0OTMxLDEwNT
+Y1NTg3MTldfQ==
 -->
