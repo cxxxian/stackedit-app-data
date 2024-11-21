@@ -22,6 +22,11 @@ Geometry* Geometry::createPlane(float width, float height)
 		0.0f, 1.0f
 	};
 
+	unsigned int indices[] = {
+		0, 1, 2,
+		2, 3, 0
+	};
+
 	//2 VBO创建
 	GLuint& posVbo = geometry->mPosVbo, uvVbo = geometry->mUvVbo;
 	glGenBuffers(1, &posVbo);
@@ -56,9 +61,9 @@ Geometry* Geometry::createPlane(float width, float height)
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, geometry->mEbo);
 
 	glBindVertexArray(0);
-	return nullptr;
+	return geometry;
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1NjU1ODcxOV19
+eyJoaXN0b3J5IjpbLTc2NzUxNDkzMSwxMDU2NTU4NzE5XX0=
 -->
