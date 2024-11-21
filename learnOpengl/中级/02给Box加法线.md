@@ -1,4 +1,4 @@
-#
+# 制作Plane
 先前做了box，sphere，现在多做一个plane
 ```
 Geometry* Geometry::createPlane(float width, float height)
@@ -65,6 +65,8 @@ Geometry* Geometry::createPlane(float width, float height)
 	return geometry;
 }
 ```
+# 添加法线
+### 法线数据
 去到`createBox()`方法中，给`box`添加法线数据
 ```
 float normals[] = {
@@ -100,6 +102,7 @@ float normals[] = {
 		-1.0f, 0.0f, 0.0f
 	};
 ```
+### 制作normalVbo
 去geometry.h中，添加一个`mNormalVbo`
 ```
 private:
@@ -138,7 +141,9 @@ Geometry* Geometry::createBox(float size)
 	return geometry;
 }
 ```
+### 验证法线数据
+通过将法线值当作颜色输出，因为normal也有x，y，zsan'ge'bian
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NjI1NDcyMjIsLTExNTA5NzkzNSw3MT
-AwODA3MjQsLTc2NzUxNDkzMSwxMDU2NTU4NzE5XX0=
+eyJoaXN0b3J5IjpbNDQ1NDE2MjQzLC0xMTUwOTc5MzUsNzEwMD
+gwNzI0LC03Njc1MTQ5MzEsMTA1NjU1ODcxOV19
 -->
