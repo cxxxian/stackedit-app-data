@@ -1,3 +1,4 @@
+#
 先前做了box，sphere，现在多做一个plane
 ```
 Geometry* Geometry::createPlane(float width, float height)
@@ -138,6 +139,6 @@ Geometry* Geometry::createBox(float size)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNTA5NzkzNSw3MTAwODA3MjQsLTc2Nz
-UxNDkzMSwxMDU2NTU4NzE5XX0=
+eyJoaXN0b3J5IjpbLTE3NjI1NDcyMjIsLTExNTA5NzkzNSw3MT
+AwODA3MjQsLTc2NzUxNDkzMSwxMDU2NTU4NzE5XX0=
 -->
