@@ -64,8 +64,42 @@ Geometry* Geometry::createPlane(float width, float height)
 	return geometry;
 }
 ```
-zai
+去到`createBox()`方法中，给`box`添加法线数据
+```
+float normals[] = {
+		//Front face
+		0.0f, 0.0f, 1.0f,
+		0.0f, 0.0f, 1.0f,
+		0.0f, 0.0f, 1.0f,
+		0.0f, 0.0f, 1.0f,
+		//Back face
+		0.0f, 0.0f, -1.0f,
+		0.0f, 0.0f, -1.0f,
+		0.0f, 0.0f, -1.0f,
+		0.0f, 0.0f, -1.0f,
+		//Top face
+		0.0f, 1.0f, 0.0f,
+		0.0f, 1.0f, 0.0f,
+		0.0f, 1.0f, 0.0f,
+		0.0f, 1.0f, 0.0f,
+		//Botton face
+		0.0f, -1.0f, 0.0f,
+		0.0f, -1.0f, 0.0f,
+		0.0f, -1.0f, 0.0f,
+		0.0f, -1.0f, 0.0f,
+		//Right face
+		1.0f, 0.0f, 0.0f,
+		1.0f, 0.0f, 0.0f,
+		1.0f, 0.0f, 0.0f,
+		1.0f, 0.0f, 0.0f,
+		//Left face
+		-1.0f, 0.0f, 0.0f,
+		-1.0f, 0.0f, 0.0f,
+		-1.0f, 0.0f, 0.0f,
+		-1.0f, 0.0f, 0.0f
+	};
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjYyMzU5ODk1LC03Njc1MTQ5MzEsMTA1Nj
-U1ODcxOV19
+eyJoaXN0b3J5IjpbLTEzOTAyODY4ODAsLTc2NzUxNDkzMSwxMD
+U2NTU4NzE5XX0=
 -->
