@@ -142,8 +142,8 @@ Geometry* Geometry::createBox(float size)
 }
 ```
 ### 验证法线数据
-通过将法线值当作颜色输出，因为normal也有x，y，zsan'ge'bian
+通过将`法线值当作颜色输出，因为normal也有x，y，z三个变量，可以当作颜色值的rgb输出
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQ1NDE2MjQzLC0xMTUwOTc5MzUsNzEwMD
-gwNzI0LC03Njc1MTQ5MzEsMTA1NjU1ODcxOV19
+eyJoaXN0b3J5IjpbLTIxMzcxNTQxNDYsLTExNTA5NzkzNSw3MT
+AwODA3MjQsLTc2NzUxNDkzMSwxMDU2NTU4NzE5XX0=
 -->
