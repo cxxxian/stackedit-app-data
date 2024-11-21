@@ -144,8 +144,55 @@ Geometry* Geometry::createBox(float size)
 ### 验证法线数据
 一个很好的验证方法：
 通过将**法线值当作颜色输出**，因为normal也有x，y，z三个变量，可以当作颜色值的rgb输出
+先去`vertex.glsl`用layout接一下法线数据，然后`out`给`fragment`
+```
+#version 460 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec2 aUV;
+layout (location = 2) in vec3 aNormal;
+
+out vec2 uv;
+out vec3 normal;
+
+uniform mat4 transform;
+uniform mat4 viewMatrix;
+uniform mat4 projectionMatrix;
+
+void main()
+{
+    vec4 position = vec4(aPos, 1.0);
+    position = projectionMatrix * viewMatrix * transform * position;
+    gl_Position = position;
+    uv = aUV;
+    normal = aNormal;
+}
+```
+然后去`fragment.glsl`接一下
+```
+#version 330 core
+out vec4 FragColor;
+
+uniform float time;
+
+in vec2 uv;
+in vec3 normal;
+
+uniform sampler2D sampler;
+
+void main()
+{
+    //1 将vs中输入的normal做一下归一化
+    vec3 normalN = normalize(normal);
+    //2 将负数的情况直接清理为0，使用clamp函数
+    vec3 normalColor = clamp(normalN, 0.0, 1.0);
+    FragColor = vec4(normalColor, 1.0);
+
+    //FragColor = texture(sampler, uv);
+}
+```
+
 ![输入图片说明](/imgs/2024-11-21/gVnhbLe8x10nZWKU.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTYzMDA2Njg0LC0xMTUwOTc5MzUsNzEwMD
-gwNzI0LC03Njc1MTQ5MzEsMTA1NjU1ODcxOV19
+eyJoaXN0b3J5IjpbLTE1MDA0MDQ5MiwtMTE1MDk3OTM1LDcxMD
+A4MDcyNCwtNzY3NTE0OTMxLDEwNTY1NTg3MTldfQ==
 -->
