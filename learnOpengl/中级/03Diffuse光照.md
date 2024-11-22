@@ -33,21 +33,17 @@ void Shader::setVector3(const std::string& name, const glm::vec3 value)
     GL_CALL(glUniform3f(location, value.x, value.y, value.z));
 }
 ```
+到Render中调用方法并且绑定光照参数到shader中
 ```
 void render(){
 	...
-    shader->begin();
-
-    shader->setInt("sampler", 0);//此处值为0是因为我们的纹理绑定在0号位上
-    shader->setMatrix4x4("transform", transform);
-    shader->setMatrix4x4("viewMatrix", camera->getViewMatrix());
-    shader->setMatrix4x4("projectionMatrix", camera->getProjectionMatrix());
     //光源参数的uniform更新
     shader->setVector3("lightDirection", lightDirection);
     shader->setVector3("lightColor", lightColor);
+    ...
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5MzAwMjIzMiwzNTMyNDIyODIsMTk2NT
+eyJoaXN0b3J5IjpbLTQwOTM0MzgwOCwzNTMyNDIyODIsMTk2NT
 EyMjQ0NCwtMTcyNTUyMjU4NSwtMjA4ODc0NjYxMl19
 -->
