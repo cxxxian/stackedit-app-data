@@ -43,7 +43,10 @@ void render(){
     ...
 }
 ```
+就可以得到目标效果啦
+
+![输入图片说明](/imgs/2024-11-22/eR7Dk8ZpNNqxIKQW.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI5NjQ1OTEyNywzNTMyNDIyODIsMTk2NT
-EyMjQ0NCwtMTcyNTUyMjU4NSwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTE4ODg5MDExNDEsMzUzMjQyMjgyLDE5Nj
+UxMjI0NDQsLTE3MjU1MjI1ODUsLTIwODg3NDY2MTJdfQ==
 -->
