@@ -48,9 +48,45 @@ void render(){
 ![输入图片说明](/imgs/2024-11-22/eR7Dk8ZpNNqxIKQW.png)
 
 现在我们要实现Diffuse光照效果了
+只需要到`fragment.glsl`修改，
+```
+#version 330 core
+out vec4 FragColor;
+
+uniform float time;
+
+in vec2 uv;
+in vec3 normal;
+
+uniform sampler2D sampler;
+
+//光源参数
+uniform vec3 lightDirection;
+uniform vec3 lightColor;
+
+void main()
+{
+    //1 获取物体当前像素的颜色，也就是纹理的颜色
+    vec3 objectColor = texture(sampler, uv).xyz;
+
+    //2 准备diffuse（漫反射）相关的各类数据
+    vec3 normalN = normalize(normal);
+
+    vec3 lightDirN = normalize(lightDirection);
+	
+	//此处的diffuse需要clampshi'yi
+    float diffuse = clamp(dot(-lightDirN, normalN), 0.0, 1.0);
+    vec3 finalColor = lightColor * diffuse * objectColor;
+
+    FragColor = vec4(finalColor, 1.0);
+}
+```
+
 ![输入图片说明](/imgs/2024-11-22/FcZQKRwLcVtCjVJd.png)
+
+![输入图片说明](/imgs/2024-11-22/YI5OATbqiPieS6Ro.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0NDQwNDc5MiwtNDE4Mjk0Njc5LC0xOD
-g4OTAxMTQxLDM1MzI0MjI4MiwxOTY1MTIyNDQ0LC0xNzI1NTIy
-NTg1LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbMTA5NjkzNTkzLC00MTgyOTQ2NzksLTE4OD
+g5MDExNDEsMzUzMjQyMjgyLDE5NjUxMjI0NDQsLTE3MjU1MjI1
+ODUsLTIwODg3NDY2MTJdfQ==
 -->
