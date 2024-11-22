@@ -4,7 +4,8 @@
 glm::vec3 lightDirection = glm::vec3(-1.0f, -1.0f, -1.0f);
 glm::vec3 lightColor = glm::vec3(0.9f, 0.85f, 0.75f);
 ```
+之前设计
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2NTEyMjQ0NCwtMTcyNTUyMjU4NSwtMj
-A4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbODc4MjMzNDI5LDE5NjUxMjI0NDQsLTE3Mj
+U1MjI1ODUsLTIwODg3NDY2MTJdfQ==
 -->
