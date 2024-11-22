@@ -82,12 +82,19 @@ void main()
     FragColor = vec4(finalColor, 1.0);
 }
 ```
+修改一下平行光的方向就可以很明显的看到明暗关系
+```
+glm::vec3 lightDirection = glm::vec3(-0.4f, -1.4f, -1.9f);
+glm::vec3 lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
+```
 
 ![输入图片说明](/imgs/2024-11-22/FcZQKRwLcVtCjVJd.png)
 
+背后是黑色的是因为diffuse的值计算出来为0，从法线和光源方向入手就可以很容易理解
+
 ![输入图片说明](/imgs/2024-11-22/YI5OATbqiPieS6Ro.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxMDc2NzAwNCwtNDE4Mjk0Njc5LC0xOD
-g4OTAxMTQxLDM1MzI0MjI4MiwxOTY1MTIyNDQ0LC0xNzI1NTIy
-NTg1LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTE1ODMyMDAyNTMsLTQxODI5NDY3OSwtMT
+g4ODkwMTE0MSwzNTMyNDIyODIsMTk2NTEyMjQ0NCwtMTcyNTUy
+MjU4NSwtMjA4ODc0NjYxMl19
 -->
