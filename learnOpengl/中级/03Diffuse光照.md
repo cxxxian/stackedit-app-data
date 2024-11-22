@@ -4,6 +4,24 @@
 glm::vec3 lightDirection = glm::vec3(-1.0f, -1.0f, -1.0f);
 glm::vec3 lightColor = glm::vec3(0.9f, 0.85f, 0.75f);
 ```
+到`fragment.glsl`中声明参数，并且先暂时将`lightColor`直接输出验证是否正确
+```
+...
+//光源参数
+uniform vec3 lightDirection;
+uniform vec3 lightColor;
+
+void main()
+{
+    //1 将vs中输入的normal做一下归一化
+    vec3 normalN = normalize(normal);
+    //2 将负数的情况直接清理为0，使用clamp函数
+    vec3 normalColor = clamp(normalN, 0.0, 1.0);
+    FragColor = vec4(lightColor, 1.0);
+
+    //FragColor = texture(sampler, uv);
+}
+```
 之前设计的传输vec3不好用，设计一个专门传vector3向量的
 ```
 void Shader::setVector3(const std::string& name, const glm::vec3 value)
@@ -15,7 +33,21 @@ void Shader::setVector3(const std::string& name, const glm::vec3 value)
     GL_CALL(glUniform3f(location, value.x, value.y, value.z));
 }
 ```
+```
+void render(){
+	...
+    shader->begin();
+
+    shader->setInt("sampler", 0);//此处值为0是因为我们的纹理绑定在0号位上
+    shader->setMatrix4x4("transform", transform);
+    shader->setMatrix4x4("viewMatrix", camera->getViewMatrix());
+    shader->setMatrix4x4("projectionMatrix", camera->getProjectionMatrix());
+    //光源参数的uniform更新
+    shader->setVector3("lightDirection", lightDirection);
+    shader->setVector3("lightColor", lightColor);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzUzMjQyMjgyLDE5NjUxMjI0NDQsLTE3Mj
-U1MjI1ODUsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbMTY5MzAwMjIzMiwzNTMyNDIyODIsMTk2NT
+EyMjQ0NCwtMTcyNTUyMjU4NSwtMjA4ODc0NjYxMl19
 -->
