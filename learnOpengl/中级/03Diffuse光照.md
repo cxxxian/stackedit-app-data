@@ -46,7 +46,11 @@ void render(){
 就可以得到目标效果啦
 
 ![输入图片说明](/imgs/2024-11-22/eR7Dk8ZpNNqxIKQW.png)
+
+现在我们要实现Diffuse光照效果了
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODg5MDExNDEsMzUzMjQyMjgyLDE5Nj
-UxMjI0NDQsLTE3MjU1MjI1ODUsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbLTQxODI5NDY3OSwtMTg4ODkwMTE0MSwzNT
+MyNDIyODIsMTk2NTEyMjQ0NCwtMTcyNTUyMjU4NSwtMjA4ODc0
+NjYxMl19
 -->
