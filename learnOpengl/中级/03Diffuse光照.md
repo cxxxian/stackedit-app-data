@@ -93,8 +93,10 @@ glm::vec3 lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
 背后是黑色的是因为diffuse的值计算出来为0，从法线和光源方向的点乘入手就可以很容易理解了
 
 ![输入图片说明](/imgs/2024-11-22/YI5OATbqiPieS6Ro.png)
+
+![输入图片说明](/imgs/2024-11-22/S1wqt76og7gdagBY.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAzNzg1NjE4OCwtNDE4Mjk0Njc5LC0xOD
-g4OTAxMTQxLDM1MzI0MjI4MiwxOTY1MTIyNDQ0LC0xNzI1NTIy
-NTg1LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbNDgzODcwMDYxLDEwMzc4NTYxODgsLTQxOD
+I5NDY3OSwtMTg4ODkwMTE0MSwzNTMyNDIyODIsMTk2NTEyMjQ0
+NCwtMTcyNTUyMjU4NSwtMjA4ODc0NjYxMl19
 -->
