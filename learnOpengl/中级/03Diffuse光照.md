@@ -33,7 +33,7 @@ void Shader::setVector3(const std::string& name, const glm::vec3 value)
     GL_CALL(glUniform3f(location, value.x, value.y, value.z));
 }
 ```
-到Render中调用方法并且绑定光照参数到shader中
+到`render()`中调用方法并且绑定光照参数到`shader`中
 ```
 void render(){
 	...
@@ -44,6 +44,6 @@ void render(){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwOTM0MzgwOCwzNTMyNDIyODIsMTk2NT
+eyJoaXN0b3J5IjpbMTI5NjQ1OTEyNywzNTMyNDIyODIsMTk2NT
 EyMjQ0NCwtMTcyNTUyMjU4NSwtMjA4ODc0NjYxMl19
 -->
