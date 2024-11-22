@@ -74,7 +74,8 @@ void main()
 
     vec3 lightDirN = normalize(lightDirection);
 	
-	//此处的diffuse需要clampshi'yi
+	//此处的diffuse需要clamp是因为，背后的面可能被点乘出负数的结果
+	//虽然都是黑色，但是不太好
     float diffuse = clamp(dot(-lightDirN, normalN), 0.0, 1.0);
     vec3 finalColor = lightColor * diffuse * objectColor;
 
@@ -86,7 +87,7 @@ void main()
 
 ![输入图片说明](/imgs/2024-11-22/YI5OATbqiPieS6Ro.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA5NjkzNTkzLC00MTgyOTQ2NzksLTE4OD
-g5MDExNDEsMzUzMjQyMjgyLDE5NjUxMjI0NDQsLTE3MjU1MjI1
-ODUsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbMTkxMDc2NzAwNCwtNDE4Mjk0Njc5LC0xOD
+g4OTAxMTQxLDM1MzI0MjI4MiwxOTY1MTIyNDQ0LC0xNzI1NTIy
+NTg1LC0yMDg4NzQ2NjEyXX0=
 -->
