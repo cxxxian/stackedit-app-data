@@ -759,10 +759,11 @@ void AEnemy::SpawnDefaultWeapon()
 ![输入图片说明](/imgs/2024-11-23/XhRWwyet3pamzgwa.png)
 
 现在给`raptor`做根动画
+选上`root`添加关键帧，头尾添加一个，然后中间将raptor往前移动一点，再添加一个关键帧
 
 ![输入图片说明](/imgs/2024-11-23/f0DEjJKDfU9IkL2g.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2MzA3MzgzLDExNjExMjA0NjMsMTQzND
+eyJoaXN0b3J5IjpbODc0NjI3ODgyLDExNjExMjA0NjMsMTQzND
 c3NzQ5MCwxMzgzODgxOTEsMTk4NzE4NTgwOSwtMjM1NjAwMTIs
 LTIwMTE3NjM2MCwtMTc2Mzg2MTg5MCwyMTEyODM3MzU3LDQyMD
 YxNDE0OSwtNDUzMzQ1Mzk5LDE3MzcwNDQzODksMTEzOTYxNDMx
