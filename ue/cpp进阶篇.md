@@ -758,9 +758,9 @@ void AEnemy::SpawnDefaultWeapon()
 
 ![输入图片说明](/imgs/2024-11-23/XhRWwyet3pamzgwa.png)
 
-
+现在给raptor做根动画
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0MDYxODUzOSwxMTYxMTIwNDYzLDE0Mz
+eyJoaXN0b3J5IjpbMTUzNjczNTIzMiwxMTYxMTIwNDYzLDE0Mz
 Q3Nzc0OTAsMTM4Mzg4MTkxLDE5ODcxODU4MDksLTIzNTYwMDEy
 LC0yMDExNzYzNjAsLTE3NjM4NjE4OTAsMjExMjgzNzM1Nyw0Mj
 A2MTQxNDksLTQ1MzM0NTM5OSwxNzM3MDQ0Mzg5LDExMzk2MTQz
