@@ -763,13 +763,13 @@ void AEnemy::SpawnDefaultWeapon()
 
 ![输入图片说明](/imgs/2024-11-23/f0DEjJKDfU9IkL2g.png)
 
-选择创建动画，按照下面这个顺序选择，我们就可以得到一个`RM_RaptorAttack1`，带根运动的动画，我们要用根运动的一个主要目的就是用MotionWarping
+选择创建动画，按照下面这个顺序选择，我们就可以得到一个`RM_RaptorAttack1`，带根运动的动画，我们要用根运动的一个主要目的就是用MotionWarping功能
 
 ![输入图片说明](/imgs/2024-11-23/o1pK3HLZQ3EoZbrK.png)
 
 ![输入图片说明](/imgs/2024-11-23/xVh8wHJ3fjEclDMN.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczNjc4MzM3MCwxNjAzNzUzODAxLDExNj
+eyJoaXN0b3J5IjpbMTQwOTQxODM2MCwxNjAzNzUzODAxLDExNj
 ExMjA0NjMsMTQzNDc3NzQ5MCwxMzgzODgxOTEsMTk4NzE4NTgw
 OSwtMjM1NjAwMTIsLTIwMTE3NjM2MCwtMTc2Mzg2MTg5MCwyMT
 EyODM3MzU3LDQyMDYxNDE0OSwtNDUzMzQ1Mzk5LDE3MzcwNDQz
