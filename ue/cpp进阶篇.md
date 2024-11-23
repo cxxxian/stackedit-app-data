@@ -763,17 +763,17 @@ void AEnemy::SpawnDefaultWeapon()
 
 ![输入图片说明](/imgs/2024-11-23/f0DEjJKDfU9IkL2g.png)
 
-选择创建动画，按照下面这个顺序选择，我们就可以得到一个`RM_RaptorAttack1`，带根运动的dong
+选择创建动画，按照下面这个顺序选择，我们就可以得到一个`RM_RaptorAttack1`，带根运动的动画，我们要用根运动的一个主要目的就是用MortionWarp
 
 ![输入图片说明](/imgs/2024-11-23/o1pK3HLZQ3EoZbrK.png)
 
 ![输入图片说明](/imgs/2024-11-23/xVh8wHJ3fjEclDMN.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk0NDEyOTIzNiwxNjAzNzUzODAxLDExNj
-ExMjA0NjMsMTQzNDc3NzQ5MCwxMzgzODgxOTEsMTk4NzE4NTgw
-OSwtMjM1NjAwMTIsLTIwMTE3NjM2MCwtMTc2Mzg2MTg5MCwyMT
-EyODM3MzU3LDQyMDYxNDE0OSwtNDUzMzQ1Mzk5LDE3MzcwNDQz
-ODksMTEzOTYxNDMxLC0yNzU3NTk1NTAsLTE5MTMzMTEwNzIsMT
-cyMTA5NzU0NCwtNDQ5NTQ5MTcxLC0xMDU1NjA3MzIwLDEyMjg3
-NzE2MThdfQ==
+eyJoaXN0b3J5IjpbOTU4ODY3Njk0LDE2MDM3NTM4MDEsMTE2MT
+EyMDQ2MywxNDM0Nzc3NDkwLDEzODM4ODE5MSwxOTg3MTg1ODA5
+LC0yMzU2MDAxMiwtMjAxMTc2MzYwLC0xNzYzODYxODkwLDIxMT
+I4MzczNTcsNDIwNjE0MTQ5LC00NTMzNDUzOTksMTczNzA0NDM4
+OSwxMTM5NjE0MzEsLTI3NTc1OTU1MCwtMTkxMzMxMTA3MiwxNz
+IxMDk3NTQ0LC00NDk1NDkxNzEsLTEwNTU2MDczMjAsMTIyODc3
+MTYxOF19
 -->
