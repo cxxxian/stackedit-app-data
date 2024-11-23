@@ -745,9 +745,9 @@ void AEnemy::SpawnDefaultWeapon()
 	}
 }
 ```
-
+那肯定的先前的paladin也要相应的修改骨骼上插槽的名字
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4MDY1MTA4NSwxMzgzODgxOTEsMTk4Nz
+eyJoaXN0b3J5IjpbLTMyODI4NjU4OSwxMzgzODgxOTEsMTk4Nz
 E4NTgwOSwtMjM1NjAwMTIsLTIwMTE3NjM2MCwtMTc2Mzg2MTg5
 MCwyMTEyODM3MzU3LDQyMDYxNDE0OSwtNDUzMzQ1Mzk5LDE3Mz
 cwNDQzODksMTEzOTYxNDMxLC0yNzU3NTk1NTAsLTE5MTMzMTEw
