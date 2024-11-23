@@ -754,13 +754,13 @@ void AEnemy::SpawnDefaultWeapon()
 
 ![输入图片说明](/imgs/2024-11-23/jmM5P4nZ0JLyTbIh.png)
 
-做一个武器给raptor用，先随便复制一个，到时候再删掉剑，我们只要网格体
+做一个武器给`raptor`用，先随便复制一个，到时候再删掉剑，我们只要网格体，自己调整一下合适的`WeaponBox`大小
 
 ![输入图片说明](/imgs/2024-11-23/XhRWwyet3pamzgwa.png)
 
 现在给raptor做根动画
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzNjczNTIzMiwxMTYxMTIwNDYzLDE0Mz
+eyJoaXN0b3J5IjpbMTg1NTgzNDA5MiwxMTYxMTIwNDYzLDE0Mz
 Q3Nzc0OTAsMTM4Mzg4MTkxLDE5ODcxODU4MDksLTIzNTYwMDEy
 LC0yMDExNzYzNjAsLTE3NjM4NjE4OTAsMjExMjgzNzM1Nyw0Mj
 A2MTQxNDksLTQ1MzM0NTM5OSwxNzM3MDQ0Mzg5LDExMzk2MTQz
