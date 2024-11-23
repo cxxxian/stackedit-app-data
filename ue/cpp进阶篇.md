@@ -780,11 +780,11 @@ void AEnemy::SpawnDefaultWeapon()
 ![输入图片说明](/imgs/2024-11-23/26EN48pXuVqp4v8M.png)
 
 最后将蒙太奇挂到`Raptor`蓝图中即可
-并且要设置攻击蒙太奇的Section`
+并且要设置攻击蒙太奇的`Section`
 
 ![输入图片说明](/imgs/2024-11-23/1HYNQxDBuTPQsKqv.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg1OTY2MjU1NiwtNDM3OTgxNzc4LC0xNT
+eyJoaXN0b3J5IjpbMTkzOTQ0NzY4MiwtNDM3OTgxNzc4LC0xNT
 c5NDY0MTg0LDEwOTgwOTY5Niw3MTY3Njg3MjYsMTYwMzc1Mzgw
 MSwxMTYxMTIwNDYzLDE0MzQ3Nzc0OTAsMTM4Mzg4MTkxLDE5OD
 cxODU4MDksLTIzNTYwMDEyLC0yMDExNzYzNjAsLTE3NjM4NjE4
