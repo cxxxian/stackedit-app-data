@@ -733,7 +733,7 @@ ASlashCharacter::ASlashCharacter()
 ![输入图片说明](/imgs/2024-11-23/JMvWqnsiV6vH8QJh.png)
 
 以及我们要解决没有武器攻击的问题
-我们去到Enemy.cpp中，将原本的`RightHandSocket`改成`WeaponSocket`，使其更通用
+我们去到`Enemy.cpp`中，将原本的`RightHandSocket`改成`WeaponSocket`，使其更通用
 ```
 void AEnemy::SpawnDefaultWeapon()
 {
@@ -745,8 +745,8 @@ void AEnemy::SpawnDefaultWeapon()
 	}
 }
 ```
-那肯定的先前的paladin也要相应的修改骨骼上插槽的名字
-然后我们去raptor的头上加一个武器插槽
+那肯定的先前的`paladin`也要相应的修改骨骼上插槽的名字
+然后我们去`raptor`的头上加一个武器插槽
 
 ![输入图片说明](/imgs/2024-11-23/lOatn0EeoWbZTKYP.png)
 
@@ -760,7 +760,7 @@ void AEnemy::SpawnDefaultWeapon()
 
 现在给raptor做根动画
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg1NTgzNDA5MiwxMTYxMTIwNDYzLDE0Mz
+eyJoaXN0b3J5IjpbLTYyNTg3Mjg5NiwxMTYxMTIwNDYzLDE0Mz
 Q3Nzc0OTAsMTM4Mzg4MTkxLDE5ODcxODU4MDksLTIzNTYwMDEy
 LC0yMDExNzYzNjAsLTE3NjM4NjE4OTAsMjExMjgzNzM1Nyw0Mj
 A2MTQxNDksLTQ1MzM0NTM5OSwxNzM3MDQ0Mzg5LDExMzk2MTQz
