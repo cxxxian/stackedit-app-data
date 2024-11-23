@@ -732,13 +732,25 @@ ASlashCharacter::ASlashCharacter()
 
 ![输入图片说明](/imgs/2024-11-23/JMvWqnsiV6vH8QJh.png)
 
-以及我们要解决没有武器攻击的问题，
+以及我们要解决没有武器攻击的问题
+我们去到Enemy.cpp中，将原本的`RightHandSocket`改成`WeaponSocket`，使其更通用
+```
+void AEnemy::SpawnDefaultWeapon()
+{
+	UWorld* World = GetWorld();
+	if (World && WeaponClass) {
+		AWeapon* DefaultWeapon = World->SpawnActor<AWeapon>(WeaponClass);
+		DefaultWeapon->Equip(GetMesh(), FName("WeaponSocket"), this, this);
+		EquippedWeapon = DefaultWeapon;
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4NzE4NTgwOSwtMjM1NjAwMTIsLTIwMT
-E3NjM2MCwtMTc2Mzg2MTg5MCwyMTEyODM3MzU3LDQyMDYxNDE0
-OSwtNDUzMzQ1Mzk5LDE3MzcwNDQzODksMTEzOTYxNDMxLC0yNz
-U3NTk1NTAsLTE5MTMzMTEwNzIsMTcyMTA5NzU0NCwtNDQ5NTQ5
-MTcxLC0xMDU1NjA3MzIwLDEyMjg3NzE2MTgsLTEzMTE2MjQwMT
-MsLTE2NjY1MDQ5MTMsLTI5Mzg3ODM3NCwtMjE0Njk5NDk5OCwt
-MTA3OTczMjcyOF19
+eyJoaXN0b3J5IjpbMTM4Mzg4MTkxLDE5ODcxODU4MDksLTIzNT
+YwMDEyLC0yMDExNzYzNjAsLTE3NjM4NjE4OTAsMjExMjgzNzM1
+Nyw0MjA2MTQxNDksLTQ1MzM0NTM5OSwxNzM3MDQ0Mzg5LDExMz
+k2MTQzMSwtMjc1NzU5NTUwLC0xOTEzMzExMDcyLDE3MjEwOTc1
+NDQsLTQ0OTU0OTE3MSwtMTA1NTYwNzMyMCwxMjI4NzcxNjE4LC
+0xMzExNjI0MDEzLC0xNjY2NTA0OTEzLC0yOTM4NzgzNzQsLTIx
+NDY5OTQ5OThdfQ==
 -->
