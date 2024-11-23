@@ -749,8 +749,12 @@ void AEnemy::SpawnDefaultWeapon()
 然后我们去raptor的头上加一个武器插槽
 
 ![输入图片说明](/imgs/2024-11-23/lOatn0EeoWbZTKYP.png)
+
+大概做成这样，后续将预览资产移走
+
+![输入图片说明](/imgs/2024-11-23/jmM5P4nZ0JLyTbIh.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQwMTQ4ODAwLDE0MzQ3Nzc0OTAsMTM4Mz
+eyJoaXN0b3J5IjpbMTA5NjkyODIzLDE0MzQ3Nzc0OTAsMTM4Mz
 g4MTkxLDE5ODcxODU4MDksLTIzNTYwMDEyLC0yMDExNzYzNjAs
 LTE3NjM4NjE4OTAsMjExMjgzNzM1Nyw0MjA2MTQxNDksLTQ1Mz
 M0NTM5OSwxNzM3MDQ0Mzg5LDExMzk2MTQzMSwtMjc1NzU5NTUw
