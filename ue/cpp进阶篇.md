@@ -759,19 +759,21 @@ void AEnemy::SpawnDefaultWeapon()
 ![输入图片说明](/imgs/2024-11-23/XhRWwyet3pamzgwa.png)
 
 现在给`raptor`做根动画
-选上`root`添加关键帧，头尾添加一个，然后中间将raptor往前移动一点，再添加一个关键帧
+选上`root`添加关键帧，头尾添加一个，然后中间将`raptor`往前移动一点，再添加一个关键帧
 
 ![输入图片说明](/imgs/2024-11-23/f0DEjJKDfU9IkL2g.png)
+
+选择创建动画，按照下面这个顺序选择，我们就可以得到一个`RM_RaptorAttack1`，带根运动的dong
 
 ![输入图片说明](/imgs/2024-11-23/o1pK3HLZQ3EoZbrK.png)
 
 ![输入图片说明](/imgs/2024-11-23/xVh8wHJ3fjEclDMN.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4Nzk2MzI3MDYsMTYwMzc1MzgwMSwxMT
-YxMTIwNDYzLDE0MzQ3Nzc0OTAsMTM4Mzg4MTkxLDE5ODcxODU4
-MDksLTIzNTYwMDEyLC0yMDExNzYzNjAsLTE3NjM4NjE4OTAsMj
-ExMjgzNzM1Nyw0MjA2MTQxNDksLTQ1MzM0NTM5OSwxNzM3MDQ0
-Mzg5LDExMzk2MTQzMSwtMjc1NzU5NTUwLC0xOTEzMzExMDcyLD
-E3MjEwOTc1NDQsLTQ0OTU0OTE3MSwtMTA1NTYwNzMyMCwxMjI4
-NzcxNjE4XX0=
+eyJoaXN0b3J5IjpbMTk0NDEyOTIzNiwxNjAzNzUzODAxLDExNj
+ExMjA0NjMsMTQzNDc3NzQ5MCwxMzgzODgxOTEsMTk4NzE4NTgw
+OSwtMjM1NjAwMTIsLTIwMTE3NjM2MCwtMTc2Mzg2MTg5MCwyMT
+EyODM3MzU3LDQyMDYxNDE0OSwtNDUzMzQ1Mzk5LDE3MzcwNDQz
+ODksMTEzOTYxNDMxLC0yNzU3NTk1NTAsLTE5MTMzMTEwNzIsMT
+cyMTA5NzU0NCwtNDQ5NTQ5MTcxLC0xMDU1NjA3MzIwLDEyMjg3
+NzE2MThdfQ==
 -->
