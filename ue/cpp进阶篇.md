@@ -791,11 +791,14 @@ void AEnemy::SpawnDefaultWeapon()
 ![输入图片说明](/imgs/2024-11-24/bUwB3WewJAbta3FV.png)
 
 ## 修复raptor受击后不动的bug
-剖析原因：
+### 剖析原因：
 为什么paladin不会这样？
-因为paladin用的是root受击动画，受击时它会跌出攻击距离，此时它会进入追逐模式
+因为paladin用的是root受击动画，受击时它会跌出攻击距离，此时它会进入追逐模式，再跑来打我们。
+但是raptor不会，它的受击不是root动画，所以它会一直处于攻击距离内不会触发二次攻击。
+### 解决办法：
+开启计时器，
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2ODg0ODcxOCwtODI4MTE2MDM2LDIwMj
+eyJoaXN0b3J5IjpbLTQxNDc0MzAxMCwtODI4MTE2MDM2LDIwMj
 k5MjUyOTgsMTkzOTQ0NzY4MiwtNDM3OTgxNzc4LC0xNTc5NDY0
 MTg0LDEwOTgwOTY5Niw3MTY3Njg3MjYsMTYwMzc1MzgwMSwxMT
 YxMTIwNDYzLDE0MzQ3Nzc0OTAsMTM4Mzg4MTkxLDE5ODcxODU4
