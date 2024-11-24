@@ -1,8 +1,9 @@
-利用我们的框架做个demo
-做两个不同material的mesh
-都做圆形，所以可以用同一种geometry
-两种不同材质，所以要声明两种material，
-利用geometry和material生成liang'z
+利用我们的框架做个`demo`
+做两个不同`material`的`mesh`
+都做圆形，所以可以用同一种`geometry`
+两种不同材质，所以要声明两种`material`，
+利用`geometry`和`material`生成两种`mesh`
+将`mesh01`和`mesh02放到数组中
 ```
 void prepare() {
     renderer = new Renderer();
@@ -33,5 +34,5 @@ void prepare() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTExOTUyNDU5MywxNzg4NzU3ODMzXX0=
+eyJoaXN0b3J5IjpbLTE0OTM0Mjg0NywxNzg4NzU3ODMzXX0=
 -->
