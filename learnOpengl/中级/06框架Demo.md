@@ -35,7 +35,7 @@ void prepare() {
 ```
 通过以上操作我们就已经生成了两个`mesh`，并将`mesh02`往`x`轴正方向移动了`3`单位长度
 
-想让mesh02转起来，那么只要
+想让`mesh02`转起来，那么只要调用之前在`mesh`设计的`rotate`函数即可，在`while`中持续调用，持续旋转
 ```
 int main() {
 	...
@@ -52,5 +52,5 @@ int main() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2NDQ1MDYwNiwxNzg4NzU3ODMzXX0=
+eyJoaXN0b3J5IjpbLTEzNDc0NzQ1NTEsMTc4ODc1NzgzM119
 -->
