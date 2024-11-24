@@ -797,7 +797,7 @@ void AEnemy::SpawnDefaultWeapon()
 但是raptor不会，它的受击不是root动画，所以它会一直处于攻击距离内不会触发二次攻击。
 ### 解决办法：
 利用计时器
-我们zhi'qian'zhi'u'zu
+我们之前制作的方法`StartAttackTimer()`，判断`IsInsideAttackRadius()`并调用即可
 ```
 void AEnemy::GetHit_Implementation(const FVector& ImpactPoint, AActor* Hitter)
 {
@@ -815,7 +815,7 @@ void AEnemy::GetHit_Implementation(const FVector& ImpactPoint, AActor* Hitter)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzNDE5OTkwNiwtNjAwMjExMjM4LC04Mj
+eyJoaXN0b3J5IjpbLTI5NDMyMzM3NCwtNjAwMjExMjM4LC04Mj
 gxMTYwMzYsMjAyOTkyNTI5OCwxOTM5NDQ3NjgyLC00Mzc5ODE3
 NzgsLTE1Nzk0NjQxODQsMTA5ODA5Njk2LDcxNjc2ODcyNiwxNj
 AzNzUzODAxLDExNjExMjA0NjMsMTQzNDc3NzQ5MCwxMzgzODgx
