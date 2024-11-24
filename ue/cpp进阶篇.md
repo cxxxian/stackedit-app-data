@@ -797,12 +797,29 @@ void AEnemy::SpawnDefaultWeapon()
 但是raptor不会，它的受击不是root动画，所以它会一直处于攻击距离内不会触发二次攻击。
 ### 解决办法：
 利用计时器
+我们zhi'qian'zhi'u'zu
+```
+void AEnemy::GetHit_Implementation(const FVector& ImpactPoint, AActor* Hitter)
+{
+	Super::GetHit_Implementation(ImpactPoint, Hitter);
+	if(!IsDead()) ShowHealthBar();
+
+	ClearPatrolTimer();
+	ClearAttackTimer();
+
+	SetWeaponCollisionEnable(ECollisionEnabled::NoCollision);
+	StopAttackMontage();
+	if (IsInsideAttackRadius()) {
+		StartAttackTimer();
+	}
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwMDIxMTIzOCwtODI4MTE2MDM2LDIwMj
-k5MjUyOTgsMTkzOTQ0NzY4MiwtNDM3OTgxNzc4LC0xNTc5NDY0
-MTg0LDEwOTgwOTY5Niw3MTY3Njg3MjYsMTYwMzc1MzgwMSwxMT
-YxMTIwNDYzLDE0MzQ3Nzc0OTAsMTM4Mzg4MTkxLDE5ODcxODU4
-MDksLTIzNTYwMDEyLC0yMDExNzYzNjAsLTE3NjM4NjE4OTAsMj
-ExMjgzNzM1Nyw0MjA2MTQxNDksLTQ1MzM0NTM5OSwxNzM3MDQ0
-Mzg5XX0=
+eyJoaXN0b3J5IjpbMTkzNDE5OTkwNiwtNjAwMjExMjM4LC04Mj
+gxMTYwMzYsMjAyOTkyNTI5OCwxOTM5NDQ3NjgyLC00Mzc5ODE3
+NzgsLTE1Nzk0NjQxODQsMTA5ODA5Njk2LDcxNjc2ODcyNiwxNj
+AzNzUzODAxLDExNjExMjA0NjMsMTQzNDc3NzQ5MCwxMzgzODgx
+OTEsMTk4NzE4NTgwOSwtMjM1NjAwMTIsLTIwMTE3NjM2MCwtMT
+c2Mzg2MTg5MCwyMTEyODM3MzU3LDQyMDYxNDE0OSwtNDUzMzQ1
+Mzk5XX0=
 -->
