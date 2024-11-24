@@ -3,7 +3,7 @@
 都做圆形，所以可以用同一种`geometry`
 两种不同材质，所以要声明两种`material`，
 利用`geometry`和`material`生成两种`mesh`
-将`mesh01`和`mesh02放到数组中
+将`mesh01`和`mesh02`放到数组中
 ```
 void prepare() {
     renderer = new Renderer();
@@ -33,6 +33,24 @@ void prepare() {
     ambLight->mColor = glm::vec3(0.1f);
 }
 ```
+通过以上操作我们就已经生成了两个`mesh`，并将`mesh02`往`x`轴正方向移动了`3`单位长度
+
+想让mesh02转起来，那么只要
+```
+int main() {
+	...
+    while (app->update()) {
+
+        meshes[1]->rotateX(1.0f);
+        meshes[1]->rotateY(5.0f);
+
+        cameraControl->update();
+        renderer->render(meshes, camera, dirLight, ambLight);
+
+    }
+	...
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTM0Mjg0NywxNzg4NzU3ODMzXX0=
+eyJoaXN0b3J5IjpbLTg2NDQ1MDYwNiwxNzg4NzU3ODMzXX0=
 -->
