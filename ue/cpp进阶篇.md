@@ -810,12 +810,12 @@ void AEnemy::GetHit_Implementation(const FVector& ImpactPoint, AActor* Hitter)
 	SetWeaponCollisionEnable(ECollisionEnabled::NoCollision);
 	StopAttackMontage();
 	if (IsInsideAttackRadius()) {
-		StartAttackTimer();
+		if (!IsDead()) { StartAttackTimer(); }
 	}
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI5NDMyMzM3NCwtNjAwMjExMjM4LC04Mj
+eyJoaXN0b3J5IjpbLTU0ODgxNjU5OCwtNjAwMjExMjM4LC04Mj
 gxMTYwMzYsMjAyOTkyNTI5OCwxOTM5NDQ3NjgyLC00Mzc5ODE3
 NzgsLTE1Nzk0NjQxODQsMTA5ODA5Njk2LDcxNjc2ODcyNiwxNj
 AzNzUzODAxLDExNjExMjA0NjMsMTQzNDc3NzQ5MCwxMzgzODgx
