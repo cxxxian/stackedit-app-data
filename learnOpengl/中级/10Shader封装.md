@@ -228,9 +228,26 @@ void main()
 ```
 但是注意到我们的`renderer`中的函数现在只传了`spotLight`的数据，并没有`directionalLight`的，要去`renderer.cpp`中补全
 
+```
+void Renderer::render(const std::vector<Mesh*>& meshes, Camera* camera, DirectionalLight* dirLight, SpotLight* spotLight, AmbientLight* ambLight){
+	//光源参数的uniform更新
+	//spotLight的更新
+	shader->setVector3("spotLight.position", spotLight->GetPosition());
+	shader->setVector3("spotLight.color", spotLight->mColor);
+	shader->setVector3("spotLight.targetDirection", spotLight->mTargetDirection);
+	shader->setFloat("spotLight.specularIntensity", spotLight-	>mSpecularIntensity);
+	shader->setFloat("spotLight.innerLine", glm::cos(glm::radians(spotLight-	>mInnerAngle)));
+	shader->setFloat("spotLight.outerLine", glm::cos(glm::radians(spotLight->mOuterAngle)));
+	shader->setVector3("ambientColor", ambLight->mColor);
 
+	//directionalLight的更新
+	shader->setVector3("directionalLight.color", dirLight->mColor);
+	shader->setVector3("directionalLight.direction", dirLight->mDirection);
+	shader->setFloat("directionalLight.specularIntensity", dirLight->mSpecularIntensity);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3ODM2NzQ1OCwyMjMzNTU5MTAsNTEwMD
-g1MzE4LDE3MDkwMzU1NjMsLTM5MTc0MDkzNCwzNzkxMTg4NDEs
-LTEyOTY4NTY2MzhdfQ==
+eyJoaXN0b3J5IjpbLTExNjc0MTQ4MDgsMjIzMzU1OTEwLDUxMD
+A4NTMxOCwxNzA5MDM1NTYzLC0zOTE3NDA5MzQsMzc5MTE4ODQx
+LC0xMjk2ODU2NjM4XX0=
 -->
