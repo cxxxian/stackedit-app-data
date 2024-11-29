@@ -39,7 +39,7 @@ void main()
 	...
 }
 ```
-当然
+当然在`shader`中改完参数名字，`render.cpp`的传参到`shader`中的这一步也要同步修改
 ```
 case MaterialType::PhongMaterial: {
 	...
@@ -73,6 +73,5 @@ struct PointLight{
 };
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjk0MTAwMjcsLTEyOTY4NTY2MzhdfQ
-==
+eyJoaXN0b3J5IjpbMzc5MTE4ODQxLC0xMjk2ODU2NjM4XX0=
 -->
