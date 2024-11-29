@@ -74,7 +74,7 @@ struct PointLight{
 };
 ```
 
-# 光照的封装
+# 反射的封装
 ```
 //计算漫反射光照
 vec3 calculateDiffuse(vec3 lightColor, vec3 objectColor, vec3 lightDir, vec3 normal){
@@ -138,9 +138,56 @@ void main()
 
 ![输入图片说明](/imgs/2024-11-29/iHIcBq0YHKmWJ2iC.png)
 
+# 光照计算的封装
+在`phong.frag`设计一个函数用来计算spotLight的光照
+```
+vec3 calculateSpotLight(SpotLight light, vec3 normal, vec3 viewDir){
+    //计算光照的通用数据
+    vec3 objectColor = texture(sampler, uv).xyz;
+    vec3 lightDir = normalize(worldPosition - spotLight.position);
+
+    vec3 targetDir = normalize(spotLight.targetDirection);
+
+    //计算spotLight的照射范围
+    float cGamma = dot(lightDir, targetDir);
+    float intensity = clamp((cGamma - light.outerLine) / (light.innerLine - light.outerLine), 0.0, 1.0);
+
+    //计算diffuse
+    vec3 diffuseColor = calculateDiffuse(light.color, objectColor, lightDir, normal);
+    
+    //计算specular
+    vec3 specularColor = calculateSpecular(light.color, lightDir, normal, viewDir, light.specularIntensity);
+
+    return (diffuseColor + specularColor) * intensity;
+
+}
+```
+所以就能把原来在main函数中原本yi
+```
+void main()
+{
+    vec3 result = vec3(0.0, 0.0, 0.0);
+
+    //计算光照的通用数据
+    vec3 objectColor = texture(sampler, uv).xyz;
+    vec3 normalN = normalize(normal);
+    vec3 lightDirN = normalize(worldPosition - spotLight.position);
+
+    vec3 viewDir = normalize(worldPosition - cameraPosition);
+    vec3 targetDirN = normalize(spotLight.targetDirection);
+
+    result += calculateSpotLight(spotLight, normalN, viewDir);
+
+    //环境光计算
+    vec3 ambientColor = objectColor * ambientColor;
+
+    vec3 finalColor = result + ambientColor;
 
 
+    FragColor = vec4(finalColor, 1.0);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjA2NjIxNiwtMzkxNzQwOTM0LDM3OT
+eyJoaXN0b3J5IjpbLTE5ODM4NTkyOCwtMzkxNzQwOTM0LDM3OT
 ExODg0MSwtMTI5Njg1NjYzOF19
 -->
