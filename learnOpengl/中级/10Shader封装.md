@@ -84,7 +84,7 @@ vec3 calculateDiffuse(vec3 lightColor, vec3 objectColor, vec3 lightDir, vec3 nor
     return diffuseColor;
 }
 ```
-暂时先把·specularMask·拿出了镜面反射光照中，因为不一定所有的物体都要有这个功能
+暂时先把`specularMask`拿出了镜面反射光照中，因为不一定所有的物体都要有这个功能
 ```
 //计算镜面反射光照
 vec3 calculateSpecular(vec3 lightColor, vec3 lightDir, vec3 normal, vec3 viewDir, float intensity){
@@ -105,6 +105,6 @@ vec3 calculateSpecular(vec3 lightColor, vec3 lightDir, vec3 normal, vec3 viewDir
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MjU0NDI5MjYsMzc5MTE4ODQxLC0xMj
-k2ODU2NjM4XX0=
+eyJoaXN0b3J5IjpbOTI2Mjk1MDI2LDM3OTExODg0MSwtMTI5Nj
+g1NjYzOF19
 -->
