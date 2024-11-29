@@ -320,16 +320,7 @@ vec3 calculatePointLight(PointLight light, vec3 normal, vec3 viewDir){
 ```
 void main()
 {
-    vec3 result = vec3(0.0, 0.0, 0.0);
-
-    //计算光照的通用数据
-    vec3 objectColor = texture(sampler, uv).xyz;
-    vec3 normalN = normalize(normal);
-    vec3 lightDirN = normalize(worldPosition - spotLight.position);
-
-    vec3 viewDir = normalize(worldPosition - cameraPosition);
-    vec3 targetDirN = normalize(spotLight.targetDirection);
-
+    ...
     result += calculateSpotLight(spotLight, normalN, viewDir);
     result += calculateDirectionalLight(directionalLight, normalN, viewDir);
     result += calculatePointLight(pointLight, normalN, viewDir);
@@ -342,8 +333,8 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MzQ2NDI2MzAsLTE3OTQ4MjM2NCwtMT
-k3Mjg2NDEwOSwxMDAzMzAzNDIyLDIyMzM1NTkxMCw1MTAwODUz
-MTgsMTcwOTAzNTU2MywtMzkxNzQwOTM0LDM3OTExODg0MSwtMT
-I5Njg1NjYzOF19
+eyJoaXN0b3J5IjpbMTcwMjkwNDM1MywtMTc5NDgyMzY0LC0xOT
+cyODY0MTA5LDEwMDMzMDM0MjIsMjIzMzU1OTEwLDUxMDA4NTMx
+OCwxNzA5MDM1NTYzLC0zOTE3NDA5MzQsMzc5MTE4ODQxLC0xMj
+k2ODU2NjM4XX0=
 -->
