@@ -4,6 +4,7 @@
 3. 聚光灯
 
 我们希望在`shader`中封装一下光照的类型
+利用`struct`结构体，声明一个`SpotLight`结构体，把参数都设计在结构体中
 ```
 ...
 struct SpotLight{
@@ -39,5 +40,5 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0NzIwODI2MV19
+eyJoaXN0b3J5IjpbLTEyOTY4NTY2MzhdfQ==
 -->
