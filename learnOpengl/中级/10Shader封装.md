@@ -190,6 +190,7 @@ void main()
     FragColor = vec4(finalColor, 1.0);
 }
 ```
+### directionalLight
 并且这样我们就可以设计不同光源的计算方法，要用的时候替换即可
 平行光计算方法如下：
 ```
@@ -279,8 +280,12 @@ while (app->update()) {
 
 }
 ```
+
+![输入图片说明](/imgs/2024-11-29/wBVo4BABbH6mpH8n.png)
+
+### pointLight
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwNTk1NTc5NywxMDAzMzAzNDIyLDIyMz
-M1NTkxMCw1MTAwODUzMTgsMTcwOTAzNTU2MywtMzkxNzQwOTM0
-LDM3OTExODg0MSwtMTI5Njg1NjYzOF19
+eyJoaXN0b3J5IjpbLTE5NzI4NjQxMDksMTAwMzMwMzQyMiwyMj
+MzNTU5MTAsNTEwMDg1MzE4LDE3MDkwMzU1NjMsLTM5MTc0MDkz
+NCwzNzkxMTg4NDEsLTEyOTY4NTY2MzhdfQ==
 -->
