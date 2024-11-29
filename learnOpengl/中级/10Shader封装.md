@@ -75,6 +75,7 @@ struct PointLight{
 ```
 
 # 反射的封装
+### calculateDiffuse
 ```
 //计算漫反射光照
 vec3 calculateDiffuse(vec3 lightColor, vec3 objectColor, vec3 lightDir, vec3 normal){
@@ -84,6 +85,7 @@ vec3 calculateDiffuse(vec3 lightColor, vec3 objectColor, vec3 lightDir, vec3 nor
     return diffuseColor;
 }
 ```
+### calculateSpecular
 暂时先把`specularMask`拿出了镜面反射光照中，因为不一定所有的物体都要有这个功能
 ```
 //计算镜面反射光照
@@ -277,7 +279,7 @@ while (app->update()) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4ODEwMzg3MSwxMDAzMzAzNDIyLDIyMz
+eyJoaXN0b3J5IjpbMTM4NDI4NjIxOCwxMDAzMzAzNDIyLDIyMz
 M1NTkxMCw1MTAwODUzMTgsMTcwOTAzNTU2MywtMzkxNzQwOTM0
 LDM3OTExODg0MSwtMTI5Njg1NjYzOF19
 -->
