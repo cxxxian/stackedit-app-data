@@ -1,3 +1,4 @@
+# 结构体的封装
 现在我们有三种不同的光照类型：
 1. 平行光
 2. 点光源
@@ -75,6 +76,6 @@ struct PointLight{
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTc2NTIyNTgxLDM3OTExODg0MSwtMTI5Nj
-g1NjYzOF19
+eyJoaXN0b3J5IjpbMTY2NjI0NTA1NiwzNzkxMTg4NDEsLTEyOT
+Y4NTY2MzhdfQ==
 -->
