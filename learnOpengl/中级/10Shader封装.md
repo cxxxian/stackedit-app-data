@@ -290,6 +290,7 @@ while (app->update()) {
 ![输入图片说明](/imgs/2024-11-29/jyyAKF9TBMvzOwlX.png)
 
 ### pointLight
+在`phong.frag`中
 ```
 uniform SpotLight spotLight;
 uniform DirectionalLight directionalLight;
@@ -338,7 +339,7 @@ void main()
     FragColor = vec4(finalColor, 1.0);
 }
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4Nzk0NjAwNiwtMTc5NDgyMzY0LC0xOT
+eyJoaXN0b3J5IjpbMjAxMDY4ODM0OSwtMTc5NDgyMzY0LC0xOT
 cyODY0MTA5LDEwMDMzMDM0MjIsMjIzMzU1OTEwLDUxMDA4NTMx
 OCwxNzA5MDM1NTYzLC0zOTE3NDA5MzQsMzc5MTE4ODQxLC0xMj
 k2ODU2NjM4XX0=
