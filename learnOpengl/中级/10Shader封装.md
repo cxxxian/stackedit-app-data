@@ -102,7 +102,7 @@ vec3 calculateSpecular(vec3 lightColor, vec3 lightDir, vec3 normal, vec3 viewDir
     return specularColor;
 }
 ```
-至此main``函数就只需要调用方法计算`diffuse`和`specular`即可
+至此`main`函数就只需要调用方法计算`diffuse`和`specular`即可
 ```
 void main()
 {
@@ -137,6 +137,6 @@ void main()
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYwMDc5NjQwLDM3OTExODg0MSwtMTI5Nj
-g1NjYzOF19
+eyJoaXN0b3J5IjpbLTYyMDU1Nzk0NiwzNzkxMTg4NDEsLTEyOT
+Y4NTY2MzhdfQ==
 -->
