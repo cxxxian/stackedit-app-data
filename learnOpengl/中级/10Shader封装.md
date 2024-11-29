@@ -74,8 +74,10 @@ struct PointLight{
 };
 ```
 
+# 方法的封装
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2NjI0NTA1NiwzNzkxMTg4NDEsLTEyOT
+eyJoaXN0b3J5IjpbMjAxMjg0NzcxMywzNzkxMTg4NDEsLTEyOT
 Y4NTY2MzhdfQ==
 -->
