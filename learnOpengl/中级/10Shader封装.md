@@ -246,9 +246,38 @@ void Renderer::render(const std::vector<Mesh*>& meshes, Camera* camera, Directio
 	shader->setFloat("directionalLight.specularIntensity", dirLight->mSpecularIntensity);
 }
 ```
-最后hui'dao
+最后回到`main.cpp`中补充平行光的声明和初始化即可
+```
+DirectionalLight* dirLight = nullptr;
+SpotLight* spotLight = nullptr;
+```
+在`prepare`函数中利用`dirLight = new DirectionalLight()`构造，并设定方向参数
+```
+void prepare() {
+    ...
+    meshes.push_back(meshWhite);
+    spotLight = new SpotLight();
+    spotLight->setPosition(meshWhite->GetPosition());
+    spotLight->mTargetDirection = glm::vec3(-1.0f, 0.0f, 0.0f);
+    spotLight->mInnerAngle = 30.0f;
+    spotLight->mOuterAngle = 45.0f;
+
+    dirLight = new DirectionalLight();
+    dirLight->mDirection = glm::vec3(1.0f);
+	...
+}
+```
+最后到mai'n
+```
+while (app->update()) {
+
+    cameraControl->update();
+    renderer->render(meshes, camera, dirLight, spotLight, ambLight);
+
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzNzIzMzUyMSwxMDAzMzAzNDIyLDIyMz
-M1NTkxMCw1MTAwODUzMTgsMTcwOTAzNTU2MywtMzkxNzQwOTM0
-LDM3OTExODg0MSwtMTI5Njg1NjYzOF19
+eyJoaXN0b3J5IjpbLTE1MzE0NDI1MTcsMTAwMzMwMzQyMiwyMj
+MzNTU5MTAsNTEwMDg1MzE4LDE3MDkwMzU1NjMsLTM5MTc0MDkz
+NCwzNzkxMTg4NDEsLTEyOTY4NTY2MzhdfQ==
 -->
