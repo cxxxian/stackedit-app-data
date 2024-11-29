@@ -188,7 +188,22 @@ void main()
 }
 ```
 并且这样我们就可以设计不同光源的计算方法，要用的时候替换即可
+
+vec3 calculateDirectionalLight(DirectionalLight light, vec3 normal, vec3 viewDir){
+    //计算光照的通用数据
+    vec3 objectColor = texture(sampler, uv).xyz;
+    vec3 lightDir = normalize(light.direction);
+
+    //计算diffuse
+    vec3 diffuseColor = calculateDiffuse(light.color, objectColor, lightDir, normal);
+    
+    //计算specular
+    vec3 specularColor = calculateSpecular(light.color, lightDir, normal, viewDir, light.specularIntensity);
+
+    return diffuseColor + specularColor;
+}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTEwMDg1MzE4LDE3MDkwMzU1NjMsLTM5MT
-c0MDkzNCwzNzkxMTg4NDEsLTEyOTY4NTY2MzhdfQ==
+eyJoaXN0b3J5IjpbLTEzODE2MjM3NjMsNTEwMDg1MzE4LDE3MD
+kwMzU1NjMsLTM5MTc0MDkzNCwzNzkxMTg4NDEsLTEyOTY4NTY2
+MzhdfQ==
 -->
