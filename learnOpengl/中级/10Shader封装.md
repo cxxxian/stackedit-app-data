@@ -134,9 +134,11 @@ void main()
     FragColor = vec4(result, 1.0);
 }
 ```
+由于此时没有用`specularMask`，所以整个物体都会被镜面反射
 
+![输入图片说明](/imgs/2024-11-29/iHIcBq0YHKmWJ2iC.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyMDU1Nzk0NiwzNzkxMTg4NDEsLTEyOT
+eyJoaXN0b3J5IjpbLTM5MTc0MDkzNCwzNzkxMTg4NDEsLTEyOT
 Y4NTY2MzhdfQ==
 -->
