@@ -280,12 +280,17 @@ while (app->update()) {
 
 }
 ```
+输出的图像可以看到，照向`glm::vec3(-1.0f, 0.0f, 0.0f)`是`spotLight`
 
 ![输入图片说明](/imgs/2024-11-29/wBVo4BABbH6mpH8n.png)
 
+照向`glm::vec3(1.0f)`是`dirLight`
+
+![输入图片说明](/imgs/2024-11-29/jyyAKF9TBMvzOwlX.png)
+
 ### pointLight
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NzI4NjQxMDksMTAwMzMwMzQyMiwyMj
-MzNTU5MTAsNTEwMDg1MzE4LDE3MDkwMzU1NjMsLTM5MTc0MDkz
-NCwzNzkxMTg4NDEsLTEyOTY4NTY2MzhdfQ==
+eyJoaXN0b3J5IjpbLTE3OTQ4MjM2NCwtMTk3Mjg2NDEwOSwxMD
+AzMzAzNDIyLDIyMzM1NTkxMCw1MTAwODUzMTgsMTcwOTAzNTU2
+MywtMzkxNzQwOTM0LDM3OTExODg0MSwtMTI5Njg1NjYzOF19
 -->
