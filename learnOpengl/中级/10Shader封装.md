@@ -289,8 +289,51 @@ while (app->update()) {
 ![输入图片说明](/imgs/2024-11-29/jyyAKF9TBMvzOwlX.png)
 
 ### pointLight
+vec3 calculatePointLight(PointLight light, vec3 normal, vec3 viewDir){
+    //计算光照的通用数据
+    vec3 objectColor = texture(sampler, uv).xyz;
+    vec3 lightDir = normalize(worldPosition - light.position);
+    
+    //计算衰减
+    float dist = length(worldPosition - light.position);
+    float attenuation = 1.0 / (light.k2 * dist * dist + light.k1 * dist + light.kc);
+
+    //计算diffuse
+    vec3 diffuseColor = calculateDiffuse(light.color, objectColor, lightDir, normal);
+    
+    //计算specular
+    vec3 specularColor = calculateSpecular(light.color, lightDir, normal, viewDir, light.specularIntensity);
+
+    return (diffuseColor + specularColor) * attenuation;;
+}
+
+void main()
+{
+    vec3 result = vec3(0.0, 0.0, 0.0);
+
+    //计算光照的通用数据
+    vec3 objectColor = texture(sampler, uv).xyz;
+    vec3 normalN = normalize(normal);
+    vec3 lightDirN = normalize(worldPosition - spotLight.position);
+
+    vec3 viewDir = normalize(worldPosition - cameraPosition);
+    vec3 targetDirN = normalize(spotLight.targetDirection);
+
+    result += calculateSpotLight(spotLight, normalN, viewDir);
+    result += calculateDirectionalLight(directionalLight, normalN, viewDir);
+    result += calculatePointLight(pointLight, normalN, viewDir);
+
+    //环境光计算
+    vec3 ambientColor = objectColor * ambientColor;
+
+    vec3 finalColor = result + ambientColor;
+
+
+    FragColor = vec4(finalColor, 1.0);
+}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTQ4MjM2NCwtMTk3Mjg2NDEwOSwxMD
-AzMzAzNDIyLDIyMzM1NTkxMCw1MTAwODUzMTgsMTcwOTAzNTU2
-MywtMzkxNzQwOTM0LDM3OTExODg0MSwtMTI5Njg1NjYzOF19
+eyJoaXN0b3J5IjpbLTIwODkxNjU2MDAsLTE3OTQ4MjM2NCwtMT
+k3Mjg2NDEwOSwxMDAzMzAzNDIyLDIyMzM1NTkxMCw1MTAwODUz
+MTgsMTcwOTAzNTU2MywtMzkxNzQwOTM0LDM3OTExODg0MSwtMT
+I5Njg1NjYzOF19
 -->
