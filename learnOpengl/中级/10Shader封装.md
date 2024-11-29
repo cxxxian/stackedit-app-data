@@ -188,7 +188,8 @@ void main()
 }
 ```
 并且这样我们就可以设计不同光源的计算方法，要用的时候替换即可
-
+平行光计算方法如下：
+```
 vec3 calculateDirectionalLight(DirectionalLight light, vec3 normal, vec3 viewDir){
     //计算光照的通用数据
     vec3 objectColor = texture(sampler, uv).xyz;
@@ -202,8 +203,29 @@ vec3 calculateDirectionalLight(DirectionalLight light, vec3 normal, vec3 viewDir
 
     return diffuseColor + specularColor;
 }
+```
+我们在`spotLight`的基础上，多声明`directionalLight`，可以弄出不同光源照射的效果
+```
+uniform SpotLight spotLight;
+uniform DirectionalLight directionalLight;
+```
+```
+void main()
+{
+    vec3 result = vec3(0.0, 0.0, 0.0);
+
+    ...
+    result += calculateSpotLight(spotLight, normalN, viewDir);
+    result += calculateDirectionalLight(directionalLight, normalN, viewDir);
+
+    //环境光计算
+    vec3 ambientColor = objectColor * ambientColor;
+    vec3 finalColor = result + ambientColor;
+    FragColor = vec4(finalColor, 1.0);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODE2MjM3NjMsNTEwMDg1MzE4LDE3MD
-kwMzU1NjMsLTM5MTc0MDkzNCwzNzkxMTg4NDEsLTEyOTY4NTY2
-MzhdfQ==
+eyJoaXN0b3J5IjpbLTY2Mjk2NDI1NSw1MTAwODUzMTgsMTcwOT
+AzNTU2MywtMzkxNzQwOTM0LDM3OTExODg0MSwtMTI5Njg1NjYz
+OF19
 -->
