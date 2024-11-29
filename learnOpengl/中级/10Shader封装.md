@@ -371,9 +371,11 @@ PointLight* pointLight = nullptr;
 DirectionalLight* dirLight = nullptr;
 SpotLight* spotLight = nullptr;
 ```
+
+![输入图片说明](/imgs/2024-11-29/9MgY9abNxjjHqnL0.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDgyMTkwMTA2LDE3MDI5MDQzNTMsLTE3OT
-Q4MjM2NCwtMTk3Mjg2NDEwOSwxMDAzMzAzNDIyLDIyMzM1NTkx
-MCw1MTAwODUzMTgsMTcwOTAzNTU2MywtMzkxNzQwOTM0LDM3OT
-ExODg0MSwtMTI5Njg1NjYzOF19
+eyJoaXN0b3J5IjpbMTAxMjI2MDY1LDQ4MjE5MDEwNiwxNzAyOT
+A0MzUzLC0xNzk0ODIzNjQsLTE5NzI4NjQxMDksMTAwMzMwMzQy
+MiwyMjMzNTU5MTAsNTEwMDg1MzE4LDE3MDkwMzU1NjMsLTM5MT
+c0MDkzNCwzNzkxMTg4NDEsLTEyOTY4NTY2MzhdfQ==
 -->
