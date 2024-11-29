@@ -246,8 +246,9 @@ void Renderer::render(const std::vector<Mesh*>& meshes, Camera* camera, Directio
 	shader->setFloat("directionalLight.specularIntensity", dirLight->mSpecularIntensity);
 }
 ```
+最后hui'dao
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwMzMwMzQyMiwyMjMzNTU5MTAsNTEwMD
-g1MzE4LDE3MDkwMzU1NjMsLTM5MTc0MDkzNCwzNzkxMTg4NDEs
-LTEyOTY4NTY2MzhdfQ==
+eyJoaXN0b3J5IjpbLTYzNzIzMzUyMSwxMDAzMzAzNDIyLDIyMz
+M1NTkxMCw1MTAwODUzMTgsMTcwOTAzNTU2MywtMzkxNzQwOTM0
+LDM3OTExODg0MSwtMTI5Njg1NjYzOF19
 -->
