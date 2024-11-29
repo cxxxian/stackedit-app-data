@@ -74,7 +74,7 @@ struct PointLight{
 };
 ```
 
-# 方法的封装
+# 光照的封装
 ```
 //计算漫反射光照
 vec3 calculateDiffuse(vec3 lightColor, vec3 objectColor, vec3 lightDir, vec3 normal){
@@ -138,7 +138,9 @@ void main()
 
 ![输入图片说明](/imgs/2024-11-29/iHIcBq0YHKmWJ2iC.png)
 
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5MTc0MDkzNCwzNzkxMTg4NDEsLTEyOT
-Y4NTY2MzhdfQ==
+eyJoaXN0b3J5IjpbLTIxMjA2NjIxNiwtMzkxNzQwOTM0LDM3OT
+ExODg0MSwtMTI5Njg1NjYzOF19
 -->
