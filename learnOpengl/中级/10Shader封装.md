@@ -193,6 +193,7 @@ void main()
 ### directionalLight
 并且这样我们就可以设计不同光源的计算方法，要用的时候替换即可
 平行光计算方法如下：
+在`phong.frag`中
 ```
 vec3 calculateDirectionalLight(DirectionalLight light, vec3 normal, vec3 viewDir){
     //计算光照的通用数据
@@ -289,6 +290,11 @@ while (app->update()) {
 ![输入图片说明](/imgs/2024-11-29/jyyAKF9TBMvzOwlX.png)
 
 ### pointLight
+```
+uniform SpotLight spotLight;
+uniform DirectionalLight directionalLight;
+uniform PointLight pointLight;
+```
 vec3 calculatePointLight(PointLight light, vec3 normal, vec3 viewDir){
     //计算光照的通用数据
     vec3 objectColor = texture(sampler, uv).xyz;
@@ -332,8 +338,8 @@ void main()
     FragColor = vec4(finalColor, 1.0);
 }
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODkxNjU2MDAsLTE3OTQ4MjM2NCwtMT
-k3Mjg2NDEwOSwxMDAzMzAzNDIyLDIyMzM1NTkxMCw1MTAwODUz
-MTgsMTcwOTAzNTU2MywtMzkxNzQwOTM0LDM3OTExODg0MSwtMT
-I5Njg1NjYzOF19
+eyJoaXN0b3J5IjpbMTQ4Nzk0NjAwNiwtMTc5NDgyMzY0LC0xOT
+cyODY0MTA5LDEwMDMzMDM0MjIsMjIzMzU1OTEwLDUxMDA4NTMx
+OCwxNzA5MDM1NTYzLC0zOTE3NDA5MzQsMzc5MTE4ODQxLC0xMj
+k2ODU2NjM4XX0=
 -->
