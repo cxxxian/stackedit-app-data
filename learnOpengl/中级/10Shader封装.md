@@ -332,10 +332,39 @@ void main()
     FragColor = vec4(finalColor, 1.0);
 }
 ```
-老样子去到rendere
+老样子去到`renderer`中对`render`函数添加一个`pointLight`的参数，并实现传参数到`shader`的功能
+void Renderer::render(const std::vector<Mesh*>& meshes, Camera* camera, DirectionalLight* dirLight, PointLight* pointLight, SpotLight* spotLight, AmbientLight* ambLight)
+{
+	
+	//光源参数的uniform更新
+	//spotLight的更新
+	shader->setVector3("spotLight.position", spotLight->GetPosition());
+	shader->setVector3("spotLight.color", spotLight->mColor);
+	shader->setVector3("spotLight.targetDirection", spotLight->mTargetDirection);
+	shader->setFloat("spotLight.specularIntensity", spotLight->mSpecularIntensity);
+	shader->setFloat("spotLight.innerLine", glm::cos(glm::radians(spotLight->mInnerAngle)));
+	shader->setFloat("spotLight.outerLine", glm::cos(glm::radians(spotLight->mOuterAngle)));
+	shader->setVector3("ambientColor", ambLight->mColor);
+
+	//directionalLight的更新
+	shader->setVector3("directionalLight.color", dirLight->mColor);
+	shader->setVector3("directionalLight.direction", dirLight->mDirection);
+	shader->setFloat("directionalLight.specularIntensity", dirLight->mSpecularIntensity);
+
+	//pointLight的更新
+	shader->setVector3("pointLight.color", pointLight->mColor);
+			shader->setVector3("pointLight.position", pointLight->GetPosition());
+			shader->setFloat("pointLight.specularIntensity", pointLight->mSpecularIntensity);
+			shader->setFloat("pointLight.k2", pointLight->mK2);
+			shader->setFloat("pointLight.k1", pointLight->mK1);
+			shader->setFloat("pointLight.kc", pointLight->mKc);
+
+	}
+}
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5ODg0MDg0OSwxNzAyOTA0MzUzLC0xNz
-k0ODIzNjQsLTE5NzI4NjQxMDksMTAwMzMwMzQyMiwyMjMzNTU5
-MTAsNTEwMDg1MzE4LDE3MDkwMzU1NjMsLTM5MTc0MDkzNCwzNz
-kxMTg4NDEsLTEyOTY4NTY2MzhdfQ==
+eyJoaXN0b3J5IjpbLTE1NDE5OTUyMDUsMTcwMjkwNDM1MywtMT
+c5NDgyMzY0LC0xOTcyODY0MTA5LDEwMDMzMDM0MjIsMjIzMzU1
+OTEwLDUxMDA4NTMxOCwxNzA5MDM1NTYzLC0zOTE3NDA5MzQsMz
+c5MTE4ODQxLC0xMjk2ODU2NjM4XX0=
 -->
