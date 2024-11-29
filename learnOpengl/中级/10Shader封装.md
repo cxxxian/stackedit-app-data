@@ -205,6 +205,7 @@ vec3 calculateDirectionalLight(DirectionalLight light, vec3 normal, vec3 viewDir
 }
 ```
 我们在`spotLight`的基础上，多声明`directionalLight`，可以弄出不同光源照射的效果
+到`main`函数中累加到`result`即可
 ```
 uniform SpotLight spotLight;
 uniform DirectionalLight directionalLight;
@@ -224,8 +225,9 @@ void main()
     FragColor = vec4(finalColor, 1.0);
 }
 ```
+但是注意到我们的`render`函数现在只传了`spotLight`的数据，并没有`directionalLight`的，要去`renderer.cpp`中补全
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2Mjk2NDI1NSw1MTAwODUzMTgsMTcwOT
+eyJoaXN0b3J5IjpbMTI0OTcwNzQ0Miw1MTAwODUzMTgsMTcwOT
 AzNTU2MywtMzkxNzQwOTM0LDM3OTExODg0MSwtMTI5Njg1NjYz
 OF19
 -->
