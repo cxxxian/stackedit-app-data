@@ -72,6 +72,9 @@ struct PointLight{
     float kc;
 };
 ```
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzc5MTE4ODQxLC0xMjk2ODU2NjM4XX0=
+eyJoaXN0b3J5IjpbNTc2NTIyNTgxLDM3OTExODg0MSwtMTI5Nj
+g1NjYzOF19
 -->
