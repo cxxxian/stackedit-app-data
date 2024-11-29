@@ -370,10 +370,10 @@ void Renderer::render(const std::vector<Mesh*>& meshes, Camera* camera, Directio
 PointLight* pointLight = nullptr;
 DirectionalLight* dirLight = nullptr;
 SpotLight* spotLight = nullptr;
-AmbientLight* ambLight = nullptr;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTMzNjk3NjksMTcwMjkwNDM1MywtMT
-c5NDgyMzY0LC0xOTcyODY0MTA5LDEwMDMzMDM0MjIsMjIzMzU1
-OTEwLDUxMDA4NTMxOCwxNzA5MDM1NTYzLC0zOTE3NDA5MzQsMz
-c5MTE4ODQxLC0xMjk2ODU2NjM4XX0=
+eyJoaXN0b3J5IjpbNDgyMTkwMTA2LDE3MDI5MDQzNTMsLTE3OT
+Q4MjM2NCwtMTk3Mjg2NDEwOSwxMDAzMzAzNDIyLDIyMzM1NTkx
+MCw1MTAwODUzMTgsMTcwOTAzNTU2MywtMzkxNzQwOTM0LDM3OT
+ExODg0MSwtMTI5Njg1NjYzOF19
 -->
