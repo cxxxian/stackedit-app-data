@@ -225,9 +225,9 @@ void main()
     FragColor = vec4(finalColor, 1.0);
 }
 ```
-但是注意到我们的`render`函数现在只传了`spotLight`的数据，并没有`directionalLight`的，要去`renderer.cpp`中补全
+但是注意到我们的`renderer`中的函数现在只传了`spotLight`的数据，并没有`directionalLight`的，要去`renderer.cpp`中补全
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0OTcwNzQ0Miw1MTAwODUzMTgsMTcwOT
+eyJoaXN0b3J5IjpbLTMwMjc1ODA3Miw1MTAwODUzMTgsMTcwOT
 AzNTU2MywtMzkxNzQwOTM0LDM3OTExODg0MSwtMTI5Njg1NjYz
 OF19
 -->
