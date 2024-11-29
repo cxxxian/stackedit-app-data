@@ -227,8 +227,10 @@ void main()
 }
 ```
 但是注意到我们的`renderer`中的函数现在只传了`spotLight`的数据，并没有`directionalLight`的，要去`renderer.cpp`中补全
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjIzMzU1OTEwLDUxMDA4NTMxOCwxNzA5MD
-M1NTYzLC0zOTE3NDA5MzQsMzc5MTE4ODQxLC0xMjk2ODU2NjM4
-XX0=
+eyJoaXN0b3J5IjpbMTU3ODM2NzQ1OCwyMjMzNTU5MTAsNTEwMD
+g1MzE4LDE3MDkwMzU1NjMsLTM5MTc0MDkzNCwzNzkxMTg4NDEs
+LTEyOTY4NTY2MzhdfQ==
 -->
