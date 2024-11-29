@@ -386,7 +386,7 @@ void prepare() {
     ambLight->mColor = glm::vec3(0.1f);
 }
 ```
-最后到main函数是循环中，
+最后到main函数是循环中，将pointLight加入，对应我们刚刚在对render
 ```
 while (app->update()) {
 
@@ -399,8 +399,8 @@ while (app->update()) {
 
 ![输入图片说明](/imgs/2024-11-29/9MgY9abNxjjHqnL0.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwNDY0NTkwOSw0ODIxOTAxMDYsMTcwMj
-kwNDM1MywtMTc5NDgyMzY0LC0xOTcyODY0MTA5LDEwMDMzMDM0
-MjIsMjIzMzU1OTEwLDUxMDA4NTMxOCwxNzA5MDM1NTYzLC0zOT
-E3NDA5MzQsMzc5MTE4ODQxLC0xMjk2ODU2NjM4XX0=
+eyJoaXN0b3J5IjpbLTEzODkwOTg1NDEsNDgyMTkwMTA2LDE3MD
+I5MDQzNTMsLTE3OTQ4MjM2NCwtMTk3Mjg2NDEwOSwxMDAzMzAz
+NDIyLDIyMzM1NTkxMCw1MTAwODUzMTgsMTcwOTAzNTU2MywtMz
+kxNzQwOTM0LDM3OTExODg0MSwtMTI5Njg1NjYzOF19
 -->
