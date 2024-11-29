@@ -316,6 +316,7 @@ vec3 calculatePointLight(PointLight light, vec3 normal, vec3 viewDir){
     return (diffuseColor + specularColor) * attenuation;;
 }
 ```
+最后在`main`函数中调用`calculatePointLight`并将值累加到`result`中
 ```
 void main()
 {
@@ -341,8 +342,8 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1MjYzMzM1NywtMTc5NDgyMzY0LC0xOT
-cyODY0MTA5LDEwMDMzMDM0MjIsMjIzMzU1OTEwLDUxMDA4NTMx
-OCwxNzA5MDM1NTYzLC0zOTE3NDA5MzQsMzc5MTE4ODQxLC0xMj
-k2ODU2NjM4XX0=
+eyJoaXN0b3J5IjpbLTE5MzQ2NDI2MzAsLTE3OTQ4MjM2NCwtMT
+k3Mjg2NDEwOSwxMDAzMzAzNDIyLDIyMzM1NTkxMCw1MTAwODUz
+MTgsMTcwOTAzNTU2MywtMzkxNzQwOTM0LDM3OTExODg0MSwtMT
+I5Njg1NjYzOF19
 -->
