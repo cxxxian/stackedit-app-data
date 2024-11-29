@@ -227,7 +227,7 @@ void main()
 }
 ```
 但是注意到我们的`renderer`中的函数现在只传了`spotLight`的数据，并没有`directionalLight`的，要去`renderer.cpp`中补全
-
+在方法声明的时候加入`DirectionalLight* dirLight`，并实现，将对应的参数传给`shader`
 ```
 void Renderer::render(const std::vector<Mesh*>& meshes, Camera* camera, DirectionalLight* dirLight, SpotLight* spotLight, AmbientLight* ambLight){
 	//光源参数的uniform更新
@@ -247,7 +247,7 @@ void Renderer::render(const std::vector<Mesh*>& meshes, Camera* camera, Directio
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjc0MTQ4MDgsMjIzMzU1OTEwLDUxMD
-A4NTMxOCwxNzA5MDM1NTYzLC0zOTE3NDA5MzQsMzc5MTE4ODQx
-LC0xMjk2ODU2NjM4XX0=
+eyJoaXN0b3J5IjpbMTAwMzMwMzQyMiwyMjMzNTU5MTAsNTEwMD
+g1MzE4LDE3MDkwMzU1NjMsLTM5MTc0MDkzNCwzNzkxMTg4NDEs
+LTEyOTY4NTY2MzhdfQ==
 -->
