@@ -371,12 +371,35 @@ PointLight* pointLight = nullptr;
 DirectionalLight* dirLight = nullptr;
 SpotLight* spotLight = nullptr;
 ```
+在`prepare`函数中进行`pointLight`的参数初始化
+```
+void prepare() {
+    ...
+    pointLight = new PointLight();
+    pointLight->setPosition(glm::vec3(0.0f, 0.0f, 1.5f));
+    pointLight->mSpecularIntensity = 0.5f;
+    pointLight->mK2 = 0.017f;
+    pointLight->mK1 = 0.07f;
+    pointLight->mKc = 1.0f;
 
+    ambLight = new AmbientLight();
+    ambLight->mColor = glm::vec3(0.1f);
+}
+```
+最后到main函数是循环中，
+```
+while (app->update()) {
+
+    cameraControl->update();
+    renderer->render(meshes, camera, dirLight, pointLight, spotLight, ambLight);
+
+}
+```
 点光源效果实现：
 
 ![输入图片说明](/imgs/2024-11-29/9MgY9abNxjjHqnL0.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwNzQ1ODUyMSw0ODIxOTAxMDYsMTcwMj
+eyJoaXN0b3J5IjpbLTkwNDY0NTkwOSw0ODIxOTAxMDYsMTcwMj
 kwNDM1MywtMTc5NDgyMzY0LC0xOTcyODY0MTA5LDEwMDMzMDM0
 MjIsMjIzMzU1OTEwLDUxMDA4NTMxOCwxNzA5MDM1NTYzLC0zOT
 E3NDA5MzQsMzc5MTE4ODQxLC0xMjk2ODU2NjM4XX0=
