@@ -333,9 +333,10 @@ void main()
 }
 ```
 老样子去到`renderer`中对`render`函数添加一个`pointLight`的参数，并实现传参数到`shader`的功能
+````
 void Renderer::render(const std::vector<Mesh*>& meshes, Camera* camera, DirectionalLight* dirLight, PointLight* pointLight, SpotLight* spotLight, AmbientLight* ambLight)
 {
-	
+	...
 	//光源参数的uniform更新
 	//spotLight的更新
 	shader->setVector3("spotLight.position", spotLight->GetPosition());
@@ -353,18 +354,18 @@ void Renderer::render(const std::vector<Mesh*>& meshes, Camera* camera, Directio
 
 	//pointLight的更新
 	shader->setVector3("pointLight.color", pointLight->mColor);
-			shader->setVector3("pointLight.position", pointLight->GetPosition());
-			shader->setFloat("pointLight.specularIntensity", pointLight->mSpecularIntensity);
-			shader->setFloat("pointLight.k2", pointLight->mK2);
-			shader->setFloat("pointLight.k1", pointLight->mK1);
-			shader->setFloat("pointLight.kc", pointLight->mKc);
-
+	shader->setVector3("pointLight.position", pointLight->GetPosition());
+	shader->setFloat("pointLight.specularIntensity", pointLight->mSpecularIntensity);
+	shader->setFloat("pointLight.k2", pointLight->mK2);
+	shader->setFloat("pointLight.k1", pointLight->mK1);
+	shader->setFloat("pointLight.kc", pointLight->mKc);
+	...
 	}
 }
-
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDE5OTUyMDUsMTcwMjkwNDM1MywtMT
-c5NDgyMzY0LC0xOTcyODY0MTA5LDEwMDMzMDM0MjIsMjIzMzU1
-OTEwLDUxMDA4NTMxOCwxNzA5MDM1NTYzLC0zOTE3NDA5MzQsMz
-c5MTE4ODQxLC0xMjk2ODU2NjM4XX0=
+eyJoaXN0b3J5IjpbLTk2ODgwMDUsMTcwMjkwNDM1MywtMTc5ND
+gyMzY0LC0xOTcyODY0MTA5LDEwMDMzMDM0MjIsMjIzMzU1OTEw
+LDUxMDA4NTMxOCwxNzA5MDM1NTYzLC0zOTE3NDA5MzQsMzc5MT
+E4ODQxLC0xMjk2ODU2NjM4XX0=
 -->
