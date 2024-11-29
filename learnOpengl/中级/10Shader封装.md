@@ -290,11 +290,13 @@ while (app->update()) {
 ![输入图片说明](/imgs/2024-11-29/jyyAKF9TBMvzOwlX.png)
 
 ### pointLight
-在`phong.frag`中
+在`phong.frag`中，声明一个`pointLight`
 ```
 uniform SpotLight spotLight;
 uniform DirectionalLight directionalLight;
 uniform PointLight pointLight;
+```
+计算点光源强度代码：
 ```
 vec3 calculatePointLight(PointLight light, vec3 normal, vec3 viewDir){
     //计算光照的通用数据
@@ -313,7 +315,8 @@ vec3 calculatePointLight(PointLight light, vec3 normal, vec3 viewDir){
 
     return (diffuseColor + specularColor) * attenuation;;
 }
-
+```
+```
 void main()
 {
     vec3 result = vec3(0.0, 0.0, 0.0);
@@ -332,14 +335,13 @@ void main()
 
     //环境光计算
     vec3 ambientColor = objectColor * ambientColor;
-
     vec3 finalColor = result + ambientColor;
-
 
     FragColor = vec4(finalColor, 1.0);
 }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxMDY4ODM0OSwtMTc5NDgyMzY0LC0xOT
+eyJoaXN0b3J5IjpbMTM1MjYzMzM1NywtMTc5NDgyMzY0LC0xOT
 cyODY0MTA5LDEwMDMzMDM0MjIsMjIzMzU1OTEwLDUxMDA4NTMx
 OCwxNzA5MDM1NTYzLC0zOTE3NDA5MzQsMzc5MTE4ODQxLC0xMj
 k2ODU2NjM4XX0=
