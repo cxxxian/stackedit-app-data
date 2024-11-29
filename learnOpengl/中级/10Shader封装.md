@@ -75,9 +75,36 @@ struct PointLight{
 ```
 
 # 方法的封装
+```
+//计算漫反射光照
+vec3 calculateDiffuse(vec3 lightColor, vec3 objectColor, vec3 lightDir, vec3 normal){
+    float diffuse = clamp(dot(-lightDir, normal), 0.0, 1.0);
+    vec3 diffuseColor = lightColor * diffuse * objectColor;
+
+    return diffuseColor;
+}
+```
+暂时先把·specularMask·拿出了镜面反射光照中，因为不一定所有的物体都要有这个功能
+```
+//计算镜面反射光照
+vec3 calculateSpecular(vec3 lightColor, vec3 lightDir, vec3 normal, vec3 viewDir, float intensity){
+    //防止背面光效果
+    float dotResult = dot(-lightDir, normal);
+    float flag = step(0.0, dotResult);
+
+    vec3 lightReflect = normalize(reflect(lightDir, normal));
+    float specular = clamp(dot(lightReflect, -viewDir), 0.0, 1.0);
+    //控制光斑大小
+    specular = pow(specular, shiness);
+
+    vec3 specularColor = lightColor * specular * flag * intensity;
+
+    return specularColor;
+}
+```
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxMjg0NzcxMywzNzkxMTg4NDEsLTEyOT
-Y4NTY2MzhdfQ==
+eyJoaXN0b3J5IjpbLTE5MjU0NDI5MjYsMzc5MTE4ODQxLC0xMj
+k2ODU2NjM4XX0=
 -->
