@@ -162,7 +162,7 @@ vec3 calculateSpotLight(SpotLight light, vec3 normal, vec3 viewDir){
 
 }
 ```
-所以就能把原来在main函数中原本yi
+所以就能把原来在`main`函数中原本一堆的计算改为调用`calculateSpotLight`的计算
 ```
 void main()
 {
@@ -187,7 +187,8 @@ void main()
     FragColor = vec4(finalColor, 1.0);
 }
 ```
+并且这样我们就可以设计
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5ODM4NTkyOCwtMzkxNzQwOTM0LDM3OT
+eyJoaXN0b3J5IjpbMTcwOTAzNTU2MywtMzkxNzQwOTM0LDM3OT
 ExODg0MSwtMTI5Njg1NjYzOF19
 -->
