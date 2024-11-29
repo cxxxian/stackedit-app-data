@@ -141,7 +141,8 @@ void main()
 ![输入图片说明](/imgs/2024-11-29/iHIcBq0YHKmWJ2iC.png)
 
 # 光照计算的封装
-在`phong.frag`设计一个函数用来计算spotLight的光照
+### spotLight
+在`phong.frag`设计一个函数用来计算`spotLight`的光照
 ```
 vec3 calculateSpotLight(SpotLight light, vec3 normal, vec3 viewDir){
     //计算光照的通用数据
@@ -279,7 +280,7 @@ while (app->update()) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4NDI4NjIxOCwxMDAzMzAzNDIyLDIyMz
+eyJoaXN0b3J5IjpbMTgwNTk1NTc5NywxMDAzMzAzNDIyLDIyMz
 M1NTkxMCw1MTAwODUzMTgsMTcwOTAzNTU2MywtMzkxNzQwOTM0
 LDM3OTExODg0MSwtMTI5Njg1NjYzOF19
 -->
