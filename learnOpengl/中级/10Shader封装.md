@@ -1,3 +1,10 @@
+现在我们有三种不同的光照类型：
+1. 平行光
+2. 点光源
+3. 聚光灯
+
+我们希望在`shader`中封装一下光照的类型
+```
 #version 460 core
 out vec4 FragColor;
 
@@ -69,6 +76,7 @@ void main()
 
     FragColor = vec4(finalColor, 1.0);
 }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5ODg4NDI1MF19
+eyJoaXN0b3J5IjpbLTgwNTE1OTE0MF19
 -->
