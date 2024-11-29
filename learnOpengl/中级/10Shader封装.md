@@ -102,9 +102,41 @@ vec3 calculateSpecular(vec3 lightColor, vec3 lightDir, vec3 normal, vec3 viewDir
     return specularColor;
 }
 ```
+至此main``函数就只需要调用方法计算`diffuse`和`specular`即可
+```
+void main()
+{
+    vec3 result = vec3(0.0, 0.0, 0.0);
+
+    //计算光照的通用数据
+    vec3 objectColor = texture(sampler, uv).xyz;
+    vec3 normalN = normalize(normal);
+    vec3 lightDirN = normalize(worldPosition - spotLight.position);
+
+    vec3 viewDir = normalize(worldPosition - cameraPosition);
+    vec3 targetDirN = normalize(spotLight.targetDirection);
+
+    //计算spotLight的照射范围
+    float cGamma = dot(lightDirN, targetDirN);
+    float spotIntensity = clamp((cGamma - spotLight.outerLine) / (spotLight.innerLine - spotLight.outerLine), 0.0, 1.0);
+
+    //计算diffuse
+    result += calculateDiffuse(spotLight.color, objectColor, lightDirN, normalN);
+    
+    //计算specular
+    result += calculateSpecular(spotLight.color, lightDirN, normalN, viewDir, spotLight.specularIntensity);
+
+    //环境光计算
+    vec3 ambientColor = objectColor * ambientColor;
+
+    //vec3 finalColor = (diffuseColor + specularColor) * spotIntensity + ambientColor;
+
+    FragColor = vec4(result, 1.0);
+}
+```
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTI2Mjk1MDI2LDM3OTExODg0MSwtMTI5Nj
+eyJoaXN0b3J5IjpbMTYwMDc5NjQwLDM3OTExODg0MSwtMTI5Nj
 g1NjYzOF19
 -->
