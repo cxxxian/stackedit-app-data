@@ -187,8 +187,8 @@ void main()
     FragColor = vec4(finalColor, 1.0);
 }
 ```
-并且这样我们就可以设计
+并且这样我们就可以设计不同光源的计算方法，要用的时候替换即可
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcwOTAzNTU2MywtMzkxNzQwOTM0LDM3OT
-ExODg0MSwtMTI5Njg1NjYzOF19
+eyJoaXN0b3J5IjpbNTEwMDg1MzE4LDE3MDkwMzU1NjMsLTM5MT
+c0MDkzNCwzNzkxMTg4NDEsLTEyOTY4NTY2MzhdfQ==
 -->
