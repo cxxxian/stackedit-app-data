@@ -267,7 +267,7 @@ void prepare() {
 	...
 }
 ```
-最后到mai'n
+最后到`main`函数中，由于我们刚刚修改了`render`函数，需要将`dirLight`添加进其中
 ```
 while (app->update()) {
 
@@ -277,7 +277,7 @@ while (app->update()) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzE0NDI1MTcsMTAwMzMwMzQyMiwyMj
-MzNTU5MTAsNTEwMDg1MzE4LDE3MDkwMzU1NjMsLTM5MTc0MDkz
-NCwzNzkxMTg4NDEsLTEyOTY4NTY2MzhdfQ==
+eyJoaXN0b3J5IjpbLTU4ODEwMzg3MSwxMDAzMzAzNDIyLDIyMz
+M1NTkxMCw1MTAwODUzMTgsMTcwOTAzNTU2MywtMzkxNzQwOTM0
+LDM3OTExODg0MSwtMTI5Njg1NjYzOF19
 -->
