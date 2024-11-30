@@ -98,7 +98,8 @@ void Renderer::setClearColor(glm::vec3 color)
 	glClearColor(color.r, color.g, color.b, 1.0);
 }
 ```
-最后我们回到`main.cpp`的`main`函数中的循环中调用即可
+最后我们回到`main.cpp`的`main`函数中的循环中调用即可。
+此处是分开的，通过`IMGUI`去调节颜色给`clearColor`赋值，然后再把`clearColor`传到`renderer`的`setClearColor`方法中进行背景色的设置
 ```cpp
 while (app->update()) {
 
@@ -111,6 +112,6 @@ while (app->update()) {
 
 ![输入图片说明](/imgs/2024-11-30/70CkLjhicG3iiS8v.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzMTU5Mzk0NiwtMTIwMzg1MzA0MCwtMT
+eyJoaXN0b3J5IjpbLTkzMTI2NDE1MiwtMTIwMzg1MzA0MCwtMT
 Y2MzA0NTg0LC00OTExMzY0NDMsMjExMDgwMDkxMF19
 -->
