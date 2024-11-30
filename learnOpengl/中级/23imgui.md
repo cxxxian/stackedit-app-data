@@ -76,6 +76,8 @@ while (app->update()) {
 ![输入图片说明](/imgs/2024-11-30/wLgTEY4pIvNf0c73.png)
 
 ```
+glm::vec3 clearColor{};
+
 void renderIMGUI() {
     ...
     //2 决定当前的GUI上面有哪些控件，从上到下
@@ -87,8 +89,9 @@ void renderIMGUI() {
 	...
 }
 ```
-多添加一些功能，
+多添加一些功能，在`main.cpp`的全局设计一个clearColor，并传入`ColorEdit3`作为参数
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYyNDIwOTk0MCwtMTIwMzg1MzA0MCwtMT
-Y2MzA0NTg0LC00OTExMzY0NDMsMjExMDgwMDkxMF19
+eyJoaXN0b3J5IjpbLTE2NzgxMDQ2OTAsLTEyMDM4NTMwNDAsLT
+E2NjMwNDU4NCwtNDkxMTM2NDQzLDIxMTA4MDA5MTBdfQ==
 -->
