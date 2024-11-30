@@ -31,7 +31,7 @@ void initIMGUI() {
 
     //设置ImGui与GLFW和OpenGL的绑定
     ImGui_ImplGlfw_InitForOpenGL(app->getWindow(), true);
-    ImGui_ImplOpenGL3_Init("version 460");
+    ImGui_ImplOpenGL3_Init("#version 460");
 }
 ```
 回到`application.h`中声明函数
@@ -40,7 +40,39 @@ GLFWwindow* getWindow() const { return mWindow; }
 ```
 
 ## 渲染
+在`main.cpp`中设计一个用来渲染`IMGUI`的方法
+```cpp
+void renderIMGUI() {
+    //1 开启当前的IMGUI渲染
+    ImGui_ImplOpenGL3_NewFrame();
+    ImGui_ImplGlfw_NewFrame();
+    ImGui::NewFrame();
+
+    //2 决定当前的GUI上面有哪些控件，从上到下
+    ImGui::Begin("Hello, world");
+    ImGui::End();
+
+    //3 执行UI渲染
+    ImGui::Render();
+    //获取当前窗体的宽高
+    int display_w, display_y;
+    glfwGetFramebufferSize(app->getWindow(), &display_w, &display_y);
+    //重置视口大小
+    glViewport(0, 0, display_w, display_y);
+
+    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+}
+```
+并将其用在main函数的循环中：
+```cpp
+while (app->update()) {
+
+    cameraControl->update();
+    renderer->render(meshes, camera, dirLight, pointLights, spotLight, ambLight);
+    renderIMGUI();
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjMwNDU4NCwtNDkxMTM2NDQzLDIxMT
-A4MDA5MTBdfQ==
+eyJoaXN0b3J5IjpbLTE1NDE4MzE1OTYsLTE2NjMwNDU4NCwtND
+kxMTM2NDQzLDIxMTA4MDA5MTBdfQ==
 -->
