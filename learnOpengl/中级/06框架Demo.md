@@ -4,7 +4,7 @@
 两种不同材质，所以要声明两种`material`，
 利用`geometry`和`material`生成两种`mesh`
 将`mesh01`和`mesh02`放到数组中
-```
+```cpp
 void prepare() {
     renderer = new Renderer();
 
@@ -37,7 +37,7 @@ void prepare() {
 
 想让`mesh02`转起来，那么只要调用之前在`mesh`设计的`rotate`函数即可，在`while`中持续调用，持续旋转
 而且由于我们之前是根据本地坐标系设计的`modelMatrix`，所以会根据自己球体的中心进行旋转
-```
+```cpp
 int main() {
 	...
     while (app->update()) {
@@ -53,5 +53,6 @@ int main() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxMzM5MzEzMSwxNzg4NzU3ODMzXX0=
+eyJoaXN0b3J5IjpbMjAzOTYzMjE4MSwxMDEzMzkzMTMxLDE3OD
+g3NTc4MzNdfQ==
 -->
