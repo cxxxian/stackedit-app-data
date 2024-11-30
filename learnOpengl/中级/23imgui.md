@@ -22,6 +22,7 @@ add_executable(openglStudy "main.cpp" "glad.c")
 target_link_libraries(openglStudy glfw3.lib wrapper app fw imguilib)
 ```
 # 使用
+## c
 初始化`IMGUI`，但由于先前我们并没有设计获取当前窗口的函数
 ```cpp
 void initIMGUI() {
@@ -38,5 +39,6 @@ void initIMGUI() {
 GLFWwindow* getWindow() const { return mWindow; }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5MTEzNjQ0MywyMTEwODAwOTEwXX0=
+eyJoaXN0b3J5IjpbLTE1OTIwMTE2NTQsLTQ5MTEzNjQ0MywyMT
+EwODAwOTEwXX0=
 -->
