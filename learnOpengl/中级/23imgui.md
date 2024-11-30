@@ -22,9 +22,21 @@ add_executable(openglStudy "main.cpp" "glad.c")
 target_link_libraries(openglStudy glfw3.lib wrapper app fw imguilib)
 ```
 # 使用
+初始化`IMGUI`，但由于先前我们并没有设计获取当前窗口的函数
+```cpp
+void initIMGUI() {
+    ImGui::CreateContext();//创建imgui上下文
+    ImGui::StyleColorsDark();
+
+    //设置ImGui与GLFW和OpenGL的绑定
+    ImGui_ImplGlfw_InitForOpenGL(app->getWindow(), true);
+    ImGui_ImplOpenGL3_Init("version 460");
+}
 ```
+回到`application.h`中声明函数
+```cpp
 GLFWwindow* getWindow() const { return mWindow; }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExMDgwMDkxMF19
+eyJoaXN0b3J5IjpbLTQ5MTEzNjQ0MywyMTEwODAwOTEwXX0=
 -->
