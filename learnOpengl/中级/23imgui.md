@@ -75,7 +75,7 @@ while (app->update()) {
 
 ![输入图片说明](/imgs/2024-11-30/wLgTEY4pIvNf0c73.png)
 
-```
+```cpp
 glm::vec3 clearColor{};
 
 void renderIMGUI() {
@@ -92,14 +92,23 @@ void renderIMGUI() {
 多添加一些功能，在`main.cpp`的全局设计一个clearColor，并传入`ColorEdit3`作为参数。
 我们希望这个功能可以通过`IMGUI`更改背景色
 在`renderer.h`中声明并在`cpp`中实现
-```
+```cpp
 void Renderer::setClearColor(glm::vec3 color)
 {
 	glClearColor(color.r, color.g, color.b, 1.0);
 }
 ```
-最后我们回到
+最后我们回到main.cpp的main函数中的循环中调用即可
+```cpp
+while (app->update()) {
+
+    cameraControl->update();
+    renderer->setClearColor(clearColor);
+    renderer->render(meshes, camera, dirLight, pointLights, spotLight, ambLight);
+    renderIMGUI();
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIzNjAzMDc0NiwtMTIwMzg1MzA0MCwtMT
+eyJoaXN0b3J5IjpbMTIzNjEwOTM0OCwtMTIwMzg1MzA0MCwtMT
 Y2MzA0NTg0LC00OTExMzY0NDMsMjExMDgwMDkxMF19
 -->
