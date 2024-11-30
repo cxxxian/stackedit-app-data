@@ -72,7 +72,9 @@ while (app->update()) {
     renderIMGUI();
 }
 ```
+
+![输入图片说明](/imgs/2024-11-30/wLgTEY4pIvNf0c73.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDE4MzE1OTYsLTE2NjMwNDU4NCwtND
+eyJoaXN0b3J5IjpbLTEyMDM4NTMwNDAsLTE2NjMwNDU4NCwtND
 kxMTM2NDQzLDIxMTA4MDA5MTBdfQ==
 -->
