@@ -6,7 +6,7 @@
 
 我们希望在`shader`中封装一下光照的类型
 利用`struct`结构体，声明一个`SpotLight`结构体，把参数都设计在结构体中
-```
+```glsl
 ...
 struct SpotLight{
     vec3 position;
@@ -41,7 +41,7 @@ void main()
 }
 ```
 当然在`shader`中改完参数名字，`render.cpp`的传参到`shader`中的这一步也要同步修改
-```
+```cpp
 case MaterialType::PhongMaterial: {
 	...
 	//光源参数的uniform更新
@@ -56,7 +56,7 @@ case MaterialType::PhongMaterial: {
 			break;
 ```
 同理可以补上平行光和点光源的结构体。
-```
+```glsl
 struct DirectionalLight{
     vec3 direction;
     vec3 color;
@@ -76,7 +76,7 @@ struct PointLight{
 
 # 反射的封装
 ### calculateDiffuse
-```
+```glsl
 //计算漫反射光照
 vec3 calculateDiffuse(vec3 lightColor, vec3 objectColor, vec3 lightDir, vec3 normal){
     float diffuse = clamp(dot(-lightDir, normal), 0.0, 1.0);
@@ -87,7 +87,7 @@ vec3 calculateDiffuse(vec3 lightColor, vec3 objectColor, vec3 lightDir, vec3 nor
 ```
 ### calculateSpecular
 暂时先把`specularMask`拿出了镜面反射光照中，因为不一定所有的物体都要有这个功能
-```
+```glsl
 //计算镜面反射光照
 vec3 calculateSpecular(vec3 lightColor, vec3 lightDir, vec3 normal, vec3 viewDir, float intensity){
     //防止背面光效果
@@ -105,7 +105,7 @@ vec3 calculateSpecular(vec3 lightColor, vec3 lightDir, vec3 normal, vec3 viewDir
 }
 ```
 至此`main`函数就只需要调用方法计算`diffuse`和`specular`即可
-```
+```glsl
 void main()
 {
     vec3 result = vec3(0.0, 0.0, 0.0);
@@ -143,7 +143,7 @@ void main()
 # 光照计算的封装
 ### spotLight
 在`phong.frag`设计一个函数用来计算`spotLight`的光照
-```
+```glsl
 vec3 calculateSpotLight(SpotLight light, vec3 normal, vec3 viewDir){
     //计算光照的通用数据
     vec3 objectColor = texture(sampler, uv).xyz;
@@ -166,7 +166,7 @@ vec3 calculateSpotLight(SpotLight light, vec3 normal, vec3 viewDir){
 }
 ```
 所以就能把原来在`main`函数中原本一堆的计算改为调用`calculateSpotLight`的计算
-```
+```glsl
 void main()
 {
     vec3 result = vec3(0.0, 0.0, 0.0);
@@ -194,7 +194,7 @@ void main()
 并且这样我们就可以设计不同光源的计算方法，要用的时候替换即可
 平行光计算方法如下：
 在`phong.frag`中
-```
+```glsl
 vec3 calculateDirectionalLight(DirectionalLight light, vec3 normal, vec3 viewDir){
     //计算光照的通用数据
     vec3 objectColor = texture(sampler, uv).xyz;
@@ -211,12 +211,12 @@ vec3 calculateDirectionalLight(DirectionalLight light, vec3 normal, vec3 viewDir
 ```
 我们在`spotLight`的基础上，多声明`directionalLight`，可以弄出不同光源照射的效果
 
-```
+```glsl
 uniform SpotLight spotLight;
 uniform DirectionalLight directionalLight;
 ```
 到`main`函数中累加到`result`即可
-```
+```glsl
 void main()
 {
     vec3 result = vec3(0.0, 0.0, 0.0);
@@ -233,7 +233,7 @@ void main()
 ```
 但是注意到我们的`renderer`中的函数现在只传了`spotLight`的数据，并没有`directionalLight`的，要去`renderer.cpp`中补全
 在方法声明的时候加入`DirectionalLight* dirLight`，并实现，将对应的参数传给`shader`
-```
+```cpp
 void Renderer::render(const std::vector<Mesh*>& meshes, Camera* camera, DirectionalLight* dirLight, SpotLight* spotLight, AmbientLight* ambLight){
 	//光源参数的uniform更新
 	//spotLight的更新
@@ -252,12 +252,12 @@ void Renderer::render(const std::vector<Mesh*>& meshes, Camera* camera, Directio
 }
 ```
 最后回到`main.cpp`中补充平行光的声明和初始化即可
-```
+```cpp
 DirectionalLight* dirLight = nullptr;
 SpotLight* spotLight = nullptr;
 ```
 在`prepare`函数中利用`dirLight = new DirectionalLight()`构造，并设定方向参数
-```
+```cpp
 void prepare() {
     ...
     meshes.push_back(meshWhite);
@@ -273,7 +273,7 @@ void prepare() {
 }
 ```
 最后到`main`函数中，由于我们刚刚修改了`render`函数，需要将`dirLight`添加进其中
-```
+```cpp
 while (app->update()) {
 
     cameraControl->update();
@@ -291,13 +291,13 @@ while (app->update()) {
 
 ### pointLight
 在`phong.frag`中，声明一个`pointLight`
-```
+```glsl
 uniform SpotLight spotLight;
 uniform DirectionalLight directionalLight;
 uniform PointLight pointLight;
 ```
 计算点光源强度代码：
-```
+```glsl
 vec3 calculatePointLight(PointLight light, vec3 normal, vec3 viewDir){
     //计算光照的通用数据
     vec3 objectColor = texture(sampler, uv).xyz;
@@ -317,7 +317,7 @@ vec3 calculatePointLight(PointLight light, vec3 normal, vec3 viewDir){
 }
 ```
 最后在`main`函数中调用`calculatePointLight`并将值累加到`result`中
-```
+```glsl
 void main()
 {
     ...
@@ -333,7 +333,7 @@ void main()
 }
 ```
 老样子去到`renderer.cpp`中对`render`函数添加一个`pointLight`的参数，并实现传参数到`shader`的功能
-```
+```cpp
 void Renderer::render(const std::vector<Mesh*>& meshes, Camera* camera, DirectionalLight* dirLight, PointLight* pointLight, SpotLight* spotLight, AmbientLight* ambLight)
 {
 	...
@@ -365,14 +365,14 @@ void Renderer::render(const std::vector<Mesh*>& meshes, Camera* camera, Directio
 ```
 
 最后到`main.cpp`中初始化`pointLight`和初始化对应参数即可
-```
+```cpp
 //灯光们
 PointLight* pointLight = nullptr;
 DirectionalLight* dirLight = nullptr;
 SpotLight* spotLight = nullptr;
 ```
 在`prepare`函数中进行`pointLight`的参数初始化
-```
+```cpp
 void prepare() {
     ...
     pointLight = new PointLight();
@@ -387,7 +387,7 @@ void prepare() {
 }
 ```
 最后到`main`函数是循环中，将`pointLight`加入，对应我们刚刚在`renderer.cpp`对`render`函数的修改。
-```
+```cpp
 while (app->update()) {
     cameraControl->update();
     renderer->render(meshes, camera, dirLight, pointLight, spotLight, ambLight);
@@ -397,8 +397,9 @@ while (app->update()) {
 
 ![输入图片说明](/imgs/2024-11-29/9MgY9abNxjjHqnL0.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1NDAwMDE1Myw0ODIxOTAxMDYsMTcwMj
-kwNDM1MywtMTc5NDgyMzY0LC0xOTcyODY0MTA5LDEwMDMzMDM0
-MjIsMjIzMzU1OTEwLDUxMDA4NTMxOCwxNzA5MDM1NTYzLC0zOT
-E3NDA5MzQsMzc5MTE4ODQxLC0xMjk2ODU2NjM4XX0=
+eyJoaXN0b3J5IjpbMTk0NDIxOTE1NCwtODU0MDAwMTUzLDQ4Mj
+E5MDEwNiwxNzAyOTA0MzUzLC0xNzk0ODIzNjQsLTE5NzI4NjQx
+MDksMTAwMzMwMzQyMiwyMjMzNTU5MTAsNTEwMDg1MzE4LDE3MD
+kwMzU1NjMsLTM5MTc0MDkzNCwzNzkxMTg4NDEsLTEyOTY4NTY2
+MzhdfQ==
 -->
