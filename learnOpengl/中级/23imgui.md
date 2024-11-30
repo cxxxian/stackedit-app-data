@@ -21,6 +21,8 @@ add_executable(openglStudy "main.cpp" "glad.c")
 
 target_link_libraries(openglStudy glfw3.lib wrapper app fw imguilib)
 ```
+
+GLFWwindow* getWindow() const { return mWindow; }
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzc4NDYyNDA0XX0=
+eyJoaXN0b3J5IjpbLTE2Nzk1NzQxNDRdfQ==
 -->
