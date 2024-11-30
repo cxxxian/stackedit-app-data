@@ -74,7 +74,21 @@ while (app->update()) {
 ```
 
 ![输入图片说明](/imgs/2024-11-30/wLgTEY4pIvNf0c73.png)
+
+```
+void renderIMGUI() {
+    ...
+    //2 决定当前的GUI上面有哪些控件，从上到下
+    ImGui::Begin("Hello, world");
+    ImGui::Text("ChangeColor Demo");
+    ImGui::Button("Test Button", ImVec2(40, 20));
+    ImGui::ColorEdit3("Clear Color", (float*)&clearColor);
+    ImGui::End();
+	...
+}
+```
+多添加一些功能，
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDM4NTMwNDAsLTE2NjMwNDU4NCwtND
-kxMTM2NDQzLDIxMTA4MDA5MTBdfQ==
+eyJoaXN0b3J5IjpbMTYyNDIwOTk0MCwtMTIwMzg1MzA0MCwtMT
+Y2MzA0NTg0LC00OTExMzY0NDMsMjExMDgwMDkxMF19
 -->
