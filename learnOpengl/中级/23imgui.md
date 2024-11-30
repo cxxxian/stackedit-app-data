@@ -98,7 +98,7 @@ void Renderer::setClearColor(glm::vec3 color)
 	glClearColor(color.r, color.g, color.b, 1.0);
 }
 ```
-最后我们回到main.cpp的main函数中的循环中调用即可
+最后我们回到`main.cpp`的`main`函数中的循环中调用即可
 ```cpp
 while (app->update()) {
 
@@ -108,7 +108,9 @@ while (app->update()) {
     renderIMGUI();
 }
 ```
+
+![输入图片说明](/imgs/2024-11-30/70CkLjhicG3iiS8v.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIzNjEwOTM0OCwtMTIwMzg1MzA0MCwtMT
+eyJoaXN0b3J5IjpbLTYzMTU5Mzk0NiwtMTIwMzg1MzA0MCwtMT
 Y2MzA0NTg0LC00OTExMzY0NDMsMjExMDgwMDkxMF19
 -->
