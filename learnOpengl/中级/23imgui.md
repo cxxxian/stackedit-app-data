@@ -89,9 +89,17 @@ void renderIMGUI() {
 	...
 }
 ```
-多添加一些功能，在`main.cpp`的全局设计一个clearColor，并传入`ColorEdit3`作为参数
-
+多添加一些功能，在`main.cpp`的全局设计一个clearColor，并传入`ColorEdit3`作为参数。
+我们希望这个功能可以通过`IMGUI`更改背景色
+在`renderer.h`中声明并在`cpp`中实现
+```
+void Renderer::setClearColor(glm::vec3 color)
+{
+	glClearColor(color.r, color.g, color.b, 1.0);
+}
+```
+最后我们回到
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzgxMDQ2OTAsLTEyMDM4NTMwNDAsLT
-E2NjMwNDU4NCwtNDkxMTM2NDQzLDIxMTA4MDA5MTBdfQ==
+eyJoaXN0b3J5IjpbLTIzNjAzMDc0NiwtMTIwMzg1MzA0MCwtMT
+Y2MzA0NTg0LC00OTExMzY0NDMsMjExMDgwMDkxMF19
 -->
