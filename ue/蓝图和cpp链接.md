@@ -16,6 +16,15 @@ void ABaseCharacter::Die_Implementation()
 `SlashCharacter`和`Enemy`要同步进行`override`的修改
 展示一下`SlashCharacter`
 ```cpp
+virtual void Die_Implementation() override;
+```
+```
+void ASlashCharacter::Die_Implementation()
+{
+	Super::Die_Implementation();
+	ActionState = EActionState::EAS_Dead;
+	DisableMeshCollision();
+}
 ```
 然后我们就可以到蓝图中使用这个`Die`事件，后面那个父类是`cpp`设计的`Die`，我们就能做到在蓝图设计自己想要的然后调用父类的`Die`函数
 ![输入图片说明](/imgs/2024-12-14/a1zepHtPTQPzbu5i.png)
@@ -53,6 +62,6 @@ Breakable的蓝图中，调用事件GetHit，右键可以调用cpp中的GetHit�
 制作瓦罐破碎音效以及设置生命周期（在破碎的三秒后销毁碎片），最后执行cpp实现的部分
 ![输入图片说明](/imgs/2024-08-17/SZhMktgyyuFROpkF.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzIzNTcyNDk2LDc2MDc2NzM3OSwtMTY4Nj
-g0MDgwNSwtMTg4MTAzOTE5N119
+eyJoaXN0b3J5IjpbLTk1MzUxMjE1Myw3NjA3NjczNzksLTE2OD
+Y4NDA4MDUsLTE4ODEwMzkxOTddfQ==
 -->
