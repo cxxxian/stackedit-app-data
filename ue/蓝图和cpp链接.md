@@ -27,11 +27,15 @@ void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 }
 ```
 Breakable的蓝图中，调用事件GetHit，右键可以调用cpp中的GetHit函数，即GetHit_Implementation
+
 ![输入图片说明](/imgs/2024-08-16/C7ulCpzSFnw6v2Xz.png)
+
 ![输入图片说明](/imgs/2024-08-16/V32MzKth3BfZj7av.png)
+
 制作瓦罐破碎音效以及设置生命周期（在破碎的三秒后销毁碎片），最后执行cpp实现的部分
+
 ![输入图片说明](/imgs/2024-08-17/SZhMktgyyuFROpkF.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODY4NDA4MDUsLTE4ODEwMzkxOTddfQ
-==
+eyJoaXN0b3J5IjpbNzYwNzY3Mzc5LC0xNjg2ODQwODA1LC0xOD
+gxMDM5MTk3XX0=
 -->
