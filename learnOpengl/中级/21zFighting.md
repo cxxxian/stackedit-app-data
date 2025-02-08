@@ -48,6 +48,8 @@ for (int i = 0; i < children.size(); i++) {
 
 ![输入图片说明](/imgs/2025-02-08/EzXPwQbidRjGTbOz.png)
 
+## 倾斜条件下导致的zFighting
+
 ![输入图片说明](/imgs/2025-02-08/77m3JVKe7UL0wDRI.png)
 
 ![输入图片说明](/imgs/2025-02-08/CQ8TQQhqYYQLsazO.png)
@@ -64,7 +66,7 @@ for (int i = 0; i < children.size(); i++) {
 
 ![输入图片说明](/imgs/2025-02-08/6MkP1dRlHh99b4wm.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMTY0OTkxNjMsLTcxNDIwNjIwOSwxOT
-YyMDYwODcxLC01NTUzNDA3ODgsLTU0MjQ3Nzc0MywxNjkyODQ5
-Mjk4LDIwOTQ5NDQ5MV19
+eyJoaXN0b3J5IjpbNzQyNTMwNTYxLC03MTQyMDYyMDksMTk2Mj
+A2MDg3MSwtNTU1MzQwNzg4LC01NDI0Nzc3NDMsMTY5Mjg0OTI5
+OCwyMDk0OTQ0OTFdfQ==
 -->
