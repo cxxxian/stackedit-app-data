@@ -99,7 +99,6 @@ void Renderer::render(
 	...
 }
 ```
-
 在`render.cpp`中和先前检测深度状态一样，开始检测`polygonOffset`状态
 ```cpp
 //针对单个object进行渲染
@@ -137,11 +136,12 @@ void Renderer::renderObject(
 		...
 }
 ```
+
 完美解决问题
 
 ![输入图片说明](/imgs/2025-02-08/cfMpyU6g0wvbxlbz.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0MjI3NzU0MiwtNjI0NjA1OTU2LDQ0OD
+eyJoaXN0b3J5IjpbMTM3ODY2NjQ5OCwtNjI0NjA1OTU2LDQ0OD
 EwNDEzNiwxNTk3MTQ0NjY5LC03MTQyMDYyMDksMTk2MjA2MDg3
 MSwtNTU1MzQwNzg4LC01NDI0Nzc3NDMsMTY5Mjg0OTI5OCwyMD
 k0OTQ0OTFdfQ==
