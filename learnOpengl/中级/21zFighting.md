@@ -50,11 +50,11 @@ for (int i = 0; i < children.size(); i++) {
 
 ![输入图片说明](/imgs/2025-02-08/L8zhRA9FKeJ4WbFm.png)
 
-倾斜后，远处的地方精度不高，就会出现`zFighting`现象
+倾斜后，远处的地方精度不高，就会出现`zFighting`现象，我们通过计算偏导可以判断哪部分离我们远，哪部分近
 
 ![输入图片说明](/imgs/2025-02-08/jGhoyrGSKeHLElCf.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2MjQ0MDA5NiwtNzE0MjA2MjA5LDE5Nj
+eyJoaXN0b3J5IjpbMTI3MDc1Nzk2OSwtNzE0MjA2MjA5LDE5Nj
 IwNjA4NzEsLTU1NTM0MDc4OCwtNTQyNDc3NzQzLDE2OTI4NDky
 OTgsMjA5NDk0NDkxXX0=
 -->
