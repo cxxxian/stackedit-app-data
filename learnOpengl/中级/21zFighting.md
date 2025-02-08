@@ -80,6 +80,26 @@ public:
 	float	mFactor{ 0.0f };
 	float	mUnit{ 0.0f };
 ```
+在render.cpp中，我们需要将polygon相关状态给设为false，什么时候要用什么时候zai
+```cpp
+void Renderer::render(
+	Scene* scene, 
+	Camera* camera,
+	DirectionalLight* dirLight,
+	AmbientLight* ambLight
+) {
+	////1 设置当前帧绘制的时候，opengl的必要状态机参数
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LESS);
+	glDepthMask(GL_TRUE);
+
+	glDisable(GL_POLYGON_OFFSET_FILL);
+	glDisable(GL_POLYGON_OFFSET_LINE);
+
+	...
+}
+```
+
 在`render.cpp`中和先前检测深度状态一样，开始检测`polygonOffset`状态
 ```cpp
 //针对单个object进行渲染
@@ -121,8 +141,8 @@ void Renderer::renderObject(
 
 ![输入图片说明](/imgs/2025-02-08/cfMpyU6g0wvbxlbz.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE0NjcyNjUwLC02MjQ2MDU5NTYsNDQ4MT
-A0MTM2LDE1OTcxNDQ2NjksLTcxNDIwNjIwOSwxOTYyMDYwODcx
-LC01NTUzNDA3ODgsLTU0MjQ3Nzc0MywxNjkyODQ5Mjk4LDIwOT
-Q5NDQ5MV19
+eyJoaXN0b3J5IjpbMTE4Mjk5MDIxNiwtNjI0NjA1OTU2LDQ0OD
+EwNDEzNiwxNTk3MTQ0NjY5LC03MTQyMDYyMDksMTk2MjA2MDg3
+MSwtNTU1MzQwNzg4LC01NDI0Nzc3NDMsMTY5Mjg0OTI5OCwyMD
+k0OTQ0OTFdfQ==
 -->
