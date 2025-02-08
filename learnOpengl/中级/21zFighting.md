@@ -80,7 +80,7 @@ public:
 	float	mFactor{ 0.0f };
 	float	mUnit{ 0.0f };
 ```
-在render.cpp中，我们需要将polygon相关状态给设为false，什么时候要用什么时候zai
+在`render.cpp`中，我们需要将`polygon`相关状态给设为`false`，什么时候要用什么时候再打开
 ```cpp
 void Renderer::render(
 	Scene* scene, 
@@ -141,7 +141,7 @@ void Renderer::renderObject(
 
 ![输入图片说明](/imgs/2025-02-08/cfMpyU6g0wvbxlbz.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4Mjk5MDIxNiwtNjI0NjA1OTU2LDQ0OD
+eyJoaXN0b3J5IjpbMTA2NTA1NDM2OCwtNjI0NjA1OTU2LDQ0OD
 EwNDEzNiwxNTk3MTQ0NjY5LC03MTQyMDYyMDksMTk2MjA2MDg3
 MSwtNTU1MzQwNzg4LC01NDI0Nzc3NDMsMTY5Mjg0OTI5OCwyMD
 k0OTQ0OTFdfQ==
