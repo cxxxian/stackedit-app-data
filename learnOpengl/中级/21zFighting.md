@@ -71,12 +71,43 @@ for (int i = 0; i < children.size(); i++) {
 ![输入图片说明](/imgs/2025-02-08/6MkP1dRlHh99b4wm.png)
 
 ## polygonOffset封装
+`material.h`
+```cpp
+public:
+	//polygonOffset
+	bool	mPolygonOffset{ false };
+	unsigned int	mPolygonType{ GL_POLYGON_OFFSET_FILL };
+	float	mFactor{ 0.0f };
+	float	mUnit{ 0.0f };
+```
+在`render.cpp`中
+```cpp
+//针对单个object进行渲染
+void Renderer::renderObject(
+	Object* object,
+	Camera* camera,
+	DirectionalLight* dirLight,
+	AmbientLight* ambLight
+) {
+		...
 
+		//2 检测polygonOffset状态
+		if (material->mPolygonOffset) {
+			glEnable(material->mPolygonType);
+			glPolygonOffset(material->mFactor, material->mUnit);
+		}
+		else {
+			glDisable(GL_POLYGON_OFFSET_FILL);
+			glDisable(GL_POLYGON_OFFSET_LINE);
+		}
+		...
+}
+```
 完美解决问题
 
 ![输入图片说明](/imgs/2025-02-08/cfMpyU6g0wvbxlbz.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE2Njg0NjA3OCwtNjI0NjA1OTU2LDQ0OD
+eyJoaXN0b3J5IjpbLTEyMTg5MzIwMiwtNjI0NjA1OTU2LDQ0OD
 EwNDEzNiwxNTk3MTQ0NjY5LC03MTQyMDYyMDksMTk2MjA2MDg3
 MSwtNTU1MzQwNzg4LC01NDI0Nzc3NDMsMTY5Mjg0OTI5OCwyMD
 k0OTQ0OTFdfQ==
