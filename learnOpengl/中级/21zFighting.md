@@ -80,7 +80,7 @@ public:
 	float	mFactor{ 0.0f };
 	float	mUnit{ 0.0f };
 ```
-在`render.cpp`中和先前深度
+在`render.cpp`中和先前检测深度状态一样，开始检测`polygonOffset`状态
 ```cpp
 //针对单个object进行渲染
 void Renderer::renderObject(
@@ -121,8 +121,8 @@ void Renderer::renderObject(
 
 ![输入图片说明](/imgs/2025-02-08/cfMpyU6g0wvbxlbz.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwNDM4MTU4NywtNjI0NjA1OTU2LDQ0OD
-EwNDEzNiwxNTk3MTQ0NjY5LC03MTQyMDYyMDksMTk2MjA2MDg3
-MSwtNTU1MzQwNzg4LC01NDI0Nzc3NDMsMTY5Mjg0OTI5OCwyMD
-k0OTQ0OTFdfQ==
+eyJoaXN0b3J5IjpbMTE0NjcyNjUwLC02MjQ2MDU5NTYsNDQ4MT
+A0MTM2LDE1OTcxNDQ2NjksLTcxNDIwNjIwOSwxOTYyMDYwODcx
+LC01NTUzNDA3ODgsLTU0MjQ3Nzc0MywxNjkyODQ5Mjk4LDIwOT
+Q5NDQ5MV19
 -->
