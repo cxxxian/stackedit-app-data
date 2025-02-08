@@ -137,7 +137,7 @@ void Renderer::renderObject(
 }
 ```
 以上就准备好了所有工作，剩下的只需要去`main.cpp`中调用，
-由于大面片旋转更好观察到zFighting现象，将面片尺寸设大一点，然后zhen
+由于大面片旋转更好观察到`zFighting`现象，将面片尺寸设大一点，然后针对`B`面片应用`polygon`相关的参数设置
 ```cpp
 void prepare() {
 	renderer = new Renderer();
@@ -168,8 +168,8 @@ void prepare() {
 
 ![输入图片说明](/imgs/2025-02-08/cfMpyU6g0wvbxlbz.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTcwNjg3NTgzLC02MjQ2MDU5NTYsNDQ4MT
-A0MTM2LDE1OTcxNDQ2NjksLTcxNDIwNjIwOSwxOTYyMDYwODcx
-LC01NTUzNDA3ODgsLTU0MjQ3Nzc0MywxNjkyODQ5Mjk4LDIwOT
-Q5NDQ5MV19
+eyJoaXN0b3J5IjpbLTE4NDEyNzA4OTcsLTYyNDYwNTk1Niw0ND
+gxMDQxMzYsMTU5NzE0NDY2OSwtNzE0MjA2MjA5LDE5NjIwNjA4
+NzEsLTU1NTM0MDc4OCwtNTQyNDc3NzQzLDE2OTI4NDkyOTgsMj
+A5NDk0NDkxXX0=
 -->
