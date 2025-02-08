@@ -66,9 +66,11 @@ for (int i = 0; i < children.size(); i++) {
 
 ![输入图片说明](/imgs/2025-02-08/6MkP1dRlHh99b4wm.png)
 
+## polygonOffset封装
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5NzE0NDY2OSwtNzE0MjA2MjA5LDE5Nj
-IwNjA4NzEsLTU1NTM0MDc4OCwtNTQyNDc3NzQzLDE2OTI4NDky
-OTgsMjA5NDk0NDkxXX0=
+eyJoaXN0b3J5IjpbNDQ4MTA0MTM2LDE1OTcxNDQ2NjksLTcxND
+IwNjIwOSwxOTYyMDYwODcxLC01NTUzNDA3ODgsLTU0MjQ3Nzc0
+MywxNjkyODQ5Mjk4LDIwOTQ5NDQ5MV19
 -->
