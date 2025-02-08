@@ -136,13 +136,14 @@ void Renderer::renderObject(
 		...
 }
 ```
+以上就准备好了所有工作，剩下的只需要去main.cpp中调用
 
 完美解决问题
 
 ![输入图片说明](/imgs/2025-02-08/cfMpyU6g0wvbxlbz.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3ODY2NjQ5OCwtNjI0NjA1OTU2LDQ0OD
-EwNDEzNiwxNTk3MTQ0NjY5LC03MTQyMDYyMDksMTk2MjA2MDg3
-MSwtNTU1MzQwNzg4LC01NDI0Nzc3NDMsMTY5Mjg0OTI5OCwyMD
-k0OTQ0OTFdfQ==
+eyJoaXN0b3J5IjpbMjQ3Mzk4OTUyLC02MjQ2MDU5NTYsNDQ4MT
+A0MTM2LDE1OTcxNDQ2NjksLTcxNDIwNjIwOSwxOTYyMDYwODcx
+LC01NTUzNDA3ODgsLTU0MjQ3Nzc0MywxNjkyODQ5Mjk4LDIwOT
+Q5NDQ5MV19
 -->
