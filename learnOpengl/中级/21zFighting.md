@@ -72,9 +72,12 @@ for (int i = 0; i < children.size(); i++) {
 
 ## polygonOffset封装
 
+完美解决问题
 
+![输入图片说明](/imgs/2025-02-08/cfMpyU6g0wvbxlbz.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyNDYwNTk1Niw0NDgxMDQxMzYsMTU5Nz
-E0NDY2OSwtNzE0MjA2MjA5LDE5NjIwNjA4NzEsLTU1NTM0MDc4
-OCwtNTQyNDc3NzQzLDE2OTI4NDkyOTgsMjA5NDk0NDkxXX0=
+eyJoaXN0b3J5IjpbMTE2Njg0NjA3OCwtNjI0NjA1OTU2LDQ0OD
+EwNDEzNiwxNTk3MTQ0NjY5LC03MTQyMDYyMDksMTk2MjA2MDg3
+MSwtNTU1MzQwNzg4LC01NDI0Nzc3NDMsMTY5Mjg0OTI5OCwyMD
+k0OTQ0OTFdfQ==
 -->
