@@ -4,7 +4,7 @@
 
 ![输入图片说明](/imgs/2025-02-08/YdiqQlBlB4j2JvMB.png)
 
-
+在`main.cpp`中，我们准备两种间隔十分紧密的平面，就会出现`zFighting`现象
 ```cpp
 void prepare() {
 	renderer = new Renderer();
@@ -26,6 +26,7 @@ void prepare() {
 	...
 }
 ```
+去到`render.cpp`中，开启PolygonOffset，并将第二个面片向后偏移`1.0f`即可解决
 ```cpp
 //2 遍历object的子节点，对每个子节点都需要调用renderObject
 auto children = object->getChildren();
@@ -41,6 +42,6 @@ for (int i = 0; i < children.size(); i++) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg3MjE3MTQ0OSwtNTQyNDc3NzQzLDE2OT
-I4NDkyOTgsMjA5NDk0NDkxXX0=
+eyJoaXN0b3J5IjpbLTEzMzA1ODI2NDgsLTU0MjQ3Nzc0MywxNj
+kyODQ5Mjk4LDIwOTQ5NDQ5MV19
 -->
