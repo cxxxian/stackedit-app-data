@@ -41,7 +41,9 @@ for (int i = 0; i < children.size(); i++) {
 	renderObject(children[i], camera, dirLight, ambLight);
 }
 ```
+
+![输入图片说明](/imgs/2025-02-08/EzXPwQbidRjGTbOz.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjU3MjE0ODYsLTU0MjQ3Nzc0MywxNjkyOD
-Q5Mjk4LDIwOTQ5NDQ5MV19
+eyJoaXN0b3J5IjpbLTU1NTM0MDc4OCwtNTQyNDc3NzQzLDE2OT
+I4NDkyOTgsMjA5NDk0NDkxXX0=
 -->
