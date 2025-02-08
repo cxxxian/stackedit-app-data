@@ -56,11 +56,11 @@ for (int i = 0; i < children.size(); i++) {
 
 如以下代码：
 前者`factor`参数，可以做到离我们近的少往后偏移一点，离我们远的多往后偏移一点
-后者units参数，整体向后面平移
+后者`units`参数，整体向后面平移
 
 ![输入图片说明](/imgs/2025-02-08/6MkP1dRlHh99b4wm.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzkyODY1MDksLTcxNDIwNjIwOSwxOT
+eyJoaXN0b3J5IjpbLTExMzkzNjI5OTEsLTcxNDIwNjIwOSwxOT
 YyMDYwODcxLC01NTUzNDA3ODgsLTU0MjQ3Nzc0MywxNjkyODQ5
 Mjk4LDIwOTQ5NDQ5MV19
 -->
