@@ -136,13 +136,39 @@ void Renderer::renderObject(
 		...
 }
 ```
-以上就准备好了所有工作，剩下的只需要去main.cpp中调用
+以上就准备好了所有工作，剩下的只需要去`main.cpp`中调用，
+由于大面片旋转更好观察到zFighting现象，将面片尺寸设大一点，然后zhen
+```cpp
+void prepare() {
+	renderer = new Renderer();
+	scene = new Scene();
 
+	//auto geometry = Geometry::createPlane(5.0f, 5.0f);
+	auto geometry = Geometry::createPlane(500.0f, 500.0f);
+	auto materialA = new PhongMaterial();
+	materialA->mDiffuse = new Texture("assets/textures/goku.jpg", 0);
+	auto meshA = new Mesh(geometry, materialA);
+	meshA->rotateX(-88.0f);
+
+	scene->addChild(meshA);
+
+	auto materialB = new PhongMaterial();
+	materialB->mDiffuse = new Texture("assets/textures/box.png", 0);
+	auto meshB = new Mesh(geometry, materialB);
+	meshB->setPosition(glm::vec3(0.0f,0.0f, -0.1f));
+	meshB->rotateX(-88.0f);
+	materialB->mPolygonOffset = true;
+	materialB->mFactor = 1.0f;
+	materialB->mUnit = 1.0f;
+	scene->addChild(meshB);
+	...
+}
+```
 完美解决问题
 
 ![输入图片说明](/imgs/2025-02-08/cfMpyU6g0wvbxlbz.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjQ3Mzk4OTUyLC02MjQ2MDU5NTYsNDQ4MT
+eyJoaXN0b3J5IjpbOTcwNjg3NTgzLC02MjQ2MDU5NTYsNDQ4MT
 A0MTM2LDE1OTcxNDQ2NjksLTcxNDIwNjIwOSwxOTYyMDYwODcx
 LC01NTUzNDA3ODgsLTU0MjQ3Nzc0MywxNjkyODQ5Mjk4LDIwOT
 Q5NDQ5MV19
