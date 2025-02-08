@@ -80,7 +80,7 @@ public:
 	float	mFactor{ 0.0f };
 	float	mUnit{ 0.0f };
 ```
-在`render.cpp`中
+在`render.cpp`中和先前深度
 ```cpp
 //针对单个object进行渲染
 void Renderer::renderObject(
@@ -90,7 +90,21 @@ void Renderer::renderObject(
 	AmbientLight* ambLight
 ) {
 		...
+		//1 检测深度状态
+		if (material->mDepthTest) {
+			glEnable(GL_DEPTH_TEST);
+			glDepthFunc(material->mDepthFunc);
+		}
+		else {
+			glDisable(GL_DEPTH_TEST);
+		}
 
+		if (material->mDepthWrite) {
+			glDepthMask(GL_TRUE);
+		}
+		else {
+			glDepthMask(GL_FALSE);
+		}
 		//2 检测polygonOffset状态
 		if (material->mPolygonOffset) {
 			glEnable(material->mPolygonType);
@@ -107,7 +121,7 @@ void Renderer::renderObject(
 
 ![输入图片说明](/imgs/2025-02-08/cfMpyU6g0wvbxlbz.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMTg5MzIwMiwtNjI0NjA1OTU2LDQ0OD
+eyJoaXN0b3J5IjpbMjAwNDM4MTU4NywtNjI0NjA1OTU2LDQ0OD
 EwNDEzNiwxNTk3MTQ0NjY5LC03MTQyMDYyMDksMTk2MjA2MDg3
 MSwtNTU1MzQwNzg4LC01NDI0Nzc3NDMsMTY5Mjg0OTI5OCwyMD
 k0OTQ0OTFdfQ==
