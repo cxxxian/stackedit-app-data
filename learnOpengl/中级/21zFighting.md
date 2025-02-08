@@ -1,4 +1,8 @@
+# zFighting现象解释
+
 ![输入图片说明](/imgs/2025-02-08/dr4v1kG4lwy4eRf6.png)
+
+# 平行条件下过于接近
 
 ![输入图片说明](/imgs/2025-02-08/14hIsaHBBWQk5lGE.png)
 
@@ -60,7 +64,7 @@ for (int i = 0; i < children.size(); i++) {
 
 ![输入图片说明](/imgs/2025-02-08/6MkP1dRlHh99b4wm.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMzkzNjI5OTEsLTcxNDIwNjIwOSwxOT
+eyJoaXN0b3J5IjpbLTE1MDMxMTAyOTUsLTcxNDIwNjIwOSwxOT
 YyMDYwODcxLC01NTUzNDA3ODgsLTU0MjQ3Nzc0MywxNjkyODQ5
 Mjk4LDIwOTQ5NDQ5MV19
 -->
