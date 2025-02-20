@@ -242,7 +242,11 @@ void prepare() {
 ![输入图片说明](/imgs/2025-02-20/B71lAiDWNCk6QUzR.png)
 
 如果用统一矫正的话，`pass01`处理的时候是正确的线性空间，但是到`pass02`就不对了
+我们创建两个`pass`，然后将统一的矫正关闭
 ```cpp
+Scene* sceneOff = nullptr;
+Scene* scene = nullptr;
+Framebuffer* fbo = nullptr;
 void prepare() {
 	//glEnable(GL_FRAMEBUFFER_SRGB);
 	fbo = new Framebuffer(WIDTH, HEIGHT);
@@ -264,12 +268,24 @@ void prepare() {
 	scene->addChild(smesh);
 	...
 }
+int main() {
+	...
+	while (glApp->update()) {
+		cameraControl->update();
+		renderer->setClearColor(clearColor);
+		renderer->render(sceneOff, camera,dirLight, ambLight, fbo->mFBO);
+		renderer->render(scene, camera, dirLight, ambLight);
+		renderIMGUI();
+	}
+	...
+}
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzE1NDcxNjAxLDg4NTg3Nzk0MywxODgzNT
-c5NTM1LC0xNjY3NjE0NDIwLDExODYyNDUxODQsNDE1MjMwNTks
-LTM5MzE3ODA3Miw0Nzc5NDA4NDcsLTY4NjIwMTc1NCwtNTM1OT
-E4OTgyLC05ODIzNDIwMjMsLTU3NTg5NzQzLC0zMjMzNDEwOTAs
-LTI3NzY5NTkyOCwtMzEwNTE4NTYxLDE2MTA0OTAwMjksLTExNz
-YzMzQ0ODRdfQ==
+eyJoaXN0b3J5IjpbLTE0MDMzNzk2MTcsODg1ODc3OTQzLDE4OD
+M1Nzk1MzUsLTE2Njc2MTQ0MjAsMTE4NjI0NTE4NCw0MTUyMzA1
+OSwtMzkzMTc4MDcyLDQ3Nzk0MDg0NywtNjg2MjAxNzU0LC01Mz
+U5MTg5ODIsLTk4MjM0MjAyMywtNTc1ODk3NDMsLTMyMzM0MTA5
+MCwtMjc3Njk1OTI4LC0zMTA1MTg1NjEsMTYxMDQ5MDAyOSwtMT
+E3NjMzNDQ4NF19
 -->
