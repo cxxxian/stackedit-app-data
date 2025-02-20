@@ -153,11 +153,31 @@ Texture::Texture(const std::vector<std::string>& paths, unsigned int unit, unsig
 	...
 }
 ```
-然后进行修改
+然后进行修改以下两个方法，不过这两个方法我们可以确定是用来读取颜色贴图的，所以我们直接使用`GL_SRGB_ALPHA`
+```cpp
+Texture* Texture::createTexture(const std::string& path, unsigned int unit) {
+	...
+	auto texture = new Texture(path, unit, GL_SRGB_ALPHA);
+	。。。
+}
+
+Texture* Texture::createTextureFromMemory(
+	const std::string& path,
+	unsigned int unit,
+	unsigned char* dataIn,
+	uint32_t widthIn,
+	uint32_t heightIn
+) {
+	...
+	//2 如果本路径对应的texture没有生成过，则重新生成
+	auto texture = new Texture(unit, dataIn, widthIn, heightIn, GL_SRGB_ALPHA);
+	...
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDU0NzQ1ODksLTE2Njc2MTQ0MjAsMT
-E4NjI0NTE4NCw0MTUyMzA1OSwtMzkzMTc4MDcyLDQ3Nzk0MDg0
-NywtNjg2MjAxNzU0LC01MzU5MTg5ODIsLTk4MjM0MjAyMywtNT
-c1ODk3NDMsLTMyMzM0MTA5MCwtMjc3Njk1OTI4LC0zMTA1MTg1
-NjEsMTYxMDQ5MDAyOSwtMTE3NjMzNDQ4NF19
+eyJoaXN0b3J5IjpbMjA4MTg3OTUyMywtMTY2NzYxNDQyMCwxMT
+g2MjQ1MTg0LDQxNTIzMDU5LC0zOTMxNzgwNzIsNDc3OTQwODQ3
+LC02ODYyMDE3NTQsLTUzNTkxODk4MiwtOTgyMzQyMDIzLC01Nz
+U4OTc0MywtMzIzMzQxMDkwLC0yNzc2OTU5MjgsLTMxMDUxODU2
+MSwxNjEwNDkwMDI5LC0xMTc2MzM0NDg0XX0=
 -->
