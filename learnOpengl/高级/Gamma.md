@@ -11,7 +11,9 @@
 ![输入图片说明](/imgs/2025-02-20/aTA0oXUxrFtmYlsW.png)
 
 这里的`color-srgb`不是减法，时`srgb`空间下的`color`值的意思
+
+![输入图片说明](/imgs/2025-02-20/2XzOzac53WpulaD2.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3NzY5NTkyOCwtMzEwNTE4NTYxLDE2MT
-A0OTAwMjksLTExNzYzMzQ0ODRdfQ==
+eyJoaXN0b3J5IjpbLTMyMzM0MTA5MCwtMjc3Njk1OTI4LC0zMT
+A1MTg1NjEsMTYxMDQ5MDAyOSwtMTE3NjMzNDQ4NF19
 -->
