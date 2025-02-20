@@ -207,6 +207,7 @@ void main()
 ![输入图片说明](/imgs/2025-02-20/SooqnUl2ZWGxZzzT.png)
 
 有了这句话后，我们也不需要进行抵抗屏幕`gamma`了，而且抵抗屏幕`gamma`要手动到每一个`shader`中都进行更改，很麻烦
+全部注释掉，相当于直接输出纹理采样的颜色
 ```glsl
 void main()
 {
@@ -220,11 +221,12 @@ void main()
 	FragColor = vec4(color, 1.0);
 }
 ```
+但是现在我们是`rgb`空间下的，直接输出会偏黑，因为我们之前在构造纹
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MzUwMDg5ODYsMTg4MzU3OTUzNSwtMT
-Y2NzYxNDQyMCwxMTg2MjQ1MTg0LDQxNTIzMDU5LC0zOTMxNzgw
-NzIsNDc3OTQwODQ3LC02ODYyMDE3NTQsLTUzNTkxODk4MiwtOT
-gyMzQyMDIzLC01NzU4OTc0MywtMzIzMzQxMDkwLC0yNzc2OTU5
-MjgsLTMxMDUxODU2MSwxNjEwNDkwMDI5LC0xMTc2MzM0NDg0XX
-0=
+eyJoaXN0b3J5IjpbLTQ4ODI2NDc0MCwxODgzNTc5NTM1LC0xNj
+Y3NjE0NDIwLDExODYyNDUxODQsNDE1MjMwNTksLTM5MzE3ODA3
+Miw0Nzc5NDA4NDcsLTY4NjIwMTc1NCwtNTM1OTE4OTgyLC05OD
+IzNDIwMjMsLTU3NTg5NzQzLC0zMjMzNDEwOTAsLTI3NzY5NTky
+OCwtMzEwNTE4NTYxLDE2MTA0OTAwMjksLTExNzYzMzQ0ODRdfQ
+==
 -->
