@@ -202,10 +202,26 @@ void main()
 }
 ```
 
+### 4.加入PostProcess后处理Pass，专门用来调节Gamma
+
 ![输入图片说明](/imgs/2025-02-20/SooqnUl2ZWGxZzzT.png)
-现在
+
+有了这句话后，我们也不需要进行抵抗屏幕`gamma`了，而且抵抗屏幕`gamma`要手动到每一个`shader`中都进行更改，很麻烦
+```glsl
+void main()
+{
+	...
+	vec3 color = texture(screenTexSampler, uv).rgb;
+	//1 将sRGB变换位RGB
+	//color = pow(color, vec3(2.2));
+	//2 与光照进行计算
+	//3 最终颜色要抵抗屏幕gamma
+	//color = pow(color, vec3(1.0/2.2));
+	FragColor = vec4(color, 1.0);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjU0MDk2MDYsMTg4MzU3OTUzNSwtMT
+eyJoaXN0b3J5IjpbLTE5MzUwMDg5ODYsMTg4MzU3OTUzNSwtMT
 Y2NzYxNDQyMCwxMTg2MjQ1MTg0LDQxNTIzMDU5LC0zOTMxNzgw
 NzIsNDc3OTQwODQ3LC02ODYyMDE3NTQsLTUzNTkxODk4MiwtOT
 gyMzQyMDIzLC01NzU4OTc0MywtMzIzMzQxMDkwLC0yNzc2OTU5
