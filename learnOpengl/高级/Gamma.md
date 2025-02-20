@@ -58,15 +58,17 @@ void prepare() {
 	...
 	auto sgeo = Geometry::createScreenPlane();
 	auto smat = new ScreenMaterial();
-	//smat->mScreenTexture = fbo->mColorAttachment;
 	smat->mScreenTexture = new Texture("assets/textures/wall.jpg", 0);
 	auto smesh = new Mesh(sgeo, smat);
 	scene->addChild(smesh);
 	...
 }
 ```
+运行之后就是很普通的一个屏幕贴图
+
+![输入图片说明](/imgs/2025-02-20/OJligs7XwVFBTXEY.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzMxMDk4NjksMTE4NjI0NTE4NCw0MT
+eyJoaXN0b3J5IjpbLTIxMTQyOTA3NjMsMTE4NjI0NTE4NCw0MT
 UyMzA1OSwtMzkzMTc4MDcyLDQ3Nzk0MDg0NywtNjg2MjAxNzU0
 LC01MzU5MTg5ODIsLTk4MjM0MjAyMywtNTc1ODk3NDMsLTMyMz
 M0MTA5MCwtMjc3Njk1OTI4LC0zMTA1MTg1NjEsMTYxMDQ5MDAy
