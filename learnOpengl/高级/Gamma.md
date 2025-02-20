@@ -175,12 +175,12 @@ Texture* Texture::createTextureFromMemory(
 }
 ```
 做完以上的准备工作，我们就可以进行实验
+我们在构造纹理的时候，手动填写参数`GL_SRGB_ALPHA`，这样的话，我们读入的图片就会在进入shader计算前
 ```cpp
 void prepare() {
 	...
 	auto sgeo = Geometry::createScreenPlane();
 	auto smat = new ScreenMaterial();
-	//smat->mScreenTexture = fbo->mColorAttachment;
 	smat->mScreenTexture = new Texture("assets/textures/wall.jpg", 0, GL_SRGB_ALPHA);
 	auto smesh = new Mesh(sgeo, smat);
 	scene->addChild(smesh);
@@ -188,9 +188,10 @@ void prepare() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTM4OTc2Mzk4LDE4ODM1Nzk1MzUsLTE2Nj
-c2MTQ0MjAsMTE4NjI0NTE4NCw0MTUyMzA1OSwtMzkzMTc4MDcy
-LDQ3Nzk0MDg0NywtNjg2MjAxNzU0LC01MzU5MTg5ODIsLTk4Mj
-M0MjAyMywtNTc1ODk3NDMsLTMyMzM0MTA5MCwtMjc3Njk1OTI4
-LC0zMTA1MTg1NjEsMTYxMDQ5MDAyOSwtMTE3NjMzNDQ4NF19
+eyJoaXN0b3J5IjpbLTE3MjQzMzEwNjAsMTg4MzU3OTUzNSwtMT
+Y2NzYxNDQyMCwxMTg2MjQ1MTg0LDQxNTIzMDU5LC0zOTMxNzgw
+NzIsNDc3OTQwODQ3LC02ODYyMDE3NTQsLTUzNTkxODk4MiwtOT
+gyMzQyMDIzLC01NzU4OTc0MywtMzIzMzQxMDkwLC0yNzc2OTU5
+MjgsLTMxMDUxODU2MSwxNjEwNDkwMDI5LC0xMTc2MzM0NDg0XX
+0=
 -->
