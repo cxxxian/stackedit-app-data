@@ -242,23 +242,17 @@ void prepare() {
 ![输入图片说明](/imgs/2025-02-20/B71lAiDWNCk6QUzR.png)
 
 如果用统一矫正的话，`pass01`处理的时候是正确的线性空间，但是到`pass02`就不对了
-
+```cpp
 void prepare() {
 	//glEnable(GL_FRAMEBUFFER_SRGB);
-
 	fbo = new Framebuffer(WIDTH, HEIGHT);
-
-	renderer = new Renderer();
-	sceneOff = new Scene();
-	scene = new Scene();
-
+	...
 	//pass 01
 	auto boxGeo = Geometry::createBox(5.0f);
 	auto boxMat = new PhongMaterial();
 	boxMat->mDiffuse = new Texture("assets/textures/wall.jpg", 0, GL_SRGB_ALPHA);
 	boxMat->mShiness = 64;
 	auto boxMesh = new Mesh(boxGeo, boxMat);
-
 	sceneOff->addChild(boxMesh);
 	
 	//pass 02
@@ -268,18 +262,11 @@ void prepare() {
 	//smat->mScreenTexture = new Texture("assets/textures/wall.jpg", 0, GL_SRGB_ALPHA);
 	auto smesh = new Mesh(sgeo, smat);
 	scene->addChild(smesh);
-
-	
-	dirLight = new DirectionalLight();
-	dirLight->mDirection = glm::vec3(0.0f, -0.4f,-1.0f);
-	dirLight->mSpecularIntensity = 1.0f;
-
-	ambLight = new AmbientLight();
-	ambLight->mColor = glm::vec3(0.1f);
-
+	...
 }
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQ0OTM2MjU4LDg4NTg3Nzk0MywxODgzNT
+eyJoaXN0b3J5IjpbMzE1NDcxNjAxLDg4NTg3Nzk0MywxODgzNT
 c5NTM1LC0xNjY3NjE0NDIwLDExODYyNDUxODQsNDE1MjMwNTks
 LTM5MzE3ODA3Miw0Nzc5NDA4NDcsLTY4NjIwMTc1NCwtNTM1OT
 E4OTgyLC05ODIzNDIwMjMsLTU3NTg5NzQzLC0zMjMzNDEwOTAs
