@@ -68,6 +68,7 @@ void prepare() {
 
 ![输入图片说明](/imgs/2025-02-20/OJligs7XwVFBTXEY.png)
 
+### 1.抵抗屏幕的Gamma，输出颜色之前做1/2.2次方运算
 这时候我们去`screen.frag`中将最终颜色要抵抗屏幕`gamma`给加上，其实就是颜色乘上`1/2.2`次方
 
 ```glsl
@@ -82,8 +83,9 @@ void main()
 
 ![输入图片说明](/imgs/2025-02-20/js9XBTXaLv4ANHmd.png)
 
+### 2.处理图片的sRGB到RGB线性变换
 所以正常步骤应该是这样的，这样输出就是正常颜色了
-将`sRGB`变换位`RGB`，是为了jiang'tu
+将`sRGB`变换为`RGB`，是为了将图片变为线性空间之后，与光照计算才是正确的
 ```glsl
 void main()
 {
@@ -97,10 +99,11 @@ void main()
 	FragColor = vec4(color, 1.0);
 }
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAyNTMwMDYxNSwtMTY2NzYxNDQyMCwxMT
-g2MjQ1MTg0LDQxNTIzMDU5LC0zOTMxNzgwNzIsNDc3OTQwODQ3
-LC02ODYyMDE3NTQsLTUzNTkxODk4MiwtOTgyMzQyMDIzLC01Nz
-U4OTc0MywtMzIzMzQxMDkwLC0yNzc2OTU5MjgsLTMxMDUxODU2
-MSwxNjEwNDkwMDI5LC0xMTc2MzM0NDg0XX0=
+eyJoaXN0b3J5IjpbMTUwNTQ4ODEyLC0xNjY3NjE0NDIwLDExOD
+YyNDUxODQsNDE1MjMwNTksLTM5MzE3ODA3Miw0Nzc5NDA4NDcs
+LTY4NjIwMTc1NCwtNTM1OTE4OTgyLC05ODIzNDIwMjMsLTU3NT
+g5NzQzLC0zMjMzNDEwOTAsLTI3NzY5NTkyOCwtMzEwNTE4NTYx
+LDE2MTA0OTAwMjksLTExNzYzMzQ0ODRdfQ==
 -->
