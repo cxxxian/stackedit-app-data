@@ -223,11 +223,25 @@ void main()
 ```
 但是现在我们是`rgb`空间下的，直接输出会偏黑，因为我们构造的实验场景手动修改了参数`GL_SRGB_ALPHA`，
 `smat->mScreenTexture = new Texture("assets/textures/wall.jpg", 0, GL_SRGB_ALPHA);`
+所以我们调用`glEnable(GL_FRAMEBUFFER_SRGB);`
+这样子就完美得到正常颜色了
+```cpp
+void prepare() {
+	glEnable(GL_FRAMEBUFFER_SRGB);
+	...
+	//pass 02
+	auto sgeo = Geometry::createScreenPlane();
+	auto smat = new ScreenMaterial();
+	smat->mScreenTexture = new Texture("assets/textures/wall.jpg", 0, GL_SRGB_ALPHA);
+	auto smesh = new Mesh(sgeo, smat);
+	scene->addChild(smesh);
+	...
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzNjYxOTc5NiwxODgzNTc5NTM1LC0xNj
-Y3NjE0NDIwLDExODYyNDUxODQsNDE1MjMwNTksLTM5MzE3ODA3
-Miw0Nzc5NDA4NDcsLTY4NjIwMTc1NCwtNTM1OTE4OTgyLC05OD
-IzNDIwMjMsLTU3NTg5NzQzLC0zMjMzNDEwOTAsLTI3NzY5NTky
-OCwtMzEwNTE4NTYxLDE2MTA0OTAwMjksLTExNzYzMzQ0ODRdfQ
-==
+eyJoaXN0b3J5IjpbODg1ODc3OTQzLDE4ODM1Nzk1MzUsLTE2Nj
+c2MTQ0MjAsMTE4NjI0NTE4NCw0MTUyMzA1OSwtMzkzMTc4MDcy
+LDQ3Nzk0MDg0NywtNjg2MjAxNzU0LC01MzU5MTg5ODIsLTk4Mj
+M0MjAyMywtNTc1ODk3NDMsLTMyMzM0MTA5MCwtMjc3Njk1OTI4
+LC0zMTA1MTg1NjEsMTYxMDQ5MDAyOSwtMTE3NjMzNDQ4NF19
 -->
