@@ -17,8 +17,10 @@
 ![输入图片说明](/imgs/2025-02-20/Zylj3ilFAZ2iE6G6.png)
 
 ![输入图片说明](/imgs/2025-02-20/7DeRo2yo5ijHrFab.png)
+
+这张图的意思是，我们从`ps`导出图片时，图片会从`32`位精度转化为`8`位精度，即从`0~1`的`float`转为`255`，但是我们jiang'du'pian
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzQ3NjE2NjMsLTU3NTg5NzQzLC0zMj
+eyJoaXN0b3J5IjpbLTEzMjU3ODU2NTAsLTU3NTg5NzQzLC0zMj
 MzNDEwOTAsLTI3NzY5NTkyOCwtMzEwNTE4NTYxLDE2MTA0OTAw
 MjksLTExNzYzMzQ0ODRdfQ==
 -->
