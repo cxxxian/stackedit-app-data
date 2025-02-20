@@ -24,8 +24,10 @@
 `0.218`和`0.22`都会被转为`56`，`56`再转回来两个就都变成`0.22`了
 
 ![输入图片说明](/imgs/2025-02-20/uDqFLhbQl2jOAusP.png)
+
+![输入图片说明](/imgs/2025-02-20/ZGlplixmTgm5KvWz.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUzNTkxODk4MiwtOTgyMzQyMDIzLC01Nz
-U4OTc0MywtMzIzMzQxMDkwLC0yNzc2OTU5MjgsLTMxMDUxODU2
-MSwxNjEwNDkwMDI5LC0xMTc2MzM0NDg0XX0=
+eyJoaXN0b3J5IjpbMTI5MzM5Mzg4LC01MzU5MTg5ODIsLTk4Mj
+M0MjAyMywtNTc1ODk3NDMsLTMyMzM0MTA5MCwtMjc3Njk1OTI4
+LC0zMTA1MTg1NjEsMTYxMDQ5MDAyOSwtMTE3NjMzNDQ4NF19
 -->
