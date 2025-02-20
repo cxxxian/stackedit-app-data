@@ -202,8 +202,6 @@ void main()
 }
 ```
 
-### 4.加入PostProcess后处理Pass，专门用来调节Gamma
-
 ![输入图片说明](/imgs/2025-02-20/SooqnUl2ZWGxZzzT.png)
 
 有了这句话后，我们也不需要进行抵抗屏幕`gamma`了，而且抵抗屏幕`gamma`要手动到每一个`shader`中都进行更改，很麻烦
@@ -239,12 +237,16 @@ void prepare() {
 }
 ```
 
+### 4.加入PostProcess后处理Pass，专门用来调节Gamma
+
 ![输入图片说明](/imgs/2025-02-20/B71lAiDWNCk6QUzR.png)
+
+如果用统一矫正的话，`pass01`处理的时候是正确的线性空间，但是到`pass02`就不对了
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDg4MzAzODAsODg1ODc3OTQzLDE4OD
-M1Nzk1MzUsLTE2Njc2MTQ0MjAsMTE4NjI0NTE4NCw0MTUyMzA1
-OSwtMzkzMTc4MDcyLDQ3Nzk0MDg0NywtNjg2MjAxNzU0LC01Mz
-U5MTg5ODIsLTk4MjM0MjAyMywtNTc1ODk3NDMsLTMyMzM0MTA5
-MCwtMjc3Njk1OTI4LC0zMTA1MTg1NjEsMTYxMDQ5MDAyOSwtMT
-E3NjMzNDQ4NF19
+eyJoaXN0b3J5IjpbMTI1ODYwMDUwMCw4ODU4Nzc5NDMsMTg4Mz
+U3OTUzNSwtMTY2NzYxNDQyMCwxMTg2MjQ1MTg0LDQxNTIzMDU5
+LC0zOTMxNzgwNzIsNDc3OTQwODQ3LC02ODYyMDE3NTQsLTUzNT
+kxODk4MiwtOTgyMzQyMDIzLC01NzU4OTc0MywtMzIzMzQxMDkw
+LC0yNzc2OTU5MjgsLTMxMDUxODU2MSwxNjEwNDkwMDI5LC0xMT
+c2MzM0NDg0XX0=
 -->
