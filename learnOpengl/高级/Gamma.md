@@ -67,8 +67,10 @@ void prepare() {
 运行之后就是很普通的一个屏幕贴图
 
 ![输入图片说明](/imgs/2025-02-20/OJligs7XwVFBTXEY.png)
+
+这时候我们去`screen.frag`中将最终颜色要抵抗屏幕`gamma`给加上，其实就是颜色乘上`1/2.2`次方
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMTQyOTA3NjMsMTE4NjI0NTE4NCw0MT
+eyJoaXN0b3J5IjpbLTIwOTAwMDYxODUsMTE4NjI0NTE4NCw0MT
 UyMzA1OSwtMzkzMTc4MDcyLDQ3Nzk0MDg0NywtNjg2MjAxNzU0
 LC01MzU5MTg5ODIsLTk4MjM0MjAyMywtNTc1ODk3NDMsLTMyMz
 M0MTA5MCwtMjc3Njk1OTI4LC0zMTA1MTg1NjEsMTYxMDQ5MDAy
