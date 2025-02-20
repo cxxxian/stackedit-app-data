@@ -158,7 +158,7 @@ Texture::Texture(const std::vector<std::string>& paths, unsigned int unit, unsig
 Texture* Texture::createTexture(const std::string& path, unsigned int unit) {
 	...
 	auto texture = new Texture(path, unit, GL_SRGB_ALPHA);
-	。。。
+	...
 }
 
 Texture* Texture::createTextureFromMemory(
@@ -175,7 +175,7 @@ Texture* Texture::createTextureFromMemory(
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4MTg3OTUyMywtMTY2NzYxNDQyMCwxMT
+eyJoaXN0b3J5IjpbMTg4MzU3OTUzNSwtMTY2NzYxNDQyMCwxMT
 g2MjQ1MTg0LDQxNTIzMDU5LC0zOTMxNzgwNzIsNDc3OTQwODQ3
 LC02ODYyMDE3NTQsLTUzNTkxODk4MiwtOTgyMzQyMDIzLC01Nz
 U4OTc0MywtMzIzMzQxMDkwLC0yNzc2OTU5MjgsLTMxMDUxODU2
