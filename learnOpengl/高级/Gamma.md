@@ -1,4 +1,5 @@
-# 图片制作中的Gamma现象
+# 理论
+## 图片制作中的Gamma现象
 
 ![输入图片说明](/imgs/2025-02-20/A1yXOH1zq4ZvfL4F.png)
 
@@ -13,6 +14,8 @@
 ![输入图片说明](/imgs/2025-02-20/aTA0oXUxrFtmYlsW.png)
 
 这里的`color-srgb`不是减法，时`srgb`空间下的`color`值的意思
+
+## 图片存储的Gamma现象
 
 ![输入图片说明](/imgs/2025-02-20/2XzOzac53WpulaD2.png)
 
@@ -35,6 +38,8 @@
 
 ![输入图片说明](/imgs/2025-02-20/b45R57UWlAkkR7IK.png)
 
+## 屏幕显示器的Gamma现象
+
 ![输入图片说明](/imgs/2025-02-20/8OoTVsUTofkFySlj.png)
 
 ![输入图片说明](/imgs/2025-02-20/I65fa7Oravmm7mZK.png)
@@ -44,10 +49,13 @@
 ![输入图片说明](/imgs/2025-02-20/gJwSWBlCBj8NfBrL.png)
 
 ![输入图片说明](/imgs/2025-02-20/Jd8EoZQYJj8fNJPv.png)
+
+# 实践
+## Gamma矫正实验
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNTYxMTE2OTYsNDE1MjMwNTksLTM5Mz
-E3ODA3Miw0Nzc5NDA4NDcsLTY4NjIwMTc1NCwtNTM1OTE4OTgy
-LC05ODIzNDIwMjMsLTU3NTg5NzQzLC0zMjMzNDEwOTAsLTI3Nz
-Y5NTkyOCwtMzEwNTE4NTYxLDE2MTA0OTAwMjksLTExNzYzMzQ0
-ODRdfQ==
+eyJoaXN0b3J5IjpbMTE4NjI0NTE4NCw0MTUyMzA1OSwtMzkzMT
+c4MDcyLDQ3Nzk0MDg0NywtNjg2MjAxNzU0LC01MzU5MTg5ODIs
+LTk4MjM0MjAyMywtNTc1ODk3NDMsLTMyMzM0MTA5MCwtMjc3Nj
+k1OTI4LC0zMTA1MTg1NjEsMTYxMDQ5MDAyOSwtMTE3NjMzNDQ4
+NF19
 -->
