@@ -284,24 +284,18 @@ int main() {
 ```glsl
 void main()
 {
-	
 	vec3 color = texture(screenTexSampler, uv).rgb;
-	//1 将sRGB变换位RGB
-	//color = pow(color, vec3(2.2));
-
-	//2 与光照进行计算
-
-	//3 最终颜色要抵抗屏幕gamma
+	//最终颜色要抵抗屏幕gamma
 	color = pow(color, vec3(1.0/2.2));
-
 	FragColor = vec4(color, 1.0);
 }
 ```
+这样s
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ1ODY0NjUsODg1ODc3OTQzLDE4ODM1Nz
-k1MzUsLTE2Njc2MTQ0MjAsMTE4NjI0NTE4NCw0MTUyMzA1OSwt
-MzkzMTc4MDcyLDQ3Nzk0MDg0NywtNjg2MjAxNzU0LC01MzU5MT
-g5ODIsLTk4MjM0MjAyMywtNTc1ODk3NDMsLTMyMzM0MTA5MCwt
-Mjc3Njk1OTI4LC0zMTA1MTg1NjEsMTYxMDQ5MDAyOSwtMTE3Nj
-MzNDQ4NF19
+eyJoaXN0b3J5IjpbLTEzODExNzU0MjYsODg1ODc3OTQzLDE4OD
+M1Nzk1MzUsLTE2Njc2MTQ0MjAsMTE4NjI0NTE4NCw0MTUyMzA1
+OSwtMzkzMTc4MDcyLDQ3Nzk0MDg0NywtNjg2MjAxNzU0LC01Mz
+U5MTg5ODIsLTk4MjM0MjAyMywtNTc1ODk3NDMsLTMyMzM0MTA5
+MCwtMjc3Njk1OTI4LC0zMTA1MTg1NjEsMTYxMDQ5MDAyOSwtMT
+E3NjMzNDQ4NF19
 -->
