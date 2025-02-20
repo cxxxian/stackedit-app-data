@@ -7,7 +7,11 @@
 ![输入图片说明](/imgs/2025-02-20/ek3VoXmYMyB8IFb0.png)
 
 ![输入图片说明](/imgs/2025-02-20/cHqbi1VatlFS3Y1Y.png)
+
+![输入图片说明](/imgs/2025-02-20/aTA0oXUxrFtmYlsW.png)
+
+这里的`color-srgb`不是减法，时`srgb`空间下的`color`值的意思
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMxMDUxODU2MSwxNjEwNDkwMDI5LC0xMT
-c2MzM0NDg0XX0=
+eyJoaXN0b3J5IjpbLTI3NzY5NTkyOCwtMzEwNTE4NTYxLDE2MT
+A0OTAwMjksLTExNzYzMzQ0ODRdfQ==
 -->
