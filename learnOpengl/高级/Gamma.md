@@ -52,12 +52,23 @@
 
 # 实践
 ## Gamma矫正实验
-```
+我们先构建一个试验场景，就是渲染一张屏幕贴图出来
+```cpp
+void prepare() {
+	...
+	auto sgeo = Geometry::createScreenPlane();
+	auto smat = new ScreenMaterial();
+	//smat->mScreenTexture = fbo->mColorAttachment;
+	smat->mScreenTexture = new Texture("assets/textures/wall.jpg", 0);
+	auto smesh = new Mesh(sgeo, smat);
+	scene->addChild(smesh);
+	...
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzMjYwMzY0OCwxMTg2MjQ1MTg0LDQxNT
-IzMDU5LC0zOTMxNzgwNzIsNDc3OTQwODQ3LC02ODYyMDE3NTQs
-LTUzNTkxODk4MiwtOTgyMzQyMDIzLC01NzU4OTc0MywtMzIzMz
-QxMDkwLC0yNzc2OTU5MjgsLTMxMDUxODU2MSwxNjEwNDkwMDI5
-LC0xMTc2MzM0NDg0XX0=
+eyJoaXN0b3J5IjpbLTIwNzMxMDk4NjksMTE4NjI0NTE4NCw0MT
+UyMzA1OSwtMzkzMTc4MDcyLDQ3Nzk0MDg0NywtNjg2MjAxNzU0
+LC01MzU5MTg5ODIsLTk4MjM0MjAyMywtNTc1ODk3NDMsLTMyMz
+M0MTA5MCwtMjc3Njk1OTI4LC0zMTA1MTg1NjEsMTYxMDQ5MDAy
+OSwtMTE3NjMzNDQ4NF19
 -->
