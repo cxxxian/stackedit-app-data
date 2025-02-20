@@ -1,7 +1,7 @@
 # 框架搭建
 ![输入图片说明](/imgs/2024-11-20/BJZMhf09N3OgxPwj.png)
 ![输入图片说明](/imgs/2024-11-20/K6uoexsFgZ9dulge.png)
-```
+```cpp
 #pragma once
 #include "core.h"
 
@@ -26,7 +26,7 @@ private:
 };
 ```
 先基础实现一下：
-```
+```cpp
 #include "geometry.h"
 
 Geometry::Geometry(){}
@@ -58,7 +58,7 @@ Geometry* Geometry::createSphere(float size)
 ```
 # 立方体
 一套完整的vbo，vao，ebo绑定过程
-```
+```cpp
 Geometry* Geometry::createBox(float size)
 {
 	Geometry* geometry = new Geometry();
@@ -137,7 +137,7 @@ Geometry* Geometry::createBox(float size)
 ```
 最后到`main.cpp`中
 先声明`geometry`，然后我们用`createBox`赋值，最后在`render`中绑定`vao`
-```
+```cpp
 Geometry* geometry = nullptr;
 void prepareVAO() {
     geometry = Geometry::createBox(6.0f);
@@ -157,7 +157,7 @@ void render(){
 ![输入图片说明](/imgs/2024-11-20/tVtV6GX8Bq7XemJc.png)
 复习一遍深度测试流程
 制作`prepareState()`用来开启深度测试，在`main`函数中调用，**最重要的是，别忘记清理深度缓存信息**
-```
+```cpp
 void prepareState() {
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
@@ -199,7 +199,7 @@ int main() {
 举一反三，到m+7的时候，我们就可以得到m+8，不用再算以m+8为基础的了
 ![输入图片说明](/imgs/2024-11-20/Ba5qJ15CVUxRnnYo.png)
 ### 代码实现
-```
+```cpp
 Geometry* Geometry::createSphere(float radius)
 {
 	Geometry* geometry = new Geometry();
@@ -295,5 +295,5 @@ Geometry* Geometry::createSphere(float radius)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY5MDMxNzE4OV19
+eyJoaXN0b3J5IjpbMTkzNDE4Mzg5LC02OTAzMTcxODldfQ==
 -->
