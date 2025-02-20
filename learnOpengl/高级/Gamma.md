@@ -20,8 +20,10 @@
 
 这张图的意思是，我们从`ps`导出图片时，图片会从`32`位精度转化为`8`位精度，即从`0~1`的`float`转为`255`，
 但是我们将图片读取到`OpenGL`中时，又会被转回去`0~1`的`float`类型，因为我们在`OpenGL`需要对图片做一些计算，转化为`0~1`比较方便
+此时就会发现丢失精度，比如：
+`0.218`和`0.22`都会被转为`56`，`56`再转回来两个就都变成`0.22`了
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg3NzQzNTEyNSwtNTc1ODk3NDMsLTMyMz
+eyJoaXN0b3J5IjpbLTk4MjM0MjAyMywtNTc1ODk3NDMsLTMyMz
 M0MTA5MCwtMjc3Njk1OTI4LC0zMTA1MTg1NjEsMTYxMDQ5MDAy
 OSwtMTE3NjMzNDQ4NF19
 -->
