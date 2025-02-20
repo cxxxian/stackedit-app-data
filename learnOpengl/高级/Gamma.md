@@ -175,7 +175,7 @@ Texture* Texture::createTextureFromMemory(
 }
 ```
 做完以上的准备工作，我们就可以进行实验
-我们在构造纹理的时候，手动填写参数`GL_SRGB_ALPHA`，这样的话，我们读入的图片就会在进入shader计算前
+我们在构造纹理的时候，手动填写参数`GL_SRGB_ALPHA`，这样的话，我们读入的图片就会在进入`shader`计算前，自动从`sRGB`转化为`RGB`
 ```cpp
 void prepare() {
 	...
@@ -187,8 +187,22 @@ void prepare() {
 	...
 }
 ```
+所以我们也没必要在`screen.frag`做`sRGB`转化为`RGB`的操作了
+注释掉后输出的就是正常颜色
+```glsl
+void main()
+{
+	...
+	//1 将sRGB变换位RGB
+	//color = pow(color, vec3(2.2));
+	//2 与光照进行计算
+	//3 最终颜色要抵抗屏幕gamma
+	color = pow(color, vec3(1.0/2.2));
+	FragColor = vec4(color, 1.0);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MjQzMzEwNjAsMTg4MzU3OTUzNSwtMT
+eyJoaXN0b3J5IjpbLTExNTU5NTA1MDEsMTg4MzU3OTUzNSwtMT
 Y2NzYxNDQyMCwxMTg2MjQ1MTg0LDQxNTIzMDU5LC0zOTMxNzgw
 NzIsNDc3OTQwODQ3LC02ODYyMDE3NTQsLTUzNTkxODk4MiwtOT
 gyMzQyMDIzLC01NzU4OTc0MywtMzIzMzQxMDkwLC0yNzc2OTU5
