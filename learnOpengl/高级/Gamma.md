@@ -116,7 +116,8 @@ Texture(
 Texture(unsigned int width, unsigned int height, unsigned int unit, unsigned int internalFormat = GL_RGBA);
 Texture(const std::vector<std::string>& paths, unsigned int unit, unsigned int internalFormat = GL_RGBA);
 ```
-然后就到具体的方法里面中``的替换参数
+然后就到具体的方法里面中的`glTexImage2D`方法替换参数。
+以前我们是直接用`GL_RGBA`，现在改为参数`internalFormat`，这样如果我们再构造时要手动声明类型就很方便了
 ```cpp
 Texture::Texture(const std::string& path, unsigned int unit, unsigned int internalFormat) {
 	...
@@ -150,9 +151,9 @@ Texture::Texture(const std::vector<std::string>& paths, unsigned int unit, unsig
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjMxOTk0NDgxLC0xNjY3NjE0NDIwLDExOD
-YyNDUxODQsNDE1MjMwNTksLTM5MzE3ODA3Miw0Nzc5NDA4NDcs
-LTY4NjIwMTc1NCwtNTM1OTE4OTgyLC05ODIzNDIwMjMsLTU3NT
-g5NzQzLC0zMjMzNDEwOTAsLTI3NzY5NTkyOCwtMzEwNTE4NTYx
-LDE2MTA0OTAwMjksLTExNzYzMzQ0ODRdfQ==
+eyJoaXN0b3J5IjpbLTU3ODU0MzM1NywtMTY2NzYxNDQyMCwxMT
+g2MjQ1MTg0LDQxNTIzMDU5LC0zOTMxNzgwNzIsNDc3OTQwODQ3
+LC02ODYyMDE3NTQsLTUzNTkxODk4MiwtOTgyMzQyMDIzLC01Nz
+U4OTc0MywtMzIzMzQxMDkwLC0yNzc2OTU5MjgsLTMxMDUxODU2
+MSwxNjEwNDkwMDI5LC0xMTc2MzM0NDg0XX0=
 -->
