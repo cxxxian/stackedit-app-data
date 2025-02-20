@@ -201,8 +201,11 @@ void main()
 	FragColor = vec4(color, 1.0);
 }
 ```
+
+![输入图片说明](/imgs/2025-02-20/SooqnUl2ZWGxZzzT.png)
+现在
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNTU5NTA1MDEsMTg4MzU3OTUzNSwtMT
+eyJoaXN0b3J5IjpbLTE0NjU0MDk2MDYsMTg4MzU3OTUzNSwtMT
 Y2NzYxNDQyMCwxMTg2MjQ1MTg0LDQxNTIzMDU5LC0zOTMxNzgw
 NzIsNDc3OTQwODQ3LC02ODYyMDE3NTQsLTUzNTkxODk4MiwtOT
 gyMzQyMDIzLC01NzU4OTc0MywtMzIzMzQxMDkwLC0yNzc2OTU5
