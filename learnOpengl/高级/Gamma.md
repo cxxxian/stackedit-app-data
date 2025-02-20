@@ -103,6 +103,9 @@ void main()
 
 ![输入图片说明](/imgs/2025-02-20/MklUqFKdBnqEKzSZ.png)
 
+这里并不是所有的贴图都用来表达颜色：
+例如蒙版
+
 去到`texture.h`中，添加参数
 ```cpp
 Texture(const std::string& path, unsigned int unit, unsigned int internalFormat = GL_RGBA);
@@ -150,10 +153,11 @@ Texture::Texture(const std::vector<std::string>& paths, unsigned int unit, unsig
 	...
 }
 ```
+然后进行修改
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3ODU0MzM1NywtMTY2NzYxNDQyMCwxMT
-g2MjQ1MTg0LDQxNTIzMDU5LC0zOTMxNzgwNzIsNDc3OTQwODQ3
-LC02ODYyMDE3NTQsLTUzNTkxODk4MiwtOTgyMzQyMDIzLC01Nz
-U4OTc0MywtMzIzMzQxMDkwLC0yNzc2OTU5MjgsLTMxMDUxODU2
-MSwxNjEwNDkwMDI5LC0xMTc2MzM0NDg0XX0=
+eyJoaXN0b3J5IjpbLTIwMDY5MzEwOTEsLTE2Njc2MTQ0MjAsMT
+E4NjI0NTE4NCw0MTUyMzA1OSwtMzkzMTc4MDcyLDQ3Nzk0MDg0
+NywtNjg2MjAxNzU0LC01MzU5MTg5ODIsLTk4MjM0MjAyMywtNT
+c1ODk3NDMsLTMyMzM0MTA5MCwtMjc3Njk1OTI4LC0zMTA1MTg1
+NjEsMTYxMDQ5MDAyOSwtMTE3NjMzNDQ4NF19
 -->
