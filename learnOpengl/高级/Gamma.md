@@ -221,9 +221,10 @@ void main()
 	FragColor = vec4(color, 1.0);
 }
 ```
-但是现在我们是`rgb`空间下的，直接输出会偏黑，因为我们之前在构造纹
+但是现在我们是`rgb`空间下的，直接输出会偏黑，因为我们构造的实验场景手动修改了参数`GL_SRGB_ALPHA`，
+`smat->mScreenTexture = new Texture("assets/textures/wall.jpg", 0, GL_SRGB_ALPHA);`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4ODI2NDc0MCwxODgzNTc5NTM1LC0xNj
+eyJoaXN0b3J5IjpbLTQzNjYxOTc5NiwxODgzNTc5NTM1LC0xNj
 Y3NjE0NDIwLDExODYyNDUxODQsNDE1MjMwNTksLTM5MzE3ODA3
 Miw0Nzc5NDA4NDcsLTY4NjIwMTc1NCwtNTM1OTE4OTgyLC05OD
 IzNDIwMjMsLTU3NTg5NzQzLC0zMjMzNDEwOTAsLTI3NzY5NTky
