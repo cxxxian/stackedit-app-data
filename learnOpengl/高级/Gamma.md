@@ -27,11 +27,13 @@
 
 ![输入图片说明](/imgs/2025-02-20/ZGlplixmTgm5KvWz.png)
 
-我们在导出图片时，先做运算转化为`sRGB`空间，这样`32`转化为`8`位存储空间的时候，暗部就不至于丢掉太多细节
+我们在导出图片时，先做运算转化为`sRGB`空间，这样`32`转化为`8`位存储空间的时候，暗部就不至于丢掉太多细节精度，然后在我们将图片读入`OpenGL`时，再做相应的运算把`sRGB`转化回`RGB`空间
 
 ![输入图片说明](/imgs/2025-02-20/I9uhYuLekoPbj64p.png)
+
+![输入图片说明](/imgs/2025-02-20/b45R57UWlAkkR7IK.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzNjQwMTIxMywtNTM1OTE4OTgyLC05OD
+eyJoaXN0b3J5IjpbLTcwOTc2NTc3OCwtNTM1OTE4OTgyLC05OD
 IzNDIwMjMsLTU3NTg5NzQzLC0zMjMzNDEwOTAsLTI3NzY5NTky
 OCwtMzEwNTE4NTYxLDE2MTA0OTAwMjksLTExNzYzMzQ0ODRdfQ
 ==
