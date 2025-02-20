@@ -174,10 +174,23 @@ Texture* Texture::createTextureFromMemory(
 	...
 }
 ```
+做完以上的准备工作，我们就可以进行实验
+```cpp
+void prepare() {
+	...
+	auto sgeo = Geometry::createScreenPlane();
+	auto smat = new ScreenMaterial();
+	//smat->mScreenTexture = fbo->mColorAttachment;
+	smat->mScreenTexture = new Texture("assets/textures/wall.jpg", 0, GL_SRGB_ALPHA);
+	auto smesh = new Mesh(sgeo, smat);
+	scene->addChild(smesh);
+	...
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4MzU3OTUzNSwtMTY2NzYxNDQyMCwxMT
-g2MjQ1MTg0LDQxNTIzMDU5LC0zOTMxNzgwNzIsNDc3OTQwODQ3
-LC02ODYyMDE3NTQsLTUzNTkxODk4MiwtOTgyMzQyMDIzLC01Nz
-U4OTc0MywtMzIzMzQxMDkwLC0yNzc2OTU5MjgsLTMxMDUxODU2
-MSwxNjEwNDkwMDI5LC0xMTc2MzM0NDg0XX0=
+eyJoaXN0b3J5IjpbNTM4OTc2Mzk4LDE4ODM1Nzk1MzUsLTE2Nj
+c2MTQ0MjAsMTE4NjI0NTE4NCw0MTUyMzA1OSwtMzkzMTc4MDcy
+LDQ3Nzk0MDg0NywtNjg2MjAxNzU0LC01MzU5MTg5ODIsLTk4Mj
+M0MjAyMywtNTc1ODk3NDMsLTMyMzM0MTA5MCwtMjc3Njk1OTI4
+LC0zMTA1MTg1NjEsMTYxMDQ5MDAyOSwtMTE3NjMzNDQ4NF19
 -->
