@@ -81,10 +81,26 @@ void main()
 ```
 
 ![输入图片说明](/imgs/2025-02-20/js9XBTXaLv4ANHmd.png)
+
+所以正常步骤应该是这样的，这样输出就是正常颜色了
+将`sRGB`变换位`RGB`，是为了jiang'tu
+```glsl
+void main()
+{
+	vec3 color = texture(screenTexSampler, uv).rgb;
+	//1 将sRGB变换位RGB
+	color = pow(color, vec3(2.2));
+	//2 与光照进行计算
+
+	//3 最终颜色要抵抗屏幕gamma
+	color = pow(color, vec3(1.0/2.2));
+	FragColor = vec4(color, 1.0);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2Njc2MTQ0MjAsMTE4NjI0NTE4NCw0MT
-UyMzA1OSwtMzkzMTc4MDcyLDQ3Nzk0MDg0NywtNjg2MjAxNzU0
-LC01MzU5MTg5ODIsLTk4MjM0MjAyMywtNTc1ODk3NDMsLTMyMz
-M0MTA5MCwtMjc3Njk1OTI4LC0zMTA1MTg1NjEsMTYxMDQ5MDAy
-OSwtMTE3NjMzNDQ4NF19
+eyJoaXN0b3J5IjpbMjAyNTMwMDYxNSwtMTY2NzYxNDQyMCwxMT
+g2MjQ1MTg0LDQxNTIzMDU5LC0zOTMxNzgwNzIsNDc3OTQwODQ3
+LC02ODYyMDE3NTQsLTUzNTkxODk4MiwtOTgyMzQyMDIzLC01Nz
+U4OTc0MywtMzIzMzQxMDkwLC0yNzc2OTU5MjgsLTMxMDUxODU2
+MSwxNjEwNDkwMDI5LC0xMTc2MzM0NDg0XX0=
 -->
