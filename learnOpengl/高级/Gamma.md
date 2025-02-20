@@ -290,9 +290,11 @@ void main()
 	FragColor = vec4(color, 1.0);
 }
 ```
-这样s
+这样渲染出来的几何体就是完全正常的了，光照也是完全对应相应的线性进行转化的
+
+![输入图片说明](/imgs/2025-02-20/OdyBkZExItyV79kD.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODExNzU0MjYsODg1ODc3OTQzLDE4OD
+eyJoaXN0b3J5IjpbLTE5OTc2NjAxMDUsODg1ODc3OTQzLDE4OD
 M1Nzk1MzUsLTE2Njc2MTQ0MjAsMTE4NjI0NTE4NCw0MTUyMzA1
 OSwtMzkzMTc4MDcyLDQ3Nzk0MDg0NywtNjg2MjAxNzU0LC01Mz
 U5MTg5ODIsLTk4MjM0MjAyMywtNTc1ODk3NDMsLTMyMzM0MTA5
