@@ -18,9 +18,10 @@
 
 ![输入图片说明](/imgs/2025-02-20/7DeRo2yo5ijHrFab.png)
 
-这张图的意思是，我们从`ps`导出图片时，图片会从`32`位精度转化为`8`位精度，即从`0~1`的`float`转为`255`，但是我们jiang'du'pian
+这张图的意思是，我们从`ps`导出图片时，图片会从`32`位精度转化为`8`位精度，即从`0~1`的`float`转为`255`，
+但是我们将图片读取到`OpenGL`中时，又会被转回去`0~1`的`float`类型，因为我们在`OpenGL`需要对图片做一些计算，转化为`0~1`比较方便
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjU3ODU2NTAsLTU3NTg5NzQzLC0zMj
-MzNDEwOTAsLTI3NzY5NTkyOCwtMzEwNTE4NTYxLDE2MTA0OTAw
-MjksLTExNzYzMzQ0ODRdfQ==
+eyJoaXN0b3J5IjpbMTg3NzQzNTEyNSwtNTc1ODk3NDMsLTMyMz
+M0MTA5MCwtMjc3Njk1OTI4LC0zMTA1MTg1NjEsMTYxMDQ5MDAy
+OSwtMTE3NjMzNDQ4NF19
 -->
