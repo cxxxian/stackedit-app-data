@@ -160,8 +160,8 @@ std::string Shader::loadShader(const std::string& filePath) {
 `std::stringstream shaderStream;`字符串流
 `std::string line;`用来记录每一行的字符串
 `while (std::getline(file, line))`然后我们就可以循环地去读取每一行字符串，判断有没有遇到`#include`
-`if (line.find("#include") != std::string::npos)`中地这个`std::string::npos`就代表没有找到地
+`if (line.find("#include") != std::string::npos)`中的这个`std::string::npos`就代表没有找到地意思
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3MzIxNjgwNywxMTcwNjAwMDUsLTE4ND
-kwMjQ2OTAsODU5NDA2ODc1LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbNDM0NDcwNDYzLDExNzA2MDAwNSwtMTg0OT
+AyNDY5MCw4NTk0MDY4NzUsLTIwODg3NDY2MTJdfQ==
 -->
