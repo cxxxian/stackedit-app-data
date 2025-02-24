@@ -160,11 +160,15 @@ std::string Shader::loadShader(const std::string& filePath) {
 `std::stringstream shaderStream;`字符串流
 `std::string line;`用来记录每一行的字符串
 `while (std::getline(file, line))`然后我们就可以循环地去读取每一行字符串，判断有没有遇到`#include`
-`if (line.find("#include") != std::string::npos)`中的这个`std::string::npos`就代表没有找到地意思
+`if (line.find("#include") != std::string::npos)`中的这个`std::string::npos`就代表没有找到的意思
+
 以上是在`shader`中进行字符串的读取
 然后我们找到了`#include`之后，我们得到的是一个相对路径，如下：
+`#include "../common/commonLight.glsl"`
+
+所以我们还要找到头进行拼接，而头其实就可以通过`filePath`得到
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4MTgxMzUzMyw0MzQ0NzA0NjMsMTE3MD
+eyJoaXN0b3J5IjpbMTM5MDU0ODE1NSw0MzQ0NzA0NjMsMTE3MD
 YwMDA1LC0xODQ5MDI0NjkwLDg1OTQwNjg3NSwtMjA4ODc0NjYx
 Ml19
 -->
