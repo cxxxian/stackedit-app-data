@@ -174,8 +174,10 @@ std::string Shader::loadShader(const std::string& filePath) {
 所以就用这样找：
 `auto lastSlashPos = filePath.find_last_of("/\\");`
 这里的`/\\`是代表最后一个是`/`或者`\`，因为根据每个人书写规范不同，两种写法都有可能
+最后拼出来的完整路径就是
+`assets/shaders/advanced/phong.vert", "assets/shaders/advanced/common/commonLight.glsl`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2NjM1NTI3OSw0MzQ0NzA0NjMsMTE3MD
-YwMDA1LC0xODQ5MDI0NjkwLDg1OTQwNjg3NSwtMjA4ODc0NjYx
-Ml19
+eyJoaXN0b3J5IjpbMTMxODkwNDQ1MywxMDY2MzU1Mjc5LDQzND
+Q3MDQ2MywxMTcwNjAwMDUsLTE4NDkwMjQ2OTAsODU5NDA2ODc1
+LC0yMDg4NzQ2NjEyXX0=
 -->
