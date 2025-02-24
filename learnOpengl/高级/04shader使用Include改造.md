@@ -177,8 +177,11 @@ std::string Shader::loadShader(const std::string& filePath) {
 最后拼出来的完整路径就是
 `assets/shaders/advanced/phong.vert", "assets/shaders/advanced/common/commonLight.glsl`
 很重要的就是要记得`substr`包前不包后
+
+最后递归调用`loadShader`，如果下一层还有`#include`就持续递归使用
+`shaderStream << loadShader(totalPath);`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjM3NTY2OTMsMTA2NjM1NTI3OSw0Mz
-Q0NzA0NjMsMTE3MDYwMDA1LC0xODQ5MDI0NjkwLDg1OTQwNjg3
-NSwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbNzI2NzY2MDY3LDEwNjYzNTUyNzksNDM0ND
+cwNDYzLDExNzA2MDAwNSwtMTg0OTAyNDY5MCw4NTk0MDY4NzUs
+LTIwODg3NDY2MTJdfQ==
 -->
