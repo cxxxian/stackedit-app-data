@@ -181,7 +181,7 @@ std::string Shader::loadShader(const std::string& filePath) {
 最后递归调用`loadShader`，如果下一层还有`#include`就持续递归使用
 `shaderStream << loadShader(totalPath);`
 
-以下使原本的构造函数，然后我们d
+以下是原本的构造函数，然后我们的新方法`loadShader`以及做好了字符串处理，所以我们可以进行调用
 ```cpp
 Shader::Shader(const char* vertexPath, const char* fragmentPath) {
 	//声明装入shader代码字符串的两个string
@@ -217,7 +217,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4OTQ3NjYyNSwxMDY2MzU1Mjc5LDQzND
-Q3MDQ2MywxMTcwNjAwMDUsLTE4NDkwMjQ2OTAsODU5NDA2ODc1
-LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTk4MjUzMTk5LDEwNjYzNTUyNzksNDM0ND
+cwNDYzLDExNzA2MDAwNSwtMTg0OTAyNDY5MCw4NTk0MDY4NzUs
+LTIwODg3NDY2MTJdfQ==
 -->
