@@ -123,10 +123,10 @@ vec3 calculatePointLight(vec3 objectColor, PointLight light, vec3 normal ,vec3 v
 回忆一下我们是怎么编译`shader`的，是将`vert`和`frag`作为字符串进行编译的，
 那么我们在读取`phong.frag`时，只要将`include`作为关键字，当读取到`include`的时候，我们就把`commonLight.glsl`内的内容替换成`#include "../common/commonLight.glsl"`
 
-所以我们去到`shader.h`中创建一个新方法
+所以我们去到`shader.h`中创建一个新方法：
 `std::string loadShader(const std::string& filePath);`
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTM5OTQ5NzcsLTE4NDkwMjQ2OTAsOD
+eyJoaXN0b3J5IjpbLTE3Mjk1Mzg3NTksLTE4NDkwMjQ2OTAsOD
 U5NDA2ODc1LC0yMDg4NzQ2NjEyXX0=
 -->
