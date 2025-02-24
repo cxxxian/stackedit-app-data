@@ -162,8 +162,9 @@ std::string Shader::loadShader(const std::string& filePath) {
 `while (std::getline(file, line))`然后我们就可以循环地去读取每一行字符串，判断有没有遇到`#include`
 `if (line.find("#include") != std::string::npos)`中的这个`std::string::npos`就代表没有找到地意思
 以上是在`shader`中进行字符串的读取
+然后我们找到了`#include`之后，我们得到的是一个相对路径，如下：
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxNjc3MjI2Miw0MzQ0NzA0NjMsMTE3MD
+eyJoaXN0b3J5IjpbLTM4MTgxMzUzMyw0MzQ0NzA0NjMsMTE3MD
 YwMDA1LC0xODQ5MDI0NjkwLDg1OTQwNjg3NSwtMjA4ODc0NjYx
 Ml19
 -->
