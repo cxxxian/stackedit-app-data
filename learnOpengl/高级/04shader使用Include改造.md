@@ -125,6 +125,9 @@ vec3 calculatePointLight(vec3 objectColor, PointLight light, vec3 normal ,vec3 v
 
 所以我们去到`shader.h`中创建一个新方法：
 `std::string loadShader(const std::string& filePath);`
+实现如下：
+用了很多`stl`语法，慢慢来盘一下
+```cpp
 std::string Shader::loadShader(const std::string& filePath) {
 	std::ifstream file(filePath);
 	std::stringstream shaderStream;
@@ -154,6 +157,6 @@ std::string Shader::loadShader(const std::string& filePath) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDcwNDM4MDgsLTE4NDkwMjQ2OTAsODU5ND
-A2ODc1LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTEzOTU5NDY1MTUsLTE4NDkwMjQ2OTAsOD
+U5NDA2ODc1LC0yMDg4NzQ2NjEyXX0=
 -->
