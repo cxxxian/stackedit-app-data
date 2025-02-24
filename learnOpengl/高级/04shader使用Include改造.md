@@ -156,8 +156,10 @@ std::string Shader::loadShader(const std::string& filePath) {
 	return shaderStream.str();
 }
 ```
-`std::ifstream file(filePath);`读取输入的
+`std::ifstream file(filePath);`读取输入的文件流，根据地址进行打开
+`std::stringstream shaderStream;`字符串流
+`std::string line;`用来记录每一行的字符串
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5ODc1MzE3OSwtMTg0OTAyNDY5MCw4NT
-k0MDY4NzUsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbMTE3MDYwMDA1LC0xODQ5MDI0NjkwLDg1OT
+QwNjg3NSwtMjA4ODc0NjYxMl19
 -->
