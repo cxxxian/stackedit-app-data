@@ -5,8 +5,11 @@
 
 ![输入图片说明](/imgs/2025-02-24/qFPC4IMXHcmwgY0w.png)
 
-观察一下现在的文件夹结构，我们希望advanced下的phong.frag可以include到`common`文件夹下的`commonLight.glsl`
+观察一下现在的文件夹结构，我们希望`advanced`下的`phong.frag`可以`include`到`common`文件夹下的`commonLight.glsl`
+
+在`phong.frag`这样写就好了`#include "../common/commonLight.glsl"`
+dan
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzYwMjIwNzQsLTIwODg3NDY2MTJdfQ
+eyJoaXN0b3J5IjpbLTEwMDA5NjY0MTMsLTIwODg3NDY2MTJdfQ
 ==
 -->
