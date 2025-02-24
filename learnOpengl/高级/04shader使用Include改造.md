@@ -156,7 +156,8 @@ std::string Shader::loadShader(const std::string& filePath) {
 	return shaderStream.str();
 }
 ```
+`std::ifstream file(filePath);`读取输入的
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTU5NDY1MTUsLTE4NDkwMjQ2OTAsOD
-U5NDA2ODc1LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTE5ODc1MzE3OSwtMTg0OTAyNDY5MCw4NT
+k0MDY4NzUsLTIwODg3NDY2MTJdfQ==
 -->
