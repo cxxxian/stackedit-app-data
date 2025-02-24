@@ -176,8 +176,9 @@ std::string Shader::loadShader(const std::string& filePath) {
 这里的`/\\`是代表最后一个是`/`或者`\`，因为根据每个人书写规范不同，两种写法都有可能，`\\`用到了转义字符
 最后拼出来的完整路径就是
 `assets/shaders/advanced/phong.vert", "assets/shaders/advanced/common/commonLight.glsl`
+很重要的就是要记得`substr`包前不包后
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNzIwODI4MTMsMTA2NjM1NTI3OSw0Mz
-Q0NzA0NjMsMTE3MDYwMDA1LC0xODQ5MDI0NjkwLDg1OTQwNjg3
-NSwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbMjAzOTM2MjgwNCwxMDY2MzU1Mjc5LDQzND
+Q3MDQ2MywxMTcwNjAwMDUsLTE4NDkwMjQ2OTAsODU5NDA2ODc1
+LC0yMDg4NzQ2NjEyXX0=
 -->
