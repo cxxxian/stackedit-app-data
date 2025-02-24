@@ -120,7 +120,9 @@ vec3 calculatePointLight(vec3 objectColor, PointLight light, vec3 normal ,vec3 v
 
 在`phong.frag`这样写就好了`#include "../common/commonLight.glsl"`
 但是问题来了，`shader`并看不懂这个代码
-回忆一下我们是怎么编译`shader`的，是将`vert`和`frag`作为字符串进行编译
+回忆一下我们是怎么编译`shader`的，是将`vert`和`frag`作为字符串进行编译的，
+那么我们在读取`phong.frag`时，只要将`include`作为关键字，当读取到`include`的时候，我们就把替换成`#include "../common/commonLight.glsl"`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODU5NDA2ODc1LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbMTg1NTY2Mjc4MCw4NTk0MDY4NzUsLTIwOD
+g3NDY2MTJdfQ==
 -->
