@@ -171,8 +171,11 @@ std::string Shader::loadShader(const std::string& filePath) {
 `mPhongShader = new Shader("assets/shaders/advanced/phong.vert", "assets/shaders/advanced/phong.frag");`
 我们要得到的头部就是
 `assets/shaders/advanced/phong.vert", "assets/shaders/advanced/`
+所以就用这样找：
+`auto lastSlashPos = filePath.find_last_of("/\\");`
+这里的`/\\`是代表最后一个是`/`或者`\`，因为根据每个人书写规范不同，两种写法都有可能
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzMDE3ODM5LDQzNDQ3MDQ2MywxMTcwNj
-AwMDUsLTE4NDkwMjQ2OTAsODU5NDA2ODc1LC0yMDg4NzQ2NjEy
-XX0=
+eyJoaXN0b3J5IjpbMTA2NjM1NTI3OSw0MzQ0NzA0NjMsMTE3MD
+YwMDA1LC0xODQ5MDI0NjkwLDg1OTQwNjg3NSwtMjA4ODc0NjYx
+Ml19
 -->
