@@ -125,8 +125,35 @@ vec3 calculatePointLight(vec3 objectColor, PointLight light, vec3 normal ,vec3 v
 
 所以我们去到`shader.h`中创建一个新方法：
 `std::string loadShader(const std::string& filePath);`
+std::string Shader::loadShader(const std::string& filePath) {
+	std::ifstream file(filePath);
+	std::stringstream shaderStream;
+	std::string line;
 
+	while (std::getline(file, line)) {
+		//判断是否含有#include
+		if (line.find("#include") != std::string::npos) {
+			//找到include包含的文件路径
+			auto start = line.find("\"");
+			auto end = line.find_last_of("\"");
+			std::string includeFile = line.substr(start + 1, end - start - 1);
+
+			//找到当前文件的文件目录
+			auto lastSlashPos = filePath.find_last_of("/\\");
+			auto folder = filePath.substr(0, lastSlashPos + 1);
+			auto totalPath = folder + includeFile;
+			shaderStream << loadShader(totalPath);
+		}
+		//如果不含有#include就将line装入shaderStream
+		else {
+			shaderStream << line << "\n";
+		}
+	}
+
+	return shaderStream.str();
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Mjk1Mzg3NTksLTE4NDkwMjQ2OTAsOD
-U5NDA2ODc1LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbNDcwNDM4MDgsLTE4NDkwMjQ2OTAsODU5ND
+A2ODc1LC0yMDg4NzQ2NjEyXX0=
 -->
