@@ -167,8 +167,12 @@ std::string Shader::loadShader(const std::string& filePath) {
 `#include "../common/commonLight.glsl"`
 
 所以我们还要找到头进行拼接，而头其实就可以通过`filePath`得到
+例如：
+`mPhongShader = new Shader("assets/shaders/advanced/phong.vert", "assets/shaders/advanced/phong.frag");`
+我们要得到的头部就是
+`assets/shaders/advanced/phong.vert", "assets/shaders/advanced/`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5MDU0ODE1NSw0MzQ0NzA0NjMsMTE3MD
-YwMDA1LC0xODQ5MDI0NjkwLDg1OTQwNjg3NSwtMjA4ODc0NjYx
-Ml19
+eyJoaXN0b3J5IjpbMTkzMDE3ODM5LDQzNDQ3MDQ2MywxMTcwNj
+AwMDUsLTE4NDkwMjQ2OTAsODU5NDA2ODc1LC0yMDg4NzQ2NjEy
+XX0=
 -->
