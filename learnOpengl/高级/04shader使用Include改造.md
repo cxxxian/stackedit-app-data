@@ -180,8 +180,44 @@ std::string Shader::loadShader(const std::string& filePath) {
 
 最后递归调用`loadShader`，如果下一层还有`#include`就持续递归使用
 `shaderStream << loadShader(totalPath);`
+
+以下使原本的构造函数，然后我们d
+```cpp
+Shader::Shader(const char* vertexPath, const char* fragmentPath) {
+	//声明装入shader代码字符串的两个string
+	std::string vertexCode;
+	std::string fragmentCode;
+
+	//声明用于读取vs跟fs文件的inFileStream
+	std::ifstream vShaderFile;
+	std::ifstream fShaderFile;
+
+	//保证ifstream遇到问题的时候可以抛出异常
+	vShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+	fShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+	try {
+		//1 打开文件
+		vShaderFile.open(vertexPath);
+		fShaderFile.open(fragmentPath);
+		
+		//2 将文件输入流当中的字符串输入到stringStream里面
+		std::stringstream vShaderStream, fShaderStream;
+		vShaderStream << vShaderFile.rdbuf();
+		fShaderStream << fShaderFile.rdbuf();
+
+		//3 关闭文件
+		vShaderFile.close();
+		fShaderFile.close();
+
+		//4 将字符串从stringStream当中读取出来，转化到code String当中
+		vertexCode = vShaderStream.str();
+		fragmentCode = fShaderStream.str();
+	}
+	...
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzI2NzY2MDY3LDEwNjYzNTUyNzksNDM0ND
-cwNDYzLDExNzA2MDAwNSwtMTg0OTAyNDY5MCw4NTk0MDY4NzUs
-LTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbMTA4OTQ3NjYyNSwxMDY2MzU1Mjc5LDQzND
+Q3MDQ2MywxMTcwNjAwMDUsLTE4NDkwMjQ2OTAsODU5NDA2ODc1
+LC0yMDg4NzQ2NjEyXX0=
 -->
