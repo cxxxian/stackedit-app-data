@@ -160,7 +160,7 @@ std::string Shader::loadShader(const std::string& filePath) {
 `std::stringstream shaderStream;`字符串流
 `std::string line;`用来记录每一行的字符串
 `while (std::getline(file, line))`然后我们就可以循环地去读取每一行字符串，判断有没有遇到`#include`
-`if (line.find("#include") != std::string::npos)`中的这个`std::string::npos`就代表没有找到的意思（`noposition`）
+`if (line.find("#include") != std::string::npos)`中的这个`std::string::npos`就代表没有找到的意思（`noPosition`）
 
 以上是在`shader`中进行字符串的读取
 然后我们找到了`#include`之后，我们得到的是一个相对路径，如下：
@@ -237,7 +237,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzNzg0MDU1NSw3MTYzMTg4NDgsMTA2Nj
-M1NTI3OSw0MzQ0NzA0NjMsMTE3MDYwMDA1LC0xODQ5MDI0Njkw
-LDg1OTQwNjg3NSwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTEwOTg0MjgyMTMsNzE2MzE4ODQ4LDEwNj
+YzNTUyNzksNDM0NDcwNDYzLDExNzA2MDAwNSwtMTg0OTAyNDY5
+MCw4NTk0MDY4NzUsLTIwODg3NDY2MTJdfQ==
 -->
