@@ -216,8 +216,28 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
 	...
 }
 ```
+修改完如下：
+```cpp
+Shader::Shader(const char* vertexPath, const char* fragmentPath) {
+	//声明装入shader代码字符串的两个string
+	std::string vertexCode;
+	std::string fragmentCode;
+
+	try {
+		vertexCode = loadShader(vertexPath);
+		fragmentCode = loadShader(fragmentPath);
+	}
+	catch (std::ifstream::failure& e) {
+		std::cout << "ERROR: Shader File Error: " << e.what() << std::endl;
+	}
+
+	const char* vertexShaderSource = vertexCode.c_str();
+	const char* fragmentShaderSource = fragmentCode.c_str();
+	...
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4MjUzMTk5LDEwNjYzNTUyNzksNDM0ND
+eyJoaXN0b3J5IjpbNzE2MzE4ODQ4LDEwNjYzNTUyNzksNDM0ND
 cwNDYzLDExNzA2MDAwNSwtMTg0OTAyNDY5MCw4NTk0MDY4NzUs
 LTIwODg3NDY2MTJdfQ==
 -->
