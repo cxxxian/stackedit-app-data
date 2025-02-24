@@ -159,7 +159,9 @@ std::string Shader::loadShader(const std::string& filePath) {
 `std::ifstream file(filePath);`读取输入的文件流，根据地址进行打开
 `std::stringstream shaderStream;`字符串流
 `std::string line;`用来记录每一行的字符串
+`while (std::getline(file, line))`然后我们就可以循环地去读取每一行字符串，判断有没有遇到`#include`
+`if (line.find("#include") != std::string::npos)`中地这个`std::string::npos`就代表没有找到地
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3MDYwMDA1LC0xODQ5MDI0NjkwLDg1OT
-QwNjg3NSwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTQ3MzIxNjgwNywxMTcwNjAwMDUsLTE4ND
+kwMjQ2OTAsODU5NDA2ODc1LC0yMDg4NzQ2NjEyXX0=
 -->
