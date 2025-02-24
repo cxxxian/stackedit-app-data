@@ -170,12 +170,12 @@ std::string Shader::loadShader(const std::string& filePath) {
 例如：
 `mPhongShader = new Shader("assets/shaders/advanced/phong.vert", "assets/shaders/advanced/phong.frag");`
 我们要得到的头部就是
-`"assets/shaders/advanced/`
+`assets/shaders/advanced/`
 所以就用这样找：
 `auto lastSlashPos = filePath.find_last_of("/\\");`
 这里的`/\\`是代表最后一个是`/`或者`\`，因为根据每个人书写规范不同，两种写法都有可能，`\\`用到了转义字符
 最后拼出来的完整路径就是
-`assets/shaders/advanced/phong.vert", "assets/shaders/advanced/common/commonLight.glsl`
+`"assets/shaders/advanced/common/commonLight.glsl`
 很重要的就是要记得`substr`包前不包后
 
 最后递归调用`loadShader`，如果下一层还有`#include`就持续递归使用
@@ -237,7 +237,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTg0MjgyMTMsNzE2MzE4ODQ4LDEwNj
+eyJoaXN0b3J5IjpbLTExMzI4NTcwMTYsNzE2MzE4ODQ4LDEwNj
 YzNTUyNzksNDM0NDcwNDYzLDExNzA2MDAwNSwtMTg0OTAyNDY5
 MCw4NTk0MDY4NzUsLTIwODg3NDY2MTJdfQ==
 -->
