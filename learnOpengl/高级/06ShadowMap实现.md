@@ -282,19 +282,19 @@ void Renderer::render(
 所以我们一开始是想要先渲染`pass01`，然后`pass02`，但此时我们插入了一个渲染`shadowMap`的过程，此时就会有问题，状态被改变了，那么后面两次的正式渲染就会绘制在`mShadowFBO`这个`fbo`上面
 
 然后关于`viewPort`的问题
-以前的`viewPort`就是用鼠标进行监测并修改da'x
+以前的`viewPort`就是在`main.cpp`中用鼠标进行监测并修改大小
 ```cpp
 void OnResize(int width, int height) {
 	GL_CALL(glViewport(0, 0, width, height));
 }
 ```
-
+但是这时候由于我们在
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTg3MDM3OSwtMTY3NjY2NTY5NiwtOD
-U4NDI1MDUzLDE1NjI0ODk5NTEsNDI3OTgzMjEwLC04MTcyNTA0
-MjgsMTkzNDIzNzUzMiw4NTI0MjEyOTYsLTExNDMwNDY5NjQsLT
-MwMzExMDk1MywxODMzNzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3
-NjM3LDMxMzExMjQ0MywtMTg2MDE2OTYxMSwtMjE4Nzc3MTM1LC
-0zMzgyMTA2MDJdfQ==
+eyJoaXN0b3J5IjpbLTEyMjE3ODgyNTEsLTE2NzY2NjU2OTYsLT
+g1ODQyNTA1MywxNTYyNDg5OTUxLDQyNzk4MzIxMCwtODE3MjUw
+NDI4LDE5MzQyMzc1MzIsODUyNDIxMjk2LC0xMTQzMDQ2OTY0LC
+0zMDMxMTA5NTMsMTgzMzc4NTU3OSwxMjkxNzg1OTkxLDc3OTUy
+NzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2MTEsLTIxODc3NzEzNS
+wtMzM4MjEwNjAyXX0=
 -->
