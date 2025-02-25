@@ -89,7 +89,26 @@ shader->setVector3("directionalLight.direction", dirLight->getDirection());
 # ShadowMap
 ## shader制作
 ### 1.创建shadow.vert/frag，渲染阴影贴图专用
-	
+`shadow.vert`如下：
+```glsl
+#version 460 core
+layout(location = 0) in vec3 aPos;
+
+uniform mat4 lightMatrix;//lightProjection * lightView
+uniform mat4 modelMatrix;
+
+void main(){
+	gl_Position = lightMatrix * modelMatrix * vec4(aPos, 1.0);
+}
+```
+`shadow.frag`如下：
+```glsl
+#version 460 core
+//不需要输出任何颜色
+//用于绘制shadowMap的FBO只有深度附件没有颜色附件
+void main(){
+}
+```
 ### 2.在Renderer中创建shadowShader，用于做ShadowMap渲染
 
 ## 渲染目标
@@ -105,8 +124,8 @@ shader->setVector3("directionalLight.direction", dirLight->getDirection());
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYyNTA4ODg1OCw4NTI0MjEyOTYsLTExND
-MwNDY5NjQsLTMwMzExMDk1MywxODMzNzg1NTc5LDEyOTE3ODU5
-OTEsNzc5NTI3NjM3LDMxMzExMjQ0MywtMTg2MDE2OTYxMSwtMj
-E4Nzc3MTM1LC0zMzgyMTA2MDJdfQ==
+eyJoaXN0b3J5IjpbODIzODk0NTQsODUyNDIxMjk2LC0xMTQzMD
+Q2OTY0LC0zMDMxMTA5NTMsMTgzMzc4NTU3OSwxMjkxNzg1OTkx
+LDc3OTUyNzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2MTEsLTIxOD
+c3NzEzNSwtMzM4MjEwNjAyXX0=
 -->
