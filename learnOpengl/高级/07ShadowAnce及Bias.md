@@ -13,8 +13,10 @@
 
 # 代码实现
 ## 1.shader中加入uniform变量bias，并且在阴影判断中使用
+```
+```
 ## 2.在IMGUI中加入对bias的调节
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTkwMjU4OTAsLTEyMjMxODc5NjIsLT
-IwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbMTA0OTc2NDgzMCwtMTQxOTAyNTg5MCwtMT
+IyMzE4Nzk2MiwtMjA4ODc0NjYxMl19
 -->
