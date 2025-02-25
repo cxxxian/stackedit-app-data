@@ -55,7 +55,7 @@ glm::vec3 Object::getDirection() const {
 ## 2.更改使用光源的代码们
 由于我们删除了`directionLight`和`spotLight`的方向，肯定会有很多报错
 慢慢来改
-
+ 
 ```cpp
 void prepare() {
 	...
@@ -85,7 +85,7 @@ void prepare() {
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI5MTc4NTk5MSw3Nzk1Mjc2MzcsMzEzMT
-EyNDQzLC0xODYwMTY5NjExLC0yMTg3NzcxMzUsLTMzODIxMDYw
-Ml19
+eyJoaXN0b3J5IjpbMTgzMzc4NTU3OSwxMjkxNzg1OTkxLDc3OT
+UyNzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2MTEsLTIxODc3NzEz
+NSwtMzM4MjEwNjAyXX0=
 -->
