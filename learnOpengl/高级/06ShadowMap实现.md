@@ -437,10 +437,13 @@ void prepare() {
 }
 ```
 输出的结果如下，会发现是黑的
+这是因为我， 
+
+![输入图片说明](/imgs/2025-02-25/gPnp9AmVRvDV6rZC.png)
 
 ![输入图片说明](/imgs/2025-02-25/jawyhBiIfoHTri1E.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyMzE1MjYzMiwyMDQ0Njg1MzE4LDEyNj
+eyJoaXN0b3J5IjpbMjA5MjQ4Njg1NywyMDQ0Njg1MzE4LDEyNj
 cxMjQ2MTUsLTY5ODc1OTAyNywtNzkwMTY3MTE0LC0xMzYyODc2
 MjgxLC0yMTQzODIyNDA0LC0xNjc2NjY1Njk2LC04NTg0MjUwNT
 MsMTU2MjQ4OTk1MSw0Mjc5ODMyMTAsLTgxNzI1MDQyOCwxOTM0
