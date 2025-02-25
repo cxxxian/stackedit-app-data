@@ -81,12 +81,14 @@ void renderIMGUI() {
 	...
 }
 ```
-0
+`0.0001`就可以解决自遮挡问题了
 
 ![输入图片说明](/imgs/2025-02-25/C50szzfw9RfHywrS.png)
 
+当调到`0.01`时，发现阴影不对了，这是由于`bias`的值过大了，把原本该被遮挡的也认为是无阴影的
+
 ![输入图片说明](/imgs/2025-02-25/aQXWDrcd3HdaOTUC.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0MTI3OTE5LC0xNDE5MDI1ODkwLC0xMj
-IzMTg3OTYyLC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTE1NDYwOTAwNDYsLTE0MTkwMjU4OTAsLT
+EyMjMxODc5NjIsLTIwODg3NDY2MTJdfQ==
 -->
