@@ -498,7 +498,7 @@ void main()
 }
 ```
 `phongShadow.frag`如下：
-我
+我们做一个`calculateShadow`方法用来
 ```glsl
 float calculateShadow(){
 	//1 找到当前像素在光源空间内的NDC坐标
@@ -515,7 +515,6 @@ float calculateShadow(){
 
 	float shadow = selfDepth > closestDepth? 1.0:0.0;
 	return shadow;
-
 }
 
 void main()
@@ -531,11 +530,11 @@ void main()
 ## 3.在Renderer中对新材质进行解析，并且更新uniform
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODMxMDMyNjQyLDEzNjc5OTI1OTEsMTE4MD
-A5Mzc4MSwxMjI3NjMwNTY3LDE3NTA0MjEyNDAsMjA0NDY4NTMx
-OCwxMjY3MTI0NjE1LC02OTg3NTkwMjcsLTc5MDE2NzExNCwtMT
-M2Mjg3NjI4MSwtMjE0MzgyMjQwNCwtMTY3NjY2NTY5NiwtODU4
-NDI1MDUzLDE1NjI0ODk5NTEsNDI3OTgzMjEwLC04MTcyNTA0Mj
-gsMTkzNDIzNzUzMiw4NTI0MjEyOTYsLTExNDMwNDY5NjQsLTMw
-MzExMDk1M119
+eyJoaXN0b3J5IjpbLTU3Mzc0NDAyOSwxMzY3OTkyNTkxLDExOD
+AwOTM3ODEsMTIyNzYzMDU2NywxNzUwNDIxMjQwLDIwNDQ2ODUz
+MTgsMTI2NzEyNDYxNSwtNjk4NzU5MDI3LC03OTAxNjcxMTQsLT
+EzNjI4NzYyODEsLTIxNDM4MjI0MDQsLTE2NzY2NjU2OTYsLTg1
+ODQyNTA1MywxNTYyNDg5OTUxLDQyNzk4MzIxMCwtODE3MjUwND
+I4LDE5MzQyMzc1MzIsODUyNDIxMjk2LC0xMTQzMDQ2OTY0LC0z
+MDMxMTA5NTNdfQ==
 -->
