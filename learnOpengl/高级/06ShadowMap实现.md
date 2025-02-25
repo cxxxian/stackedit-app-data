@@ -13,7 +13,9 @@
 ### 3.在Renderer中创建ShadowFBO，用于做阴影ShadowMap的渲染目标（RenderTarget）
 
 ## 渲染器修改
-
+在`Renderer`中加入`RenderShadowMap`函数，在真正渲染物体之前，先把`ShadowMap`做出来
+### 注意1：
+做好排除工作，ScreenMaterial的物体不参与ShadowPass渲染
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDAyNzQ2MzM3XX0=
+eyJoaXN0b3J5IjpbLTMzODIxMDYwMl19
 -->
