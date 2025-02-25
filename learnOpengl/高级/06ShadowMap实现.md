@@ -35,7 +35,7 @@ glm::vec3	mTargetDirection{ -1.0f };
 
 ![输入图片说明](/imgs/2024-11-01/rKYoiuZ2ttQqLKy0.png)
 
-我们先回忆一下先前设计的旋转矩阵，第一列是`right`轴，第二列是`up`轴，第三列是`front`轴（取---f），分别对应`xyz`
+我们先回忆一下先前设计的旋转矩阵，第一列是`right`轴，第二列是`up`轴，第三列是`front`轴（取`-f`是因为我们的向前对应的是`z`方向），分别对应`xyz`
 
 因为我们要得到光照的方向，所以只要关注旋转矩阵的`front`方向即可，代表向前的向量
 
@@ -59,6 +59,6 @@ glm::vec3	mTargetDirection{ -1.0f };
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwMzU2MTk4NywzMTMxMTI0NDMsLTE4Nj
-AxNjk2MTEsLTIxODc3NzEzNSwtMzM4MjEwNjAyXX0=
+eyJoaXN0b3J5IjpbLTE5NDAyNzI5OTMsMzEzMTEyNDQzLC0xOD
+YwMTY5NjExLC0yMTg3NzcxMzUsLTMzODIxMDYwMl19
 -->
