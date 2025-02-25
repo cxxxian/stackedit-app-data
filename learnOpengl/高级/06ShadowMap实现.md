@@ -353,6 +353,7 @@ glm::mat4 Renderer::getLightMatrix(DirectionalLight* dirLight)
 }
 ```
 总的`renderDepthMap`的函数如下：
+由于`lightMatrix`是统一的，只需要传一次，其他关于`mesh`自身的，进入循环依次传输
 ```cpp
 void Renderer::renderShadowMap(const std::vector<Mesh*>& meshes, DirectionalLight* dirLight, Framebuffer* fbo)
 {
@@ -411,11 +412,11 @@ void Renderer::renderShadowMap(const std::vector<Mesh*>& meshes, DirectionalLigh
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMDE0OTYzMTYsLTY5ODc1OTAyNywtNz
-kwMTY3MTE0LC0xMzYyODc2MjgxLC0yMTQzODIyNDA0LC0xNjc2
-NjY1Njk2LC04NTg0MjUwNTMsMTU2MjQ4OTk1MSw0Mjc5ODMyMT
-AsLTgxNzI1MDQyOCwxOTM0MjM3NTMyLDg1MjQyMTI5NiwtMTE0
-MzA0Njk2NCwtMzAzMTEwOTUzLDE4MzM3ODU1NzksMTI5MTc4NT
-k5MSw3Nzk1Mjc2MzcsMzEzMTEyNDQzLC0xODYwMTY5NjExLC0y
-MTg3NzcxMzVdfQ==
+eyJoaXN0b3J5IjpbMTI2NzEyNDYxNSwtNjk4NzU5MDI3LC03OT
+AxNjcxMTQsLTEzNjI4NzYyODEsLTIxNDM4MjI0MDQsLTE2NzY2
+NjU2OTYsLTg1ODQyNTA1MywxNTYyNDg5OTUxLDQyNzk4MzIxMC
+wtODE3MjUwNDI4LDE5MzQyMzc1MzIsODUyNDIxMjk2LC0xMTQz
+MDQ2OTY0LC0zMDMxMTA5NTMsMTgzMzc4NTU3OSwxMjkxNzg1OT
+kxLDc3OTUyNzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2MTEsLTIx
+ODc3NzEzNV19
 -->
