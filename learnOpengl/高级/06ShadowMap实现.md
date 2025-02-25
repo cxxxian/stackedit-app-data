@@ -81,7 +81,11 @@ dirLight->mSpecularIntensity = 0.5f;
 ```cpp
 shader->setVector3("directionalLight.direction", dirLight->getDirection());
 ```
-quangaiw
+全改完就可以正常运行了
+构造一个小场景先：
+
+![输入图片说明](/imgs/2025-02-25/yhUUeos5oPbPZy3v.png)
+
 # ShadowMap
 ## shader制作
 ### 1.创建shadow.vert/frag，渲染阴影贴图专用
@@ -100,8 +104,8 @@ quangaiw
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1MDg4NzM2MSwtMTE0MzA0Njk2NCwtMz
-AzMTEwOTUzLDE4MzM3ODU1NzksMTI5MTc4NTk5MSw3Nzk1Mjc2
-MzcsMzEzMTEyNDQzLC0xODYwMTY5NjExLC0yMTg3NzcxMzUsLT
-MzODIxMDYwMl19
+eyJoaXN0b3J5IjpbODUyNDIxMjk2LC0xMTQzMDQ2OTY0LC0zMD
+MxMTA5NTMsMTgzMzc4NTU3OSwxMjkxNzg1OTkxLDc3OTUyNzYz
+NywzMTMxMTI0NDMsLTE4NjAxNjk2MTEsLTIxODc3NzEzNSwtMz
+M4MjEwNjAyXX0=
 -->
