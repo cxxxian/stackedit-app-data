@@ -497,15 +497,45 @@ void main()
 	lightSpaceClipCoord = lightMatrix * transformPosition;
 }
 ```
+`phongShadow.frag`如下：
+我
+```glsl
+float calculateShadow(){
+	//1 找到当前像素在光源空间内的NDC坐标
+	vec3 lightNDC = lightSpaceClipCoord.xyz / lightSpaceClipCoord.z;
+	//2 找到当前像素在shadowMap上的uv
+	vec3 projCoord = lightNDC * 0.5 + 0.5;//+0.5会被自动扩展为三维向量
+	vec2 uv = projCoord.xy;
+
+	//3 使用这个uv对SM进行采样，得到closestDepth
+	float closestDepth = texture(shadowMapSampler, uv).r;
+	
+	//4 对比当前像素在光源空间内的深度值与closestDepth的大小
+	float selfDepth = projCoord.z;
+
+	float shadow = selfDepth > closestDepth? 1.0:0.0;
+	return shadow;
+
+}
+
+void main()
+{
+	...
+
+	float shadow = calculateShadow();
+	vec3 finalColor = result * (1.0 - shadow) + ambientColor;
+	FragColor = vec4(finalColor,alpha * opacity);
+}
+```
 ## 2.加入新的PhongShadowMaterial材质
 ## 3.在Renderer中对新材质进行解析，并且更新uniform
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2Nzk5MjU5MSwxMTgwMDkzNzgxLDEyMj
-c2MzA1NjcsMTc1MDQyMTI0MCwyMDQ0Njg1MzE4LDEyNjcxMjQ2
-MTUsLTY5ODc1OTAyNywtNzkwMTY3MTE0LC0xMzYyODc2MjgxLC
-0yMTQzODIyNDA0LC0xNjc2NjY1Njk2LC04NTg0MjUwNTMsMTU2
-MjQ4OTk1MSw0Mjc5ODMyMTAsLTgxNzI1MDQyOCwxOTM0MjM3NT
-MyLDg1MjQyMTI5NiwtMTE0MzA0Njk2NCwtMzAzMTEwOTUzLDE4
-MzM3ODU1NzldfQ==
+eyJoaXN0b3J5IjpbODMxMDMyNjQyLDEzNjc5OTI1OTEsMTE4MD
+A5Mzc4MSwxMjI3NjMwNTY3LDE3NTA0MjEyNDAsMjA0NDY4NTMx
+OCwxMjY3MTI0NjE1LC02OTg3NTkwMjcsLTc5MDE2NzExNCwtMT
+M2Mjg3NjI4MSwtMjE0MzgyMjQwNCwtMTY3NjY2NTY5NiwtODU4
+NDI1MDUzLDE1NjI0ODk5NTEsNDI3OTgzMjEwLC04MTcyNTA0Mj
+gsMTkzNDIzNzUzMiw4NTI0MjEyOTYsLTExNDMwNDY5NjQsLTMw
+MzExMDk1M119
 -->
