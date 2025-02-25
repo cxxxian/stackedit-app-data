@@ -210,15 +210,18 @@ Renderer::Renderer() {
 
 ## 渲染器修改
 在`Renderer`中加入`RenderShadowMap`函数，在真正渲染物体之前，先把`ShadowMap`做出来
+
+
+
 ### 注意1：
 做好排除工作，`ScreenMaterial`的物体不参与`ShadowPass`渲染，若是`PostProcessPass`则不进行`RenderShadowMap`的操作（防止污染`ShadowMap`）
 
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2MjQ4OTk1MSw0Mjc5ODMyMTAsLTgxNz
-I1MDQyOCwxOTM0MjM3NTMyLDg1MjQyMTI5NiwtMTE0MzA0Njk2
-NCwtMzAzMTEwOTUzLDE4MzM3ODU1NzksMTI5MTc4NTk5MSw3Nz
-k1Mjc2MzcsMzEzMTEyNDQzLC0xODYwMTY5NjExLC0yMTg3Nzcx
-MzUsLTMzODIxMDYwMl19
+eyJoaXN0b3J5IjpbLTUxMDQyNjAwNywxNTYyNDg5OTUxLDQyNz
+k4MzIxMCwtODE3MjUwNDI4LDE5MzQyMzc1MzIsODUyNDIxMjk2
+LC0xMTQzMDQ2OTY0LC0zMDMxMTA5NTMsMTgzMzc4NTU3OSwxMj
+kxNzg1OTkxLDc3OTUyNzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2
+MTEsLTIxODc3NzEzNSwtMzM4MjEwNjAyXX0=
 -->
