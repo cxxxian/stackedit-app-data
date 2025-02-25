@@ -31,50 +31,15 @@ public:
 	float		mBias{ 0.0f };
 ```
 然后就到`renderer.cpp`中的`renderObject`找到对应`case`进行传输即可
+```cpp
 case MaterialType::PhongShadowMaterial: {
-	PhongShadowMaterial* phongShadowMat = (PhongShadowMaterial*)material;
-
-	shader->setInt("sampler", 0);
-	phongShadowMat->mDiffuse->bind();
-
-	shader->setInt("shadowMapSampler", 1);
-	mShadowFBO->mDepthAttachment->setUnit(1);
-	mShadowFBO->mDepthAttachment->bind();
-
-
-	shader->setMatrix4x4("lightMatrix", getLightMatrix(dirLight));
-
-	//mvp
-	shader->setMatrix4x4("modelMatrix", mesh->getModelMatrix());
-	shader->setMatrix4x4("viewMatrix", camera->getViewMatrix());
-	shader->setMatrix4x4("projectionMatrix", camera->getProjectionMatrix());
-
-	auto normalMatrix = glm::mat3(glm::transpose(glm::inverse(mesh->getModelMatrix())));
-	shader->setMatrix3x3("normalMatrix", normalMatrix);
-
-	//光源参数的uniform更新
-	//directionalLight 的更新
-	shader->setVector3("directionalLight.color", dirLight->mColor);
-	shader->setVector3("directionalLight.direction", dirLight->getDirection());
-	shader->setFloat("directionalLight.specularIntensity", dirLight->mSpecularIntensity);
-	shader->setFloat("directionalLight.intensity", dirLight->mIntensity);
-
-	shader->setFloat("shiness", phongShadowMat->mShiness);
-
-	shader->setVector3("ambientColor", ambLight->mColor);
-
-	//相机信息更新
-	shader->setVector3("cameraPosition", camera->mPosition);
-
-	//透明度
-	shader->setFloat("opacity", material->mOpacity);
-
+	...
 	shader->setFloat("bias", phongShadowMat->mBias);
-
 }
 	break;
+```
 ## 2.在IMGUI中加入对bias的调节
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5Mzg5NjgzODYsLTE0MTkwMjU4OTAsLT
-EyMjMxODc5NjIsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbMTU5MzQ2ODgyNSwtMTQxOTAyNTg5MCwtMT
+IyMzE4Nzk2MiwtMjA4ODc0NjYxMl19
 -->
