@@ -352,13 +352,70 @@ glm::mat4 Renderer::getLightMatrix(DirectionalLight* dirLight)
 	return lightProjectionMatrix * lightViewMatrix;
 }
 ```
-总的
+总的`renderDepthMap`的函数如下：
+```cpp
+void Renderer::renderShadowMap(const std::vector<Mesh*>& meshes, DirectionalLight* dirLight, Framebuffer* fbo)
+{
+	//1 确保现在的绘制不是postProcessPass的绘制，如果是，则不执行渲染
+	bool isPostProcessPass = true;
+	for (int i = 0; i < meshes.size(); i++) {
+		auto mesh = meshes[i];
+		if (mesh->mMaterial->mType != MaterialType::ScreenMaterial) {
+			isPostProcessPass = false;
+			break;
+		}
+	}
+	if (isPostProcessPass) {
+		return;
+	}
+	//2 保存原始状态，绘制shadowMap完毕后，要恢复原始状态
+	GLint preFbo;
+	glGetIntegerv(GL_FRAMEBUFFER_BINDING, &preFbo);//查找当前所绑定的fbo，并赋值给preFbo
+
+	GLint preViewport[4];
+	glGetIntegerv(GL_VIEWPORT, preViewport);
+	
+	//3 设置shadoPass绘制的时候所需的状态
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LESS);
+	glDepthMask(GL_TRUE);
+
+	glBindFramebuffer(GL_FRAMEBUFFER, fbo->mFBO);
+	glViewport(0, 0, fbo->mWidth, fbo->mHeight);
+
+	//4 开始绘制
+	glClear(GL_DEPTH_BUFFER_BIT);
+
+	auto lightMatrix = getLightMatrix(dirLight);
+	mDepthShader->begin();
+	mShadowShader->setMatrix4x4("lightMatrix", lightMatrix);
+	for (int i = 0; i < meshes.size(); i++) {
+		auto mesh = meshes[i];
+		auto geometry = mesh->mGeometry;
+		glBindVertexArray(geometry->getVao());
+
+		//4 执行绘制命令
+		if (mesh->getType() == ObjectType::InstancedMesh) {
+			InstancedMesh* im = (InstancedMesh*)mesh;
+			glDrawElementsInstanced(GL_TRIANGLES, geometry->getIndicesCount(), GL_UNSIGNED_INT, 0, im->mInstanceCount);
+		}
+		else {
+			glDrawElements(GL_TRIANGLES, geometry->getIndicesCount(), GL_UNSIGNED_INT, 0);
+		}
+
+	}
+	mDepthShader->end();
+	
+	glBindFramebuffer(GL_FRAMEBUFFER, preFbo);
+	glViewport(preViewport[0], preViewport[1], preViewport[2], preViewport[3]);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUyMjc2NjQyMywtNjk4NzU5MDI3LC03OT
-AxNjcxMTQsLTEzNjI4NzYyODEsLTIxNDM4MjI0MDQsLTE2NzY2
-NjU2OTYsLTg1ODQyNTA1MywxNTYyNDg5OTUxLDQyNzk4MzIxMC
-wtODE3MjUwNDI4LDE5MzQyMzc1MzIsODUyNDIxMjk2LC0xMTQz
-MDQ2OTY0LC0zMDMxMTA5NTMsMTgzMzc4NTU3OSwxMjkxNzg1OT
-kxLDc3OTUyNzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2MTEsLTIx
-ODc3NzEzNV19
+eyJoaXN0b3J5IjpbLTIxMDE0OTYzMTYsLTY5ODc1OTAyNywtNz
+kwMTY3MTE0LC0xMzYyODc2MjgxLC0yMTQzODIyNDA0LC0xNjc2
+NjY1Njk2LC04NTg0MjUwNTMsMTU2MjQ4OTk1MSw0Mjc5ODMyMT
+AsLTgxNzI1MDQyOCwxOTM0MjM3NTMyLDg1MjQyMTI5NiwtMTE0
+MzA0Njk2NCwtMzAzMTEwOTUzLDE4MzM3ODU1NzksMTI5MTc4NT
+k5MSw3Nzk1Mjc2MzcsMzEzMTEyNDQzLC0xODYwMTY5NjExLC0y
+MTg3NzcxMzVdfQ==
 -->
