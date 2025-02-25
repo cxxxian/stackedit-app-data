@@ -262,12 +262,30 @@ void Renderer::render(
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 解释：
-我们要理解`OpenGL`是一个状态机的概念，suo
+我们要理解`OpenGL`是一个状态机的概念，
+```cpp
+void Renderer::render(
+	Scene* scene, 
+	Camera* camera,
+	DirectionalLight* dirLight,
+	AmbientLight* ambLight,
+	unsigned int fbo
+) {
+	glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+	...
+
+	//渲染shadowMap
+	renderShadowMap(mOpacityObjects, dirLight, mShadowFBO);
+	...
+}
+```
+所以我们一开始是想要先渲染`pass01`，然后`pass02`，但此时我们cha
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTE4NzU0MjYzLC04NTg0MjUwNTMsMTU2Mj
-Q4OTk1MSw0Mjc5ODMyMTAsLTgxNzI1MDQyOCwxOTM0MjM3NTMy
-LDg1MjQyMTI5NiwtMTE0MzA0Njk2NCwtMzAzMTEwOTUzLDE4Mz
-M3ODU1NzksMTI5MTc4NTk5MSw3Nzk1Mjc2MzcsMzEzMTEyNDQz
-LC0xODYwMTY5NjExLC0yMTg3NzcxMzUsLTMzODIxMDYwMl19
+eyJoaXN0b3J5IjpbLTIwNjAwNTQ4NywtODU4NDI1MDUzLDE1Nj
+I0ODk5NTEsNDI3OTgzMjEwLC04MTcyNTA0MjgsMTkzNDIzNzUz
+Miw4NTI0MjEyOTYsLTExNDMwNDY5NjQsLTMwMzExMDk1MywxOD
+MzNzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3NjM3LDMxMzExMjQ0
+MywtMTg2MDE2OTYxMSwtMjE4Nzc3MTM1LC0zMzgyMTA2MDJdfQ
+==
 -->
