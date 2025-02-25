@@ -536,7 +536,7 @@ void main()
 ### 3.1加入新的shader对象
 这里别搞混了
 `mShadowShader`是我们用来渲染`shadowMap`的`shader`
-`mPhongShadowShader`是我们用来根据`shadowMap`的结果进行真实的
+`mPhongShadowShader`是我们用来根据`shadowMap`的结果进行真实的阴影判断并渲染场景的`shader`
 ```cpp
 private:
 	...
@@ -547,11 +547,11 @@ private:
 ### 3.3对新的材质进行uniform更新
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExMDIzMTU4MCwtMTk3ODg5NDUxOSwxMz
-Y3OTkyNTkxLDExODAwOTM3ODEsMTIyNzYzMDU2NywxNzUwNDIx
-MjQwLDIwNDQ2ODUzMTgsMTI2NzEyNDYxNSwtNjk4NzU5MDI3LC
-03OTAxNjcxMTQsLTEzNjI4NzYyODEsLTIxNDM4MjI0MDQsLTE2
-NzY2NjU2OTYsLTg1ODQyNTA1MywxNTYyNDg5OTUxLDQyNzk4Mz
-IxMCwtODE3MjUwNDI4LDE5MzQyMzc1MzIsODUyNDIxMjk2LC0x
-MTQzMDQ2OTY0XX0=
+eyJoaXN0b3J5IjpbMjQ0OTQ0MDIxLC0xOTc4ODk0NTE5LDEzNj
+c5OTI1OTEsMTE4MDA5Mzc4MSwxMjI3NjMwNTY3LDE3NTA0MjEy
+NDAsMjA0NDY4NTMxOCwxMjY3MTI0NjE1LC02OTg3NTkwMjcsLT
+c5MDE2NzExNCwtMTM2Mjg3NjI4MSwtMjE0MzgyMjQwNCwtMTY3
+NjY2NTY5NiwtODU4NDI1MDUzLDE1NjI0ODk5NTEsNDI3OTgzMj
+EwLC04MTcyNTA0MjgsMTkzNDIzNzUzMiw4NTI0MjEyOTYsLTEx
+NDMwNDY5NjRdfQ==
 -->
