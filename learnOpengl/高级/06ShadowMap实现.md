@@ -437,13 +437,13 @@ void prepare() {
 }
 ```
 输出的结果如下，会发现是黑的
-这是因为我们设计的正交相机给的数据中的`near`和`far`平面太大了，而我们的相机距离几何体很近，把（相机到几何体距离） / （）
+这是因为我们设计的正交相机给的数据中的`near`和`far`平面太大了，而我们的相机距离几何体很近，把（相机到几何体距离） 占 （`far - near`）距离的占比转化到`0~1`，就几乎没有了
 
 ![输入图片说明](/imgs/2025-02-25/gPnp9AmVRvDV6rZC.png)
 
 ![输入图片说明](/imgs/2025-02-25/jawyhBiIfoHTri1E.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMTUzMjExMTMsMjA0NDY4NTMxOCwxMj
+eyJoaXN0b3J5IjpbLTE2MjUwMTQxNTAsMjA0NDY4NTMxOCwxMj
 Y3MTI0NjE1LC02OTg3NTkwMjcsLTc5MDE2NzExNCwtMTM2Mjg3
 NjI4MSwtMjE0MzgyMjQwNCwtMTY3NjY2NTY5NiwtODU4NDI1MD
 UzLDE1NjI0ODk5NTEsNDI3OTgzMjEwLC04MTcyNTA0MjgsMTkz
