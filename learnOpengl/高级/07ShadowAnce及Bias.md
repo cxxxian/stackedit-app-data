@@ -39,7 +39,9 @@ case MaterialType::PhongShadowMaterial: {
 	break;
 ```
 ## 2.在IMGUI中加入对bias的调节
+
+来到mi
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5MzQ2ODgyNSwtMTQxOTAyNTg5MCwtMT
+eyJoaXN0b3J5IjpbMTIwNDAyNTk5OCwtMTQxOTAyNTg5MCwtMT
 IyMzE4Nzk2MiwtMjA4ODc0NjYxMl19
 -->
