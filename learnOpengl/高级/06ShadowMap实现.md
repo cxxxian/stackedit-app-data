@@ -463,7 +463,7 @@ glm::mat4 Renderer::getLightMatrix(DirectionalLight* dirLight)
 ![输入图片说明](/imgs/2025-02-25/fXdczrMNuEvEPRpY.png)
 
 然后全是红色的，这是什么原因？
-因为我们的`screen.frag`是对`screenTexSampler`进行采样，此时`screenTexSampler`我们传过来的是`sha`
+因为我们的`screen.frag`是对`screenTexSampler`进行采样，此时`screenTexSampler`我们传过来的是`shadowMap`，只有`r`通道有值，所以会是红色的
 ```glsl
 void main()
 {
@@ -476,7 +476,7 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1NDAxNjYxMywyMDQ0Njg1MzE4LDEyNj
+eyJoaXN0b3J5IjpbMTc1MDQyMTI0MCwyMDQ0Njg1MzE4LDEyNj
 cxMjQ2MTUsLTY5ODc1OTAyNywtNzkwMTY3MTE0LC0xMzYyODc2
 MjgxLC0yMTQzODIyNDA0LC0xNjc2NjY1Njk2LC04NTg0MjUwNT
 MsMTU2MjQ4OTk1MSw0Mjc5ODMyMTAsLTgxNzI1MDQyOCwxOTM0
