@@ -1,6 +1,7 @@
 # 准备工作
 ## 1.改造Light类，继承Object（并为Object增加getDirection函数）
-因为之前我们说过，`light`其实也是有位置的，所以我们可以把`Object`做为`Light`的父类（当初设计`Object`类就有位置等参数），继承后就可以利用`Object的`getModelMatrix`得到`M`矩阵
+因为之前我们说过，`light`其实也是有位置的，所以我们可以把`Object`做为`Light`的父类（当初设计`Object`类就有位置等参数），
+继承后就可以利用`Object`的`getModelMatrix`得到`M`矩阵，而上节课说到的，`M`的逆矩阵就是光源摄像机的`viewMatrix`
 ## 2.更改使用光源的代码们
 
 # ShadowMap
@@ -21,5 +22,5 @@
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwMTYyNjkyNywtMzM4MjEwNjAyXX0=
+eyJoaXN0b3J5IjpbLTE2OTU2OTg0NjQsLTMzODIxMDYwMl19
 -->
