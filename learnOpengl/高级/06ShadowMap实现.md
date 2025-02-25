@@ -19,6 +19,8 @@ class Light: public Object {
 	...
 };
 ```
+然后去把所有光源有关于方向的可以直接删除了
+检查过后发现只有directionLight和spotLight`有
 ## 2.更改使用光源的代码们
 
 # ShadowMap
@@ -39,6 +41,6 @@ class Light: public Object {
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxNjA3MDE4MywtMjE4Nzc3MTM1LC0zMz
+eyJoaXN0b3J5IjpbLTU4NzM2Njk2MywtMjE4Nzc3MTM1LC0zMz
 gyMTA2MDJdfQ==
 -->
