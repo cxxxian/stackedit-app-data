@@ -89,6 +89,7 @@ shader->setVector3("directionalLight.direction", dirLight->getDirection());
 # ShadowMap
 ## shader制作
 ### 1.创建shadow.vert/frag，渲染阴影贴图专用
+	
 ### 2.在Renderer中创建shadowShader，用于做ShadowMap渲染
 
 ## 渲染目标
@@ -104,8 +105,8 @@ shader->setVector3("directionalLight.direction", dirLight->getDirection());
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODUyNDIxMjk2LC0xMTQzMDQ2OTY0LC0zMD
-MxMTA5NTMsMTgzMzc4NTU3OSwxMjkxNzg1OTkxLDc3OTUyNzYz
-NywzMTMxMTI0NDMsLTE4NjAxNjk2MTEsLTIxODc3NzEzNSwtMz
-M4MjEwNjAyXX0=
+eyJoaXN0b3J5IjpbMTYyNTA4ODg1OCw4NTI0MjEyOTYsLTExND
+MwNDY5NjQsLTMwMzExMDk1MywxODMzNzg1NTc5LDEyOTE3ODU5
+OTEsNzc5NTI3NjM3LDMxMzExMjQ0MywtMTg2MDE2OTYxMSwtMj
+E4Nzc3MTM1LC0zMzgyMTA2MDJdfQ==
 -->
