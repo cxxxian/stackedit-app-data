@@ -279,13 +279,15 @@ void Renderer::render(
 	...
 }
 ```
-所以我们一开始是想要先渲染`pass01`，然后`pass02`，但此时我们cha
+所以我们一开始是想要先渲染`pass01`，然后`pass02`，但此时我们插入了一个渲染`shadowMap`的过程，此时就会有问题，`fbo`此时被绑定的就是`mShadowFBO`
+
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjAwNTQ4NywtODU4NDI1MDUzLDE1Nj
-I0ODk5NTEsNDI3OTgzMjEwLC04MTcyNTA0MjgsMTkzNDIzNzUz
-Miw4NTI0MjEyOTYsLTExNDMwNDY5NjQsLTMwMzExMDk1MywxOD
-MzNzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3NjM3LDMxMzExMjQ0
-MywtMTg2MDE2OTYxMSwtMjE4Nzc3MTM1LC0zMzgyMTA2MDJdfQ
-==
+eyJoaXN0b3J5IjpbLTE2NzY2NjU2OTYsLTg1ODQyNTA1MywxNT
+YyNDg5OTUxLDQyNzk4MzIxMCwtODE3MjUwNDI4LDE5MzQyMzc1
+MzIsODUyNDIxMjk2LC0xMTQzMDQ2OTY0LC0zMDMxMTA5NTMsMT
+gzMzc4NTU3OSwxMjkxNzg1OTkxLDc3OTUyNzYzNywzMTMxMTI0
+NDMsLTE4NjAxNjk2MTEsLTIxODc3NzEzNSwtMzM4MjEwNjAyXX
+0=
 -->
