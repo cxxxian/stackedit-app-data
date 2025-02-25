@@ -55,6 +55,18 @@ glm::vec3 Object::getDirection() const {
 ## 2.更改使用光源的代码们
 由于我们删除了`directionLight`和`spotLight`的方向，肯定会有很多报错
 慢慢来改
+
+```cpp
+void prepare() {
+	...
+	dirLight = new DirectionalLight();
+	dirLight->mDirection = glm::vec3(0.0f, -0.4f,-1.0f);
+	dirLight->mSpecularIntensity = 0.5f;
+
+	ambLight = new AmbientLight();
+	ambLight->mColor = glm::vec3(0.1f);
+}
+```
 # ShadowMap
 ## shader制作
 ### 1.创建shadow.vert/frag，渲染阴影贴图专用
@@ -73,7 +85,7 @@ glm::vec3 Object::getDirection() const {
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMyMTAwNjkxMCw3Nzk1Mjc2MzcsMzEzMT
+eyJoaXN0b3J5IjpbMTI5MTc4NTk5MSw3Nzk1Mjc2MzcsMzEzMT
 EyNDQzLC0xODYwMTY5NjExLC0yMTg3NzcxMzUsLTMzODIxMDYw
 Ml19
 -->
