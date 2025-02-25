@@ -23,6 +23,8 @@ float calculateShadow(){
 	return shadow;
 }
 ```
+相应的我们要在`cpu`端设计参数并传输，
+在`phongShadowMaterial.h`设计参数`mBias`
 ```cpp
 public:
 	...
@@ -30,6 +32,6 @@ public:
 ```
 ## 2.在IMGUI中加入对bias的调节
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDAwNDI2NTcsLTE0MTkwMjU4OTAsLT
-EyMjMxODc5NjIsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbMTkyOTUzMDM4NiwtMTQxOTAyNTg5MCwtMT
+IyMzE4Nzk2MiwtMjA4ODc0NjYxMl19
 -->
