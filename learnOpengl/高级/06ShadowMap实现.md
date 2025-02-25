@@ -298,14 +298,45 @@ Renderer::Renderer() {
 修改了`viewPort`的大小，并且也没有调整回去，肯定会出问题
 
 有了以上几点注意事项，现在我们正式开始设计`renderShadowMap`
+```cpp
+void Renderer::renderShadowMap(const std::vector<Mesh*>& meshes, DirectionalLight* dirLight, Framebuffer* fbo)
+{
+	//1 确保现在的绘制不是postProcessPass的绘制，如果是，则不执行渲染
+	bool isPostProcessPass = true;
+	for (int i = 0; i < meshes.size(); i++) {
+		auto mesh = meshes[i];
+		if (mesh->mMaterial->mType != MaterialType::ScreenMaterial) {
+			isPostProcessPass = false;
+			break;
+		}
+	}
+	if (isPostProcessPass) {
+		return;
+	}
+	//2 保存原始状态，绘制shadowMap完毕后，要恢复原始状态
+	GLint preFbo;
+	glGetIntegerv(GL_FRAMEBUFFER_BINDING, &preFbo);//查找当前所绑定的fbo，并赋值给preFbo
+
+	GLint preViewport[4];
+	glGetIntegerv(GL_VIEWPORT, preViewport);
+	
+	//3 设置shadoPass绘制的时候所需的状态
+	//4 开始绘制
+
+
+	glBindFramebuffer(GL_FRAMEBUFFER, preFbo);
+	glViewport(preViewport[0], preViewport[1], preViewport[2], preViewport[3]);
+}
 ```
-```
+先搞定我们刚刚说的两个注意事项
+我们通过遍历`meshes`判断`material`可以确保现在的绘制不是`postProcessPass`的绘制
+然后通过`glGetIntegerv`记录需要保存的状态信息，然后我们最后再重新
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NjE0MjM5OTMsLTEzNjI4NzYyODEsLT
-IxNDM4MjI0MDQsLTE2NzY2NjU2OTYsLTg1ODQyNTA1MywxNTYy
-NDg5OTUxLDQyNzk4MzIxMCwtODE3MjUwNDI4LDE5MzQyMzc1Mz
-IsODUyNDIxMjk2LC0xMTQzMDQ2OTY0LC0zMDMxMTA5NTMsMTgz
-Mzc4NTU3OSwxMjkxNzg1OTkxLDc3OTUyNzYzNywzMTMxMTI0ND
-MsLTE4NjAxNjk2MTEsLTIxODc3NzEzNSwtMzM4MjEwNjAyXX0=
+eyJoaXN0b3J5IjpbMTEyMjkwNTIyNiwtMTM2Mjg3NjI4MSwtMj
+E0MzgyMjQwNCwtMTY3NjY2NTY5NiwtODU4NDI1MDUzLDE1NjI0
+ODk5NTEsNDI3OTgzMjEwLC04MTcyNTA0MjgsMTkzNDIzNzUzMi
+w4NTI0MjEyOTYsLTExNDMwNDY5NjQsLTMwMzExMDk1MywxODMz
+Nzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3NjM3LDMxMzExMjQ0My
+wtMTg2MDE2OTYxMSwtMjE4Nzc3MTM1LC0zMzgyMTA2MDJdfQ==
 
 -->
