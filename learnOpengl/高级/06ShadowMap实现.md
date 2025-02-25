@@ -533,9 +533,12 @@ void main()
 把`phongMaterial`复制改为`phongShadowMaterial`
 并且在`material.h`加上`PhongShadowMaterial`枚举
 ## 3.在Renderer中对新材质进行解析，并且更新uniform
+### 3.1加入新的shader对象
+### 3.2pickShader加入对新材质的兼容
+### 3.3对新的材质进行uniform更新
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMjIwOTk2NjIsMTM2Nzk5MjU5MSwxMT
+eyJoaXN0b3J5IjpbLTE5Nzg4OTQ1MTksMTM2Nzk5MjU5MSwxMT
 gwMDkzNzgxLDEyMjc2MzA1NjcsMTc1MDQyMTI0MCwyMDQ0Njg1
 MzE4LDEyNjcxMjQ2MTUsLTY5ODc1OTAyNywtNzkwMTY3MTE0LC
 0xMzYyODc2MjgxLC0yMTQzODIyNDA0LC0xNjc2NjY1Njk2LC04
