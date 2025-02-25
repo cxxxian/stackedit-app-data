@@ -197,12 +197,16 @@ Framebuffer::Framebuffer()
 public:
 	Framebuffer* mShadowFBO{ nullptr };
 ```
+我们`shadowMap`的大小是可以自己设置大小的
 ```cpp
 Renderer::Renderer() {
 	...
 	mShadowFBO = Framebuffer::createShadowFBO(2048, 2048);
 }
 ```
+这里要对应我们的`viewPort`，如果我们的`viewPort`是`1024*1024`的话，那么只会shi
+
+![输入图片说明](/imgs/2025-02-25/tUy6L1Yyn2nCEDci.png)
 
 ## 渲染器修改
 在`Renderer`中加入`RenderShadowMap`函数，在真正渲染物体之前，先把`ShadowMap`做出来
@@ -212,7 +216,7 @@ Renderer::Renderer() {
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1NDgzODk1LDQyNzk4MzIxMCwtODE3Mj
+eyJoaXN0b3J5IjpbMTAyNTEzNTU2LDQyNzk4MzIxMCwtODE3Mj
 UwNDI4LDE5MzQyMzc1MzIsODUyNDIxMjk2LC0xMTQzMDQ2OTY0
 LC0zMDMxMTA5NTMsMTgzMzc4NTU3OSwxMjkxNzg1OTkxLDc3OT
 UyNzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2MTEsLTIxODc3NzEz
