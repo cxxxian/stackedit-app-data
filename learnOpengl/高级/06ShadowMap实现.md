@@ -68,6 +68,13 @@ void prepare() {
 }
 ```
 这里的`main.cpp`中的`dirLight->mDirection = glm::vec3(0.0f, -0.4f,-1.0f);`就已经在报错了，因为我们把这个变量已经删了
+所以我们现在要利用`rotate`函数进行更改方向（继承自Ob'j'e'c）
+```cpp
+dirLight = new DirectionalLight();
+dirLight->rotateY(45.0f);
+dirLight->rotateX(-25.0f);
+dirLight->mSpecularIntensity = 0.5f;
+```
 # ShadowMap
 ## shader制作
 ### 1.创建shadow.vert/frag，渲染阴影贴图专用
@@ -86,7 +93,7 @@ void prepare() {
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc1OTY5MDYwLDE4MzM3ODU1NzksMTI5MT
-c4NTk5MSw3Nzk1Mjc2MzcsMzEzMTEyNDQzLC0xODYwMTY5NjEx
-LC0yMTg3NzcxMzUsLTMzODIxMDYwMl19
+eyJoaXN0b3J5IjpbLTE4MzQ2Mzg5NDgsMTgzMzc4NTU3OSwxMj
+kxNzg1OTkxLDc3OTUyNzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2
+MTEsLTIxODc3NzEzNSwtMzM4MjEwNjAyXX0=
 -->
