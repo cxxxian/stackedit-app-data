@@ -7,7 +7,7 @@
 public:
 	glm::vec3 mDirection{-1.0};
 ```
-但现在光源既然继承于`Object`，那它就可以进行平移旋转什么的，所以我们要为`Object`增加`getDirection`函数，因为此时d
+但现在光源既然继承于`Object`，那它就可以进行平移旋转什么的，所以我们要为`Object`增加`getDirection`函数，因为此时的`mDirection`可能会因为平移旋转什么的发生变化
 ## 2.更改使用光源的代码们
 
 # ShadowMap
@@ -28,5 +28,5 @@ public:
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjk0NTk5OTAsLTMzODIxMDYwMl19
+eyJoaXN0b3J5IjpbLTIxODc3NzEzNSwtMzM4MjEwNjAyXX0=
 -->
