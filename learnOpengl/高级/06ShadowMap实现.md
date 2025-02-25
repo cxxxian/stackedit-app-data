@@ -442,8 +442,27 @@ void prepare() {
 ![输入图片说明](/imgs/2025-02-25/gPnp9AmVRvDV6rZC.png)
 
 ![输入图片说明](/imgs/2025-02-25/jawyhBiIfoHTri1E.png)
+
+```cpp
+glm::mat4 Renderer::getLightMatrix(DirectionalLight* dirLight)
+{
+	//1 viewMatrix
+	auto lightViewMatrix = glm::inverse(dirLight->getModelMatrix());
+
+	//2 projection（正交投影）
+	float size = 6.0f;
+	auto lightCamera = new OrthographicCamera(-size, size, -size, size, 0.1, 100);
+	auto lightProjectionMatrix = lightCamera->getProjectionMatrix();
+	
+	//3 求lightMatrix并且返回
+	return lightProjectionMatrix * lightViewMatrix;
+}
+```
+将`far`换成`100`之后，就不会全是黑色了
+
+![输入图片说明](/imgs/2025-02-25/fXdczrMNuEvEPRpY.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjUwMTQxNTAsMjA0NDY4NTMxOCwxMj
+eyJoaXN0b3J5IjpbLTE4NzUzODc5NzAsMjA0NDY4NTMxOCwxMj
 Y3MTI0NjE1LC02OTg3NTkwMjcsLTc5MDE2NzExNCwtMTM2Mjg3
 NjI4MSwtMjE0MzgyMjQwNCwtMTY3NjY2NTY5NiwtODU4NDI1MD
 UzLDE1NjI0ODk5NTEsNDI3OTgzMjEwLC04MTcyNTA0MjgsMTkz
