@@ -579,14 +579,62 @@ Shader* Renderer::pickShader(MaterialType type) {
 	break;
 ```
 ## 4.修改场景当中物体的材质（兼容阴影）
+都修改`material`为`PhongShadowMaterial`，
+以及将
+```cpp
+void prepare() {
+	fbo = new Framebuffer(WIDTH, HEIGHT);
 
-## 5.postProcessPass当中的输入贴图改成正常形态
+	renderer = new Renderer();
+	sceneOff = new Scene();
+	scene = new Scene();
+
+	//pass 01
+	auto geo = Geometry::createBox(2.0);
+	auto mat = new PhongShadowMaterial();
+	mat->mDiffuse = new Texture("assets/textures/parallax/bricks.jpg", 0, GL_SRGB_ALPHA);
+
+	mat->mShiness = 32;
+	auto mesh = new Mesh(geo, mat);
+	sceneOff->addChild(mesh);
+
+	auto groundGeo = Geometry::createPlane(10, 10);
+	mat = new PhongShadowMaterial();
+	mat->mDiffuse = new Texture("assets/textures/grass.jpg", 0, GL_SRGB_ALPHA);
+	mat->mShiness = 32;
+
+	auto groundMesh = new Mesh(groundGeo, mat);
+	groundMesh->setPosition(glm::vec3(0.0, 0.0, 0.0f));
+	groundMesh->rotateX(-90.0f);
+	sceneOff->addChild(groundMesh);
+
+	//pass 02 postProcessPass:后处理pass
+	auto sgeo = Geometry::createScreenPlane();
+	auto smat = new ScreenMaterial();
+	smat->mScreenTexture = fbo->mColorAttachment;
+//	smat->mScreenTexture = renderer->mShadowFBO->mDepthAttachment;
+	auto smesh = new Mesh(sgeo, smat);
+	scene->addChild(smesh);
+
+	
+	dirLight = new DirectionalLight();
+	dirLight->setPosition(glm::vec3(3.0f, 3.0f, 3.0f));
+	dirLight->rotateY(45.0f);
+	dirLight->rotateX(-45.0f);
+	dirLight->mSpecularIntensity = 0.5f;
+
+	ambLight = new AmbientLight();
+	ambLight->mColor = glm::vec3(0.1f);
+
+}
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5NjE4MjI1NiwtMTk3ODg5NDUxOSwxMz
-Y3OTkyNTkxLDExODAwOTM3ODEsMTIyNzYzMDU2NywxNzUwNDIx
-MjQwLDIwNDQ2ODUzMTgsMTI2NzEyNDYxNSwtNjk4NzU5MDI3LC
-03OTAxNjcxMTQsLTEzNjI4NzYyODEsLTIxNDM4MjI0MDQsLTE2
-NzY2NjU2OTYsLTg1ODQyNTA1MywxNTYyNDg5OTUxLDQyNzk4Mz
-IxMCwtODE3MjUwNDI4LDE5MzQyMzc1MzIsODUyNDIxMjk2LC0x
-MTQzMDQ2OTY0XX0=
+eyJoaXN0b3J5IjpbMTA0OTY5NTI1MiwtMzk2MTgyMjU2LC0xOT
+c4ODk0NTE5LDEzNjc5OTI1OTEsMTE4MDA5Mzc4MSwxMjI3NjMw
+NTY3LDE3NTA0MjEyNDAsMjA0NDY4NTMxOCwxMjY3MTI0NjE1LC
+02OTg3NTkwMjcsLTc5MDE2NzExNCwtMTM2Mjg3NjI4MSwtMjE0
+MzgyMjQwNCwtMTY3NjY2NTY5NiwtODU4NDI1MDUzLDE1NjI0OD
+k5NTEsNDI3OTgzMjEwLC04MTcyNTA0MjgsMTkzNDIzNzUzMiw4
+NTI0MjEyOTZdfQ==
 -->
