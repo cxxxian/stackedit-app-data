@@ -332,13 +332,16 @@ void Renderer::renderShadowMap(const std::vector<Mesh*>& meshes, DirectionalLigh
 我们通过遍历`meshes`判断`material`可以确保现在的绘制不是`postProcessPass`的绘制
 然后通过`glGetIntegerv`记录需要保存的状态信息，然后我们最后再重新对`framebuffer`绑定和`viewport`赋值
 
-
+我们再在`renderer.h`设计一个函数，用来计算`LightMatrix`，这是后续要传到`depthShader`中的，封装成函数比较有条理
+```cpp
+glm::mat4 getLightMatrix(DirectionalLight* dirLight);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MDA0OTU0NzAsLTc5MDE2NzExNCwtMT
-M2Mjg3NjI4MSwtMjE0MzgyMjQwNCwtMTY3NjY2NTY5NiwtODU4
-NDI1MDUzLDE1NjI0ODk5NTEsNDI3OTgzMjEwLC04MTcyNTA0Mj
-gsMTkzNDIzNzUzMiw4NTI0MjEyOTYsLTExNDMwNDY5NjQsLTMw
-MzExMDk1MywxODMzNzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3Nj
-M3LDMxMzExMjQ0MywtMTg2MDE2OTYxMSwtMjE4Nzc3MTM1LC0z
-MzgyMTA2MDJdfQ==
+eyJoaXN0b3J5IjpbLTY5ODc1OTAyNywtNzkwMTY3MTE0LC0xMz
+YyODc2MjgxLC0yMTQzODIyNDA0LC0xNjc2NjY1Njk2LC04NTg0
+MjUwNTMsMTU2MjQ4OTk1MSw0Mjc5ODMyMTAsLTgxNzI1MDQyOC
+wxOTM0MjM3NTMyLDg1MjQyMTI5NiwtMTE0MzA0Njk2NCwtMzAz
+MTEwOTUzLDE4MzM3ODU1NzksMTI5MTc4NTk5MSw3Nzk1Mjc2Mz
+csMzEzMTEyNDQzLC0xODYwMTY5NjExLC0yMTg3NzcxMzUsLTMz
+ODIxMDYwMl19
 -->
