@@ -197,6 +197,11 @@ Framebuffer::Framebuffer()
 public:
 	Framebuffer* mShadowFBO{ nullptr };
 ```
+```cpp
+Renderer::Renderer() {
+	...
+	mShadowFBO = Framebuffer::createShadowFBO(2048, 2048);
+}
 ```
 
 ## 渲染器修改
@@ -207,9 +212,9 @@ public:
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODI4Mjc2OTgsNDI3OTgzMjEwLC04MT
-cyNTA0MjgsMTkzNDIzNzUzMiw4NTI0MjEyOTYsLTExNDMwNDY5
-NjQsLTMwMzExMDk1MywxODMzNzg1NTc5LDEyOTE3ODU5OTEsNz
-c5NTI3NjM3LDMxMzExMjQ0MywtMTg2MDE2OTYxMSwtMjE4Nzc3
-MTM1LC0zMzgyMTA2MDJdfQ==
+eyJoaXN0b3J5IjpbLTc1NDgzODk1LDQyNzk4MzIxMCwtODE3Mj
+UwNDI4LDE5MzQyMzc1MzIsODUyNDIxMjk2LC0xMTQzMDQ2OTY0
+LC0zMDMxMTA5NTMsMTgzMzc4NTU3OSwxMjkxNzg1OTkxLDc3OT
+UyNzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2MTEsLTIxODc3NzEz
+NSwtMzM4MjEwNjAyXX0=
 -->
