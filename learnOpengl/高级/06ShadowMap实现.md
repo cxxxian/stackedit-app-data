@@ -39,7 +39,7 @@ glm::vec3	mTargetDirection{ -1.0f };
 
 因为我们要得到光照的方向，所以只要关注旋转矩阵的`front`方向即可，代表向前的向量
 有了这个回忆，我们就可以开始设计了
-在object.h声明并在object.cpp实现：
+在`object.h`声明并在`object.cpp`实现：
 ```cpp
 glm::vec3 Object::getDirection() const {
 	auto modelMatrix = glm::mat3(getModelMatrix());
@@ -48,6 +48,7 @@ glm::vec3 Object::getDirection() const {
 	return dir;
 }
 ```
+解释一下，可以利用上面那张图，`getModelMatrix()`此时得到的是一个四维矩阵左上角的三乘三矩阵是旋转矩阵，第四列的前三个代表平移，而第四行是我们为了齐次进行的补全
 
 ## 2.更改使用光源的代码们
 
@@ -69,6 +70,6 @@ glm::vec3 Object::getDirection() const {
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk5NjYxMTk2MSwzMTMxMTI0NDMsLTE4Nj
-AxNjk2MTEsLTIxODc3NzEzNSwtMzM4MjEwNjAyXX0=
+eyJoaXN0b3J5IjpbLTE2MDM5MzY3MzgsMzEzMTEyNDQzLC0xOD
+YwMTY5NjExLC0yMTg3NzcxMzUsLTMzODIxMDYwMl19
 -->
