@@ -38,6 +38,7 @@ glm::vec3	mTargetDirection{ -1.0f };
 我们先回忆一下先前设计的旋转矩阵，第一列是`right`轴，第二列是`up`轴，第三列是`front`轴（取`-f`是因为我们的向前对应的是`z`方向），分别对应`xyz`
 
 因为我们要得到光照的方向，所以只要关注旋转矩阵的`front`方向即可，代表向前的向量
+有了这个回忆，我们就可以开始设计了
 
 ## 2.更改使用光源的代码们
 
@@ -59,6 +60,6 @@ glm::vec3	mTargetDirection{ -1.0f };
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NDAyNzI5OTMsMzEzMTEyNDQzLC0xOD
+eyJoaXN0b3J5IjpbLTEzNjk4ODIzNDEsMzEzMTEyNDQzLC0xOD
 YwMTY5NjExLC0yMTg3NzcxMzUsLTMzODIxMDYwMl19
 -->
