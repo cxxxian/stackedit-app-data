@@ -628,9 +628,11 @@ void prepare() {
 
 }
 ```
+运行后就可以得到正确的阴影计算了，此时出现了摩尔纹，后续解决
 
+![输入图片说明](/imgs/2025-02-25/R5RLbT65kAAPG1Lm.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2NTkxMjYyMCwxNTE5MzMwMDcxLC0zOT
+eyJoaXN0b3J5IjpbLTU2NTc3MTc0OCwxNTE5MzMwMDcxLC0zOT
 YxODIyNTYsLTE5Nzg4OTQ1MTksMTM2Nzk5MjU5MSwxMTgwMDkz
 NzgxLDEyMjc2MzA1NjcsMTc1MDQyMTI0MCwyMDQ0Njg1MzE4LD
 EyNjcxMjQ2MTUsLTY5ODc1OTAyNywtNzkwMTY3MTE0LC0xMzYy
