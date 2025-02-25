@@ -248,7 +248,8 @@ void Renderer::render(
 ```
 如以上，我们在排序完之后就要进行渲染`shadowMap`
 因为再往后就已经是渲染离屏场景了，已经要用到`shadowMap`了，所以只能在此之前准备好
-
+然后我们在这里只传入`mOpacityObjects`，即不透明的物体
+因为`shadowMap`不好处理半透明物体，我们判断完遮挡后就会直接挡住光，并不能做到半透过一点光，所以干脆就直接只处理不透明物体
 
 ### 注意1：
 做好排除工作，`ScreenMaterial`的物体不参与`ShadowPass`渲染，若是`PostProcessPass`则不进行`RenderShadowMap`的操作（防止污染`ShadowMap`）
@@ -256,9 +257,9 @@ void Renderer::render(
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzUxNDMwMzU5LDE1NjI0ODk5NTEsNDI3OT
-gzMjEwLC04MTcyNTA0MjgsMTkzNDIzNzUzMiw4NTI0MjEyOTYs
-LTExNDMwNDY5NjQsLTMwMzExMDk1MywxODMzNzg1NTc5LDEyOT
-E3ODU5OTEsNzc5NTI3NjM3LDMxMzExMjQ0MywtMTg2MDE2OTYx
-MSwtMjE4Nzc3MTM1LC0zMzgyMTA2MDJdfQ==
+eyJoaXN0b3J5IjpbLTg1ODQyNTA1MywxNTYyNDg5OTUxLDQyNz
+k4MzIxMCwtODE3MjUwNDI4LDE5MzQyMzc1MzIsODUyNDIxMjk2
+LC0xMTQzMDQ2OTY0LC0zMDMxMTA5NTMsMTgzMzc4NTU3OSwxMj
+kxNzg1OTkxLDc3OTUyNzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2
+MTEsLTIxODc3NzEzNSwtMzM4MjEwNjAyXX0=
 -->
