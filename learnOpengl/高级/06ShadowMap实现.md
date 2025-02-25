@@ -133,7 +133,35 @@ static Texture* createDepthAttachment(
 );
 ```
 然后再到`texture.cpp`实现
+```cpp
+Texture* Texture::createDepthAttachment(
+	unsigned int width,
+	unsigned int height,
+	unsigned int unit
+) {
+	Texture* depthTex = new Texture();
 
+	unsigned int depth;
+	glGenTextures(1, &depth);
+	glBindTexture(GL_TEXTURE_2D, depth);
+
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, width, height, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+	//设置纹理的包裹方式
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);//u
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);//v
+
+	depthTex->mTexture = depth;
+	depthTex->mWidth = width;
+	depthTex->mHeight = height;
+	depthTex->mUnit = unit;
+
+	return depthTex;
+}
+```
 ### 2.在FrameBuffer中增加创建ShadowFBO的创建函数
 ### 3.在Renderer中创建ShadowFBO，用于做阴影ShadowMap的渲染目标（RenderTarget）
 
@@ -145,8 +173,9 @@ static Texture* createDepthAttachment(
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgxNzI1MDQyOCwxOTM0MjM3NTMyLDg1Mj
-QyMTI5NiwtMTE0MzA0Njk2NCwtMzAzMTEwOTUzLDE4MzM3ODU1
-NzksMTI5MTc4NTk5MSw3Nzk1Mjc2MzcsMzEzMTEyNDQzLC0xOD
-YwMTY5NjExLC0yMTg3NzcxMzUsLTMzODIxMDYwMl19
+eyJoaXN0b3J5IjpbLTY5OTA3NTg3LC04MTcyNTA0MjgsMTkzND
+IzNzUzMiw4NTI0MjEyOTYsLTExNDMwNDY5NjQsLTMwMzExMDk1
+MywxODMzNzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3NjM3LDMxMz
+ExMjQ0MywtMTg2MDE2OTYxMSwtMjE4Nzc3MTM1LC0zMzgyMTA2
+MDJdfQ==
 -->
