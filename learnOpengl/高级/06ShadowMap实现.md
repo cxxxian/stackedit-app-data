@@ -556,7 +556,10 @@ Shader* Renderer::pickShader(MaterialType type) {
 
 ```
 ### 3.3对新的材质进行uniform更新
- ```cpp
+其实就是多了`shadowMapSampler`和`lightMatrix`
+`shadowMapSampler`就是`shadowMap`
+`lightMatrix`调用我们设计的方法得到
+```cpp
  case MaterialType::PhongShadowMaterial: {
 	PhongShadowMaterial* phongShadowMat = (PhongShadowMaterial*)material;
 
@@ -571,41 +574,17 @@ Shader* Renderer::pickShader(MaterialType type) {
 	mShadowFBO->mDepthAttachment->bind();
 
 	shader->setMatrix4x4("lightMatrix", getLightMatrix(dirLight));
-
-	//mvp
-	shader->setMatrix4x4("modelMatrix", mesh->getModelMatrix());
-	shader->setMatrix4x4("viewMatrix", camera->getViewMatrix());
-	shader->setMatrix4x4("projectionMatrix", camera->getProjectionMatrix());
-
-	auto normalMatrix = glm::mat3(glm::transpose(glm::inverse(mesh->getModelMatrix())));
-	shader->setMatrix3x3("normalMatrix", normalMatrix);
-
-	//光源参数的uniform更新
-	//directionalLight 的更新
-	shader->setVector3("directionalLight.color", dirLight->mColor);
-	shader->setVector3("directionalLight.direction", dirLight->getDirection());
-	shader->setFloat("directionalLight.specularIntensity", dirLight->mSpecularIntensity);
-	shader->setFloat("directionalLight.intensity", dirLight->mIntensity);
-
-	shader->setFloat("shiness", phongShadowMat->mShiness);
-
-	shader->setVector3("ambientColor", ambLight->mColor);
-
-	//相机信息更新
-	shader->setVector3("cameraPosition", camera->mPosition);
-
-	//透明度
-	shader->setFloat("opacity", material->mOpacity);
-
+	...
 }
 	break;
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU1MTI3NzQzOSwtMTk3ODg5NDUxOSwxMz
-Y3OTkyNTkxLDExODAwOTM3ODEsMTIyNzYzMDU2NywxNzUwNDIx
-MjQwLDIwNDQ2ODUzMTgsMTI2NzEyNDYxNSwtNjk4NzU5MDI3LC
-03OTAxNjcxMTQsLTEzNjI4NzYyODEsLTIxNDM4MjI0MDQsLTE2
-NzY2NjU2OTYsLTg1ODQyNTA1MywxNTYyNDg5OTUxLDQyNzk4Mz
-IxMCwtODE3MjUwNDI4LDE5MzQyMzc1MzIsODUyNDIxMjk2LC0x
-MTQzMDQ2OTY0XX0=
+eyJoaXN0b3J5IjpbNTMyMTQ2NzIzLC0xOTc4ODk0NTE5LDEzNj
+c5OTI1OTEsMTE4MDA5Mzc4MSwxMjI3NjMwNTY3LDE3NTA0MjEy
+NDAsMjA0NDY4NTMxOCwxMjY3MTI0NjE1LC02OTg3NTkwMjcsLT
+c5MDE2NzExNCwtMTM2Mjg3NjI4MSwtMjE0MzgyMjQwNCwtMTY3
+NjY2NTY5NiwtODU4NDI1MDUzLDE1NjI0ODk5NTEsNDI3OTgzMj
+EwLC04MTcyNTA0MjgsMTkzNDIzNzUzMiw4NTI0MjEyOTYsLTEx
+NDMwNDY5NjRdfQ==
 -->
