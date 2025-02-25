@@ -478,6 +478,7 @@ void main()
 
 # RenderPass
 ## 1.加入新的phongShadow.vert/frag，加入是否位于阴影中的判断
+`phongShadow.vert`如下：
 ```glsl
 #version 460 core
 ...
@@ -500,7 +501,7 @@ void main()
 ## 3.在Renderer中对新材质进行解析，并且更新uniform
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzMzM4MDgzMSwxMTgwMDkzNzgxLDEyMj
+eyJoaXN0b3J5IjpbMTM2Nzk5MjU5MSwxMTgwMDkzNzgxLDEyMj
 c2MzA1NjcsMTc1MDQyMTI0MCwyMDQ0Njg1MzE4LDEyNjcxMjQ2
 MTUsLTY5ODc1OTAyNywtNzkwMTY3MTE0LC0xMzYyODc2MjgxLC
 0yMTQzODIyNDA0LC0xNjc2NjY1Njk2LC04NTg0MjUwNTMsMTU2
