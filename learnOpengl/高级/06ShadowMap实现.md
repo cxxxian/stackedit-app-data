@@ -15,7 +15,7 @@
 ## 渲染器修改
 在`Renderer`中加入`RenderShadowMap`函数，在真正渲染物体之前，先把`ShadowMap`做出来
 ### 注意1：
-做好排除工作，ScreenMaterial的物体不参与ShadowPass渲染
+做好排除工作，`ScreenMaterial`的物体不参与`ShadowPass渲染
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMzODIxMDYwMl19
+eyJoaXN0b3J5IjpbLTcxNjI4MzM0MCwtMzM4MjEwNjAyXX0=
 -->
