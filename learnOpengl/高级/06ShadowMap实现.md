@@ -110,6 +110,12 @@ void main(){
 }
 ```
 ### 2.在Renderer中创建shadowShader，用于做ShadowMap渲染
+`
+Renderer::Renderer() {
+	...
+	mShadowShader = new Shader("assets/shaders/advanced/shadow.vert", "assets/shaders/advanced/shadow.frag");
+}
+```
 
 ## 渲染目标
 ### 1.在Texture中增加创建DepthAttachment的创建函数
@@ -124,8 +130,8 @@ void main(){
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODIzODk0NTQsODUyNDIxMjk2LC0xMTQzMD
-Q2OTY0LC0zMDMxMTA5NTMsMTgzMzc4NTU3OSwxMjkxNzg1OTkx
-LDc3OTUyNzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2MTEsLTIxOD
-c3NzEzNSwtMzM4MjEwNjAyXX0=
+eyJoaXN0b3J5IjpbLTExNDEzODUyMDIsODUyNDIxMjk2LC0xMT
+QzMDQ2OTY0LC0zMDMxMTA5NTMsMTgzMzc4NTU3OSwxMjkxNzg1
+OTkxLDc3OTUyNzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2MTEsLT
+IxODc3NzEzNSwtMzM4MjEwNjAyXX0=
 -->
