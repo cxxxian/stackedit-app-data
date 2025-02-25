@@ -192,6 +192,8 @@ Framebuffer::Framebuffer()
 }
 ```
 ### 3.在Renderer中创建ShadowFBO，用于做阴影ShadowMap的渲染目标（RenderTarget）
+public:
+	Framebuffer* mShadowFBO{ nullptr };
 
 ## 渲染器修改
 在`Renderer`中加入`RenderShadowMap`函数，在真正渲染物体之前，先把`ShadowMap`做出来
@@ -201,9 +203,9 @@ Framebuffer::Framebuffer()
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMwNDE4MDIyLC04MTcyNTA0MjgsMTkzND
-IzNzUzMiw4NTI0MjEyOTYsLTExNDMwNDY5NjQsLTMwMzExMDk1
-MywxODMzNzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3NjM3LDMxMz
-ExMjQ0MywtMTg2MDE2OTYxMSwtMjE4Nzc3MTM1LC0zMzgyMTA2
-MDJdfQ==
+eyJoaXN0b3J5IjpbLTEzNDI3MDczNTAsLTgxNzI1MDQyOCwxOT
+M0MjM3NTMyLDg1MjQyMTI5NiwtMTE0MzA0Njk2NCwtMzAzMTEw
+OTUzLDE4MzM3ODU1NzksMTI5MTc4NTk5MSw3Nzk1Mjc2MzcsMz
+EzMTEyNDQzLC0xODYwMTY5NjExLC0yMTg3NzcxMzUsLTMzODIx
+MDYwMl19
 -->
