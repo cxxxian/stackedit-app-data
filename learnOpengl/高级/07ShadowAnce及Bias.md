@@ -67,7 +67,20 @@ void prepare() {
 	...
 }
 ```
+`%.3f`这个参数值是`format`，dai
+
+![输入图片说明](/imgs/2025-02-25/Sq0j5zehEMyzInOB.png)
+
+```cpp
+void renderIMGUI() {
+	...
+	ImGui::Begin("MaterialEditor");
+	ImGui::SliderFloat("Bias:", &mat->mBias, 0.0f, 0.01f, "%.4f");
+	ImGui::End();
+	...
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MTA1NjYwMzAsLTE0MTkwMjU4OTAsLT
-EyMjMxODc5NjIsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbLTY4MzYxNjQsLTE0MTkwMjU4OTAsLTEyMj
+MxODc5NjIsLTIwODg3NDY2MTJdfQ==
 -->
