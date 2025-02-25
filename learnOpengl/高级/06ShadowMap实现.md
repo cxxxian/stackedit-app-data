@@ -633,11 +633,11 @@ void prepare() {
 ![输入图片说明](/imgs/2025-02-25/R5RLbT65kAAPG1Lm.png)
 
 至于这个两个边角，似乎没有被纳入`shadowMap`中
-正确的！确实是没有，这个与我们的视锥体选取有关，就是我们的正交相机的
+正确的！确实是没有，这个与我们的视锥体选取有关，就是我们的正交相机的六个参数画出来的一个立方体，只有在里面的部分才能正常计算阴影
 
 ![输入图片说明](/imgs/2025-02-25/BMQXCeeRRpHV00CA.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5NDY2OTAzMSwxNTE5MzMwMDcxLC0zOT
+eyJoaXN0b3J5IjpbMTQ1NjA4NDE0NiwxNTE5MzMwMDcxLC0zOT
 YxODIyNTYsLTE5Nzg4OTQ1MTksMTM2Nzk5MjU5MSwxMTgwMDkz
 NzgxLDEyMjc2MzA1NjcsMTc1MDQyMTI0MCwyMDQ0Njg1MzE4LD
 EyNjcxMjQ2MTUsLTY5ODc1OTAyNywtNzkwMTY3MTE0LC0xMzYy
