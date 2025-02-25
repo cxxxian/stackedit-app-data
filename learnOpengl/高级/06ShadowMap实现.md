@@ -163,6 +163,8 @@ Texture* Texture::createDepthAttachment(
 }
 ```
 ### 2.在FrameBuffer中增加创建ShadowFBO的创建函数
+```
+```
 ### 3.在Renderer中创建ShadowFBO，用于做阴影ShadowMap的渲染目标（RenderTarget）
 
 ## 渲染器修改
@@ -173,9 +175,9 @@ Texture* Texture::createDepthAttachment(
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY5OTA3NTg3LC04MTcyNTA0MjgsMTkzND
-IzNzUzMiw4NTI0MjEyOTYsLTExNDMwNDY5NjQsLTMwMzExMDk1
-MywxODMzNzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3NjM3LDMxMz
-ExMjQ0MywtMTg2MDE2OTYxMSwtMjE4Nzc3MTM1LC0zMzgyMTA2
-MDJdfQ==
+eyJoaXN0b3J5IjpbLTQ4MzYzOTE3MSwtODE3MjUwNDI4LDE5Mz
+QyMzc1MzIsODUyNDIxMjk2LC0xMTQzMDQ2OTY0LC0zMDMxMTA5
+NTMsMTgzMzc4NTU3OSwxMjkxNzg1OTkxLDc3OTUyNzYzNywzMT
+MxMTI0NDMsLTE4NjAxNjk2MTEsLTIxODc3NzEzNSwtMzM4MjEw
+NjAyXX0=
 -->
