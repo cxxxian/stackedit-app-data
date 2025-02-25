@@ -330,9 +330,9 @@ void Renderer::renderShadowMap(const std::vector<Mesh*>& meshes, DirectionalLigh
 ```
 先搞定我们刚刚说的两个注意事项
 我们通过遍历`meshes`判断`material`可以确保现在的绘制不是`postProcessPass`的绘制
-然后通过`glGetIntegerv`记录需要保存的状态信息，然后我们最后再重新
+然后通过`glGetIntegerv`记录需要保存的状态信息，然后我们最后再重新对`framebuffer`绑定和`viewport`赋值
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEyMjkwNTIyNiwtMTM2Mjg3NjI4MSwtMj
+eyJoaXN0b3J5IjpbLTc5MDE2NzExNCwtMTM2Mjg3NjI4MSwtMj
 E0MzgyMjQwNCwtMTY3NjY2NTY5NiwtODU4NDI1MDUzLDE1NjI0
 ODk5NTEsNDI3OTgzMjEwLC04MTcyNTA0MjgsMTkzNDIzNzUzMi
 w4NTI0MjEyOTYsLTExNDMwNDY5NjQsLTMwMzExMDk1MywxODMz
