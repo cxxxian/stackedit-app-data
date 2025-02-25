@@ -506,7 +506,7 @@ uniform sampler2D shadowMapSampler;
 
 float calculateShadow(){
 	//1 找到当前像素在光源空间内的NDC坐标
-	vec3 lightNDC = lightSpaceClipCoord.xyz / lightSpaceClipCoord.z;
+	vec3 lightNDC = lightSpaceClipCoord.xyz / lightSpaceClipCoord.w;
 	//2 找到当前像素在shadowMap上的uv
 	vec3 projCoord = lightNDC * 0.5 + 0.5;//+0.5会被自动扩展为三维向量
 	vec2 uv = projCoord.xy;
@@ -630,11 +630,11 @@ void prepare() {
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxOTMzMDA3MSwtMzk2MTgyMjU2LC0xOT
-c4ODk0NTE5LDEzNjc5OTI1OTEsMTE4MDA5Mzc4MSwxMjI3NjMw
-NTY3LDE3NTA0MjEyNDAsMjA0NDY4NTMxOCwxMjY3MTI0NjE1LC
-02OTg3NTkwMjcsLTc5MDE2NzExNCwtMTM2Mjg3NjI4MSwtMjE0
-MzgyMjQwNCwtMTY3NjY2NTY5NiwtODU4NDI1MDUzLDE1NjI0OD
-k5NTEsNDI3OTgzMjEwLC04MTcyNTA0MjgsMTkzNDIzNzUzMiw4
-NTI0MjEyOTZdfQ==
+eyJoaXN0b3J5IjpbLTg2NTkxMjYyMCwxNTE5MzMwMDcxLC0zOT
+YxODIyNTYsLTE5Nzg4OTQ1MTksMTM2Nzk5MjU5MSwxMTgwMDkz
+NzgxLDEyMjc2MzA1NjcsMTc1MDQyMTI0MCwyMDQ0Njg1MzE4LD
+EyNjcxMjQ2MTUsLTY5ODc1OTAyNywtNzkwMTY3MTE0LC0xMzYy
+ODc2MjgxLC0yMTQzODIyNDA0LC0xNjc2NjY1Njk2LC04NTg0Mj
+UwNTMsMTU2MjQ4OTk1MSw0Mjc5ODMyMTAsLTgxNzI1MDQyOCwx
+OTM0MjM3NTMyXX0=
 -->
