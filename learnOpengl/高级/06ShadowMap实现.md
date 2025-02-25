@@ -461,12 +461,26 @@ glm::mat4 Renderer::getLightMatrix(DirectionalLight* dirLight)
 将`far`换成`100`之后，就不会全是黑色了
 
 ![输入图片说明](/imgs/2025-02-25/fXdczrMNuEvEPRpY.png)
+
+然后全是红色的，这是什么原因？
+因为我们的`screen.frag`是对`screenTexSampler`进行采样，此时`screenTexSampler`我们传过来的是`sha`
+```glsl
+void main()
+{
+	...
+	vec3 color = texture(screenTexSampler, uv).rgb;
+
+	//2 最终颜色要抵抗屏幕gamma
+	color = pow(color, vec3(1.0/2.2));
+	FragColor = vec4(color, 1.0);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzUzODc5NzAsMjA0NDY4NTMxOCwxMj
-Y3MTI0NjE1LC02OTg3NTkwMjcsLTc5MDE2NzExNCwtMTM2Mjg3
-NjI4MSwtMjE0MzgyMjQwNCwtMTY3NjY2NTY5NiwtODU4NDI1MD
-UzLDE1NjI0ODk5NTEsNDI3OTgzMjEwLC04MTcyNTA0MjgsMTkz
-NDIzNzUzMiw4NTI0MjEyOTYsLTExNDMwNDY5NjQsLTMwMzExMD
-k1MywxODMzNzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3NjM3LDMx
-MzExMjQ0M119
+eyJoaXN0b3J5IjpbMjA1NDAxNjYxMywyMDQ0Njg1MzE4LDEyNj
+cxMjQ2MTUsLTY5ODc1OTAyNywtNzkwMTY3MTE0LC0xMzYyODc2
+MjgxLC0yMTQzODIyNDA0LC0xNjc2NjY1Njk2LC04NTg0MjUwNT
+MsMTU2MjQ4OTk1MSw0Mjc5ODMyMTAsLTgxNzI1MDQyOCwxOTM0
+MjM3NTMyLDg1MjQyMTI5NiwtMTE0MzA0Njk2NCwtMzAzMTEwOT
+UzLDE4MzM3ODU1NzksMTI5MTc4NTk5MSw3Nzk1Mjc2MzcsMzEz
+MTEyNDQzXX0=
 -->
