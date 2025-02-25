@@ -53,7 +53,8 @@ glm::vec3 Object::getDirection() const {
 而此时我们只需要`front`向量，所以`modelMatrix[2]`就可以取得`modelMatrix`的第三列即`front`，最后还需要加上一个负号，因为此时是朝向`z`轴的，但是`-z`轴才是我们的前方
 
 ## 2.更改使用光源的代码们
-
+由于我们删除了`directionLight`和`spotLight`的方向，肯定会有很多报错
+慢慢来改
 # ShadowMap
 ## shader制作
 ### 1.创建shadow.vert/frag，渲染阴影贴图专用
@@ -72,6 +73,7 @@ glm::vec3 Object::getDirection() const {
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzc5NTI3NjM3LDMxMzExMjQ0MywtMTg2MD
-E2OTYxMSwtMjE4Nzc3MTM1LC0zMzgyMTA2MDJdfQ==
+eyJoaXN0b3J5IjpbMTMyMTAwNjkxMCw3Nzk1Mjc2MzcsMzEzMT
+EyNDQzLC0xODYwMTY5NjExLC0yMTg3NzcxMzUsLTMzODIxMDYw
+Ml19
 -->
