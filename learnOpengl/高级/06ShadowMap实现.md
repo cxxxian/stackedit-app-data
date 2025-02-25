@@ -254,12 +254,16 @@ void Renderer::render(
 ### 注意1：
 做好排除工作，`ScreenMaterial`的物体不参与`ShadowPass`渲染，若是`PostProcessPass`则不进行`RenderShadowMap`的操作（防止污染`ShadowMap`）
 
+解释：
+这是因为我们离屏渲染调用的是`render`函数，而`postProcessPass`调用的也是`render`渲染，而我们的`shadowMap`渲染方法调用正是在`render`函数中的，zhe'jiu
+
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1ODQyNTA1MywxNTYyNDg5OTUxLDQyNz
-k4MzIxMCwtODE3MjUwNDI4LDE5MzQyMzc1MzIsODUyNDIxMjk2
-LC0xMTQzMDQ2OTY0LC0zMDMxMTA5NTMsMTgzMzc4NTU3OSwxMj
-kxNzg1OTkxLDc3OTUyNzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2
-MTEsLTIxODc3NzEzNSwtMzM4MjEwNjAyXX0=
+eyJoaXN0b3J5IjpbLTQxMTYzMTIwMiwtODU4NDI1MDUzLDE1Nj
+I0ODk5NTEsNDI3OTgzMjEwLC04MTcyNTA0MjgsMTkzNDIzNzUz
+Miw4NTI0MjEyOTYsLTExNDMwNDY5NjQsLTMwMzExMDk1MywxOD
+MzNzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3NjM3LDMxMzExMjQ0
+MywtMTg2MDE2OTYxMSwtMjE4Nzc3MTM1LC0zMzgyMTA2MDJdfQ
+==
 -->
