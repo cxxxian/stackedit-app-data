@@ -204,7 +204,7 @@ Renderer::Renderer() {
 	mShadowFBO = Framebuffer::createShadowFBO(2048, 2048);
 }
 ```
-这里要对应我们的`viewPort`，如果我们的`viewPort`是`1024*1024`的话，那么只会shi
+这里要对应我们的`viewPort`，如果我们的`viewPort`是`1024*1024`的话，那么只会把东西都绘制到`shadowMap`的左下角四分之一的位置，很浪费空间。
 
 ![输入图片说明](/imgs/2025-02-25/tUy6L1Yyn2nCEDci.png)
 
@@ -216,9 +216,9 @@ Renderer::Renderer() {
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyNTEzNTU2LDQyNzk4MzIxMCwtODE3Mj
-UwNDI4LDE5MzQyMzc1MzIsODUyNDIxMjk2LC0xMTQzMDQ2OTY0
-LC0zMDMxMTA5NTMsMTgzMzc4NTU3OSwxMjkxNzg1OTkxLDc3OT
-UyNzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2MTEsLTIxODc3NzEz
-NSwtMzM4MjEwNjAyXX0=
+eyJoaXN0b3J5IjpbMTU2MjQ4OTk1MSw0Mjc5ODMyMTAsLTgxNz
+I1MDQyOCwxOTM0MjM3NTMyLDg1MjQyMTI5NiwtMTE0MzA0Njk2
+NCwtMzAzMTEwOTUzLDE4MzM3ODU1NzksMTI5MTc4NTk5MSw3Nz
+k1Mjc2MzcsMzEzMTEyNDQzLC0xODYwMTY5NjExLC0yMTg3Nzcx
+MzUsLTMzODIxMDYwMl19
 -->
