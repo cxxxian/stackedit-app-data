@@ -67,6 +67,7 @@ void prepare() {
 	ambLight->mColor = glm::vec3(0.1f);
 }
 ```
+这里的`main.cpp`中的`dirLight->mDirection = glm::vec3(0.0f, -0.4f,-1.0f);`就已经在报错了，因为我们把这个变量已经删了
 # ShadowMap
 ## shader制作
 ### 1.创建shadow.vert/frag，渲染阴影贴图专用
@@ -85,7 +86,7 @@ void prepare() {
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgzMzc4NTU3OSwxMjkxNzg1OTkxLDc3OT
-UyNzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2MTEsLTIxODc3NzEz
-NSwtMzM4MjEwNjAyXX0=
+eyJoaXN0b3J5IjpbNDc1OTY5MDYwLDE4MzM3ODU1NzksMTI5MT
+c4NTk5MSw3Nzk1Mjc2MzcsMzEzMTEyNDQzLC0xODYwMTY5NjEx
+LC0yMTg3NzcxMzUsLTMzODIxMDYwMl19
 -->
