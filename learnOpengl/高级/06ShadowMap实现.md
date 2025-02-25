@@ -197,6 +197,7 @@ Framebuffer::Framebuffer()
 public:
 	Framebuffer* mShadowFBO{ nullptr };
 ```
+```
 
 ## 渲染器修改
 在`Renderer`中加入`RenderShadowMap`函数，在真正渲染物体之前，先把`ShadowMap`做出来
@@ -206,9 +207,9 @@ public:
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDI3OTgzMjEwLC04MTcyNTA0MjgsMTkzND
-IzNzUzMiw4NTI0MjEyOTYsLTExNDMwNDY5NjQsLTMwMzExMDk1
-MywxODMzNzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3NjM3LDMxMz
-ExMjQ0MywtMTg2MDE2OTYxMSwtMjE4Nzc3MTM1LC0zMzgyMTA2
-MDJdfQ==
+eyJoaXN0b3J5IjpbLTEzODI4Mjc2OTgsNDI3OTgzMjEwLC04MT
+cyNTA0MjgsMTkzNDIzNzUzMiw4NTI0MjEyOTYsLTExNDMwNDY5
+NjQsLTMwMzExMDk1MywxODMzNzg1NTc5LDEyOTE3ODU5OTEsNz
+c5NTI3NjM3LDMxMzExMjQ0MywtMTg2MDE2OTYxMSwtMjE4Nzc3
+MTM1LC0zMzgyMTA2MDJdfQ==
 -->
