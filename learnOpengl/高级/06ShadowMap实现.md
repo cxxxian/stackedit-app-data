@@ -413,14 +413,38 @@ void Renderer::renderShadowMap(const std::vector<Mesh*>& meshes, DirectionalLigh
 	glViewport(preViewport[0], preViewport[1], preViewport[2], preViewport[3]);
 }
 ```
+这时候我们去`main.cpp`构造试验场景，将`shadowMap`直接当作`pass02`进行输出
+```cpp
+void prepare() {
+	...
+
+	//pass 02
+	auto sgeo = Geometry::createScreenPlane();
+	auto smat = new ScreenMaterial();
+	//smat->mScreenTexture = fbo->mColorAttachment;
+	smat->mScreenTexture = renderer->mShadowFBO->mDepthAttachment;
+	auto smesh = new Mesh(sgeo, smat);
+	scene->addChild(smesh);
+
+	dirLight = new DirectionalLight();
+	dirLight->setPosition(glm::vec3(3.0f, 3.0f, 3.0f));
+	dirLight->rotateY(45.0f);
+	dirLight->rotateX(-45.0f);
+	dirLight->mSpecularIntensity = 0.5f;
+
+	ambLight = new AmbientLight();
+	ambLight->mColor = glm::vec3(0.1f);
+}
+```
+输出的结果如下，会发现是黑的
 
 ![输入图片说明](/imgs/2025-02-25/jawyhBiIfoHTri1E.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODMxMDYyODgxLDIwNDQ2ODUzMTgsMTI2Nz
-EyNDYxNSwtNjk4NzU5MDI3LC03OTAxNjcxMTQsLTEzNjI4NzYy
-ODEsLTIxNDM4MjI0MDQsLTE2NzY2NjU2OTYsLTg1ODQyNTA1My
-wxNTYyNDg5OTUxLDQyNzk4MzIxMCwtODE3MjUwNDI4LDE5MzQy
-Mzc1MzIsODUyNDIxMjk2LC0xMTQzMDQ2OTY0LC0zMDMxMTA5NT
-MsMTgzMzc4NTU3OSwxMjkxNzg1OTkxLDc3OTUyNzYzNywzMTMx
-MTI0NDNdfQ==
+eyJoaXN0b3J5IjpbMTAyMzE1MjYzMiwyMDQ0Njg1MzE4LDEyNj
+cxMjQ2MTUsLTY5ODc1OTAyNywtNzkwMTY3MTE0LC0xMzYyODc2
+MjgxLC0yMTQzODIyNDA0LC0xNjc2NjY1Njk2LC04NTg0MjUwNT
+MsMTU2MjQ4OTk1MSw0Mjc5ODMyMTAsLTgxNzI1MDQyOCwxOTM0
+MjM3NTMyLDg1MjQyMTI5NiwtMTE0MzA0Njk2NCwtMzAzMTEwOT
+UzLDE4MzM3ODU1NzksMTI5MTc4NTk5MSw3Nzk1Mjc2MzcsMzEz
+MTEyNDQzXX0=
 -->
