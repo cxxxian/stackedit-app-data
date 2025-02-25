@@ -67,10 +67,11 @@ void prepare() {
 	...
 }
 ```
-`%.3f`这个参数值是`format`，dai
+`%.3f`这个参数值是`format`，代表滑动滑块移动的最小单位是`10`的`-3`次方
 
 ![输入图片说明](/imgs/2025-02-25/Sq0j5zehEMyzInOB.png)
 
+由于`bias`非常敏感，所以我们使用`%.4f`
 ```cpp
 void renderIMGUI() {
 	...
@@ -80,7 +81,9 @@ void renderIMGUI() {
 	...
 }
 ```
+
+![输入图片说明](/imgs/2025-02-25/C50szzfw9RfHywrS.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4MzYxNjQsLTE0MTkwMjU4OTAsLTEyMj
-MxODc5NjIsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbMTU5NjI5ODQ5MSwtMTQxOTAyNTg5MCwtMT
+IyMzE4Nzk2MiwtMjA4ODc0NjYxMl19
 -->
