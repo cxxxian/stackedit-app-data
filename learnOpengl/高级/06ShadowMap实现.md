@@ -168,7 +168,29 @@ Texture* Texture::createDepthAttachment(
 static Framebuffer* createShadowFBO(unsigned int width, unsigned int height);
 Framebuffer();
 ```
-然
+然后`frameBuffer.cpp`实现如下：
+```cpp
+Framebuffer* Framebuffer::createShadowFBO(unsigned int width, unsigned int height)
+{
+	Framebuffer* fb = new Framebuffer();
+	fb->mWidth = width;
+	fb->mHeight = height;
+
+	glGenFramebuffers(1, &fb->mFBO);
+	glBindFramebuffer(GL_FRAMEBUFFER, fb->mFBO);
+
+	fb->mDepthAttachment = Texture::createDepthAttachment(width, height, 0);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, fb->mDepthAttachment->getTexture(), 0);
+
+	glDrawBuffer(GL_NONE);//显式地告诉opengl，我们当前这个fbo没有颜色输出
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+	return fb;
+}
+Framebuffer::Framebuffer()
+{
+}
+```
 ### 3.在Renderer中创建ShadowFBO，用于做阴影ShadowMap的渲染目标（RenderTarget）
 
 ## 渲染器修改
@@ -179,9 +201,9 @@ Framebuffer();
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjkyMTI3MjUsLTgxNzI1MDQyOCwxOT
-M0MjM3NTMyLDg1MjQyMTI5NiwtMTE0MzA0Njk2NCwtMzAzMTEw
-OTUzLDE4MzM3ODU1NzksMTI5MTc4NTk5MSw3Nzk1Mjc2MzcsMz
-EzMTEyNDQzLC0xODYwMTY5NjExLC0yMTg3NzcxMzUsLTMzODIx
-MDYwMl19
+eyJoaXN0b3J5IjpbMTMwNDE4MDIyLC04MTcyNTA0MjgsMTkzND
+IzNzUzMiw4NTI0MjEyOTYsLTExNDMwNDY5NjQsLTMwMzExMDk1
+MywxODMzNzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3NjM3LDMxMz
+ExMjQ0MywtMTg2MDE2OTYxMSwtMjE4Nzc3MTM1LC0zMzgyMTA2
+MDJdfQ==
 -->
