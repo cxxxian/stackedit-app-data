@@ -18,7 +18,7 @@
 做好排除工作，`ScreenMaterial`的物体不参与`ShadowPass`渲染，若是`PostProcessPass`则不进行`RenderShadowMap`的操作（防止污染`ShadowMap`）
 
 ### 注意2：
-做好备份工作，先前的fbo，先前的viewport等参数，都需要做备份与hui'f
+做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk0Nzg2OTMwMiwtMzM4MjEwNjAyXX0=
+eyJoaXN0b3J5IjpbNDY5NDEzMjAyLC0zMzgyMTA2MDJdfQ==
 -->
