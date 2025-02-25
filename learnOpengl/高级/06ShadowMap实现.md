@@ -86,7 +86,7 @@ shader->setVector3("directionalLight.direction", dirLight->getDirection());
 
 ![输入图片说明](/imgs/2025-02-25/yhUUeos5oPbPZy3v.png)
 
-# ShadowMap
+# ShadowPass
 ## shader制作
 ### 1.创建shadow.vert/frag，渲染阴影贴图专用
 `shadow.vert`如下：
@@ -475,12 +475,18 @@ void main()
 	FragColor = vec4(color, 1.0);
 }
 ```
+
+# RenderPass
+## 1.加入新的phongShadow.vert/frag，加入是否位于阴影中的判断
+## 2.加入新的PhongShadowMaterial材质
+## 
+ 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc1MDQyMTI0MCwyMDQ0Njg1MzE4LDEyNj
-cxMjQ2MTUsLTY5ODc1OTAyNywtNzkwMTY3MTE0LC0xMzYyODc2
-MjgxLC0yMTQzODIyNDA0LC0xNjc2NjY1Njk2LC04NTg0MjUwNT
-MsMTU2MjQ4OTk1MSw0Mjc5ODMyMTAsLTgxNzI1MDQyOCwxOTM0
-MjM3NTMyLDg1MjQyMTI5NiwtMTE0MzA0Njk2NCwtMzAzMTEwOT
-UzLDE4MzM3ODU1NzksMTI5MTc4NTk5MSw3Nzk1Mjc2MzcsMzEz
-MTEyNDQzXX0=
+eyJoaXN0b3J5IjpbLTI2NTM3NzQ1LDE3NTA0MjEyNDAsMjA0ND
+Y4NTMxOCwxMjY3MTI0NjE1LC02OTg3NTkwMjcsLTc5MDE2NzEx
+NCwtMTM2Mjg3NjI4MSwtMjE0MzgyMjQwNCwtMTY3NjY2NTY5Ni
+wtODU4NDI1MDUzLDE1NjI0ODk5NTEsNDI3OTgzMjEwLC04MTcy
+NTA0MjgsMTkzNDIzNzUzMiw4NTI0MjEyOTYsLTExNDMwNDY5Nj
+QsLTMwMzExMDk1MywxODMzNzg1NTc5LDEyOTE3ODU5OTEsNzc5
+NTI3NjM3XX0=
 -->
