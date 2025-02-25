@@ -336,13 +336,28 @@ void Renderer::renderShadowMap(const std::vector<Mesh*>& meshes, DirectionalLigh
 ```cpp
 glm::mat4 getLightMatrix(DirectionalLight* dirLight);
 ```
+实现如下：
+```cpp
+glm::mat4 Renderer::getLightMatrix(DirectionalLight* dirLight)
+{
+	//1 viewMatrix
+	auto lightViewMatrix = glm::inverse(dirLight->getModelMatrix());
 
+	//2 projection（正交投影）
+	float size = 6.0f;
+	auto lightCamera = new OrthographicCamera(-size, size, -size, size, 0.1, 1000);
+	auto lightProjectionMatrix = lightCamera->getProjectionMatrix();
+	
+	//3 求lightMatrix并且返回
+	return lightProjectionMatrix * lightViewMatrix;
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQxMDU4OTM5LC02OTg3NTkwMjcsLTc5MD
-E2NzExNCwtMTM2Mjg3NjI4MSwtMjE0MzgyMjQwNCwtMTY3NjY2
-NTY5NiwtODU4NDI1MDUzLDE1NjI0ODk5NTEsNDI3OTgzMjEwLC
-04MTcyNTA0MjgsMTkzNDIzNzUzMiw4NTI0MjEyOTYsLTExNDMw
-NDY5NjQsLTMwMzExMDk1MywxODMzNzg1NTc5LDEyOTE3ODU5OT
-EsNzc5NTI3NjM3LDMxMzExMjQ0MywtMTg2MDE2OTYxMSwtMjE4
-Nzc3MTM1XX0=
+eyJoaXN0b3J5IjpbLTE5NDY1NTg4NDQsLTY5ODc1OTAyNywtNz
+kwMTY3MTE0LC0xMzYyODc2MjgxLC0yMTQzODIyNDA0LC0xNjc2
+NjY1Njk2LC04NTg0MjUwNTMsMTU2MjQ4OTk1MSw0Mjc5ODMyMT
+AsLTgxNzI1MDQyOCwxOTM0MjM3NTMyLDg1MjQyMTI5NiwtMTE0
+MzA0Njk2NCwtMzAzMTEwOTUzLDE4MzM3ODU1NzksMTI5MTc4NT
+k5MSw3Nzk1Mjc2MzcsMzEzMTEyNDQzLC0xODYwMTY5NjExLC0y
+MTg3NzcxMzVdfQ==
 -->
