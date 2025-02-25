@@ -288,10 +288,16 @@ void OnResize(int width, int height) {
 	GL_CALL(glViewport(0, 0, width, height));
 }
 ```
-但是这时候由于我们在
-
+但是这时候由于我们在这里：
+```cpp
+Renderer::Renderer() {
+	...
+	mShadowFBO = Framebuffer::createShadowFBO(2048, 2048);
+}
+```
+修改了`viewPort`的大小，并且也没有调整回去，肯定会出问题
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjE3ODgyNTEsLTE2NzY2NjU2OTYsLT
+eyJoaXN0b3J5IjpbLTIxNDM4MjI0MDQsLTE2NzY2NjU2OTYsLT
 g1ODQyNTA1MywxNTYyNDg5OTUxLDQyNzk4MzIxMCwtODE3MjUw
 NDI4LDE5MzQyMzc1MzIsODUyNDIxMjk2LC0xMTQzMDQ2OTY0LC
 0zMDMxMTA5NTMsMTgzMzc4NTU3OSwxMjkxNzg1OTkxLDc3OTUy
