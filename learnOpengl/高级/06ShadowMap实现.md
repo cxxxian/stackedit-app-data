@@ -331,12 +331,14 @@ void Renderer::renderShadowMap(const std::vector<Mesh*>& meshes, DirectionalLigh
 先搞定我们刚刚说的两个注意事项
 我们通过遍历`meshes`判断`material`可以确保现在的绘制不是`postProcessPass`的绘制
 然后通过`glGetIntegerv`记录需要保存的状态信息，然后我们最后再重新对`framebuffer`绑定和`viewport`赋值
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5MDE2NzExNCwtMTM2Mjg3NjI4MSwtMj
-E0MzgyMjQwNCwtMTY3NjY2NTY5NiwtODU4NDI1MDUzLDE1NjI0
-ODk5NTEsNDI3OTgzMjEwLC04MTcyNTA0MjgsMTkzNDIzNzUzMi
-w4NTI0MjEyOTYsLTExNDMwNDY5NjQsLTMwMzExMDk1MywxODMz
-Nzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3NjM3LDMxMzExMjQ0My
-wtMTg2MDE2OTYxMSwtMjE4Nzc3MTM1LC0zMzgyMTA2MDJdfQ==
 
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE3MDA0OTU0NzAsLTc5MDE2NzExNCwtMT
+M2Mjg3NjI4MSwtMjE0MzgyMjQwNCwtMTY3NjY2NTY5NiwtODU4
+NDI1MDUzLDE1NjI0ODk5NTEsNDI3OTgzMjEwLC04MTcyNTA0Mj
+gsMTkzNDIzNzUzMiw4NTI0MjEyOTYsLTExNDMwNDY5NjQsLTMw
+MzExMDk1MywxODMzNzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3Nj
+M3LDMxMzExMjQ0MywtMTg2MDE2OTYxMSwtMjE4Nzc3MTM1LC0z
+MzgyMTA2MDJdfQ==
 -->
