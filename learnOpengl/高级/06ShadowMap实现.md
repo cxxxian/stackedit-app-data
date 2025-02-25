@@ -8,6 +8,17 @@ public:
 	glm::vec3 mDirection{-1.0};
 ```
 但现在光源既然继承于`Object`，那它就可以进行平移旋转什么的，所以我们要为`Object`增加`getDirection`函数，因为此时的`mDirection`可能会因为平移旋转什么的发生变化
+
+开始修改代码：
+将`Light`继承于`Object`，这样所有的光源就都继承于`Object`了，因为`light.h`是所有光源的父类
+```cpp
+#pragma once
+#include "../core.h"
+#include "../object.h"
+class Light: public Object {
+	...
+};
+```
 ## 2.更改使用光源的代码们
 
 # ShadowMap
@@ -28,5 +39,6 @@ public:
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxODc3NzEzNSwtMzM4MjEwNjAyXX0=
+eyJoaXN0b3J5IjpbMTkxNjA3MDE4MywtMjE4Nzc3MTM1LC0zMz
+gyMTA2MDJdfQ==
 -->
