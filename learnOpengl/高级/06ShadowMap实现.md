@@ -479,6 +479,7 @@ void main()
 # RenderPass
 ## 1.加入新的phongShadow.vert/frag，加入是否位于阴影中的判断
 `phongShadow.vert`如下：
+
 ```glsl
 #version 460 core
 ...
@@ -498,8 +499,11 @@ void main()
 }
 ```
 `phongShadow.frag`如下：
-我们做一个`calculateShadow`方法用来判断`shadow`值是`0`还是`1`，分别对应
+我们做一个`calculateShadow`方法用来判断`shadow`值是`0`还是`1`，分别对应无阴影和有阴影
 ```glsl
+in vec4 lightSpaceClipCoord;
+uniform sampler2D shadowMapSampler;
+
 float calculateShadow(){
 	//1 找到当前像素在光源空间内的NDC坐标
 	vec3 lightNDC = lightSpaceClipCoord.xyz / lightSpaceClipCoord.z;
@@ -529,11 +533,11 @@ void main()
 ## 3.在Renderer中对新材质进行解析，并且更新uniform
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzg2OTE5MTg5LDEzNjc5OTI1OTEsMTE4MD
-A5Mzc4MSwxMjI3NjMwNTY3LDE3NTA0MjEyNDAsMjA0NDY4NTMx
-OCwxMjY3MTI0NjE1LC02OTg3NTkwMjcsLTc5MDE2NzExNCwtMT
-M2Mjg3NjI4MSwtMjE0MzgyMjQwNCwtMTY3NjY2NTY5NiwtODU4
-NDI1MDUzLDE1NjI0ODk5NTEsNDI3OTgzMjEwLC04MTcyNTA0Mj
-gsMTkzNDIzNzUzMiw4NTI0MjEyOTYsLTExNDMwNDY5NjQsLTMw
-MzExMDk1M119
+eyJoaXN0b3J5IjpbLTEwMjA0ODc5MzQsMTM2Nzk5MjU5MSwxMT
+gwMDkzNzgxLDEyMjc2MzA1NjcsMTc1MDQyMTI0MCwyMDQ0Njg1
+MzE4LDEyNjcxMjQ2MTUsLTY5ODc1OTAyNywtNzkwMTY3MTE0LC
+0xMzYyODc2MjgxLC0yMTQzODIyNDA0LC0xNjc2NjY1Njk2LC04
+NTg0MjUwNTMsMTU2MjQ4OTk1MSw0Mjc5ODMyMTAsLTgxNzI1MD
+QyOCwxOTM0MjM3NTMyLDg1MjQyMTI5NiwtMTE0MzA0Njk2NCwt
+MzAzMTEwOTUzXX0=
 -->
