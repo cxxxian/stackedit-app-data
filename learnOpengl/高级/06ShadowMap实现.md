@@ -478,16 +478,33 @@ void main()
 
 # RenderPass
 ## 1.加入新的phongShadow.vert/frag，加入是否位于阴影中的判断
+```glsl
+#version 460 core
+...
+out vec4 lightSpaceClipCoord;//光源空间内的剪裁空间坐标
+....
+uniform mat4 lightMatrix;//lightProjection * lightView
 
+void main()
+{
+	// 将输入的顶点位置，转化为齐次坐标（3维-4维）
+	vec4 transformPosition = vec4(aPos, 1.0);
+	//做一个中间变量TransformPosition，用于计算四位位置与modelMatrix相乘的中间结果
+	transformPosition = modelMatrix * transformPosition;
+	...
+
+	lightSpaceClipCoord = lightMatrix * transformPosition;
+}
+```
 ## 2.加入新的PhongShadowMaterial材质
 ## 3.在Renderer中对新材质进行解析，并且更新uniform
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4MDA5Mzc4MSwxMjI3NjMwNTY3LDE3NT
-A0MjEyNDAsMjA0NDY4NTMxOCwxMjY3MTI0NjE1LC02OTg3NTkw
-MjcsLTc5MDE2NzExNCwtMTM2Mjg3NjI4MSwtMjE0MzgyMjQwNC
-wtMTY3NjY2NTY5NiwtODU4NDI1MDUzLDE1NjI0ODk5NTEsNDI3
-OTgzMjEwLC04MTcyNTA0MjgsMTkzNDIzNzUzMiw4NTI0MjEyOT
-YsLTExNDMwNDY5NjQsLTMwMzExMDk1MywxODMzNzg1NTc5LDEy
-OTE3ODU5OTFdfQ==
+eyJoaXN0b3J5IjpbMjAzMzM4MDgzMSwxMTgwMDkzNzgxLDEyMj
+c2MzA1NjcsMTc1MDQyMTI0MCwyMDQ0Njg1MzE4LDEyNjcxMjQ2
+MTUsLTY5ODc1OTAyNywtNzkwMTY3MTE0LC0xMzYyODc2MjgxLC
+0yMTQzODIyNDA0LC0xNjc2NjY1Njk2LC04NTg0MjUwNTMsMTU2
+MjQ4OTk1MSw0Mjc5ODMyMTAsLTgxNzI1MDQyOCwxOTM0MjM3NT
+MyLDg1MjQyMTI5NiwtMTE0MzA0Njk2NCwtMzAzMTEwOTUzLDE4
+MzM3ODU1NzldfQ==
 -->
