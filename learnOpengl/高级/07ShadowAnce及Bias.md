@@ -22,10 +22,14 @@ float calculateShadow(){
 	float shadow = (selfDepth - bias) > closestDepth? 1.0:0.0;
 	return shadow;
 }
-
+```
+```cpp
+public:
+	...
+	float		mBias{ 0.0f };
 ```
 ## 2.在IMGUI中加入对bias的调节
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEyODQ4ODkyMCwtMTQxOTAyNTg5MCwtMT
-IyMzE4Nzk2MiwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTExMDAwNDI2NTcsLTE0MTkwMjU4OTAsLT
+EyMjMxODc5NjIsLTIwODg3NDY2MTJdfQ==
 -->
