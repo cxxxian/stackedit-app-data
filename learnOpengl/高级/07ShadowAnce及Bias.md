@@ -12,8 +12,9 @@
 所以`bias`不是一个固定值，可以暴露出来给美术人员调整，不同场景需要不同的`bias`
 
 # 代码实现
-## 1.sh
+## 1.shader中加入uniform变量bias，并且在阴影判断中使用
+## 2.在IMGUI中加入对bias的调节
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjg2OTYyNjAsLTEyMjMxODc5NjIsLT
+eyJoaXN0b3J5IjpbLTE0MTkwMjU4OTAsLTEyMjMxODc5NjIsLT
 IwODg3NDY2MTJdfQ==
 -->
