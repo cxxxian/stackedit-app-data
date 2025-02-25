@@ -30,6 +30,8 @@ public:
 ```cpp
 glm::vec3	mTargetDirection{ -1.0f };
 ```
+
+现在我们开始设计`geiDirection`方法
 ## 2.更改使用光源的代码们
 
 # ShadowMap
@@ -50,6 +52,6 @@ glm::vec3	mTargetDirection{ -1.0f };
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzEzMTEyNDQzLC0xODYwMTY5NjExLC0yMT
-g3NzcxMzUsLTMzODIxMDYwMl19
+eyJoaXN0b3J5IjpbMTQ3MTg1MzQ0OCwzMTMxMTI0NDMsLTE4Nj
+AxNjk2MTEsLTIxODc3NzEzNSwtMzM4MjEwNjAyXX0=
 -->
