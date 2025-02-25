@@ -388,12 +388,13 @@ void Renderer::renderShadowMap(const std::vector<Mesh*>& meshes, DirectionalLigh
 	glClear(GL_DEPTH_BUFFER_BIT);
 
 	auto lightMatrix = getLightMatrix(dirLight);
-	mDepthShader->begin();
+	mShadowShader->begin();
 	mShadowShader->setMatrix4x4("lightMatrix", lightMatrix);
 	for (int i = 0; i < meshes.size(); i++) {
 		auto mesh = meshes[i];
 		auto geometry = mesh->mGeometry;
 		glBindVertexArray(geometry->getVao());
+		mShadowShader->setMatrix4x4("modelMatrix", mesh->getModelMatrix());
 
 		//4 执行绘制命令
 		if (mesh->getType() == ObjectType::InstancedMesh) {
@@ -405,18 +406,20 @@ void Renderer::renderShadowMap(const std::vector<Mesh*>& meshes, DirectionalLigh
 		}
 
 	}
-	mDepthShader->end();
-	
+
+	mShadowShader->end();
+
+
 	glBindFramebuffer(GL_FRAMEBUFFER, preFbo);
 	glViewport(preViewport[0], preViewport[1], preViewport[2], preViewport[3]);
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2NzEyNDYxNSwtNjk4NzU5MDI3LC03OT
-AxNjcxMTQsLTEzNjI4NzYyODEsLTIxNDM4MjI0MDQsLTE2NzY2
-NjU2OTYsLTg1ODQyNTA1MywxNTYyNDg5OTUxLDQyNzk4MzIxMC
-wtODE3MjUwNDI4LDE5MzQyMzc1MzIsODUyNDIxMjk2LC0xMTQz
-MDQ2OTY0LC0zMDMxMTA5NTMsMTgzMzc4NTU3OSwxMjkxNzg1OT
-kxLDc3OTUyNzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2MTEsLTIx
-ODc3NzEzNV19
+eyJoaXN0b3J5IjpbLTEyMzY4MzQ0MzIsMTI2NzEyNDYxNSwtNj
+k4NzU5MDI3LC03OTAxNjcxMTQsLTEzNjI4NzYyODEsLTIxNDM4
+MjI0MDQsLTE2NzY2NjU2OTYsLTg1ODQyNTA1MywxNTYyNDg5OT
+UxLDQyNzk4MzIxMCwtODE3MjUwNDI4LDE5MzQyMzc1MzIsODUy
+NDIxMjk2LC0xMTQzMDQ2OTY0LC0zMDMxMTA5NTMsMTgzMzc4NT
+U3OSwxMjkxNzg1OTkxLDc3OTUyNzYzNywzMTMxMTI0NDMsLTE4
+NjAxNjk2MTFdfQ==
 -->
