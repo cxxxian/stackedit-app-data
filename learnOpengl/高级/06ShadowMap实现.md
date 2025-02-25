@@ -534,16 +534,24 @@ void main()
 并且在`material.h`加上`PhongShadowMaterial`枚举
 ## 3.在Renderer中对新材质进行解析，并且更新uniform
 ### 3.1加入新的shader对象
-``
+这里别搞混了
+`mShadowShader`是我们用来渲染`shadowMap`的`shader`
+`mPhongShadowShader`是我们用来根据`shadowMap`的结果进行真实的
+```cpp
+private:
+	...
+	Shader* mShadowShader{ nullptr };
+	Shader* mPhongShadowShader{ nullptr };
+```
 ### 3.2pickShader加入对新材质的兼容
 ### 3.3对新的材质进行uniform更新
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NDc0MzI0NTcsLTE5Nzg4OTQ1MTksMT
-M2Nzk5MjU5MSwxMTgwMDkzNzgxLDEyMjc2MzA1NjcsMTc1MDQy
-MTI0MCwyMDQ0Njg1MzE4LDEyNjcxMjQ2MTUsLTY5ODc1OTAyNy
-wtNzkwMTY3MTE0LC0xMzYyODc2MjgxLC0yMTQzODIyNDA0LC0x
-Njc2NjY1Njk2LC04NTg0MjUwNTMsMTU2MjQ4OTk1MSw0Mjc5OD
-MyMTAsLTgxNzI1MDQyOCwxOTM0MjM3NTMyLDg1MjQyMTI5Niwt
-MTE0MzA0Njk2NF19
+eyJoaXN0b3J5IjpbMjExMDIzMTU4MCwtMTk3ODg5NDUxOSwxMz
+Y3OTkyNTkxLDExODAwOTM3ODEsMTIyNzYzMDU2NywxNzUwNDIx
+MjQwLDIwNDQ2ODUzMTgsMTI2NzEyNDYxNSwtNjk4NzU5MDI3LC
+03OTAxNjcxMTQsLTEzNjI4NzYyODEsLTIxNDM4MjI0MDQsLTE2
+NzY2NjU2OTYsLTg1ODQyNTA1MywxNTYyNDg5OTUxLDQyNzk4Mz
+IxMCwtODE3MjUwNDI4LDE5MzQyMzc1MzIsODUyNDIxMjk2LC0x
+MTQzMDQ2OTY0XX0=
 -->
