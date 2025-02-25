@@ -210,8 +210,42 @@ Renderer::Renderer() {
 
 ## 渲染器修改
 在`Renderer`中加入`RenderShadowMap`函数，在真正渲染物体之前，先把`ShadowMap`做出来
+在`renderer.h`中设计一个函数用来渲染`shadowMap`
+```cpp
+void renderShadowMap(const std::vector<Mesh*> &meshes, DirectionalLight* dirLight, Framebuffer* fbo);
+```
+然后对应实现，但是在实现之前，我们先思考一下要在哪里调用
+```cpp
+void Renderer::render(
+	Scene* scene, 
+	Camera* camera,
+	DirectionalLight* dirLight,
+	AmbientLight* ambLight,
+	unsigned int fbo
+) {
+	...
 
+	std::sort(
+		mTransparentObjects.begin(), 
+		mTransparentObjects.end(),
+		[camera](const Mesh* a, const Mesh* b) {
+			...
+		}
+	);
 
+	//渲染shadowMap
+	renderShadowMap(mOpacityObjects, dirLight, mShadowFBO);
+
+	//3 渲染两个队列
+	for (int i = 0; i < mOpacityObjects.size(); i++) {
+		renderObject(mOpacityObjects[i], camera, dirLight, ambLight);
+	}
+
+	for (int i = 0; i < mTransparentObjects.size(); i++) {
+		renderObject(mTransparentObjects[i], camera, dirLight, ambLight);
+	}
+}
+```
 
 ### 注意1：
 做好排除工作，`ScreenMaterial`的物体不参与`ShadowPass`渲染，若是`PostProcessPass`则不进行`RenderShadowMap`的操作（防止污染`ShadowMap`）
@@ -219,7 +253,7 @@ Renderer::Renderer() {
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUxMDQyNjAwNywxNTYyNDg5OTUxLDQyNz
+eyJoaXN0b3J5IjpbLTQyMTc3NDUyOSwxNTYyNDg5OTUxLDQyNz
 k4MzIxMCwtODE3MjUwNDI4LDE5MzQyMzc1MzIsODUyNDIxMjk2
 LC0xMTQzMDQ2OTY0LC0zMDMxMTA5NTMsMTgzMzc4NTU3OSwxMj
 kxNzg1OTkxLDc3OTUyNzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2
