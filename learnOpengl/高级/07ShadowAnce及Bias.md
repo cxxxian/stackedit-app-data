@@ -13,10 +13,19 @@
 
 # 代码实现
 ## 1.shader中加入uniform变量bias，并且在阴影判断中使用
-```
+用`selfDepth - bias`，就可以把观察到的像素向光源推进`bias`个距离，消除子遮挡现象
+```glsl
+uniform float bias;
+...
+float calculateShadow(){
+	...
+	float shadow = (selfDepth - bias) > closestDepth? 1.0:0.0;
+	return shadow;
+}
+
 ```
 ## 2.在IMGUI中加入对bias的调节
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0OTc2NDgzMCwtMTQxOTAyNTg5MCwtMT
+eyJoaXN0b3J5IjpbMTEyODQ4ODkyMCwtMTQxOTAyNTg5MCwtMT
 IyMzE4Nzk2MiwtMjA4ODc0NjYxMl19
 -->
