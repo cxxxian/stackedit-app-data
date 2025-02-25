@@ -77,7 +77,10 @@ dirLight->mSpecularIntensity = 0.5f;
 ```
 然后就是取`render.cpp`中修改，我们传到`shader`用的都是`dirLight->mDirection`
 要改成我们自己设计的方法`getDirection()`
-
+举个例子：
+```cpp
+shader->setVector3("directionalLight.direction", dirLight->getDirection());
+```
 # ShadowMap
 ## shader制作
 ### 1.创建shadow.vert/frag，渲染阴影贴图专用
@@ -96,7 +99,7 @@ dirLight->mSpecularIntensity = 0.5f;
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjM3NjMyMjMsLTMwMzExMDk1MywxOD
+eyJoaXN0b3J5IjpbLTExNDMwNDY5NjQsLTMwMzExMDk1MywxOD
 MzNzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3NjM3LDMxMzExMjQ0
 MywtMTg2MDE2OTYxMSwtMjE4Nzc3MTM1LC0zMzgyMTA2MDJdfQ
 ==
