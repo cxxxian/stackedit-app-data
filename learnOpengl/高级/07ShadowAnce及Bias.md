@@ -40,7 +40,7 @@ case MaterialType::PhongShadowMaterial: {
 ```
 ## 2.在IMGUI中加入对bias的调节
 
-来到`mian.cpp`中，把`mat`提到外面作为全局变量（因为`imgui`拿到这个变量），而且地面和
+来到`mian.cpp`中，把`mat`提到外面作为全局变量（因为`imgui`拿到这个变量），而且地面和几何体都是用的`PhongShadowMaterial`，所以统一即可
 ```cpp
 PhongShadowMaterial* mat = nullptr;
 void prepare() {
@@ -68,6 +68,6 @@ void prepare() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1OTc2NTgyOSwtMTQxOTAyNTg5MCwtMT
-IyMzE4Nzk2MiwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTE2MTA1NjYwMzAsLTE0MTkwMjU4OTAsLT
+EyMjMxODc5NjIsLTIwODg3NDY2MTJdfQ==
 -->
