@@ -413,8 +413,10 @@ void Renderer::renderShadowMap(const std::vector<Mesh*>& meshes, DirectionalLigh
 	glViewport(preViewport[0], preViewport[1], preViewport[2], preViewport[3]);
 }
 ```
+
+![输入图片说明](/imgs/2025-02-25/jawyhBiIfoHTri1E.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTc0ODI0OTU3LDIwNDQ2ODUzMTgsMTI2Nz
+eyJoaXN0b3J5IjpbODMxMDYyODgxLDIwNDQ2ODUzMTgsMTI2Nz
 EyNDYxNSwtNjk4NzU5MDI3LC03OTAxNjcxMTQsLTEzNjI4NzYy
 ODEsLTIxNDM4MjI0MDQsLTE2NzY2NjU2OTYsLTg1ODQyNTA1My
 wxNTYyNDg5OTUxLDQyNzk4MzIxMCwtODE3MjUwNDI4LDE5MzQy
