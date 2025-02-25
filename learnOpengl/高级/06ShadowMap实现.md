@@ -163,8 +163,12 @@ Texture* Texture::createDepthAttachment(
 }
 ```
 ### 2.在FrameBuffer中增加创建ShadowFBO的创建函数
+`frameBuffer.h`中，我们不仅要创建函数`createShadowFBO`，并且还要创建一个空的构造函数，因为我们以前的构造函数用来创建了另一套`fbo`（颜色）
+```cpp
+static Framebuffer* createShadowFBO(unsigned int width, unsigned int height);
+Framebuffer();
 ```
-```
+然
 ### 3.在Renderer中创建ShadowFBO，用于做阴影ShadowMap的渲染目标（RenderTarget）
 
 ## 渲染器修改
@@ -175,9 +179,9 @@ Texture* Texture::createDepthAttachment(
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4MzYzOTE3MSwtODE3MjUwNDI4LDE5Mz
-QyMzc1MzIsODUyNDIxMjk2LC0xMTQzMDQ2OTY0LC0zMDMxMTA5
-NTMsMTgzMzc4NTU3OSwxMjkxNzg1OTkxLDc3OTUyNzYzNywzMT
-MxMTI0NDMsLTE4NjAxNjk2MTEsLTIxODc3NzEzNSwtMzM4MjEw
-NjAyXX0=
+eyJoaXN0b3J5IjpbLTE0NjkyMTI3MjUsLTgxNzI1MDQyOCwxOT
+M0MjM3NTMyLDg1MjQyMTI5NiwtMTE0MzA0Njk2NCwtMzAzMTEw
+OTUzLDE4MzM3ODU1NzksMTI5MTc4NTk5MSw3Nzk1Mjc2MzcsMz
+EzMTEyNDQzLC0xODYwMTY5NjExLC0yMTg3NzcxMzUsLTMzODIx
+MDYwMl19
 -->
