@@ -279,15 +279,15 @@ void Renderer::render(
 	...
 }
 ```
-所以我们一开始是想要先渲染`pass01`，然后`pass02`，但此时我们插入了一个渲染`shadowMap`的过程，此时就会有问题，`fbo`此时被绑定的就是`mShadowFBO`
+所以我们一开始是想要先渲染`pass01`，然后`pass02`，但此时我们插入了一个渲染`shadowMap`的过程，此时就会有问题，状态被改变了，那么后面两次的正式渲染就会绘制在`mShadowFBO`这个`fbo`上面
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzY2NjU2OTYsLTg1ODQyNTA1MywxNT
-YyNDg5OTUxLDQyNzk4MzIxMCwtODE3MjUwNDI4LDE5MzQyMzc1
-MzIsODUyNDIxMjk2LC0xMTQzMDQ2OTY0LC0zMDMxMTA5NTMsMT
-gzMzc4NTU3OSwxMjkxNzg1OTkxLDc3OTUyNzYzNywzMTMxMTI0
-NDMsLTE4NjAxNjk2MTEsLTIxODc3NzEzNSwtMzM4MjEwNjAyXX
-0=
+eyJoaXN0b3J5IjpbMTQzMDM1MDg5OCwtMTY3NjY2NTY5NiwtOD
+U4NDI1MDUzLDE1NjI0ODk5NTEsNDI3OTgzMjEwLC04MTcyNTA0
+MjgsMTkzNDIzNzUzMiw4NTI0MjEyOTYsLTExNDMwNDY5NjQsLT
+MwMzExMDk1MywxODMzNzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3
+NjM3LDMxMzExMjQ0MywtMTg2MDE2OTYxMSwtMjE4Nzc3MTM1LC
+0zMzgyMTA2MDJdfQ==
 -->
