@@ -1,3 +1,5 @@
+# 概念
+
 ![输入图片说明](/imgs/2025-02-25/bt5KiPgBKRaSixIZ.png)
 
 从光源相机视角：
@@ -8,7 +10,10 @@
 ![输入图片说明](/imgs/2025-02-25/ah8tjNTdtm30xfea.png)
 
 所以`bias`不是一个固定值，可以暴露出来给美术人员调整，不同场景需要不同的`bias`
+
+# 代码实现
+## 1.sh
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyMDM5MDMwNywtMTIyMzE4Nzk2MiwtMj
-A4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTEwNjg2OTYyNjAsLTEyMjMxODc5NjIsLT
+IwODg3NDY2MTJdfQ==
 -->
