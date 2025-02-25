@@ -68,7 +68,7 @@ void prepare() {
 }
 ```
 这里的`main.cpp`中的`dirLight->mDirection = glm::vec3(0.0f, -0.4f,-1.0f);`就已经在报错了，因为我们把这个变量已经删了
-所以我们现在要利用`rotate`函数进行更改方向（继承自Ob'j'e'c）
+所以我们现在要利用`rotate`函数进行更改方向（继承自`Object`），并且要注意这里的旋转是根据`dirLight`本地的坐标轴进行旋转的
 ```cpp
 dirLight = new DirectionalLight();
 dirLight->rotateY(45.0f);
@@ -93,7 +93,7 @@ dirLight->mSpecularIntensity = 0.5f;
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzQ2Mzg5NDgsMTgzMzc4NTU3OSwxMj
-kxNzg1OTkxLDc3OTUyNzYzNywzMTMxMTI0NDMsLTE4NjAxNjk2
-MTEsLTIxODc3NzEzNSwtMzM4MjEwNjAyXX0=
+eyJoaXN0b3J5IjpbLTMwMzExMDk1MywxODMzNzg1NTc5LDEyOT
+E3ODU5OTEsNzc5NTI3NjM3LDMxMzExMjQ0MywtMTg2MDE2OTYx
+MSwtMjE4Nzc3MTM1LC0zMzgyMTA2MDJdfQ==
 -->
