@@ -556,9 +556,52 @@ Shader* Renderer::pickShader(MaterialType type) {
 
 ```
 ### 3.3对新的材质进行uniform更新
- 
+ ```cpp
+ case MaterialType::PhongShadowMaterial: {
+	PhongShadowMaterial* phongShadowMat = (PhongShadowMaterial*)material;
+
+	//diffuse贴图帧更新
+	//将纹理采样器与纹理单元进行挂钩
+	shader->setInt("sampler", 0);
+	//将纹理与纹理单元进行挂钩
+	phongShadowMat->mDiffuse->bind();
+
+	shader->setInt("shadowMapSampler", 1);
+	mShadowFBO->mDepthAttachment->setUnit(1);
+	mShadowFBO->mDepthAttachment->bind();
+
+	shader->setMatrix4x4("lightMatrix", getLightMatrix(dirLight));
+
+	//mvp
+	shader->setMatrix4x4("modelMatrix", mesh->getModelMatrix());
+	shader->setMatrix4x4("viewMatrix", camera->getViewMatrix());
+	shader->setMatrix4x4("projectionMatrix", camera->getProjectionMatrix());
+
+	auto normalMatrix = glm::mat3(glm::transpose(glm::inverse(mesh->getModelMatrix())));
+	shader->setMatrix3x3("normalMatrix", normalMatrix);
+
+	//光源参数的uniform更新
+	//directionalLight 的更新
+	shader->setVector3("directionalLight.color", dirLight->mColor);
+	shader->setVector3("directionalLight.direction", dirLight->getDirection());
+	shader->setFloat("directionalLight.specularIntensity", dirLight->mSpecularIntensity);
+	shader->setFloat("directionalLight.intensity", dirLight->mIntensity);
+
+	shader->setFloat("shiness", phongShadowMat->mShiness);
+
+	shader->setVector3("ambientColor", ambLight->mColor);
+
+	//相机信息更新
+	shader->setVector3("cameraPosition", camera->mPosition);
+
+	//透明度
+	shader->setFloat("opacity", material->mOpacity);
+
+}
+	break;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg3MjQ1OTEzMywtMTk3ODg5NDUxOSwxMz
+eyJoaXN0b3J5IjpbMTU1MTI3NzQzOSwtMTk3ODg5NDUxOSwxMz
 Y3OTkyNTkxLDExODAwOTM3ODEsMTIyNzYzMDU2NywxNzUwNDIx
 MjQwLDIwNDQ2ODUzMTgsMTI2NzEyNDYxNSwtNjk4NzU5MDI3LC
 03OTAxNjcxMTQsLTEzNjI4NzYyODEsLTIxNDM4MjI0MDQsLTE2
