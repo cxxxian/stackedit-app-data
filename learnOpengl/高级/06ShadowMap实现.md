@@ -75,6 +75,7 @@ dirLight->rotateY(45.0f);
 dirLight->rotateX(-25.0f);
 dirLight->mSpecularIntensity = 0.5f;
 ```
+然后
 # ShadowMap
 ## shader制作
 ### 1.创建shadow.vert/frag，渲染阴影贴图专用
@@ -93,7 +94,8 @@ dirLight->mSpecularIntensity = 0.5f;
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwMzExMDk1MywxODMzNzg1NTc5LDEyOT
-E3ODU5OTEsNzc5NTI3NjM3LDMxMzExMjQ0MywtMTg2MDE2OTYx
-MSwtMjE4Nzc3MTM1LC0zMzgyMTA2MDJdfQ==
+eyJoaXN0b3J5IjpbLTIwNTM0ODYzNTUsLTMwMzExMDk1MywxOD
+MzNzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3NjM3LDMxMzExMjQ0
+MywtMTg2MDE2OTYxMSwtMjE4Nzc3MTM1LC0zMzgyMTA2MDJdfQ
+==
 -->
