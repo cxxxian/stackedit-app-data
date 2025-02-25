@@ -580,7 +580,7 @@ Shader* Renderer::pickShader(MaterialType type) {
 ```
 ## 4.修改场景当中物体的材质（兼容阴影）
 都修改`material`为`PhongShadowMaterial`，
-以及将
+以及用回颜色贴图`smat->mScreenTexture = fbo->mColorAttachment;`
 ```cpp
 void prepare() {
 	fbo = new Framebuffer(WIDTH, HEIGHT);
@@ -630,7 +630,7 @@ void prepare() {
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0OTY5NTI1MiwtMzk2MTgyMjU2LC0xOT
+eyJoaXN0b3J5IjpbMTUxOTMzMDA3MSwtMzk2MTgyMjU2LC0xOT
 c4ODk0NTE5LDEzNjc5OTI1OTEsMTE4MDA5Mzc4MSwxMjI3NjMw
 NTY3LDE3NTA0MjEyNDAsMjA0NDY4NTMxOCwxMjY3MTI0NjE1LC
 02OTg3NTkwMjcsLTc5MDE2NzExNCwtMTM2Mjg3NjI4MSwtMjE0
