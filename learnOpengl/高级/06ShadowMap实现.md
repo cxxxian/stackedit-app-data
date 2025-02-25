@@ -81,6 +81,7 @@ dirLight->mSpecularIntensity = 0.5f;
 ```cpp
 shader->setVector3("directionalLight.direction", dirLight->getDirection());
 ```
+quangaiw
 # ShadowMap
 ## shader制作
 ### 1.创建shadow.vert/frag，渲染阴影贴图专用
@@ -99,8 +100,8 @@ shader->setVector3("directionalLight.direction", dirLight->getDirection());
 ### 注意2：
 做好备份工作，先前的`fbo`，先前的`viewport`等参数，都需要做备份与恢复
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDMwNDY5NjQsLTMwMzExMDk1MywxOD
-MzNzg1NTc5LDEyOTE3ODU5OTEsNzc5NTI3NjM3LDMxMzExMjQ0
-MywtMTg2MDE2OTYxMSwtMjE4Nzc3MTM1LC0zMzgyMTA2MDJdfQ
-==
+eyJoaXN0b3J5IjpbMTA1MDg4NzM2MSwtMTE0MzA0Njk2NCwtMz
+AzMTEwOTUzLDE4MzM3ODU1NzksMTI5MTc4NTk5MSw3Nzk1Mjc2
+MzcsMzEzMTEyNDQzLC0xODYwMTY5NjExLC0yMTg3NzcxMzUsLT
+MzODIxMDYwMl19
 -->
