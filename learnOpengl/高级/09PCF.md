@@ -15,6 +15,7 @@
 
 # 实现
 去到`phongShadow.frag`创建一个计算`pcf`的方法
+然后在`main`方法中，原本调用的是`caculateShadow`，现在改为使用`pcf`
 ```glsl
 float pcf(vec3 normal, vec3 lightDir){
 	 //1 找到当前像素在光源空间内的NDC坐标
@@ -46,6 +47,6 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg5MjE4OTE0NSwxNjc2NTY1MjExLDc1ND
+eyJoaXN0b3J5IjpbMTc5OTg0MTAxOSwxNjc2NTY1MjExLDc1ND
 g4MDY3NV19
 -->
