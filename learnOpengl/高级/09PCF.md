@@ -140,12 +140,12 @@ float pcf(vec3 normal, vec3 lightDir){
 public:
 	...
 	float		mDiskTightness{ 1.0f };
-	float		mPcfRadius{ 1.0f };
+	float		mPcfRadius{ 0.0f };
 ```
 然后去`renderer.cpp`中的`renderObject`方法找对应`case`进行传输
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3NDk0OTI1MywtMTg1NzE1ODA0NSwtMT
-cyODYzODY2LDY1OTYwMTQ3OCwtMjEwNjQ1MTY5MSwtMTkyMjk2
-Njc0MiwxMTYwMzYxOTE1LDE2NzY1NjUyMTEsNzU0ODgwNjc1XX
-0=
+eyJoaXN0b3J5IjpbLTE1MzQ5NjI0OTIsMTI3NDk0OTI1MywtMT
+g1NzE1ODA0NSwtMTcyODYzODY2LDY1OTYwMTQ3OCwtMjEwNjQ1
+MTY5MSwtMTkyMjk2Njc0MiwxMTYwMzYxOTE1LDE2NzY1NjUyMT
+EsNzU0ODgwNjc1XX0=
 -->
