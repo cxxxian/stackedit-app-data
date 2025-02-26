@@ -6,10 +6,11 @@
 
 引入`texelSize`，这是是图素的概念，是以`uv`为单位的
 以前用的`pixel`叫像素
+这里使用的方法是`textureSize`，可以根据传入的
 其实就是九宫格的值分别进行判断，挡住的值为`1`，没挡住为`0`，最后把九个值累加起来求平均值
 
 ![输入图片说明](/imgs/2025-02-26/g3SNfD41FKDMGYP5.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4MjA5NTg3MywxNjc2NTY1MjExLDc1ND
+eyJoaXN0b3J5IjpbLTI3NjM2MDgxOCwxNjc2NTY1MjExLDc1ND
 g4MDY3NV19
 -->
