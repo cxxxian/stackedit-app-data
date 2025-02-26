@@ -46,10 +46,12 @@ void main()
 	...
 }
 ```
-已经有点过渡的感觉了
+已经有点过渡的感觉了，但是阴影会呈现出一种很规律的边界，很丑
 
 ![输入图片说明](/imgs/2025-02-26/9r0eedg2AfIPoLR3.png)
+
+##
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3MTE5NzE0OCwxNjc2NTY1MjExLDc1ND
+eyJoaXN0b3J5IjpbMTQ2MTM4OTY2NiwxNjc2NTY1MjExLDc1ND
 g4MDY3NV19
 -->
