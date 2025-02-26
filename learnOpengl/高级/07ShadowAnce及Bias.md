@@ -98,10 +98,33 @@ void renderIMGUI() {
 ![输入图片说明](/imgs/2025-02-26/WtkzxcZNSvqa6MdK.png)
 
 这里其实利用的是`1.0 - cos`，在数学上这个算法是错误的，但是这里我们这样即可，只需要表现出随着`sin`增大，`bias`也要跟着变大
-```
+实现如下：
+设计方法`getBias`，此处使用`max(bias * (1.0 - dot(normalN, lightDirN)), 0.0005)`，是为了防止`bias`为`0`的情况，最小为`0.0005`
+```glsl
+float getBias(vec3 normal, vec3 lightDir){
+	vec3 normalN = normalize(normal);
+	vec3 lightDirN = normalize(lightDir);
+
+	return max(bias * (1.0 - dot(normalN, lightDirN)), 0.0005);
+}
+
+
+float calculateShadow(vec3 normal, vec3 lightDir){
+	...
+	float shadow = (selfDepth - getBias(normal, lightDir)) > closestDepth? 1.0:0.0;
+	return shadow;
+}
+void main()
+{
+	...
+	float shadow = calculateShadow(normal, -directionalLight.direction);
+	
+	vec3 finalColor = result * (1.0 - shadow) + ambientColor;
+	FragColor = vec4(finalColor,alpha * opacity);
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0NzM1NDY5NywtMTA4NDg5MDI5OCwtOT
+eyJoaXN0b3J5IjpbMTg4NjEyMDYxMywtMTA4NDg5MDI5OCwtOT
 g5Mzg2MzEzLC0xNTQ2MDkwMDQ2LC0xNDE5MDI1ODkwLC0xMjIz
 MTg3OTYyLC0yMDg4NzQ2NjEyXX0=
 -->
