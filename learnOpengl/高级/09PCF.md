@@ -155,7 +155,7 @@ void renderIMGUI() {
 	...
 	ImGui::Begin("MaterialEditor");
 	ImGui::SliderFloat("Bias:", &mat->mBias, 0.0f, 0.01f, "%.4f");
-	ImGui::SliderFloat("Tightness:", &mat->mDiskTightness, 0.0f, 1.0f, "%.3f");
+	ImGui::SliderFloat("Tightness:", &mat->mDiskTightness, 0.0f, 5.0f, "%.3f");
 	ImGui::SliderFloat("PcfRadius:", &mat->mPcfRadius, 0.0f, 1.0f, "%.4f");
 	...
 	ImGui::End();
@@ -166,9 +166,13 @@ void renderIMGUI() {
 `pcfRadius`为`0`的话边缘就锐利，越大越模糊，因为这个与泊松盘的大小挂钩
 
 ![输入图片说明](/imgs/2025-02-26/4PsaQyqAKawgcQzC.png)
+
+![输入图片说明](/imgs/2025-02-26/jmyaKZP6ARFuYTbH.png)
+
+至于`Tightness`则是关于采样点的稀疏程度
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk0MDEwNzMxLDEyNzQ5NDkyNTMsLTE4NT
-cxNTgwNDUsLTE3Mjg2Mzg2Niw2NTk2MDE0NzgsLTIxMDY0NTE2
-OTEsLTE5MjI5NjY3NDIsMTE2MDM2MTkxNSwxNjc2NTY1MjExLD
-c1NDg4MDY3NV19
+eyJoaXN0b3J5IjpbMTMzMjg3OTYzNCwxMjc0OTQ5MjUzLC0xOD
+U3MTU4MDQ1LC0xNzI4NjM4NjYsNjU5NjAxNDc4LC0yMTA2NDUx
+NjkxLC0xOTIyOTY2NzQyLDExNjAzNjE5MTUsMTY3NjU2NTIxMS
+w3NTQ4ODA2NzVdfQ==
 -->
