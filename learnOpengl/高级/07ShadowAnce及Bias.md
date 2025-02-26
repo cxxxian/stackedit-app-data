@@ -100,6 +100,10 @@ void renderIMGUI() {
 这里其实利用的是`1.0 - cos`，在数学上这个算法是错误的，但是这里我们这样即可，只需要表现出随着`sin`增大，`bias`也要跟着变大
 实现如下：
 设计方法`getBias`，此处使用`max(bias * (1.0 - dot(normalN, lightDirN)), 0.0005)`，是为了防止`bias`为`0`的情况，最小为`0.0005`
+
+以及要注意在`main`中，需要传入的是`calculateShadow(normal, -directionalLight.direction)`，
+负方向的`directionalLight.direction`
+便于做叉乘计算
 ```glsl
 float getBias(vec3 normal, vec3 lightDir){
 	vec3 normalN = normalize(normal);
@@ -107,7 +111,6 @@ float getBias(vec3 normal, vec3 lightDir){
 
 	return max(bias * (1.0 - dot(normalN, lightDirN)), 0.0005);
 }
-
 
 float calculateShadow(vec3 normal, vec3 lightDir){
 	...
@@ -124,7 +127,7 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4NjEyMDYxMywtMTA4NDg5MDI5OCwtOT
-g5Mzg2MzEzLC0xNTQ2MDkwMDQ2LC0xNDE5MDI1ODkwLC0xMjIz
-MTg3OTYyLC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTE2NTE4OTM2ODUsLTEwODQ4OTAyOTgsLT
+k4OTM4NjMxMywtMTU0NjA5MDA0NiwtMTQxOTAyNTg5MCwtMTIy
+MzE4Nzk2MiwtMjA4ODc0NjYxMl19
 -->
