@@ -6,6 +6,8 @@
 以前我们是直接写死在`renderer.cpp`中，如下：
 `mShadowFBO = Framebuffer::createShadowFbo(2048, 2048);`
 大小为`2048*2048`，而我们以后肯定会有不同`shadowMap`大小的定制需求，所以子类需要强制进行重写方法
+
+![输入图片说明](/imgs/2025-02-26/DsjfF0lOja219sUp.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDY2NzU2NTE0XX0=
+eyJoaXN0b3J5IjpbOTI1MjI3NjM3LDQ2Njc1NjUxNF19
 -->
