@@ -62,8 +62,14 @@ void main()
 ![输入图片说明](/imgs/2025-02-26/7IanlScIbyqtuxbR.png)
 
 ![输入图片说明](/imgs/2025-02-26/NIG0x44D7duFjuqr.png)
+
+所以最终代码长这样，
+`rand_2to1`指的是传入一个二维`uv`，会返回一个随机数
+我们利用这个方法可以做出一个初始弧度
+
+![输入图片说明](/imgs/2025-02-26/acYq2vLVEPRdYAXo.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4NTMxNjAwNiwtMjEwNjQ1MTY5MSwtMT
+eyJoaXN0b3J5IjpbMTM4Nzg3NzQ2NywtMjEwNjQ1MTY5MSwtMT
 kyMjk2Njc0MiwxMTYwMzYxOTE1LDE2NzY1NjUyMTEsNzU0ODgw
 Njc1XX0=
 -->
