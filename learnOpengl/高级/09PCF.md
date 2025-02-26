@@ -108,9 +108,35 @@ void poissonDiskSamples(vec2 randomSeed){
 	}
 }
 ```
-然后同样是
+然后同样是`phongShadow.frag`，制作泊松采样版本的`pcf`计算
+这里有一个变量`pcfRadius`
+是用在这里的：`float closestDepth = texture(shadowMapSampler, uv + disk[i] * pcfRadius).r;`
+这里是因为`disk[i]`是属于`0~1`
+```glsl
+uniform float pcfRadius;
+float pcf(vec3 normal, vec3 lightDir){
+	 //1 找到当前像素在光源空间内的NDC坐标
+	vec3 lightNDC = lightSpaceClipCoord.xyz/lightSpaceClipCoord.w;
+
+	//2 找到当前像素在ShadowMap上的uv
+	vec3 projCoord = lightNDC * 0.5 + 0.5;
+	vec2 uv = projCoord.xy;
+	float depth = projCoord.z;
+
+	poissonDiskSamples(uv);
+	vec2 texelSize = 1.0 / textureSize(shadowMapSampler, 0);
+
+	//3 遍历poisson采样盘的每一个采样点，每一个的深度值都需要与当前像素在光源下的深度值进行比较
+	float sum = 0.0;
+	for(int i = 0; i < NUM_SAMPLES; i++){
+		float closestDepth = texture(shadowMapSampler, uv + disk[i] * pcfRadius).r;
+		sum += closestDepth < (depth - getBias(normal, lightDir))? 1.0:0.0;
+	}
+	return sum / float(NUM_SAMPLES); 
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ2NTQzOTkwLC0xNzI4NjM4NjYsNjU5Nj
-AxNDc4LC0yMTA2NDUxNjkxLC0xOTIyOTY2NzQyLDExNjAzNjE5
-MTUsMTY3NjU2NTIxMSw3NTQ4ODA2NzVdfQ==
+eyJoaXN0b3J5IjpbMTIzNTg4NDA0MCwtMTcyODYzODY2LDY1OT
+YwMTQ3OCwtMjEwNjQ1MTY5MSwtMTkyMjk2Njc0MiwxMTYwMzYx
+OTE1LDE2NzY1NjUyMTEsNzU0ODgwNjc1XX0=
 -->
