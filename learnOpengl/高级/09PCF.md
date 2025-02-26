@@ -176,10 +176,13 @@ void renderIMGUI() {
 
 ![输入图片说明](/imgs/2025-02-26/heRYOhoy4GpGE34f.png)
 
+`tightness`越大，采样点在泊松圆盘的圆心处越密集，那也就代表着越锐利，
+yue
+
 ![输入图片说明](/imgs/2025-02-26/2M25ZfwUUR1ecIPU.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1MzI0MTM3NSwxMjc0OTQ5MjUzLC0xOD
-U3MTU4MDQ1LC0xNzI4NjM4NjYsNjU5NjAxNDc4LC0yMTA2NDUx
-NjkxLC0xOTIyOTY2NzQyLDExNjAzNjE5MTUsMTY3NjU2NTIxMS
-w3NTQ4ODA2NzVdfQ==
+eyJoaXN0b3J5IjpbLTE2ODgxMTg1NTUsMTI3NDk0OTI1MywtMT
+g1NzE1ODA0NSwtMTcyODYzODY2LDY1OTYwMTQ3OCwtMjEwNjQ1
+MTY5MSwtMTkyMjk2Njc0MiwxMTYwMzYxOTE1LDE2NzY1NjUyMT
+EsNzU0ODgwNjc1XX0=
 -->
