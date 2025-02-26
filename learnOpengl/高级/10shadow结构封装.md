@@ -8,6 +8,9 @@
 大小为`2048*2048`，而我们以后肯定会有不同`shadowMap`大小的定制需求，所以子类需要强制进行重写方法
 
 ![输入图片说明](/imgs/2025-02-26/DsjfF0lOja219sUp.png)
+
+![输入图片说明](/imgs/2025-02-26/mfl7Gdi2fZhSKIvj.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTI1MjI3NjM3LDQ2Njc1NjUxNF19
+eyJoaXN0b3J5IjpbLTEwMzA2Mjc3NzYsOTI1MjI3NjM3LDQ2Nj
+c1NjUxNF19
 -->
