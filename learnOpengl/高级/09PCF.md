@@ -135,9 +135,16 @@ float pcf(vec3 normal, vec3 lightDir){
 	return sum / float(NUM_SAMPLES); 
 }
 ```
-这样
+这样`frag`部分就设计好了，我们去`phongShadowMaterial`做相应的变量
+```cpp
+public:
+	...
+	float		mDiskTightness{ 1.0f };
+	float		mPcfRadius{ 1.0f };
+```
+然后去`renderer.cpp`中的`renderObject`方法找对应`case`进行传输
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2MTY0MzM0NywtMTg1NzE1ODA0NSwtMT
+eyJoaXN0b3J5IjpbMTI3NDk0OTI1MywtMTg1NzE1ODA0NSwtMT
 cyODYzODY2LDY1OTYwMTQ3OCwtMjEwNjQ1MTY5MSwtMTkyMjk2
 Njc0MiwxMTYwMzYxOTE1LDE2NzY1NjUyMTEsNzU0ODgwNjc1XX
 0=
