@@ -52,7 +52,9 @@ void main()
 
 # 泊松采样
 引入泊松采样
+
+![输入图片说明](/imgs/2025-02-26/uJ1g4uBnD7ZrqXRB.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE2MDM2MTkxNSwxNjc2NTY1MjExLDc1ND
-g4MDY3NV19
+eyJoaXN0b3J5IjpbLTE4MDI1MzA4NzUsMTE2MDM2MTkxNSwxNj
+c2NTY1MjExLDc1NDg4MDY3NV19
 -->
