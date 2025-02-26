@@ -15,7 +15,7 @@
 ## 1.加入Shadow父类，并且派生DirectionalLightShadow子类
 `shadow`父类的设计
 `mCamera`是用来获得`projectionMatrix`（投影矩阵）的
-er
+而我们还需要光源的矩阵，这个设计在子类中
 ```cpp
 #pragma once
 #include "../../core.h"
@@ -38,6 +38,20 @@ public:
 	float	mDiskTightness{ 1.0f };
 };
 ```
+`directionalLightShadow`设计如下：
+```cpp
+#pragma once
+#include "shadow.h"
+
+class DirectionalLightShadow :public Shadow {
+public:
+	DirectionalLightShadow();
+	~DirectionalLightShadow();
+
+	void setRenderTargetSize(int width, int height)override;
+	glm::mat4 getLightMatrix(glm::mat4 lightModelMatrix);
+};
+```
 ### 1.1 注意setRenderTargetSize的实现
 ### 1.2 DirectionalLightShadow中，加入getLightMatrix函数
 ## 2.在Light父类中，加入Shadow类型对象，并且在平行光中对其进行初始化（其余暂时不管）	
@@ -45,6 +59,6 @@ public:
 ## 4.RenderObject中，更改ShadowMap以及其他系列参数的更新
 ## 5.IMGUI中修改对bias、pcfRadius、tightness、renderTarget大小的调整
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDUyOTMzNzEsLTE4MjgwMjAzMDEsLT
-EwMzA2Mjc3NzYsOTI1MjI3NjM3LDQ2Njc1NjUxNF19
+eyJoaXN0b3J5IjpbLTI1NzgxNDc5MiwtMTgyODAyMDMwMSwtMT
+AzMDYyNzc3Niw5MjUyMjc2MzcsNDY2NzU2NTE0XX0=
 -->
