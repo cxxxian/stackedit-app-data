@@ -71,8 +71,25 @@ void main()
 这里就体现了随机性，因为我们不同位置的`uv`值肯定是不同的，所以这样就可以做到随机产生初始弧度
 
 ![输入图片说明](/imgs/2025-02-26/acYq2vLVEPRdYAXo.png)
+
+# 实现
+在`phongShadow.frag`制作随机数生成的函数
+```glsl
+#define NUM_SAMPLES 32
+#define PI 3.141592653589793
+#define PI2 6.283185307179586
+
+float rand_2to1(vec2 uv ) { 
+  // 0 - 1
+	const highp float a = 12.9898, b = 78.233, c = 43758.5453;
+	highp float dt = dot( uv.xy, vec2( a,b ) ), sn = mod( dt, PI );
+	return fract(sin(sn) * c);
+}
+```
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjU5NjAxNDc4LC0yMTA2NDUxNjkxLC0xOT
-IyOTY2NzQyLDExNjAzNjE5MTUsMTY3NjU2NTIxMSw3NTQ4ODA2
-NzVdfQ==
+eyJoaXN0b3J5IjpbLTE3Mjg2Mzg2Niw2NTk2MDE0NzgsLTIxMD
+Y0NTE2OTEsLTE5MjI5NjY3NDIsMTE2MDM2MTkxNSwxNjc2NTY1
+MjExLDc1NDg4MDY3NV19
 -->
