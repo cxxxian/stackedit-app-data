@@ -98,8 +98,10 @@ void renderIMGUI() {
 ![输入图片说明](/imgs/2025-02-26/WtkzxcZNSvqa6MdK.png)
 
 这里其实利用的是`1.0 - cos`，在数学上这个算法是错误的，但是这里我们这样即可，只需要表现出随着`sin`增大，`bias`也要跟着变大
+```
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjQwNDAzNDAxLC0xMDg0ODkwMjk4LC05OD
-kzODYzMTMsLTE1NDYwOTAwNDYsLTE0MTkwMjU4OTAsLTEyMjMx
-ODc5NjIsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbMTM0NzM1NDY5NywtMTA4NDg5MDI5OCwtOT
+g5Mzg2MzEzLC0xNTQ2MDkwMDQ2LC0xNDE5MDI1ODkwLC0xMjIz
+MTg3OTYyLC0yMDg4NzQ2NjEyXX0=
 -->
