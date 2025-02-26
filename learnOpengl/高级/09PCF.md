@@ -66,10 +66,11 @@ void main()
 所以最终代码长这样，
 `rand_2to1`指的是传入一个二维`uv`，会返回一个随机数
 我们利用这个方法可以做出一个初始弧度
+这里就体现了随机性，因为我们不同位置的`uv`值肯定是不同的，所以这样就可以做到随机产生初始弧度
 
 ![输入图片说明](/imgs/2025-02-26/acYq2vLVEPRdYAXo.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4Nzg3NzQ2NywtMjEwNjQ1MTY5MSwtMT
-kyMjk2Njc0MiwxMTYwMzYxOTE1LDE2NzY1NjUyMTEsNzU0ODgw
-Njc1XX0=
+eyJoaXN0b3J5IjpbLTE2ODMyNjgyNTUsLTIxMDY0NTE2OTEsLT
+E5MjI5NjY3NDIsMTE2MDM2MTkxNSwxNjc2NTY1MjExLDc1NDg4
+MDY3NV19
 -->
