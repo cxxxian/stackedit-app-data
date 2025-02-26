@@ -88,7 +88,12 @@ void renderIMGUI() {
 当调到`0.01`时，发现阴影不对了，这是由于`bias`的值过大了，把原本该被遮挡的也认为是无阴影的
 
 ![输入图片说明](/imgs/2025-02-25/aQXWDrcd3HdaOTUC.png)
+
+# 自适应bias
+
+![输入图片说明](/imgs/2025-02-26/VudYjCyKTwhcSVur.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDYwOTAwNDYsLTE0MTkwMjU4OTAsLT
-EyMjMxODc5NjIsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbLTE3NDg1MzM4MTMsLTE1NDYwOTAwNDYsLT
+E0MTkwMjU4OTAsLTEyMjMxODc5NjIsLTIwODg3NDY2MTJdfQ==
+
 -->
