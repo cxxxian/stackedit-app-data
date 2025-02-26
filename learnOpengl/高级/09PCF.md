@@ -50,8 +50,9 @@ void main()
 
 ![输入图片说明](/imgs/2025-02-26/9r0eedg2AfIPoLR3.png)
 
-##
+# 泊松采样
+引入泊松采样
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ2MTM4OTY2NiwxNjc2NTY1MjExLDc1ND
+eyJoaXN0b3J5IjpbMTE2MDM2MTkxNSwxNjc2NTY1MjExLDc1ND
 g4MDY3NV19
 -->
