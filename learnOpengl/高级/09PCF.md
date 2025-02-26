@@ -170,10 +170,12 @@ void renderIMGUI() {
 ![输入图片说明](/imgs/2025-02-26/jmyaKZP6ARFuYTbH.png)
 
 至于`Tightness`则是关于采样点的稀疏程度
-`0`的话就是越靠近外面越密集，`1`的话就是越靠近圆心越密集
+`0`的话就是越靠近外面越密集，`5`的话就是越靠近圆心越密集
+
+![输入图片说明](/imgs/2025-02-26/NIG0x44D7duFjuqr.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMyNTM0NDUxMCwxMjc0OTQ5MjUzLC0xOD
-U3MTU4MDQ1LC0xNzI4NjM4NjYsNjU5NjAxNDc4LC0yMTA2NDUx
-NjkxLC0xOTIyOTY2NzQyLDExNjAzNjE5MTUsMTY3NjU2NTIxMS
-w3NTQ4ODA2NzVdfQ==
+eyJoaXN0b3J5IjpbLTE5MDkzNTY2NjAsMTI3NDk0OTI1MywtMT
+g1NzE1ODA0NSwtMTcyODYzODY2LDY1OTYwMTQ3OCwtMjEwNjQ1
+MTY5MSwtMTkyMjk2Njc0MiwxMTYwMzYxOTE1LDE2NzY1NjUyMT
+EsNzU0ODgwNjc1XX0=
 -->
