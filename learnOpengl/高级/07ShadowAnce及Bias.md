@@ -92,8 +92,9 @@ void renderIMGUI() {
 # 自适应bias
 
 ![输入图片说明](/imgs/2025-02-26/VudYjCyKTwhcSVur.png)
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDg1MzM4MTMsLTE1NDYwOTAwNDYsLT
-E0MTkwMjU4OTAsLTEyMjMxODc5NjIsLTIwODg3NDY2MTJdfQ==
 
+![输入图片说明](/imgs/2025-02-26/WtkzxcZNSvqa6MdK.png)
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTk4OTM4NjMxMywtMTU0NjA5MDA0NiwtMT
+QxOTAyNTg5MCwtMTIyMzE4Nzk2MiwtMjA4ODc0NjYxMl19
 -->
