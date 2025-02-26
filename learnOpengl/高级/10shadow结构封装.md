@@ -14,6 +14,8 @@
 # 实现
 ## 1.加入Shadow父类，并且派生DirectionalLightShadow子类
 `shadow`父类的设计
+`mCamera`是用来获得`projectionMatrix`（投影矩阵）的
+er
 ```cpp
 #pragma once
 #include "../../core.h"
@@ -43,6 +45,6 @@ public:
 ## 4.RenderObject中，更改ShadowMap以及其他系列参数的更新
 ## 5.IMGUI中修改对bias、pcfRadius、tightness、renderTarget大小的调整
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzUwOTY0MjkxLC0xODI4MDIwMzAxLC0xMD
-MwNjI3Nzc2LDkyNTIyNzYzNyw0NjY3NTY1MTRdfQ==
+eyJoaXN0b3J5IjpbLTEyMDUyOTMzNzEsLTE4MjgwMjAzMDEsLT
+EwMzA2Mjc3NzYsOTI1MjI3NjM3LDQ2Njc1NjUxNF19
 -->
