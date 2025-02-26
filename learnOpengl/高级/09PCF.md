@@ -61,6 +61,8 @@ void main()
 
 ![输入图片说明](/imgs/2025-02-26/7IanlScIbyqtuxbR.png)
 
+引入`tightness`，可以对分布的均匀程度做出扰动
+
 ![输入图片说明](/imgs/2025-02-26/NIG0x44D7duFjuqr.png)
 
 所以最终代码长这样，
@@ -70,7 +72,7 @@ void main()
 
 ![输入图片说明](/imgs/2025-02-26/acYq2vLVEPRdYAXo.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODMyNjgyNTUsLTIxMDY0NTE2OTEsLT
-E5MjI5NjY3NDIsMTE2MDM2MTkxNSwxNjc2NTY1MjExLDc1NDg4
-MDY3NV19
+eyJoaXN0b3J5IjpbNjU5NjAxNDc4LC0yMTA2NDUxNjkxLC0xOT
+IyOTY2NzQyLDExNjAzNjE5MTUsMTY3NjU2NTIxMSw3NTQ4ODA2
+NzVdfQ==
 -->
