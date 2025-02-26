@@ -111,7 +111,7 @@ void poissonDiskSamples(vec2 randomSeed){
 然后同样是`phongShadow.frag`，制作泊松采样版本的`pcf`计算
 这里有一个变量`pcfRadius`
 是用在这里的：`float closestDepth = texture(shadowMapSampler, uv + disk[i] * pcfRadius).r;`
-这里是因为`disk[i]`是属于`0~1`的，而我们原始的`uv + disk[i]`那就有可能会超出`0~1`，此处乘上`pcfRadius`就相当于是对泊松采样的圆做一个半径限制，
+这里是因为`disk[i]`是属于`0~1`的，而我们原始的`uv + disk[i]`那就有可能会超出`0~1`，此处乘上`pcfRadius`就相当于是对泊松采样的圆做一个半径限制，我们在外面可以动态进行调节
 ```glsl
 uniform float pcfRadius;
 float pcf(vec3 normal, vec3 lightDir){
@@ -136,7 +136,7 @@ float pcf(vec3 normal, vec3 lightDir){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcyNjY5ODYzNSwtMTcyODYzODY2LDY1OT
-YwMTQ3OCwtMjEwNjQ1MTY5MSwtMTkyMjk2Njc0MiwxMTYwMzYx
-OTE1LDE2NzY1NjUyMTEsNzU0ODgwNjc1XX0=
+eyJoaXN0b3J5IjpbLTE4NTcxNTgwNDUsLTE3Mjg2Mzg2Niw2NT
+k2MDE0NzgsLTIxMDY0NTE2OTEsLTE5MjI5NjY3NDIsMTE2MDM2
+MTkxNSwxNjc2NTY1MjExLDc1NDg4MDY3NV19
 -->
