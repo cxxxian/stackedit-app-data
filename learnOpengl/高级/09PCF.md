@@ -73,7 +73,7 @@ void main()
 ![输入图片说明](/imgs/2025-02-26/acYq2vLVEPRdYAXo.png)
 
 # 实现
-在`phongShadow.frag`制作随机数生成的函数
+在`phongShadow.frag`制作随机数生成的函数，以及生成泊松采样的点
 ```glsl
 #define NUM_SAMPLES 32
 #define PI 3.141592653589793
@@ -85,11 +85,32 @@ float rand_2to1(vec2 uv ) {
 	highp float dt = dot( uv.xy, vec2( a,b ) ), sn = mod( dt, PI );
 	return fract(sin(sn) * c);
 }
+uniform float diskTightness;
+vec2 disk[NUM_SAMPLES];
+void poissonDiskSamples(vec2 randomSeed){
+	//1 初始弧度
+	float angle = rand_2to1(randomSeed) * PI2;
+
+	//2 初始半径
+	float radius = 1.0 / float(NUM_SAMPLES);
+
+	//3 弧度步长
+	float angleStep = 3.883222077450933;
+
+	//4 半径步长
+	float radiusStep = radius;
+
+	//5 循环生成
+	for(int i = 0; i < NUM_SAMPLES; i++){
+		disk[i] = vec2(cos(angle), sin(angle)) * pow(radius, diskTightness);
+		radius += radiusStep;
+		angle += angleStep;
+	}
+}
 ```
-
-
+然后同样是
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Mjg2Mzg2Niw2NTk2MDE0NzgsLTIxMD
-Y0NTE2OTEsLTE5MjI5NjY3NDIsMTE2MDM2MTkxNSwxNjc2NTY1
-MjExLDc1NDg4MDY3NV19
+eyJoaXN0b3J5IjpbMTQ2NTQzOTkwLC0xNzI4NjM4NjYsNjU5Nj
+AxNDc4LC0yMTA2NDUxNjkxLC0xOTIyOTY2NzQyLDExNjAzNjE5
+MTUsMTY3NjU2NTIxMSw3NTQ4ODA2NzVdfQ==
 -->
