@@ -143,9 +143,28 @@ public:
 	float		mPcfRadius{ 0.0f };
 ```
 然后去`renderer.cpp`中的`renderObject`方法找对应`case`进行传输
+```cpp
+//tightness
+shader->setFloat("diskTightness", phongShadowMat->mDiskTightness);
+//pcfRadius
+shader->setFloat("pcfRadius", phongShadowMat->mPcfRadius);
+```
+最后到`mian.cpp`中，加入`imgui`进行调节
+```cpp
+void renderIMGUI() {
+	...
+	ImGui::Begin("MaterialEditor");
+	ImGui::SliderFloat("Bias:", &mat->mBias, 0.0f, 0.01f, "%.4f");
+	ImGui::SliderFloat("Tightness:", &mat->mDiskTightness, 0.0f, 1.0f, "%.3f");
+	ImGui::SliderFloat("PcfRadius:", &mat->mPcfRadius, 0.0f, 1.0f, "%.4f");
+	...
+	ImGui::End();
+	...
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzQ5NjI0OTIsMTI3NDk0OTI1MywtMT
-g1NzE1ODA0NSwtMTcyODYzODY2LDY1OTYwMTQ3OCwtMjEwNjQ1
-MTY5MSwtMTkyMjk2Njc0MiwxMTYwMzYxOTE1LDE2NzY1NjUyMT
-EsNzU0ODgwNjc1XX0=
+eyJoaXN0b3J5IjpbLTY1NzI4NTM3OSwxMjc0OTQ5MjUzLC0xOD
+U3MTU4MDQ1LC0xNzI4NjM4NjYsNjU5NjAxNDc4LC0yMTA2NDUx
+NjkxLC0xOTIyOTY2NzQyLDExNjAzNjE5MTUsMTY3NjU2NTIxMS
+w3NTQ4ODA2NzVdfQ==
 -->
