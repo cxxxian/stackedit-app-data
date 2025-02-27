@@ -116,6 +116,13 @@ int main() {
 `uniform float lightSize;`
 `uniform float frustum;`
 `uniform float nearPlane;`
+
+`lightSize`我们可以设计为外部可调控，所以在`shadow.h`中设计参数
+```cpp
+public:
+	...
+	float	mLightSize{ 0.04 };
+```
 ```glsl
 //PCSS相关参数
 uniform float lightSize;
@@ -124,8 +131,8 @@ uniform float nearPlane;
 ```
 ## 3 将计算的dBlocker绘制在屏幕上进行观察
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjUxMzU3NzQsLTE5Njc0Mjc2MzgsLT
-c3Njg3NDA2OSwtMjAxNzM3NTcyNywtMTI5Mzc1NjA4LC0yNjE5
-OTI2MjQsMTQyMTYyMzI4OCw2NDk0OTA1MzYsLTUxMTA0MDYzNy
-wxMTk0MTE2NDIxLDY4NTA4NjczOCwtMjg0NjY0OTE5XX0=
+eyJoaXN0b3J5IjpbMTY5NzYxMjc1NiwtMTk2NzQyNzYzOCwtNz
+c2ODc0MDY5LC0yMDE3Mzc1NzI3LC0xMjkzNzU2MDgsLTI2MTk5
+MjYyNCwxNDIxNjIzMjg4LDY0OTQ5MDUzNiwtNTExMDQwNjM3LD
+ExOTQxMTY0MjEsNjg1MDg2NzM4LC0yODQ2NjQ5MTldfQ==
 -->
