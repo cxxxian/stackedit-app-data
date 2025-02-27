@@ -123,6 +123,7 @@ public:
 	...
 	float	mLightSize{ 0.04 };
 ```
+还记得我们计算`dBlocker`需要用到的参数，要一个在光源坐标系下的位置，用来判断深度，这个无需乘上projectionMatrix
 然后在`phongShadow.frag`设计三个参数
 ```glsl
 //PCSS相关参数
@@ -132,8 +133,9 @@ uniform float nearPlane;
 ```
 ## 3 将计算的dBlocker绘制在屏幕上进行观察
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1Nzc3MzY3OCwtMTk2NzQyNzYzOCwtNz
-c2ODc0MDY5LC0yMDE3Mzc1NzI3LC0xMjkzNzU2MDgsLTI2MTk5
-MjYyNCwxNDIxNjIzMjg4LDY0OTQ5MDUzNiwtNTExMDQwNjM3LD
-ExOTQxMTY0MjEsNjg1MDg2NzM4LC0yODQ2NjQ5MTldfQ==
+eyJoaXN0b3J5IjpbLTgyNDg4NDA4NSwtMzU3NzczNjc4LC0xOT
+Y3NDI3NjM4LC03NzY4NzQwNjksLTIwMTczNzU3MjcsLTEyOTM3
+NTYwOCwtMjYxOTkyNjI0LDE0MjE2MjMyODgsNjQ5NDkwNTM2LC
+01MTEwNDA2MzcsMTE5NDExNjQyMSw2ODUwODY3MzgsLTI4NDY2
+NDkxOV19
 -->
