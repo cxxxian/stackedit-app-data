@@ -140,7 +140,7 @@ void main()
 }
 ```
 然后在`phongShadow.frag`接收`vert`的`lightSpacePosition`，
-并设计三个参数
+并设计三个参数，以及实现
 ```glsl
 in vec3 lightSpacePosition;
 
@@ -148,12 +148,34 @@ in vec3 lightSpacePosition;
 uniform float lightSize;
 uniform float frustum;
 uniform float nearPlane;
+
+float findBlocker(vec3 lightSpacePosition, vec2 shadowUV, float depthReceiver, vec3 normal, vec3 lightDir){
+
+	poissonDiskSamples(shadowUV);
+
+	//根据相似三角形得到的在shadowMap上对应的光源长度，此时还不是以uv为单位
+	float searchRadius = (-lightSpacePosition.z - nearPlane) / (-lightSpacePosition.z) * lightSize;
+	//从光源坐标系转uv
+	float searchRadiusUV = searchRadius / frustum;
+
+	float blockerNum = 0.0;
+	float blockerSumDepth = 0.0;
+	for(int i = 0; i < NUM_SAMPLES; i++){
+		float sampleDepth = texture(shadowMapSampler, shadowUV + disk[i] * searchRadiusUV).r;
+		if(depthReceiver - getBias(normal, lightDir) > sampleDepth){
+			blockerNum += 1.0;
+			blockerSumDepth += sampleDepth;
+		}
+	}
+
+	return blockerNum != 0.0? blockerSumDepth / blockerNum : -1;
+}
 ```
 ## 3 将计算的dBlocker绘制在屏幕上进行观察
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Njc2MzE4MjEsLTM1Nzc3MzY3OCwtMT
-k2NzQyNzYzOCwtNzc2ODc0MDY5LC0yMDE3Mzc1NzI3LC0xMjkz
-NzU2MDgsLTI2MTk5MjYyNCwxNDIxNjIzMjg4LDY0OTQ5MDUzNi
-wtNTExMDQwNjM3LDExOTQxMTY0MjEsNjg1MDg2NzM4LC0yODQ2
-NjQ5MTldfQ==
+eyJoaXN0b3J5IjpbOTU0MDY5MjA4LC0xNzY3NjMxODIxLC0zNT
+c3NzM2NzgsLTE5Njc0Mjc2MzgsLTc3Njg3NDA2OSwtMjAxNzM3
+NTcyNywtMTI5Mzc1NjA4LC0yNjE5OTI2MjQsMTQyMTYyMzI4OC
+w2NDk0OTA1MzYsLTUxMTA0MDYzNywxMTk0MTE2NDIxLDY4NTA4
+NjczOCwtMjg0NjY0OTE5XX0=
 -->
