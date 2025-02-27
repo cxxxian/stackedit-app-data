@@ -224,12 +224,13 @@ void main()
 如果`blockerNum = 0`，那意思就是该点周围没有遮挡物，所以返回了一个`-1`的值，
 如果有遮挡物才需要算出平均深度`blockerSumDepth / blockerNum`
 
-所以我们在main方法
+所以我们在`main`方法中调用方法，当`dBlocker < 0.0`输出红色，
+不然则将`dBlocker`作为颜色输出，`rgb`都是`dBlocker`所以输出就是灰色的
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg3NjczMzI3MCwtMTA0MjA1MDgxMSwtNT
-k3NDQwMjExLDg0NDAxMzQxMywxNTc3NzU4NDczLC0xNzY3NjMx
-ODIxLC0zNTc3NzM2NzgsLTE5Njc0Mjc2MzgsLTc3Njg3NDA2OS
-wtMjAxNzM3NTcyNywtMTI5Mzc1NjA4LC0yNjE5OTI2MjQsMTQy
-MTYyMzI4OCw2NDk0OTA1MzYsLTUxMTA0MDYzNywxMTk0MTE2ND
-IxLDY4NTA4NjczOCwtMjg0NjY0OTE5XX0=
+eyJoaXN0b3J5IjpbNDk4MDI5OTA4LC0xMDQyMDUwODExLC01OT
+c0NDAyMTEsODQ0MDEzNDEzLDE1Nzc3NTg0NzMsLTE3Njc2MzE4
+MjEsLTM1Nzc3MzY3OCwtMTk2NzQyNzYzOCwtNzc2ODc0MDY5LC
+0yMDE3Mzc1NzI3LC0xMjkzNzU2MDgsLTI2MTk5MjYyNCwxNDIx
+NjIzMjg4LDY0OTQ5MDUzNiwtNTExMDQwNjM3LDExOTQxMTY0Mj
+EsNjg1MDg2NzM4LC0yODQ2NjQ5MTldfQ==
 -->
