@@ -29,8 +29,13 @@
 
 这里求得两个参数，`blockerNum`是采样点中有几个点是遮挡物的范围，`blockerSumDepth`是几个被遮挡的总深度值，
 通过这两个参数就可以求得遮挡物的平均深度值
+
+![输入图片说明](/imgs/2025-02-27/F4PYwiWOv6he3T7W.png)
+
+# 实现
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTM3NTYwOCwtMjYxOTkyNjI0LDE0Mj
-E2MjMyODgsNjQ5NDkwNTM2LC01MTEwNDA2MzcsMTE5NDExNjQy
-MSw2ODUwODY3MzgsLTI4NDY2NDkxOV19
+eyJoaXN0b3J5IjpbLTIwMTczNzU3MjcsLTEyOTM3NTYwOCwtMj
+YxOTkyNjI0LDE0MjE2MjMyODgsNjQ5NDkwNTM2LC01MTEwNDA2
+MzcsMTE5NDExNjQyMSw2ODUwODY3MzgsLTI4NDY2NDkxOV19
 -->
