@@ -116,7 +116,7 @@ int main() {
 `uniform float lightSize;`
 `uniform float frustum;`
 `uniform float nearPlane;`
-```g'l's
+```glsl
 //PCSS相关参数
 uniform float lightSize;
 uniform float frustum;
@@ -124,8 +124,8 @@ uniform float nearPlane;
 ```
 ## 3 将计算的dBlocker绘制在屏幕上进行观察
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODM1ODcyNjQ2LC0xOTY3NDI3NjM4LC03Nz
-Y4NzQwNjksLTIwMTczNzU3MjcsLTEyOTM3NTYwOCwtMjYxOTky
-NjI0LDE0MjE2MjMyODgsNjQ5NDkwNTM2LC01MTEwNDA2MzcsMT
-E5NDExNjQyMSw2ODUwODY3MzgsLTI4NDY2NDkxOV19
+eyJoaXN0b3J5IjpbLTE1MjUxMzU3NzQsLTE5Njc0Mjc2MzgsLT
+c3Njg3NDA2OSwtMjAxNzM3NTcyNywtMTI5Mzc1NjA4LC0yNjE5
+OTI2MjQsMTQyMTYyMzI4OCw2NDk0OTA1MzYsLTUxMTA0MDYzNy
+wxMTk0MTE2NDIxLDY4NTA4NjczOCwtMjg0NjY0OTE5XX0=
 -->
