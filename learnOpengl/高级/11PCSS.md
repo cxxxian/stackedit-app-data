@@ -34,7 +34,7 @@
 
 # 实现
 ## 准备工作：搭建实验环境，注意参数调节（尤其是光源位置，方向以及光源视景体大小）
-一个平面和一个大平面
+一个平面和一个大平面，设计一个函数`transform()`循环调用，使小平面可以反复上下运动
 ```cpp
 void prepare() {
 	fbo = new Framebuffer(WIDTH, HEIGHT);
@@ -70,6 +70,36 @@ void prepare() {
 	ambLight->mColor = glm::vec3(0.1f);
 
 }
+
+bool goUp = true;
+void transform() {
+	auto pos = upPlane->getPosition();
+	if (goUp) {
+		pos.y += 0.05;
+		upPlane->setPosition(pos);
+		if (pos.y > 10) {
+			goUp = false;
+		}
+	}
+	else {
+		pos.y -= 0.05;
+		upPlane->setPosition(pos);
+		if (pos.y < 0.2) {
+			goUp = true;
+		}
+	}
+}
+int main() {
+	...
+	prepare();
+	initIMGUI();
+	while (glApp->update()) {
+		cameraControl->update();
+		transform();
+		...
+	}
+	...
+}
 ```
 ## 1 加入dBlocker所需的uniform参数
 `lightSize`：光源尺寸（可调整）
@@ -85,8 +115,8 @@ void prepare() {
 
 ## 3 将计算的dBlocker绘制在屏幕上进行观察
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTUzNDcwMDEsLTc3Njg3NDA2OSwtMj
-AxNzM3NTcyNywtMTI5Mzc1NjA4LC0yNjE5OTI2MjQsMTQyMTYy
-MzI4OCw2NDk0OTA1MzYsLTUxMTA0MDYzNywxMTk0MTE2NDIxLD
-Y4NTA4NjczOCwtMjg0NjY0OTE5XX0=
+eyJoaXN0b3J5IjpbMTkzNjE5MTgwMywtNzc2ODc0MDY5LC0yMD
+E3Mzc1NzI3LC0xMjkzNzU2MDgsLTI2MTk5MjYyNCwxNDIxNjIz
+Mjg4LDY0OTQ5MDUzNiwtNTExMDQwNjM3LDExOTQxMTY0MjEsNj
+g1MDg2NzM4LC0yODQ2NjQ5MTldfQ==
 -->
