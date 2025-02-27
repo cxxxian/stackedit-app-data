@@ -227,13 +227,14 @@ void main()
 所以我们在`main`方法中调用方法，当`dBlocker < 0.0`输出红色，
 不然则将`dBlocker`作为颜色输出，`rgb`都是`dBlocker`所以输出就是灰色的
 
-
+所以我们可以观察到，越远，那就是`dBlocker`越接近`1`，所以越黑i，越近的话那就越白
+其他不会被遮挡到的地方就是红色的
 
 ![输入图片说明](/imgs/2025-02-27/5GlR5eHp6JnSvA8A.png)
 
 ![输入图片说明](/imgs/2025-02-27/ZMEEyVArpsehpxga.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxNzgzMTUwOCwtMTA0MjA1MDgxMSwtNT
+eyJoaXN0b3J5IjpbMjEzNDQ2MjYwMywtMTA0MjA1MDgxMSwtNT
 k3NDQwMjExLDg0NDAxMzQxMywxNTc3NzU4NDczLC0xNzY3NjMx
 ODIxLC0zNTc3NzM2NzgsLTE5Njc0Mjc2MzgsLTc3Njg3NDA2OS
 wtMjAxNzM3NTcyNywtMTI5Mzc1NjA4LC0yNjE5OTI2MjQsMTQy
