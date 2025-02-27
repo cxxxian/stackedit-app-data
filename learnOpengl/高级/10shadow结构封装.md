@@ -91,7 +91,7 @@ glm::mat4 DirectionalLightShadow::getLightMatrix(glm::mat4 lightModelMatrix)
 }
 ```
 ## 2.在Light父类中，加入Shadow类型对象，并且在平行光中对其进行初始化（其余暂时不管）	
-在light.h
+在`light.h`中初始化一个`mShadow`，在平行光中对其进行初始化
 ```cpp
 #pragma once
 #include "../core.h"
@@ -115,7 +115,7 @@ public:
 ## 4.RenderObject中，更改ShadowMap以及其他系列参数的更新
 ## 5.IMGUI中修改对bias、pcfRadius、tightness、renderTarget大小的调整
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3NDIwOTUyNSwtMjU3ODE0NzkyLC0xOD
+eyJoaXN0b3J5IjpbMTI3MzIyMjk4NCwtMjU3ODE0NzkyLC0xOD
 I4MDIwMzAxLC0xMDMwNjI3Nzc2LDkyNTIyNzYzNyw0NjY3NTY1
 MTRdfQ==
 -->
