@@ -176,7 +176,8 @@ case MaterialType::PhongShadowMaterial: {
 	break;
 ```
 ## 5.IMGUI中修改对bias、pcfRadius、tightness、renderTarget大小的调整
-
+`bias, pcfRadius, tightness`都很简单，直接调用`&dirLight->mShadow`下的变量即可
+`renderTarget`大小的调整就比较麻烦了，需要监测`imgui`的对应滑块是否有被滑动（）
 ```cpp
 void renderIMGUI() {
 	...
@@ -201,8 +202,8 @@ void renderIMGUI() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk2MTU4MzA4MCwtMTU1OTI5MTAwMywxMT
-c2MjQ0Mzg4LC0xNjk0ODczMjYxLDQ2MDc0MTAwMywtMjU3ODE0
-NzkyLC0xODI4MDIwMzAxLC0xMDMwNjI3Nzc2LDkyNTIyNzYzNy
-w0NjY3NTY1MTRdfQ==
+eyJoaXN0b3J5IjpbMjM1MzI5ODk5LC0xNTU5MjkxMDAzLDExNz
+YyNDQzODgsLTE2OTQ4NzMyNjEsNDYwNzQxMDAzLC0yNTc4MTQ3
+OTIsLTE4MjgwMjAzMDEsLTEwMzA2Mjc3NzYsOTI1MjI3NjM3LD
+Q2Njc1NjUxNF19
 -->
