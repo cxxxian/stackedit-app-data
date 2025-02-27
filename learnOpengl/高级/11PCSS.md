@@ -177,10 +177,13 @@ float findBlocker(vec3 lightSpacePosition, vec2 shadowUV, float depthReceiver, v
 所以通过`shadowUV + disk[i] * searchRadiusUV`进行采样，就可以根据光源长度更改采样范围
 最后返回的是一个点周围的`blocker`的平均深度
 ## 3 将计算的dBlocker绘制在屏幕上进行观察
+```
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQ0MDEzNDEzLDE1Nzc3NTg0NzMsLTE3Nj
-c2MzE4MjEsLTM1Nzc3MzY3OCwtMTk2NzQyNzYzOCwtNzc2ODc0
-MDY5LC0yMDE3Mzc1NzI3LC0xMjkzNzU2MDgsLTI2MTk5MjYyNC
-wxNDIxNjIzMjg4LDY0OTQ5MDUzNiwtNTExMDQwNjM3LDExOTQx
-MTY0MjEsNjg1MDg2NzM4LC0yODQ2NjQ5MTldfQ==
+eyJoaXN0b3J5IjpbMTI1MzA4MzM2NSw4NDQwMTM0MTMsMTU3Nz
+c1ODQ3MywtMTc2NzYzMTgyMSwtMzU3NzczNjc4LC0xOTY3NDI3
+NjM4LC03NzY4NzQwNjksLTIwMTczNzU3MjcsLTEyOTM3NTYwOC
+wtMjYxOTkyNjI0LDE0MjE2MjMyODgsNjQ5NDkwNTM2LC01MTEw
+NDA2MzcsMTE5NDExNjQyMSw2ODUwODY3MzgsLTI4NDY2NDkxOV
+19
 -->
