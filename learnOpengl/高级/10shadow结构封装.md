@@ -143,7 +143,7 @@ void Renderer::render(
 }
 ```
 原本是在`renderer.h`中设计了一个`getLightMatrix`，现在我们直接删除即可，因为我们在`DirectionalLightShadow`下也设计了一个
-所以将
+所以将`dirLight->mShadow`强转为`DirectionalLightShadow`即可
 ```cpp
 void Renderer::renderShadowMap(const std::vector<Mesh*>& meshes, DirectionalLight* dirLight, Framebuffer* fbo)
 {
@@ -157,7 +157,7 @@ void Renderer::renderShadowMap(const std::vector<Mesh*>& meshes, DirectionalLigh
 ## 4.RenderObject中，更改ShadowMap以及其他系列参数的更新
 ## 5.IMGUI中修改对bias、pcfRadius、tightness、renderTarget大小的调整
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjI2NTEzNDUsLTE2OTQ4NzMyNjEsND
-YwNzQxMDAzLC0yNTc4MTQ3OTIsLTE4MjgwMjAzMDEsLTEwMzA2
-Mjc3NzYsOTI1MjI3NjM3LDQ2Njc1NjUxNF19
+eyJoaXN0b3J5IjpbMTE3NjI0NDM4OCwtMTY5NDg3MzI2MSw0Nj
+A3NDEwMDMsLTI1NzgxNDc5MiwtMTgyODAyMDMwMSwtMTAzMDYy
+Nzc3Niw5MjUyMjc2MzcsNDY2NzU2NTE0XX0=
 -->
