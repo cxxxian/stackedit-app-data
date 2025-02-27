@@ -24,8 +24,10 @@
 
 此处的`lightSpacePosition.z`是负值，因为我们是朝向`-z`轴的，所以需要加上负号再进行运算
 最后的得到一个`searchRadius`，但是注意，因为我们没有乘`projectionMatrix`，此时的`searchRadius`是光源相机空间下的度量尺度，我们需要转到`shadowMap`的`uv`空间，所以除上`frustumSize`，这个是`shadowMap`的`uv`尺度得来的
+
+![输入图片说明](/imgs/2025-02-27/ldDe3nV4hcxRTQP4.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI2MTk5MjYyNCwxNDIxNjIzMjg4LDY0OT
-Q5MDUzNiwtNTExMDQwNjM3LDExOTQxMTY0MjEsNjg1MDg2NzM4
-LC0yODQ2NjQ5MTldfQ==
+eyJoaXN0b3J5IjpbMTIzNjQ3MjE5OSwtMjYxOTkyNjI0LDE0Mj
+E2MjMyODgsNjQ5NDkwNTM2LC01MTEwNDA2MzcsMTE5NDExNjQy
+MSw2ODUwODY3MzgsLTI4NDY2NDkxOV19
 -->
