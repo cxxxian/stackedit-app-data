@@ -14,9 +14,9 @@
 `penumbra`越大，说明采样半径要越大，
 `penumbra`越小，说明采样半径要越小
 
-
+![输入图片说明](/imgs/2025-02-27/fJZYhSY3QSORzalY.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTkwMjY4NzYsNjQ5NDkwNTM2LC01MT
-EwNDA2MzcsMTE5NDExNjQyMSw2ODUwODY3MzgsLTI4NDY2NDkx
-OV19
+eyJoaXN0b3J5IjpbMTQyMTYyMzI4OCw2NDk0OTA1MzYsLTUxMT
+A0MDYzNywxMTk0MTE2NDIxLDY4NTA4NjczOCwtMjg0NjY0OTE5
+XX0=
 -->
