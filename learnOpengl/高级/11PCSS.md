@@ -13,7 +13,10 @@
 观察上图，其实在同一个遮挡物前，算出来的`penumbra`是一样的，`penumbra`只是用来控制`pcf`采样的大小（`pcfRadius`），
 `penumbra`越大，说明采样半径要越大，
 `penumbra`越小，说明采样半径要越小
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ5NDkwNTM2LC01MTEwNDA2MzcsMTE5ND
-ExNjQyMSw2ODUwODY3MzgsLTI4NDY2NDkxOV19
+eyJoaXN0b3J5IjpbLTE5OTkwMjY4NzYsNjQ5NDkwNTM2LC01MT
+EwNDA2MzcsMTE5NDExNjQyMSw2ODUwODY3MzgsLTI4NDY2NDkx
+OV19
 -->
