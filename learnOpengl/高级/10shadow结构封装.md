@@ -54,11 +54,48 @@ public:
 ```
 ### 1.1 注意setRenderTargetSize的实现
 ### 1.2 DirectionalLightShadow中，加入getLightMatrix函数
+根据以上两点注意事项，实现`directionalLightShadow.cpp`
+```cpp
+#include "directionalLightShadow.h"
+#include "../../../application/camera/orthographicCamera.h"
+
+DirectionalLightShadow::DirectionalLightShadow()
+{
+	float size = 10.0;
+	mCamera = new OrthographicCamera(-size, size, -size, size, 0.1f, 80.0f);
+	mRenderTarget = Framebuffer::createShadowFbo(1024, 1024);
+}
+
+DirectionalLightShadow::~DirectionalLightShadow()
+{
+	delete mCamera;
+	delete mRenderTarget;
+}
+
+void DirectionalLightShadow::setRenderTargetSize(int width, int height)
+{
+	if (mRenderTarget != nullptr) {
+		delete mRenderTarget;
+	}
+
+	mRenderTarget = Framebuffer::createShadowFbo(width, height);
+
+}
+glm::mat4 DirectionalLightShadow::getLightMatrix(glm::mat4 lightModelMatrix)
+{
+	auto viewMatrix = glm::inverse(lightModelMatrix);
+	auto projMatrix = mCamera->getProjectionMatrix();
+
+	return projMatrix * viewMatrix;
+
+}
+```
 ## 2.在Light父类中，加入Shadow类型对象，并且在平行光中对其进行初始化（其余暂时不管）	
 ## 3.RenderShadowMap中更改FBO与lightMatrix获取方式
 ## 4.RenderObject中，更改ShadowMap以及其他系列参数的更新
 ## 5.IMGUI中修改对bias、pcfRadius、tightness、renderTarget大小的调整
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1NzgxNDc5MiwtMTgyODAyMDMwMSwtMT
-AzMDYyNzc3Niw5MjUyMjc2MzcsNDY2NzU2NTE0XX0=
+eyJoaXN0b3J5IjpbLTE3OTcwNjcxNDAsLTI1NzgxNDc5MiwtMT
+gyODAyMDMwMSwtMTAzMDYyNzc3Niw5MjUyMjc2MzcsNDY2NzU2
+NTE0XX0=
 -->
