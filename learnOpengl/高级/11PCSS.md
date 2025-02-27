@@ -216,15 +216,16 @@ void main()
 	}else{
 		FragColor = vec4(dBlocker, dBlocker, dBlocker, 1.0);
 	}
-
 	//FragColor = vec4(finalColor,alpha * opacity);
 }
 ```
+这里我们临时做了一个小实验来输出，
+因为我们在`findBlocker`的方法中，如果`blockerNum = 0`，那意思就是周围没有一个遮挡物
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTk1OTc5NDYsLTEwNDIwNTA4MTEsLT
-U5NzQ0MDIxMSw4NDQwMTM0MTMsMTU3Nzc1ODQ3MywtMTc2NzYz
-MTgyMSwtMzU3NzczNjc4LC0xOTY3NDI3NjM4LC03NzY4NzQwNj
-ksLTIwMTczNzU3MjcsLTEyOTM3NTYwOCwtMjYxOTkyNjI0LDE0
-MjE2MjMyODgsNjQ5NDkwNTM2LC01MTEwNDA2MzcsMTE5NDExNj
-QyMSw2ODUwODY3MzgsLTI4NDY2NDkxOV19
+eyJoaXN0b3J5IjpbLTkyMjI3ODE2OCwtMTA0MjA1MDgxMSwtNT
+k3NDQwMjExLDg0NDAxMzQxMywxNTc3NzU4NDczLC0xNzY3NjMx
+ODIxLC0zNTc3NzM2NzgsLTE5Njc0Mjc2MzgsLTc3Njg3NDA2OS
+wtMjAxNzM3NTcyNywtMTI5Mzc1NjA4LC0yNjE5OTI2MjQsMTQy
+MTYyMzI4OCw2NDk0OTA1MzYsLTUxMTA0MDYzNywxMTk0MTE2ND
+IxLDY4NTA4NjczOCwtMjg0NjY0OTE5XX0=
 -->
