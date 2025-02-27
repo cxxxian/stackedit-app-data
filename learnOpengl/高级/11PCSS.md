@@ -174,7 +174,8 @@ float findBlocker(vec3 lightSpacePosition, vec2 shadowUV, float depthReceiver, v
 解释一下：
 `float sampleDepth = texture(shadowMapSampler, shadowUV + disk[i] * searchRadiusUV).r;`
 这句话，`searchRadiusUV`是我们通过`float searchRadiusUV = searchRadius / frustum`算出来的，与光源长度挂钩
-`frustum`其实就是相机视景体的左右两边的距离
+`frustum`其实就是光源相机视景体的左右两边的距离，这样就可以从光源视角的坐标系转到`uv`的长度
+
 所以通过`shadowUV + disk[i] * searchRadiusUV`进行采样，就可以根据光源长度更改采样范围
 最后返回的是一个点周围的`blocker`的平均深度
 
@@ -220,10 +221,10 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMyMTM5MDk5OSwtMTA0MjA1MDgxMSwtNT
-k3NDQwMjExLDg0NDAxMzQxMywxNTc3NzU4NDczLC0xNzY3NjMx
-ODIxLC0zNTc3NzM2NzgsLTE5Njc0Mjc2MzgsLTc3Njg3NDA2OS
-wtMjAxNzM3NTcyNywtMTI5Mzc1NjA4LC0yNjE5OTI2MjQsMTQy
-MTYyMzI4OCw2NDk0OTA1MzYsLTUxMTA0MDYzNywxMTk0MTE2ND
-IxLDY4NTA4NjczOCwtMjg0NjY0OTE5XX0=
+eyJoaXN0b3J5IjpbLTE1OTk1OTc5NDYsLTEwNDIwNTA4MTEsLT
+U5NzQ0MDIxMSw4NDQwMTM0MTMsMTU3Nzc1ODQ3MywtMTc2NzYz
+MTgyMSwtMzU3NzczNjc4LC0xOTY3NDI3NjM4LC03NzY4NzQwNj
+ksLTIwMTczNzU3MjcsLTEyOTM3NTYwOCwtMjYxOTkyNjI0LDE0
+MjE2MjMyODgsNjQ5NDkwNTM2LC01MTEwNDA2MzcsMTE5NDExNj
+QyMSw2ODUwODY3MzgsLTI4NDY2NDkxOV19
 -->
