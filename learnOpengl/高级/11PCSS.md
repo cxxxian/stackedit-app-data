@@ -34,6 +34,7 @@
 
 # 实现
 ## 准备工作：搭建实验环境，注意参数调节（尤其是光源位置，方向以及光源视景体大小）
+
 ## 1 加入dBlocker所需的uniform参数
 `lightSize`：光源尺寸（可调整）
 `frustrum`：近平面大小
@@ -48,8 +49,8 @@
 
 ## 3 将计算的dBlocker绘制在屏幕上进行观察
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3Njg3NDA2OSwtMjAxNzM3NTcyNywtMT
-I5Mzc1NjA4LC0yNjE5OTI2MjQsMTQyMTYyMzI4OCw2NDk0OTA1
-MzYsLTUxMTA0MDYzNywxMTk0MTE2NDIxLDY4NTA4NjczOCwtMj
-g0NjY0OTE5XX0=
+eyJoaXN0b3J5IjpbMTA1MjU5NjU0MSwtNzc2ODc0MDY5LC0yMD
+E3Mzc1NzI3LC0xMjkzNzU2MDgsLTI2MTk5MjYyNCwxNDIxNjIz
+Mjg4LDY0OTQ5MDUzNiwtNTExMDQwNjM3LDExOTQxMTY0MjEsNj
+g1MDg2NzM4LC0yODQ2NjQ5MTldfQ==
 -->
