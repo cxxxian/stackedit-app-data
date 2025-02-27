@@ -19,9 +19,12 @@
 ![输入图片说明](/imgs/2025-02-27/mhWpKPWNGP3ZD2li.png)
 
 依旧是相似三角形的思想，此处不可以直接乘上`projectionMatrix`，因为我们`light`的位置到`shadowMap`之间的距离`n`，并不在视景体之内
-所以我们只能乘上viewMatrix将其zhuan
+
+所以我们只能乘上`viewMatrix`将其转到光源坐标系下进行操作
+
+此处的`lightSpacePosition.z`是负值，因为我们是朝向`-z`轴的，所以需要加上负号再进行运算
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5OTE4OTQ4NywxNDIxNjIzMjg4LDY0OT
+eyJoaXN0b3J5IjpbMTMzOTM5NjA0OCwxNDIxNjIzMjg4LDY0OT
 Q5MDUzNiwtNTExMDQwNjM3LDExOTQxMTY0MjEsNjg1MDg2NzM4
 LC0yODQ2NjQ5MTldfQ==
 -->
