@@ -35,9 +35,20 @@
 # 实现
 ## 准备工作：搭建实验环境，注意参数调节（尤其是光源位置，方向以及光源视景体大小）
 ## 1 加入dBlocker所需的uniform参数
+`lightSize`：光源尺寸（可调整）
+`frustrum`：近平面大小
+`nearPlane`：近平面到相机距离
 
+## 2 shader中加入findBlocker函数，计算dBlocker，如果没有阻挡物则返回-1（说明不在阴影中）
+需要更新的`uniform`：
+`uniform mat4 lightViewMatrix;`
+`uniform float lightSize;`
+`uniform float frustum;`
+`uniform float nearPlane;`
+
+## 3 将计算的dBlocker绘制在屏幕上进行观察
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1MDE0MDAxMCwtMjAxNzM3NTcyNywtMT
+eyJoaXN0b3J5IjpbLTc3Njg3NDA2OSwtMjAxNzM3NTcyNywtMT
 I5Mzc1NjA4LC0yNjE5OTI2MjQsMTQyMTYyMzI4OCw2NDk0OTA1
 MzYsLTUxMTA0MDYzNywxMTk0MTE2NDIxLDY4NTA4NjczOCwtMj
 g0NjY0OTE5XX0=
