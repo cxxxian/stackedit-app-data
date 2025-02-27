@@ -237,6 +237,29 @@ void main()
 ![输入图片说明](/imgs/2025-02-27/ZMEEyVArpsehpxga.png)
 
 ## 4 加入PCSS函数，并且使用
+往`pcf`多添加一个形参`pcfUVRadius`，因为`pcss`需要用到
+```glsl
+float pcf(vec3 normal, vec3 lightDir, float pcfUVRadius){
+	//1 找到当前像素在光源空间内的NDC坐标
+	vec3 lightNDC = lightSpaceClipCoord.xyz/lightSpaceClipCoord.w;
+
+	//2 找到当前像素在ShadowMap上的uv
+	vec3 projCoord = lightNDC * 0.5 + 0.5;
+	vec2 uv = projCoord.xy;
+	float depth = projCoord.z;
+
+	poissonDiskSamples(uv);
+	vec2 texelSize = 1.0 / textureSize(shadowMapSampler, 0);
+
+	//3 遍历poisson采样盘的每一个采样点，每一个的深度值都需要与当前像素在光源下的深度值进行比较
+	float sum = 0.0;
+	for(int i = 0; i < NUM_SAMPLES; i++){
+		float closestDepth = texture(shadowMapSampler, uv + disk[i] * pcfUVRadius).r;
+		sum += closestDepth < (depth - getBias(normal, lightDir))? 1.0:0.0;
+	}
+	return sum / float(NUM_SAMPLES); 
+}
+```
 `pcss`算法实现如下
 ```glsl
 float pcss(vec3 lightSpacePosition, vec4 lightSpaceClipCoord, vec3 normal, vec3 lightDir){
@@ -261,7 +284,7 @@ float pcss(vec3 lightSpacePosition, vec4 lightSpaceClipCoord, vec3 normal, vec3 
 ## 5 加入对PCSS参数的IMGUI调整
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4MjY0MDcxMywxMjk1NjYzMjc5LDIxMz
+eyJoaXN0b3J5IjpbLTk1NzkxMDk5NCwxMjk1NjYzMjc5LDIxMz
 Q0NjI2MDMsLTEwNDIwNTA4MTEsLTU5NzQ0MDIxMSw4NDQwMTM0
 MTMsMTU3Nzc1ODQ3MywtMTc2NzYzMTgyMSwtMzU3NzczNjc4LC
 0xOTY3NDI3NjM4LC03NzY4NzQwNjksLTIwMTczNzU3MjcsLTEy
