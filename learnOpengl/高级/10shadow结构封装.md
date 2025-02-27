@@ -166,12 +166,18 @@ case MaterialType::PhongShadowMaterial: {
 	shader->setMatrix4x4("lightMatrix", dirShadow->getLightMatrix(dirLight->getModelMatrix()));
 	//--------------------
 	...
+	//bias
+	shader->setFloat("bias", dirShadow->mBias);
+	//tightness
+	shader->setFloat("diskTightness", dirShadow->mDiskTightness);
+	//pcfRadius
+	shader->setFloat("pcfRadius", dirShadow->mPcfRadius);
 }
 	break;
 ```
 ## 5.IMGUI中修改对bias、pcfRadius、tightness、renderTarget大小的调整
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNTUzNzMzNTUsMTE3NjI0NDM4OCwtMT
+eyJoaXN0b3J5IjpbLTE1NTkyOTEwMDMsMTE3NjI0NDM4OCwtMT
 Y5NDg3MzI2MSw0NjA3NDEwMDMsLTI1NzgxNDc5MiwtMTgyODAy
 MDMwMSwtMTAzMDYyNzc3Niw5MjUyMjc2MzcsNDY2NzU2NTE0XX
 0=
