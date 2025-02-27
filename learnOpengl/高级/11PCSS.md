@@ -178,7 +178,8 @@ float findBlocker(vec3 lightSpacePosition, vec2 shadowUV, float depthReceiver, v
 最后返回的是一个点周围的`blocker`的平均深度
 
 然后我们去到`cpu`端更新`uniform`，我们加了好多新的
-
+```c'p'p
+```
 ## 3 将计算的dBlocker绘制在屏幕上进行观察
 ```glsl
 void main()
@@ -204,10 +205,10 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5NzQ0MDIxMSw4NDQwMTM0MTMsMTU3Nz
-c1ODQ3MywtMTc2NzYzMTgyMSwtMzU3NzczNjc4LC0xOTY3NDI3
-NjM4LC03NzY4NzQwNjksLTIwMTczNzU3MjcsLTEyOTM3NTYwOC
-wtMjYxOTkyNjI0LDE0MjE2MjMyODgsNjQ5NDkwNTM2LC01MTEw
-NDA2MzcsMTE5NDExNjQyMSw2ODUwODY3MzgsLTI4NDY2NDkxOV
-19
+eyJoaXN0b3J5IjpbLTQ3NDU1NDY0OCwtNTk3NDQwMjExLDg0ND
+AxMzQxMywxNTc3NzU4NDczLC0xNzY3NjMxODIxLC0zNTc3NzM2
+NzgsLTE5Njc0Mjc2MzgsLTc3Njg3NDA2OSwtMjAxNzM3NTcyNy
+wtMTI5Mzc1NjA4LC0yNjE5OTI2MjQsMTQyMTYyMzI4OCw2NDk0
+OTA1MzYsLTUxMTA0MDYzNywxMTk0MTE2NDIxLDY4NTA4NjczOC
+wtMjg0NjY0OTE5XX0=
 -->
