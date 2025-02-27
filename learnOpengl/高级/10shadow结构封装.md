@@ -176,6 +176,7 @@ case MaterialType::PhongShadowMaterial: {
 	break;
 ```
 ## 5.IMGUI中修改对bias、pcfRadius、tightness、renderTarget大小的调整
+
 ```cpp
 void renderIMGUI() {
 	...
@@ -194,19 +195,14 @@ void renderIMGUI() {
 	{
 		dirLight->mShadow->setRenderTargetSize(width, height);
 	}
-	
-
-	auto pos = dirLight->getPosition();
-	if (ImGui::SliderFloat("light.x", &pos.x, 0.0f, 50.0f, "%.2f")) {
-		dirLight->setPosition(pos);
-	}
+	...
 	ImGui::End();
 	...
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzQ4Mjk3MTMsLTE1NTkyOTEwMDMsMT
-E3NjI0NDM4OCwtMTY5NDg3MzI2MSw0NjA3NDEwMDMsLTI1Nzgx
-NDc5MiwtMTgyODAyMDMwMSwtMTAzMDYyNzc3Niw5MjUyMjc2Mz
-csNDY2NzU2NTE0XX0=
+eyJoaXN0b3J5IjpbLTk2MTU4MzA4MCwtMTU1OTI5MTAwMywxMT
+c2MjQ0Mzg4LC0xNjk0ODczMjYxLDQ2MDc0MTAwMywtMjU3ODE0
+NzkyLC0xODI4MDIwMzAxLC0xMDMwNjI3Nzc2LDkyNTIyNzYzNy
+w0NjY3NTY1MTRdfQ==
 -->
