@@ -140,7 +140,7 @@ void main()
 }
 ```
 然后在`phongShadow.frag`接收`vert`的`lightSpacePosition`，
-并设计三个参数，以及实现
+并设计三个参数，以及实现`findBlocker`
 ```glsl
 in vec3 lightSpacePosition;
 
@@ -173,9 +173,9 @@ float findBlocker(vec3 lightSpacePosition, vec2 shadowUV, float depthReceiver, v
 ```
 ## 3 将计算的dBlocker绘制在屏幕上进行观察
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTU0MDY5MjA4LC0xNzY3NjMxODIxLC0zNT
-c3NzM2NzgsLTE5Njc0Mjc2MzgsLTc3Njg3NDA2OSwtMjAxNzM3
-NTcyNywtMTI5Mzc1NjA4LC0yNjE5OTI2MjQsMTQyMTYyMzI4OC
-w2NDk0OTA1MzYsLTUxMTA0MDYzNywxMTk0MTE2NDIxLDY4NTA4
-NjczOCwtMjg0NjY0OTE5XX0=
+eyJoaXN0b3J5IjpbMTU3Nzc1ODQ3MywtMTc2NzYzMTgyMSwtMz
+U3NzczNjc4LC0xOTY3NDI3NjM4LC03NzY4NzQwNjksLTIwMTcz
+NzU3MjcsLTEyOTM3NTYwOCwtMjYxOTkyNjI0LDE0MjE2MjMyOD
+gsNjQ5NDkwNTM2LC01MTEwNDA2MzcsMTE5NDExNjQyMSw2ODUw
+ODY3MzgsLTI4NDY2NDkxOV19
 -->
