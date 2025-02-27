@@ -120,10 +120,11 @@ DirectionalLight::DirectionalLight() {
 }
 ```
 ## 3.RenderShadowMap中更改FBO与lightMatrix获取方式
+
 ## 4.RenderObject中，更改ShadowMap以及其他系列参数的更新
 ## 5.IMGUI中修改对bias、pcfRadius、tightness、renderTarget大小的调整
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0MDQ5NDc0MiwtMjU3ODE0NzkyLC0xOD
-I4MDIwMzAxLC0xMDMwNjI3Nzc2LDkyNTIyNzYzNyw0NjY3NTY1
-MTRdfQ==
+eyJoaXN0b3J5IjpbOTIyNjIxNTQ0LC0yNTc4MTQ3OTIsLTE4Mj
+gwMjAzMDEsLTEwMzA2Mjc3NzYsOTI1MjI3NjM3LDQ2Njc1NjUx
+NF19
 -->
