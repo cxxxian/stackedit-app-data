@@ -26,8 +26,11 @@
 最后的得到一个`searchRadius`，但是注意，因为我们没有乘`projectionMatrix`，此时的`searchRadius`是光源相机空间下的度量尺度，我们需要转到`shadowMap`的`uv`空间，所以除上`frustumSize`，这个是`shadowMap`的`uv`尺度得来的
 
 ![输入图片说明](/imgs/2025-02-27/ldDe3nV4hcxRTQP4.png)
+
+这里求得两个参数，`blockerNum`是采样点中有几个点是遮挡物的范围，`blockerSumDepth`是几个被遮挡的总深度值，
+通过这两个参数就可以求的平均shen'du'zhi
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIzNjQ3MjE5OSwtMjYxOTkyNjI0LDE0Mj
-E2MjMyODgsNjQ5NDkwNTM2LC01MTEwNDA2MzcsMTE5NDExNjQy
-MSw2ODUwODY3MzgsLTI4NDY2NDkxOV19
+eyJoaXN0b3J5IjpbODk5NjUxMjY0LC0yNjE5OTI2MjQsMTQyMT
+YyMzI4OCw2NDk0OTA1MzYsLTUxMTA0MDYzNywxMTk0MTE2NDIx
+LDY4NTA4NjczOCwtMjg0NjY0OTE5XX0=
 -->
