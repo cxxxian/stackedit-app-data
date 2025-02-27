@@ -220,9 +220,9 @@ void main()
 }
 ```
 这里我们临时做了一个小实验来输出，
-因为我们在`findBlocker`的方法中，如果`blockerNum = 0`，那意思就是采样点周围没有遮挡物
+因为我们在`findBlocker`的方法中，如果`blockerNum = 0`，那意思就是该点周围没有遮挡物，so
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzExOTM3MzMsLTEwNDIwNTA4MTEsLT
+eyJoaXN0b3J5IjpbLTE5NjE3ODk0NDYsLTEwNDIwNTA4MTEsLT
 U5NzQ0MDIxMSw4NDQwMTM0MTMsMTU3Nzc1ODQ3MywtMTc2NzYz
 MTgyMSwtMzU3NzczNjc4LC0xOTY3NDI3NjM4LC03NzY4NzQwNj
 ksLTIwMTczNzU3MjcsLTEyOTM3NTYwOCwtMjYxOTkyNjI0LDE0
