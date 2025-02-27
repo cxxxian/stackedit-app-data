@@ -28,9 +28,9 @@
 ![输入图片说明](/imgs/2025-02-27/ldDe3nV4hcxRTQP4.png)
 
 这里求得两个参数，`blockerNum`是采样点中有几个点是遮挡物的范围，`blockerSumDepth`是几个被遮挡的总深度值，
-通过这两个参数就可以求的平均shen'du'zhi
+通过这两个参数就可以求得遮挡物的平均深度值
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODk5NjUxMjY0LC0yNjE5OTI2MjQsMTQyMT
-YyMzI4OCw2NDk0OTA1MzYsLTUxMTA0MDYzNywxMTk0MTE2NDIx
-LDY4NTA4NjczOCwtMjg0NjY0OTE5XX0=
+eyJoaXN0b3J5IjpbLTEyOTM3NTYwOCwtMjYxOTkyNjI0LDE0Mj
+E2MjMyODgsNjQ5NDkwNTM2LC01MTEwNDA2MzcsMTE5NDExNjQy
+MSw2ODUwODY3MzgsLTI4NDY2NDkxOV19
 -->
