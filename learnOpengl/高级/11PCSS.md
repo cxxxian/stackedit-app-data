@@ -237,12 +237,31 @@ void main()
 ![输入图片说明](/imgs/2025-02-27/ZMEEyVArpsehpxga.png)
 
 ## 4 加入PCSS函数，并且使用
+`pcss`算法实现如下
+```glsl
+float pcss(vec3 lightSpacePosition, vec4 lightSpaceClipCoord, vec3 normal, vec3 lightDir){
+	//1 找到当前像素在shadowMap下的uv以及在光源坐标系下的深度值
+	vec3 lightNDC = lightSpaceClipCoord.xyz/lightSpaceClipCoord.w;
+
+	vec3 projCoord = lightNDC * 0.5 + 0.5;
+	vec2 uv = projCoord.xy;
+	float depth = projCoord.z;
+
+	//2 计算dBlocker
+	float dBlocker = findBlocker(lightSpacePosition, uv, depth, normal, - -directionalLight.direction);
+
+	//3 计算penumbra
+	float penumbra = ((depth - dBlocker) / dBlocker) * (lightSize / frustum);
+
+	//4 计算出来真正的pcfRadius
+	return pcf(normal, lightDir, penumbra * pcfRadius);
+}
 ```
-```
+其实`pcss`比`pcf`好在哪，就是好在可以根据`penumbra`动态调节`pcfRadius`，如果`pcfRadius`固定的话，那不管变换远近阴影是不会有变化的（软硬变化）
 ## 5 加入对PCSS参数的IMGUI调整
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTI4MjM4NSwxMjk1NjYzMjc5LDIxMz
+eyJoaXN0b3J5IjpbLTk4MjY0MDcxMywxMjk1NjYzMjc5LDIxMz
 Q0NjI2MDMsLTEwNDIwNTA4MTEsLTU5NzQ0MDIxMSw4NDQwMTM0
 MTMsMTU3Nzc1ODQ3MywtMTc2NzYzMTgyMSwtMzU3NzczNjc4LC
 0xOTY3NDI3NjM4LC03NzY4NzQwNjksLTIwMTczNzU3MjcsLTEy
