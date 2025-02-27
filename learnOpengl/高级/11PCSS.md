@@ -220,12 +220,16 @@ void main()
 }
 ```
 这里我们临时做了一个小实验来输出，
-因为我们在`findBlocker`的方法中，如果`blockerNum = 0`，那意思就是该点周围没有遮挡物，so
+因为我们在`findBlocker`的方法中，
+如果`blockerNum = 0`，那意思就是该点周围没有遮挡物，所以返回了一个`-1`的值，
+如果有遮挡物才需要算出平均深度`blockerSumDepth / blockerNum`
+
+所以我们在main方法
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjE3ODk0NDYsLTEwNDIwNTA4MTEsLT
-U5NzQ0MDIxMSw4NDQwMTM0MTMsMTU3Nzc1ODQ3MywtMTc2NzYz
-MTgyMSwtMzU3NzczNjc4LC0xOTY3NDI3NjM4LC03NzY4NzQwNj
-ksLTIwMTczNzU3MjcsLTEyOTM3NTYwOCwtMjYxOTkyNjI0LDE0
-MjE2MjMyODgsNjQ5NDkwNTM2LC01MTEwNDA2MzcsMTE5NDExNj
-QyMSw2ODUwODY3MzgsLTI4NDY2NDkxOV19
+eyJoaXN0b3J5IjpbLTg3NjczMzI3MCwtMTA0MjA1MDgxMSwtNT
+k3NDQwMjExLDg0NDAxMzQxMywxNTc3NzU4NDczLC0xNzY3NjMx
+ODIxLC0zNTc3NzM2NzgsLTE5Njc0Mjc2MzgsLTc3Njg3NDA2OS
+wtMjAxNzM3NTcyNywtMTI5Mzc1NjA4LC0yNjE5OTI2MjQsMTQy
+MTYyMzI4OCw2NDk0OTA1MzYsLTUxMTA0MDYzNywxMTk0MTE2ND
+IxLDY4NTA4NjczOCwtMjg0NjY0OTE5XX0=
 -->
