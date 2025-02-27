@@ -23,8 +23,9 @@
 所以我们只能乘上`viewMatrix`将其转到光源坐标系下进行操作
 
 此处的`lightSpacePosition.z`是负值，因为我们是朝向`-z`轴的，所以需要加上负号再进行运算
+最后的得到一个`searchRadius`，但是z
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMzOTM5NjA0OCwxNDIxNjIzMjg4LDY0OT
-Q5MDUzNiwtNTExMDQwNjM3LDExOTQxMTY0MjEsNjg1MDg2NzM4
-LC0yODQ2NjQ5MTldfQ==
+eyJoaXN0b3J5IjpbNDg5MTQ0MTgsMTQyMTYyMzI4OCw2NDk0OT
+A1MzYsLTUxMTA0MDYzNywxMTk0MTE2NDIxLDY4NTA4NjczOCwt
+Mjg0NjY0OTE5XX0=
 -->
