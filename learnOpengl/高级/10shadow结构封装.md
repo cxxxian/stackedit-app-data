@@ -111,11 +111,19 @@ public:
 	Shadow*		mShadow{ nullptr };
 };
 ```
+在平行光中对其进行初始化如下：
+```cpp
+#include "shadow/directionalLightShadow.h"
+
+DirectionalLight::DirectionalLight() {
+	mShadow = new DirectionalLightShadow();
+}
+```
 ## 3.RenderShadowMap中更改FBO与lightMatrix获取方式
 ## 4.RenderObject中，更改ShadowMap以及其他系列参数的更新
 ## 5.IMGUI中修改对bias、pcfRadius、tightness、renderTarget大小的调整
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3MzIyMjk4NCwtMjU3ODE0NzkyLC0xOD
+eyJoaXN0b3J5IjpbMTM0MDQ5NDc0MiwtMjU3ODE0NzkyLC0xOD
 I4MDIwMzAxLC0xMDMwNjI3Nzc2LDkyNTIyNzYzNyw0NjY3NTY1
 MTRdfQ==
 -->
