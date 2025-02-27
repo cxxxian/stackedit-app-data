@@ -34,7 +34,43 @@
 
 # 实现
 ## 准备工作：搭建实验环境，注意参数调节（尤其是光源位置，方向以及光源视景体大小）
+一个平面和一个大平面
+```cpp
+void prepare() {
+	fbo = new Framebuffer(WIDTH, HEIGHT);
 
+	renderer = new Renderer();
+	sceneOff = new Scene();
+	scene = new Scene();
+
+	//pass 01
+	auto geo = Geometry::createPlane(1.0, 1.0);
+	auto upPlaneMat = new PhongShadowMaterial();
+	upPlaneMat->mDiffuse = new Texture("assets/textures/grass.jpg", 0, GL_SRGB_ALPHA);
+	upPlaneMat->mShiness = 32;
+	upPlane = new Mesh(geo, upPlaneMat);
+	upPlane->rotateX(-90.0f);
+	sceneOff->addChild(upPlane);
+
+	auto groundGeo = Geometry::createPlane(10, 10);
+	auto groundMat = new PhongShadowMaterial();
+	groundMat->mDiffuse = new Texture("assets/textures/grass.jpg", 0, GL_SRGB_ALPHA);
+	groundMat->mShiness = 32;
+	auto groundMesh = new Mesh(groundGeo, groundMat);
+	groundMesh->setPosition(glm::vec3(0.0, 0.0, 0.0f));
+	groundMesh->rotateX(-90.0f);
+	sceneOff->addChild(groundMesh);
+	...
+	dirLight = new DirectionalLight();
+	dirLight->setPosition(glm::vec3(3.0f, 15.0f, 0.0f));
+	dirLight->rotateX(-90.0f);
+	dirLight->mSpecularIntensity = 0.5f;
+
+	ambLight = new AmbientLight();
+	ambLight->mColor = glm::vec3(0.1f);
+
+}
+```
 ## 1 加入dBlocker所需的uniform参数
 `lightSize`：光源尺寸（可调整）
 `frustrum`：近平面大小
@@ -49,8 +85,8 @@
 
 ## 3 将计算的dBlocker绘制在屏幕上进行观察
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1MjU5NjU0MSwtNzc2ODc0MDY5LC0yMD
-E3Mzc1NzI3LC0xMjkzNzU2MDgsLTI2MTk5MjYyNCwxNDIxNjIz
-Mjg4LDY0OTQ5MDUzNiwtNTExMDQwNjM3LDExOTQxMTY0MjEsNj
-g1MDg2NzM4LC0yODQ2NjQ5MTldfQ==
+eyJoaXN0b3J5IjpbLTE0OTUzNDcwMDEsLTc3Njg3NDA2OSwtMj
+AxNzM3NTcyNywtMTI5Mzc1NjA4LC0yNjE5OTI2MjQsMTQyMTYy
+MzI4OCw2NDk0OTA1MzYsLTUxMTA0MDYzNywxMTk0MTE2NDIxLD
+Y4NTA4NjczOCwtMjg0NjY0OTE5XX0=
 -->
