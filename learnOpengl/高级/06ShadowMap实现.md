@@ -480,6 +480,7 @@ void main()
 ## 1.加入新的phongShadow.vert/frag，加入是否位于阴影中的判断
 `phongShadow.vert`如下：
 计算完`lightSpaceClipCoord`往后传到`frag`中
+其实这时候的`lightSpaceClipCoord`已经是`NDC`坐标了，因为我们`lightMatrix`里面就含有正交投影矩阵，可以将坐标转为`NDC`
 ```glsl
 #version 460 core
 ...
@@ -644,11 +645,11 @@ void prepare() {
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4ODY0MDYyNiwxNDU2MDg0MTQ2LDE1MT
-kzMzAwNzEsLTM5NjE4MjI1NiwtMTk3ODg5NDUxOSwxMzY3OTky
-NTkxLDExODAwOTM3ODEsMTIyNzYzMDU2NywxNzUwNDIxMjQwLD
-IwNDQ2ODUzMTgsMTI2NzEyNDYxNSwtNjk4NzU5MDI3LC03OTAx
-NjcxMTQsLTEzNjI4NzYyODEsLTIxNDM4MjI0MDQsLTE2NzY2Nj
-U2OTYsLTg1ODQyNTA1MywxNTYyNDg5OTUxLDQyNzk4MzIxMCwt
-ODE3MjUwNDI4XX0=
+eyJoaXN0b3J5IjpbNzU0OTAzNDg1LDE5ODg2NDA2MjYsMTQ1Nj
+A4NDE0NiwxNTE5MzMwMDcxLC0zOTYxODIyNTYsLTE5Nzg4OTQ1
+MTksMTM2Nzk5MjU5MSwxMTgwMDkzNzgxLDEyMjc2MzA1NjcsMT
+c1MDQyMTI0MCwyMDQ0Njg1MzE4LDEyNjcxMjQ2MTUsLTY5ODc1
+OTAyNywtNzkwMTY3MTE0LC0xMzYyODc2MjgxLC0yMTQzODIyND
+A0LC0xNjc2NjY1Njk2LC04NTg0MjUwNTMsMTU2MjQ4OTk1MSw0
+Mjc5ODMyMTBdfQ==
 -->
