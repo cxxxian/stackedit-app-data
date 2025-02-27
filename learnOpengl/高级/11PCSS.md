@@ -125,7 +125,7 @@ public:
 ```
 还记得我们计算`dBlocker`需要用到的参数，要一个在光源坐标系下的位置，用来判断深度，这个无需乘上`projectionMatrix`，
 但是我们之前设计的`lightMatrix`是通过`lightProjection * lightView`得到的
-所以我们要重新设计一个`lightViewMatrix`，并传到`frag`中
+所以我们要重新在`vert`设计一个`lightViewMatrix`，并传到`frag`中
 区分一下：
 `lightSpaceClipCoord`是乘上投影矩阵的
 `lightSpacePosition`没有，是一个在光源坐标系下的位置
@@ -139,8 +139,11 @@ void main()
 	lightSpacePosition = (lightViewMatrix * transformPosition).xyz;
 }
 ```
-然后在`phongShadow.frag`设计三个参数
+然后在`phongShadow.frag`接收`vert`的`lightSpacePosition`，
+并设计三个参数
 ```glsl
+in vec3 lightSpacePosition;
+
 //PCSS相关参数
 uniform float lightSize;
 uniform float frustum;
@@ -148,9 +151,9 @@ uniform float nearPlane;
 ```
 ## 3 将计算的dBlocker绘制在屏幕上进行观察
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ2NTQ1OTMxLC0zNTc3NzM2NzgsLTE5Nj
-c0Mjc2MzgsLTc3Njg3NDA2OSwtMjAxNzM3NTcyNywtMTI5Mzc1
-NjA4LC0yNjE5OTI2MjQsMTQyMTYyMzI4OCw2NDk0OTA1MzYsLT
-UxMTA0MDYzNywxMTk0MTE2NDIxLDY4NTA4NjczOCwtMjg0NjY0
-OTE5XX0=
+eyJoaXN0b3J5IjpbLTE3Njc2MzE4MjEsLTM1Nzc3MzY3OCwtMT
+k2NzQyNzYzOCwtNzc2ODc0MDY5LC0yMDE3Mzc1NzI3LC0xMjkz
+NzU2MDgsLTI2MTk5MjYyNCwxNDIxNjIzMjg4LDY0OTQ5MDUzNi
+wtNTExMDQwNjM3LDExOTQxMTY0MjEsNjg1MDg2NzM4LC0yODQ2
+NjQ5MTldfQ==
 -->
