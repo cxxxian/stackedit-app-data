@@ -101,6 +101,10 @@ int main() {
 	...
 }
 ```
+此时会发现无论上下怎么运动，阴影都一动不动（不合常理），因为我们之前只用了`pcf`，并没有远近距离导致阴影变化软硬一说
+
+![输入图片说明](/imgs/2025-02-27/edoSnJYhd6RYk6r4.png)
+
 ## 1 加入dBlocker所需的uniform参数
 `lightSize`：光源尺寸（可调整）
 `frustrum`：近平面大小
@@ -115,8 +119,8 @@ int main() {
 
 ## 3 将计算的dBlocker绘制在屏幕上进行观察
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzNjE5MTgwMywtNzc2ODc0MDY5LC0yMD
-E3Mzc1NzI3LC0xMjkzNzU2MDgsLTI2MTk5MjYyNCwxNDIxNjIz
-Mjg4LDY0OTQ5MDUzNiwtNTExMDQwNjM3LDExOTQxMTY0MjEsNj
-g1MDg2NzM4LC0yODQ2NjQ5MTldfQ==
+eyJoaXN0b3J5IjpbLTE5Njc0Mjc2MzgsLTc3Njg3NDA2OSwtMj
+AxNzM3NTcyNywtMTI5Mzc1NjA4LC0yNjE5OTI2MjQsMTQyMTYy
+MzI4OCw2NDk0OTA1MzYsLTUxMTA0MDYzNywxMTk0MTE2NDIxLD
+Y4NTA4NjczOCwtMjg0NjY0OTE5XX0=
 -->
