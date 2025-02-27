@@ -17,8 +17,10 @@
 ![输入图片说明](/imgs/2025-02-27/fJZYhSY3QSORzalY.png)
 
 ![输入图片说明](/imgs/2025-02-27/mhWpKPWNGP3ZD2li.png)
+
+依旧是相似三角形的思想，此处不可以直接乘上`projectionMatrix`，因为我们`light`的位置到`shadowMap`之间的距离`n`，并不在视景体之内
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5NTM2MTQ2LDE0MjE2MjMyODgsNjQ5ND
-kwNTM2LC01MTEwNDA2MzcsMTE5NDExNjQyMSw2ODUwODY3Mzgs
-LTI4NDY2NDkxOV19
+eyJoaXN0b3J5IjpbLTE1MjE5NDAxNjQsMTQyMTYyMzI4OCw2ND
+k0OTA1MzYsLTUxMTA0MDYzNywxMTk0MTE2NDIxLDY4NTA4Njcz
+OCwtMjg0NjY0OTE5XX0=
 -->
