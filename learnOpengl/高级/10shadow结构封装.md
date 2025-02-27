@@ -176,9 +176,11 @@ case MaterialType::PhongShadowMaterial: {
 	break;
 ```
 ## 5.IMGUI中修改对bias、pcfRadius、tightness、renderTarget大小的调整
+```
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTkyOTEwMDMsMTE3NjI0NDM4OCwtMT
-Y5NDg3MzI2MSw0NjA3NDEwMDMsLTI1NzgxNDc5MiwtMTgyODAy
-MDMwMSwtMTAzMDYyNzc3Niw5MjUyMjc2MzcsNDY2NzU2NTE0XX
-0=
+eyJoaXN0b3J5IjpbNzgxOTk5MzY1LC0xNTU5MjkxMDAzLDExNz
+YyNDQzODgsLTE2OTQ4NzMyNjEsNDYwNzQxMDAzLC0yNTc4MTQ3
+OTIsLTE4MjgwMjAzMDEsLTEwMzA2Mjc3NzYsOTI1MjI3NjM3LD
+Q2Njc1NjUxNF19
 -->
