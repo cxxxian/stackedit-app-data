@@ -155,9 +155,24 @@ void Renderer::renderShadowMap(const std::vector<Mesh*>& meshes, DirectionalLigh
 
 ```
 ## 4.RenderObject中，更改ShadowMap以及其他系列参数的更新
+```cpp
+case MaterialType::PhongShadowMaterial: {
+	...
+	//----shadow相关------
+	shader->setInt("shadowMapSampler", 1);
+	dirShadow->mRenderTarget->mDepthAttachment->setUnit(1);
+	dirShadow->mRenderTarget->mDepthAttachment->bind();
+
+	shader->setMatrix4x4("lightMatrix", dirShadow->getLightMatrix(dirLight->getModelMatrix()));
+	//--------------------
+	...
+}
+	break;
+```
 ## 5.IMGUI中修改对bias、pcfRadius、tightness、renderTarget大小的调整
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3NjI0NDM4OCwtMTY5NDg3MzI2MSw0Nj
-A3NDEwMDMsLTI1NzgxNDc5MiwtMTgyODAyMDMwMSwtMTAzMDYy
-Nzc3Niw5MjUyMjc2MzcsNDY2NzU2NTE0XX0=
+eyJoaXN0b3J5IjpbLTExNTUzNzMzNTUsMTE3NjI0NDM4OCwtMT
+Y5NDg3MzI2MSw0NjA3NDEwMDMsLTI1NzgxNDc5MiwtMTgyODAy
+MDMwMSwtMTAzMDYyNzc3Niw5MjUyMjc2MzcsNDY2NzU2NTE0XX
+0=
 -->
