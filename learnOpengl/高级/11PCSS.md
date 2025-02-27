@@ -171,11 +171,15 @@ float findBlocker(vec3 lightSpacePosition, vec2 shadowUV, float depthReceiver, v
 	return blockerNum != 0.0? blockerSumDepth / blockerNum : -1;
 }
 ```
+解释一下：
+`float sampleDepth = texture(shadowMapSampler, shadowUV + disk[i] * searchRadiusUV).r;`
+这句话，`searchRadiusUV`是我们通过`float searchRadiusUV = searchRadius / frustum`算出来的，与光源长度挂钩
+所以通过`shadowUV + disk[i] * searchRadiusUV`进行采样，就可以根据光源长度更改ca
 ## 3 将计算的dBlocker绘制在屏幕上进行观察
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3Nzc1ODQ3MywtMTc2NzYzMTgyMSwtMz
-U3NzczNjc4LC0xOTY3NDI3NjM4LC03NzY4NzQwNjksLTIwMTcz
-NzU3MjcsLTEyOTM3NTYwOCwtMjYxOTkyNjI0LDE0MjE2MjMyOD
-gsNjQ5NDkwNTM2LC01MTEwNDA2MzcsMTE5NDExNjQyMSw2ODUw
-ODY3MzgsLTI4NDY2NDkxOV19
+eyJoaXN0b3J5IjpbNjQyNTM3ODUzLDE1Nzc3NTg0NzMsLTE3Nj
+c2MzE4MjEsLTM1Nzc3MzY3OCwtMTk2NzQyNzYzOCwtNzc2ODc0
+MDY5LC0yMDE3Mzc1NzI3LC0xMjkzNzU2MDgsLTI2MTk5MjYyNC
+wxNDIxNjIzMjg4LDY0OTQ5MDUzNiwtNTExMDQwNjM3LDExOTQx
+MTY0MjEsNjg1MDg2NzM4LC0yODQ2NjQ5MTldfQ==
 -->
