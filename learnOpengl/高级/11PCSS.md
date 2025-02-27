@@ -33,9 +33,11 @@
 ![输入图片说明](/imgs/2025-02-27/F4PYwiWOv6he3T7W.png)
 
 # 实现
-## z
+## 准备工作：搭建实验环境，注意参数调节（尤其是光源位置，方向以及光源视景体大小）
+## 1 加入dBlocker所需的uniform参数
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTgyMjQ0MSwtMjAxNzM3NTcyNywtMT
+eyJoaXN0b3J5IjpbLTM1MDE0MDAxMCwtMjAxNzM3NTcyNywtMT
 I5Mzc1NjA4LC0yNjE5OTI2MjQsMTQyMTYyMzI4OCw2NDk0OTA1
 MzYsLTUxMTA0MDYzNywxMTk0MTE2NDIxLDY4NTA4NjczOCwtMj
 g0NjY0OTE5XX0=
