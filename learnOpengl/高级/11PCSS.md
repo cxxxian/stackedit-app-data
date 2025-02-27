@@ -123,7 +123,19 @@ public:
 	...
 	float	mLightSize{ 0.04 };
 ```
-还记得我们计算`dBlocker`需要用到的参数，要一个在光源坐标系下的位置，用来判断深度，这个无需乘上projectionMatrix
+还记得我们计算`dBlocker`需要用到的参数，要一个在光源坐标系下的位置，用来判断深度，这个无需乘上`projectionMatrix`，
+但是我们之前设计的`lightMatrix`是通过`lightProjection * lightView`得到的
+所以我们要重新设计一个`lightViewMatrix`，并传到`frag`中
+```
+out vec3 lightSpacePosition;
+uniform mat4 lightViewMatrix;
+void main()
+{
+...
+	lightSpaceClipCoord = lightMatrix * transformPosition;
+	lightSpacePosition = (lightViewMatrix * transformPosition).xyz;
+}
+```
 然后在`phongShadow.frag`设计三个参数
 ```glsl
 //PCSS相关参数
@@ -133,7 +145,7 @@ uniform float nearPlane;
 ```
 ## 3 将计算的dBlocker绘制在屏幕上进行观察
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyNDg4NDA4NSwtMzU3NzczNjc4LC0xOT
+eyJoaXN0b3J5IjpbLTY0ODU4MTcxNSwtMzU3NzczNjc4LC0xOT
 Y3NDI3NjM4LC03NzY4NzQwNjksLTIwMTczNzU3MjcsLTEyOTM3
 NTYwOCwtMjYxOTkyNjI0LDE0MjE2MjMyODgsNjQ5NDkwNTM2LC
 01MTEwNDA2MzcsMTE5NDExNjQyMSw2ODUwODY3MzgsLTI4NDY2
