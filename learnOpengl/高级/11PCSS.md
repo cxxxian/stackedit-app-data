@@ -283,14 +283,19 @@ float pcss(vec3 lightSpacePosition, vec4 lightSpaceClipCoord, vec3 normal, vec3 
 其实`pcss`比`pcf`好在哪，就是好在可以根据`penumbra`动态调节`pcfRadius`，如果`pcfRadius`固定的话，那不管变换远近阴影是不会有变化的（软硬变化）
 ## 5 加入对PCSS参数的IMGUI调整
 
-
-
+```cpp
+void renderIMGUI() {
+	...
+	ImGui::SliderFloat("Light Size:", &dirLight->mShadow->mLightSize, 0.0f, 10.0f);
+	...
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjA4OTc1MjYsLTk1NzkxMDk5NCwxMj
-k1NjYzMjc5LDIxMzQ0NjI2MDMsLTEwNDIwNTA4MTEsLTU5NzQ0
-MDIxMSw4NDQwMTM0MTMsMTU3Nzc1ODQ3MywtMTc2NzYzMTgyMS
-wtMzU3NzczNjc4LC0xOTY3NDI3NjM4LC03NzY4NzQwNjksLTIw
-MTczNzU3MjcsLTEyOTM3NTYwOCwtMjYxOTkyNjI0LDE0MjE2Mj
-MyODgsNjQ5NDkwNTM2LC01MTEwNDA2MzcsMTE5NDExNjQyMSw2
-ODUwODY3MzhdfQ==
+eyJoaXN0b3J5IjpbLTM1ODY1NTY4MywtOTU3OTEwOTk0LDEyOT
+U2NjMyNzksMjEzNDQ2MjYwMywtMTA0MjA1MDgxMSwtNTk3NDQw
+MjExLDg0NDAxMzQxMywxNTc3NzU4NDczLC0xNzY3NjMxODIxLC
+0zNTc3NzM2NzgsLTE5Njc0Mjc2MzgsLTc3Njg3NDA2OSwtMjAx
+NzM3NTcyNywtMTI5Mzc1NjA4LC0yNjE5OTI2MjQsMTQyMTYyMz
+I4OCw2NDk0OTA1MzYsLTUxMTA0MDYzNywxMTk0MTE2NDIxLDY4
+NTA4NjczOF19
 -->
