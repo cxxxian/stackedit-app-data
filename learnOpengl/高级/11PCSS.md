@@ -123,6 +123,7 @@ public:
 	...
 	float	mLightSize{ 0.04 };
 ```
+然后在`phongShadow.frag`设计三个参数
 ```glsl
 //PCSS相关参数
 uniform float lightSize;
@@ -131,7 +132,7 @@ uniform float nearPlane;
 ```
 ## 3 将计算的dBlocker绘制在屏幕上进行观察
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5NzYxMjc1NiwtMTk2NzQyNzYzOCwtNz
+eyJoaXN0b3J5IjpbLTM1Nzc3MzY3OCwtMTk2NzQyNzYzOCwtNz
 c2ODc0MDY5LC0yMDE3Mzc1NzI3LC0xMjkzNzU2MDgsLTI2MTk5
 MjYyNCwxNDIxNjIzMjg4LDY0OTQ5MDUzNiwtNTExMDQwNjM3LD
 ExOTQxMTY0MjEsNjg1MDg2NzM4LC0yODQ2NjQ5MTldfQ==
