@@ -176,11 +176,37 @@ case MaterialType::PhongShadowMaterial: {
 	break;
 ```
 ## 5.IMGUI中修改对bias、pcfRadius、tightness、renderTarget大小的调整
-```
+```cpp
+void renderIMGUI() {
+	...
+
+	//2 决定当前的GUI上面有哪些控件，从上到下
+	ImGui::Begin("MaterialEditor");
+	ImGui::SliderFloat("Bias:", &dirLight->mShadow->mBias, 0.0f, 0.01f, "%.4f");
+	ImGui::SliderFloat("Tightness:", &dirLight->mShadow->mDiskTightness, 0.0f, 5.0f, "%.3f");
+	ImGui::SliderFloat("PcfRadius:", &dirLight->mShadow->mPcfRadius, 0.0f, 1.0f, "%.4f");
+
+	int width = dirLight->mShadow->mRenderTarget->mWidth;
+	int height = dirLight->mShadow->mRenderTarget->mHeight;
+	if (
+		ImGui::SliderInt("FBO width", &width, 1, 4096) ||
+		ImGui::SliderInt("FBO height", &height, 1, 4096))
+	{
+		dirLight->mShadow->setRenderTargetSize(width, height);
+	}
+	
+
+	auto pos = dirLight->getPosition();
+	if (ImGui::SliderFloat("light.x", &pos.x, 0.0f, 50.0f, "%.2f")) {
+		dirLight->setPosition(pos);
+	}
+	ImGui::End();
+	...
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzgxOTk5MzY1LC0xNTU5MjkxMDAzLDExNz
-YyNDQzODgsLTE2OTQ4NzMyNjEsNDYwNzQxMDAzLC0yNTc4MTQ3
-OTIsLTE4MjgwMjAzMDEsLTEwMzA2Mjc3NzYsOTI1MjI3NjM3LD
-Q2Njc1NjUxNF19
+eyJoaXN0b3J5IjpbLTE2NzQ4Mjk3MTMsLTE1NTkyOTEwMDMsMT
+E3NjI0NDM4OCwtMTY5NDg3MzI2MSw0NjA3NDEwMDMsLTI1Nzgx
+NDc5MiwtMTgyODAyMDMwMSwtMTAzMDYyNzc3Niw5MjUyMjc2Mz
+csNDY2NzU2NTE0XX0=
 -->
