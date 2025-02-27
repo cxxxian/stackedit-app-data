@@ -120,11 +120,27 @@ DirectionalLight::DirectionalLight() {
 }
 ```
 ## 3.RenderShadowMap中更改FBO与lightMatrix获取方式
-
+以前我们是在`renderer.h`中声明了一个`mShadow`，现在可以将其删除了。
+然后修改相关报错
+```cpp
+void Renderer::render(
+	Scene* scene, 
+	Camera* camera,
+	DirectionalLight* dirLight,
+	AmbientLight* ambLight,
+	unsigned int fbo
+) {
+	...
+	//渲染Shadowmap
+	renderShadowMap(mOpacityObjects, dirLight, dirLight->mShadow->mRenderTarget);
+	...
+	}
+}
+```
 ## 4.RenderObject中，更改ShadowMap以及其他系列参数的更新
 ## 5.IMGUI中修改对bias、pcfRadius、tightness、renderTarget大小的调整
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTIyNjIxNTQ0LC0yNTc4MTQ3OTIsLTE4Mj
+eyJoaXN0b3J5IjpbNDYwNzQxMDAzLC0yNTc4MTQ3OTIsLTE4Mj
 gwMjAzMDEsLTEwMzA2Mjc3NzYsOTI1MjI3NjM3LDQ2Njc1NjUx
 NF19
 -->
