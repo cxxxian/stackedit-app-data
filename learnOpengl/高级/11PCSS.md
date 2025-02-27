@@ -178,7 +178,21 @@ float findBlocker(vec3 lightSpacePosition, vec2 shadowUV, float depthReceiver, v
 最后返回的是一个点周围的`blocker`的平均深度
 
 然后我们去到`cpu`端更新`uniform`，我们加了好多新的
-```c'p'p
+```cpp
+case MaterialType::PhongShadowMaterial: {
+	...
+	shader->setMatrix4x4("lightViewMatrix", glm::inverse(dirLight->getModelMatrix()));
+	...
+	//lightSize
+	shader->setFloat("lightSize", dirShadow->mLightSize);
+	//frustum & nearPlane
+	OrthographicCamera* camera = (OrthographicCamera*)dirShadow->mCamera;
+	float frustum = camera->mR - camera->mL;
+	float nearPlane = camera->mNear;
+
+	shader->setFloat("frustum", frustum);
+	shader->setFloat("nearPlane", nearPlane);
+}
 ```
 ## 3 将计算的dBlocker绘制在屏幕上进行观察
 ```glsl
@@ -205,10 +219,10 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3NDU1NDY0OCwtNTk3NDQwMjExLDg0ND
-AxMzQxMywxNTc3NzU4NDczLC0xNzY3NjMxODIxLC0zNTc3NzM2
-NzgsLTE5Njc0Mjc2MzgsLTc3Njg3NDA2OSwtMjAxNzM3NTcyNy
-wtMTI5Mzc1NjA4LC0yNjE5OTI2MjQsMTQyMTYyMzI4OCw2NDk0
-OTA1MzYsLTUxMTA0MDYzNywxMTk0MTE2NDIxLDY4NTA4NjczOC
-wtMjg0NjY0OTE5XX0=
+eyJoaXN0b3J5IjpbLTEwNDIwNTA4MTEsLTU5NzQ0MDIxMSw4ND
+QwMTM0MTMsMTU3Nzc1ODQ3MywtMTc2NzYzMTgyMSwtMzU3Nzcz
+Njc4LC0xOTY3NDI3NjM4LC03NzY4NzQwNjksLTIwMTczNzU3Mj
+csLTEyOTM3NTYwOCwtMjYxOTkyNjI0LDE0MjE2MjMyODgsNjQ5
+NDkwNTM2LC01MTEwNDA2MzcsMTE5NDExNjQyMSw2ODUwODY3Mz
+gsLTI4NDY2NDkxOV19
 -->
