@@ -203,12 +203,12 @@ void renderIMGUI() {
 }
 ```
 
-
+可以发现，如果`shadowMap`的分辨率特别小的话，即使我们`Bias`很大，也会出现自遮挡现象
 
 ![输入图片说明](/imgs/2025-02-27/69XOvAgyCbDwPCap.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDI4MTkzMzksLTE1NTkyOTEwMDMsMT
-E3NjI0NDM4OCwtMTY5NDg3MzI2MSw0NjA3NDEwMDMsLTI1Nzgx
-NDc5MiwtMTgyODAyMDMwMSwtMTAzMDYyNzc3Niw5MjUyMjc2Mz
-csNDY2NzU2NTE0XX0=
+eyJoaXN0b3J5IjpbNTQxMDAzMDUzLC0xNTU5MjkxMDAzLDExNz
+YyNDQzODgsLTE2OTQ4NzMyNjEsNDYwNzQxMDAzLC0yNTc4MTQ3
+OTIsLTE4MjgwMjAzMDEsLTEwMzA2Mjc3NzYsOTI1MjI3NjM3LD
+Q2Njc1NjUxNF19
 -->
