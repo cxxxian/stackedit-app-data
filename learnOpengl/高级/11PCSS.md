@@ -4,6 +4,8 @@
 
 ![输入图片说明](/imgs/2025-02-27/S7mc54dvcXWWecpz.png)
 
+`penumbra`可以理解为当前像素可以产生的柔和阴影是多大程度
+
 ![输入图片说明](/imgs/2025-02-27/2YMnTtkuLBebcBwW.png)
 
 ![输入图片说明](/imgs/2025-02-27/9A1yz7mHFgNrTGeT.png)
@@ -233,11 +235,14 @@ void main()
 ![输入图片说明](/imgs/2025-02-27/5GlR5eHp6JnSvA8A.png)
 
 ![输入图片说明](/imgs/2025-02-27/ZMEEyVArpsehpxga.png)
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzNDQ2MjYwMywtMTA0MjA1MDgxMSwtNT
-k3NDQwMjExLDg0NDAxMzQxMywxNTc3NzU4NDczLC0xNzY3NjMx
-ODIxLC0zNTc3NzM2NzgsLTE5Njc0Mjc2MzgsLTc3Njg3NDA2OS
-wtMjAxNzM3NTcyNywtMTI5Mzc1NjA4LC0yNjE5OTI2MjQsMTQy
-MTYyMzI4OCw2NDk0OTA1MzYsLTUxMTA0MDYzNywxMTk0MTE2ND
-IxLDY4NTA4NjczOCwtMjg0NjY0OTE5XX0=
+eyJoaXN0b3J5IjpbLTIzODUzMDA1MSwyMTM0NDYyNjAzLC0xMD
+QyMDUwODExLC01OTc0NDAyMTEsODQ0MDEzNDEzLDE1Nzc3NTg0
+NzMsLTE3Njc2MzE4MjEsLTM1Nzc3MzY3OCwtMTk2NzQyNzYzOC
+wtNzc2ODc0MDY5LC0yMDE3Mzc1NzI3LC0xMjkzNzU2MDgsLTI2
+MTk5MjYyNCwxNDIxNjIzMjg4LDY0OTQ5MDUzNiwtNTExMDQwNj
+M3LDExOTQxMTY0MjEsNjg1MDg2NzM4LC0yODQ2NjQ5MTldfQ==
+
 -->
