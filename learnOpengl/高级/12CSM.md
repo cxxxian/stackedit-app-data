@@ -10,7 +10,10 @@
 # 视锥体划分算法
 
 ![输入图片说明](/imgs/2025-02-28/JB6arthKfUApwilD.png)
+
+![输入图片说明](/imgs/2025-02-28/z1pqFpFjkieK8F4e.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDA1Mjk3MTIsLTgyNDc2NjU2NCwtMT
-QyNDM3NTc5NiwxMjk3ODU3MzIzLC03MDI5OTQ5OV19
+eyJoaXN0b3J5IjpbMjE3OTI0NzQzLC0xMjQwNTI5NzEyLC04Mj
+Q3NjY1NjQsLTE0MjQzNzU3OTYsMTI5Nzg1NzMyMywtNzAyOTk0
+OTldfQ==
 -->
