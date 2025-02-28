@@ -8,7 +8,9 @@
 ![输入图片说明](/imgs/2025-02-28/EC5xuIQ1DfI0UxVl.png)
 
 # 视锥体划分算法
+
+![输入图片说明](/imgs/2025-02-28/JB6arthKfUApwilD.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTI4MTk3MzMwLC04MjQ3NjY1NjQsLTE0Mj
-QzNzU3OTYsMTI5Nzg1NzMyMywtNzAyOTk0OTldfQ==
+eyJoaXN0b3J5IjpbLTEyNDA1Mjk3MTIsLTgyNDc2NjU2NCwtMT
+QyNDM3NTc5NiwxMjk3ODU3MzIzLC03MDI5OTQ5OV19
 -->
