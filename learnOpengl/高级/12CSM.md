@@ -7,8 +7,8 @@
 
 ![输入图片说明](/imgs/2025-02-28/EC5xuIQ1DfI0UxVl.png)
 
-# 视景体划分算法
+# 视锥体划分算法
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyNDc2NjU2NCwtMTQyNDM3NTc5NiwxMj
-k3ODU3MzIzLC03MDI5OTQ5OV19
+eyJoaXN0b3J5IjpbNTI4MTk3MzMwLC04MjQ3NjY1NjQsLTE0Mj
+QzNzU3OTYsMTI5Nzg1NzMyMywtNzAyOTk0OTldfQ==
 -->
