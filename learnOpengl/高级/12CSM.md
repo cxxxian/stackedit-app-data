@@ -117,7 +117,7 @@ void DirectionalLightCSMShadow::generateCascadeLayers(std::vector<float>& layers
 	}
 }
 ```
-然后我们去到`phongCSMShadow.frag`当中，设计一个方法`getCurrentLayer`， 返回的值是当前我们在哪一个层级中
+然后我们去到`phongCSMShadow.frag`当中，设计一个方法`getCurrentLayer`， 返回的值是当前我们在哪一个分层（子锥体）中
 `i <= csmLayerCount`，这里为什么要用`<=`，是因为我们的层边界有五个，层级是四个，就好像`0--1--2--3--4`，`--`有四个
 然后我们把对应的`layer`声明不同颜色并输出
 ```glsl
@@ -169,13 +169,29 @@ void main()
 }
 ```
 然后我们去`renderer.cpp`中的`renderObject`进行数据的传输到`shader`中
+```cpp
+case MaterialType::PhongCSMShadowMaterial: {
+	PhongCSMShadowMaterial* phongShadowMat = (PhongCSMShadowMaterial*)material;
 
+	DirectionalLightCSMShadow* dirCSMShadow = (DirectionalLightCSMShadow*)dirLight->mShadow;
+	shader->setInt("sampler", 0);
+	phongShadowMat->mDiffuse->bind();
+
+	shader->setInt("csmLayerCount", dirCSMShadow->mLayerCount);
+
+	std::vector<float> layers;
+	dirCSMShadow->generateCascadeLayers(layers, camera->mNear, camera->mFar);
+	shader->setFloatArray("csmLayers", layers.data(), layers.size());
+	...
+}
+	 break;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1MDc5NjU1NiwxNDA0OTUyODk0LDE4ND
-IzNjMyMTksLTMyNTQ2MiwxMDY3NjA4MTQ3LDEwMDg2MzM0Nzgs
-LTg2Mzc5NDEwNCwtMTQ3ODY4MzI2OSwtOTAxMTc5NjQ1LC0yMT
-QwMzY0NTYsMTQwNzU5OTY4MywtMTA2OTgyMDgyMSwtNDgxMzIw
-MzEyLC0yMDk0MTI0MzMsMzIzNjA1MzkyLDExMzkyMjkxMywyMT
-c5MjQ3NDMsLTEyNDA1Mjk3MTIsLTgyNDc2NjU2NCwtMTQyNDM3
-NTc5Nl19
+eyJoaXN0b3J5IjpbLTE1MTYyNDk0MzgsMTQwNDk1Mjg5NCwxOD
+QyMzYzMjE5LC0zMjU0NjIsMTA2NzYwODE0NywxMDA4NjMzNDc4
+LC04NjM3OTQxMDQsLTE0Nzg2ODMyNjksLTkwMTE3OTY0NSwtMj
+E0MDM2NDU2LDE0MDc1OTk2ODMsLTEwNjk4MjA4MjEsLTQ4MTMy
+MDMxMiwtMjA5NDEyNDMzLDMyMzYwNTM5MiwxMTM5MjI5MTMsMj
+E3OTI0NzQzLC0xMjQwNTI5NzEyLC04MjQ3NjY1NjQsLTE0MjQz
+NzU3OTZdfQ==
 -->
