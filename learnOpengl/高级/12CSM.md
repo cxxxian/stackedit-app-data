@@ -296,14 +296,18 @@ std::vector<glm::vec4> Tools::getFrustumCornersWorldSpace(const glm::mat4& projV
 ## 2 DirectionalLightCSMShadow类加入getLightMatrix函数.
 ### 功能：传入玩家相机+near+far+光，计算当前光源方向下，子椎体的LightMatrix
 
+
+
+![输入图片说明](/imgs/2025-03-01/PdQfJp4yG3cwW0s3.png)
+
 ## 3 DirectionalLightCSMShadow类加入getLightMatrices函数
 ### 功能：传入玩家相机+光源+视锥体划分数据，计算每个子视锥体的LightMatrix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDAxNzM3MTIsMTEwMjY5MjYxNywtMT
-E3NDMwNTE4MCw3NTE2NzM3OTIsLTkxMjYzMjA1MSwtMTExMDY5
-MTU5NywzMzA1MDgxNjcsLTE2NDkyMTk0NzUsLTEyNDc4MzkzNS
-wtNjg4NDc4Mjk5LDE0MDQ5NTI4OTQsMTg0MjM2MzIxOSwtMzI1
-NDYyLDEwNjc2MDgxNDcsMTAwODYzMzQ3OCwtODYzNzk0MTA0LC
-0xNDc4NjgzMjY5LC05MDExNzk2NDUsLTIxNDAzNjQ1NiwxNDA3
-NTk5NjgzXX0=
+eyJoaXN0b3J5IjpbMTYyMjgyODU1NywtMTU0MDE3MzcxMiwxMT
+AyNjkyNjE3LC0xMTc0MzA1MTgwLDc1MTY3Mzc5MiwtOTEyNjMy
+MDUxLC0xMTEwNjkxNTk3LDMzMDUwODE2NywtMTY0OTIxOTQ3NS
+wtMTI0NzgzOTM1LC02ODg0NzgyOTksMTQwNDk1Mjg5NCwxODQy
+MzYzMjE5LC0zMjU0NjIsMTA2NzYwODE0NywxMDA4NjMzNDc4LC
+04NjM3OTQxMDQsLTE0Nzg2ODMyNjksLTkwMTE3OTY0NSwtMjE0
+MDM2NDU2XX0=
 -->
