@@ -62,18 +62,33 @@ enum class MaterialType {
 
 ## 合并到渲染流程当中
 快速过一遍流程
+声明`shader`变量
 ```cpp
 Shader* mPhongCSMShadowShader{ nullptr };
 ```
+初始化
 ```cpp
 mPhongCSMShadowShader = new Shader("assets/shaders/advanced/phongCSMShadow.vert", "assets/shaders/advanced/phongCSMShadow.frag");
 ```
+完善`pickShader`
+```cpp
+Shader* Renderer::pickShader(MaterialType type) {
+	Shader* result = nullptr;
+	switch (type) {
+	...
+	case MaterialType::PhongCSMShadowMaterial:
+		result = mPhongCSMShadowShader;
+		break;
+	...
+	}
+
+	return result;
+}
 ```
-``
 ## 加入视锥体划分
 ### CSM阴影中，加入generateCascadeLayers函数 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4NTE3Nzg4NSwxMDA4NjMzNDc4LC04Nj
+eyJoaXN0b3J5IjpbMTA2NzYwODE0NywxMDA4NjMzNDc4LC04Nj
 M3OTQxMDQsLTE0Nzg2ODMyNjksLTkwMTE3OTY0NSwtMjE0MDM2
 NDU2LDE0MDc1OTk2ODMsLTEwNjk4MjA4MjEsLTQ4MTMyMDMxMi
 wtMjA5NDEyNDMzLDMyMzYwNTM5MiwxMTM5MjI5MTMsMjE3OTI0
