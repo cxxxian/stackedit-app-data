@@ -22,7 +22,8 @@
 ![输入图片说明](/imgs/2025-03-01/857OU8SdEQ6vq1Q4.png)
 
 整理一下我们得到的已知量，
-`near```
+`near`和`far`大小已知，以及`fov`视张角已知，就可以构建视锥体，得出投影矩阵
+然后
 
 ![输入图片说明](/imgs/2025-03-01/ZA5RZ2ATAn32t2P6.png)
 
@@ -30,8 +31,8 @@
 
 ![输入图片说明](/imgs/2025-03-01/uY2ejfeckQ9el1b7.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2NDg3OTc2MywtMTA2OTgyMDgyMSwtND
-gxMzIwMzEyLC0yMDk0MTI0MzMsMzIzNjA1MzkyLDExMzkyMjkx
-MywyMTc5MjQ3NDMsLTEyNDA1Mjk3MTIsLTgyNDc2NjU2NCwtMT
-QyNDM3NTc5NiwxMjk3ODU3MzIzLC03MDI5OTQ5OV19
+eyJoaXN0b3J5IjpbLTEyODk3NDEzNzQsLTEwNjk4MjA4MjEsLT
+Q4MTMyMDMxMiwtMjA5NDEyNDMzLDMyMzYwNTM5MiwxMTM5MjI5
+MTMsMjE3OTI0NzQzLC0xMjQwNTI5NzEyLC04MjQ3NjY1NjQsLT
+E0MjQzNzU3OTYsMTI5Nzg1NzMyMywtNzAyOTk0OTldfQ==
 -->
