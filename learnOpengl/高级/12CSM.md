@@ -300,14 +300,15 @@ std::vector<glm::vec4> Tools::getFrustumCornersWorldSpace(const glm::mat4& projV
 但是此时我们的相机是放在视景体内部的中心位置，所以就会导致`near`跑到相机的后面，即应该是一个负值
 又因为我们的相机是朝向`-z`轴的
 捋一下，现在我们的`maxZ`假如是`10`，`minZ`是`-10`的话，那就代表`near`对应的是`maxZ`，`far`对应的是`minZ`，
-那就不对了，因为`near`此时是在我们相机背后的，farshi
+那就不对了，因为`near`此时是在我们相机背后（`+z`轴方向）的，`far`是在我们相机前面（`-z`轴方向）的
+所以我们在构造正交相机的时候，传入的`minZ`和`maxZ`都要加上负号
 
 ![输入图片说明](/imgs/2025-03-01/PdQfJp4yG3cwW0s3.png)
 
 ## 3 DirectionalLightCSMShadow类加入getLightMatrices函数
 ### 功能：传入玩家相机+光源+视锥体划分数据，计算每个子视锥体的LightMatrix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk0MTc2MjU3OCwtMTU0MDE3MzcxMiwxMT
+eyJoaXN0b3J5IjpbLTgyMzM3MTc0OCwtMTU0MDE3MzcxMiwxMT
 AyNjkyNjE3LC0xMTc0MzA1MTgwLDc1MTY3Mzc5MiwtOTEyNjMy
 MDUxLC0xMTEwNjkxNTk3LDMzMDUwODE2NywtMTY0OTIxOTQ3NS
 wtMTI0NzgzOTM1LC02ODg0NzgyOTksMTQwNDk1Mjg5NCwxODQy
