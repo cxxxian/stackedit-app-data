@@ -117,6 +117,7 @@ void DirectionalLightCSMShadow::generateCascadeLayers(std::vector<float>& layers
 	}
 }
 ```
+然后我们去到`phongCSMShadow.frag`当中
 ```glsl
 uniform int csmLayerCount;
 uniform float csmLayers[20];
@@ -141,24 +142,7 @@ int getCurrentLayer(){
 void main()
 {
 //环境光计算
-	vec3 objectColor  = texture(sampler, uv).xyz ;
-	vec3 result = vec3(0.0,0.0,0.0);
-
-	//计算光照的通用数据
-	vec3 normalN = normalize(normal);
-	vec3 viewDir = normalize(worldPosition - cameraPosition);
-
-	result += calculateDirectionalLight(objectColor, directionalLight,normalN, viewDir);
-
-	
-	float alpha =  texture(sampler, uv).a;
-
-	vec3 ambientColor = objectColor * ambientColor;
-
-	float shadow = pcss(lightSpacePosition, lightSpaceClipCoord, normal, -directionalLight.direction);
-	//float shadow = pcf(normal, -directionalLight.direction, pcfRadius);
-	vec3 finalColor = result * (1.0 - shadow) + ambientColor;
-
+	...
 	int layer = getCurrentLayer();
 	vec3 maskColor = vec3(0.0,0.0,0.0);
 	switch(layer){
@@ -183,11 +167,11 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyODkyOTAxOTgsMTg0MjM2MzIxOSwtMz
-I1NDYyLDEwNjc2MDgxNDcsMTAwODYzMzQ3OCwtODYzNzk0MTA0
-LC0xNDc4NjgzMjY5LC05MDExNzk2NDUsLTIxNDAzNjQ1NiwxND
-A3NTk5NjgzLC0xMDY5ODIwODIxLC00ODEzMjAzMTIsLTIwOTQx
-MjQzMywzMjM2MDUzOTIsMTEzOTIyOTEzLDIxNzkyNDc0MywtMT
-I0MDUyOTcxMiwtODI0NzY2NTY0LC0xNDI0Mzc1Nzk2LDEyOTc4
-NTczMjNdfQ==
+eyJoaXN0b3J5IjpbMTQwNDk1Mjg5NCwxODQyMzYzMjE5LC0zMj
+U0NjIsMTA2NzYwODE0NywxMDA4NjMzNDc4LC04NjM3OTQxMDQs
+LTE0Nzg2ODMyNjksLTkwMTE3OTY0NSwtMjE0MDM2NDU2LDE0MD
+c1OTk2ODMsLTEwNjk4MjA4MjEsLTQ4MTMyMDMxMiwtMjA5NDEy
+NDMzLDMyMzYwNTM5MiwxMTM5MjI5MTMsMjE3OTI0NzQzLC0xMj
+QwNTI5NzEyLC04MjQ3NjY1NjQsLTE0MjQzNzU3OTYsMTI5Nzg1
+NzMyM119
 -->
