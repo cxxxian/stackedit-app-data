@@ -366,6 +366,8 @@ glm::mat4 DirectionalLightCSMShadow::getLightMatrix(Camera* camera, glm::vec3 li
 假设有四个切片边界，那就会划分出三个子视锥体，所以循环的次数为`clips.size() - 1`
 每次依次传入两个作为`near`和`far`平面
 比如第一次就是`0`作为近平面，`1`作为远平面
+tips**：
+`const std::vector<float>& clips`
 ```cpp
 std::vector<glm::mat4> DirectionalLightCSMShadow::getLightMatrices(Camera* camera, glm::vec3 lightDir, const std::vector<float>& clips) {
 	std::vector<glm::mat4> matrices;
@@ -379,7 +381,7 @@ std::vector<glm::mat4> DirectionalLightCSMShadow::getLightMatrices(Camera* camer
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5OTM4MzM4NSw4NTc4NTMwNTEsLTE1ND
+eyJoaXN0b3J5IjpbMTc0NjY3NTY5NSw4NTc4NTMwNTEsLTE1ND
 AxNzM3MTIsMTEwMjY5MjYxNywtMTE3NDMwNTE4MCw3NTE2NzM3
 OTIsLTkxMjYzMjA1MSwtMTExMDY5MTU5NywzMzA1MDgxNjcsLT
 E2NDkyMTk0NzUsLTEyNDc4MzkzNSwtNjg4NDc4Mjk5LDE0MDQ5
