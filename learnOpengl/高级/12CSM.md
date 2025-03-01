@@ -264,12 +264,22 @@ Framebuffer* Framebuffer::createCSMShadowFbo(unsigned int width, unsigned int he
 	return fb;
 }
 ```
+
+# 实践（光源矩阵计算）
+## 1 Tool类中，加入getFrustumCornersWorldSpace函数
+### 功能：传入一个相机Projection*View矩阵乘积，得到对应视锥体八个角点
+
+## 2 DirectionalLightCSMShadow类加入getLightMatrix函数.
+### 功能：传入玩家相机+near+far+光，计算当前光源方向下，子椎体的LightMatrix
+
+## 3 DirectionalLightCSMShadow类加入getLightMatrices函数
+### 功能：传入玩家相机+光源+视锥体划分数据，计算每个子视锥体的LightMatrix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDg0NDMwOTQsLTkxMjYzMjA1MSwtMT
-ExMDY5MTU5NywzMzA1MDgxNjcsLTE2NDkyMTk0NzUsLTEyNDc4
-MzkzNSwtNjg4NDc4Mjk5LDE0MDQ5NTI4OTQsMTg0MjM2MzIxOS
-wtMzI1NDYyLDEwNjc2MDgxNDcsMTAwODYzMzQ3OCwtODYzNzk0
-MTA0LC0xNDc4NjgzMjY5LC05MDExNzk2NDUsLTIxNDAzNjQ1Ni
-wxNDA3NTk5NjgzLC0xMDY5ODIwODIxLC00ODEzMjAzMTIsLTIw
-OTQxMjQzM119
+eyJoaXN0b3J5IjpbNzUxNjczNzkyLC05MTI2MzIwNTEsLTExMT
+A2OTE1OTcsMzMwNTA4MTY3LC0xNjQ5MjE5NDc1LC0xMjQ3ODM5
+MzUsLTY4ODQ3ODI5OSwxNDA0OTUyODk0LDE4NDIzNjMyMTksLT
+MyNTQ2MiwxMDY3NjA4MTQ3LDEwMDg2MzM0NzgsLTg2Mzc5NDEw
+NCwtMTQ3ODY4MzI2OSwtOTAxMTc5NjQ1LC0yMTQwMzY0NTYsMT
+QwNzU5OTY4MywtMTA2OTgyMDgyMSwtNDgxMzIwMzEyLC0yMDk0
+MTI0MzNdfQ==
 -->
