@@ -212,6 +212,8 @@ case MaterialType::PhongCSMShadowMaterial: {
 ## 1 Texture类加入CSMTextureArray的创建
 在`texture.h`制作函数并实现
 这里要**注意**，
+`dTex->mTextureTarget = GL_TEXTURE_2D_ARRAY`这一句话别忘了，因为我们默认的`mTextureTarget`是`GL_TEXTURE_2D`
+我们在`bind`函数中会根据`GL_TEXTURE_2D`进行动态绑定，因为我们之前由于天空球材质加入了bu'y'y
 ```cpp
 Texture* Texture::createDepthAttachmentCSMArray(unsigned int width, unsigned int height, unsigned int layerNum, unsigned int unit)
 {
@@ -241,11 +243,11 @@ Texture* Texture::createDepthAttachmentCSMArray(unsigned int width, unsigned int
 ```
 ## 2 FBO类加入CSMFBO的创建
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjUxMTMxOTUzLC0xMTEwNjkxNTk3LDMzMD
-UwODE2NywtMTY0OTIxOTQ3NSwtMTI0NzgzOTM1LC02ODg0Nzgy
-OTksMTQwNDk1Mjg5NCwxODQyMzYzMjE5LC0zMjU0NjIsMTA2Nz
-YwODE0NywxMDA4NjMzNDc4LC04NjM3OTQxMDQsLTE0Nzg2ODMy
-NjksLTkwMTE3OTY0NSwtMjE0MDM2NDU2LDE0MDc1OTk2ODMsLT
-EwNjk4MjA4MjEsLTQ4MTMyMDMxMiwtMjA5NDEyNDMzLDMyMzYw
-NTM5Ml19
+eyJoaXN0b3J5IjpbLTIwOTE5Mjg1NTYsLTExMTA2OTE1OTcsMz
+MwNTA4MTY3LC0xNjQ5MjE5NDc1LC0xMjQ3ODM5MzUsLTY4ODQ3
+ODI5OSwxNDA0OTUyODk0LDE4NDIzNjMyMTksLTMyNTQ2MiwxMD
+Y3NjA4MTQ3LDEwMDg2MzM0NzgsLTg2Mzc5NDEwNCwtMTQ3ODY4
+MzI2OSwtOTAxMTc5NjQ1LC0yMTQwMzY0NTYsMTQwNzU5OTY4My
+wtMTA2OTgyMDgyMSwtNDgxMzIwMzEyLC0yMDk0MTI0MzMsMzIz
+NjA1MzkyXX0=
 -->
