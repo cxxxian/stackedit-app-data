@@ -359,12 +359,24 @@ glm::mat4 DirectionalLightCSMShadow::getLightMatrix(Camera* camera, glm::vec3 li
 
 ## 3 DirectionalLightCSMShadow类加入getLightMatrices函数
 ### 功能：传入玩家相机+光源+视锥体划分数据，计算每个子视锥体的LightMatrix
+```cpp
+std::vector<glm::mat4> DirectionalLightCSMShadow::getLightMatrices(Camera* camera, glm::vec3 lightDir, const std::vector<float>& clips) {
+	std::vector<glm::mat4> matrices;
+	for (int i = 0; i < clips.size() - 1; i++) {
+		auto lightMatrix = getLightMatrix(camera, lightDir, clips[i], clips[i + 1]);
+		matrices.push_back(lightMatrix);
+	}
+
+	return matrices;
+}
+
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODU3ODUzMDUxLC0xNTQwMTczNzEyLDExMD
-I2OTI2MTcsLTExNzQzMDUxODAsNzUxNjczNzkyLC05MTI2MzIw
-NTEsLTExMTA2OTE1OTcsMzMwNTA4MTY3LC0xNjQ5MjE5NDc1LC
-0xMjQ3ODM5MzUsLTY4ODQ3ODI5OSwxNDA0OTUyODk0LDE4NDIz
-NjMyMTksLTMyNTQ2MiwxMDY3NjA4MTQ3LDEwMDg2MzM0NzgsLT
-g2Mzc5NDEwNCwtMTQ3ODY4MzI2OSwtOTAxMTc5NjQ1LC0yMTQw
-MzY0NTZdfQ==
+eyJoaXN0b3J5IjpbLTE0Nzk1MDY3NDMsODU3ODUzMDUxLC0xNT
+QwMTczNzEyLDExMDI2OTI2MTcsLTExNzQzMDUxODAsNzUxNjcz
+NzkyLC05MTI2MzIwNTEsLTExMTA2OTE1OTcsMzMwNTA4MTY3LC
+0xNjQ5MjE5NDc1LC0xMjQ3ODM5MzUsLTY4ODQ3ODI5OSwxNDA0
+OTUyODk0LDE4NDIzNjMyMTksLTMyNTQ2MiwxMDY3NjA4MTQ3LD
+EwMDg2MzM0NzgsLTg2Mzc5NDEwNCwtMTQ3ODY4MzI2OSwtOTAx
+MTc5NjQ1XX0=
 -->
