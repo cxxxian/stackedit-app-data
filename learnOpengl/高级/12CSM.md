@@ -116,14 +116,78 @@ void DirectionalLightCSMShadow::generateCascadeLayers(std::vector<float>& layers
 		layers.push_back(layer);
 	}
 }
+```
+```glsl
+uniform int csmLayerCount;
+uniform float csmLayers[20];
+uniform mat4 viewMatrix;
 
+int getCurrentLayer(){
+	//求当前像素在相机坐标系下的坐标
+	vec3 positionCameraSpace = (viewMatrix * vec4(worldPosition, 1.0)).xyz;
+	float z = -positionCameraSpace.z;
+
+	int layer = 0;
+	for(int i = 0;i <= csmLayerCount;i++){
+		if(z < csmLayers[i]){
+			layer = i - 1;
+			break;
+		}
+	}
+
+	return layer;
+}
+
+void main()
+{
+//环境光计算
+	vec3 objectColor  = texture(sampler, uv).xyz ;
+	vec3 result = vec3(0.0,0.0,0.0);
+
+	//计算光照的通用数据
+	vec3 normalN = normalize(normal);
+	vec3 viewDir = normalize(worldPosition - cameraPosition);
+
+	result += calculateDirectionalLight(objectColor, directionalLight,normalN, viewDir);
+
+	
+	float alpha =  texture(sampler, uv).a;
+
+	vec3 ambientColor = objectColor * ambientColor;
+
+	float shadow = pcss(lightSpacePosition, lightSpaceClipCoord, normal, -directionalLight.direction);
+	//float shadow = pcf(normal, -directionalLight.direction, pcfRadius);
+	vec3 finalColor = result * (1.0 - shadow) + ambientColor;
+
+	int layer = getCurrentLayer();
+	vec3 maskColor = vec3(0.0,0.0,0.0);
+	switch(layer){
+		case 0:
+			maskColor = vec3(1.0,0.0,0.0);
+		break;
+		case 1:
+			maskColor = vec3(0.0,1.0,0.0);
+		break;
+		case 2:
+			maskColor = vec3(0.0,0.0,1.0);
+		break;
+		case 3:
+			maskColor = vec3(0.0,1.0,1.0);
+		break;
+		case 4:
+			maskColor = vec3(1.0,0.0,1.0);
+		break;
+	}
+	finalColor = finalColor * maskColor;
+	FragColor = vec4(finalColor,alpha * opacity);
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg0MjM2MzIxOSwtMzI1NDYyLDEwNjc2MD
-gxNDcsMTAwODYzMzQ3OCwtODYzNzk0MTA0LC0xNDc4NjgzMjY5
-LC05MDExNzk2NDUsLTIxNDAzNjQ1NiwxNDA3NTk5NjgzLC0xMD
-Y5ODIwODIxLC00ODEzMjAzMTIsLTIwOTQxMjQzMywzMjM2MDUz
-OTIsMTEzOTIyOTEzLDIxNzkyNDc0MywtMTI0MDUyOTcxMiwtOD
-I0NzY2NTY0LC0xNDI0Mzc1Nzk2LDEyOTc4NTczMjMsLTcwMjk5
-NDk5XX0=
+eyJoaXN0b3J5IjpbLTEyODkyOTAxOTgsMTg0MjM2MzIxOSwtMz
+I1NDYyLDEwNjc2MDgxNDcsMTAwODYzMzQ3OCwtODYzNzk0MTA0
+LC0xNDc4NjgzMjY5LC05MDExNzk2NDUsLTIxNDAzNjQ1NiwxND
+A3NTk5NjgzLC0xMDY5ODIwODIxLC00ODEzMjAzMTIsLTIwOTQx
+MjQzMywzMjM2MDUzOTIsMTEzOTIyOTEzLDIxNzkyNDc0MywtMT
+I0MDUyOTcxMiwtODI0NzY2NTY0LC0xNDI0Mzc1Nzk2LDEyOTc4
+NTczMjNdfQ==
 -->
