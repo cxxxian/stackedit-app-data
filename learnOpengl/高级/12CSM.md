@@ -267,6 +267,11 @@ Framebuffer* Framebuffer::createCSMShadowFbo(unsigned int width, unsigned int he
 
 # 实践（光源矩阵计算）
 ## 1 Tool类中，加入getFrustumCornersWorldSpace函数
+
+复习一下这张图，我们通过相机`Projection*View`，可以将视锥体的`NDC`坐标反推回世界坐标
+
+![输入图片说明](/imgs/2025-03-01/uY2ejfeckQ9el1b7.png)
+
 ### 功能：传入一个相机Projection*View矩阵乘积，得到对应视锥体八个角点
 
 ## 2 DirectionalLightCSMShadow类加入getLightMatrix函数.
@@ -275,11 +280,11 @@ Framebuffer* Framebuffer::createCSMShadowFbo(unsigned int width, unsigned int he
 ## 3 DirectionalLightCSMShadow类加入getLightMatrices函数
 ### 功能：传入玩家相机+光源+视锥体划分数据，计算每个子视锥体的LightMatrix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzUxNjczNzkyLC05MTI2MzIwNTEsLTExMT
-A2OTE1OTcsMzMwNTA4MTY3LC0xNjQ5MjE5NDc1LC0xMjQ3ODM5
-MzUsLTY4ODQ3ODI5OSwxNDA0OTUyODk0LDE4NDIzNjMyMTksLT
-MyNTQ2MiwxMDY3NjA4MTQ3LDEwMDg2MzM0NzgsLTg2Mzc5NDEw
-NCwtMTQ3ODY4MzI2OSwtOTAxMTc5NjQ1LC0yMTQwMzY0NTYsMT
-QwNzU5OTY4MywtMTA2OTgyMDgyMSwtNDgxMzIwMzEyLC0yMDk0
-MTI0MzNdfQ==
+eyJoaXN0b3J5IjpbLTExNzQzMDUxODAsNzUxNjczNzkyLC05MT
+I2MzIwNTEsLTExMTA2OTE1OTcsMzMwNTA4MTY3LC0xNjQ5MjE5
+NDc1LC0xMjQ3ODM5MzUsLTY4ODQ3ODI5OSwxNDA0OTUyODk0LD
+E4NDIzNjMyMTksLTMyNTQ2MiwxMDY3NjA4MTQ3LDEwMDg2MzM0
+NzgsLTg2Mzc5NDEwNCwtMTQ3ODY4MzI2OSwtOTAxMTc5NjQ1LC
+0yMTQwMzY0NTYsMTQwNzU5OTY4MywtMTA2OTgyMDgyMSwtNDgx
+MzIwMzEyXX0=
 -->
