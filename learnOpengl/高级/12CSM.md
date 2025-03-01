@@ -43,7 +43,7 @@
 
 ![输入图片说明](/imgs/2025-03-01/jXykrmSeTQ60BbAO.png)
 
-# 实践（）
+# 实践（CSM结构搭建与视锥体划分算法实现）
 ## 加入新结构
 ### 1 加入新影子DrectionalLightCSMShadow
 就直接复制`DrectionalLightShadow.h`和`DrectionalLightShadow.cpp`，之后再做修改操作
@@ -265,11 +265,11 @@ Framebuffer* Framebuffer::createCSMShadowFbo(unsigned int width, unsigned int he
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzUyNTYwOSwtOTEyNjMyMDUxLC0xMT
-EwNjkxNTk3LDMzMDUwODE2NywtMTY0OTIxOTQ3NSwtMTI0Nzgz
-OTM1LC02ODg0NzgyOTksMTQwNDk1Mjg5NCwxODQyMzYzMjE5LC
-0zMjU0NjIsMTA2NzYwODE0NywxMDA4NjMzNDc4LC04NjM3OTQx
-MDQsLTE0Nzg2ODMyNjksLTkwMTE3OTY0NSwtMjE0MDM2NDU2LD
-E0MDc1OTk2ODMsLTEwNjk4MjA4MjEsLTQ4MTMyMDMxMiwtMjA5
-NDEyNDMzXX0=
+eyJoaXN0b3J5IjpbLTE4NDg0NDMwOTQsLTkxMjYzMjA1MSwtMT
+ExMDY5MTU5NywzMzA1MDgxNjcsLTE2NDkyMTk0NzUsLTEyNDc4
+MzkzNSwtNjg4NDc4Mjk5LDE0MDQ5NTI4OTQsMTg0MjM2MzIxOS
+wtMzI1NDYyLDEwNjc2MDgxNDcsMTAwODYzMzQ3OCwtODYzNzk0
+MTA0LC0xNDc4NjgzMjY5LC05MDExNzk2NDUsLTIxNDAzNjQ1Ni
+wxNDA3NTk5NjgzLC0xMDY5ODIwODIxLC00ODEzMjAzMTIsLTIw
+OTQxMjQzM119
 -->
