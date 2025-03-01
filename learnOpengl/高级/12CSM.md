@@ -242,14 +242,33 @@ Texture* Texture::createDepthAttachmentCSMArray(unsigned int width, unsigned int
 }
 ```
 ## 2 FBO类加入CSMFBO的创建
-```
+```cpp
+Framebuffer* Framebuffer::createCSMShadowFbo(unsigned int width, unsigned int height, unsigned int layerNumber)
+{
+	Framebuffer* fb = new Framebuffer();
+	unsigned int fbo;
+	glGenFramebuffers(1, &fbo);
+	glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+
+	//加入深度附件
+	Texture* depthAttachment = Texture::createDepthAttachmentCSMArray(width, height, layerNumber, 0);
+	glFramebufferTextureLayer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, depthAttachment->getTexture(), 0, 0);
+	glDrawBuffer(GL_NONE);//显式的告诉opengl， 我们当前这个fbo没有颜色输出
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+	fb->mFBO = fbo;
+	fb->mWidth = width;
+	fb->mHeight = height;
+
+	return fb;
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkyNzc4NDgzNSwtMTExMDY5MTU5NywzMz
-A1MDgxNjcsLTE2NDkyMTk0NzUsLTEyNDc4MzkzNSwtNjg4NDc4
-Mjk5LDE0MDQ5NTI4OTQsMTg0MjM2MzIxOSwtMzI1NDYyLDEwNj
-c2MDgxNDcsMTAwODYzMzQ3OCwtODYzNzk0MTA0LC0xNDc4Njgz
-MjY5LC05MDExNzk2NDUsLTIxNDAzNjQ1NiwxNDA3NTk5NjgzLC
-0xMDY5ODIwODIxLC00ODEzMjAzMTIsLTIwOTQxMjQzMywzMjM2
-MDUzOTJdfQ==
+eyJoaXN0b3J5IjpbLTE1MTMyOTcxMjksLTExMTA2OTE1OTcsMz
+MwNTA4MTY3LC0xNjQ5MjE5NDc1LC0xMjQ3ODM5MzUsLTY4ODQ3
+ODI5OSwxNDA0OTUyODk0LDE4NDIzNjMyMTksLTMyNTQ2MiwxMD
+Y3NjA4MTQ3LDEwMDg2MzM0NzgsLTg2Mzc5NDEwNCwtMTQ3ODY4
+MzI2OSwtOTAxMTc5NjQ1LC0yMTQwMzY0NTYsMTQwNzU5OTY4My
+wtMTA2OTgyMDgyMSwtNDgxMzIwMzEyLC0yMDk0MTI0MzMsMzIz
+NjA1MzkyXX0=
 -->
