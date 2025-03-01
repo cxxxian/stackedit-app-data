@@ -292,17 +292,18 @@ std::vector<glm::vec4> Tools::getFrustumCornersWorldSpace(const glm::mat4& projV
 	return corners;
 }
 ```
+所以通过这一个方法，我们就成功把子视锥体的八个顶点转到世界坐标系下了
 ## 2 DirectionalLightCSMShadow类加入getLightMatrix函数.
 ### 功能：传入玩家相机+near+far+光，计算当前光源方向下，子椎体的LightMatrix
 
 ## 3 DirectionalLightCSMShadow类加入getLightMatrices函数
 ### 功能：传入玩家相机+光源+视锥体划分数据，计算每个子视锥体的LightMatrix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwMjY5MjYxNywtMTE3NDMwNTE4MCw3NT
-E2NzM3OTIsLTkxMjYzMjA1MSwtMTExMDY5MTU5NywzMzA1MDgx
-NjcsLTE2NDkyMTk0NzUsLTEyNDc4MzkzNSwtNjg4NDc4Mjk5LD
-E0MDQ5NTI4OTQsMTg0MjM2MzIxOSwtMzI1NDYyLDEwNjc2MDgx
-NDcsMTAwODYzMzQ3OCwtODYzNzk0MTA0LC0xNDc4NjgzMjY5LC
-05MDExNzk2NDUsLTIxNDAzNjQ1NiwxNDA3NTk5NjgzLC0xMDY5
-ODIwODIxXX0=
+eyJoaXN0b3J5IjpbLTE1NDAxNzM3MTIsMTEwMjY5MjYxNywtMT
+E3NDMwNTE4MCw3NTE2NzM3OTIsLTkxMjYzMjA1MSwtMTExMDY5
+MTU5NywzMzA1MDgxNjcsLTE2NDkyMTk0NzUsLTEyNDc4MzkzNS
+wtNjg4NDc4Mjk5LDE0MDQ5NTI4OTQsMTg0MjM2MzIxOSwtMzI1
+NDYyLDEwNjc2MDgxNDcsMTAwODYzMzQ3OCwtODYzNzk0MTA0LC
+0xNDc4NjgzMjY5LC05MDExNzk2NDUsLTIxNDAzNjQ1NiwxNDA3
+NTk5NjgzXX0=
 -->
