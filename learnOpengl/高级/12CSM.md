@@ -44,12 +44,16 @@
 # 实践
 ## 加入新结构
 ### 1 加入新影子DrectionalLightCSMShadow
-### 2 加入新材质P 
+### 2 加入新材质PhongCSMShadowMaterial
+### 3 加入新shader，PhongCSMShadow.vert/frag
+
+## 加入视锥体划分
+### CSM阴影中，加入generateCascadeLayers函数 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NzI4NjQ1NDEsLTE0Nzg2ODMyNjksLT
-kwMTE3OTY0NSwtMjE0MDM2NDU2LDE0MDc1OTk2ODMsLTEwNjk4
-MjA4MjEsLTQ4MTMyMDMxMiwtMjA5NDEyNDMzLDMyMzYwNTM5Mi
-wxMTM5MjI5MTMsMjE3OTI0NzQzLC0xMjQwNTI5NzEyLC04MjQ3
-NjY1NjQsLTE0MjQzNzU3OTYsMTI5Nzg1NzMyMywtNzAyOTk0OT
-ldfQ==
+eyJoaXN0b3J5IjpbLTg2Mzc5NDEwNCwtMTQ3ODY4MzI2OSwtOT
+AxMTc5NjQ1LC0yMTQwMzY0NTYsMTQwNzU5OTY4MywtMTA2OTgy
+MDgyMSwtNDgxMzIwMzEyLC0yMDk0MTI0MzMsMzIzNjA1MzkyLD
+ExMzkyMjkxMywyMTc5MjQ3NDMsLTEyNDA1Mjk3MTIsLTgyNDc2
+NjU2NCwtMTQyNDM3NTc5NiwxMjk3ODU3MzIzLC03MDI5OTQ5OV
+19
 -->
