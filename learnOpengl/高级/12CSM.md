@@ -19,6 +19,8 @@
 
 ![输入图片说明](/imgs/2025-03-01/CbTqYPCWZEIVqKn5.png)
 
+子锥体有八个点要确认，它是长得像一个棱台，这里二维方向所以只能看到四个点
+
 ![输入图片说明](/imgs/2025-03-01/857OU8SdEQ6vq1Q4.png)
 
 整理一下我们得到的已知量，
@@ -50,10 +52,10 @@
 ## 加入视锥体划分
 ### CSM阴影中，加入generateCascadeLayers函数 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2Mzc5NDEwNCwtMTQ3ODY4MzI2OSwtOT
-AxMTc5NjQ1LC0yMTQwMzY0NTYsMTQwNzU5OTY4MywtMTA2OTgy
-MDgyMSwtNDgxMzIwMzEyLC0yMDk0MTI0MzMsMzIzNjA1MzkyLD
-ExMzkyMjkxMywyMTc5MjQ3NDMsLTEyNDA1Mjk3MTIsLTgyNDc2
-NjU2NCwtMTQyNDM3NTc5NiwxMjk3ODU3MzIzLC03MDI5OTQ5OV
-19
+eyJoaXN0b3J5IjpbMTAwODYzMzQ3OCwtODYzNzk0MTA0LC0xND
+c4NjgzMjY5LC05MDExNzk2NDUsLTIxNDAzNjQ1NiwxNDA3NTk5
+NjgzLC0xMDY5ODIwODIxLC00ODEzMjAzMTIsLTIwOTQxMjQzMy
+wzMjM2MDUzOTIsMTEzOTIyOTEzLDIxNzkyNDc0MywtMTI0MDUy
+OTcxMiwtODI0NzY2NTY0LC0xNDI0Mzc1Nzk2LDEyOTc4NTczMj
+MsLTcwMjk5NDk5XX0=
 -->
