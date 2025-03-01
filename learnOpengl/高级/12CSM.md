@@ -117,7 +117,8 @@ void DirectionalLightCSMShadow::generateCascadeLayers(std::vector<float>& layers
 	}
 }
 ```
-然后我们去到`phongCSMShadow.frag`当中，设计
+然后我们去到`phongCSMShadow.frag`当中，设计一个方法`getCurrentLayer`， 返回的值是当前我们在哪一个层级中
+`i <= csmLayerCount`，这里为什么要用`<=`，是因为我们的层边界有五个，层级是四个，就好像`0--1--2--3--4`，`--`有四个
 ```glsl
 uniform int csmLayerCount;
 uniform float csmLayers[20];
@@ -167,11 +168,11 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4MzIyOTM0OSwxNDA0OTUyODk0LDE4ND
-IzNjMyMTksLTMyNTQ2MiwxMDY3NjA4MTQ3LDEwMDg2MzM0Nzgs
-LTg2Mzc5NDEwNCwtMTQ3ODY4MzI2OSwtOTAxMTc5NjQ1LC0yMT
-QwMzY0NTYsMTQwNzU5OTY4MywtMTA2OTgyMDgyMSwtNDgxMzIw
-MzEyLC0yMDk0MTI0MzMsMzIzNjA1MzkyLDExMzkyMjkxMywyMT
-c5MjQ3NDMsLTEyNDA1Mjk3MTIsLTgyNDc2NjU2NCwtMTQyNDM3
-NTc5Nl19
+eyJoaXN0b3J5IjpbLTE3NTcyNDI0NDcsMTQwNDk1Mjg5NCwxOD
+QyMzYzMjE5LC0zMjU0NjIsMTA2NzYwODE0NywxMDA4NjMzNDc4
+LC04NjM3OTQxMDQsLTE0Nzg2ODMyNjksLTkwMTE3OTY0NSwtMj
+E0MDM2NDU2LDE0MDc1OTk2ODMsLTEwNjk4MjA4MjEsLTQ4MTMy
+MDMxMiwtMjA5NDEyNDMzLDMyMzYwNTM5MiwxMTM5MjI5MTMsMj
+E3OTI0NzQzLC0xMjQwNTI5NzEyLC04MjQ3NjY1NjQsLTE0MjQz
+NzU3OTZdfQ==
 -->
