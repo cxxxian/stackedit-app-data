@@ -106,7 +106,7 @@ public:
 	int mLayerCount = 5;
 };
 ```
-实现如下，根据公式计算每一层的距离然后存入la'y
+实现如下，根据公式计算每一层的距离然后存入`layer`数组中
 ```cpp
 void DirectionalLightCSMShadow::generateCascadeLayers(std::vector<float>& layers, float near, float far) {
 	layers.clear();
@@ -119,11 +119,11 @@ void DirectionalLightCSMShadow::generateCascadeLayers(std::vector<float>& layers
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTQ0MTA2MDgsLTMyNTQ2MiwxMDY3Nj
-A4MTQ3LDEwMDg2MzM0NzgsLTg2Mzc5NDEwNCwtMTQ3ODY4MzI2
-OSwtOTAxMTc5NjQ1LC0yMTQwMzY0NTYsMTQwNzU5OTY4MywtMT
-A2OTgyMDgyMSwtNDgxMzIwMzEyLC0yMDk0MTI0MzMsMzIzNjA1
-MzkyLDExMzkyMjkxMywyMTc5MjQ3NDMsLTEyNDA1Mjk3MTIsLT
-gyNDc2NjU2NCwtMTQyNDM3NTc5NiwxMjk3ODU3MzIzLC03MDI5
-OTQ5OV19
+eyJoaXN0b3J5IjpbMTg0MjM2MzIxOSwtMzI1NDYyLDEwNjc2MD
+gxNDcsMTAwODYzMzQ3OCwtODYzNzk0MTA0LC0xNDc4NjgzMjY5
+LC05MDExNzk2NDUsLTIxNDAzNjQ1NiwxNDA3NTk5NjgzLC0xMD
+Y5ODIwODIxLC00ODEzMjAzMTIsLTIwOTQxMjQzMywzMjM2MDUz
+OTIsMTEzOTIyOTEzLDIxNzkyNDc0MywtMTI0MDUyOTcxMiwtOD
+I0NzY2NTY0LC0xNDI0Mzc1Nzk2LDEyOTc4NTczMjMsLTcwMjk5
+NDk5XX0=
 -->
