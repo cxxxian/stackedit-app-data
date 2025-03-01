@@ -117,7 +117,7 @@ void DirectionalLightCSMShadow::generateCascadeLayers(std::vector<float>& layers
 	}
 }
 ```
-然后我们去到`phongCSMShadow.frag`当中
+然后我们去到`phongCSMShadow.frag`当中，设计
 ```glsl
 uniform int csmLayerCount;
 uniform float csmLayers[20];
@@ -167,11 +167,11 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwNDk1Mjg5NCwxODQyMzYzMjE5LC0zMj
-U0NjIsMTA2NzYwODE0NywxMDA4NjMzNDc4LC04NjM3OTQxMDQs
-LTE0Nzg2ODMyNjksLTkwMTE3OTY0NSwtMjE0MDM2NDU2LDE0MD
-c1OTk2ODMsLTEwNjk4MjA4MjEsLTQ4MTMyMDMxMiwtMjA5NDEy
-NDMzLDMyMzYwNTM5MiwxMTM5MjI5MTMsMjE3OTI0NzQzLC0xMj
-QwNTI5NzEyLC04MjQ3NjY1NjQsLTE0MjQzNzU3OTYsMTI5Nzg1
-NzMyM119
+eyJoaXN0b3J5IjpbMjA4MzIyOTM0OSwxNDA0OTUyODk0LDE4ND
+IzNjMyMTksLTMyNTQ2MiwxMDY3NjA4MTQ3LDEwMDg2MzM0Nzgs
+LTg2Mzc5NDEwNCwtMTQ3ODY4MzI2OSwtOTAxMTc5NjQ1LC0yMT
+QwMzY0NTYsMTQwNzU5OTY4MywtMTA2OTgyMDgyMSwtNDgxMzIw
+MzEyLC0yMDk0MTI0MzMsMzIzNjA1MzkyLDExMzkyMjkxMywyMT
+c5MjQ3NDMsLTEyNDA1Mjk3MTIsLTgyNDc2NjU2NCwtMTQyNDM3
+NTc5Nl19
 -->
