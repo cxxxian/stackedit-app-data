@@ -21,14 +21,17 @@
 
 ![输入图片说明](/imgs/2025-03-01/857OU8SdEQ6vq1Q4.png)
 
+整理一下我们得到的已知量，
+
+
 ![输入图片说明](/imgs/2025-03-01/ZA5RZ2ATAn32t2P6.png)
 
 `Pw = modelMatrix * P`
 
 ![输入图片说明](/imgs/2025-03-01/uY2ejfeckQ9el1b7.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4MTMyMDMxMiwtMjA5NDEyNDMzLDMyMz
-YwNTM5MiwxMTM5MjI5MTMsMjE3OTI0NzQzLC0xMjQwNTI5NzEy
-LC04MjQ3NjY1NjQsLTE0MjQzNzU3OTYsMTI5Nzg1NzMyMywtNz
-AyOTk0OTldfQ==
+eyJoaXN0b3J5IjpbLTEwNjk4MjA4MjEsLTQ4MTMyMDMxMiwtMj
+A5NDEyNDMzLDMyMzYwNTM5MiwxMTM5MjI5MTMsMjE3OTI0NzQz
+LC0xMjQwNTI5NzEyLC04MjQ3NjY1NjQsLTE0MjQzNzU3OTYsMT
+I5Nzg1NzMyMywtNzAyOTk0OTldfQ==
 -->
