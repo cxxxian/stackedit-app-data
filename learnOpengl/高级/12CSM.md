@@ -359,6 +359,10 @@ glm::mat4 DirectionalLightCSMShadow::getLightMatrix(Camera* camera, glm::vec3 li
 
 ## 3 DirectionalLightCSMShadow类加入getLightMatrices函数
 ### 功能：传入玩家相机+光源+视锥体划分数据，计算每个子视锥体的LightMatrix
+`clips`是视锥体切片数据，即每一个子视锥体的划分界限
+
+![输入图片说明](/imgs/2025-03-01/eb26DYwKDcTVSsfR.png)
+
 ```cpp
 std::vector<glm::mat4> DirectionalLightCSMShadow::getLightMatrices(Camera* camera, glm::vec3 lightDir, const std::vector<float>& clips) {
 	std::vector<glm::mat4> matrices;
@@ -372,11 +376,11 @@ std::vector<glm::mat4> DirectionalLightCSMShadow::getLightMatrices(Camera* camer
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Nzk1MDY3NDMsODU3ODUzMDUxLC0xNT
-QwMTczNzEyLDExMDI2OTI2MTcsLTExNzQzMDUxODAsNzUxNjcz
-NzkyLC05MTI2MzIwNTEsLTExMTA2OTE1OTcsMzMwNTA4MTY3LC
-0xNjQ5MjE5NDc1LC0xMjQ3ODM5MzUsLTY4ODQ3ODI5OSwxNDA0
-OTUyODk0LDE4NDIzNjMyMTksLTMyNTQ2MiwxMDY3NjA4MTQ3LD
-EwMDg2MzM0NzgsLTg2Mzc5NDEwNCwtMTQ3ODY4MzI2OSwtOTAx
-MTc5NjQ1XX0=
+eyJoaXN0b3J5IjpbLTYzMzk4OTY4NCw4NTc4NTMwNTEsLTE1ND
+AxNzM3MTIsMTEwMjY5MjYxNywtMTE3NDMwNTE4MCw3NTE2NzM3
+OTIsLTkxMjYzMjA1MSwtMTExMDY5MTU5NywzMzA1MDgxNjcsLT
+E2NDkyMTk0NzUsLTEyNDc4MzkzNSwtNjg4NDc4Mjk5LDE0MDQ5
+NTI4OTQsMTg0MjM2MzIxOSwtMzI1NDYyLDEwNjc2MDgxNDcsMT
+AwODYzMzQ3OCwtODYzNzk0MTA0LC0xNDc4NjgzMjY5LC05MDEx
+Nzk2NDVdfQ==
 -->
