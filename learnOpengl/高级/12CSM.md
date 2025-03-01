@@ -298,14 +298,15 @@ std::vector<glm::vec4> Tools::getFrustumCornersWorldSpace(const glm::mat4& projV
 
 理解一下这个正交相机的设计，按理来说，`near`平面和`far`平面都要在相机的前方，即传入的值都是正数
 但是此时我们的相机是放在视景体内部的中心位置，所以就会导致`near`跑到相机的后面，即应该是一个负值
-
+又因为我们的相机是朝向`-z`轴的
+捋一下，现在我们的`maxZ`假如是`10`，`minZ`是`-10`的话，那就代表near对应的是maxZ，fard
 
 ![输入图片说明](/imgs/2025-03-01/PdQfJp4yG3cwW0s3.png)
 
 ## 3 DirectionalLightCSMShadow类加入getLightMatrices函数
 ### 功能：传入玩家相机+光源+视锥体划分数据，计算每个子视锥体的LightMatrix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMzNjExNDAzNCwtMTU0MDE3MzcxMiwxMT
+eyJoaXN0b3J5IjpbMTIwODE5NTc2OSwtMTU0MDE3MzcxMiwxMT
 AyNjkyNjE3LC0xMTc0MzA1MTgwLDc1MTY3Mzc5MiwtOTEyNjMy
 MDUxLC0xMTEwNjkxNTk3LDMzMDUwODE2NywtMTY0OTIxOTQ3NS
 wtMTI0NzgzOTM1LC02ODg0NzgyOTksMTQwNDk1Mjg5NCwxODQy
