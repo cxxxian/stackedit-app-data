@@ -351,7 +351,7 @@ glm::mat4 DirectionalLightCSMShadow::getLightMatrix(Camera* camera, glm::vec3 li
 理解一下这个正交相机的设计，按理来说，`near`平面和`far`平面都要在相机的前方，即传入的值都是正数
 但是此时我们的相机是放在视景体内部的中心位置，所以就会导致`near`跑到相机的后面，即应该是一个负值
 又因为我们的相机是朝向`-z`轴的
-捋一下，现在我们的`maxZ`假如是`10`，`minZ`是`-10`的话，那就代表`near`对应的是`maxZ`，`far`对应的是`minZ`，
+捋一下，现在我们的`maxZ`假如是`10`，`minZ`是`-10`的话，那就代表`near`对应的是`maxZ`，`far`对应的是`minZ`，（这个取值从包围盒的设计去理解）
 那就不对了，因为`near`此时是在我们相机背后（`+z`轴方向）的，`far`是在我们相机前面（`-z`轴方向）的
 所以我们在构造正交相机的时候，传入的`minZ`和`maxZ`都要加上负号
 
@@ -360,11 +360,11 @@ glm::mat4 DirectionalLightCSMShadow::getLightMatrix(Camera* camera, glm::vec3 li
 ## 3 DirectionalLightCSMShadow类加入getLightMatrices函数
 ### 功能：传入玩家相机+光源+视锥体划分数据，计算每个子视锥体的LightMatrix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzgwNzk2NTcsLTE1NDAxNzM3MTIsMT
-EwMjY5MjYxNywtMTE3NDMwNTE4MCw3NTE2NzM3OTIsLTkxMjYz
-MjA1MSwtMTExMDY5MTU5NywzMzA1MDgxNjcsLTE2NDkyMTk0Nz
-UsLTEyNDc4MzkzNSwtNjg4NDc4Mjk5LDE0MDQ5NTI4OTQsMTg0
-MjM2MzIxOSwtMzI1NDYyLDEwNjc2MDgxNDcsMTAwODYzMzQ3OC
-wtODYzNzk0MTA0LC0xNDc4NjgzMjY5LC05MDExNzk2NDUsLTIx
-NDAzNjQ1Nl19
+eyJoaXN0b3J5IjpbODU3ODUzMDUxLC0xNTQwMTczNzEyLDExMD
+I2OTI2MTcsLTExNzQzMDUxODAsNzUxNjczNzkyLC05MTI2MzIw
+NTEsLTExMTA2OTE1OTcsMzMwNTA4MTY3LC0xNjQ5MjE5NDc1LC
+0xMjQ3ODM5MzUsLTY4ODQ3ODI5OSwxNDA0OTUyODk0LDE4NDIz
+NjMyMTksLTMyNTQ2MiwxMDY3NjA4MTQ3LDEwMDg2MzM0NzgsLT
+g2Mzc5NDEwNCwtMTQ3ODY4MzI2OSwtOTAxMTc5NjQ1LC0yMTQw
+MzY0NTZdfQ==
 -->
