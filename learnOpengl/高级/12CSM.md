@@ -95,9 +95,31 @@ Shader* Renderer::pickShader(MaterialType type) {
 ## 加入视锥体划分
 ### CSM阴影中，加入generateCascadeLayers函数 
 
-zai
+在`directionalLightCSMShadow.h`中，
+设计一个方法用来划分层次
+```cpp
+public:
+	...
+	void generateCascadeLayers(std::vector<float>& layers, float near, float far);
+	...
+public:
+	int mLayerCount = 5;
+};
+```
+实现如下，根据公式计算每一层的距离然后存入la'y
+```cpp
+void DirectionalLightCSMShadow::generateCascadeLayers(std::vector<float>& layers, float near, float far) {
+	layers.clear();
+
+	for (int i = 0; i <= mLayerCount; i++) {
+		float layer = near * glm::pow(far / near, (float)i / (float)mLayerCount);
+		layers.push_back(layer);
+	}
+}
+
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTU2Mjg1NDYsLTMyNTQ2MiwxMDY3Nj
+eyJoaXN0b3J5IjpbLTEyOTQ0MTA2MDgsLTMyNTQ2MiwxMDY3Nj
 A4MTQ3LDEwMDg2MzM0NzgsLTg2Mzc5NDEwNCwtMTQ3ODY4MzI2
 OSwtOTAxMTc5NjQ1LC0yMTQwMzY0NTYsMTQwNzU5OTY4MywtMT
 A2OTgyMDgyMSwtNDgxMzIwMzEyLC0yMDk0MTI0MzMsMzIzNjA1
