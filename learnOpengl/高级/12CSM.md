@@ -61,14 +61,22 @@ enum class MaterialType {
 也是复制`PhongShadow.vert/frag`即可
 
 ## 合并到渲染流程当中
-
+快速过一遍流程
+```cpp
+Shader* mPhongCSMShadowShader{ nullptr };
+```
+```cpp
+mPhongCSMShadowShader = new Shader("assets/shaders/advanced/phongCSMShadow.vert", "assets/shaders/advanced/phongCSMShadow.frag");
+```
+```
+``
 ## 加入视锥体划分
 ### CSM阴影中，加入generateCascadeLayers函数 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzg1ODMxNzYzLDEwMDg2MzM0NzgsLTg2Mz
-c5NDEwNCwtMTQ3ODY4MzI2OSwtOTAxMTc5NjQ1LC0yMTQwMzY0
-NTYsMTQwNzU5OTY4MywtMTA2OTgyMDgyMSwtNDgxMzIwMzEyLC
-0yMDk0MTI0MzMsMzIzNjA1MzkyLDExMzkyMjkxMywyMTc5MjQ3
-NDMsLTEyNDA1Mjk3MTIsLTgyNDc2NjU2NCwtMTQyNDM3NTc5Ni
-wxMjk3ODU3MzIzLC03MDI5OTQ5OV19
+eyJoaXN0b3J5IjpbMTM4NTE3Nzg4NSwxMDA4NjMzNDc4LC04Nj
+M3OTQxMDQsLTE0Nzg2ODMyNjksLTkwMTE3OTY0NSwtMjE0MDM2
+NDU2LDE0MDc1OTk2ODMsLTEwNjk4MjA4MjEsLTQ4MTMyMDMxMi
+wtMjA5NDEyNDMzLDMyMzYwNTM5MiwxMTM5MjI5MTMsMjE3OTI0
+NzQzLC0xMjQwNTI5NzEyLC04MjQ3NjY1NjQsLTE0MjQzNzU3OT
+YsMTI5Nzg1NzMyMywtNzAyOTk0OTldfQ==
 -->
