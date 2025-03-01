@@ -170,7 +170,7 @@ void main()
 ```
 然后我们去`renderer.cpp`中的`renderObject`进行数据的传输到`shader`中
 
-
+暂时先把所有的阴影相关的数据传输都注释掉，我们传输`layer`相关的参数过去，然后就可以暂时得到一个目的效果
 ```cpp
 case MaterialType::PhongCSMShadowMaterial: {
 	PhongCSMShadowMaterial* phongShadowMat = (PhongCSMShadowMaterial*)material;
@@ -188,14 +188,15 @@ case MaterialType::PhongCSMShadowMaterial: {
 }
 	 break;
 ```
+ru'xia
 
 ![输入图片说明](/imgs/2025-03-01/o1yOnDndgp3sxtN3.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE1MzY2NzQ0LDE0MDQ5NTI4OTQsMTg0Mj
-M2MzIxOSwtMzI1NDYyLDEwNjc2MDgxNDcsMTAwODYzMzQ3OCwt
-ODYzNzk0MTA0LC0xNDc4NjgzMjY5LC05MDExNzk2NDUsLTIxND
-AzNjQ1NiwxNDA3NTk5NjgzLC0xMDY5ODIwODIxLC00ODEzMjAz
-MTIsLTIwOTQxMjQzMywzMjM2MDUzOTIsMTEzOTIyOTEzLDIxNz
-kyNDc0MywtMTI0MDUyOTcxMiwtODI0NzY2NTY0LC0xNDI0Mzc1
-Nzk2XX0=
+eyJoaXN0b3J5IjpbLTE1MzI0NzQyMiwxNDA0OTUyODk0LDE4ND
+IzNjMyMTksLTMyNTQ2MiwxMDY3NjA4MTQ3LDEwMDg2MzM0Nzgs
+LTg2Mzc5NDEwNCwtMTQ3ODY4MzI2OSwtOTAxMTc5NjQ1LC0yMT
+QwMzY0NTYsMTQwNzU5OTY4MywtMTA2OTgyMDgyMSwtNDgxMzIw
+MzEyLC0yMDk0MTI0MzMsMzIzNjA1MzkyLDExMzkyMjkxMywyMT
+c5MjQ3NDMsLTEyNDA1Mjk3MTIsLTgyNDc2NjU2NCwtMTQyNDM3
+NTc5Nl19
 -->
