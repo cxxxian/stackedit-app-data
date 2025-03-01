@@ -296,6 +296,58 @@ std::vector<glm::vec4> Tools::getFrustumCornersWorldSpace(const glm::mat4& projV
 ## 2 DirectionalLightCSMShadow类加入getLightMatrix函数.
 ### 功能：传入玩家相机+near+far+光，计算当前光源方向下，子椎体的LightMatrix
 
+```cpp
+glm::mat4 DirectionalLightCSMShadow::getLightMatrix(Camera* camera, glm::vec3 lightDir, float near, float far) {
+	//1 求当前子视锥体的八个角点世界坐标系的值
+	//此处的camera是玩家视角的相机
+	auto perpCamera = (PerspectiveCamera*)camera;
+	auto perpViewMatrix = perpCamera->getViewMatrix();
+	auto perpProjectionMatrix = glm::perspective(glm::radians(perpCamera->mFovy), perpCamera->mAspect, near, far);
+	auto corners = Tools::getFrustumCornersWorldSpace(perpProjectionMatrix * perpViewMatrix);
+
+	//2 八个角点位置的平均值作为光源的位置，得到lightViewMatrix
+	glm::vec3 center = glm::vec3(0.0f);
+	for (int i = 0; i < corners.size(); i++) {
+		//corners是四维向量要降为三维
+		center += glm::vec3(corners[i]);
+	}
+	center /= corners.size();
+
+	//glm::vec3(0.0, 1.0, 0.0)是穹顶向量
+	auto lightViewMatrix = glm::lookAt(center, center + lightDir, glm::vec3(0.0, 1.0, 0.0));;
+
+	//3 将八个角点转化到光源坐标系，并求最小的AABB包围盒
+	//std::numeric_limits<float>::max()方法，可以取到float的最大值表示
+	float minX = std::numeric_limits<float>::max();
+	float maxX = std::numeric_limits<float>::min();
+	float minY = std::numeric_limits<float>::max();
+	float maxY = std::numeric_limits<float>::min();
+	float minZ = std::numeric_limits<float>::max();
+	float maxZ = std::numeric_limits<float>::min();
+
+	//&v说明可能会改变v的值，但是不希望有改变的现象出现，可以加上const，称为不可改变的引用
+	for (const auto& v : corners) {
+		//将v点从世界坐标系下转换到了光源相机坐标系下
+		const auto pt = lightViewMatrix * v;
+		minX = std::min(minX, pt.x);
+		maxX = std::max(maxX, pt.x);
+		minY = std::min(minY, pt.y);
+		maxY = std::max(maxY, pt.y);
+		minZ = std::min(minZ, pt.z);
+		maxZ = std::max(maxZ, pt.z);
+	}
+
+	//4 调整(包围盒以外的物体，也能够影响到其内部物体的阴影遮挡效果）
+	maxZ *= 10;
+	minZ *= 10;
+
+	//5 计算当前光源的投影矩阵
+	auto lightProjectionMatrix = glm::ortho(minX, maxX, minY, maxY, -maxZ, -minZ);
+
+	return lightProjectionMatrix * lightViewMatrix;
+}
+```
+
 理解一下这个正交相机的设计，按理来说，`near`平面和`far`平面都要在相机的前方，即传入的值都是正数
 但是此时我们的相机是放在视景体内部的中心位置，所以就会导致`near`跑到相机的后面，即应该是一个负值
 又因为我们的相机是朝向`-z`轴的
@@ -308,11 +360,11 @@ std::vector<glm::vec4> Tools::getFrustumCornersWorldSpace(const glm::mat4& projV
 ## 3 DirectionalLightCSMShadow类加入getLightMatrices函数
 ### 功能：传入玩家相机+光源+视锥体划分数据，计算每个子视锥体的LightMatrix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyMzM3MTc0OCwtMTU0MDE3MzcxMiwxMT
-AyNjkyNjE3LC0xMTc0MzA1MTgwLDc1MTY3Mzc5MiwtOTEyNjMy
-MDUxLC0xMTEwNjkxNTk3LDMzMDUwODE2NywtMTY0OTIxOTQ3NS
-wtMTI0NzgzOTM1LC02ODg0NzgyOTksMTQwNDk1Mjg5NCwxODQy
-MzYzMjE5LC0zMjU0NjIsMTA2NzYwODE0NywxMDA4NjMzNDc4LC
-04NjM3OTQxMDQsLTE0Nzg2ODMyNjksLTkwMTE3OTY0NSwtMjE0
-MDM2NDU2XX0=
+eyJoaXN0b3J5IjpbMzUwNDU0MjA5LC0xNTQwMTczNzEyLDExMD
+I2OTI2MTcsLTExNzQzMDUxODAsNzUxNjczNzkyLC05MTI2MzIw
+NTEsLTExMTA2OTE1OTcsMzMwNTA4MTY3LC0xNjQ5MjE5NDc1LC
+0xMjQ3ODM5MzUsLTY4ODQ3ODI5OSwxNDA0OTUyODk0LDE4NDIz
+NjMyMTksLTMyNTQ2MiwxMDY3NjA4MTQ3LDEwMDg2MzM0NzgsLT
+g2Mzc5NDEwNCwtMTQ3ODY4MzI2OSwtOTAxMTc5NjQ1LC0yMTQw
+MzY0NTZdfQ==
 -->
