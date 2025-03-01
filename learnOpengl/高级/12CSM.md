@@ -15,11 +15,13 @@
 
 ![输入图片说明](/imgs/2025-02-28/wjvyEYImwMOmdAHY.png)
 
+# 子视锥体LightMatrix计算原理
+
 ![输入图片说明](/imgs/2025-03-01/CbTqYPCWZEIVqKn5.png)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTIzNzg2NywxMTM5MjI5MTMsMjE3OT
-I0NzQzLC0xMjQwNTI5NzEyLC04MjQ3NjY1NjQsLTE0MjQzNzU3
-OTYsMTI5Nzg1NzMyMywtNzAyOTk0OTldfQ==
+eyJoaXN0b3J5IjpbMzIzNjA1MzkyLDExMzkyMjkxMywyMTc5Mj
+Q3NDMsLTEyNDA1Mjk3MTIsLTgyNDc2NjU2NCwtMTQyNDM3NTc5
+NiwxMjk3ODU3MzIzLC03MDI5OTQ5OV19
 -->
