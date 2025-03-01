@@ -87,15 +87,18 @@ Shader* Renderer::pickShader(MaterialType type) {
 ```
 然后在`renderObject`加入对应`case`即可
 
-da'j
+搭建一个实验场景
+会发现后面是黑色，这是因为超出了我们视景体的范围，我们先前设计的是将其`shadowMap`的`uv`值，然后超出之后直接设为`0`
+
+![输入图片说明](/imgs/2025-03-01/3lNhLKYsqKzqNFNu.png)
 ## 加入视锥体划分
 ### CSM阴影中，加入generateCascadeLayers函数 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTUzMDY1NzgsLTMyNTQ2MiwxMDY3Nj
-A4MTQ3LDEwMDg2MzM0NzgsLTg2Mzc5NDEwNCwtMTQ3ODY4MzI2
-OSwtOTAxMTc5NjQ1LC0yMTQwMzY0NTYsMTQwNzU5OTY4MywtMT
-A2OTgyMDgyMSwtNDgxMzIwMzEyLC0yMDk0MTI0MzMsMzIzNjA1
-MzkyLDExMzkyMjkxMywyMTc5MjQ3NDMsLTEyNDA1Mjk3MTIsLT
-gyNDc2NjU2NCwtMTQyNDM3NTc5NiwxMjk3ODU3MzIzLC03MDI5
-OTQ5OV19
+eyJoaXN0b3J5IjpbLTE5MzIyMzMyNiwtMzI1NDYyLDEwNjc2MD
+gxNDcsMTAwODYzMzQ3OCwtODYzNzk0MTA0LC0xNDc4NjgzMjY5
+LC05MDExNzk2NDUsLTIxNDAzNjQ1NiwxNDA3NTk5NjgzLC0xMD
+Y5ODIwODIxLC00ODEzMjAzMTIsLTIwOTQxMjQzMywzMjM2MDUz
+OTIsMTEzOTIyOTEzLDIxNzkyNDc0MywtMTI0MDUyOTcxMiwtOD
+I0NzY2NTY0LC0xNDI0Mzc1Nzk2LDEyOTc4NTczMjMsLTcwMjk5
+NDk5XX0=
 -->
