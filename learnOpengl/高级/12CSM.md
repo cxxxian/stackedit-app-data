@@ -43,7 +43,7 @@
 
 ![输入图片说明](/imgs/2025-03-01/jXykrmSeTQ60BbAO.png)
 
-# 实践
+# 实践（）
 ## 加入新结构
 ### 1 加入新影子DrectionalLightCSMShadow
 就直接复制`DrectionalLightShadow.h`和`DrectionalLightShadow.cpp`，之后再做修改操作
@@ -208,7 +208,7 @@ case MaterialType::PhongCSMShadowMaterial: {
 
 ![输入图片说明](/imgs/2025-03-01/Ln0hRrFQtN9RqVAx.png)
 
-# 实践
+# 实践（纹理数组应用与fbo实现）
 ## 1 Texture类加入CSMTextureArray的创建
 在`texture.h`制作函数并实现
 这里要**注意**，
@@ -265,11 +265,11 @@ Framebuffer* Framebuffer::createCSMShadowFbo(unsigned int width, unsigned int he
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkxMjYzMjA1MSwtMTExMDY5MTU5NywzMz
-A1MDgxNjcsLTE2NDkyMTk0NzUsLTEyNDc4MzkzNSwtNjg4NDc4
-Mjk5LDE0MDQ5NTI4OTQsMTg0MjM2MzIxOSwtMzI1NDYyLDEwNj
-c2MDgxNDcsMTAwODYzMzQ3OCwtODYzNzk0MTA0LC0xNDc4Njgz
-MjY5LC05MDExNzk2NDUsLTIxNDAzNjQ1NiwxNDA3NTk5NjgzLC
-0xMDY5ODIwODIxLC00ODEzMjAzMTIsLTIwOTQxMjQzMywzMjM2
-MDUzOTJdfQ==
+eyJoaXN0b3J5IjpbLTE2MzUyNTYwOSwtOTEyNjMyMDUxLC0xMT
+EwNjkxNTk3LDMzMDUwODE2NywtMTY0OTIxOTQ3NSwtMTI0Nzgz
+OTM1LC02ODg0NzgyOTksMTQwNDk1Mjg5NCwxODQyMzYzMjE5LC
+0zMjU0NjIsMTA2NzYwODE0NywxMDA4NjMzNDc4LC04NjM3OTQx
+MDQsLTE0Nzg2ODMyNjksLTkwMTE3OTY0NSwtMjE0MDM2NDU2LD
+E0MDc1OTk2ODMsLTEwNjk4MjA4MjEsLTQ4MTMyMDMxMiwtMjA5
+NDEyNDMzXX0=
 -->
