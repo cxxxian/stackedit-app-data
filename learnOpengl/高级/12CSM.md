@@ -210,13 +210,42 @@ case MaterialType::PhongCSMShadowMaterial: {
 
 # 实践
 ## 1 Texture类加入CSMTextureArray的创建
+在`texture.h`制作函数并实现
+这里要**注意**，
+```cpp
+Texture* Texture::createDepthAttachmentCSMArray(unsigned int width, unsigned int height, unsigned int layerNum, unsigned int unit)
+{
+	Texture* dTex = new Texture();
+	unsigned int depth;
+	glGenTextures(1, &depth);
+	glBindTexture(GL_TEXTURE_BINDING_2D_ARRAY, depth);
+
+	glTexImage3D(GL_TEXTURE_2D_ARRAY, 0, GL_DEPTH_COMPONENT, width, height, layerNum, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+
+	glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	GLfloat borderColor[] = { 0.0,0.0,0.0,0.0 };
+	glTexParameterfv(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_BORDER_COLOR, borderColor);
+	glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);//u
+	glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);//v
+	glBindTexture(GL_TEXTURE_BINDING_2D_ARRAY, 0);
+
+	dTex->mTexture = depth;
+	dTex->mWidth = width;
+	dTex->mHeight = height;
+	dTex->mUnit = unit;
+	dTex->mTextureTarget = GL_TEXTURE_2D_ARRAY;
+
+	return dTex;
+}
+```
 ## 2 FBO类加入CSMFBO的创建
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTA2OTE1OTcsMzMwNTA4MTY3LC0xNj
-Q5MjE5NDc1LC0xMjQ3ODM5MzUsLTY4ODQ3ODI5OSwxNDA0OTUy
-ODk0LDE4NDIzNjMyMTksLTMyNTQ2MiwxMDY3NjA4MTQ3LDEwMD
-g2MzM0NzgsLTg2Mzc5NDEwNCwtMTQ3ODY4MzI2OSwtOTAxMTc5
-NjQ1LC0yMTQwMzY0NTYsMTQwNzU5OTY4MywtMTA2OTgyMDgyMS
-wtNDgxMzIwMzEyLC0yMDk0MTI0MzMsMzIzNjA1MzkyLDExMzky
-MjkxM119
+eyJoaXN0b3J5IjpbNjUxMTMxOTUzLC0xMTEwNjkxNTk3LDMzMD
+UwODE2NywtMTY0OTIxOTQ3NSwtMTI0NzgzOTM1LC02ODg0Nzgy
+OTksMTQwNDk1Mjg5NCwxODQyMzYzMjE5LC0zMjU0NjIsMTA2Nz
+YwODE0NywxMDA4NjMzNDc4LC04NjM3OTQxMDQsLTE0Nzg2ODMy
+NjksLTkwMTE3OTY0NSwtMjE0MDM2NDU2LDE0MDc1OTk2ODMsLT
+EwNjk4MjA4MjEsLTQ4MTMyMDMxMiwtMjA5NDEyNDMzLDMyMzYw
+NTM5Ml19
 -->
