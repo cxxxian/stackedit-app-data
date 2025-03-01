@@ -273,19 +273,36 @@ Framebuffer* Framebuffer::createCSMShadowFbo(unsigned int width, unsigned int he
 ![输入图片说明](/imgs/2025-03-01/uY2ejfeckQ9el1b7.png)
 
 ### 功能：传入一个相机Projection*View矩阵乘积，得到对应视锥体八个角点
-
-
+方法声明在`tool.h`并实现
+```cpp
+std::vector<glm::vec4> Tools::getFrustumCornersWorldSpace(const glm::mat4& projView)
+{
+	const auto inv = glm::inverse(projView);
+	std::vector<glm::vec4> corners{};
+	for (int x = 0; x < 2; x++) {
+		for (int y = 0; y < 2; y++) {
+			for (int z = 0; z < 2; z++) {
+				glm::vec4 ndc = glm::vec4(2.0f * x - 1.0, 2.0f * y - 1.0, 2.0f * z - 1.0, 1.0);
+				glm::vec4 p_middle = inv * ndc;
+				glm::vec4 p_world = p_middle / p_middle.w;
+				corners.push_back(p_world);
+			}
+		}
+	}
+	return corners;
+}
+```
 ## 2 DirectionalLightCSMShadow类加入getLightMatrix函数.
 ### 功能：传入玩家相机+near+far+光，计算当前光源方向下，子椎体的LightMatrix
 
 ## 3 DirectionalLightCSMShadow类加入getLightMatrices函数
 ### 功能：传入玩家相机+光源+视锥体划分数据，计算每个子视锥体的LightMatrix
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDk3ODUxOTgsLTExNzQzMDUxODAsNz
-UxNjczNzkyLC05MTI2MzIwNTEsLTExMTA2OTE1OTcsMzMwNTA4
-MTY3LC0xNjQ5MjE5NDc1LC0xMjQ3ODM5MzUsLTY4ODQ3ODI5OS
-wxNDA0OTUyODk0LDE4NDIzNjMyMTksLTMyNTQ2MiwxMDY3NjA4
-MTQ3LDEwMDg2MzM0NzgsLTg2Mzc5NDEwNCwtMTQ3ODY4MzI2OS
-wtOTAxMTc5NjQ1LC0yMTQwMzY0NTYsMTQwNzU5OTY4MywtMTA2
-OTgyMDgyMV19
+eyJoaXN0b3J5IjpbMTEwMjY5MjYxNywtMTE3NDMwNTE4MCw3NT
+E2NzM3OTIsLTkxMjYzMjA1MSwtMTExMDY5MTU5NywzMzA1MDgx
+NjcsLTE2NDkyMTk0NzUsLTEyNDc4MzkzNSwtNjg4NDc4Mjk5LD
+E0MDQ5NTI4OTQsMTg0MjM2MzIxOSwtMzI1NDYyLDEwNjc2MDgx
+NDcsMTAwODYzMzQ3OCwtODYzNzk0MTA0LC0xNDc4NjgzMjY5LC
+05MDExNzk2NDUsLTIxNDAzNjQ1NiwxNDA3NTk5NjgzLC0xMDY5
+ODIwODIxXX0=
 -->
