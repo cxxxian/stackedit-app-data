@@ -364,6 +364,8 @@ glm::mat4 DirectionalLightCSMShadow::getLightMatrix(Camera* camera, glm::vec3 li
 ![输入图片说明](/imgs/2025-03-01/eb26DYwKDcTVSsfR.png)
 
 假设有四个切片边界，那就会划分出三个子视锥体，所以循环的次数为`clips.size() - 1`
+每次依次传入两个作为`near`和`far`平面
+比如第一次就是`0`作为近平面，`1`作为远平面
 ```cpp
 std::vector<glm::mat4> DirectionalLightCSMShadow::getLightMatrices(Camera* camera, glm::vec3 lightDir, const std::vector<float>& clips) {
 	std::vector<glm::mat4> matrices;
@@ -377,11 +379,11 @@ std::vector<glm::mat4> DirectionalLightCSMShadow::getLightMatrices(Camera* camer
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MjE2NDA0ODUsODU3ODUzMDUxLC0xNT
-QwMTczNzEyLDExMDI2OTI2MTcsLTExNzQzMDUxODAsNzUxNjcz
-NzkyLC05MTI2MzIwNTEsLTExMTA2OTE1OTcsMzMwNTA4MTY3LC
-0xNjQ5MjE5NDc1LC0xMjQ3ODM5MzUsLTY4ODQ3ODI5OSwxNDA0
-OTUyODk0LDE4NDIzNjMyMTksLTMyNTQ2MiwxMDY3NjA4MTQ3LD
-EwMDg2MzM0NzgsLTg2Mzc5NDEwNCwtMTQ3ODY4MzI2OSwtOTAx
-MTc5NjQ1XX0=
+eyJoaXN0b3J5IjpbMTE5OTM4MzM4NSw4NTc4NTMwNTEsLTE1ND
+AxNzM3MTIsMTEwMjY5MjYxNywtMTE3NDMwNTE4MCw3NTE2NzM3
+OTIsLTkxMjYzMjA1MSwtMTExMDY5MTU5NywzMzA1MDgxNjcsLT
+E2NDkyMTk0NzUsLTEyNDc4MzkzNSwtNjg4NDc4Mjk5LDE0MDQ5
+NTI4OTQsMTg0MjM2MzIxOSwtMzI1NDYyLDEwNjc2MDgxNDcsMT
+AwODYzMzQ3OCwtODYzNzk0MTA0LC0xNDc4NjgzMjY5LC05MDEx
+Nzk2NDVdfQ==
 -->
