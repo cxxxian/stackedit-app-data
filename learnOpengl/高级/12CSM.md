@@ -516,8 +516,14 @@ void Renderer::renderShadowMap(
 然后进入循环，渲染出我们的`csmShadow`，此时它就包含了很多张`shadowMap`在其中，因为我们的`mDepthAttachment`（`texture`）是用`texture2DArray`声明的，所以所有渲染出来的`shadowMap`都会被存在里面
 
 # 实践（RenderPass完成）
+## 1 修改phongCSMShadowShader，根据当前像素位于的分层信息选择
+### 采样哪一个ShadowMap
+### 增加uniform mat4 lightMatrices[20];
+### 修改pcf函数，需要传入采样shadowmap的哪一个layer
+
+## 2 修改renderObject函数，将uniform更新做好
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE3MDQxNDMxLDE5MzY1MzAwMzEsMTM2Nz
+eyJoaXN0b3J5IjpbODY1MTM5NTk2LDE5MzY1MzAwMzEsMTM2Nz
 g0MTE0MSwyMDI3MTQ4MDg4LDQ0MTU3NzQwMywxNjMwMzU5NDA0
 LDEyNjc2Njk2MiwxNTcyODcyNjI4LDE2MjE2NjQ2NTEsODU3OD
 UzMDUxLC0xNTQwMTczNzEyLDExMDI2OTI2MTcsLTExNzQzMDUx
