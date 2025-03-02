@@ -595,6 +595,7 @@ float pcf(vec4 lightSpaceClipCoord, vec3 normal, vec3 lightDir,float pcfUVRadius
 	...
 }
 ```
+这样理解，以前的`texture2D`就是`uv`两个维度，现在`texture2DArray`就是`uvw`三个维度的，所以加入一个参数
 ```glsl
 float findBlocker(vec3 lightSpacePosition, vec2 shadowUV, float depthReceiver, vec3 normal,vec3 lightDir){
 	...
@@ -606,11 +607,11 @@ float findBlocker(vec3 lightSpacePosition, vec2 shadowUV, float depthReceiver, v
 
 ## 2 修改renderObject函数，将uniform更新做好
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE2NTE5NDc5LC0xNzc3NTAwMjkxLDE1OT
-kyOTg1NzAsNzA0NjQ1MDExLDg2NTEzOTU5NiwxOTM2NTMwMDMx
-LDEzNjc4NDExNDEsMjAyNzE0ODA4OCw0NDE1Nzc0MDMsMTYzMD
-M1OTQwNCwxMjY3NjY5NjIsMTU3Mjg3MjYyOCwxNjIxNjY0NjUx
-LDg1Nzg1MzA1MSwtMTU0MDE3MzcxMiwxMTAyNjkyNjE3LC0xMT
-c0MzA1MTgwLDc1MTY3Mzc5MiwtOTEyNjMyMDUxLC0xMTEwNjkx
-NTk3XX0=
+eyJoaXN0b3J5IjpbLTkzNTE5MjYxMSwtMTc3NzUwMDI5MSwxNT
+k5Mjk4NTcwLDcwNDY0NTAxMSw4NjUxMzk1OTYsMTkzNjUzMDAz
+MSwxMzY3ODQxMTQxLDIwMjcxNDgwODgsNDQxNTc3NDAzLDE2Mz
+AzNTk0MDQsMTI2NzY2OTYyLDE1NzI4NzI2MjgsMTYyMTY2NDY1
+MSw4NTc4NTMwNTEsLTE1NDAxNzM3MTIsMTEwMjY5MjYxNywtMT
+E3NDMwNTE4MCw3NTE2NzM3OTIsLTkxMjYzMjA1MSwtMTExMDY5
+MTU5N119
 -->
