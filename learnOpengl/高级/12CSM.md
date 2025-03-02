@@ -545,15 +545,26 @@ float csm(vec3 positionWorldSpace, vec3 normal, vec3 lightDir, float pcfRadius){
 
 }
 ```
-jie'xia'l
+接下来要调用`pcf`方法，先看一下原来的
+我们会发现用到了一个`lightSpaceClipCoord`是从`vert`传过来的
+```glsl
+in vec4 lightSpaceClipCoord;
+uniform float pcfRadius;
+float pcf(vec3 normal, vec3 lightDir,float pcfUVRadius){
+	//1 找到当前像素在光源空间内的NDC坐标
+	vec3 lightNDC = lightSpaceClipCoord.xyz/lightSpaceClipCoord.w;
+	...
+}
+```
+
 
 ## 2 修改renderObject函数，将uniform更新做好
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDE3NzkwMDEsNzA0NjQ1MDExLDg2NT
-EzOTU5NiwxOTM2NTMwMDMxLDEzNjc4NDExNDEsMjAyNzE0ODA4
-OCw0NDE1Nzc0MDMsMTYzMDM1OTQwNCwxMjY3NjY5NjIsMTU3Mj
-g3MjYyOCwxNjIxNjY0NjUxLDg1Nzg1MzA1MSwtMTU0MDE3Mzcx
-MiwxMTAyNjkyNjE3LC0xMTc0MzA1MTgwLDc1MTY3Mzc5MiwtOT
-EyNjMyMDUxLC0xMTEwNjkxNTk3LDMzMDUwODE2NywtMTY0OTIx
-OTQ3NV19
+eyJoaXN0b3J5IjpbLTUwNzE0MTIzNCw3MDQ2NDUwMTEsODY1MT
+M5NTk2LDE5MzY1MzAwMzEsMTM2Nzg0MTE0MSwyMDI3MTQ4MDg4
+LDQ0MTU3NzQwMywxNjMwMzU5NDA0LDEyNjc2Njk2MiwxNTcyOD
+cyNjI4LDE2MjE2NjQ2NTEsODU3ODUzMDUxLC0xNTQwMTczNzEy
+LDExMDI2OTI2MTcsLTExNzQzMDUxODAsNzUxNjczNzkyLC05MT
+I2MzIwNTEsLTExMTA2OTE1OTcsMzMwNTA4MTY3LC0xNjQ5MjE5
+NDc1XX0=
 -->
