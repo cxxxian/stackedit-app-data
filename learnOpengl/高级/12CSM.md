@@ -414,13 +414,32 @@ Framebuffer* Framebuffer::createCSMShadowFbo(unsigned int width, unsigned int he
 ```
 现在我们要设计动态切换`attachment`（渲染`N`张`ShadowMap`），因为这里的`depthAttachment`是我们用`static Texture* createDepthAttachmentCSMArray(unsigned int width, unsigned int height, unsigned int layerNum, unsigned int unit);`制作出来的，是一个类型为`GL_TEXTURE_2D_ARRAY`的`texture`的`depthAttachment`
 所以我们去`renderer.cpp`中的`renderShadowMap`完善切换渲染的步骤
+```cpp
+void Renderer::renderShadowMap(
+	const std::vector<Mesh*>& meshes, 
+	DirectionalLight* dirLight, 
+	Framebuffer* fbo) {
+	...
+	DirectionalLightCSMShadow* csmShadow = (DirectionalLightCSMShadow*)dirLight->mShadow;
+	
+	//4 循环为每个子视锥体渲染shadowMap
+	for (int i = 0; i < csmShadow->mLayerCount; i++) {
+		glFramebufferTextureLayer(
+			GL_FRAMEBUFFER,
+			GL_DEPTH_ATTACHMENT,
+			csmShadow->mRenderTarget->mDepthAttachment->getTexture(),
+			0, i);
+	}
+	...
+}
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYzMDM1OTQwNCwxMjY3NjY5NjIsMTU3Mj
-g3MjYyOCwxNjIxNjY0NjUxLDg1Nzg1MzA1MSwtMTU0MDE3Mzcx
-MiwxMTAyNjkyNjE3LC0xMTc0MzA1MTgwLDc1MTY3Mzc5MiwtOT
-EyNjMyMDUxLC0xMTEwNjkxNTk3LDMzMDUwODE2NywtMTY0OTIx
-OTQ3NSwtMTI0NzgzOTM1LC02ODg0NzgyOTksMTQwNDk1Mjg5NC
-wxODQyMzYzMjE5LC0zMjU0NjIsMTA2NzYwODE0NywxMDA4NjMz
-NDc4XX0=
+eyJoaXN0b3J5IjpbNDQxNTc3NDAzLDE2MzAzNTk0MDQsMTI2Nz
+Y2OTYyLDE1NzI4NzI2MjgsMTYyMTY2NDY1MSw4NTc4NTMwNTEs
+LTE1NDAxNzM3MTIsMTEwMjY5MjYxNywtMTE3NDMwNTE4MCw3NT
+E2NzM3OTIsLTkxMjYzMjA1MSwtMTExMDY5MTU5NywzMzA1MDgx
+NjcsLTE2NDkyMTk0NzUsLTEyNDc4MzkzNSwtNjg4NDc4Mjk5LD
+E0MDQ5NTI4OTQsMTg0MjM2MzIxOSwtMzI1NDYyLDEwNjc2MDgx
+NDddfQ==
 -->
