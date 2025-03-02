@@ -595,14 +595,22 @@ float pcf(vec4 lightSpaceClipCoord, vec3 normal, vec3 lightDir,float pcfUVRadius
 	...
 }
 ```
+```glsl
+float findBlocker(vec3 lightSpacePosition, vec2 shadowUV, float depthReceiver, vec3 normal,vec3 lightDir){
+	...
+	for(int i = 0;i < NUM_SAMPLES;i++){
+		float sampleDepth = texture(shadowMapSampler, vec3(shadowUV + disk[i] * searchRadiusUV, layer)).r;
+		...
+}
+```
 
 ## 2 修改renderObject函数，将uniform更新做好
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Nzc1MDAyOTEsMTU5OTI5ODU3MCw3MD
-Q2NDUwMTEsODY1MTM5NTk2LDE5MzY1MzAwMzEsMTM2Nzg0MTE0
-MSwyMDI3MTQ4MDg4LDQ0MTU3NzQwMywxNjMwMzU5NDA0LDEyNj
-c2Njk2MiwxNTcyODcyNjI4LDE2MjE2NjQ2NTEsODU3ODUzMDUx
-LC0xNTQwMTczNzEyLDExMDI2OTI2MTcsLTExNzQzMDUxODAsNz
-UxNjczNzkyLC05MTI2MzIwNTEsLTExMTA2OTE1OTcsMzMwNTA4
-MTY3XX0=
+eyJoaXN0b3J5IjpbMTE2NTE5NDc5LC0xNzc3NTAwMjkxLDE1OT
+kyOTg1NzAsNzA0NjQ1MDExLDg2NTEzOTU5NiwxOTM2NTMwMDMx
+LDEzNjc4NDExNDEsMjAyNzE0ODA4OCw0NDE1Nzc0MDMsMTYzMD
+M1OTQwNCwxMjY3NjY5NjIsMTU3Mjg3MjYyOCwxNjIxNjY0NjUx
+LDg1Nzg1MzA1MSwtMTU0MDE3MzcxMiwxMTAyNjkyNjE3LC0xMT
+c0MzA1MTgwLDc1MTY3Mzc5MiwtOTEyNjMyMDUxLC0xMTEwNjkx
+NTk3XX0=
 -->
