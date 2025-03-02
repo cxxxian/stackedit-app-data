@@ -517,17 +517,42 @@ void Renderer::renderShadowMap(
 
 # 实践（RenderPass完成）
 ## 1 修改phongCSMShadowShader，根据当前像素位于的分层信息选择
-### 采样哪一个ShadowMap
-### 增加uniform mat4 lightMatrices[20];
-### 修改pcf函数，需要传入采样shadowmap的哪一个layer
+- 采样哪一个ShadowMap
+- 增加uniform mat4 lightMatrices[20];
+- 修改pcf函数，需要传入采样shadowmap的哪一个layer
+
+我们先一步一步来实现
+先制作`csm`方法并调用`getCurrentLayer`
+```cpp
+int getCurrentLayer(vec3 positionWorldSpace){
+	//求当前像素在相机坐标系下的坐标
+	vec3 positionCameraSpace = (viewMatrix * vec4(positionWorldSpace, 1.0)).xyz;
+	float z = -positionCameraSpace.z;
+
+	int layer = 0;
+	for(int i = 0;i <= csmLayerCount;i++){
+		if(z < csmLayers[i]){
+			layer = i - 1;
+			break;
+		}
+	}
+
+	return layer;
+}
+
+float csm(vec3 positionWorldSpace, vec3 normal, vec3 lightDir, float pcfRadius){
+	int layer = getCurrentLayer(positionWorldSpace);
+
+}
+```
 
 ## 2 修改renderObject函数，将uniform更新做好
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODY1MTM5NTk2LDE5MzY1MzAwMzEsMTM2Nz
-g0MTE0MSwyMDI3MTQ4MDg4LDQ0MTU3NzQwMywxNjMwMzU5NDA0
-LDEyNjc2Njk2MiwxNTcyODcyNjI4LDE2MjE2NjQ2NTEsODU3OD
-UzMDUxLC0xNTQwMTczNzEyLDExMDI2OTI2MTcsLTExNzQzMDUx
-ODAsNzUxNjczNzkyLC05MTI2MzIwNTEsLTExMTA2OTE1OTcsMz
-MwNTA4MTY3LC0xNjQ5MjE5NDc1LC0xMjQ3ODM5MzUsLTY4ODQ3
-ODI5OV19
+eyJoaXN0b3J5IjpbNzA0NjQ1MDExLDg2NTEzOTU5NiwxOTM2NT
+MwMDMxLDEzNjc4NDExNDEsMjAyNzE0ODA4OCw0NDE1Nzc0MDMs
+MTYzMDM1OTQwNCwxMjY3NjY5NjIsMTU3Mjg3MjYyOCwxNjIxNj
+Y0NjUxLDg1Nzg1MzA1MSwtMTU0MDE3MzcxMiwxMTAyNjkyNjE3
+LC0xMTc0MzA1MTgwLDc1MTY3Mzc5MiwtOTEyNjMyMDUxLC0xMT
+EwNjkxNTk3LDMzMDUwODE2NywtMTY0OTIxOTQ3NSwtMTI0Nzgz
+OTM1XX0=
 -->
