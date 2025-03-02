@@ -508,9 +508,10 @@ void Renderer::renderShadowMap(
 ```
 
 `std::vector<float>layers`声明一个`layers`数组，用来存放子视锥体的分层平面数据，通过调用`csmShadow->generateCascadeLayers`方法获得
-通过`csmShadow->getLightMatrices`方法获得每一个子视锥体在`light`坐标系下的`lightMatrix`
+通过`csmShadow->getLightMatrices`方法获得每一个子视锥体在`light`坐标系下的`lightMatrix`（`lightProjectionMatrix * lightViewMatrix`）
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk2MzE1MjY0Miw0NDE1Nzc0MDMsMTYzMD
+eyJoaXN0b3J5IjpbMTAwNDk4Mjk4Myw0NDE1Nzc0MDMsMTYzMD
 M1OTQwNCwxMjY3NjY5NjIsMTU3Mjg3MjYyOCwxNjIxNjY0NjUx
 LDg1Nzg1MzA1MSwtMTU0MDE3MzcxMiwxMTAyNjkyNjE3LC0xMT
 c0MzA1MTgwLDc1MTY3Mzc5MiwtOTEyNjMyMDUxLC0xMTEwNjkx
