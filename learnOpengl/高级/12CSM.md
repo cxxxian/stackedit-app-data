@@ -433,6 +433,7 @@ void Renderer::renderShadowMap(
 	...
 }
 ```
+慢慢来解释，
 完整实现如下：
 ```cpp
 void Renderer::renderShadowMap(
@@ -504,10 +505,11 @@ void Renderer::renderShadowMap(
 	glBindFramebuffer(GL_FRAMEBUFFER, preFbo);
 	glViewport(preViewport[0], preViewport[1], preViewport[2], preViewport[3]);
 }
-
 ```
+
+`std::vector<float>layers`声明一个`layers`数组，用来存放子视锥体的平面数据，通过调用`csmShadow->generateCascadeLayers`方法获得
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxOTE5MTI1OSw0NDE1Nzc0MDMsMTYzMD
+eyJoaXN0b3J5IjpbLTM4NDI1MDE1Miw0NDE1Nzc0MDMsMTYzMD
 M1OTQwNCwxMjY3NjY5NjIsMTU3Mjg3MjYyOCwxNjIxNjY0NjUx
 LDg1Nzg1MzA1MSwtMTU0MDE3MzcxMiwxMTAyNjkyNjE3LC0xMT
 c0MzA1MTgwLDc1MTY3Mzc5MiwtOTEyNjMyMDUxLC0xMTEwNjkx
