@@ -510,12 +510,14 @@ void Renderer::renderShadowMap(
 1. `std::vector<float>layers`声明一个`layers`数组，用来存放子视锥体的分层平面数据，通过调用`csmShadow->generateCascadeLayers`方法获得
 2. 通过`csmShadow->getLightMatrices`方法获得每一个子视锥体在`light`坐标系下的`lightMatrix`（`lightProjectionMatrix * lightViewMatrix`）
 3. 然后就是进入循环，为每一个子视锥体进行渲染`shadowMap`，以前我们只渲染了一张，而现在引入`CSM`的概念我们要渲染多张
+
+可以重新捋一遍，`csmShadow->getLightMatrices`这个方法，
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjExNzQ1MTIsMjAyNzE0ODA4OCw0ND
-E1Nzc0MDMsMTYzMDM1OTQwNCwxMjY3NjY5NjIsMTU3Mjg3MjYy
-OCwxNjIxNjY0NjUxLDg1Nzg1MzA1MSwtMTU0MDE3MzcxMiwxMT
-AyNjkyNjE3LC0xMTc0MzA1MTgwLDc1MTY3Mzc5MiwtOTEyNjMy
-MDUxLC0xMTEwNjkxNTk3LDMzMDUwODE2NywtMTY0OTIxOTQ3NS
-wtMTI0NzgzOTM1LC02ODg0NzgyOTksMTQwNDk1Mjg5NCwxODQy
-MzYzMjE5XX0=
+eyJoaXN0b3J5IjpbMTg1ODI2ODc2MCwyMDI3MTQ4MDg4LDQ0MT
+U3NzQwMywxNjMwMzU5NDA0LDEyNjc2Njk2MiwxNTcyODcyNjI4
+LDE2MjE2NjQ2NTEsODU3ODUzMDUxLC0xNTQwMTczNzEyLDExMD
+I2OTI2MTcsLTExNzQzMDUxODAsNzUxNjczNzkyLC05MTI2MzIw
+NTEsLTExMTA2OTE1OTcsMzMwNTA4MTY3LC0xNjQ5MjE5NDc1LC
+0xMjQ3ODM5MzUsLTY4ODQ3ODI5OSwxNDA0OTUyODk0LDE4NDIz
+NjMyMTldfQ==
 -->
