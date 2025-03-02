@@ -571,7 +571,7 @@ void main()
 怎么解决？全删了！
 把`vert`相关的`lightSpaceClipCoord`和`lightMatrix`都删了，放到`frag`进行处理（`PCSS`也先删了）
 
-我们在`pcf`方法中加入参数`lightSpaceClipCoord`，这样的话`csm`方法进行调用的时候动态计算传入不同子视锥体对
+我们在`pcf`方法中加入参数`lightSpaceClipCoord`，这样的话`csm`方法进行调用的时候动态计算传入不同子视锥体对应的`lightSpaceClipCoord`
 ```glsl
 uniform float pcfRadius;
 float pcf(vec4 lightSpaceClipCoord, vec3 normal, vec3 lightDir,float pcfUVRadius){
@@ -582,11 +582,11 @@ float pcf(vec4 lightSpaceClipCoord, vec3 normal, vec3 lightDir,float pcfUVRadius
 
 ## 2 修改renderObject函数，将uniform更新做好
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5Njc2MDYxLDcwNDY0NTAxMSw4NjUxMz
-k1OTYsMTkzNjUzMDAzMSwxMzY3ODQxMTQxLDIwMjcxNDgwODgs
-NDQxNTc3NDAzLDE2MzAzNTk0MDQsMTI2NzY2OTYyLDE1NzI4Nz
-I2MjgsMTYyMTY2NDY1MSw4NTc4NTMwNTEsLTE1NDAxNzM3MTIs
-MTEwMjY5MjYxNywtMTE3NDMwNTE4MCw3NTE2NzM3OTIsLTkxMj
-YzMjA1MSwtMTExMDY5MTU5NywzMzA1MDgxNjcsLTE2NDkyMTk0
-NzVdfQ==
+eyJoaXN0b3J5IjpbMTU5OTI5ODU3MCw3MDQ2NDUwMTEsODY1MT
+M5NTk2LDE5MzY1MzAwMzEsMTM2Nzg0MTE0MSwyMDI3MTQ4MDg4
+LDQ0MTU3NzQwMywxNjMwMzU5NDA0LDEyNjc2Njk2MiwxNTcyOD
+cyNjI4LDE2MjE2NjQ2NTEsODU3ODUzMDUxLC0xNTQwMTczNzEy
+LDExMDI2OTI2MTcsLTExNzQzMDUxODAsNzUxNjczNzkyLC05MT
+I2MzIwNTEsLTExMTA2OTE1OTcsMzMwNTA4MTY3LC0xNjQ5MjE5
+NDc1XX0=
 -->
