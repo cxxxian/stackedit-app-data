@@ -647,15 +647,15 @@ case MaterialType::PhongCSMShadowMaterial: {
 ![输入图片说明](/imgs/2025-03-02/rFSdBLI9xfPQMwsK.png)
 
 加入`lightSize`和`pcfRadius`调节后，效果就好很多
-但是有一个这种情况，就是同一片阴影中，切换了两张`shadowMap`，不同分辨率导致就像bei'qi
+但是有一个这种情况，就是同一片阴影中，切换了两张`shadowMap`，不同分辨率导致就像被切割了一样，我们可以在`frag`中对其做线性插值改善这个现象
 
 ![输入图片说明](/imgs/2025-03-02/pIF6wAbGZJjIk73n.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYxNjg5MTEyMiwxNjUyMzg2NDQ4LC0xOD
-Y4NDExOTMwLC0xNzc3NTAwMjkxLDE1OTkyOTg1NzAsNzA0NjQ1
-MDExLDg2NTEzOTU5NiwxOTM2NTMwMDMxLDEzNjc4NDExNDEsMj
-AyNzE0ODA4OCw0NDE1Nzc0MDMsMTYzMDM1OTQwNCwxMjY3NjY5
-NjIsMTU3Mjg3MjYyOCwxNjIxNjY0NjUxLDg1Nzg1MzA1MSwtMT
-U0MDE3MzcxMiwxMTAyNjkyNjE3LC0xMTc0MzA1MTgwLDc1MTY3
-Mzc5Ml19
+eyJoaXN0b3J5IjpbODcwODY4MjUyLDE2NTIzODY0NDgsLTE4Nj
+g0MTE5MzAsLTE3Nzc1MDAyOTEsMTU5OTI5ODU3MCw3MDQ2NDUw
+MTEsODY1MTM5NTk2LDE5MzY1MzAwMzEsMTM2Nzg0MTE0MSwyMD
+I3MTQ4MDg4LDQ0MTU3NzQwMywxNjMwMzU5NDA0LDEyNjc2Njk2
+MiwxNTcyODcyNjI4LDE2MjE2NjQ2NTEsODU3ODUzMDUxLC0xNT
+QwMTczNzEyLDExMDI2OTI2MTcsLTExNzQzMDUxODAsNzUxNjcz
+NzkyXX0=
 -->
