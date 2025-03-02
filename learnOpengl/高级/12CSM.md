@@ -412,18 +412,13 @@ Framebuffer* Framebuffer::createCSMShadowFbo(unsigned int width, unsigned int he
 	...
 }
 ```
-现在我们要设计动态切换`attachment`（渲染`N`张`ShadowMap`），因为这里的`depthAttachment`是我们用`static Texture* createDepthAttachmentCSMArray(
-	unsigned int width,
-	unsigned int height,
-	unsigned int layerNum,
-	unsigned int unit
-);`
+现在我们要设计动态切换`attachment`（渲染`N`张`ShadowMap`），因为这里的`depthAttachment`是我们用`static Texture* createDepthAttachmentCSMArray(unsigned int width, unsigned int height, unsigned int layerNum, unsigned int unit);`制作出来的，是一个类型为`GL_TEXTURE_2D_ARRAY`的`texture`的`depthAttachment`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc1NjA4ODk0MCwxNTcyODcyNjI4LDE2Mj
-E2NjQ2NTEsODU3ODUzMDUxLC0xNTQwMTczNzEyLDExMDI2OTI2
-MTcsLTExNzQzMDUxODAsNzUxNjczNzkyLC05MTI2MzIwNTEsLT
-ExMTA2OTE1OTcsMzMwNTA4MTY3LC0xNjQ5MjE5NDc1LC0xMjQ3
-ODM5MzUsLTY4ODQ3ODI5OSwxNDA0OTUyODk0LDE4NDIzNjMyMT
-ksLTMyNTQ2MiwxMDY3NjA4MTQ3LDEwMDg2MzM0NzgsLTg2Mzc5
-NDEwNF19
+eyJoaXN0b3J5IjpbLTE1ODkyMzU3NTEsMTU3Mjg3MjYyOCwxNj
+IxNjY0NjUxLDg1Nzg1MzA1MSwtMTU0MDE3MzcxMiwxMTAyNjky
+NjE3LC0xMTc0MzA1MTgwLDc1MTY3Mzc5MiwtOTEyNjMyMDUxLC
+0xMTEwNjkxNTk3LDMzMDUwODE2NywtMTY0OTIxOTQ3NSwtMTI0
+NzgzOTM1LC02ODg0NzgyOTksMTQwNDk1Mjg5NCwxODQyMzYzMj
+E5LC0zMjU0NjIsMTA2NzYwODE0NywxMDA4NjMzNDc4LC04NjM3
+OTQxMDRdfQ==
 -->
