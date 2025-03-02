@@ -595,23 +595,23 @@ float pcf(vec4 lightSpaceClipCoord, vec3 normal, vec3 lightDir,float pcfUVRadius
 	...
 }
 ```
-这样理解，以前的`texture2D`就是`uv`两个维度，现在`texture2DArray`就是`uvw`三个维度的，所以加入一个参数
+这样理解，以前的`texture2D`就是`uv`两个维度，现在`texture2DArray`就是`uvw`三个维度的，所以加入一个参数`layer`作为`w`维度使用，层数的意思
 ```glsl
-float findBlocker(vec3 lightSpacePosition, vec2 shadowUV, float depthReceiver, vec3 normal,vec3 lightDir){
+float pcf(vec4 lightSpaceClipCoord, int layer, vec3 normal, vec3 lightDir,float pcfUVRadius){
 	...
 	for(int i = 0;i < NUM_SAMPLES;i++){
-		float sampleDepth = texture(shadowMapSampler, vec3(shadowUV + disk[i] * searchRadiusUV, layer)).r;
+		float closestDepth = texture(shadowMapSampler,vec3(uv + disk[i] * pcfUVRadius, layer)).r;
 		...
 }
 ```
 
 ## 2 修改renderObject函数，将uniform更新做好
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkzNTE5MjYxMSwtMTc3NzUwMDI5MSwxNT
-k5Mjk4NTcwLDcwNDY0NTAxMSw4NjUxMzk1OTYsMTkzNjUzMDAz
-MSwxMzY3ODQxMTQxLDIwMjcxNDgwODgsNDQxNTc3NDAzLDE2Mz
-AzNTk0MDQsMTI2NzY2OTYyLDE1NzI4NzI2MjgsMTYyMTY2NDY1
-MSw4NTc4NTMwNTEsLTE1NDAxNzM3MTIsMTEwMjY5MjYxNywtMT
-E3NDMwNTE4MCw3NTE2NzM3OTIsLTkxMjYzMjA1MSwtMTExMDY5
-MTU5N119
+eyJoaXN0b3J5IjpbMjE3NjM1MzIsLTE3Nzc1MDAyOTEsMTU5OT
+I5ODU3MCw3MDQ2NDUwMTEsODY1MTM5NTk2LDE5MzY1MzAwMzEs
+MTM2Nzg0MTE0MSwyMDI3MTQ4MDg4LDQ0MTU3NzQwMywxNjMwMz
+U5NDA0LDEyNjc2Njk2MiwxNTcyODcyNjI4LDE2MjE2NjQ2NTEs
+ODU3ODUzMDUxLC0xNTQwMTczNzEyLDExMDI2OTI2MTcsLTExNz
+QzMDUxODAsNzUxNjczNzkyLC05MTI2MzIwNTEsLTExMTA2OTE1
+OTddfQ==
 -->
