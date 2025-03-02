@@ -578,7 +578,7 @@ float pcf(vec4 lightSpaceClipCoord, vec3 normal, vec3 lightDir,float pcfUVRadius
 	...
 }
 ```
-我们从`cpu`传入
+我们从`cpu`端传入`lightMatrices[20]`，就是不同视锥体对应的`lightMatrix`，我们之前已经设计方法可以算出来了
 ```glsl
 uniform mat4 lightMatrices[20];
 float csm(vec3 positionWorldSpace, vec3 normal, vec3 lightDir, float pcfRadius){
@@ -590,7 +590,7 @@ float csm(vec3 positionWorldSpace, vec3 normal, vec3 lightDir, float pcfRadius){
 
 ## 2 修改renderObject函数，将uniform更新做好
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjUyMTM0MSwxNTk5Mjk4NTcwLDcwND
+eyJoaXN0b3J5IjpbMjEwMzE3ODgyNCwxNTk5Mjk4NTcwLDcwND
 Y0NTAxMSw4NjUxMzk1OTYsMTkzNjUzMDAzMSwxMzY3ODQxMTQx
 LDIwMjcxNDgwODgsNDQxNTc3NDAzLDE2MzAzNTk0MDQsMTI2Nz
 Y2OTYyLDE1NzI4NzI2MjgsMTYyMTY2NDY1MSw4NTc4NTMwNTEs
