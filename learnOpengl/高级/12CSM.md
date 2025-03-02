@@ -382,8 +382,10 @@ std::vector<glm::mat4> DirectionalLightCSMShadow::getLightMatrices(Camera* camer
 ```
 
 # 实践（shadowPass函数改版）
+## 1 查缺补漏，查看DirectionalLightCSMShadow中有没有需要补充的内容
+## 2 修改renderShadowMap，每一次渲染N张ShadowMap给到每个子视锥体
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5NjE0Nzg2NywxNjIxNjY0NjUxLDg1Nz
+eyJoaXN0b3J5IjpbMTg5MzU1MDk4NywxNjIxNjY0NjUxLDg1Nz
 g1MzA1MSwtMTU0MDE3MzcxMiwxMTAyNjkyNjE3LC0xMTc0MzA1
 MTgwLDc1MTY3Mzc5MiwtOTEyNjMyMDUxLC0xMTEwNjkxNTk3LD
 MzMDUwODE2NywtMTY0OTIxOTQ3NSwtMTI0NzgzOTM1LC02ODg0
