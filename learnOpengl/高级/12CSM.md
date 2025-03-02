@@ -433,13 +433,85 @@ void Renderer::renderShadowMap(
 	...
 }
 ```
+完整实现如下：
+```cpp
+void Renderer::renderShadowMap(
+	Camera* camera,
+	const std::vector<Mesh*>& meshes, 
+	DirectionalLight* dirLight) {
+	//1 确保现在的绘制不是postProcessPass的绘制，如果是，则不执行渲染
+	bool isPostProcessPass = true;
+	for (int i = 0; i < meshes.size(); i++) {
+		auto mesh = meshes[i];
+		if (mesh->mMaterial->mType != MaterialType::ScreenMaterial) {
+			isPostProcessPass = false;
+			break;
+		}
+	}
+	if (isPostProcessPass) {
+		return;
+	}
 
+	//2 保存原始状态，绘制shadowMap完毕后，要恢复原始状态
+	GLint preFbo;
+	glGetIntegerv(GL_FRAMEBUFFER_BINDING, &preFbo);
+
+	GLint preViewport[4];
+	glGetIntegerv(GL_VIEWPORT, preViewport);
+
+
+	//3 设置ShadowPass绘制的时候所需的状态
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LESS);
+	glDepthMask(GL_TRUE);
+
+	DirectionalLightCSMShadow* csmShadow = (DirectionalLightCSMShadow*)dirLight->mShadow;
+	std::vector<float>layers;
+	csmShadow->generateCascadeLayers(layers, camera->mNear, camera->mFar);
+	auto lightMatrices = csmShadow->getLightMatrices(camera, dirLight->getDirection(), layers);
+
+	glBindFramebuffer(GL_FRAMEBUFFER, csmShadow->mRenderTarget->mFBO);
+	glViewport(0, 0, csmShadow->mRenderTarget->mWidth, csmShadow->mRenderTarget->mHeight);
+
+	//4 循环为每个子视锥体渲染shadowMap
+	for (int i = 0; i < csmShadow->mLayerCount; i++) {
+		glFramebufferTextureLayer(
+			GL_FRAMEBUFFER,
+			GL_DEPTH_ATTACHMENT,
+			csmShadow->mRenderTarget->mDepthAttachment->getTexture(),
+			0, i);
+		glClear(GL_DEPTH_BUFFER_BIT);//!!!重要
+		mShadowShader->begin();
+		mShadowShader->setMatrix4x4("lightMatrix", lightMatrices[i]);
+		for (int i = 0; i < meshes.size(); i++) {
+			auto mesh = meshes[i];
+			auto geometry = mesh->mGeometry;
+
+			glBindVertexArray(geometry->getVao());
+			mShadowShader->setMatrix4x4("modelMatrix", mesh->getModelMatrix());
+
+			if (mesh->getType() == ObjectType::InstancedMesh) {
+				InstancedMesh* im = (InstancedMesh*)mesh;
+				glDrawElementsInstanced(GL_TRIANGLES, geometry->getIndicesCount(), GL_UNSIGNED_INT, 0, im->mInstanceCount);
+			}
+			else {
+				glDrawElements(GL_TRIANGLES, geometry->getIndicesCount(), GL_UNSIGNED_INT, 0);
+			}
+		}
+		mShadowShader->end();
+	}
+
+	glBindFramebuffer(GL_FRAMEBUFFER, preFbo);
+	glViewport(preViewport[0], preViewport[1], preViewport[2], preViewport[3]);
+}
+
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQxNTc3NDAzLDE2MzAzNTk0MDQsMTI2Nz
-Y2OTYyLDE1NzI4NzI2MjgsMTYyMTY2NDY1MSw4NTc4NTMwNTEs
-LTE1NDAxNzM3MTIsMTEwMjY5MjYxNywtMTE3NDMwNTE4MCw3NT
-E2NzM3OTIsLTkxMjYzMjA1MSwtMTExMDY5MTU5NywzMzA1MDgx
-NjcsLTE2NDkyMTk0NzUsLTEyNDc4MzkzNSwtNjg4NDc4Mjk5LD
-E0MDQ5NTI4OTQsMTg0MjM2MzIxOSwtMzI1NDYyLDEwNjc2MDgx
-NDddfQ==
+eyJoaXN0b3J5IjpbMTAxOTE5MTI1OSw0NDE1Nzc0MDMsMTYzMD
+M1OTQwNCwxMjY3NjY5NjIsMTU3Mjg3MjYyOCwxNjIxNjY0NjUx
+LDg1Nzg1MzA1MSwtMTU0MDE3MzcxMiwxMTAyNjkyNjE3LC0xMT
+c0MzA1MTgwLDc1MTY3Mzc5MiwtOTEyNjMyMDUxLC0xMTEwNjkx
+NTk3LDMzMDUwODE2NywtMTY0OTIxOTQ3NSwtMTI0NzgzOTM1LC
+02ODg0NzgyOTksMTQwNDk1Mjg5NCwxODQyMzYzMjE5LC0zMjU0
+NjJdfQ==
 -->
