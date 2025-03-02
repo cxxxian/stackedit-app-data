@@ -587,14 +587,22 @@ float csm(vec3 positionWorldSpace, vec3 normal, vec3 lightDir, float pcfRadius){
 	return 1.0;
 }
 ```
+但是`pcf`还有一个问题，看这一句，我们这时候的
+```glsl
+float pcf(vec4 lightSpaceClipCoord, vec3 normal, vec3 lightDir,float pcfUVRadius){
+	...
+	float closestDepth = texture(shadowMapSampler,uv + disk[i] * pcfUVRadius).r;
+	...
+}
+```
 
 ## 2 修改renderObject函数，将uniform更新做好
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEwMzE3ODgyNCwxNTk5Mjk4NTcwLDcwND
-Y0NTAxMSw4NjUxMzk1OTYsMTkzNjUzMDAzMSwxMzY3ODQxMTQx
-LDIwMjcxNDgwODgsNDQxNTc3NDAzLDE2MzAzNTk0MDQsMTI2Nz
-Y2OTYyLDE1NzI4NzI2MjgsMTYyMTY2NDY1MSw4NTc4NTMwNTEs
-LTE1NDAxNzM3MTIsMTEwMjY5MjYxNywtMTE3NDMwNTE4MCw3NT
-E2NzM3OTIsLTkxMjYzMjA1MSwtMTExMDY5MTU5NywzMzA1MDgx
-NjddfQ==
+eyJoaXN0b3J5IjpbNTUwMTcwNzY0LDE1OTkyOTg1NzAsNzA0Nj
+Q1MDExLDg2NTEzOTU5NiwxOTM2NTMwMDMxLDEzNjc4NDExNDEs
+MjAyNzE0ODA4OCw0NDE1Nzc0MDMsMTYzMDM1OTQwNCwxMjY3Nj
+Y5NjIsMTU3Mjg3MjYyOCwxNjIxNjY0NjUxLDg1Nzg1MzA1MSwt
+MTU0MDE3MzcxMiwxMTAyNjkyNjE3LC0xMTc0MzA1MTgwLDc1MT
+Y3Mzc5MiwtOTEyNjMyMDUxLC0xMTEwNjkxNTk3LDMzMDUwODE2
+N119
 -->
