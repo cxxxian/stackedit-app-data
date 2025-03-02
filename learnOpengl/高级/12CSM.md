@@ -383,13 +383,30 @@ std::vector<glm::mat4> DirectionalLightCSMShadow::getLightMatrices(Camera* camer
 
 # 实践（shadowPass函数改版）
 ## 1 查缺补漏，查看DirectionalLightCSMShadow中有没有需要补充的内容
+```cpp
+DirectionalLightCSMShadow::DirectionalLightCSMShadow() {
+	mRenderTarget = Framebuffer::createCSMShadowFbo(1024, 1024, mLayerCount);
+}
+
+DirectionalLightCSMShadow::~DirectionalLightCSMShadow() {
+	delete mRenderTarget;
+}
+
+void DirectionalLightCSMShadow::setRenderTargetSize(int width, int height) {
+	if (mRenderTarget != nullptr) {
+		delete mRenderTarget;
+	}
+
+	mRenderTarget = Framebuffer::createCSMShadowFbo(width, height, mLayerCount);
+}
+```
 ## 2 修改renderShadowMap，每一次渲染N张ShadowMap给到每个子视锥体
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5MzU1MDk4NywxNjIxNjY0NjUxLDg1Nz
-g1MzA1MSwtMTU0MDE3MzcxMiwxMTAyNjkyNjE3LC0xMTc0MzA1
-MTgwLDc1MTY3Mzc5MiwtOTEyNjMyMDUxLC0xMTEwNjkxNTk3LD
-MzMDUwODE2NywtMTY0OTIxOTQ3NSwtMTI0NzgzOTM1LC02ODg0
-NzgyOTksMTQwNDk1Mjg5NCwxODQyMzYzMjE5LC0zMjU0NjIsMT
-A2NzYwODE0NywxMDA4NjMzNDc4LC04NjM3OTQxMDQsLTE0Nzg2
-ODMyNjldfQ==
+eyJoaXN0b3J5IjpbNDk1OTcyNzc1LDE2MjE2NjQ2NTEsODU3OD
+UzMDUxLC0xNTQwMTczNzEyLDExMDI2OTI2MTcsLTExNzQzMDUx
+ODAsNzUxNjczNzkyLC05MTI2MzIwNTEsLTExMTA2OTE1OTcsMz
+MwNTA4MTY3LC0xNjQ5MjE5NDc1LC0xMjQ3ODM5MzUsLTY4ODQ3
+ODI5OSwxNDA0OTUyODk0LDE4NDIzNjMyMTksLTMyNTQ2MiwxMD
+Y3NjA4MTQ3LDEwMDg2MzM0NzgsLTg2Mzc5NDEwNCwtMTQ3ODY4
+MzI2OV19
 -->
