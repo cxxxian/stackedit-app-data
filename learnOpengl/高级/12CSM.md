@@ -578,15 +578,23 @@ float pcf(vec4 lightSpaceClipCoord, vec3 normal, vec3 lightDir,float pcfUVRadius
 	...
 }
 ```
-
+我们从`cpu`传入
+```glsl
+uniform mat4 lightMatrices[20];
+float csm(vec3 positionWorldSpace, vec3 normal, vec3 lightDir, float pcfRadius){
+	int layer = getCurrentLayer(positionWorldSpace);
+	vec4 lightSpaceClipCoord = lightMatrices[layer] * vec4(positionWorldSpace, 1.0);
+	return 1.0;
+}
+```
 
 ## 2 修改renderObject函数，将uniform更新做好
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5OTI5ODU3MCw3MDQ2NDUwMTEsODY1MT
-M5NTk2LDE5MzY1MzAwMzEsMTM2Nzg0MTE0MSwyMDI3MTQ4MDg4
-LDQ0MTU3NzQwMywxNjMwMzU5NDA0LDEyNjc2Njk2MiwxNTcyOD
-cyNjI4LDE2MjE2NjQ2NTEsODU3ODUzMDUxLC0xNTQwMTczNzEy
-LDExMDI2OTI2MTcsLTExNzQzMDUxODAsNzUxNjczNzkyLC05MT
-I2MzIwNTEsLTExMTA2OTE1OTcsMzMwNTA4MTY3LC0xNjQ5MjE5
-NDc1XX0=
+eyJoaXN0b3J5IjpbLTE4MjUyMTM0MSwxNTk5Mjk4NTcwLDcwND
+Y0NTAxMSw4NjUxMzk1OTYsMTkzNjUzMDAzMSwxMzY3ODQxMTQx
+LDIwMjcxNDgwODgsNDQxNTc3NDAzLDE2MzAzNTk0MDQsMTI2Nz
+Y2OTYyLDE1NzI4NzI2MjgsMTYyMTY2NDY1MSw4NTc4NTMwNTEs
+LTE1NDAxNzM3MTIsMTEwMjY5MjYxNywtMTE3NDMwNTE4MCw3NT
+E2NzM3OTIsLTkxMjYzMjA1MSwtMTExMDY5MTU5NywzMzA1MDgx
+NjddfQ==
 -->
