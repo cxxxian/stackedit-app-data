@@ -613,13 +613,38 @@ float csm(vec3 positionWorldSpace, vec3 normal, vec3 lightDir, float pcfRadius){
 }
 ```
 
-## 2 修改renderObject函数，将uniform更新做好
+## 2 修改renderObject函数，将uniform更新做好kany
+```cpp
+case MaterialType::PhongCSMShadowMaterial: {
+	...
+	//---csm--------
+	shader->setInt("csmLayerCount", dirCSMShadow->mLayerCount);
+
+	std::vector<float> layers;
+	dirCSMShadow->generateCascadeLayers(layers, camera->mNear, camera->mFar);
+	shader->setFloatArray("csmLayers", layers.data(), layers.size());
+
+	shader->setInt("shadowMapSampler", 1);
+	dirCSMShadow->mRenderTarget->mDepthAttachment->setUnit(1);
+	dirCSMShadow->mRenderTarget->mDepthAttachment->bind();
+
+	auto lightMatrices = dirCSMShadow->getLightMatrices(camera, dirLight->getDirection(), layers);
+	shader->setMatrix4x4Array("lightMatrices", lightMatrices.data(), lightMatrices.size());
+
+	shader->setFloat("bias", dirCSMShadow->mBias);
+	shader->setFloat("diskTightness", dirCSMShadow->mDiskTightness);
+	shader->setFloat("pcfRadius", dirCSMShadow->mPcfRadius);
+	//-----------------
+	...
+}
+	break;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODUyMzg1NjAwLC0xODY4NDExOTMwLC0xNz
-c3NTAwMjkxLDE1OTkyOTg1NzAsNzA0NjQ1MDExLDg2NTEzOTU5
-NiwxOTM2NTMwMDMxLDEzNjc4NDExNDEsMjAyNzE0ODA4OCw0ND
-E1Nzc0MDMsMTYzMDM1OTQwNCwxMjY3NjY5NjIsMTU3Mjg3MjYy
-OCwxNjIxNjY0NjUxLDg1Nzg1MzA1MSwtMTU0MDE3MzcxMiwxMT
-AyNjkyNjE3LC0xMTc0MzA1MTgwLDc1MTY3Mzc5MiwtOTEyNjMy
-MDUxXX0=
+eyJoaXN0b3J5IjpbLTczMjI3NTU3NCwtMTg2ODQxMTkzMCwtMT
+c3NzUwMDI5MSwxNTk5Mjk4NTcwLDcwNDY0NTAxMSw4NjUxMzk1
+OTYsMTkzNjUzMDAzMSwxMzY3ODQxMTQxLDIwMjcxNDgwODgsND
+QxNTc3NDAzLDE2MzAzNTk0MDQsMTI2NzY2OTYyLDE1NzI4NzI2
+MjgsMTYyMTY2NDY1MSw4NTc4NTMwNTEsLTE1NDAxNzM3MTIsMT
+EwMjY5MjYxNywtMTE3NDMwNTE4MCw3NTE2NzM3OTIsLTkxMjYz
+MjA1MV19
 -->
