@@ -383,6 +383,8 @@ std::vector<glm::mat4> DirectionalLightCSMShadow::getLightMatrices(Camera* camer
 
 # 实践（shadowPass函数改版）
 ## 1 查缺补漏，查看DirectionalLightCSMShadow中有没有需要补充的内容
+其他都和`directionalLightShadow`差不多，
+只是`directionalLightCSMShadow`就不需要在构造函数中创建正交相机了，因为正交相机我们创建在了zi
 ```cpp
 DirectionalLightCSMShadow::DirectionalLightCSMShadow() {
 	mRenderTarget = Framebuffer::createCSMShadowFbo(1024, 1024, mLayerCount);
@@ -402,7 +404,7 @@ void DirectionalLightCSMShadow::setRenderTargetSize(int width, int height) {
 ```
 ## 2 修改renderShadowMap，每一次渲染N张ShadowMap给到每个子视锥体
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDk1OTcyNzc1LDE2MjE2NjQ2NTEsODU3OD
+eyJoaXN0b3J5IjpbMTI5NjU1NTE4LDE2MjE2NjQ2NTEsODU3OD
 UzMDUxLC0xNTQwMTczNzEyLDExMDI2OTI2MTcsLTExNzQzMDUx
 ODAsNzUxNjczNzkyLC05MTI2MzIwNTEsLTExMTA2OTE1OTcsMz
 MwNTA4MTY3LC0xNjQ5MjE5NDc1LC0xMjQ3ODM5MzUsLTY4ODQ3
