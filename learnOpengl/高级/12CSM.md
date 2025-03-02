@@ -641,11 +641,14 @@ case MaterialType::PhongCSMShadowMaterial: {
 	break;
 ```
 
-可以看到，离得越远，后面的`shadowMap`分辨率就越低，即阴影de
+先把`lightSize`和`pcfRadius`都调成`0`
+可以看到，离得越远，后面的`shadowMap`分辨率就越低，即阴影的锯齿也会越不精细（可以通过调整`layerNum`，越多层效果会更好一点）
 
 ![输入图片说明](/imgs/2025-03-02/rFSdBLI9xfPQMwsK.png)
+
+加入
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2Njg1NzI5OSwxNjUyMzg2NDQ4LC0xOD
+eyJoaXN0b3J5IjpbMTM2MzcyOTU4NSwxNjUyMzg2NDQ4LC0xOD
 Y4NDExOTMwLC0xNzc3NTAwMjkxLDE1OTkyOTg1NzAsNzA0NjQ1
 MDExLDg2NTEzOTU5NiwxOTM2NTMwMDMxLDEzNjc4NDExNDEsMj
 AyNzE0ODA4OCw0NDE1Nzc0MDMsMTYzMDM1OTQwNCwxMjY3NjY5
