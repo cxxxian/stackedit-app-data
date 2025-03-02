@@ -220,7 +220,7 @@ Texture* Texture::createDepthAttachmentCSMArray(unsigned int width, unsigned int
 	Texture* dTex = new Texture();
 	unsigned int depth;
 	glGenTextures(1, &depth);
-	glBindTexture(GL_TEXTURE_BINDING_2D_ARRAY, depth);
+	glBindTexture(GL_TEXTURE_2D_ARRAY, depth);
 
 	glTexImage3D(GL_TEXTURE_2D_ARRAY, 0, GL_DEPTH_COMPONENT, width, height, layerNum, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
 
@@ -615,11 +615,11 @@ float csm(vec3 positionWorldSpace, vec3 normal, vec3 lightDir, float pcfRadius){
 
 ## 2 修改renderObject函数，将uniform更新做好
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4Njg0MTE5MzAsLTE3Nzc1MDAyOTEsMT
-U5OTI5ODU3MCw3MDQ2NDUwMTEsODY1MTM5NTk2LDE5MzY1MzAw
-MzEsMTM2Nzg0MTE0MSwyMDI3MTQ4MDg4LDQ0MTU3NzQwMywxNj
-MwMzU5NDA0LDEyNjc2Njk2MiwxNTcyODcyNjI4LDE2MjE2NjQ2
-NTEsODU3ODUzMDUxLC0xNTQwMTczNzEyLDExMDI2OTI2MTcsLT
-ExNzQzMDUxODAsNzUxNjczNzkyLC05MTI2MzIwNTEsLTExMTA2
-OTE1OTddfQ==
+eyJoaXN0b3J5IjpbODUyMzg1NjAwLC0xODY4NDExOTMwLC0xNz
+c3NTAwMjkxLDE1OTkyOTg1NzAsNzA0NjQ1MDExLDg2NTEzOTU5
+NiwxOTM2NTMwMDMxLDEzNjc4NDExNDEsMjAyNzE0ODA4OCw0ND
+E1Nzc0MDMsMTYzMDM1OTQwNCwxMjY3NjY5NjIsMTU3Mjg3MjYy
+OCwxNjIxNjY0NjUxLDg1Nzg1MzA1MSwtMTU0MDE3MzcxMiwxMT
+AyNjkyNjE3LC0xMTc0MzA1MTgwLDc1MTY3Mzc5MiwtOTEyNjMy
+MDUxXX0=
 -->
