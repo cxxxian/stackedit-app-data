@@ -556,15 +556,25 @@ float pcf(vec3 normal, vec3 lightDir,float pcfUVRadius){
 	...
 }
 ```
+去到`vert`会发现，我们只有一个全局的`lightMatrix`，但是现在有了`csm`概念之后，每一个子视锥体的`lightMatrix`都是不一样的
+```glsl
+uniform mat4 lightViewMatrix;
+uniform mat4 lightMatrix;//lightProjection * lightView
 
+void main()
+{
+	...
+	lightSpacePosition = (lightViewMatrix * transformPosition).xyz;
+}
+```
 
 ## 2 修改renderObject函数，将uniform更新做好
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUwNzE0MTIzNCw3MDQ2NDUwMTEsODY1MT
-M5NTk2LDE5MzY1MzAwMzEsMTM2Nzg0MTE0MSwyMDI3MTQ4MDg4
-LDQ0MTU3NzQwMywxNjMwMzU5NDA0LDEyNjc2Njk2MiwxNTcyOD
-cyNjI4LDE2MjE2NjQ2NTEsODU3ODUzMDUxLC0xNTQwMTczNzEy
-LDExMDI2OTI2MTcsLTExNzQzMDUxODAsNzUxNjczNzkyLC05MT
-I2MzIwNTEsLTExMTA2OTE1OTcsMzMwNTA4MTY3LC0xNjQ5MjE5
-NDc1XX0=
+eyJoaXN0b3J5IjpbODIwMDgyODg2LDcwNDY0NTAxMSw4NjUxMz
+k1OTYsMTkzNjUzMDAzMSwxMzY3ODQxMTQxLDIwMjcxNDgwODgs
+NDQxNTc3NDAzLDE2MzAzNTk0MDQsMTI2NzY2OTYyLDE1NzI4Nz
+I2MjgsMTYyMTY2NDY1MSw4NTc4NTMwNTEsLTE1NDAxNzM3MTIs
+MTEwMjY5MjYxNywtMTE3NDMwNTE4MCw3NTE2NzM3OTIsLTkxMj
+YzMjA1MSwtMTExMDY5MTU5NywzMzA1MDgxNjcsLTE2NDkyMTk0
+NzVdfQ==
 -->
