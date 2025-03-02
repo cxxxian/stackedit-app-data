@@ -513,13 +513,13 @@ void Renderer::renderShadowMap(
 
 可以重新捋一遍，`csmShadow->getLightMatrices`这个方法，里面调用了`getLightMatrice`，主要是做到了：
 利用玩家的摄像机的投影矩阵和视角矩阵，将子视锥体的`ndc`转到世界空间坐标系下面，然后我们把子视锥体的八个点求中点作为光源位置，在那个位置建立正交相机，我们就可以把子视锥体转到光源坐标系下面，得到`lightMatrix`，这个`lightMatrix`是要传入`shader`中使用的
-然后进入循环，渲染出我们的`csmShadow`，此时它就包含了很多张`shadowMap`在其中，因为我们的`mDepthAttachment`（`texture`）是用`texture2DArray`声明的，所以所有渲染出来的``
+然后进入循环，渲染出我们的`csmShadow`，此时它就包含了很多张`shadowMap`在其中，因为我们的`mDepthAttachment`（`texture`）是用`texture2DArray`声明的，所以所有渲染出来的`shadowMap`都会被存在里面
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzczNDQ5MDcsMTkzNjUzMDAzMSwxMz
-Y3ODQxMTQxLDIwMjcxNDgwODgsNDQxNTc3NDAzLDE2MzAzNTk0
-MDQsMTI2NzY2OTYyLDE1NzI4NzI2MjgsMTYyMTY2NDY1MSw4NT
-c4NTMwNTEsLTE1NDAxNzM3MTIsMTEwMjY5MjYxNywtMTE3NDMw
-NTE4MCw3NTE2NzM3OTIsLTkxMjYzMjA1MSwtMTExMDY5MTU5Ny
-wzMzA1MDgxNjcsLTE2NDkyMTk0NzUsLTEyNDc4MzkzNSwtNjg4
-NDc4Mjk5XX0=
+eyJoaXN0b3J5IjpbLTUyMzM4MzEzMSwxOTM2NTMwMDMxLDEzNj
+c4NDExNDEsMjAyNzE0ODA4OCw0NDE1Nzc0MDMsMTYzMDM1OTQw
+NCwxMjY3NjY5NjIsMTU3Mjg3MjYyOCwxNjIxNjY0NjUxLDg1Nz
+g1MzA1MSwtMTU0MDE3MzcxMiwxMTAyNjkyNjE3LC0xMTc0MzA1
+MTgwLDc1MTY3Mzc5MiwtOTEyNjMyMDUxLC0xMTEwNjkxNTk3LD
+MzMDUwODE2NywtMTY0OTIxOTQ3NSwtMTI0NzgzOTM1LC02ODg0
+NzgyOTldfQ==
 -->
