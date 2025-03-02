@@ -403,14 +403,21 @@ void DirectionalLightCSMShadow::setRenderTargetSize(int width, int height) {
 }
 ```
 ## 2 修改renderShadowMap，每一次渲染N张ShadowMap给到每个子视锥体
+原本我们在`frameBuffer.cpp`中，
+```cpp
+Framebuffer* Framebuffer::createCSMShadowFbo(unsigned int width, unsigned int height, unsigned int layerNumber)
+{
+	...
+	glFramebufferTextureLayer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, depthAttachment->getTexture(), 0, 0);
+	...
+}
 ```
-
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzMzM0NCwxNTcyODcyNjI4LDE2MjE2Nj
-Q2NTEsODU3ODUzMDUxLC0xNTQwMTczNzEyLDExMDI2OTI2MTcs
-LTExNzQzMDUxODAsNzUxNjczNzkyLC05MTI2MzIwNTEsLTExMT
-A2OTE1OTcsMzMwNTA4MTY3LC0xNjQ5MjE5NDc1LC0xMjQ3ODM5
-MzUsLTY4ODQ3ODI5OSwxNDA0OTUyODk0LDE4NDIzNjMyMTksLT
-MyNTQ2MiwxMDY3NjA4MTQ3LDEwMDg2MzM0NzgsLTg2Mzc5NDEw
-NF19
+eyJoaXN0b3J5IjpbNzI3MDQwMzk3LDE1NzI4NzI2MjgsMTYyMT
+Y2NDY1MSw4NTc4NTMwNTEsLTE1NDAxNzM3MTIsMTEwMjY5MjYx
+NywtMTE3NDMwNTE4MCw3NTE2NzM3OTIsLTkxMjYzMjA1MSwtMT
+ExMDY5MTU5NywzMzA1MDgxNjcsLTE2NDkyMTk0NzUsLTEyNDc4
+MzkzNSwtNjg4NDc4Mjk5LDE0MDQ5NTI4OTQsMTg0MjM2MzIxOS
+wtMzI1NDYyLDEwNjc2MDgxNDcsMTAwODYzMzQ3OCwtODYzNzk0
+MTA0XX0=
 -->
