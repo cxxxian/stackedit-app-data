@@ -604,15 +604,22 @@ float pcf(vec4 lightSpaceClipCoord, int layer, vec3 normal, vec3 lightDir,float 
 		...
 }
 ```
-
+最后`csm`方法就是写成这样
+```glsl
+float csm(vec3 positionWorldSpace, vec3 normal, vec3 lightDir, float pcfRadius){
+	int layer = getCurrentLayer(positionWorldSpace);
+	vec4 lightSpaceClipCoord = lightMatrices[layer] * vec4(positionWorldSpace, 1.0);
+	return pcf(lightSpaceClipCoord, layer, normal, lightDir, pcfRadius);
+}
+```
 
 ## 2 修改renderObject函数，将uniform更新做好
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTE4Mzc1MjkwLC0xNzc3NTAwMjkxLDE1OT
-kyOTg1NzAsNzA0NjQ1MDExLDg2NTEzOTU5NiwxOTM2NTMwMDMx
-LDEzNjc4NDExNDEsMjAyNzE0ODA4OCw0NDE1Nzc0MDMsMTYzMD
-M1OTQwNCwxMjY3NjY5NjIsMTU3Mjg3MjYyOCwxNjIxNjY0NjUx
-LDg1Nzg1MzA1MSwtMTU0MDE3MzcxMiwxMTAyNjkyNjE3LC0xMT
-c0MzA1MTgwLDc1MTY3Mzc5MiwtOTEyNjMyMDUxLC0xMTEwNjkx
-NTk3XX0=
+eyJoaXN0b3J5IjpbLTE4Njg0MTE5MzAsLTE3Nzc1MDAyOTEsMT
+U5OTI5ODU3MCw3MDQ2NDUwMTEsODY1MTM5NTk2LDE5MzY1MzAw
+MzEsMTM2Nzg0MTE0MSwyMDI3MTQ4MDg4LDQ0MTU3NzQwMywxNj
+MwMzU5NDA0LDEyNjc2Njk2MiwxNTcyODcyNjI4LDE2MjE2NjQ2
+NTEsODU3ODUzMDUxLC0xNTQwMTczNzEyLDExMDI2OTI2MTcsLT
+ExNzQzMDUxODAsNzUxNjczNzkyLC05MTI2MzIwNTEsLTExMTA2
+OTE1OTddfQ==
 -->
