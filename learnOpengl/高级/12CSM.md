@@ -412,8 +412,14 @@ Framebuffer* Framebuffer::createCSMShadowFbo(unsigned int width, unsigned int he
 	...
 }
 ```
+现在我们要设计动态切换`attachment`（渲染`N`张`ShadowMap`），因为这里的`depthAttachment`是我们用`static Texture* createDepthAttachmentCSMArray(
+	unsigned int width,
+	unsigned int height,
+	unsigned int layerNum,
+	unsigned int unit
+);`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4ODYwMjg2NiwxNTcyODcyNjI4LDE2Mj
+eyJoaXN0b3J5IjpbMTc1NjA4ODk0MCwxNTcyODcyNjI4LDE2Mj
 E2NjQ2NTEsODU3ODUzMDUxLC0xNTQwMTczNzEyLDExMDI2OTI2
 MTcsLTExNzQzMDUxODAsNzUxNjczNzkyLC05MTI2MzIwNTEsLT
 ExMTA2OTE1OTcsMzMwNTA4MTY3LC0xNjQ5MjE5NDc1LC0xMjQ3
