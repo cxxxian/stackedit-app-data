@@ -613,7 +613,8 @@ float csm(vec3 positionWorldSpace, vec3 normal, vec3 lightDir, float pcfRadius){
 }
 ```
 
-## 2 修改renderObject函数，将uniform更新做好kany
+## 2 修改renderObject函数，将uniform更新做好
+看一下需要更新的`uniform`进行对应的更新即可
 ```cpp
 case MaterialType::PhongCSMShadowMaterial: {
 	...
@@ -640,7 +641,7 @@ case MaterialType::PhongCSMShadowMaterial: {
 	break;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczMjI3NTU3NCwtMTg2ODQxMTkzMCwtMT
+eyJoaXN0b3J5IjpbMTY1MjM4NjQ0OCwtMTg2ODQxMTkzMCwtMT
 c3NzUwMDI5MSwxNTk5Mjk4NTcwLDcwNDY0NTAxMSw4NjUxMzk1
 OTYsMTkzNjUzMDAzMSwxMzY3ODQxMTQxLDIwMjcxNDgwODgsND
 QxNTc3NDAzLDE2MzAzNTk0MDQsMTI2NzY2OTYyLDE1NzI4NzI2
