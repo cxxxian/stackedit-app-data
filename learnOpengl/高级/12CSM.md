@@ -587,7 +587,7 @@ float csm(vec3 positionWorldSpace, vec3 normal, vec3 lightDir, float pcfRadius){
 	return 1.0;
 }
 ```
-但是`pcf`还有一个问题，看这一句，我们这时候的
+但是`pcf`还有一个问题，看这一句，我们这时候的`shadowMapSampler`已经不是`texture2D`了而是`texture2DArray`的材质，所以我们要加入层数的概念进行采样
 ```glsl
 float pcf(vec4 lightSpaceClipCoord, vec3 normal, vec3 lightDir,float pcfUVRadius){
 	...
@@ -598,11 +598,11 @@ float pcf(vec4 lightSpaceClipCoord, vec3 normal, vec3 lightDir,float pcfUVRadius
 
 ## 2 修改renderObject函数，将uniform更新做好
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTUwMTcwNzY0LDE1OTkyOTg1NzAsNzA0Nj
-Q1MDExLDg2NTEzOTU5NiwxOTM2NTMwMDMxLDEzNjc4NDExNDEs
-MjAyNzE0ODA4OCw0NDE1Nzc0MDMsMTYzMDM1OTQwNCwxMjY3Nj
-Y5NjIsMTU3Mjg3MjYyOCwxNjIxNjY0NjUxLDg1Nzg1MzA1MSwt
-MTU0MDE3MzcxMiwxMTAyNjkyNjE3LC0xMTc0MzA1MTgwLDc1MT
-Y3Mzc5MiwtOTEyNjMyMDUxLC0xMTEwNjkxNTk3LDMzMDUwODE2
-N119
+eyJoaXN0b3J5IjpbLTE3Nzc1MDAyOTEsMTU5OTI5ODU3MCw3MD
+Q2NDUwMTEsODY1MTM5NTk2LDE5MzY1MzAwMzEsMTM2Nzg0MTE0
+MSwyMDI3MTQ4MDg4LDQ0MTU3NzQwMywxNjMwMzU5NDA0LDEyNj
+c2Njk2MiwxNTcyODcyNjI4LDE2MjE2NjQ2NTEsODU3ODUzMDUx
+LC0xNTQwMTczNzEyLDExMDI2OTI2MTcsLTExNzQzMDUxODAsNz
+UxNjczNzkyLC05MTI2MzIwNTEsLTExMTA2OTE1OTcsMzMwNTA4
+MTY3XX0=
 -->
