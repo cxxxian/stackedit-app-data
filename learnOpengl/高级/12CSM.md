@@ -646,9 +646,12 @@ case MaterialType::PhongCSMShadowMaterial: {
 
 ![输入图片说明](/imgs/2025-03-02/rFSdBLI9xfPQMwsK.png)
 
-加入
+加入`lightSize`和`pcfRadius`调节后，效果就好很多
+但是有一个这种情况，就是同一片阴影中，切换了两张`shadowMap`，不同分辨率导致就像bei'qi
+
+![输入图片说明](/imgs/2025-03-02/pIF6wAbGZJjIk73n.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2MzcyOTU4NSwxNjUyMzg2NDQ4LC0xOD
+eyJoaXN0b3J5IjpbMTYxNjg5MTEyMiwxNjUyMzg2NDQ4LC0xOD
 Y4NDExOTMwLC0xNzc3NTAwMjkxLDE1OTkyOTg1NzAsNzA0NjQ1
 MDExLDg2NTEzOTU5NiwxOTM2NTMwMDMxLDEzNjc4NDExNDEsMj
 AyNzE0ODA4OCw0NDE1Nzc0MDMsMTYzMDM1OTQwNCwxMjY3NjY5
