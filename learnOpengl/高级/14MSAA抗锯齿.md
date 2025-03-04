@@ -22,11 +22,13 @@
 
 # 实践
 ## 1 创建MSAA专用纹理
+```
+`
 ## 2 创建MSAA专用FBO
 ## 3 Renderer中增加msaaResolve函数
 ## 4 绘制流程更改
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4NDc4OTkyOCw5OTU0NDExNDYsLTE2Nz
-EyNzQ0MTcsLTE2MDE0NTI2NDYsMTEwNzIyNzYwOSwtMTA3MDQ4
-MjYwOV19
+eyJoaXN0b3J5IjpbNjkzMTYzNzUyLDExODQ3ODk5MjgsOTk1ND
+QxMTQ2LC0xNjcxMjc0NDE3LC0xNjAxNDUyNjQ2LDExMDcyMjc2
+MDksLTEwNzA0ODI2MDldfQ==
 -->
