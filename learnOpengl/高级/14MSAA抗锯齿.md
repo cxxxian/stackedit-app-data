@@ -80,10 +80,20 @@ Framebuffer* Framebuffer::createMultiSampleFbo(unsigned int width, unsigned int 
 }
 ```
 ## 3 Renderer中增加msaaResolve函数
+`renderer.h`新建并实现函数
+```cpp
+void Renderer::msaaResolve(Framebuffer* src, Framebuffer* dst)
+{
+	glBindFramebuffer(GL_READ_FRAMEBUFFER, src->mFBO);
+	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, dst->mFBO);
+	glBlitFramebuffer(0, 0, src->mWidth, src->mHeight, 0, 0, dst->mWidth, dst->mHeight, GL_COLOR_BUFFER_BIT, GL_NEAREST);
+}
+
+```
 ## 4 绘制流程更改
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzIzNDU1NDEwLC0xMzYxMTU4MzUyLDExOT
-I3Nzk2MDYsMTE4NDc4OTkyOCw5OTU0NDExNDYsLTE2NzEyNzQ0
-MTcsLTE2MDE0NTI2NDYsMTEwNzIyNzYwOSwtMTA3MDQ4MjYwOV
-19
+eyJoaXN0b3J5IjpbLTgwMDY0ODU4NCw3MjM0NTU0MTAsLTEzNj
+ExNTgzNTIsMTE5Mjc3OTYwNiwxMTg0Nzg5OTI4LDk5NTQ0MTE0
+NiwtMTY3MTI3NDQxNywtMTYwMTQ1MjY0NiwxMTA3MjI3NjA5LC
+0xMDcwNDgyNjA5XX0=
 -->
