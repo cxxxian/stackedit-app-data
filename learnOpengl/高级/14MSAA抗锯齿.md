@@ -118,7 +118,10 @@ void prepare() {
 	...
 }
 ```
-```
+最后最重要的在这一步，
+第一次离屏渲染，我们用的是`fboMultiSample->mFBO`进行超采样
+然后调用`renderer->msaaResolve`函数，把超采样得到的颜色xia'cai'y
+```cpp
 int main() {
 	...
 	while (glApp->update()) {
@@ -135,7 +138,7 @@ int main() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0NjU5NjY2NiwtODAwNjQ4NTg0LDcyMz
+eyJoaXN0b3J5IjpbLTg0NzUyMTk1MiwtODAwNjQ4NTg0LDcyMz
 Q1NTQxMCwtMTM2MTE1ODM1MiwxMTkyNzc5NjA2LDExODQ3ODk5
 MjgsOTk1NDQxMTQ2LC0xNjcxMjc0NDE3LC0xNjAxNDUyNjQ2LD
 ExMDcyMjc2MDksLTEwNzA0ODI2MDldfQ==
