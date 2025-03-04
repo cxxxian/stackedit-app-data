@@ -95,6 +95,12 @@ void Renderer::msaaResolve(Framebuffer* src, Framebuffer* dst)
 ```cpp
 Framebuffer* fboMultiSample = nullptr;
 Framebuffer* fboResolve = nullptr;
+```
+然后到`prepare`函数中，初始化两个`fbo`
+`fboMultiSample`用我们设计的函数`createMultiSampleFbo`
+`fboResolve`就普通初始化即可
+pa's's
+```cpp
 void prepare() {
 	fboMultiSample = Framebuffer::createMultiSampleFbo(WIDTH, HEIGHT, 4);
 	fboResolve = new Framebuffer(WIDTH, HEIGHT);
@@ -126,8 +132,8 @@ int main() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMxMzc3NjM5MCwtODAwNjQ4NTg0LDcyMz
-Q1NTQxMCwtMTM2MTE1ODM1MiwxMTkyNzc5NjA2LDExODQ3ODk5
-MjgsOTk1NDQxMTQ2LC0xNjcxMjc0NDE3LC0xNjAxNDUyNjQ2LD
-ExMDcyMjc2MDksLTEwNzA0ODI2MDldfQ==
+eyJoaXN0b3J5IjpbLTk1NTc0MTIzLC04MDA2NDg1ODQsNzIzND
+U1NDEwLC0xMzYxMTU4MzUyLDExOTI3Nzk2MDYsMTE4NDc4OTky
+OCw5OTU0NDExNDYsLTE2NzEyNzQ0MTcsLTE2MDE0NTI2NDYsMT
+EwNzIyNzYwOSwtMTA3MDQ4MjYwOV19
 -->
