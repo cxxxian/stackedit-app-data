@@ -120,7 +120,8 @@ void prepare() {
 ```
 最后最重要的在这一步，
 第一次离屏渲染，我们用的是`fboMultiSample->mFBO`进行超采样
-然后调用`renderer->msaaResolve`函数，把超采样得到的颜色xia'cai'y
+然后调用`renderer->msaaResolve`函数，把超采样得到的颜色下采样到`fboResolve`中，
+然后我们刚刚在`prepare`函数中使用了`smat->mScreenTexture = fboResolve->mColorAttachment;`复制，最后就可以得到`msaa`效果
 ```cpp
 int main() {
 	...
@@ -138,7 +139,7 @@ int main() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg0NzUyMTk1MiwtODAwNjQ4NTg0LDcyMz
+eyJoaXN0b3J5IjpbMjA2ODE4MTkwMCwtODAwNjQ4NTg0LDcyMz
 Q1NTQxMCwtMTM2MTE1ODM1MiwxMTkyNzc5NjA2LDExODQ3ODk5
 MjgsOTk1NDQxMTQ2LC0xNjcxMjc0NDE3LC0xNjAxNDUyNjQ2LD
 ExMDcyMjc2MDksLTEwNzA0ODI2MDldfQ==
