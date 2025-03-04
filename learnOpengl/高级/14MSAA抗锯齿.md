@@ -50,6 +50,8 @@ Texture* Texture::createMultiSampleTexture(unsigned int width, unsigned int heig
 }
 ```
 ## 2 创建MSAA专用FBO
+这里`glFramebufferTexture2D`方法中的：
+`GL_TEXTURE_2D_MULTISAMPLE`代表要把哪个目标点的`texture`
 ```cpp
 Framebuffer* Framebuffer::createMultiSampleFbo(unsigned int width, unsigned int height, unsigned int samples)
 {
@@ -76,7 +78,7 @@ Framebuffer* Framebuffer::createMultiSampleFbo(unsigned int width, unsigned int 
 ## 3 Renderer中增加msaaResolve函数
 ## 4 绘制流程更改
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3NzgwOTc1LDExOTI3Nzk2MDYsMTE4ND
-c4OTkyOCw5OTU0NDExNDYsLTE2NzEyNzQ0MTcsLTE2MDE0NTI2
-NDYsMTEwNzIyNzYwOSwtMTA3MDQ4MjYwOV19
+eyJoaXN0b3J5IjpbLTc3Nzg0NTUxMSwxMTkyNzc5NjA2LDExOD
+Q3ODk5MjgsOTk1NDQxMTQ2LC0xNjcxMjc0NDE3LC0xNjAxNDUy
+NjQ2LDExMDcyMjc2MDksLTEwNzA0ODI2MDldfQ==
 -->
