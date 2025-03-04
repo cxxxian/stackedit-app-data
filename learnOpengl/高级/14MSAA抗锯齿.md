@@ -19,8 +19,13 @@
 ![输入图片说明](/imgs/2025-03-04/T1TQCBtJe8F4dACp.png)
 
 ![输入图片说明](/imgs/2025-03-04/M3fj6hqjoIRxpDEu.png)
+
+# 实践
+## 1 创建MSAA专用纹理
+## 2 创建MSAA专用FBO
+## 3 Rendererz'j'png
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjI4MjgxMzE2LDk5NTQ0MTE0NiwtMTY3MT
-I3NDQxNywtMTYwMTQ1MjY0NiwxMTA3MjI3NjA5LC0xMDcwNDgy
-NjA5XX0=
+eyJoaXN0b3J5IjpbLTEyNTg0MDk3MjIsOTk1NDQxMTQ2LC0xNj
+cxMjc0NDE3LC0xNjAxNDUyNjQ2LDExMDcyMjc2MDksLTEwNzA0
+ODI2MDldfQ==
 -->
