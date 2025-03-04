@@ -27,6 +27,7 @@
 `samples`用来指定有多少个采样点
 `format`用来指定格式（例如`GL_RGBA`或者`GL_DEPTH24_STENCIL8`）
 按照以前我们需要设计该纹理的采样（`filter`）方式（`GL_NEAREST`或者`GL_LINEAR`）以及超过`0, 1`后要怎么处理这个纹理
+但是现在是超采样，所以没有必要指定采样方式，我们更不会有超过`0, 1`的情况
 ```cpp
 Texture* Texture::createMultiSampleTexture(unsigned int width, unsigned int height, unsigned int samples, unsigned int format, unsigned int unit)
 {
@@ -52,7 +53,7 @@ Texture* Texture::createMultiSampleTexture(unsigned int width, unsigned int heig
 ## 3 Renderer中增加msaaResolve函数
 ## 4 绘制流程更改
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3ODk2NzczMSwxMTg0Nzg5OTI4LDk5NT
+eyJoaXN0b3J5IjpbMTE5Mjc3OTYwNiwxMTg0Nzg5OTI4LDk5NT
 Q0MTE0NiwtMTY3MTI3NDQxNywtMTYwMTQ1MjY0NiwxMTA3MjI3
 NjA5LC0xMDcwNDgyNjA5XX0=
 -->
