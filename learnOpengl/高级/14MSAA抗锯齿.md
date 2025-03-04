@@ -91,11 +91,64 @@ void Renderer::msaaResolve(Framebuffer* src, Framebuffer* dst)
 
 ```
 ## 4 绘制流程更改
+```cpp
+Framebuffer* fboMultiSample = nullptr;
+Framebuffer* fboResolve = nullptr;
+void prepare() {
+	fboMultiSample = Framebuffer::createMultiSampleFbo(WIDTH, HEIGHT, 4);
+	fboResolve = new Framebuffer(WIDTH, HEIGHT);
+
+	...
+	//pass 01
+	...
+	//pass 02 postProcessPass:后处理pass
+	auto sgeo = Geometry::createScreenPlane();
+	auto smat = new ScreenMaterial();
+	smat->mScreenTexture = fboResolve->mColorAttachment;
+	auto smesh = new Mesh(sgeo, smat);
+	scene->addChild(smesh);
+	...
+}
+int main() {
+	if (!glApp->init(WIDTH, HEIGHT)) {
+		return -1;
+	}
+
+	glApp->setResizeCallback(OnResize);
+	glApp->setKeyBoardCallback(OnKey);
+	glApp->setMouseCallback(OnMouse);
+	glApp->setCursorCallback(OnCursor);
+	glApp->setScrollCallback(OnScroll);
+
+	//设置opengl视口以及清理颜色
+	GL_CALL(glViewport(0, 0, WIDTH, HEIGHT));
+	GL_CALL(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
+
+	prepareCamera();
+
+	prepare();
+	
+	initIMGUI();
+
+	while (glApp->update()) {
+		cameraControl->update();
+
+		renderer->setClearColor(clearColor);
+		renderer->render(sceneOff, camera, pointLight, ambLight, fboMultiSample->mFBO);
+		renderer->msaaResolve(fboMultiSample, fboResolve);
+		renderer->render(scene, camera, pointLight, ambLight);
+
+		renderIMGUI();
+	}
+
+	glApp->destroy();
+
+	return 0;
+}
 ```
-``
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzNTQyNzM4OCwtODAwNjQ4NTg0LDcyMz
-Q1NTQxMCwtMTM2MTE1ODM1MiwxMTkyNzc5NjA2LDExODQ3ODk5
-MjgsOTk1NDQxMTQ2LC0xNjcxMjc0NDE3LC0xNjAxNDUyNjQ2LD
-ExMDcyMjc2MDksLTEwNzA0ODI2MDldfQ==
+eyJoaXN0b3J5IjpbLTIwOTIwMDY5ODIsLTgwMDY0ODU4NCw3Mj
+M0NTU0MTAsLTEzNjExNTgzNTIsMTE5Mjc3OTYwNiwxMTg0Nzg5
+OTI4LDk5NTQ0MTE0NiwtMTY3MTI3NDQxNywtMTYwMTQ1MjY0Ni
+wxMTA3MjI3NjA5LC0xMDcwNDgyNjA5XX0=
 -->
