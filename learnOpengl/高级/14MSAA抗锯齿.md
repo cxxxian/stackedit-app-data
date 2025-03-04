@@ -91,7 +91,7 @@ void Renderer::msaaResolve(Framebuffer* src, Framebuffer* dst)
 
 ```
 ## 4 绘制流程更改
-
+我们到`main.cpp`中，需要声明两个`fbo`，一个用来做超采样，一个用来承接超采样得到的下采样
 ```cpp
 Framebuffer* fboMultiSample = nullptr;
 Framebuffer* fboResolve = nullptr;
@@ -126,8 +126,8 @@ int main() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTc4MDcxNzk4LC04MDA2NDg1ODQsNzIzND
-U1NDEwLC0xMzYxMTU4MzUyLDExOTI3Nzk2MDYsMTE4NDc4OTky
-OCw5OTU0NDExNDYsLTE2NzEyNzQ0MTcsLTE2MDE0NTI2NDYsMT
-EwNzIyNzYwOSwtMTA3MDQ4MjYwOV19
+eyJoaXN0b3J5IjpbMTMxMzc3NjM5MCwtODAwNjQ4NTg0LDcyMz
+Q1NTQxMCwtMTM2MTE1ODM1MiwxMTkyNzc5NjA2LDExODQ3ODk5
+MjgsOTk1NDQxMTQ2LC0xNjcxMjc0NDE3LC0xNjAxNDUyNjQ2LD
+ExMDcyMjc2MDksLTEwNzA0ODI2MDldfQ==
 -->
