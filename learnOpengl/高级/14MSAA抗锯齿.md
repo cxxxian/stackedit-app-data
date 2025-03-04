@@ -50,10 +50,12 @@ Texture* Texture::createMultiSampleTexture(unsigned int width, unsigned int heig
 }
 ```
 ## 2 创建MSAA专用FBO
+```
+```
 ## 3 Renderer中增加msaaResolve函数
 ## 4 绘制流程更改
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5Mjc3OTYwNiwxMTg0Nzg5OTI4LDk5NT
-Q0MTE0NiwtMTY3MTI3NDQxNywtMTYwMTQ1MjY0NiwxMTA3MjI3
-NjA5LC0xMDcwNDgyNjA5XX0=
+eyJoaXN0b3J5IjpbMTg4MDA3MzQzMCwxMTkyNzc5NjA2LDExOD
+Q3ODk5MjgsOTk1NDQxMTQ2LC0xNjcxMjc0NDE3LC0xNjAxNDUy
+NjQ2LDExMDcyMjc2MDksLTEwNzA0ODI2MDldfQ==
 -->
