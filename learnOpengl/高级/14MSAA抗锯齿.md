@@ -50,12 +50,33 @@ Texture* Texture::createMultiSampleTexture(unsigned int width, unsigned int heig
 }
 ```
 ## 2 创建MSAA专用FBO
-```
+```cpp
+Framebuffer* Framebuffer::createMultiSampleFbo(unsigned int width, unsigned int height, unsigned int samples)
+{
+	Framebuffer* fb = new Framebuffer();
+	unsigned int fbo;
+	glGenFramebuffers(1, &fbo);
+	glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+
+	auto colorAttachment = Texture::createMultiSampleTexture(width, height, samples, GL_RGBA, 0);
+	auto dsAttachment = Texture::createMultiSampleTexture(width, height, samples, GL_DEPTH24_STENCIL8, 0);
+
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D_MULTISAMPLE, colorAttachment->getTexture(), 0);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_TEXTURE_2D_MULTISAMPLE, dsAttachment->getTexture(), 0);
+
+	fb->mFBO = fbo;
+	fb->mColorAttachment = colorAttachment;
+	fb->mDepthAttachment = dsAttachment;
+	fb->mWidth = width;
+	fb->mHeight = height;
+
+	return fb;
+}
 ```
 ## 3 Renderer中增加msaaResolve函数
 ## 4 绘制流程更改
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4MDA3MzQzMCwxMTkyNzc5NjA2LDExOD
-Q3ODk5MjgsOTk1NDQxMTQ2LC0xNjcxMjc0NDE3LC0xNjAxNDUy
-NjQ2LDExMDcyMjc2MDksLTEwNzA0ODI2MDldfQ==
+eyJoaXN0b3J5IjpbMTE3NzgwOTc1LDExOTI3Nzk2MDYsMTE4ND
+c4OTkyOCw5OTU0NDExNDYsLTE2NzEyNzQ0MTcsLTE2MDE0NTI2
+NDYsMTEwNzIyNzYwOSwtMTA3MDQ4MjYwOV19
 -->
