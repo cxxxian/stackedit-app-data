@@ -99,7 +99,8 @@ Framebuffer* fboResolve = nullptr;
 然后到`prepare`函数中，初始化两个`fbo`
 `fboMultiSample`用我们设计的函数`createMultiSampleFbo`
 `fboResolve`就普通初始化即可
-pa's's
+`pass01`并没有和`fbo`有什么关系，
+关键在于`pass02`，我们要把`smat->mScreenTexture = fboResolve->mColorAttachment`，即把下采样过后的`mColorAttachment`赋给屏幕进行渲染
 ```cpp
 void prepare() {
 	fboMultiSample = Framebuffer::createMultiSampleFbo(WIDTH, HEIGHT, 4);
@@ -116,6 +117,8 @@ void prepare() {
 	scene->addChild(smesh);
 	...
 }
+```
+```
 int main() {
 	...
 	while (glApp->update()) {
@@ -132,8 +135,8 @@ int main() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1NTc0MTIzLC04MDA2NDg1ODQsNzIzND
-U1NDEwLC0xMzYxMTU4MzUyLDExOTI3Nzk2MDYsMTE4NDc4OTky
-OCw5OTU0NDExNDYsLTE2NzEyNzQ0MTcsLTE2MDE0NTI2NDYsMT
-EwNzIyNzYwOSwtMTA3MDQ4MjYwOV19
+eyJoaXN0b3J5IjpbMTY0NjU5NjY2NiwtODAwNjQ4NTg0LDcyMz
+Q1NTQxMCwtMTM2MTE1ODM1MiwxMTkyNzc5NjA2LDExODQ3ODk5
+MjgsOTk1NDQxMTQ2LC0xNjcxMjc0NDE3LC0xNjAxNDUyNjQ2LD
+ExMDcyMjc2MDksLTEwNzA0ODI2MDldfQ==
 -->
