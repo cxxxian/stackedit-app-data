@@ -143,6 +143,7 @@ int main() {
 ![输入图片说明](/imgs/2025-03-04/LY1PjuEp73oPkY0B.png)
 
 如果不使用`msaa`，这样设置即可
+这样的话就是进行普通的采样了
 ```cpp
 while (glApp->update()) {
 	cameraControl->update();
@@ -155,9 +156,12 @@ while (glApp->update()) {
 	renderIMGUI();
 }
 ```
+锯齿状明显
+
+![输入图片说明](/imgs/2025-03-04/cP9i2s26h8gDne1x.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODU4NTIwNzQsLTgwMDY0ODU4NCw3Mj
-M0NTU0MTAsLTEzNjExNTgzNTIsMTE5Mjc3OTYwNiwxMTg0Nzg5
-OTI4LDk5NTQ0MTE0NiwtMTY3MTI3NDQxNywtMTYwMTQ1MjY0Ni
-wxMTA3MjI3NjA5LC0xMDcwNDgyNjA5XX0=
+eyJoaXN0b3J5IjpbNTM2MDExMzEwLC04MDA2NDg1ODQsNzIzND
+U1NDEwLC0xMzYxMTU4MzUyLDExOTI3Nzk2MDYsMTE4NDc4OTky
+OCw5OTU0NDExNDYsLTE2NzEyNzQ0MTcsLTE2MDE0NTI2NDYsMT
+EwNzIyNzYwOSwtMTA3MDQ4MjYwOV19
 -->
