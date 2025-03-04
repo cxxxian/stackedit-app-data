@@ -22,13 +22,36 @@
 
 # 实践
 ## 1 创建MSAA专用纹理
+在`texture.h`声明函数并实现
+步骤上没有大的差别，几个新参数：
+`samples`用来指定有多少个采样点
+`format`用来指定
+```cpp
+Texture* Texture::createMultiSampleTexture(unsigned int width, unsigned int height, unsigned int samples, unsigned int format, unsigned int unit)
+{
+	Texture* tex = new Texture();
+
+	unsigned int glTex;
+	glGenTextures(1, &glTex);
+	glBindTexture(GL_TEXTURE_2D_MULTISAMPLE, glTex);
+
+	glTexImage2DMultisample(GL_TEXTURE_2D_MULTISAMPLE, samples, format, width, height, GL_TRUE);
+	glBindTexture(GL_TEXTURE_2D_MULTISAMPLE, 0);
+
+	tex->mTexture = glTex;
+	tex->mWidth = width;
+	tex->mHeight = height;
+	tex->mUnit = unit;
+	tex->mTextureTarget = GL_TEXTURE_2D_MULTISAMPLE;
+
+	return tex;
+}
 ```
-`
 ## 2 创建MSAA专用FBO
 ## 3 Renderer中增加msaaResolve函数
 ## 4 绘制流程更改
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjkzMTYzNzUyLDExODQ3ODk5MjgsOTk1ND
+eyJoaXN0b3J5IjpbNzQzMDU4MzE5LDExODQ3ODk5MjgsOTk1ND
 QxMTQ2LC0xNjcxMjc0NDE3LC0xNjAxNDUyNjQ2LDExMDcyMjc2
 MDksLTEwNzA0ODI2MDldfQ==
 -->
