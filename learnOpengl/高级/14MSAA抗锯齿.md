@@ -91,6 +91,7 @@ void Renderer::msaaResolve(Framebuffer* src, Framebuffer* dst)
 
 ```
 ## 4 绘制流程更改
+
 ```cpp
 Framebuffer* fboMultiSample = nullptr;
 Framebuffer* fboResolve = nullptr;
@@ -110,26 +111,7 @@ void prepare() {
 	...
 }
 int main() {
-	if (!glApp->init(WIDTH, HEIGHT)) {
-		return -1;
-	}
-
-	glApp->setResizeCallback(OnResize);
-	glApp->setKeyBoardCallback(OnKey);
-	glApp->setMouseCallback(OnMouse);
-	glApp->setCursorCallback(OnCursor);
-	glApp->setScrollCallback(OnScroll);
-
-	//设置opengl视口以及清理颜色
-	GL_CALL(glViewport(0, 0, WIDTH, HEIGHT));
-	GL_CALL(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
-
-	prepareCamera();
-
-	prepare();
-	
-	initIMGUI();
-
+	...
 	while (glApp->update()) {
 		cameraControl->update();
 
@@ -140,15 +122,12 @@ int main() {
 
 		renderIMGUI();
 	}
-
-	glApp->destroy();
-
-	return 0;
+	...
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwOTIwMDY5ODIsLTgwMDY0ODU4NCw3Mj
-M0NTU0MTAsLTEzNjExNTgzNTIsMTE5Mjc3OTYwNiwxMTg0Nzg5
-OTI4LDk5NTQ0MTE0NiwtMTY3MTI3NDQxNywtMTYwMTQ1MjY0Ni
-wxMTA3MjI3NjA5LC0xMDcwNDgyNjA5XX0=
+eyJoaXN0b3J5IjpbNTc4MDcxNzk4LC04MDA2NDg1ODQsNzIzND
+U1NDEwLC0xMzYxMTU4MzUyLDExOTI3Nzk2MDYsMTE4NDc4OTky
+OCw5OTU0NDExNDYsLTE2NzEyNzQ0MTcsLTE2MDE0NTI2NDYsMT
+EwNzIyNzYwOSwtMTA3MDQ4MjYwOV19
 -->
