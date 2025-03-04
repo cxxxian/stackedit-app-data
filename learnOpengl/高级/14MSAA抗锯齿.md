@@ -20,7 +20,7 @@
 
 这个函数`glBlitFramebuffer`代表：
 从源头`src`的什么位置开始，源头的宽度，源头的高度
-复制到`d's't`的什么位置开始，源头的宽度，源头的高度
+复制到`dst`的什么位置开始，目标用多少宽度来承接，目标用多少高度来承接
 
 ![输入图片说明](/imgs/2025-03-04/M3fj6hqjoIRxpDEu.png)
 
@@ -82,8 +82,8 @@ Framebuffer* Framebuffer::createMultiSampleFbo(unsigned int width, unsigned int 
 ## 3 Renderer中增加msaaResolve函数
 ## 4 绘制流程更改
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzNjEzNzEwMiwtMTM2MTE1ODM1MiwxMT
-kyNzc5NjA2LDExODQ3ODk5MjgsOTk1NDQxMTQ2LC0xNjcxMjc0
-NDE3LC0xNjAxNDUyNjQ2LDExMDcyMjc2MDksLTEwNzA0ODI2MD
-ldfQ==
+eyJoaXN0b3J5IjpbNzIzNDU1NDEwLC0xMzYxMTU4MzUyLDExOT
+I3Nzk2MDYsMTE4NDc4OTkyOCw5OTU0NDExNDYsLTE2NzEyNzQ0
+MTcsLTE2MDE0NTI2NDYsMTEwNzIyNzYwOSwtMTA3MDQ4MjYwOV
+19
 -->
