@@ -26,7 +26,7 @@
 步骤上没有大的差别，几个新参数：
 `samples`用来指定有多少个采样点
 `format`用来指定格式（例如`GL_RGBA`或者`GL_DEPTH24_STENCIL8`）
-
+然后由于此纹理是应用于超采样，所以我们也没必要去设计`uv`的各个状态
 ```cpp
 Texture* Texture::createMultiSampleTexture(unsigned int width, unsigned int height, unsigned int samples, unsigned int format, unsigned int unit)
 {
@@ -52,7 +52,7 @@ Texture* Texture::createMultiSampleTexture(unsigned int width, unsigned int heig
 ## 3 Renderer中增加msaaResolve函数
 ## 4 绘制流程更改
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxMzI1MTg4NywxMTg0Nzg5OTI4LDk5NT
-Q0MTE0NiwtMTY3MTI3NDQxNywtMTYwMTQ1MjY0NiwxMTA3MjI3
-NjA5LC0xMDcwNDgyNjA5XX0=
+eyJoaXN0b3J5IjpbLTE3ODc0NDcwOTMsMTE4NDc4OTkyOCw5OT
+U0NDExNDYsLTE2NzEyNzQ0MTcsLTE2MDE0NTI2NDYsMTEwNzIy
+NzYwOSwtMTA3MDQ4MjYwOV19
 -->
