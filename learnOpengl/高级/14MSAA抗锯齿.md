@@ -25,7 +25,8 @@
 在`texture.h`声明函数并实现
 步骤上没有大的差别，几个新参数：
 `samples`用来指定有多少个采样点
-`format`用来指定
+`format`用来指定格式（例如`GL_RGBA`或者`GL_DEPTH24_STENCIL8`）
+
 ```cpp
 Texture* Texture::createMultiSampleTexture(unsigned int width, unsigned int height, unsigned int samples, unsigned int format, unsigned int unit)
 {
@@ -51,7 +52,7 @@ Texture* Texture::createMultiSampleTexture(unsigned int width, unsigned int heig
 ## 3 Renderer中增加msaaResolve函数
 ## 4 绘制流程更改
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQzMDU4MzE5LDExODQ3ODk5MjgsOTk1ND
-QxMTQ2LC0xNjcxMjc0NDE3LC0xNjAxNDUyNjQ2LDExMDcyMjc2
-MDksLTEwNzA0ODI2MDldfQ==
+eyJoaXN0b3J5IjpbMTUxMzI1MTg4NywxMTg0Nzg5OTI4LDk5NT
+Q0MTE0NiwtMTY3MTI3NDQxNywtMTYwMTQ1MjY0NiwxMTA3MjI3
+NjA5LC0xMDcwNDgyNjA5XX0=
 -->
