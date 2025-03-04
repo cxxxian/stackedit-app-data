@@ -91,9 +91,11 @@ void Renderer::msaaResolve(Framebuffer* src, Framebuffer* dst)
 
 ```
 ## 4 绘制流程更改
+```
+``
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgwMDY0ODU4NCw3MjM0NTU0MTAsLTEzNj
-ExNTgzNTIsMTE5Mjc3OTYwNiwxMTg0Nzg5OTI4LDk5NTQ0MTE0
-NiwtMTY3MTI3NDQxNywtMTYwMTQ1MjY0NiwxMTA3MjI3NjA5LC
-0xMDcwNDgyNjA5XX0=
+eyJoaXN0b3J5IjpbMjEzNTQyNzM4OCwtODAwNjQ4NTg0LDcyMz
+Q1NTQxMCwtMTM2MTE1ODM1MiwxMTkyNzc5NjA2LDExODQ3ODk5
+MjgsOTk1NDQxMTQ2LC0xNjcxMjc0NDE3LC0xNjAxNDUyNjQ2LD
+ExMDcyMjc2MDksLTEwNzA0ODI2MDldfQ==
 -->
