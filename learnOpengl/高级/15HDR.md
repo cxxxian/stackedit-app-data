@@ -15,9 +15,11 @@
 
 ![输入图片说明](/imgs/2025-03-05/SdaXFIhJ7sAxsEfg.png)
 
+`exposure`大的话，颜色
+
 ![输入图片说明](/imgs/2025-03-05/uJUqnnkzhrcRjiCz.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjg5MDI0NTYsLTE1MjU5MjgzMTUsLT
-UxOTA2NzU3OCwyMTMwMDkxMjQ2LC0xNDYyNTQxMzA4LC01MTc5
-MDc0OTYsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbLTE4NTI1NjIzLC0xNTI1OTI4MzE1LC01MT
+kwNjc1NzgsMjEzMDA5MTI0NiwtMTQ2MjU0MTMwOCwtNTE3OTA3
+NDk2LC0yMDg4NzQ2NjEyXX0=
 -->
