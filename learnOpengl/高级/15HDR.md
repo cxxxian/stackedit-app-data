@@ -15,12 +15,15 @@
 
 ![输入图片说明](/imgs/2025-03-05/SdaXFIhJ7sAxsEfg.png)
 
+![输入图片说明](/imgs/2025-03-05/uJUqnnkzhrcRjiCz.png)
+
 `exposure`大的话，颜色分配亮的部分就会比较多
 `exposure`小的话，颜色分配亮暗就会比较平均
+一
 
-![输入图片说明](/imgs/2025-03-05/uJUqnnkzhrcRjiCz.png)
+![输入图片说明](/imgs/2025-03-05/ZdNE79o6jitm2JY8.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTExMDE2NDI4OSwtMTUyNTkyODMxNSwtNT
+eyJoaXN0b3J5IjpbMTY4MDg2MzY2MCwtMTUyNTkyODMxNSwtNT
 E5MDY3NTc4LDIxMzAwOTEyNDYsLTE0NjI1NDEzMDgsLTUxNzkw
 NzQ5NiwtMjA4ODc0NjYxMl19
 -->
