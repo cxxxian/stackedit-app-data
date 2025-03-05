@@ -25,9 +25,11 @@
 
 ![输入图片说明](/imgs/2025-03-05/GotyZblQOrTGgjqx.png)
 
-下采样完之后我们进行上采样，上采样同样可以用`g'l'B'li't'Frame'Buff`
+下采样完之后我们进行上采样，上采样同样可以用`glBlitFrameBuffer`，但是我们自定义一个`poisson`采样效果更好
 
 ![输入图片说明](/imgs/2025-03-05/g6vfUxsWRPHpIs7a.png)
+
+![输入图片说明](/imgs/2025-03-05/I1q3SwtUQB0xAwBY.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExNzM3Njk4NF19
+eyJoaXN0b3J5IjpbMTIwODE5ODE1MV19
 -->
