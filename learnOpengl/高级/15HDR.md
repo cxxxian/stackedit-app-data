@@ -10,7 +10,9 @@
 `internalFormat`是把外界给的数据存储到`internalFormat`这种格式
 
 ![输入图片说明](/imgs/2025-03-05/owkZcV9qniGdemWq.png)
+
+![输入图片说明](/imgs/2025-03-05/1lZ2X7IJcZOmNzPD.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzMDA5MTI0NiwtMTQ2MjU0MTMwOCwtNT
-E3OTA3NDk2LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTUxOTA2NzU3OCwyMTMwMDkxMjQ2LC0xND
+YyNTQxMzA4LC01MTc5MDc0OTYsLTIwODg3NDY2MTJdfQ==
 -->
