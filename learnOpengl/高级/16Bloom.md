@@ -24,6 +24,10 @@
 ![输入图片说明](/imgs/2025-03-05/QAyI6USOoz6rY7s4.png)
 
 ![输入图片说明](/imgs/2025-03-05/GotyZblQOrTGgjqx.png)
+
+下采样完之后我们进行上采样，上采样同样可以用`g'l'B'li't'Frame'Buff`
+
+![输入图片说明](/imgs/2025-03-05/g6vfUxsWRPHpIs7a.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDQ0MDU2MDddfQ==
+eyJoaXN0b3J5IjpbMjExNzM3Njk4NF19
 -->
