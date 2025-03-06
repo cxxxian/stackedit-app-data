@@ -362,10 +362,26 @@ void Bloom::upSample(Framebuffer* target, Framebuffer* lowerResFbo, Framebuffer*
 ```
 # 五、Bloom图与原图叠加（merge）
 ## 1 编写叠加用的shader：merge.vert/frag
+`merge.vert`就是普通的传`pos`和`uv`
+```glsl
+#version 460 core
+layout (location = 0) in vec2 aPos;
+layout (location = 1) in vec2 aUV;
+
+out vec2 uv;
+
+void main()
+{
+	gl_Position = vec4(aPos.x, aPos.y, 0.0, 1.0);
+	uv = aUV;
+}
+```
+`merge.frag`实现如下：
+
 ## 2 编写叠加函数
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2ODIzMTU3MSwxNjkyOTE4MTc5LC0xMj
+eyJoaXN0b3J5IjpbLTIxMDY5ODExNSwxNjkyOTE4MTc5LC0xMj
 gyOTEyMTU2LDE1NzIyOTY3OTcsLTE0NTI4NTg1NzgsMTY3MjA1
 OTgwMywyMDEzOTc0MTAwLC0xODg2NDU1NzczLC0yMjI2NDY1NT
 csNzk0Mjk3MjEsMTAxNzc4NTUxMSwxOTE3NzkyOTczLC02ODcy
