@@ -155,7 +155,7 @@ void main()
 ```
 `extractBright.frag`如下，
 用来找寻传入的`srcTex`纹理中超过阈值`threshold`的部分，也就是比较亮的地方
-如果超过我们就输出`color`，否则就是直接输出黑色``
+如果超过我们就输出`color`，否则就是直接输出黑色`vec4(0.0, 0.0, 0.0, 1.0)`
 ```glsl
 #version 460 core
 out vec4 FragColor;
@@ -181,8 +181,7 @@ void main()
 ```
 ## 3 编写extractBright函数，用来提取对应FBO的亮度
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYwNjIyNDA3NywxMDE3Nzg1NTExLDE5MT
-c3OTI5NzMsLTY4NzIwMzM5NSwyOTQ4MzcwNzIsNzY0ODYwODYz
-LC0xOTcyOTQyNTc2LC0xNTA5MDYyODg0LDEyMDgxOTgxNTFdfQ
-==
+eyJoaXN0b3J5IjpbNzk0Mjk3MjEsMTAxNzc4NTUxMSwxOTE3Nz
+kyOTczLC02ODcyMDMzOTUsMjk0ODM3MDcyLDc2NDg2MDg2Mywt
+MTk3Mjk0MjU3NiwtMTUwOTA2Mjg4NCwxMjA4MTk4MTUxXX0=
 -->
