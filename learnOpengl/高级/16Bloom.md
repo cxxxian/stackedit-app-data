@@ -316,13 +316,20 @@ void main()
 	FragColor = vec4(color, 1.0);
 }
 ```
-准备好以上`shader`，我们就到bloom.hsh
+准备好以上`shader`，我们就到`bloom.h`声明变量`mUpSampleShader`并初始化
+```cpp
+Bloom::Bloom(int width, int height, int minResolution = 32)
+{
+	...
+	mUpSampleShader = new Shader("assets/shaders/advanced/bloom/upSample.vert", "assets/shaders/advanced/bloom/upSample.frag");
+}
+```
 ## 2 编写上采样的函数
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTU5Njg0NDYsLTEyODI5MTIxNTYsMT
-U3MjI5Njc5NywtMTQ1Mjg1ODU3OCwxNjcyMDU5ODAzLDIwMTM5
-NzQxMDAsLTE4ODY0NTU3NzMsLTIyMjY0NjU1Nyw3OTQyOTcyMS
-wxMDE3Nzg1NTExLDE5MTc3OTI5NzMsLTY4NzIwMzM5NSwyOTQ4
-MzcwNzIsNzY0ODYwODYzLC0xOTcyOTQyNTc2LC0xNTA5MDYyOD
-g0LDEyMDgxOTgxNTFdfQ==
+eyJoaXN0b3J5IjpbMTY5MjkxODE3OSwtMTI4MjkxMjE1NiwxNT
+cyMjk2Nzk3LC0xNDUyODU4NTc4LDE2NzIwNTk4MDMsMjAxMzk3
+NDEwMCwtMTg4NjQ1NTc3MywtMjIyNjQ2NTU3LDc5NDI5NzIxLD
+EwMTc3ODU1MTEsMTkxNzc5Mjk3MywtNjg3MjAzMzk1LDI5NDgz
+NzA3Miw3NjQ4NjA4NjMsLTE5NzI5NDI1NzYsLTE1MDkwNjI4OD
+QsMTIwODE5ODE1MV19
 -->
