@@ -179,9 +179,12 @@ void main()
 	}
 }
 ```
+
+并且因为这个shader只可能用在bloom上面，所以我们直接声明在bloom.h当中，而不是像以前一样声明在renderer
 ## 3 编写extractBright函数，用来提取对应FBO的亮度
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzk0Mjk3MjEsMTAxNzc4NTUxMSwxOTE3Nz
-kyOTczLC02ODcyMDMzOTUsMjk0ODM3MDcyLDc2NDg2MDg2Mywt
-MTk3Mjk0MjU3NiwtMTUwOTA2Mjg4NCwxMjA4MTk4MTUxXX0=
+eyJoaXN0b3J5IjpbLTU2MTM4MDk0OSw3OTQyOTcyMSwxMDE3Nz
+g1NTExLDE5MTc3OTI5NzMsLTY4NzIwMzM5NSwyOTQ4MzcwNzIs
+NzY0ODYwODYzLC0xOTcyOTQyNTc2LC0xNTA5MDYyODg0LDEyMD
+gxOTgxNTFdfQ==
 -->
