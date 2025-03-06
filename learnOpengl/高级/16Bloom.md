@@ -500,7 +500,7 @@ void Bloom::doBloom(Framebuffer* srcFbo)
 
 ![输入图片说明](/imgs/2025-03-06/2iYBu7fCrF2lWlyz.png)
 
-
+可以看到原来的处理方式，`uv`超过`0~1`的部分，我们采用`GL_REPEAT`，而我们此时的泊松采样，比如在最右边进行采样，超过之后就会回到最左边采样，就造成立刻这种现象
 ```cpp
 Texture* Texture::createHDRAttachment(unsigned int width, unsigned int height, unsigned int unit)
 {
@@ -524,7 +524,7 @@ Texture* Texture::createHDRAttachment(unsigned int width, unsigned int height, u
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0MzYxNjc5OSwxMTUwODU2MDk5LC0xND
+eyJoaXN0b3J5IjpbMTAyMDc5OTc4NCwxMTUwODU2MDk5LC0xND
 YzNzQzNTMzLDcyMDI4MjA3NCwtMTU3NDAwNzI0OCwtMTQyMzc0
 ODkxNiwtNzY0NTEyMzUxLC00ODQ0NjczNjIsLTIxMDY5ODExNS
 wxNjkyOTE4MTc5LC0xMjgyOTEyMTU2LDE1NzIyOTY3OTcsLTE0
