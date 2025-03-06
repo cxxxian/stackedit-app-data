@@ -493,9 +493,11 @@ void Bloom::doBloom(Framebuffer* srcFbo)
 }
 ```
 
-xia
+# 问题修复
+## 1 屏幕四周爆亮
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzODg4MjIyOSwtMTQ2Mzc0MzUzMyw3Mj
+eyJoaXN0b3J5IjpbMTEwODM3OTE2OSwtMTQ2Mzc0MzUzMyw3Mj
 AyODIwNzQsLTE1NzQwMDcyNDgsLTE0MjM3NDg5MTYsLTc2NDUx
 MjM1MSwtNDg0NDY3MzYyLC0yMTA2OTgxMTUsMTY5MjkxODE3OS
 wtMTI4MjkxMjE1NiwxNTcyMjk2Nzk3LC0xNDUyODU4NTc4LDE2
