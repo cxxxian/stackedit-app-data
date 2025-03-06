@@ -377,14 +377,37 @@ void main()
 }
 ```
 `merge.frag`实现如下：
+其实就是简单的颜色相加，
+原图 + 辉光效果的贴图得到最终颜色并输出
+创建`uniform`变量`bloomIntensity`用来调节辉光的剧烈程度
+```glsl
+#version 460 core
+out vec4 FragColor;
 
+in vec2 uv;
+
+uniform sampler2D originTex;
+uniform sampler2D bloomTex;
+
+uniform float bloomIntensity;
+
+void main()
+{
+	vec3 originColor = texture(originTex, uv).rgb;
+	vec3 bloomColor = texture(bloomTex, uv).rgb;
+	vec3 color = originColor + bloomColor * bloomIntensity;
+
+	FragColor = vec4(color, 1.0);
+}
+```
 ## 2 编写叠加函数
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMDY5ODExNSwxNjkyOTE4MTc5LC0xMj
-gyOTEyMTU2LDE1NzIyOTY3OTcsLTE0NTI4NTg1NzgsMTY3MjA1
-OTgwMywyMDEzOTc0MTAwLC0xODg2NDU1NzczLC0yMjI2NDY1NT
-csNzk0Mjk3MjEsMTAxNzc4NTUxMSwxOTE3NzkyOTczLC02ODcy
-MDMzOTUsMjk0ODM3MDcyLDc2NDg2MDg2MywtMTk3Mjk0MjU3Ni
-wtMTUwOTA2Mjg4NCwxMjA4MTk4MTUxXX0=
+eyJoaXN0b3J5IjpbMjEyNTYxMjYxNywtMjEwNjk4MTE1LDE2OT
+I5MTgxNzksLTEyODI5MTIxNTYsMTU3MjI5Njc5NywtMTQ1Mjg1
+ODU3OCwxNjcyMDU5ODAzLDIwMTM5NzQxMDAsLTE4ODY0NTU3Nz
+MsLTIyMjY0NjU1Nyw3OTQyOTcyMSwxMDE3Nzg1NTExLDE5MTc3
+OTI5NzMsLTY4NzIwMzM5NSwyOTQ4MzcwNzIsNzY0ODYwODYzLC
+0xOTcyOTQyNTc2LC0xNTA5MDYyODg0LDEyMDgxOTgxNTFdfQ==
+
 -->
