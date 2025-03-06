@@ -33,12 +33,13 @@
 
 # 实践
 ## 1 FrameBuffer类增加HDR下Bloom专用的fbo
-特点：只需要颜色`attachment`，因为是`screenSpace`的绘制
+特点：只需要颜色`attachment`，因为是`screenSpace`的绘制，suo'y
 
 ## 2 创建Bloom类（初步）
 - 下采样`FBO`数组
 - 上采样`FBO`数组
 - 初始化宽度高度，有多少级的下采样图片数量
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDkwNjI4ODQsMTIwODE5ODE1MV19
+eyJoaXN0b3J5IjpbLTE1NTQwNTUwODksLTE1MDkwNjI4ODQsMT
+IwODE5ODE1MV19
 -->
