@@ -268,7 +268,9 @@ void main()
 ```
 `upSample.frag`如下，这里引入之前制作的`poisson`采样函数
 `bloomRadius`用来控制采样的半径距离
+
 `bloomAttenuation`用来控制辉光效果的剧烈程度，越小辉光周围蔓延就会越小，越大的话周围亮度朦胧程度就会越大
+`lowerResColor * bloomAttenuation`，``
 ```glsl
 #version 460 core
 out vec4 FragColor;
@@ -316,10 +318,10 @@ void main()
 ```
 ## 2 编写上采样的函数
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyODI5MTIxNTYsMTU3MjI5Njc5NywtMT
-Q1Mjg1ODU3OCwxNjcyMDU5ODAzLDIwMTM5NzQxMDAsLTE4ODY0
-NTU3NzMsLTIyMjY0NjU1Nyw3OTQyOTcyMSwxMDE3Nzg1NTExLD
-E5MTc3OTI5NzMsLTY4NzIwMzM5NSwyOTQ4MzcwNzIsNzY0ODYw
-ODYzLC0xOTcyOTQyNTc2LC0xNTA5MDYyODg0LDEyMDgxOTgxNT
-FdfQ==
+eyJoaXN0b3J5IjpbMTQ0MDYxNTMxMSwtMTI4MjkxMjE1NiwxNT
+cyMjk2Nzk3LC0xNDUyODU4NTc4LDE2NzIwNTk4MDMsMjAxMzk3
+NDEwMCwtMTg4NjQ1NTc3MywtMjIyNjQ2NTU3LDc5NDI5NzIxLD
+EwMTc3ODU1MTEsMTkxNzc5Mjk3MywtNjg3MjAzMzk1LDI5NDgz
+NzA3Miw3NjQ4NjA4NjMsLTE5NzI5NDI1NzYsLTE1MDkwNjI4OD
+QsMTIwODE5ODE1MV19
 -->
