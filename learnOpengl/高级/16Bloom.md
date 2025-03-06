@@ -447,19 +447,57 @@ void Bloom::merge(Framebuffer* target, Framebuffer* origin, Framebuffer* bloom)
 ```
 
 # 六、流程串联
-## 1 保存原来的Fbo以及viewPort状态
-## 2 将原始FBO进行备份保存
-## 3 提取亮部到downSample的第一个FBO
-## 4 循环执行下采样
-## 5 循环执行上采样
-## 6 执行merge合并
-## 7 恢复原始FBO以及viewPort状态
+```cpp
+void Bloom::doBloom(Framebuffer* srcFbo)
+{
+	//1 保存原来的Fbo以及viewPort状态
+	GLint preFbo;
+	glGetIntegerv(GL_FRAMEBUFFER_BINDING, &preFbo);
+
+	GLint preViewport[4];
+	glGetIntegerv(GL_VIEWPORT, preViewport);
+
+	//2 将原始FBO进行备份保存
+	glBindFramebuffer(GL_READ_FRAMEBUFFER, srcFbo->mFBO);
+	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, mOriginFbo->mFBO);
+	glBlitFramebuffer(0, 0, srcFbo->mWidth, srcFbo->mHeight, 0, 0, mOriginFbo->mWidth, mOriginFbo->mHeight, GL_COLOR_BUFFER_BIT, GL_LINEAR);
+
+	//3 提取亮部到downSample的第一个FBO
+	extractBright(srcFbo, mDownSamples[0]);
+
+	//4 循环执行下采样
+	for (int i = 1; i < mDownSamples.size(); i++) {
+		auto src = mDownSamples[i - 1];
+		auto dst = mDownSamples[i];
+		downSample(src, dst);
+	}
+	//5 循环执行上采样
+	int N = mDownSamples.size();
+	auto lowerResFbo = mDownSamples[N - 1];
+	auto higherResFbo = mDownSamples[N - 2];
+
+	upSample(mUpSamples[0], lowerResFbo, higherResFbo);
+	for (int i = 1; i < mUpSamples.size(); i++) {
+		lowerResFbo = mUpSamples[i - 1];
+		higherResFbo = mDownSamples[N - 2 - i];
+
+		upSample(mUpSamples[i], lowerResFbo, higherResFbo);
+	}
+
+	//6 执行merge合并
+	merge(srcFbo, mOriginFbo, mUpSamples[mUpSamples.size() - 1]);
+
+	//7 恢复原始FBO以及viewPort状态
+	glBindFramebuffer(GL_FRAMEBUFFER, preFbo);
+	glViewport(preViewport[0], preViewport[1], preViewport[2], preViewport[3]);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NzQwMDcyNDgsLTE0MjM3NDg5MTYsLT
-c2NDUxMjM1MSwtNDg0NDY3MzYyLC0yMTA2OTgxMTUsMTY5Mjkx
-ODE3OSwtMTI4MjkxMjE1NiwxNTcyMjk2Nzk3LC0xNDUyODU4NT
-c4LDE2NzIwNTk4MDMsMjAxMzk3NDEwMCwtMTg4NjQ1NTc3Mywt
-MjIyNjQ2NTU3LDc5NDI5NzIxLDEwMTc3ODU1MTEsMTkxNzc5Mj
-k3MywtNjg3MjAzMzk1LDI5NDgzNzA3Miw3NjQ4NjA4NjMsLTE5
-NzI5NDI1NzZdfQ==
+eyJoaXN0b3J5IjpbNzIwMjgyMDc0LC0xNTc0MDA3MjQ4LC0xND
+IzNzQ4OTE2LC03NjQ1MTIzNTEsLTQ4NDQ2NzM2MiwtMjEwNjk4
+MTE1LDE2OTI5MTgxNzksLTEyODI5MTIxNTYsMTU3MjI5Njc5Ny
+wtMTQ1Mjg1ODU3OCwxNjcyMDU5ODAzLDIwMTM5NzQxMDAsLTE4
+ODY0NTU3NzMsLTIyMjY0NjU1Nyw3OTQyOTcyMSwxMDE3Nzg1NT
+ExLDE5MTc3OTI5NzMsLTY4NzIwMzM5NSwyOTQ4MzcwNzIsNzY0
+ODYwODYzXX0=
 -->
