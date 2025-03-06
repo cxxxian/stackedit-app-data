@@ -31,7 +31,7 @@
 
 ![输入图片说明](/imgs/2025-03-05/I1q3SwtUQB0xAwBY.png)
 
-# 实践
+# 一、架构与初始化
 ## 1 FrameBuffer类增加HDR下Bloom专用的fbo
 特点：只需要颜色`attachment`，因为是`screenSpace`的绘制，所以不用进行深度检测什么七七八八的
 相比普通的`createHDRFbo`，就是把深度相关的`attachment`删去
@@ -87,7 +87,13 @@ private:
 计算每次下采样要进行多少次，按照下面的推导来：
 
 ![输入图片说明](/imgs/2025-03-06/YlAKJPg0j5O2dNxw.png)
+
+# 二、提取高亮
+## 1 Bloom类加入screenPlane的geometry（用其中的VAO）
+## 2 编写提取高亮用到的shader
+## 3 bian
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjk0ODM3MDcyLDc2NDg2MDg2MywtMTk3Mj
-k0MjU3NiwtMTUwOTA2Mjg4NCwxMjA4MTk4MTUxXX0=
+eyJoaXN0b3J5IjpbLTk4MDA2NjQ0NywyOTQ4MzcwNzIsNzY0OD
+YwODYzLC0xOTcyOTQyNTc2LC0xNTA5MDYyODg0LDEyMDgxOTgx
+NTFdfQ==
 -->
