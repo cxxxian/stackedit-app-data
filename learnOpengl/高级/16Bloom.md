@@ -251,6 +251,8 @@ void Bloom::downSample(Framebuffer* src, Framebuffer* dst)
 
 ![输入图片说明](/imgs/2025-03-05/yhCihKjmoMEgQYAK.png)
 
+![输入图片说明](/imgs/2025-03-05/DswyvpydLLp5apLC.png)
+
 ## 1 编写上采样的shader：upSample.vert/frag
 `upSample.vert`就是很普通的得到`pos`和`uv`信息
 ```glsl
@@ -266,9 +268,9 @@ void main()
 ```
 ## 2 编写上采样的函数
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTI4NTg1NzgsMTY3MjA1OTgwMywyMD
-EzOTc0MTAwLC0xODg2NDU1NzczLC0yMjI2NDY1NTcsNzk0Mjk3
-MjEsMTAxNzc4NTUxMSwxOTE3NzkyOTczLC02ODcyMDMzOTUsMj
-k0ODM3MDcyLDc2NDg2MDg2MywtMTk3Mjk0MjU3NiwtMTUwOTA2
-Mjg4NCwxMjA4MTk4MTUxXX0=
+eyJoaXN0b3J5IjpbMTU3MjI5Njc5NywtMTQ1Mjg1ODU3OCwxNj
+cyMDU5ODAzLDIwMTM5NzQxMDAsLTE4ODY0NTU3NzMsLTIyMjY0
+NjU1Nyw3OTQyOTcyMSwxMDE3Nzg1NTExLDE5MTc3OTI5NzMsLT
+Y4NzIwMzM5NSwyOTQ4MzcwNzIsNzY0ODYwODYzLC0xOTcyOTQy
+NTc2LC0xNTA5MDYyODg0LDEyMDgxOTgxNTFdfQ==
 -->
