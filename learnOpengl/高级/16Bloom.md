@@ -248,8 +248,9 @@ void Bloom::downSample(Framebuffer* src, Framebuffer* dst)
 
 # 四、编写上采样函数
 ## 1 编写上采样的shader：upSample.vs/frag
+## 2 编写上采样的函数
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4OTAxMTAxMCwyMDEzOTc0MTAwLC0xOD
+eyJoaXN0b3J5IjpbLTg3Nzg2NTc5OCwyMDEzOTc0MTAwLC0xOD
 g2NDU1NzczLC0yMjI2NDY1NTcsNzk0Mjk3MjEsMTAxNzc4NTUx
 MSwxOTE3NzkyOTczLC02ODcyMDMzOTUsMjk0ODM3MDcyLDc2ND
 g2MDg2MywtMTk3Mjk0MjU3NiwtMTUwOTA2Mjg4NCwxMjA4MTk4
