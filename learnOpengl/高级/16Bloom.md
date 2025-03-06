@@ -401,13 +401,21 @@ void main()
 }
 ```
 然后老样子在`bloom.h`声明然后在构造函数中初始化
+```cpp
+Bloom::Bloom(int width, int height, int minResolution = 32)
+{
+	...
+	mMergehader = new Shader("assets/shaders/advanced/bloom/merge.vert", "assets/shaders/advanced/bloom/merge.frag");
+}
+```
 ## 2 编写叠加函数
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODYyMzg4NTM4LC0yMTA2OTgxMTUsMTY5Mj
-kxODE3OSwtMTI4MjkxMjE1NiwxNTcyMjk2Nzk3LC0xNDUyODU4
-NTc4LDE2NzIwNTk4MDMsMjAxMzk3NDEwMCwtMTg4NjQ1NTc3My
-wtMjIyNjQ2NTU3LDc5NDI5NzIxLDEwMTc3ODU1MTEsMTkxNzc5
-Mjk3MywtNjg3MjAzMzk1LDI5NDgzNzA3Miw3NjQ4NjA4NjMsLT
-E5NzI5NDI1NzYsLTE1MDkwNjI4ODQsMTIwODE5ODE1MV19
+eyJoaXN0b3J5IjpbMTQxMDQ2MDEzOCwtMjEwNjk4MTE1LDE2OT
+I5MTgxNzksLTEyODI5MTIxNTYsMTU3MjI5Njc5NywtMTQ1Mjg1
+ODU3OCwxNjcyMDU5ODAzLDIwMTM5NzQxMDAsLTE4ODY0NTU3Nz
+MsLTIyMjY0NjU1Nyw3OTQyOTcyMSwxMDE3Nzg1NTExLDE5MTc3
+OTI5NzMsLTY4NzIwMzM5NSwyOTQ4MzcwNzIsNzY0ODYwODYzLC
+0xOTcyOTQyNTc2LC0xNTA5MDYyODg0LDEyMDgxOTgxNTFdfQ==
+
 -->
