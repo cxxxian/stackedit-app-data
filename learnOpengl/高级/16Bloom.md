@@ -90,12 +90,27 @@ private:
 
 # 二、提取高亮
 ## 1 Bloom类加入screenPlane的geometry（用其中的VAO）
+在`bloom.h`中添加一个几何体`mQuad`
+```cpp
+#include "../geometry.h"
+class Bloom {
+private:
+	...
+	Geometry* mQuad{ nullptr };
+};
 ```
-
+并在构造函数中初始话为`screenPlane`
+```cpp
+Bloom::Bloom(int width, int height, int minResolution = 32)
+{
+	...
+	mQuad = Geometry::createScreenPlane();
+}
+```
 ## 2 编写提取高亮用到的shader
 ## 3 编写extractBright函数，用来提取对应FBO的亮度
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NzcyMzM5NSwtNjg3MjAzMzk1LDI5ND
-gzNzA3Miw3NjQ4NjA4NjMsLTE5NzI5NDI1NzYsLTE1MDkwNjI4
-ODQsMTIwODE5ODE1MV19
+eyJoaXN0b3J5IjpbNjYwOTE0MDU0LC02ODcyMDMzOTUsMjk0OD
+M3MDcyLDc2NDg2MDg2MywtMTk3Mjk0MjU3NiwtMTUwOTA2Mjg4
+NCwxMjA4MTk4MTUxXX0=
 -->
