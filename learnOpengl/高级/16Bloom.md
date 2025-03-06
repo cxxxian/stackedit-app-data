@@ -270,7 +270,7 @@ void main()
 `bloomRadius`用来控制采样的半径距离
 
 `bloomAttenuation`用来控制辉光效果的剧烈程度，越小辉光周围蔓延就会越小，越大的话周围亮度朦胧程度就会越大
-`lowerResColor * bloomAttenuation`，``
+`lowerResColor * bloomAttenuation`，`lowerResColor`被上采样得到的`texture`的颜色，主要影响的是外面一圈朦胧的效果
 ```glsl
 #version 460 core
 out vec4 FragColor;
@@ -318,10 +318,10 @@ void main()
 ```
 ## 2 编写上采样的函数
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ0MDYxNTMxMSwtMTI4MjkxMjE1NiwxNT
-cyMjk2Nzk3LC0xNDUyODU4NTc4LDE2NzIwNTk4MDMsMjAxMzk3
-NDEwMCwtMTg4NjQ1NTc3MywtMjIyNjQ2NTU3LDc5NDI5NzIxLD
-EwMTc3ODU1MTEsMTkxNzc5Mjk3MywtNjg3MjAzMzk1LDI5NDgz
-NzA3Miw3NjQ4NjA4NjMsLTE5NzI5NDI1NzYsLTE1MDkwNjI4OD
-QsMTIwODE5ODE1MV19
+eyJoaXN0b3J5IjpbLTIwNzQ5NzI1OTIsLTEyODI5MTIxNTYsMT
+U3MjI5Njc5NywtMTQ1Mjg1ODU3OCwxNjcyMDU5ODAzLDIwMTM5
+NzQxMDAsLTE4ODY0NTU3NzMsLTIyMjY0NjU1Nyw3OTQyOTcyMS
+wxMDE3Nzg1NTExLDE5MTc3OTI5NzMsLTY4NzIwMzM5NSwyOTQ4
+MzcwNzIsNzY0ODYwODYzLC0xOTcyOTQyNTc2LC0xNTA5MDYyOD
+g0LDEyMDgxOTgxNTFdfQ==
 -->
