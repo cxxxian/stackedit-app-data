@@ -443,13 +443,18 @@ void Bloom::merge(Framebuffer* target, Framebuffer* origin, Framebuffer* bloom)
 
 # 六、流程串联
 ## 1 保存原来的Fbo以及viewPort状态
-## 2 将原始
+## 2 将原始FBO进行备份保存
+## 3 提取亮部到downSample的第一个FBO
+## 4 循环执行下采样
+## 5 循环执行上采样
+## 6 执行merge合并
+## 7 恢复原始FBO以及viewP[ort状态
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3MjEzMDE3OCwtNDg0NDY3MzYyLC0yMT
-A2OTgxMTUsMTY5MjkxODE3OSwtMTI4MjkxMjE1NiwxNTcyMjk2
-Nzk3LC0xNDUyODU4NTc4LDE2NzIwNTk4MDMsMjAxMzk3NDEwMC
-wtMTg4NjQ1NTc3MywtMjIyNjQ2NTU3LDc5NDI5NzIxLDEwMTc3
-ODU1MTEsMTkxNzc5Mjk3MywtNjg3MjAzMzk1LDI5NDgzNzA3Mi
-w3NjQ4NjA4NjMsLTE5NzI5NDI1NzYsLTE1MDkwNjI4ODQsMTIw
-ODE5ODE1MV19
+eyJoaXN0b3J5IjpbLTE0ODQ3MDg3NDYsLTQ4NDQ2NzM2MiwtMj
+EwNjk4MTE1LDE2OTI5MTgxNzksLTEyODI5MTIxNTYsMTU3MjI5
+Njc5NywtMTQ1Mjg1ODU3OCwxNjcyMDU5ODAzLDIwMTM5NzQxMD
+AsLTE4ODY0NTU3NzMsLTIyMjY0NjU1Nyw3OTQyOTcyMSwxMDE3
+Nzg1NTExLDE5MTc3OTI5NzMsLTY4NzIwMzM5NSwyOTQ4MzcwNz
+IsNzY0ODYwODYzLC0xOTcyOTQyNTc2LC0xNTA5MDYyODg0LDEy
+MDgxOTgxNTFdfQ==
 -->
