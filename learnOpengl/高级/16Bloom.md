@@ -266,11 +266,59 @@ void main()
 	uv = aUV;
 }
 ```
+`upSample.frag`如下，这里引入之前制作的`poisson`采样函数
+`bloomRadius`yo
+```glsl
+#version 460 core
+out vec4 FragColor;
+
+in vec2 uv;
+uniform sampler2D lowerResTex;//被上采样的低分辨率图像
+uniform sampler2D higherResTex;//来自下采样链条，与当前绘制目标大小相同的纹理
+
+#define NUM_SAMPLES 32
+#define PI 3.141592653589793
+#define PI2 6.283185307179586
+
+float rand_2to1(vec2 uv ) { 
+  ...
+}
+uniform float diskTightness;
+vec2 disk[NUM_SAMPLES];
+void poissonDiskSamples(vec2 randomSeed){
+	...
+}
+
+uniform float bloomRadius;
+
+vec3 doPoissonSample(sampler2D tex, vec2 uv){
+	poissonDiskSamples(uv);
+	 
+	vec3 sumColor = vec3(0.0);
+	for(int i = 0; i < NUM_SAMPLES; i++){
+		sumColor += texture(tex, uv + disk[i] * bloomRadius).rgb;
+	}
+	return sumColor / NUM_SAMPLES;
+}
+
+uniform float bloomAttenuation;
+
+void main()
+{
+	vec3 lowerResColor = doPoissonSample(lowerResTex, uv);
+	vec3 higherResColor = doPoissonSample(higherResTex, uv);
+
+	vec3 color = higherResColor + lowerResColor * bloomAttenuation;
+
+	FragColor = vec4(color, 1.0);
+}
+```
 ## 2 编写上采样的函数
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3MjI5Njc5NywtMTQ1Mjg1ODU3OCwxNj
-cyMDU5ODAzLDIwMTM5NzQxMDAsLTE4ODY0NTU3NzMsLTIyMjY0
-NjU1Nyw3OTQyOTcyMSwxMDE3Nzg1NTExLDE5MTc3OTI5NzMsLT
-Y4NzIwMzM5NSwyOTQ4MzcwNzIsNzY0ODYwODYzLC0xOTcyOTQy
-NTc2LC0xNTA5MDYyODg0LDEyMDgxOTgxNTFdfQ==
+eyJoaXN0b3J5IjpbMjA2ODA4MzM4OSwxNTcyMjk2Nzk3LC0xND
+UyODU4NTc4LDE2NzIwNTk4MDMsMjAxMzk3NDEwMCwtMTg4NjQ1
+NTc3MywtMjIyNjQ2NTU3LDc5NDI5NzIxLDEwMTc3ODU1MTEsMT
+kxNzc5Mjk3MywtNjg3MjAzMzk1LDI5NDgzNzA3Miw3NjQ4NjA4
+NjMsLTE5NzI5NDI1NzYsLTE1MDkwNjI4ODQsMTIwODE5ODE1MV
+19
 -->
