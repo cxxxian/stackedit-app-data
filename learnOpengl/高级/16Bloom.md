@@ -513,6 +513,7 @@ Texture* Texture::createHDRAttachment(unsigned int width, unsigned int height, u
 	...
 }
 ```
+我们使用`GL_CLAMP_TO_EDGE`就可以解决这个情况
 ```cpp
 Texture* Texture::createHDRAttachment(unsigned int width, unsigned int height, unsigned int unit)
 {
@@ -523,12 +524,14 @@ Texture* Texture::createHDRAttachment(unsigned int width, unsigned int height, u
 }
 
 ```
+
+![输入图片说明](/imgs/2025-03-06/BSoc9cpYWLSTpNK0.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyMDc5OTc4NCwxMTUwODU2MDk5LC0xND
-YzNzQzNTMzLDcyMDI4MjA3NCwtMTU3NDAwNzI0OCwtMTQyMzc0
-ODkxNiwtNzY0NTEyMzUxLC00ODQ0NjczNjIsLTIxMDY5ODExNS
-wxNjkyOTE4MTc5LC0xMjgyOTEyMTU2LDE1NzIyOTY3OTcsLTE0
-NTI4NTg1NzgsMTY3MjA1OTgwMywyMDEzOTc0MTAwLC0xODg2ND
-U1NzczLC0yMjI2NDY1NTcsNzk0Mjk3MjEsMTAxNzc4NTUxMSwx
-OTE3NzkyOTczXX0=
+eyJoaXN0b3J5IjpbMzg3MzM1OTk5LDExNTA4NTYwOTksLTE0Nj
+M3NDM1MzMsNzIwMjgyMDc0LC0xNTc0MDA3MjQ4LC0xNDIzNzQ4
+OTE2LC03NjQ1MTIzNTEsLTQ4NDQ2NzM2MiwtMjEwNjk4MTE1LD
+E2OTI5MTgxNzksLTEyODI5MTIxNTYsMTU3MjI5Njc5NywtMTQ1
+Mjg1ODU3OCwxNjcyMDU5ODAzLDIwMTM5NzQxMDAsLTE4ODY0NT
+U3NzMsLTIyMjY0NjU1Nyw3OTQyOTcyMSwxMDE3Nzg1NTExLDE5
+MTc3OTI5NzNdfQ==
 -->
