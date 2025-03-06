@@ -62,7 +62,28 @@ Framebuffer* Framebuffer::createHDRBloomFbo(unsigned int width, unsigned int hei
 - 下采样`FBO`数组
 - 上采样`FBO`数组
 - 初始化宽度高度，有多少级的下采样图片数量
+```cpp
+#pragma once
+#include "../core.h"
+#include "../framebuffer/framebuffer.h"
+
+class Bloom {
+public:
+	Bloom();
+	~Bloom();
+
+private:
+	//下/上 采样FBO数组
+	std::vector<Framebuffer*> mDownSamples{};
+	std::vector<Framebuffer*> mUpSamples{};
+
+	//初始化宽度高度，有多少级的下采样图片数量
+	int mWidth{ 0 };
+	int mHeight{ 0 };
+	int mMipLevels{ 0 };
+};
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NzI5NDI1NzYsLTE1MDkwNjI4ODQsMT
-IwODE5ODE1MV19
+eyJoaXN0b3J5IjpbNTM2MDkyMDczLC0xOTcyOTQyNTc2LC0xNT
+A5MDYyODg0LDEyMDgxOTgxNTFdfQ==
 -->
