@@ -90,10 +90,12 @@ private:
 
 # 二、提取高亮
 ## 1 Bloom类加入screenPlane的geometry（用其中的VAO）
+```
+
 ## 2 编写提取高亮用到的shader
 ## 3 编写extractBright函数，用来提取对应FBO的亮度
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4NzIwMzM5NSwyOTQ4MzcwNzIsNzY0OD
-YwODYzLC0xOTcyOTQyNTc2LC0xNTA5MDYyODg0LDEyMDgxOTgx
-NTFdfQ==
+eyJoaXN0b3J5IjpbLTE1NzcyMzM5NSwtNjg3MjAzMzk1LDI5ND
+gzNzA3Miw3NjQ4NjA4NjMsLTE5NzI5NDI1NzYsLTE1MDkwNjI4
+ODQsMTIwODE5ODE1MV19
 -->
