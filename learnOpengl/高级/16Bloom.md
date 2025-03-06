@@ -33,13 +33,36 @@
 
 # 实践
 ## 1 FrameBuffer类增加HDR下Bloom专用的fbo
-特点：只需要颜色`attachment`，因为是`screenSpace`的绘制，suo'y
+特点：只需要颜色`attachment`，因为是`screenSpace`的绘制，所以不用进行深度检测什么七七八八的
+相比普通的`createHDRFbo`，就是把深度相关的`attachment`删去
+```cpp
+Framebuffer* Framebuffer::createHDRBloomFbo(unsigned int width, unsigned int height)
+{
+	Framebuffer* fb = new Framebuffer();
+	unsigned int fbo;
+	glGenFramebuffers(1, &fbo);
+	glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+
+	auto colorAttachment = Texture::createHDRAttachment(width, height, 0);
+
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, colorAttachment->getTexture(), 0);
+
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	fb->mFBO = fbo;
+	fb->mColorAttachment = colorAttachment;
+	fb->mWidth = width;
+	fb->mHeight = height;
+
+	return fb;
+}
+
+```
 
 ## 2 创建Bloom类（初步）
 - 下采样`FBO`数组
 - 上采样`FBO`数组
 - 初始化宽度高度，有多少级的下采样图片数量
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTQwNTUwODksLTE1MDkwNjI4ODQsMT
+eyJoaXN0b3J5IjpbLTE5NzI5NDI1NzYsLTE1MDkwNjI4ODQsMT
 IwODE5ODE1MV19
 -->
