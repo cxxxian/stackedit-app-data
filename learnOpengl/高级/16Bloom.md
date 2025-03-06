@@ -204,7 +204,7 @@ Bloom::Bloom(int width, int height, int minResolution = 32)
 在`bloom.h`声明函数`extractBright`并实现
 在一开始，我们需要绑定`glBindFramebuffer(GL_FRAMEBUFFER, dst->mFBO);`，
 说明我们此时绘制的目标是`dst->mFBO`
-接下来就是将视口调整为`glViewport(0, 0, dst->mWidth, dst->mHeight)`
+接下来就是将视口调整为`glViewport(0, 0, dst->mWidth, dst->mHeight)`，这里是出于安全性的考量，防止我们在调用这个方法之前，如果修改过`viewport`的大下导致和屏幕尺寸不对应，就会有问题
 ```cpp
 void Bloom::extractBright(Framebuffer* src, Framebuffer* dst)
 {
@@ -230,8 +230,8 @@ void Bloom::extractBright(Framebuffer* src, Framebuffer* dst)
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODY0NTU3NzMsLTIyMjY0NjU1Nyw3OT
-QyOTcyMSwxMDE3Nzg1NTExLDE5MTc3OTI5NzMsLTY4NzIwMzM5
-NSwyOTQ4MzcwNzIsNzY0ODYwODYzLC0xOTcyOTQyNTc2LC0xNT
-A5MDYyODg0LDEyMDgxOTgxNTFdfQ==
+eyJoaXN0b3J5IjpbODM4Njk3NDkyLC0xODg2NDU1NzczLC0yMj
+I2NDY1NTcsNzk0Mjk3MjEsMTAxNzc4NTUxMSwxOTE3NzkyOTcz
+LC02ODcyMDMzOTUsMjk0ODM3MDcyLDc2NDg2MDg2MywtMTk3Mj
+k0MjU3NiwtMTUwOTA2Mjg4NCwxMjA4MTk4MTUxXX0=
 -->
