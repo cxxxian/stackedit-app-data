@@ -234,7 +234,7 @@ void Bloom::extractBright(Framebuffer* src, Framebuffer* dst)
 
 # 三、 编写下采样函数
 就直接用`glBlitFramebuffer`进行编写即可
-根据读入的`src->mFBO`，写到`dst->mFBO`即可，写的
+根据读入的`src->mFBO`，写到`dst->mFBO`即可，写入的是`GL_COLOR_BUFFER_BIT`即颜色信息，采用`GL_LINEAR`方式
 ```cpp
 
 void Bloom::downSample(Framebuffer* src, Framebuffer* dst)
@@ -245,8 +245,11 @@ void Bloom::downSample(Framebuffer* src, Framebuffer* dst)
 	glBlitFramebuffer(0, 0, src->mWidth, src->mHeight, 0, 0, dst->mWidth, dst->mHeight, GL_COLOR_BUFFER_BIT, GL_LINEAR);
 }
 ```
+
+# 四、编写上采样函数
+## 1 编写上采样的shader：upSample.vs/frag
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2NDYzOTA2OCwyMDEzOTc0MTAwLC0xOD
+eyJoaXN0b3J5IjpbLTc4OTAxMTAxMCwyMDEzOTc0MTAwLC0xOD
 g2NDU1NzczLC0yMjI2NDY1NTcsNzk0Mjk3MjEsMTAxNzc4NTUx
 MSwxOTE3NzkyOTczLC02ODcyMDMzOTUsMjk0ODM3MDcyLDc2ND
 g2MDg2MywtMTk3Mjk0MjU3NiwtMTUwOTA2Mjg4NCwxMjA4MTk4
