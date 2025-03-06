@@ -201,10 +201,35 @@ Bloom::Bloom(int width, int height, int minResolution = 32)
 }
 ```
 ## 3 编写extractBright函数，用来提取对应FBO的亮度
-```
+在`bloom.h`声明函数`extractBright`并实现
+在一开始，我们需要绑定`glBindFramebuffer(GL_FRAMEBUFFER, dst->mFBO);`，
+说明我们此时绘制的目标是`dst->mFBO`
+```cpp
+void Bloom::extractBright(Framebuffer* src, Framebuffer* dst)
+{
+	glBindFramebuffer(GL_FRAMEBUFFER, dst->mFBO);
+
+	glViewport(0, 0, dst->mWidth, dst->mHeight);
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	mExtractBrightShader->begin();
+	{
+		auto srcTex = src->mColorAttachment;
+		srcTex->setUnit(0);
+		srcTex->bind();
+		mExtractBrightShader->setInt("srcTex", 0);
+
+		mExtractBrightShader->setFloat("threshold", mThreshold);
+
+		glBindVertexArray(mQuad->getVao());
+		glDrawElements(GL_TRIANGLES, mQuad->getIndicesCount(), GL_UNSIGNED_INT, 0);
+	}
+	mExtractBrightShader->end();
+}
+
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNzI2MTY2OSwtMjIyNjQ2NTU3LDc5ND
+eyJoaXN0b3J5IjpbMTc0NDA2MTMyNSwtMjIyNjQ2NTU3LDc5ND
 I5NzIxLDEwMTc3ODU1MTEsMTkxNzc5Mjk3MywtNjg3MjAzMzk1
 LDI5NDgzNzA3Miw3NjQ4NjA4NjMsLTE5NzI5NDI1NzYsLTE1MD
 kwNjI4ODQsMTIwODE5ODE1MV19
