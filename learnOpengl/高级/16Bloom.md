@@ -409,13 +409,43 @@ Bloom::Bloom(int width, int height, int minResolution = 32)
 }
 ```
 ## 2 编写叠加函数
-```c
+在`bloom.h`创建一个对应变量传递给`shader`
+```glsl
+float mBloomIntensity{ 1.0f };
+```
+然后制作一个函数用来
+```cpp
+void Bloom::merge(Framebuffer* target, Framebuffer* origin, Framebuffer* bloom)
+{
+	glBindFramebuffer(GL_FRAMEBUFFER, target->mFBO);
+
+	glViewport(0, 0, target->mWidth, target->mHeight);
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	mMergeShader->begin();
+	{
+		origin->mColorAttachment->setUnit(0);
+		origin->mColorAttachment->bind();
+		mMergeShader->setInt("originTex", 0);
+
+		bloom->mColorAttachment->setUnit(1);
+		bloom->mColorAttachment->bind();
+		mMergeShader->setInt("bloomTex", 1);
+
+		mMergeShader->setFloat("bloomIntensity", mBloomIntensity);
+
+		glBindVertexArray(mQuad->getVao());
+		glDrawElements(GL_TRIANGLES, mQuad->getIndicesCount(), GL_UNSIGNED_INT, 0);
+	}
+	mMergeShader->end();
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5NTA5NzI5LC0yMTA2OTgxMTUsMTY5Mj
-kxODE3OSwtMTI4MjkxMjE1NiwxNTcyMjk2Nzk3LC0xNDUyODU4
-NTc4LDE2NzIwNTk4MDMsMjAxMzk3NDEwMCwtMTg4NjQ1NTc3My
-wtMjIyNjQ2NTU3LDc5NDI5NzIxLDEwMTc3ODU1MTEsMTkxNzc5
-Mjk3MywtNjg3MjAzMzk1LDI5NDgzNzA3Miw3NjQ4NjA4NjMsLT
-E5NzI5NDI1NzYsLTE1MDkwNjI4ODQsMTIwODE5ODE1MV19
+eyJoaXN0b3J5IjpbLTExMzQ4NzU3ODksLTIxMDY5ODExNSwxNj
+kyOTE4MTc5LC0xMjgyOTEyMTU2LDE1NzIyOTY3OTcsLTE0NTI4
+NTg1NzgsMTY3MjA1OTgwMywyMDEzOTc0MTAwLC0xODg2NDU1Nz
+czLC0yMjI2NDY1NTcsNzk0Mjk3MjEsMTAxNzc4NTUxMSwxOTE3
+NzkyOTczLC02ODcyMDMzOTUsMjk0ODM3MDcyLDc2NDg2MDg2My
+wtMTk3Mjk0MjU3NiwtMTUwOTA2Mjg4NCwxMjA4MTk4MTUxXX0=
+
 -->
