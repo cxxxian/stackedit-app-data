@@ -89,7 +89,7 @@ private:
 ![输入图片说明](/imgs/2025-03-06/YlAKJPg0j5O2dNxw.png)
 
 注意此处有一个小重点，就是我们最后达到最小层级之后，还会再运行一次`w / 2`和`h / 2`，所以其实我们最后一张采样图片的大小是`2w, 2h`，
-倒数第二张
+倒数第二张是`4w, 4h`，
 ```cpp
 Bloom::Bloom(int width, int height, int minResolution = 32)
 {
@@ -138,7 +138,7 @@ Bloom::Bloom(int width, int height, int minResolution = 32)
 ## 2 编写提取高亮用到的shader
 ## 3 编写extractBright函数，用来提取对应FBO的亮度
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1Mzg1MDcxNSwtNjg3MjAzMzk1LDI5ND
+eyJoaXN0b3J5IjpbMTkxNzc5Mjk3MywtNjg3MjAzMzk1LDI5ND
 gzNzA3Miw3NjQ4NjA4NjMsLTE5NzI5NDI1NzYsLTE1MDkwNjI4
 ODQsMTIwODE5ODE1MV19
 -->
