@@ -137,11 +137,25 @@ Bloom::Bloom(int width, int height, int minResolution = 32)
 ```
 ## 2 编写提取高亮用到的shader
 制作`extractBright.vert/frag`，从`screen.vert/frag`复制过来
+`extractBright.vert`如下，就是简单输出`pos`和`uv`给`frag`
+这时候因为直接是设计好的屏幕坐标，即传入进来的时候就已经是`ndc`坐标了，所以不用对`pos`进行任何转化
+```glsl
+#version 460 core
+layout (location = 0) in vec2 aPos;
+layout (location = 1) in vec2 aUV;
+
+out vec2 uv;
+
+
+void main()
+{
+	gl_Position = vec4(aPos.x, aPos.y, 0.0, 1.0);
+	uv = aUV;
+}
 ```
-`
 ## 3 编写extractBright函数，用来提取对应FBO的亮度
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxNDg4MjQwNywxMDE3Nzg1NTExLDE5MT
+eyJoaXN0b3J5IjpbLTMwOTE3ODQyNiwxMDE3Nzg1NTExLDE5MT
 c3OTI5NzMsLTY4NzIwMzM5NSwyOTQ4MzcwNzIsNzY0ODYwODYz
 LC0xOTcyOTQyNTc2LC0xNTA5MDYyODg0LDEyMDgxOTgxNTFdfQ
 ==
