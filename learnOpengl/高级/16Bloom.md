@@ -137,9 +137,12 @@ Bloom::Bloom(int width, int height, int minResolution = 32)
 ```
 ## 2 编写提取高亮用到的shader
 制作`extractBright.vert/frag`，从`screen.vert/frag`复制过来
+```
+`
 ## 3 编写extractBright函数，用来提取对应FBO的亮度
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxNzc4NTUxMSwxOTE3NzkyOTczLC02OD
-cyMDMzOTUsMjk0ODM3MDcyLDc2NDg2MDg2MywtMTk3Mjk0MjU3
-NiwtMTUwOTA2Mjg4NCwxMjA4MTk4MTUxXX0=
+eyJoaXN0b3J5IjpbMTkxNDg4MjQwNywxMDE3Nzg1NTExLDE5MT
+c3OTI5NzMsLTY4NzIwMzM5NSwyOTQ4MzcwNzIsNzY0ODYwODYz
+LC0xOTcyOTQyNTc2LC0xNTA5MDYyODg0LDEyMDgxOTgxNTFdfQ
+==
 -->
