@@ -88,6 +88,33 @@ private:
 
 ![输入图片说明](/imgs/2025-03-06/YlAKJPg0j5O2dNxw.png)
 
+注意c
+```cpp
+Bloom::Bloom(int width, int height, int minResolution = 32)
+{
+	mWidth = width;
+	mHeight = height;
+
+	float widthLevels = std::log2((float)width / (float)minResolution);
+	float heightLevels = std::log2((float)height / (float)minResolution);
+
+	mMipLevels = std::min(widthLevels, heightLevels);
+
+	int w = mWidth, h = mHeight;
+	for (int i = 0; i < mMipLevels; i++) {
+		mDownSamples.push_back(Framebuffer::createHDRBloomFbo(w, h));
+		w /= 2;
+		h /= 2;
+	}
+	w = 4 * w, h = 4 * h;
+	for (int i = 0; i < mMipLevels - 1; i++) {
+		mDownSamples.push_back(Framebuffer::createHDRBloomFbo(w, h));
+		w *= 2;
+		h *= 2;
+	}
+}
+```
+
 # 二、提取高亮
 ## 1 Bloom类加入screenPlane的geometry（用其中的VAO）
 在`bloom.h`中添加一个几何体`mQuad`
@@ -110,7 +137,7 @@ Bloom::Bloom(int width, int height, int minResolution = 32)
 ## 2 编写提取高亮用到的shader
 ## 3 编写extractBright函数，用来提取对应FBO的亮度
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjYwOTE0MDU0LC02ODcyMDMzOTUsMjk0OD
+eyJoaXN0b3J5IjpbMTc0MDAxMjcyLC02ODcyMDMzOTUsMjk0OD
 M3MDcyLDc2NDg2MDg2MywtMTk3Mjk0MjU3NiwtMTUwOTA2Mjg4
 NCwxMjA4MTk4MTUxXX0=
 -->
