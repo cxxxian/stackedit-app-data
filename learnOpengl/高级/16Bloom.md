@@ -500,6 +500,7 @@ void Bloom::doBloom(Framebuffer* srcFbo)
 
 ![输入图片说明](/imgs/2025-03-06/2iYBu7fCrF2lWlyz.png)
 
+···
 ```cpp
 Texture* Texture::createHDRAttachment(unsigned int width, unsigned int height, unsigned int unit)
 {
@@ -514,11 +515,11 @@ Texture* Texture::createHDRAttachment(unsigned int width, unsigned int height, u
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1MDg1NjA5OSwtMTQ2Mzc0MzUzMyw3Mj
-AyODIwNzQsLTE1NzQwMDcyNDgsLTE0MjM3NDg5MTYsLTc2NDUx
-MjM1MSwtNDg0NDY3MzYyLC0yMTA2OTgxMTUsMTY5MjkxODE3OS
-wtMTI4MjkxMjE1NiwxNTcyMjk2Nzk3LC0xNDUyODU4NTc4LDE2
-NzIwNTk4MDMsMjAxMzk3NDEwMCwtMTg4NjQ1NTc3MywtMjIyNj
-Q2NTU3LDc5NDI5NzIxLDEwMTc3ODU1MTEsMTkxNzc5Mjk3Mywt
-Njg3MjAzMzk1XX0=
+eyJoaXN0b3J5IjpbMTEwOTE2NiwxMTUwODU2MDk5LC0xNDYzNz
+QzNTMzLDcyMDI4MjA3NCwtMTU3NDAwNzI0OCwtMTQyMzc0ODkx
+NiwtNzY0NTEyMzUxLC00ODQ0NjczNjIsLTIxMDY5ODExNSwxNj
+kyOTE4MTc5LC0xMjgyOTEyMTU2LDE1NzIyOTY3OTcsLTE0NTI4
+NTg1NzgsMTY3MjA1OTgwMywyMDEzOTc0MTAwLC0xODg2NDU1Nz
+czLC0yMjI2NDY1NTcsNzk0Mjk3MjEsMTAxNzc4NTUxMSwxOTE3
+NzkyOTczXX0=
 -->
