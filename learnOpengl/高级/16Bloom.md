@@ -331,7 +331,6 @@ float mBloomRadius{ 0.1f };
 float mBloomAttenuation{ 1.0f };
 ```
 然后在`bloom.h`定义一个函数并实现
-
 ```cpp
 void Bloom::upSample(Framebuffer* target, Framebuffer* lowerResFbo, Framebuffer* higherResFbo)
 {
@@ -361,10 +360,10 @@ void Bloom::upSample(Framebuffer* target, Framebuffer* lowerResFbo, Framebuffer*
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODIyNzEzNzM4LDE2OTI5MTgxNzksLTEyOD
-I5MTIxNTYsMTU3MjI5Njc5NywtMTQ1Mjg1ODU3OCwxNjcyMDU5
-ODAzLDIwMTM5NzQxMDAsLTE4ODY0NTU3NzMsLTIyMjY0NjU1Ny
-w3OTQyOTcyMSwxMDE3Nzg1NTExLDE5MTc3OTI5NzMsLTY4NzIw
-MzM5NSwyOTQ4MzcwNzIsNzY0ODYwODYzLC0xOTcyOTQyNTc2LC
-0xNTA5MDYyODg0LDEyMDgxOTgxNTFdfQ==
+eyJoaXN0b3J5IjpbMTU3NjA0NTYyNCwxNjkyOTE4MTc5LC0xMj
+gyOTEyMTU2LDE1NzIyOTY3OTcsLTE0NTI4NTg1NzgsMTY3MjA1
+OTgwMywyMDEzOTc0MTAwLC0xODg2NDU1NzczLC0yMjI2NDY1NT
+csNzk0Mjk3MjEsMTAxNzc4NTUxMSwxOTE3NzkyOTczLC02ODcy
+MDMzOTUsMjk0ODM3MDcyLDc2NDg2MDg2MywtMTk3Mjk0MjU3Ni
+wtMTUwOTA2Mjg4NCwxMjA4MTk4MTUxXX0=
 -->
