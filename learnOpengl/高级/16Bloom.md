@@ -316,9 +316,10 @@ void main()
 	FragColor = vec4(color, 1.0);
 }
 ```
+准备好以上`shader`，我们就到bloom.hsh
 ## 2 编写上采样的函数
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzQ5NzI1OTIsLTEyODI5MTIxNTYsMT
+eyJoaXN0b3J5IjpbLTEzOTU5Njg0NDYsLTEyODI5MTIxNTYsMT
 U3MjI5Njc5NywtMTQ1Mjg1ODU3OCwxNjcyMDU5ODAzLDIwMTM5
 NzQxMDAsLTE4ODY0NTU3NzMsLTIyMjY0NjU1Nyw3OTQyOTcyMS
 wxMDE3Nzg1NTExLDE5MTc3OTI5NzMsLTY4NzIwMzM5NSwyOTQ4
