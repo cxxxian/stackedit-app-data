@@ -36,8 +36,9 @@
 特点：只需要颜色`attachment`，因为是`screenSpace`的绘制
 
 ## 2 创建Bloom类（初步）
-- 下采样FBO数组
-- 
+- 下采样`FBO`数组
+- 上采样`FBO`数组
+- 初始化宽度高度，有多少级的下采样图片数量
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTc3NTc4NywxMjA4MTk4MTUxXX0=
+eyJoaXN0b3J5IjpbLTE1MDkwNjI4ODQsMTIwODE5ODE1MV19
 -->
