@@ -84,8 +84,10 @@ private:
 };
 ```
 ## 编写Bloom构造函数（按需创建上下采样的fbo数组）
+计算每次下采样要缩小
 
+![输入图片说明](/imgs/2025-03-06/YlAKJPg0j5O2dNxw.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzY0ODYwODYzLC0xOTcyOTQyNTc2LC0xNT
-A5MDYyODg0LDEyMDgxOTgxNTFdfQ==
+eyJoaXN0b3J5IjpbLTYyMTQ3ODY1OSw3NjQ4NjA4NjMsLTE5Nz
+I5NDI1NzYsLTE1MDkwNjI4ODQsMTIwODE5ODE1MV19
 -->
