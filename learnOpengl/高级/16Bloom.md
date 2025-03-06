@@ -180,10 +180,27 @@ void main()
 }
 ```
 
-并且因为这个shader只可能用在bloom上面，所以我们直接声明在bloom.h当中，而不是像以前一样声明在renderer
+并且因为这个`shader`只可能用在`bloom`上面，所以我们直接声明在`bloom.h`当中，而不是像以前一样声明在`renderer.h`当中
+```cpp
+#include "../shader.h"
+class Bloom {
+private:
+	...
+	Shader* mExtractBrightShader{ nullptr };
+```
+在`bloom`的构造函数中初始化
+```cpp
+#include "bloom.h"
+Bloom::Bloom(int width, int height, int minResolution = 32)
+{
+	...
+	mQuad = Geometry::createScreenPlane();
+	mExtractBrightShader = new Shader("assets/shaders/advanced/bloom/extractBright.vert", "assets/shaders/advanced/bloom/extractBright.frag")
+}
+```
 ## 3 编写extractBright函数，用来提取对应FBO的亮度
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2MTM4MDk0OSw3OTQyOTcyMSwxMDE3Nz
+eyJoaXN0b3J5IjpbLTIyMjY0NjU1Nyw3OTQyOTcyMSwxMDE3Nz
 g1NTExLDE5MTc3OTI5NzMsLTY4NzIwMzM5NSwyOTQ4MzcwNzIs
 NzY0ODYwODYzLC0xOTcyOTQyNTc2LC0xNTA5MDYyODg0LDEyMD
 gxOTgxNTFdfQ==
