@@ -119,7 +119,7 @@ Bloom::Bloom(int width, int height, int minResolution = 32)
 # 二、提取高亮
 ## 1 Bloom类加入screenPlane的geometry（用其中的VAO）
 在`bloom.h`中添加一个几何体`mQuad`
-yi'ji
+以及声明一个变量`mThreshold`用来作为`shader`中阈值的调整
 ```cpp
 #include "../geometry.h"
 class Bloom {
@@ -201,9 +201,11 @@ Bloom::Bloom(int width, int height, int minResolution = 32)
 }
 ```
 ## 3 编写extractBright函数，用来提取对应FBO的亮度
+```
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwMjY4NTE3LC0yMjI2NDY1NTcsNzk0Mj
-k3MjEsMTAxNzc4NTUxMSwxOTE3NzkyOTczLC02ODcyMDMzOTUs
-Mjk0ODM3MDcyLDc2NDg2MDg2MywtMTk3Mjk0MjU3NiwtMTUwOT
-A2Mjg4NCwxMjA4MTk4MTUxXX0=
+eyJoaXN0b3J5IjpbLTEwNzI2MTY2OSwtMjIyNjQ2NTU3LDc5ND
+I5NzIxLDEwMTc3ODU1MTEsMTkxNzc5Mjk3MywtNjg3MjAzMzk1
+LDI5NDgzNzA3Miw3NjQ4NjA4NjMsLTE5NzI5NDI1NzYsLTE1MD
+kwNjI4ODQsMTIwODE5ODE1MV19
 -->
