@@ -500,7 +500,7 @@ void Bloom::doBloom(Framebuffer* srcFbo)
 
 ![输入图片说明](/imgs/2025-03-06/2iYBu7fCrF2lWlyz.png)
 
-···
+
 ```cpp
 Texture* Texture::createHDRAttachment(unsigned int width, unsigned int height, unsigned int unit)
 {
@@ -508,6 +508,15 @@ Texture* Texture::createHDRAttachment(unsigned int width, unsigned int height, u
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB16F, width, height, 0, GL_RGB, GL_FLOAT, NULL);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);//u
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);//v
+	...
+}
+```
+```cpp
+Texture* Texture::createHDRAttachment(unsigned int width, unsigned int height, unsigned int unit)
+{
+	...
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);//u
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);//v
 	...
@@ -515,11 +524,11 @@ Texture* Texture::createHDRAttachment(unsigned int width, unsigned int height, u
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwOTE2NiwxMTUwODU2MDk5LC0xNDYzNz
-QzNTMzLDcyMDI4MjA3NCwtMTU3NDAwNzI0OCwtMTQyMzc0ODkx
-NiwtNzY0NTEyMzUxLC00ODQ0NjczNjIsLTIxMDY5ODExNSwxNj
-kyOTE4MTc5LC0xMjgyOTEyMTU2LDE1NzIyOTY3OTcsLTE0NTI4
-NTg1NzgsMTY3MjA1OTgwMywyMDEzOTc0MTAwLC0xODg2NDU1Nz
-czLC0yMjI2NDY1NTcsNzk0Mjk3MjEsMTAxNzc4NTUxMSwxOTE3
-NzkyOTczXX0=
+eyJoaXN0b3J5IjpbLTQ0MzYxNjc5OSwxMTUwODU2MDk5LC0xND
+YzNzQzNTMzLDcyMDI4MjA3NCwtMTU3NDAwNzI0OCwtMTQyMzc0
+ODkxNiwtNzY0NTEyMzUxLC00ODQ0NjczNjIsLTIxMDY5ODExNS
+wxNjkyOTE4MTc5LC0xMjgyOTEyMTU2LDE1NzIyOTY3OTcsLTE0
+NTI4NTg1NzgsMTY3MjA1OTgwMywyMDEzOTc0MTAwLC0xODg2ND
+U1NzczLC0yMjI2NDY1NTcsNzk0Mjk3MjEsMTAxNzc4NTUxMSwx
+OTE3NzkyOTczXX0=
 -->
