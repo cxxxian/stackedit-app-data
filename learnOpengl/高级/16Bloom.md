@@ -90,8 +90,13 @@ private:
 
 注意此处有一个小重点，就是我们最后达到最小层级之后，还会再运行一次`w / 2`和`h / 2`，所以其实我们最后一张采样图片的大小是`2w, 2h`，
 倒数第二张是`4w, 4h`，
+声明如下：
 ```cpp
-Bloom::Bloom(int width, int height, int minResolution = 32)
+Bloom::Bloom(int width, int height, int minResolution = 32);
+```
+实现如下：
+```cpp
+Bloom::Bloom(int width, int height, int minResolution)
 {
 	mWidth = width;
 	mHeight = height;
@@ -450,11 +455,11 @@ void Bloom::merge(Framebuffer* target, Framebuffer* origin, Framebuffer* bloom)
 ## 6 执行merge合并
 ## 7 恢复原始FBO以及viewPort状态
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2NDUxMjM1MSwtNDg0NDY3MzYyLC0yMT
-A2OTgxMTUsMTY5MjkxODE3OSwtMTI4MjkxMjE1NiwxNTcyMjk2
-Nzk3LC0xNDUyODU4NTc4LDE2NzIwNTk4MDMsMjAxMzk3NDEwMC
-wtMTg4NjQ1NTc3MywtMjIyNjQ2NTU3LDc5NDI5NzIxLDEwMTc3
-ODU1MTEsMTkxNzc5Mjk3MywtNjg3MjAzMzk1LDI5NDgzNzA3Mi
-w3NjQ4NjA4NjMsLTE5NzI5NDI1NzYsLTE1MDkwNjI4ODQsMTIw
-ODE5ODE1MV19
+eyJoaXN0b3J5IjpbLTE0MjM3NDg5MTYsLTc2NDUxMjM1MSwtND
+g0NDY3MzYyLC0yMTA2OTgxMTUsMTY5MjkxODE3OSwtMTI4Mjkx
+MjE1NiwxNTcyMjk2Nzk3LC0xNDUyODU4NTc4LDE2NzIwNTk4MD
+MsMjAxMzk3NDEwMCwtMTg4NjQ1NTc3MywtMjIyNjQ2NTU3LDc5
+NDI5NzIxLDEwMTc3ODU1MTEsMTkxNzc5Mjk3MywtNjg3MjAzMz
+k1LDI5NDgzNzA3Miw3NjQ4NjA4NjMsLTE5NzI5NDI1NzYsLTE1
+MDkwNjI4ODRdfQ==
 -->
