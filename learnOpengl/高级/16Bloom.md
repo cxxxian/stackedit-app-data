@@ -153,9 +153,35 @@ void main()
 	uv = aUV;
 }
 ```
+`extractBright.frag`如下，
+用来找寻传入的`srcTex`纹理中超过阈值`threshold`的部分，也就是比较亮的地方
+如果超过我们就输出`color`，否则就是直接输出黑色``
+```glsl
+#version 460 core
+out vec4 FragColor;
+
+in vec2 uv;
+
+uniform sampler2D srcTex;
+
+uniform float threshold;
+
+void main()
+{
+	vec3 color = texture(srcTex, uv).rgb;
+
+	float brightness = dot(color, vec3(0.2126, 0.7152, 0.0722));
+
+	if(brightness > threshold){
+		FragColor = vec4(color, 1.0);
+	}else{
+		FragColor = vec4(0.0, 0.0, 0.0, 1.0);		
+	}
+}
+```
 ## 3 编写extractBright函数，用来提取对应FBO的亮度
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwOTE3ODQyNiwxMDE3Nzg1NTExLDE5MT
+eyJoaXN0b3J5IjpbMTYwNjIyNDA3NywxMDE3Nzg1NTExLDE5MT
 c3OTI5NzMsLTY4NzIwMzM5NSwyOTQ4MzcwNzIsNzY0ODYwODYz
 LC0xOTcyOTQyNTc2LC0xNTA5MDYyODg0LDEyMDgxOTgxNTFdfQ
 ==
