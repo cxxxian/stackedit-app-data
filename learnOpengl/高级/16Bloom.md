@@ -83,7 +83,9 @@ private:
 	int mMipLevels{ 0 };
 };
 ```
+## 编写Bloom构造函数（按需创建上下采样的fbo数组）
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTM2MDkyMDczLC0xOTcyOTQyNTc2LC0xNT
+eyJoaXN0b3J5IjpbNzY0ODYwODYzLC0xOTcyOTQyNTc2LC0xNT
 A5MDYyODg0LDEyMDgxOTgxNTFdfQ==
 -->
