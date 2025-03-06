@@ -31,7 +31,13 @@
 
 ![输入图片说明](/imgs/2025-03-05/I1q3SwtUQB0xAwBY.png)
 
-## 
+# 实践
+## 1 FrameBuffer类增加HDR下Bloom专用的fbo
+特点：只需要颜色`attachment`，因为是`screenSpace`的绘制
+
+## 2 创建Bloom类（初步）
+- 下采样FBO数组
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3OTIxNzEwNSwxMjA4MTk4MTUxXX0=
+eyJoaXN0b3J5IjpbLTE1NTc3NTc4NywxMjA4MTk4MTUxXX0=
 -->
