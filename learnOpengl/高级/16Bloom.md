@@ -114,7 +114,7 @@ Bloom::Bloom(int width, int height, int minResolution)
 	}
 	w = 4 * w, h = 4 * h;
 	for (int i = 0; i < mMipLevels - 1; i++) {
-		mDownSamples.push_back(Framebuffer::createHDRBloomFbo(w, h));
+		mUpSamples.push_back(Framebuffer::createHDRBloomFbo(w, h));
 		w *= 2;
 		h *= 2;
 	}
@@ -493,11 +493,11 @@ void Bloom::doBloom(Framebuffer* srcFbo)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzIwMjgyMDc0LC0xNTc0MDA3MjQ4LC0xND
-IzNzQ4OTE2LC03NjQ1MTIzNTEsLTQ4NDQ2NzM2MiwtMjEwNjk4
-MTE1LDE2OTI5MTgxNzksLTEyODI5MTIxNTYsMTU3MjI5Njc5Ny
-wtMTQ1Mjg1ODU3OCwxNjcyMDU5ODAzLDIwMTM5NzQxMDAsLTE4
-ODY0NTU3NzMsLTIyMjY0NjU1Nyw3OTQyOTcyMSwxMDE3Nzg1NT
-ExLDE5MTc3OTI5NzMsLTY4NzIwMzM5NSwyOTQ4MzcwNzIsNzY0
-ODYwODYzXX0=
+eyJoaXN0b3J5IjpbLTE0NjM3NDM1MzMsNzIwMjgyMDc0LC0xNT
+c0MDA3MjQ4LC0xNDIzNzQ4OTE2LC03NjQ1MTIzNTEsLTQ4NDQ2
+NzM2MiwtMjEwNjk4MTE1LDE2OTI5MTgxNzksLTEyODI5MTIxNT
+YsMTU3MjI5Njc5NywtMTQ1Mjg1ODU3OCwxNjcyMDU5ODAzLDIw
+MTM5NzQxMDAsLTE4ODY0NTU3NzMsLTIyMjY0NjU1Nyw3OTQyOT
+cyMSwxMDE3Nzg1NTExLDE5MTc3OTI5NzMsLTY4NzIwMzM5NSwy
+OTQ4MzcwNzJdfQ==
 -->
