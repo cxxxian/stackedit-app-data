@@ -413,7 +413,7 @@ Bloom::Bloom(int width, int height, int minResolution = 32)
 ```glsl
 float mBloomIntensity{ 1.0f };
 ```
-然后制作一个函数用来
+然后制作一个函数，将值传递给刚刚`shader`中相应的变量
 ```cpp
 void Bloom::merge(Framebuffer* target, Framebuffer* origin, Framebuffer* bloom)
 {
@@ -441,11 +441,11 @@ void Bloom::merge(Framebuffer* target, Framebuffer* origin, Framebuffer* bloom)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMzQ4NzU3ODksLTIxMDY5ODExNSwxNj
-kyOTE4MTc5LC0xMjgyOTEyMTU2LDE1NzIyOTY3OTcsLTE0NTI4
-NTg1NzgsMTY3MjA1OTgwMywyMDEzOTc0MTAwLC0xODg2NDU1Nz
-czLC0yMjI2NDY1NTcsNzk0Mjk3MjEsMTAxNzc4NTUxMSwxOTE3
-NzkyOTczLC02ODcyMDMzOTUsMjk0ODM3MDcyLDc2NDg2MDg2My
-wtMTk3Mjk0MjU3NiwtMTUwOTA2Mjg4NCwxMjA4MTk4MTUxXX0=
+eyJoaXN0b3J5IjpbLTQ4NDQ2NzM2MiwtMjEwNjk4MTE1LDE2OT
+I5MTgxNzksLTEyODI5MTIxNTYsMTU3MjI5Njc5NywtMTQ1Mjg1
+ODU3OCwxNjcyMDU5ODAzLDIwMTM5NzQxMDAsLTE4ODY0NTU3Nz
+MsLTIyMjY0NjU1Nyw3OTQyOTcyMSwxMDE3Nzg1NTExLDE5MTc3
+OTI5NzMsLTY4NzIwMzM5NSwyOTQ4MzcwNzIsNzY0ODYwODYzLC
+0xOTcyOTQyNTc2LC0xNTA5MDYyODg0LDEyMDgxOTgxNTFdfQ==
 
 -->
