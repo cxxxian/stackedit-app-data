@@ -30,7 +30,35 @@ Framebuffer* Framebuffer::createMultiSampleHDRFbo(unsigned int width, unsigned i
 ```
 
 然后到`main.cpp`中，创建相应的`fbo`并进行渲染
+会发现，渲染出来的屏幕一片黑
+```cpp
+Framebuffer* fboMulti = nullptr;
+Framebuffer* fboResolve = nullptr;
+
+void prepare() {
+
+	fboMulti = Framebuffer::createMultiSampleHDRFbo(WIDTH, HEIGHT);
+	fboResolve = Framebuffer::createHDRFbo(WIDTH, HEIGHT);
+
+	...
+}
+int main() {
+	...
+	while (glApp->update()) {
+		cameraControl->update();
+
+		renderer->setClearColor(clearColor);
+		renderer->render(sceneOff, camera, pointLight, ambLight, fboMulti->mFBO);
+		renderer->msaaResolve(fboMulti, fboResolve);
+		bloom->doBloom(fboResolve);
+		renderer->render(scene, camera, pointLight, ambLight);
+
+		renderIMGUI();
+	}
+	...
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NDIwNTEwNjcsMTkwNjk1ODUzNiwtMT
-c2MzQ3Mzg1MywtMTQ3ODI5MjgzMCwtMTMyMzc5MzA3MV19
+eyJoaXN0b3J5IjpbLTE4OTYzOTUxNSwxOTA2OTU4NTM2LC0xNz
+YzNDczODUzLC0xNDc4MjkyODMwLC0xMzIzNzkzMDcxXX0=
 -->
