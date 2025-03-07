@@ -15,7 +15,8 @@ Framebuffer* Framebuffer::createMultiSampleHDRFbo(unsigned int width, unsigned i
 	auto colorAttachment = Texture::createMultiSampleTexture(width, height, samples, GL_RGB16F, 0);
 	auto dsAttachment = Texture::createMultiSampleTexture(width, height, samples, GL_DEPTH24_STENCIL8, 0);
 
-	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, colorAttachment->getTexture(), 0);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D_MULTISAMPLE, colorAttachment->getTexture(), 0);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_TEXTURE_2D_MULTISAMPLE, dsAttachment->getTexture(), 0);
 
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	fb->mFBO = fbo;
@@ -26,11 +27,10 @@ Framebuffer* Framebuffer::createMultiSampleHDRFbo(unsigned int width, unsigned i
 
 	return fb;
 }
-
 ```
 
 然后到`main.cpp`中，创建相应的`fbo`并进行渲染
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwNjk1ODUzNiwtMTc2MzQ3Mzg1MywtMT
-Q3ODI5MjgzMCwtMTMyMzc5MzA3MV19
+eyJoaXN0b3J5IjpbLTE2NDIwNTEwNjcsMTkwNjk1ODUzNiwtMT
+c2MzQ3Mzg1MywtMTQ3ODI5MjgzMCwtMTMyMzc5MzA3MV19
 -->
