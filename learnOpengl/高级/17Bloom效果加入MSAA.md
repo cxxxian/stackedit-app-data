@@ -27,7 +27,9 @@ Framebuffer* Framebuffer::createMultiSampleHDRFbo(unsigned int width, unsigned i
 }
 
 ```
+
+然后dai
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzgyOTI4MzAsLTEzMjM3OTMwNzFdfQ
-==
+eyJoaXN0b3J5IjpbLTI4OTcyMjU0LC0xNDc4MjkyODMwLC0xMz
+IzNzkzMDcxXX0=
 -->
