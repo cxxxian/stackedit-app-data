@@ -21,8 +21,8 @@
 
 ![输入图片说明](/imgs/2025-03-07/Mxvau6tc3y6tCHSi.png)
 
-`d`
+`dΦ`表示`dw`内对应的功率大小‘
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzI4MTMzOCwtMTIwNzczNjAyOSwtMT
-I1ODg0NzY0OSwxOTUxMTI1NDAyXX0=
+eyJoaXN0b3J5IjpbLTEyODkyMzkxNzMsLTEyMDc3MzYwMjksLT
+EyNTg4NDc2NDksMTk1MTEyNTQwMl19
 -->
