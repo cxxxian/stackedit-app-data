@@ -49,9 +49,10 @@
 画图推导一下可以得知：
 真正的面积是`ds * cosθ`
 
+![输入图片说明](/imgs/2025-03-07/Yq0yTsRZKUHJq1d5.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzMTAwMjczOCwtMTIwNDIwMDAwMiwtMT
-cyMjc3MzU3MCwtMTIwNzczNjAyOSwtMTI1ODg0NzY0OSwxOTUx
-MTI1NDAyXX0=
+eyJoaXN0b3J5IjpbLTE2MDgwMTc1ODEsLTEyMDQyMDAwMDIsLT
+E3MjI3NzM1NzAsLTEyMDc3MzYwMjksLTEyNTg4NDc2NDksMTk1
+MTEyNTQwMl19
 -->
