@@ -61,7 +61,7 @@ int main() {
 ```
 
 解析`BUG`：
-1 由于`fboResolve`这个对象自创建以来，一次都没有清理`DepthBuffer`，所以他的深度附件永远都充满了`0`；
+1 由于`fboResolve`这个对象自创建以来，一次都没有清理`DepthBuffer`，所以他的深度附件永远都充满了`0`（即离屏幕最近，所以此时不管什么都无法通过深度测试）；
 `fboResolve`创建时是带有深度`attachment`的
 ```cpp
 Framebuffer* Framebuffer::createHDRFbo(unsigned int width, unsigned int height)
@@ -105,7 +105,7 @@ void Bloom::merge(Framebuffer* target, Framebuffer* origin, Framebuffer* bloom)
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3ODI1NjYxNywxNTc2NDc3NTUwLC0xNz
-Q2NTcyMTA3LC0xODk2Mzk1MTUsMTkwNjk1ODUzNiwtMTc2MzQ3
-Mzg1MywtMTQ3ODI5MjgzMCwtMTMyMzc5MzA3MV19
+eyJoaXN0b3J5IjpbNzk0NzYyODU0LDE1NzY0Nzc1NTAsLTE3ND
+Y1NzIxMDcsLTE4OTYzOTUxNSwxOTA2OTU4NTM2LC0xNzYzNDcz
+ODUzLC0xNDc4MjkyODMwLC0xMzIzNzkzMDcxXX0=
 -->
