@@ -10,6 +10,8 @@
 # Radiant Intensity
 
 ![输入图片说明](/imgs/2025-03-07/eklgiY6JhKm1kruV.png)
+
+![输入图片说明](/imgs/2025-03-07/mVUI4L8AkcuN7E93.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1MTEyNTQwMl19
+eyJoaXN0b3J5IjpbLTEyNTg4NDc2NDksMTk1MTEyNTQwMl19
 -->
