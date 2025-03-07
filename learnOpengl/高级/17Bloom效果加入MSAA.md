@@ -81,7 +81,7 @@ Framebuffer* Framebuffer::createHDRFbo(unsigned int width, unsigned int height)
 ```
 2 由于其深度缓存内部都是`0`，那么对其进行绘制的时候，所有像素都无法通过深度检测
 
-并且这一步，我们只复制了颜色信息，所以经过这一步，`fboResolve`的深度缓冲里面依旧还是全是`0`，并不会被
+并且这一步，我们只复制了颜色信息，所以经过这一步，`fboResolve`的深度缓冲里面依旧还是全是`0`，并不会被`src`的深度值赋值更新
 ```cpp
 void Renderer::msaaResolve(Framebuffer* src, Framebuffer* dst)
 {
@@ -105,7 +105,7 @@ void Bloom::merge(Framebuffer* target, Framebuffer* origin, Framebuffer* bloom)
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMyNDA2NDAzMywxNTc2NDc3NTUwLC0xNz
+eyJoaXN0b3J5IjpbMjA3ODI1NjYxNywxNTc2NDc3NTUwLC0xNz
 Q2NTcyMTA3LC0xODk2Mzk1MTUsMTkwNjk1ODUzNiwtMTc2MzQ3
 Mzg1MywtMTQ3ODI5MjgzMCwtMTMyMzc5MzA3MV19
 -->
