@@ -23,8 +23,9 @@
 
 `dΦ`表示`dw`内对应的功率大小
 可以得出两个结论：
-
+1. `intensity`和距离远近没有关系，只和`dΦ`和`dw`相关
+2. 当`dw`无限小的时候，可以视为`intensity`是一个
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDU4MDAwMSwtMTIwNzczNjAyOSwtMT
+eyJoaXN0b3J5IjpbLTk1ODEwNDM1MiwtMTIwNzczNjAyOSwtMT
 I1ODg0NzY0OSwxOTUxMTI1NDAyXX0=
 -->
