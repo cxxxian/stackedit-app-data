@@ -43,8 +43,14 @@
 # Irradiance
 
 ![输入图片说明](/imgs/2025-03-07/3v7TDuR6k6gh48gA.png)
+
+![输入图片说明](/imgs/2025-03-07/jMdxqINHf0oDjcPa.png)
+
+推导
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk3NjU0Mzg2MiwtMTIwNDIwMDAwMiwtMT
-cyMjc3MzU3MCwtMTIwNzczNjAyOSwtMTI1ODg0NzY0OSwxOTUx
-MTI1NDAyXX0=
+eyJoaXN0b3J5IjpbOTEzNDE0OTA2LC0xMjA0MjAwMDAyLC0xNz
+IyNzczNTcwLC0xMjA3NzM2MDI5LC0xMjU4ODQ3NjQ5LDE5NTEx
+MjU0MDJdfQ==
 -->
