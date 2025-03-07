@@ -31,6 +31,7 @@ Framebuffer* Framebuffer::createMultiSampleHDRFbo(unsigned int width, unsigned i
 
 然后到`main.cpp`中，创建相应的`fbo`并进行渲染
 会发现，渲染出来的屏幕一片黑
+无论只单纯运行`MSAA`或者`bloom`都没事，合并就出问题。
 ```cpp
 Framebuffer* fboMulti = nullptr;
 Framebuffer* fboResolve = nullptr;
@@ -59,6 +60,7 @@ int main() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4OTYzOTUxNSwxOTA2OTU4NTM2LC0xNz
-YzNDczODUzLC0xNDc4MjkyODMwLC0xMzIzNzkzMDcxXX0=
+eyJoaXN0b3J5IjpbLTE3NDY1NzIxMDcsLTE4OTYzOTUxNSwxOT
+A2OTU4NTM2LC0xNzYzNDczODUzLC0xNDc4MjkyODMwLC0xMzIz
+NzkzMDcxXX0=
 -->
