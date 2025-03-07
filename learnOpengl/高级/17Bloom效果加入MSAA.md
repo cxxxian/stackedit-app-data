@@ -1,6 +1,6 @@
 在`framebuffer.h`设计一个用来专门针对`MSAA`版的`HDR`
 ```cpp
-static Framebuffer* createMultiSampleHDRFbo(unsigned int width, unsigned int height, unsigned int samples);
+static Framebuffer* createMultiSampleHDRFbo(unsigned int width, unsigned int height, unsigned int samples = 4);
 ```
 与普通的`createMultiSampleFbo`就是改变在
 `auto colorAttachment = Texture::createMultiSampleTexture(width, height, samples, GL_RGB16F, 0);`这里使用的是`GL_RGB16F`
@@ -20,6 +20,7 @@ Framebuffer* Framebuffer::createMultiSampleHDRFbo(unsigned int width, unsigned i
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	fb->mFBO = fbo;
 	fb->mColorAttachment = colorAttachment;
+	fb->mDepthStencilAttachment = dsAttachment;
 	fb->mWidth = width;
 	fb->mHeight = height;
 
@@ -30,6 +31,6 @@ Framebuffer* Framebuffer::createMultiSampleHDRFbo(unsigned int width, unsigned i
 
 然后到`main.cpp`中，创建相应的`fbo`并进行渲染
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NjM0NzM4NTMsLTE0NzgyOTI4MzAsLT
-EzMjM3OTMwNzFdfQ==
+eyJoaXN0b3J5IjpbMTkwNjk1ODUzNiwtMTc2MzQ3Mzg1MywtMT
+Q3ODI5MjgzMCwtMTMyMzc5MzA3MV19
 -->
