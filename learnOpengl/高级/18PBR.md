@@ -37,7 +37,9 @@
 # 微分立体角
  
 ![输入图片说明](/imgs/2025-03-07/QQPq8LjfcTjn7V9o.png)
+
+![输入图片说明](/imgs/2025-03-07/Qbom7GTVdC09lPpr.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDYwNjM0MywtMTcyMjc3MzU3MCwtMT
-IwNzczNjAyOSwtMTI1ODg0NzY0OSwxOTUxMTI1NDAyXX0=
+eyJoaXN0b3J5IjpbMjEzNDkxNzQsLTE3MjI3NzM1NzAsLTEyMD
+c3MzYwMjksLTEyNTg4NDc2NDksMTk1MTEyNTQwMl19
 -->
