@@ -20,8 +20,9 @@
 注意：点光源没有面积，没有体积
 
 ![输入图片说明](/imgs/2025-03-07/Mxvau6tc3y6tCHSi.png)
-``
+
+`d`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTk1MzM3NTYsLTEyMDc3MzYwMjksLT
-EyNTg4NDc2NDksMTk1MTEyNTQwMl19
+eyJoaXN0b3J5IjpbLTE2NzI4MTMzOCwtMTIwNzczNjAyOSwtMT
+I1ODg0NzY0OSwxOTUxMTI1NDAyXX0=
 -->
