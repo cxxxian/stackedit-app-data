@@ -25,7 +25,7 @@
 如何描述点光源在某个方向上有多么的亮？
 注意：点光源没有面积，没有体积
 
-
+## radiant intensity
 
 ![输入图片说明](/imgs/2025-03-07/Mxvau6tc3y6tCHSi.png)
 
@@ -33,7 +33,10 @@
 可以得出两个结论：
 1. `intensity`和距离远近没有关系，只和`dΦ`和`dw`相关
 2. 当`dw`无限小的时候，可以视为`intensity`是一个方向上的功率
+
+# 微分立体角
+ 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjk1ODk2MTEsLTEyMDc3MzYwMjksLT
+eyJoaXN0b3J5IjpbLTE3MjI3NzM1NzAsLTEyMDc3MzYwMjksLT
 EyNTg4NDc2NDksMTk1MTEyNTQwMl19
 -->
