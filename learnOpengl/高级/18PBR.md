@@ -6,6 +6,9 @@
 用于光的能量与传播的定义与计算
 
 ![输入图片说明](/imgs/2025-03-07/XHpZApk0oA4v9a0q.png)
+
+# Radiant Intensity
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4MjkwMDI5N119
+eyJoaXN0b3J5IjpbMTY2OTMyNzg0Nl19
 -->
