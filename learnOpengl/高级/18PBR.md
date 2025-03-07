@@ -40,9 +40,9 @@
 
 ![输入图片说明](/imgs/2025-03-07/Qbom7GTVdC09lPpr.png)
 
-# Ir 
+# Irradiance 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2NjQ1NTExMiwtMTIwNDIwMDAwMiwtMT
-cyMjc3MzU3MCwtMTIwNzczNjAyOSwtMTI1ODg0NzY0OSwxOTUx
-MTI1NDAyXX0=
+eyJoaXN0b3J5IjpbLTE1ODk0MjU4NDUsLTEyMDQyMDAwMDIsLT
+E3MjI3NzM1NzAsLTEyMDc3MzYwMjksLTEyNTg4NDc2NDksMTk1
+MTEyNTQwMl19
 -->
