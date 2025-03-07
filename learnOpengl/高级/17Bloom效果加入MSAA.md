@@ -62,33 +62,26 @@ int main() {
 
 解析`BUG`：
 1 由于`fboResolve`这个对象自创建以来，一次都没有清理`DepthBuffer`，所以他的深度附件永远都充满了`0`；
+`fboResolve`创建时是带有深度`attachment`的
 ```cpp
 Framebuffer* Framebuffer::createHDRFbo(unsigned int width, unsigned int height)
 {
-	Framebuffer* fb = new Framebuffer();
-	unsigned int fbo;
-	glGenFramebuffers(1, &fbo);
-	glBindFramebuffer(GL_FRAMEBUFFER, fbo);
-
-	auto colorAttachment = Texture::createHDRAttachment(width, height, 0);
+	...
 	auto dsAttachment = Texture::createDepthStencilAttachment(width, height, 0);
-
-	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, colorAttachment->getTexture(), 0);
+	...
 	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_TEXTURE_2D, dsAttachment->getTexture(), 0);
 
-	glBindFramebuffer(GL_FRAMEBUFFER, 0);
-	fb->mFBO = fbo;
+	...
 	fb->mColorAttachment = colorAttachment;
 	fb->mDepthAttachment = dsAttachment;
-	fb->mWidth = width;
-	fb->mHeight = height;
+	...
 
 	return fb;
 }
 ```
 2 由于其深度缓存内部都是`0`，那么对其进行绘制的时候，所有像素都无法通过深度检测
 
-并且这一步，我们只复制了颜色信息，所以经过这一步，`fboResolve`的深度缓冲里面依旧还是全是`0`
+并且这一步，我们只复制了颜色信息，所以经过这一步，`fboResolve`的深度缓冲里面依旧还是全是`0`，并不会被
 ```cpp
 void Renderer::msaaResolve(Framebuffer* src, Framebuffer* dst)
 {
@@ -112,7 +105,7 @@ void Bloom::merge(Framebuffer* target, Framebuffer* origin, Framebuffer* bloom)
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjUxODcxNjMsMTU3NjQ3NzU1MCwtMT
-c0NjU3MjEwNywtMTg5NjM5NTE1LDE5MDY5NTg1MzYsLTE3NjM0
-NzM4NTMsLTE0NzgyOTI4MzAsLTEzMjM3OTMwNzFdfQ==
+eyJoaXN0b3J5IjpbMTMyNDA2NDAzMywxNTc2NDc3NTUwLC0xNz
+Q2NTcyMTA3LC0xODk2Mzk1MTUsMTkwNjk1ODUzNiwtMTc2MzQ3
+Mzg1MywtMTQ3ODI5MjgzMCwtMTMyMzc5MzA3MV19
 -->
