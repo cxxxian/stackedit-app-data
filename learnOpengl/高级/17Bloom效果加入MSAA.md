@@ -63,6 +63,8 @@ int main() {
 解析`BUG`：
 1 由于`fboResolve`这个对象自创建以来，一次都没有清理`DepthBuffer`，所以他的深度附件永远都充满了`0`；
 2 由于其深度缓存内部都是`0`，那么对其进行绘制的时候，所有像素都无法通过深度检测
+```
+```
 
 所以我们在进行合并渲染时，原本只清理的颜色信息，因为我们认为`bloom`不会有深度相关的操作，但是现在我们要多清理一下深度信息
 ```cpp
@@ -78,7 +80,7 @@ void Bloom::merge(Framebuffer* target, Framebuffer* origin, Framebuffer* bloom)
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjA1MzMyNTksMTU3NjQ3NzU1MCwtMT
-c0NjU3MjEwNywtMTg5NjM5NTE1LDE5MDY5NTg1MzYsLTE3NjM0
-NzM4NTMsLTE0NzgyOTI4MzAsLTEzMjM3OTMwNzFdfQ==
+eyJoaXN0b3J5IjpbMzY4NzI1MzAxLDE1NzY0Nzc1NTAsLTE3ND
+Y1NzIxMDcsLTE4OTYzOTUxNSwxOTA2OTU4NTM2LC0xNzYzNDcz
+ODUzLC0xNDc4MjkyODMwLC0xMzIzNzkzMDcxXX0=
 -->
