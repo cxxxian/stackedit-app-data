@@ -28,8 +28,8 @@ Framebuffer* Framebuffer::createMultiSampleHDRFbo(unsigned int width, unsigned i
 
 ```
 
-然后dai
+然后到`main.cpp`中，创建相应的`fbo`并进行渲染
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI4OTcyMjU0LC0xNDc4MjkyODMwLC0xMz
-IzNzkzMDcxXX0=
+eyJoaXN0b3J5IjpbLTE3NjM0NzM4NTMsLTE0NzgyOTI4MzAsLT
+EzMjM3OTMwNzFdfQ==
 -->
