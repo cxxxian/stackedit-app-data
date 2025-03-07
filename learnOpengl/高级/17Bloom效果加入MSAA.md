@@ -59,8 +59,24 @@ int main() {
 	...
 }
 ```
+
+解析`BUG`：
+1 由于`fboResolve`这个对象自创建以来，一次都没有清理过`DepthBuffer`，所以他的深度附件永远都充满了`0`；
+2 由于其深度缓存内部都是`0`，那么对其进行绘制的时候，所有像素都无法通过深度检测
+```cpp
+void Bloom::merge(Framebuffer* target, Framebuffer* origin, Framebuffer* bloom)
+{
+	glBindFramebuffer(GL_FRAMEBUFFER, target->mFBO);
+
+	glViewport(0, 0, target->mWidth, target->mHeight);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	...
+}
+
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDY1NzIxMDcsLTE4OTYzOTUxNSwxOT
-A2OTU4NTM2LC0xNzYzNDczODUzLC0xNDc4MjkyODMwLC0xMzIz
-NzkzMDcxXX0=
+eyJoaXN0b3J5IjpbLTc5NDU4NDUxLC0xNzQ2NTcyMTA3LC0xOD
+k2Mzk1MTUsMTkwNjk1ODUzNiwtMTc2MzQ3Mzg1MywtMTQ3ODI5
+MjgzMCwtMTMyMzc5MzA3MV19
 -->
