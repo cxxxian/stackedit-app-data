@@ -14,7 +14,11 @@
 ![输入图片说明](/imgs/2025-03-07/mVUI4L8AkcuN7E93.png)
 
 ![输入图片说明](/imgs/2025-03-07/R5MpAqBR0kBzTqhv.png)
+
+问题：
+如何描述点光源在某个方向上有多么的亮？
+注意：点光源没有面积，没有体积
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYxMDIwMDc4MywtMTI1ODg0NzY0OSwxOT
-UxMTI1NDAyXX0=
+eyJoaXN0b3J5IjpbLTEyMDc3MzYwMjksLTEyNTg4NDc2NDksMT
+k1MTEyNTQwMl19
 -->
