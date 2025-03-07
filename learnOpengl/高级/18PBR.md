@@ -40,9 +40,11 @@
 
 ![输入图片说明](/imgs/2025-03-07/Qbom7GTVdC09lPpr.png)
 
-# Irradiance 
+# Irradiance
+
+![输入图片说明](/imgs/2025-03-07/3v7TDuR6k6gh48gA.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODk0MjU4NDUsLTEyMDQyMDAwMDIsLT
-E3MjI3NzM1NzAsLTEyMDc3MzYwMjksLTEyNTg4NDc2NDksMTk1
-MTEyNTQwMl19
+eyJoaXN0b3J5IjpbMTk3NjU0Mzg2MiwtMTIwNDIwMDAwMiwtMT
+cyMjc3MzU3MCwtMTIwNzczNjAyOSwtMTI1ODg0NzY0OSwxOTUx
+MTI1NDAyXX0=
 -->
