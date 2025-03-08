@@ -78,13 +78,17 @@
 双向反射分布方程
 `Bidirectional Reflectance Distribution Funtion`
 
-![输入图片说明](/imgs/2025-03-08/si9pEaOPfLvIG17r.png)z
+![输入图片说明](/imgs/2025-03-08/si9pEaOPfLvIG17r.png)
+
+这里为什么`E`和`L`前面都要加上一个微分，这是因为现实中是有很多光线共同作用得到结果，此时我们只考虑了一个方向（即一根光线），所以加上微分
 
 ![输入图片说明](/imgs/2025-03-08/2XlHY3Hro2hr56Rd.png)
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTgxNzUwODIsLTE4ODI4MTI4MDksMT
-Q4NzI4NTgwOCwtMTc5OTA4MTI5NSwtMjAyMTU2Nzc2NywtODE3
-NTM1Mjk1LDE2MTU0MTMwOTQsMjAzOTIzNTE2MywtMTYwODAxNz
-U4MSwtMTIwNDIwMDAwMiwtMTcyMjc3MzU3MCwtMTIwNzczNjAy
-OSwtMTI1ODg0NzY0OSwxOTUxMTI1NDAyXX0=
+eyJoaXN0b3J5IjpbLTMyMDQ5NTQxNCwtMTg4MjgxMjgwOSwxND
+g3Mjg1ODA4LC0xNzk5MDgxMjk1LC0yMDIxNTY3NzY3LC04MTc1
+MzUyOTUsMTYxNTQxMzA5NCwyMDM5MjM1MTYzLC0xNjA4MDE3NT
+gxLC0xMjA0MjAwMDAyLC0xNzIyNzczNTcwLC0xMjA3NzM2MDI5
+LC0xMjU4ODQ3NjQ5LDE5NTExMjU0MDJdfQ==
 -->
