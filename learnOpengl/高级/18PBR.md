@@ -62,7 +62,7 @@
 ![输入图片说明](/imgs/2025-03-08/YifQQoxvmy5J5KMM.png)
 
 `L`其实就是`w`方向发过来的`Radiance`，
-通过以下计算可以得出表面接收的`Irradiance`
+通过以下计算可以得出表面接收的`Irradiance`，这里要配合`Irradiance`的公式一起看
 
 ![输入图片说明](/imgs/2025-03-08/Lbb2laxvsPgZ32L9.png)
 
@@ -70,7 +70,7 @@
 
 捋一下，由光源这边的`dΦ`，以及对应的`dw`和`ds`，然后可知物体的`dw`和`ds`，就可以计算出物体对应的`dΦ`了
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NTE1NzU0MzcsLTIwMjE1Njc3NjcsLT
+eyJoaXN0b3J5IjpbLTE3OTkwODEyOTUsLTIwMjE1Njc3NjcsLT
 gxNzUzNTI5NSwxNjE1NDEzMDk0LDIwMzkyMzUxNjMsLTE2MDgw
 MTc1ODEsLTEyMDQyMDAwMDIsLTE3MjI3NzM1NzAsLTEyMDc3Mz
 YwMjksLTEyNTg4NDc2NDksMTk1MTEyNTQwMl19
