@@ -112,11 +112,12 @@
 
 ![输入图片说明](/imgs/2025-03-08/AvIMK3Zt2wAeXG9i.png)
 
-ge'nü'j
+因为漫反射情况下，入射光线打到平面上后，会向四面八方发射出相同的出射光，所以可得与入射方向出射方向都无关
+所以也就是`fr`与参数`w`
 
 ![输入图片说明](/imgs/2025-03-08/HdV9ZGBXKAtRkypR.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNzU2OTk5OTMsMTE2ODAxNzk2MiwtMT
+eyJoaXN0b3J5IjpbLTEzMDI0OTUwMDgsMTE2ODAxNzk2MiwtMT
 g4MTQ5OTM5OSwtNDIwNzk1NTA1LDIwMDAwMDkwMzIsLTEwNDEy
 NzYyNTEsLTEyOTMzMTM2OTUsLTE2Mjg0NDM2MiwtMTg4MjgxMj
 gwOSwxNDg3Mjg1ODA4LC0xNzk5MDgxMjk1LC0yMDIxNTY3NzY3
