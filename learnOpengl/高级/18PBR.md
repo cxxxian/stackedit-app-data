@@ -65,10 +65,10 @@
 
 ![输入图片说明](/imgs/2025-03-08/Byypax7tnWae758P.png)
 
-捋一下，由光源这边的`dΦ`，以及对应的`dw`和`ds`，rang
+捋一下，由光源这边的`dΦ`，以及对应的`dw`和`ds`，然后可知物体的`dw`和`ds`，就可以计算出物体对应的`dΦ`了
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODUwMTc1MDI5LC04MTc1MzUyOTUsMTYxNT
-QxMzA5NCwyMDM5MjM1MTYzLC0xNjA4MDE3NTgxLC0xMjA0MjAw
-MDAyLC0xNzIyNzczNTcwLC0xMjA3NzM2MDI5LC0xMjU4ODQ3Nj
-Q5LDE5NTExMjU0MDJdfQ==
+eyJoaXN0b3J5IjpbLTIwMjE1Njc3NjcsLTgxNzUzNTI5NSwxNj
+E1NDEzMDk0LDIwMzkyMzUxNjMsLTE2MDgwMTc1ODEsLTEyMDQy
+MDAwMDIsLTE3MjI3NzM1NzAsLTEyMDc3MzYwMjksLTEyNTg4ND
+c2NDksMTk1MTEyNTQwMl19
 -->
