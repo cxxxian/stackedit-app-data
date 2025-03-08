@@ -97,11 +97,12 @@
 ![输入图片说明](/imgs/2025-03-08/Bch7WmAeu7HlG9Sh.png)
 
 当`dw`无穷小的时候，我们就可以改写成积分的形式
-回顾一开始的立体角概念，w可以用极坐标的`θ`和`Φ`表示
+回顾一开始的立体角概念，`w`可以用极坐标的`θ`和`Φ`表示
+这样我们就可以得到完整的渲染方程概念
 
 ![输入图片说明](/imgs/2025-03-08/8IfZr9j3f9YWHWPU.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMjMzOTI3MTAsLTEwNDEyNzYyNTEsLT
+eyJoaXN0b3J5IjpbLTExNjU0NzIxMzMsLTEwNDEyNzYyNTEsLT
 EyOTMzMTM2OTUsLTE2Mjg0NDM2MiwtMTg4MjgxMjgwOSwxNDg3
 Mjg1ODA4LC0xNzk5MDgxMjk1LC0yMDIxNTY3NzY3LC04MTc1Mz
 UyOTUsMTYxNTQxMzA5NCwyMDM5MjM1MTYzLC0xNjA4MDE3NTgx
