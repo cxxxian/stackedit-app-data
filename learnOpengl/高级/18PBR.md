@@ -89,9 +89,9 @@
 
 ![输入图片说明](/imgs/2025-03-08/m4fVMzi2qL9fREyA.png)
 
-可以把`BRDF`理解为材质相关的系数，因为我们计算光线`Radiance`->反射处的`Irradiance`->人眼处的`Radiance`，这之间并没有引入任何材质
+可以把`BRDF`理解为材质相关的系数，因为我们计算光线`Radiance`->反射处的`Irradiance`->人眼处的`Radiance`，这之间并没有引入任何材质相关的概念，通过`BRDF`系数，就相当于一个系数告诉你应该要怎么反射，
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3OTIxNjI5NCwtMTYyODQ0MzYyLC0xOD
+eyJoaXN0b3J5IjpbMTEzNjkwMDQ4NywtMTYyODQ0MzYyLC0xOD
 gyODEyODA5LDE0ODcyODU4MDgsLTE3OTkwODEyOTUsLTIwMjE1
 Njc3NjcsLTgxNzUzNTI5NSwxNjE1NDEzMDk0LDIwMzkyMzUxNj
 MsLTE2MDgwMTc1ODEsLTEyMDQyMDAwMDIsLTE3MjI3NzM1NzAs
