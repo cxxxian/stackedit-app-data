@@ -58,6 +58,7 @@
 ![输入图片说明](/imgs/2025-03-08/NhlK2GeSwBo8oXrq.png)
 
 这里的二次不是二次方的意思，而是二次求导
+fa'so
 
 ![输入图片说明](/imgs/2025-03-08/YifQQoxvmy5J5KMM.png)
 
@@ -70,8 +71,9 @@
 
 捋一下，由光源这边的`dΦ`，以及对应的`dw`和`ds`，然后可知物体的`dw`和`ds`，就可以计算出物体对应的`dΦ`了
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTkwODEyOTUsLTIwMjE1Njc3NjcsLT
-gxNzUzNTI5NSwxNjE1NDEzMDk0LDIwMzkyMzUxNjMsLTE2MDgw
-MTc1ODEsLTEyMDQyMDAwMDIsLTE3MjI3NzM1NzAsLTEyMDc3Mz
-YwMjksLTEyNTg4NDc2NDksMTk1MTEyNTQwMl19
+eyJoaXN0b3J5IjpbLTE1ODQxMDY0MzMsLTE3OTkwODEyOTUsLT
+IwMjE1Njc3NjcsLTgxNzUzNTI5NSwxNjE1NDEzMDk0LDIwMzky
+MzUxNjMsLTE2MDgwMTc1ODEsLTEyMDQyMDAwMDIsLTE3MjI3Nz
+M1NzAsLTEyMDc3MzYwMjksLTEyNTg4NDc2NDksMTk1MTEyNTQw
+Ml19
 -->
