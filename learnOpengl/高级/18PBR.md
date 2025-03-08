@@ -86,10 +86,14 @@
 
 这个式子的意思就是，
 光线的`Radiance`转化为反射处的`Irradiance`，然后乘上`BRDF`系数，最后转到人眼处的`Radiance`
+
+![输入图片说明](/imgs/2025-03-08/m4fVMzi2qL9fREyA.png)
+
+可以把`BRDF`理解为材质相关的系数，因为我们计算光线`Radiance`->反射处的`Irradiance`->人眼处的`Radiance`，这之间并没有引入任何材质
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2Mjg0NDM2MiwtMTg4MjgxMjgwOSwxND
-g3Mjg1ODA4LC0xNzk5MDgxMjk1LC0yMDIxNTY3NzY3LC04MTc1
-MzUyOTUsMTYxNTQxMzA5NCwyMDM5MjM1MTYzLC0xNjA4MDE3NT
-gxLC0xMjA0MjAwMDAyLC0xNzIyNzczNTcwLC0xMjA3NzM2MDI5
-LC0xMjU4ODQ3NjQ5LDE5NTExMjU0MDJdfQ==
+eyJoaXN0b3J5IjpbMjA3OTIxNjI5NCwtMTYyODQ0MzYyLC0xOD
+gyODEyODA5LDE0ODcyODU4MDgsLTE3OTkwODEyOTUsLTIwMjE1
+Njc3NjcsLTgxNzUzNTI5NSwxNjE1NDEzMDk0LDIwMzkyMzUxNj
+MsLTE2MDgwMTc1ODEsLTEyMDQyMDAwMDIsLTE3MjI3NzM1NzAs
+LTEyMDc3MzYwMjksLTEyNTg4NDc2NDksMTk1MTEyNTQwMl19
 -->
