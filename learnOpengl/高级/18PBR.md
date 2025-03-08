@@ -84,9 +84,10 @@
 
 ![输入图片说明](/imgs/2025-03-08/2XlHY3Hro2hr56Rd.png)
 
-
+这个式子的意思就是，
+光线的`Radiance`转化为反射处的`Irradiance`，然后乘上`BRDF`系数，最后转到人眼处的`Radiance`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyMDQ5NTQxNCwtMTg4MjgxMjgwOSwxND
+eyJoaXN0b3J5IjpbLTE2Mjg0NDM2MiwtMTg4MjgxMjgwOSwxND
 g3Mjg1ODA4LC0xNzk5MDgxMjk1LC0yMDIxNTY3NzY3LC04MTc1
 MzUyOTUsMTYxNTQxMzA5NCwyMDM5MjM1MTYzLC0xNjA4MDE3NT
 gxLC0xMjA0MjAwMDAyLC0xNzIyNzczNTcwLC0xMjA3NzM2MDI5
