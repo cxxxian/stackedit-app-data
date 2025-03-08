@@ -62,8 +62,12 @@
 ![输入图片说明](/imgs/2025-03-08/YifQQoxvmy5J5KMM.png)
 
 ![输入图片说明](/imgs/2025-03-08/Lbb2laxvsPgZ32L9.png)
+
+![输入图片说明](/imgs/2025-03-08/Byypax7tnWae758P.png)
+
+捋一下，由光源这边的`dΦ`，以及对应的`dw`和`ds`，rang
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDYwNjUzMTIzLC04MTc1MzUyOTUsMTYxNT
+eyJoaXN0b3J5IjpbODUwMTc1MDI5LC04MTc1MzUyOTUsMTYxNT
 QxMzA5NCwyMDM5MjM1MTYzLC0xNjA4MDE3NTgxLC0xMjA0MjAw
 MDAyLC0xNzIyNzczNTcwLC0xMjA3NzM2MDI5LC0xMjU4ODQ3Nj
 Q5LDE5NTExMjU0MDJdfQ==
