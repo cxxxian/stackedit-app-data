@@ -55,12 +55,15 @@
 
 ![输入图片说明](/imgs/2025-03-08/qS8aYOaiTgDV0MEY.png)
 
+发送方：
+
 ![输入图片说明](/imgs/2025-03-08/NhlK2GeSwBo8oXrq.png)
 
 这里的二次不是二次方的意思，而是二次求导
-fa'so
 
 ![输入图片说明](/imgs/2025-03-08/YifQQoxvmy5J5KMM.png)
+
+接收方：
 
 `L`其实就是`w`方向发过来的`Radiance`，
 通过以下计算可以得出表面接收的`Irradiance`，这里要配合`Irradiance`的公式一起看
@@ -71,7 +74,7 @@ fa'so
 
 捋一下，由光源这边的`dΦ`，以及对应的`dw`和`ds`，然后可知物体的`dw`和`ds`，就可以计算出物体对应的`dΦ`了
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODQxMDY0MzMsLTE3OTkwODEyOTUsLT
+eyJoaXN0b3J5IjpbLTIxMjA3MjY4NTIsLTE3OTkwODEyOTUsLT
 IwMjE1Njc3NjcsLTgxNzUzNTI5NSwxNjE1NDEzMDk0LDIwMzky
 MzUxNjMsLTE2MDgwMTc1ODEsLTEyMDQyMDAwMDIsLTE3MjI3Nz
 M1NzAsLTEyMDc3MzYwMjksLTEyNTg4NDc2NDksMTk1MTEyNTQw
