@@ -73,10 +73,15 @@
 ![输入图片说明](/imgs/2025-03-08/Byypax7tnWae758P.png)
 
 捋一下，由光源这边的`dΦ`，以及对应的`dw`和`ds`，然后可知物体的`dw`和`ds`，就可以计算出物体对应的`dΦ`了
+
+# BRDF
+双向反射分布方程
+`Bidirectional Reflectance Distribution Funtion`
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjA3MjY4NTIsLTE3OTkwODEyOTUsLT
-IwMjE1Njc3NjcsLTgxNzUzNTI5NSwxNjE1NDEzMDk0LDIwMzky
-MzUxNjMsLTE2MDgwMTc1ODEsLTEyMDQyMDAwMDIsLTE3MjI3Nz
-M1NzAsLTEyMDc3MzYwMjksLTEyNTg4NDc2NDksMTk1MTEyNTQw
-Ml19
+eyJoaXN0b3J5IjpbMTQ4NzI4NTgwOCwtMTc5OTA4MTI5NSwtMj
+AyMTU2Nzc2NywtODE3NTM1Mjk1LDE2MTU0MTMwOTQsMjAzOTIz
+NTE2MywtMTYwODAxNzU4MSwtMTIwNDIwMDAwMiwtMTcyMjc3Mz
+U3MCwtMTIwNzczNjAyOSwtMTI1ODg0NzY0OSwxOTUxMTI1NDAy
+XX0=
 -->
