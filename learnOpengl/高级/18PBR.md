@@ -61,7 +61,8 @@
 
 ![输入图片说明](/imgs/2025-03-08/YifQQoxvmy5J5KMM.png)
 
-L * dw其实就是
+`L`其实就是`w`方向发过来的`Radiance`，
+通过以下计算可以得出表面接收的`Ir`
 
 ![输入图片说明](/imgs/2025-03-08/Lbb2laxvsPgZ32L9.png)
 
@@ -69,7 +70,7 @@ L * dw其实就是
 
 捋一下，由光源这边的`dΦ`，以及对应的`dw`和`ds`，然后可知物体的`dw`和`ds`，就可以计算出物体对应的`dΦ`了
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1Mzg5MjYyNCwtMjAyMTU2Nzc2NywtOD
+eyJoaXN0b3J5IjpbMTIyMzM5NjQzOCwtMjAyMTU2Nzc2NywtOD
 E3NTM1Mjk1LDE2MTU0MTMwOTQsMjAzOTIzNTE2MywtMTYwODAx
 NzU4MSwtMTIwNDIwMDAwMiwtMTcyMjc3MzU3MCwtMTIwNzczNj
 AyOSwtMTI1ODg0NzY0OSwxOTUxMTI1NDAyXX0=
