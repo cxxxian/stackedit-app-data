@@ -146,13 +146,13 @@
 
 `D(w) * dw = S(w) / Smacro`
 所以写成`S(w) = D(w) * dw * Smacro`
-把所有微平面求和就可以得到``
+把所有微平面求和就可以得到`Smicro`
 
 ![输入图片说明](/imgs/2025-03-09/PXMy5D8kQkmW0imz.png)
 
 ![输入图片说明](/imgs/2025-03-09/5bsmMUSnJGrktSAt.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3MTAzNjY3MSwtOTc3OTE3MDY0LDIxMT
+eyJoaXN0b3J5IjpbMTQwNzE4NzAyNCwtOTc3OTE3MDY0LDIxMT
 MzOTgwNTksNDA1NTUxNzQwLC0yNTg0OTIwMjMsLTEzOTEwMzU3
 MjIsLTE3NDA0MzE0MTgsOTQ3MzMwNSwxMTY4MDE3OTYyLC0xOD
 gxNDk5Mzk5LC00MjA3OTU1MDUsMjAwMDAwOTAzMiwtMTA0MTI3
