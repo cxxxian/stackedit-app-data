@@ -134,9 +134,10 @@ case MaterialType::PbrMaterial: {
 	break;
 ```
 ## 3 编写D G F三大函数
-
+```g'l's
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyMDQ5NTk4Niw3Mjg0OTgwNCwtMTYyMT
-MyMDkzMSwtMTczNzU5NTU1NiwtMjAxMzI0ODM2NSwxMTI5Njgy
-NTE0LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTE5NDYxNzUyMCwtMjIwNDk1OTg2LDcyOD
+Q5ODA0LC0xNjIxMzIwOTMxLC0xNzM3NTk1NTU2LC0yMDEzMjQ4
+MzY1LDExMjk2ODI1MTQsLTIwODg3NDY2MTJdfQ==
 -->
