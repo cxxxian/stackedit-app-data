@@ -96,11 +96,20 @@ void main()
 }
 ```
 ## 2 pbr材质解析加入管线中
-```c'p'p
+在`renderer.h`中声明新的`shader`对象
+```cpp
+//pbr相关
+Shader* mPbrShader{ nullptr };
+```
+并且到`renderer.cpp`中进行初始化
+```cpp
+Renderer::Renderer() {
+	mPbrShader = new Shader("assets/shaders/advanced/pbr/pbr.vert", "assets/shaders/advanced/pbr/pbr.frag");
+}
 ```
 ## 3 编写D G F三大函数
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ4MzU1MTE0LC0xNzM3NTk1NTU2LC0yMD
-EzMjQ4MzY1LDExMjk2ODI1MTQsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbLTM0MzgzMTUyOCwtMTczNzU5NTU1NiwtMj
+AxMzI0ODM2NSwxMTI5NjgyNTE0LC0yMDg4NzQ2NjEyXX0=
 -->
