@@ -107,9 +107,15 @@ Renderer::Renderer() {
 	mPbrShader = new Shader("assets/shaders/advanced/pbr/pbr.vert", "assets/shaders/advanced/pbr/pbr.frag");
 }
 ```
+完善`pickShader`函数
+```cpp
+case MaterialType::PbrMaterial:
+	result = mPbrShader;
+	break;
+```
 ## 3 编写D G F三大函数
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM0MzgzMTUyOCwtMTczNzU5NTU1NiwtMj
-AxMzI0ODM2NSwxMTI5NjgyNTE0LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTE2MjEzMjA5MzEsLTE3Mzc1OTU1NTYsLT
+IwMTMyNDgzNjUsMTEyOTY4MjUxNCwtMjA4ODc0NjYxMl19
 -->
