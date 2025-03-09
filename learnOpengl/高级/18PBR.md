@@ -184,11 +184,13 @@
 几何遮蔽和几何阴影都需要考虑到
 将两个`G`项相乘得到最后的系数
 `v`是视线方向，`l`是光源方向，分别计算出对应的`G`项
-b
+比如几何阴影下，能看到`30%`
+几何遮蔽下能到看`40%`
+最后相乘得到的就是最终的`12%`
 
 ![输入图片说明](/imgs/2025-03-09/QwYnJ9ZVqj4CrSiS.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODYxNDIxNTgwLC02NzQ0NTM2NTEsLTE5OT
+eyJoaXN0b3J5IjpbMTUwMzEyMjI4LC02NzQ0NTM2NTEsLTE5OT
 cwMzAxLC04OTgwNDQ0NDUsLTY2MDMyMzI4OSw5NDgyMjY4ODYs
 MTQwNzE4NzAyNCwtOTc3OTE3MDY0LDIxMTMzOTgwNTksNDA1NT
 UxNzQwLC0yNTg0OTIwMjMsLTEzOTEwMzU3MjIsLTE3NDA0MzE0
