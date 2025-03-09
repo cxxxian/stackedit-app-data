@@ -173,11 +173,11 @@
 ![输入图片说明](/imgs/2025-03-09/FFWgFXkowNFi9qhh.png)
 
 理解一下以下的式子，`v`点乘`n`得到的就是宏平面（值为`1`）投影到`v`方向上的面积
-所以这个值应该要等于微平面上所有面投影到`v`方向上，乘上的`G(v,h)`jiu'xiang'dan
+所以这个值应该要等于微平面上所有面投影到`v`方向上，乘上的`G(v,h)`就相当于一个百分比，乘上多少的百分比才能求得相同的投影面积
 
 ![输入图片说明](/imgs/2025-03-09/57Lrh7IKboxl6Tt2.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc0MTQ1MTk2OCwtODk4MDQ0NDQ1LC02Nj
+eyJoaXN0b3J5IjpbMTMyMjk0OTE5NSwtODk4MDQ0NDQ1LC02Nj
 AzMjMyODksOTQ4MjI2ODg2LDE0MDcxODcwMjQsLTk3NzkxNzA2
 NCwyMTEzMzk4MDU5LDQwNTU1MTc0MCwtMjU4NDkyMDIzLC0xMz
 kxMDM1NzIyLC0xNzQwNDMxNDE4LDk0NzMzMDUsMTE2ODAxNzk2
