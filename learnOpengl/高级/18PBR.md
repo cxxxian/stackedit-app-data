@@ -177,11 +177,11 @@
 
 ![输入图片说明](/imgs/2025-03-09/57Lrh7IKboxl6Tt2.png)
 
-xi'sh
+系数`k`分为直接光照和环境光照
 
 ![输入图片说明](/imgs/2025-03-09/QlXR77f0nplfIvZo.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkyODUyMzU5NywtMTk5NzAzMDEsLTg5OD
+eyJoaXN0b3J5IjpbLTY3NDQ1MzY1MSwtMTk5NzAzMDEsLTg5OD
 A0NDQ0NSwtNjYwMzIzMjg5LDk0ODIyNjg4NiwxNDA3MTg3MDI0
 LC05Nzc5MTcwNjQsMjExMzM5ODA1OSw0MDU1NTE3NDAsLTI1OD
 Q5MjAyMywtMTM5MTAzNTcyMiwtMTc0MDQzMTQxOCw5NDczMzA1
