@@ -155,8 +155,13 @@
 ![输入图片说明](/imgs/2025-03-09/GujLh67uEwRsyojO.png)
 
 ![输入图片说明](/imgs/2025-03-09/pVJ0uoYGbHyQgOXU.png)
+
+该函数图像长这样，当`a = 0.35`时
+因为宏平面的法向总体还是朝上的，所以在``
+
+![输入图片说明](/imgs/2025-03-09/00LhwnMJF5RAREhJ.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwMDcwMTE5Myw5NDgyMjY4ODYsMTQwNz
+eyJoaXN0b3J5IjpbLTEwMTY0MTUwNCw5NDgyMjY4ODYsMTQwNz
 E4NzAyNCwtOTc3OTE3MDY0LDIxMTMzOTgwNTksNDA1NTUxNzQw
 LC0yNTg0OTIwMjMsLTEzOTEwMzU3MjIsLTE3NDA0MzE0MTgsOT
 Q3MzMwNSwxMTY4MDE3OTYyLC0xODgxNDk5Mzk5LC00MjA3OTU1
