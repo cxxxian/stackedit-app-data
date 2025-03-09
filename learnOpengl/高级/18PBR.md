@@ -163,8 +163,11 @@
 但是当`a`特别小时，整个函数会趋向于一条直线，也很好理解，因为太粗糙了，所以微平面上的法线分布都很均匀地朝向四面八方，而不是总体和宏平面差不多了，所以在`n * h = 0`和`n * h = 1`时区别不大，类似于一条横着的直线
 
 ![输入图片说明](/imgs/2025-03-09/00LhwnMJF5RAREhJ.png)
+
+## 几何遮蔽（G函数）
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwNTYyNTY1Nyw5NDgyMjY4ODYsMTQwNz
+eyJoaXN0b3J5IjpbLTgwNDE5NTg1Niw5NDgyMjY4ODYsMTQwNz
 E4NzAyNCwtOTc3OTE3MDY0LDIxMTMzOTgwNTksNDA1NTUxNzQw
 LC0yNTg0OTIwMjMsLTEzOTEwMzU3MjIsLTE3NDA0MzE0MTgsOT
 Q3MzMwNSwxMTY4MDE3OTYyLC0xODgxNDk5Mzk5LC00MjA3OTU1
