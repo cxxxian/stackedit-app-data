@@ -195,11 +195,12 @@
 ![输入图片说明](/imgs/2025-03-09/NHP0NSmJLO9D4mjc.png)
 
 抽象理解：
-理解为一束激光，垂直射进去肯定反射的比较少，斜着射进去反射比较多
+理解为一束激光，垂直射进去肯定反射的比较少，因为冲击力比较强，都射入内部了，
+与之相反，斜着射进去反射比较多
 
 ![输入图片说明](/imgs/2025-03-09/4wRwrsVqUC6EYG1t.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzA1NDU1OTMyLDIwMjQ3NDA2NjYsLTY3ND
+eyJoaXN0b3J5IjpbNTQyNjk1MDI2LDIwMjQ3NDA2NjYsLTY3ND
 Q1MzY1MSwtMTk5NzAzMDEsLTg5ODA0NDQ0NSwtNjYwMzIzMjg5
 LDk0ODIyNjg4NiwxNDA3MTg3MDI0LC05Nzc5MTcwNjQsMjExMz
 M5ODA1OSw0MDU1NTE3NDAsLTI1ODQ5MjAyMywtMTM5MTAzNTcy
