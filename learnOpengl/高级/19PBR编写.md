@@ -27,10 +27,12 @@ PbrMaterial::~PbrMaterial() {
 
 }
 ```
+```
+```
 ## 2 pbr材质解析加入管线中
 ## 3 编写D G F三大函数
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Mzc1OTU1NTYsLTIwMTMyNDgzNjUsMT
-EyOTY4MjUxNCwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTEzOTU5MDY4NTIsLTE3Mzc1OTU1NTYsLT
+IwMTMyNDgzNjUsMTEyOTY4MjUxNCwtMjA4ODc0NjYxMl19
 -->
