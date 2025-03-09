@@ -113,7 +113,7 @@ case MaterialType::PbrMaterial:
 	result = mPbrShader;
 	break;
 ```
-在`renderObject`加入对应`case`，先做一个简单基础款，只有`vert`部分对应的变量传输，后面随着`frag`
+在`renderObject`加入对应`case`，先做一个简单基础款，只有`vert`部分对应的变量传输，后面随着`frag`的实现慢慢往上加东西
 ```cpp
 case MaterialType::PbrMaterial: {
 	PbrMaterial* pbrMat = (PbrMaterial*)material;
@@ -136,7 +136,7 @@ case MaterialType::PbrMaterial: {
 ## 3 编写D G F三大函数
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODk2NTg5MDEsNzI4NDk4MDQsLTE2Mj
-EzMjA5MzEsLTE3Mzc1OTU1NTYsLTIwMTMyNDgzNjUsMTEyOTY4
-MjUxNCwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTIyMDQ5NTk4Niw3Mjg0OTgwNCwtMTYyMT
+MyMDkzMSwtMTczNzU5NTU1NiwtMjAxMzI0ODM2NSwxMTI5Njgy
+NTE0LC0yMDg4NzQ2NjEyXX0=
 -->
