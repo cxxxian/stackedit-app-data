@@ -2,6 +2,7 @@
 
 # 准备工作
 ## 1 创建pbr的Material以及shader
+`pbrMaterial.h`如下
 ```cpp
 #pragma once
 #include "../material.h"
@@ -14,11 +15,22 @@ public:
 	...
 };
 ```
-``
+`pbrMaterial.cpp`如下
+```cpp
+#include "pbrMaterial.h"
+
+PbrMaterial::PbrMaterial() {
+	mType = MaterialType::PbrMaterial;
+}
+
+PbrMaterial::~PbrMaterial() {
+
+}
+```
 ## 2 pbr材质解析加入管线中
 ## 3 编写D G F三大函数
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMTA4NDMxMCwtMjAxMzI0ODM2NSwxMT
+eyJoaXN0b3J5IjpbLTgwMTU5MjY1OSwtMjAxMzI0ODM2NSwxMT
 I5NjgyNTE0LC0yMDg4NzQ2NjEyXX0=
 -->
