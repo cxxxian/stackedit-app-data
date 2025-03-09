@@ -160,15 +160,15 @@
 因为宏平面的法向总体还是朝上的，所以在`n * h = 1`时，占的比例应该大，所以概率密度很高
 在`n * h = 0`时，概率密度应该变得很小
 
-但是当`a`特别小时，整个函数会趋向于一条直线，也很好理解，因为tai'cu
+但是当`a`特别小时，整个函数会趋向于一条直线，也很好理解，因为太粗糙了，所以微平面上的法线分布都很均匀地朝向四面八方，而不是总体和宏平面差不多了，suo
 
 ![输入图片说明](/imgs/2025-03-09/00LhwnMJF5RAREhJ.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODU2ODA3NTMsOTQ4MjI2ODg2LDE0MD
-cxODcwMjQsLTk3NzkxNzA2NCwyMTEzMzk4MDU5LDQwNTU1MTc0
-MCwtMjU4NDkyMDIzLC0xMzkxMDM1NzIyLC0xNzQwNDMxNDE4LD
-k0NzMzMDUsMTE2ODAxNzk2MiwtMTg4MTQ5OTM5OSwtNDIwNzk1
-NTA1LDIwMDAwMDkwMzIsLTEwNDEyNzYyNTEsLTEyOTMzMTM2OT
-UsLTE2Mjg0NDM2MiwtMTg4MjgxMjgwOSwxNDg3Mjg1ODA4LC0x
-Nzk5MDgxMjk1XX0=
+eyJoaXN0b3J5IjpbMTY5MzIwNTc2LDk0ODIyNjg4NiwxNDA3MT
+g3MDI0LC05Nzc5MTcwNjQsMjExMzM5ODA1OSw0MDU1NTE3NDAs
+LTI1ODQ5MjAyMywtMTM5MTAzNTcyMiwtMTc0MDQzMTQxOCw5ND
+czMzA1LDExNjgwMTc5NjIsLTE4ODE0OTkzOTksLTQyMDc5NTUw
+NSwyMDAwMDA5MDMyLC0xMDQxMjc2MjUxLC0xMjkzMzEzNjk1LC
+0xNjI4NDQzNjIsLTE4ODI4MTI4MDksMTQ4NzI4NTgwOCwtMTc5
+OTA4MTI5NV19
 -->
