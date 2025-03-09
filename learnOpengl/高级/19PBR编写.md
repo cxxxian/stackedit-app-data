@@ -96,9 +96,11 @@ void main()
 }
 ```
 ## 2 pbr材质解析加入管线中
+```c'p'p
+```
 ## 3 编写D G F三大函数
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0MzcxMDI2MywtMTczNzU5NTU1NiwtMj
-AxMzI0ODM2NSwxMTI5NjgyNTE0LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbNjQ4MzU1MTE0LC0xNzM3NTk1NTU2LC0yMD
+EzMjQ4MzY1LDExMjk2ODI1MTQsLTIwODg3NDY2MTJdfQ==
 -->
