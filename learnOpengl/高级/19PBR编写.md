@@ -15,7 +15,7 @@ public:
 	...
 };
 ```
-`pbrMaterial.cpp`如下
+`pbrMaterial.cpp`如下，以及去到`material.h`中添加对应枚举类
 ```cpp
 #include "pbrMaterial.h"
 
@@ -31,6 +31,6 @@ PbrMaterial::~PbrMaterial() {
 ## 3 编写D G F三大函数
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgwMTU5MjY1OSwtMjAxMzI0ODM2NSwxMT
-I5NjgyNTE0LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTE3Mzc1OTU1NTYsLTIwMTMyNDgzNjUsMT
+EyOTY4MjUxNCwtMjA4ODc0NjYxMl19
 -->
