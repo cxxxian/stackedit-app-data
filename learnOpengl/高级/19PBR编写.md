@@ -134,10 +134,57 @@ case MaterialType::PbrMaterial: {
 	break;
 ```
 ## 3 编写D G F三大函数
-```g'l's
+在`pbr.frag`实现如下三大函数
+注意`Fresnel`返回的是`vec3`
+```glsl
+#define PI 3.141592653589793
+
+//NDF：α本应该表示粗糙度（roughness），α= r^2，便于美术调控
+float NDF_GGX(vec3 N, vec3 H, float roughness){
+	float a = roughness * roughness;
+	float a2 = a*a;
+	float NdotH = max(dot(N,H), 0.0);
+
+	float num = a2;
+	float denom =PI * (NdotH * NdotH *(a2 - 1.0) + 1.0);//分母
+
+	denom = max(denom, 0.0001);//不能为0
+
+	return num / denom;
+}
+
+//Geometry
+float GeometrySchlickGGX(float NdotV, float roughness){
+	float r = (roughness + 1.0);
+	float k = r * r / 8.0;
+
+	float num = NdotV;
+	float denom = NdotV * (1.0 - k) + k;
+
+	denom = max(denom, 0.00001);
+
+	return num / denom;
+}
+
+//考虑几何遮蔽和几何阴影的共同作用得到的值
+//此处的N是宏平面的法线方向
+float GeometrySmith(vec3 N, vec3 V, vec3 L, float roughness){
+	float NdotV = max(dot(N,V),0.0);
+	float NdotL = max(dot(N,L),0.0);
+
+	float ggx1 = GeometrySchlickGGX(NdotV, roughness);
+	float ggx2 = GeometrySchlickGGX(NdotL, roughness);
+
+	return ggx1 * ggx2;
+}
+
+//Fresnel
+vec3 fresnelSchlick(vec3 F0, float HdotV){
+	return F0 + (1.0 - F0) * pow((1.0 - HdotV), 5.0);
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NDYxNzUyMCwtMjIwNDk1OTg2LDcyOD
+eyJoaXN0b3J5IjpbLTQ2NTgzOTM0NSwtMjIwNDk1OTg2LDcyOD
 Q5ODA0LC0xNjIxMzIwOTMxLC0xNzM3NTk1NTU2LC0yMDEzMjQ4
 MzY1LDExMjk2ODI1MTQsLTIwODg3NDY2MTJdfQ==
 -->
