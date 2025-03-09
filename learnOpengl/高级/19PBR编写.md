@@ -113,9 +113,30 @@ case MaterialType::PbrMaterial:
 	result = mPbrShader;
 	break;
 ```
+在`renderObject`加入对应`case`，先做一个简单基础款，只有`vert`部分对应的变量传输
+```cpp
+case MaterialType::PbrMaterial: {
+	PbrMaterial* pbrMat = (PbrMaterial*)material;
+
+	
+	//mvp以及基础参数
+	shader->setMatrix4x4("modelMatrix", mesh->getModelMatrix());
+	shader->setMatrix4x4("viewMatrix", camera->getViewMatrix());
+	shader->setMatrix4x4("projectionMatrix", camera->getProjectionMatrix());
+
+	auto normalMatrix = glm::mat3(glm::transpose(glm::inverse(mesh->getModelMatrix())));
+	shader->setMatrix3x3("normalMatrix", normalMatrix);
+
+	shader->setVector3("cameraPosition", camera->mPosition);
+	//pbr相关参数
+
+}
+	break;
+```
 ## 3 编写D G F三大函数
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjEzMjA5MzEsLTE3Mzc1OTU1NTYsLT
-IwMTMyNDgzNjUsMTEyOTY4MjUxNCwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbNzI4NDk4MDQsLTE2MjEzMjA5MzEsLTE3Mz
+c1OTU1NTYsLTIwMTMyNDgzNjUsMTEyOTY4MjUxNCwtMjA4ODc0
+NjYxMl19
 -->
