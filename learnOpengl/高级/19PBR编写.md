@@ -184,10 +184,12 @@ vec3 fresnelSchlick(vec3 F0, float HdotV){
 }
 ```
 
-
+# 构造实验环境
+## 1 渲染环境改为四个点光源
+## 2 生成一堆阵列小球
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyNDIyOTI2OSwtNDY1ODM5MzQ1LC0yMj
-A0OTU5ODYsNzI4NDk4MDQsLTE2MjEzMjA5MzEsLTE3Mzc1OTU1
-NTYsLTIwMTMyNDgzNjUsMTEyOTY4MjUxNCwtMjA4ODc0NjYxMl
-19
+eyJoaXN0b3J5IjpbNjA5NDA0MDI1LC00NjU4MzkzNDUsLTIyMD
+Q5NTk4Niw3Mjg0OTgwNCwtMTYyMTMyMDkzMSwtMTczNzU5NTU1
+NiwtMjAxMzI0ODM2NSwxMTI5NjgyNTE0LC0yMDg4NzQ2NjEyXX
+0=
 -->
