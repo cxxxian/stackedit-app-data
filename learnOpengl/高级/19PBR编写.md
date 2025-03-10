@@ -205,11 +205,12 @@ void renderObject(
 并且`renderObject`我们只留下三个`case`
 `case MaterialType::WhiteMaterial`和`case MaterialType::ScreenMaterial`和`case MaterialType::PbrMaterial`
 由于这三个没有涉及到`pointLight`的使用，所以不会报错
+暂时关闭`pointShadow`的使用
 ## 1 渲染环境改为四个点光源
 
 ## 2 生成一堆阵列小球
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4MDgwNjY4MSwxNDk5NDg0NzcwLDYwOT
+eyJoaXN0b3J5IjpbLTM3MTQzMTMzOCwxNDk5NDg0NzcwLDYwOT
 QwNDAyNSwtNDY1ODM5MzQ1LC0yMjA0OTU5ODYsNzI4NDk4MDQs
 LTE2MjEzMjA5MzEsLTE3Mzc1OTU1NTYsLTIwMTMyNDgzNjUsMT
 EyOTY4MjUxNCwtMjA4ODc0NjYxMl19
