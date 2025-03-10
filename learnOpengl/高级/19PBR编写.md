@@ -484,6 +484,13 @@ void main()
 
 然后就可以回到`vert`了
 ```glsl
+...
+in mat3 tbn;
+uniform sampler2D albedoTex;//物体颜色(反照率）
+uniform sampler2D roughnessTex;//粗糙度贴图
+uniform sampler2D metallicTex;//金属度贴图
+uniform sampler2D normalTex;//法线贴图
+
 void main()
 {
 	//1 准备通用数据
@@ -501,7 +508,7 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4NTA2MjA2NCwtODgwOTk2Njc3LC0yNz
+eyJoaXN0b3J5IjpbLTk3Mzg4Mjc3MSwtODgwOTk2Njc3LC0yNz
 M3MzE1MzYsMTM1NDA4NzAyOSwtNjQxMTg4MTU0LC04MDY0MTk4
 NzAsNzgyODk2Njg0LDE3OTAzMTU4MzQsLTIyMDE5OTkyNCwtOT
 Q4OTgwMDM3LC0yNDc4OTA1NzUsMTMyNTcwMzQ0NiwtMzcxNDMx
