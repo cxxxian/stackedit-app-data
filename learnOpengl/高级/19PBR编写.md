@@ -405,9 +405,10 @@ case MaterialType::PbrMaterial: {
 
 ![输入图片说明](/imgs/2025-03-10/qatyUcZI2WTpKjiA.png)
 
-# 将Shader中的roughness normal metallic albedo 都是用相关纹理替代
+# 相关纹理替代
+将`Shader`中的`roughness normal metallic albedo `都是用相关纹理替代
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTc2NjY0MzUsNzgyODk2Njg0LDE3OT
+eyJoaXN0b3J5IjpbLTEyNDA4NzIwMjUsNzgyODk2Njg0LDE3OT
 AzMTU4MzQsLTIyMDE5OTkyNCwtOTQ4OTgwMDM3LC0yNDc4OTA1
 NzUsMTMyNTcwMzQ0NiwtMzcxNDMxMzM4LDE0OTk0ODQ3NzAsNj
 A5NDA0MDI1LC00NjU4MzkzNDUsLTIyMDQ5NTk4Niw3Mjg0OTgw
