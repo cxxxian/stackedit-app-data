@@ -426,13 +426,26 @@ public:
 	Texture* mNormal{ nullptr };//最邻近插值
 	Texture* mMetallic{ nullptr };//最邻近插值
 ```
-所以我们y
+所以我们要去在`texture.h`创建一个最邻近插值滤波方法含函数并实现
+```cpp
+Texture* Texture::createNearestAttachment(const std::string& path)
+{
+	auto texture = new Texture(path, 0);
+	glBindTexture(GL_TEXTURE_2D, texture->mTexture);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+	glBindTexture(GL_TEXTURE_2D, 0);
+	return texture;
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwMDUyNDU1LC02NDExODgxNTQsLTgwNj
-QxOTg3MCw3ODI4OTY2ODQsMTc5MDMxNTgzNCwtMjIwMTk5OTI0
-LC05NDg5ODAwMzcsLTI0Nzg5MDU3NSwxMzI1NzAzNDQ2LC0zNz
-E0MzEzMzgsMTQ5OTQ4NDc3MCw2MDk0MDQwMjUsLTQ2NTgzOTM0
-NSwtMjIwNDk1OTg2LDcyODQ5ODA0LC0xNjIxMzIwOTMxLC0xNz
-M3NTk1NTU2LC0yMDEzMjQ4MzY1LDExMjk2ODI1MTQsLTIwODg3
-NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbMTM1NDA4NzAyOSwtNjQxMTg4MTU0LC04MD
+Y0MTk4NzAsNzgyODk2Njg0LDE3OTAzMTU4MzQsLTIyMDE5OTky
+NCwtOTQ4OTgwMDM3LC0yNDc4OTA1NzUsMTMyNTcwMzQ0NiwtMz
+cxNDMxMzM4LDE0OTk0ODQ3NzAsNjA5NDA0MDI1LC00NjU4Mzkz
+NDUsLTIyMDQ5NTk4Niw3Mjg0OTgwNCwtMTYyMTMyMDkzMSwtMT
+czNzU5NTU1NiwtMjAxMzI0ODM2NSwxMTI5NjgyNTE0LC0yMDg4
+NzQ2NjEyXX0=
 -->
