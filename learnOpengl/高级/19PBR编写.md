@@ -407,8 +407,12 @@ case MaterialType::PbrMaterial: {
 
 # 相关纹理替代
 将`Shader`中的`roughness normal metallic albedo `都是用相关纹理替代
+
+![输入图片说明](/imgs/2025-03-10/1dQcdACMhzDIgJa5.png)
+
+解释一下这个`arm`贴图，分别代表`AO`````
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDA4NzIwMjUsNzgyODk2Njg0LDE3OT
+eyJoaXN0b3J5IjpbLTE3Njk2MTE3NTQsNzgyODk2Njg0LDE3OT
 AzMTU4MzQsLTIyMDE5OTkyNCwtOTQ4OTgwMDM3LC0yNDc4OTA1
 NzUsMTMyNTcwMzQ0NiwtMzcxNDMxMzM4LDE0OTk0ODQ3NzAsNj
 A5NDA0MDI1LC00NjU4MzkzNDUsLTIyMDQ5NTk4Niw3Mjg0OTgw
