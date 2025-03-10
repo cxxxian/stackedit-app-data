@@ -416,7 +416,9 @@ case MaterialType::PbrMaterial: {
 只需要用`matellic`，即`B`通道的值
 
 我们去`pbrMaterial.h`中声明对应的材质贴图
-但是对于z
+但是对于这几个贴图我们要有不同的滤波的方式
+`mAlbedo`用双线性插值，因为他是最主要的颜色贴图
+剩下三个使用的是最邻近采样，因为我们需要有颗粒分明的效果，不会被周围的像素插值
 ```cpp
 public:
 	Texture* mAlbedo{ nullptr };
@@ -425,11 +427,10 @@ public:
 	Texture* mMetallic{ nullptr };
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDc3NjExMzAsLTgwNjQxOTg3MCw3OD
-I4OTY2ODQsMTc5MDMxNTgzNCwtMjIwMTk5OTI0LC05NDg5ODAw
-MzcsLTI0Nzg5MDU3NSwxMzI1NzAzNDQ2LC0zNzE0MzEzMzgsMT
-Q5OTQ4NDc3MCw2MDk0MDQwMjUsLTQ2NTgzOTM0NSwtMjIwNDk1
-OTg2LDcyODQ5ODA0LC0xNjIxMzIwOTMxLC0xNzM3NTk1NTU2LC
-0yMDEzMjQ4MzY1LDExMjk2ODI1MTQsLTIwODg3NDY2MTJdfQ==
-
+eyJoaXN0b3J5IjpbLTU4NzM1ODEyLC04MDY0MTk4NzAsNzgyOD
+k2Njg0LDE3OTAzMTU4MzQsLTIyMDE5OTkyNCwtOTQ4OTgwMDM3
+LC0yNDc4OTA1NzUsMTMyNTcwMzQ0NiwtMzcxNDMxMzM4LDE0OT
+k0ODQ3NzAsNjA5NDA0MDI1LC00NjU4MzkzNDUsLTIyMDQ5NTk4
+Niw3Mjg0OTgwNCwtMTYyMTMyMDkzMSwtMTczNzU5NTU1NiwtMj
+AxMzI0ODM2NSwxMTI5NjgyNTE0LC0yMDg4NzQ2NjEyXX0=
 -->
