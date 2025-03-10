@@ -460,7 +460,9 @@ void prepare() {
 但是我们要先去`pbr.vert`中计算一个`tbn`传到`frag`，后续的`normal`计算需要用（因为默认的`normal`贴图都是朝向z轴的，我们利用`tbn`才能支持旋转后也正确得到法线）
 所以如下，
 我们需要从外界传入`aTangent`，利用`aTangent`和`normal`可以计算出`bitangent`，最后构成`tbn`矩阵
-
+小回忆：
+`tangent`是可以直接利用`modelMatrix`进行几何变换的
+但是`normal`不行，比如放大后斜边的法向量就不一定垂直了
 ```glsl
 #version 460 core
 ...
@@ -480,7 +482,7 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyNTc1MDI3OCwtMjczNzMxNTM2LDEzNT
+eyJoaXN0b3J5IjpbLTg4MDk5NjY3NywtMjczNzMxNTM2LDEzNT
 QwODcwMjksLTY0MTE4ODE1NCwtODA2NDE5ODcwLDc4Mjg5NjY4
 NCwxNzkwMzE1ODM0LC0yMjAxOTk5MjQsLTk0ODk4MDAzNywtMj
 Q3ODkwNTc1LDEzMjU3MDM0NDYsLTM3MTQzMTMzOCwxNDk5NDg0
