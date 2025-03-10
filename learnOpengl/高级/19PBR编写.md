@@ -207,12 +207,75 @@ void renderObject(
 由于这三个没有涉及到`pointLight`的使用，所以不会报错
 暂时关闭`pointShadow`的使用
 ## 1 渲染环境改为四个点光源
-```
+```cpp
+std::vector<PointLight*> pointLights{};
+void prepare() {
+	//fbo = Framebuffer::createHDRFbo(WIDTH, HEIGHT);
+
+	fboMulti = Framebuffer::createMultiSampleHDRFbo(WIDTH, HEIGHT);
+	fboResolve = Framebuffer::createHDRFbo(WIDTH, HEIGHT);
+
+	renderer = new Renderer();
+	bloom = new Bloom(WIDTH, HEIGHT);
+	sceneOff = new Scene();
+	scene = new Scene();
+
+	//pass 01
+	auto geometry = Geometry::createSphere(1.0f);
+	auto material = new PbrMaterial();
+
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 5; j++) {
+			auto mesh = new Mesh(geometry, material);
+			mesh->setPosition(glm::vec3(i * 2.5, j * 2.5, 0.0f));
+			sceneOff->addChild(mesh);
+		}
+	}
+
+	//pass 02 postProcessPass:后处理pass
+	auto sgeo = Geometry::createScreenPlane();
+	screenMat = new ScreenMaterial();
+	screenMat->mScreenTexture = fboResolve->mColorAttachment;
+	auto smesh = new Mesh(sgeo, screenMat);
+	scene->addChild(smesh);
+
+
+	glm::vec3 lightPositions[] = {
+			glm::vec3(-3.0f,  3.0f, 10.0f),
+			glm::vec3(3.0f,  3.0f, 10.0f),
+			glm::vec3(-3.0f, -3.0f, 10.0f),
+			glm::vec3(3.0f, -3.0f, 10.0f),
+	};
+	glm::vec3 lightColors[] = {
+		glm::vec3(300.0f, 0.0f, 0.0f),
+		glm::vec3(0.0f, 300.0f, 0.0f),
+		glm::vec3(0.0f, 0.0f, 300.0f),
+		glm::vec3(300.0f, 300.0f, 300.0f)
+	};
+	for (int i = 0; i < 4; i++) {
+		auto pointLight = new PointLight();
+		pointLight->setPosition(lightPositions[i]);
+		pointLight->mColor = lightColors[i];
+		pointLights.push_back(pointLight);
+	}
+}
+int main() {
+	...
+	while (glApp->update()) {
+		...
+		renderer->render(sceneOff, camera, pointLights, ambLight, fboMulti->mFBO);
+		renderer->msaaResolve(fboMulti, fboResolve);
+		bloom->doBloom(fboResolve);
+		renderer->render(scene, camera, pointLights, ambLight);
+	...
+	}
+	...
+}
 ```
 ## 2 生成一堆阵列小球
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzkyNjE0Nzg4LC0zNzE0MzEzMzgsMTQ5OT
-Q4NDc3MCw2MDk0MDQwMjUsLTQ2NTgzOTM0NSwtMjIwNDk1OTg2
-LDcyODQ5ODA0LC0xNjIxMzIwOTMxLC0xNzM3NTk1NTU2LC0yMD
-EzMjQ4MzY1LDExMjk2ODI1MTQsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbMTMyNTcwMzQ0NiwtMzcxNDMxMzM4LDE0OT
+k0ODQ3NzAsNjA5NDA0MDI1LC00NjU4MzkzNDUsLTIyMDQ5NTk4
+Niw3Mjg0OTgwNCwtMTYyMTMyMDkzMSwtMTczNzU5NTU1NiwtMj
+AxMzI0ODM2NSwxMTI5NjgyNTE0LC0yMDg4NzQ2NjEyXX0=
 -->
