@@ -352,11 +352,17 @@ void main()
 ```
 
 # 完成uniform更新
-## 1 PbrMaterial中加入albedo贴图
-## 2 PbrMaterial中加入roughness、metallic参数
-## 3 更新uniform
+## 1 PbrMaterial中加入albedo贴图、roughness、metallic参数
+`PbrMaterial.h`中加入三个参数
+```cpp
+public:
+	Texture* mAlbedo{ nullptr };
+	float mRoughness{ 0.1f };
+	float mMetallic{ 0.5f };
+```
+## 2 更新uniform
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2OTk0NzcxNiwtMjQ3ODkwNTc1LDEzMj
+eyJoaXN0b3J5IjpbLTk0ODk4MDAzNywtMjQ3ODkwNTc1LDEzMj
 U3MDM0NDYsLTM3MTQzMTMzOCwxNDk5NDg0NzcwLDYwOTQwNDAy
 NSwtNDY1ODM5MzQ1LC0yMjA0OTU5ODYsNzI4NDk4MDQsLTE2Mj
 EzMjA5MzEsLTE3Mzc1OTU1NTYsLTIwMTMyNDgzNjUsMTEyOTY4
