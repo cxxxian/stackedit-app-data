@@ -207,11 +207,12 @@ void renderObject(
 由于这三个没有涉及到`pointLight`的使用，所以不会报错
 暂时关闭`pointShadow`的使用
 ## 1 渲染环境改为四个点光源
-
+```
+```
 ## 2 生成一堆阵列小球
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3MTQzMTMzOCwxNDk5NDg0NzcwLDYwOT
-QwNDAyNSwtNDY1ODM5MzQ1LC0yMjA0OTU5ODYsNzI4NDk4MDQs
-LTE2MjEzMjA5MzEsLTE3Mzc1OTU1NTYsLTIwMTMyNDgzNjUsMT
-EyOTY4MjUxNCwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbMzkyNjE0Nzg4LC0zNzE0MzEzMzgsMTQ5OT
+Q4NDc3MCw2MDk0MDQwMjUsLTQ2NTgzOTM0NSwtMjIwNDk1OTg2
+LDcyODQ5ODA0LC0xNjIxMzIwOTMxLC0xNzM3NTk1NTU2LC0yMD
+EzMjQ4MzY1LDExMjk2ODI1MTQsLTIwODg3NDY2MTJdfQ==
 -->
