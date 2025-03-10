@@ -367,15 +367,16 @@ void prepare() {
 	//pass 01
 	auto geometry = Geometry::createSphere(1.0f);
 	auto material = new PbrMaterial();
-	material->mAlbedo = new Texture("assets/textures/box,png", 0, GL_SRGB_ALPHA);
+	material->mAlbedo = new Texture("assets/textures/box.png", 0, GL_SRGB_ALPHA);
 	...
 }
 ```
 ## 2 更新uniform
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyMDE5OTkyNCwtOTQ4OTgwMDM3LC0yND
-c4OTA1NzUsMTMyNTcwMzQ0NiwtMzcxNDMxMzM4LDE0OTk0ODQ3
-NzAsNjA5NDA0MDI1LC00NjU4MzkzNDUsLTIyMDQ5NTk4Niw3Mj
-g0OTgwNCwtMTYyMTMyMDkzMSwtMTczNzU5NTU1NiwtMjAxMzI0
-ODM2NSwxMTI5NjgyNTE0LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbNjE4ODMzNzM4LC0yMjAxOTk5MjQsLTk0OD
+k4MDAzNywtMjQ3ODkwNTc1LDEzMjU3MDM0NDYsLTM3MTQzMTMz
+OCwxNDk5NDg0NzcwLDYwOTQwNDAyNSwtNDY1ODM5MzQ1LC0yMj
+A0OTU5ODYsNzI4NDk4MDQsLTE2MjEzMjA5MzEsLTE3Mzc1OTU1
+NTYsLTIwMTMyNDgzNjUsMTEyOTY4MjUxNCwtMjA4ODc0NjYxMl
+19
 -->
