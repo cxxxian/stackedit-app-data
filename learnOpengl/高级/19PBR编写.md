@@ -415,9 +415,16 @@ case MaterialType::PbrMaterial: {
 `Roughness`也用不上因为我们有专门`Roughness`的贴图
 只需要用`matellic`，即`B`通道的值
 
+我们去`pbrMaterial.h`中声明对应的材质贴图
+```cpp
+public:
+	Texture* mAlbedo{ nullptr };
+	Texture* mRoughness{ nullptr };
+	Texture* mNormal{ nullptr };
+	Texture* mMetallic{ nullptr };
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5MDY4MTE3OCw3ODI4OTY2ODQsMTc5MD
+eyJoaXN0b3J5IjpbLTgwNjQxOTg3MCw3ODI4OTY2ODQsMTc5MD
 MxNTgzNCwtMjIwMTk5OTI0LC05NDg5ODAwMzcsLTI0Nzg5MDU3
 NSwxMzI1NzAzNDQ2LC0zNzE0MzEzMzgsMTQ5OTQ4NDc3MCw2MD
 k0MDQwMjUsLTQ2NTgzOTM0NSwtMjIwNDk1OTg2LDcyODQ5ODA0
