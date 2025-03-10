@@ -459,7 +459,8 @@ void prepare() {
 然后去`pbr.frag`中设计相关贴图变量
 但是我们要先去`pbr.vert`中计算一个`tbn`传到`frag`，后续的`normal`计算需要用（因为默认的`normal`贴图都是朝向z轴的，我们利用`tbn`才能支持旋转后也正确得到法线）
 所以如下，
-我们需要从外界传入`aTangent`，利用`aTangent`
+我们需要从外界传入`aTangent`，利用`aTangent`和`normal`可以计算出`bitangent`，最后构成`tbn`矩阵
+
 ```glsl
 #version 460 core
 ...
@@ -479,11 +480,11 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQ0NjgwODgxLC0yNzM3MzE1MzYsMTM1ND
-A4NzAyOSwtNjQxMTg4MTU0LC04MDY0MTk4NzAsNzgyODk2Njg0
-LDE3OTAzMTU4MzQsLTIyMDE5OTkyNCwtOTQ4OTgwMDM3LC0yND
-c4OTA1NzUsMTMyNTcwMzQ0NiwtMzcxNDMxMzM4LDE0OTk0ODQ3
-NzAsNjA5NDA0MDI1LC00NjU4MzkzNDUsLTIyMDQ5NTk4Niw3Mj
-g0OTgwNCwtMTYyMTMyMDkzMSwtMTczNzU5NTU1NiwtMjAxMzI0
-ODM2NV19
+eyJoaXN0b3J5IjpbMTAyNTc1MDI3OCwtMjczNzMxNTM2LDEzNT
+QwODcwMjksLTY0MTE4ODE1NCwtODA2NDE5ODcwLDc4Mjg5NjY4
+NCwxNzkwMzE1ODM0LC0yMjAxOTk5MjQsLTk0ODk4MDAzNywtMj
+Q3ODkwNTc1LDEzMjU3MDM0NDYsLTM3MTQzMTMzOCwxNDk5NDg0
+NzcwLDYwOTQwNDAyNSwtNDY1ODM5MzQ1LC0yMjA0OTU5ODYsNz
+I4NDk4MDQsLTE2MjEzMjA5MzEsLTE3Mzc1OTU1NTYsLTIwMTMy
+NDgzNjVdfQ==
 -->
