@@ -440,7 +440,7 @@ Texture* Texture::createNearestAttachment(const std::string& path)
 	return texture;
 }
 ```
-然后去main.cpp中的prepa
+然后去`main.cpp`中的`prepare`函数中初始化相关贴图
 ```cpp
 void prepare() {
 	...
@@ -455,12 +455,15 @@ void prepare() {
 	...
 }
 ```
+
+然后去`pbr.frag`中设计相关贴图变量
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NTkwMjczOTcsMTM1NDA4NzAyOSwtNj
-QxMTg4MTU0LC04MDY0MTk4NzAsNzgyODk2Njg0LDE3OTAzMTU4
-MzQsLTIyMDE5OTkyNCwtOTQ4OTgwMDM3LC0yNDc4OTA1NzUsMT
-MyNTcwMzQ0NiwtMzcxNDMxMzM4LDE0OTk0ODQ3NzAsNjA5NDA0
-MDI1LC00NjU4MzkzNDUsLTIyMDQ5NTk4Niw3Mjg0OTgwNCwtMT
-YyMTMyMDkzMSwtMTczNzU5NTU1NiwtMjAxMzI0ODM2NSwxMTI5
-NjgyNTE0XX0=
+eyJoaXN0b3J5IjpbLTI3MzczMTUzNiwxMzU0MDg3MDI5LC02ND
+ExODgxNTQsLTgwNjQxOTg3MCw3ODI4OTY2ODQsMTc5MDMxNTgz
+NCwtMjIwMTk5OTI0LC05NDg5ODAwMzcsLTI0Nzg5MDU3NSwxMz
+I1NzAzNDQ2LC0zNzE0MzEzMzgsMTQ5OTQ4NDc3MCw2MDk0MDQw
+MjUsLTQ2NTgzOTM0NSwtMjIwNDk1OTg2LDcyODQ5ODA0LC0xNj
+IxMzIwOTMxLC0xNzM3NTk1NTU2LC0yMDEzMjQ4MzY1LDExMjk2
+ODI1MTRdfQ==
 -->
