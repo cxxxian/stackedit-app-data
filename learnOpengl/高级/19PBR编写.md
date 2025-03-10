@@ -274,8 +274,9 @@ int main() {
 }
 ```
 此时的场景就是这样全白色的阵列小球，为什么是白色的，因为我们还没进行`pbr`流程计算，现在`pbr.frag`里面直接输出的是`vec3(1.0)`，相应的`shader`传参数也还没做好
-`pbr.frag`
+`pbr.frag`如下：
 ```glsl
+...
 void main()
 {
 //环境光计算
@@ -290,8 +291,10 @@ void main()
 
 ![输入图片说明](/imgs/2025-03-10/YuV4DCAa4sNGBq9V.png)
 
+我们现在要做的就是正确构建`pbr`计算公式，然后通过`renderObject`把相应的变量传到`shader`中
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1NTk4OTAzNywxMzI1NzAzNDQ2LC0zNz
+eyJoaXN0b3J5IjpbLTI0Nzg5MDU3NSwxMzI1NzAzNDQ2LC0zNz
 E0MzEzMzgsMTQ5OTQ4NDc3MCw2MDk0MDQwMjUsLTQ2NTgzOTM0
 NSwtMjIwNDk1OTg2LDcyODQ5ODA0LC0xNjIxMzIwOTMxLC0xNz
 M3NTk1NTU2LC0yMDEzMjQ4MzY1LDExMjk2ODI1MTQsLTIwODg3
