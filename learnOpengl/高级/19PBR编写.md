@@ -273,14 +273,27 @@ int main() {
 	...
 }
 ```
-此时的场景就是这样全白色的阵列小球，为什么是白色的，因为我们还没进行`pbr`流程计算，现在`pbr.frag`里面直接输出的是`vec3(1.0)`，没有
+此时的场景就是这样全白色的阵列小球，为什么是白色的，因为我们还没进行`pbr`流程计算，现在`pbr.frag`里面直接输出的是`vec3(1.0)`，相应的`shader`传参数也还没做好
+`pbr.frag`
+```glsl
+void main()
+{
+//环境光计算
+	vec3 objectColor  = texture(albedoTex, uv).xyz ;
+
+	//计算光照的通用数据
+	vec3 normalN = normalize(normal);
+	vec3 viewDirN = normalize(worldPosition - cameraPosition);
+	FragColor = vec4(1.0);
+}
+```
 
 ![输入图片说明](/imgs/2025-03-10/YuV4DCAa4sNGBq9V.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ5MDUzNTYsMTMyNTcwMzQ0NiwtMzcxND
-MxMzM4LDE0OTk0ODQ3NzAsNjA5NDA0MDI1LC00NjU4MzkzNDUs
-LTIyMDQ5NTk4Niw3Mjg0OTgwNCwtMTYyMTMyMDkzMSwtMTczNz
-U5NTU1NiwtMjAxMzI0ODM2NSwxMTI5NjgyNTE0LC0yMDg4NzQ2
-NjEyXX0=
+eyJoaXN0b3J5IjpbLTU1NTk4OTAzNywxMzI1NzAzNDQ2LC0zNz
+E0MzEzMzgsMTQ5OTQ4NDc3MCw2MDk0MDQwMjUsLTQ2NTgzOTM0
+NSwtMjIwNDk1OTg2LDcyODQ5ODA0LC0xNjIxMzIwOTMxLC0xNz
+M3NTk1NTU2LC0yMDEzMjQ4MzY1LDExMjk2ODI1MTQsLTIwODg3
+NDY2MTJdfQ==
 -->
