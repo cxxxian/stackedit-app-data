@@ -440,12 +440,27 @@ Texture* Texture::createNearestAttachment(const std::string& path)
 	return texture;
 }
 ```
+然后去main.cpp中的prepa
+```cpp
+void prepare() {
+	...
+
+	//pass 01
+	auto geometry = Geometry::createSphere(1.0f);
+	material = new PbrMaterial();
+	material->mAlbedo = new Texture("assets/textures/pbr/slab_tiles_diff_2k.jpg", 0, GL_SRGB_ALPHA);
+	material->mNormal = Texture::createNearestAttachment("assets/textures/pbr/slab_tiles_nor_gl_2k.jpg");
+	material->mRoughness = Texture::createNearestAttachment("assets/textures/pbr/slab_tiles_rough_2k.jpg");
+	material->mMetallic = Texture::createNearestAttachment("assets/textures/pbr/slab_tiles_arm_2k.jpg");
+	...
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1NDA4NzAyOSwtNjQxMTg4MTU0LC04MD
-Y0MTk4NzAsNzgyODk2Njg0LDE3OTAzMTU4MzQsLTIyMDE5OTky
-NCwtOTQ4OTgwMDM3LC0yNDc4OTA1NzUsMTMyNTcwMzQ0NiwtMz
-cxNDMxMzM4LDE0OTk0ODQ3NzAsNjA5NDA0MDI1LC00NjU4Mzkz
-NDUsLTIyMDQ5NTk4Niw3Mjg0OTgwNCwtMTYyMTMyMDkzMSwtMT
-czNzU5NTU1NiwtMjAxMzI0ODM2NSwxMTI5NjgyNTE0LC0yMDg4
-NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTE2NTkwMjczOTcsMTM1NDA4NzAyOSwtNj
+QxMTg4MTU0LC04MDY0MTk4NzAsNzgyODk2Njg0LDE3OTAzMTU4
+MzQsLTIyMDE5OTkyNCwtOTQ4OTgwMDM3LC0yNDc4OTA1NzUsMT
+MyNTcwMzQ0NiwtMzcxNDMxMzM4LDE0OTk0ODQ3NzAsNjA5NDA0
+MDI1LC00NjU4MzkzNDUsLTIyMDQ5NTk4Niw3Mjg0OTgwNCwtMT
+YyMTMyMDkzMSwtMTczNzU5NTU1NiwtMjAxMzI0ODM2NSwxMTI5
+NjgyNTE0XX0=
 -->
