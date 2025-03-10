@@ -207,6 +207,7 @@ void renderObject(
 由于这三个没有涉及到`pointLight`的使用，所以不会报错
 暂时关闭`pointShadow`的使用
 ## 1 渲染环境改为四个点光源
+## 2 生成一堆阵列小球
 ```cpp
 std::vector<PointLight*> pointLights{};
 void prepare() {
@@ -272,10 +273,14 @@ int main() {
 	...
 }
 ```
-## 2 生成一堆阵列小球
+此时的场景就是这样全白色的阵列小球，为什么是白色的，因为我们还没进行`pbr`流程计算，现在`pbr.frag`里面直接输出的是`vec3(1.0)`，没有
+
+![输入图片说明](/imgs/2025-03-10/YuV4DCAa4sNGBq9V.png)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMyNTcwMzQ0NiwtMzcxNDMxMzM4LDE0OT
-k0ODQ3NzAsNjA5NDA0MDI1LC00NjU4MzkzNDUsLTIyMDQ5NTk4
-Niw3Mjg0OTgwNCwtMTYyMTMyMDkzMSwtMTczNzU5NTU1NiwtMj
-AxMzI0ODM2NSwxMTI5NjgyNTE0LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbNjQ5MDUzNTYsMTMyNTcwMzQ0NiwtMzcxND
+MxMzM4LDE0OTk0ODQ3NzAsNjA5NDA0MDI1LC00NjU4MzkzNDUs
+LTIyMDQ5NTk4Niw3Mjg0OTgwNCwtMTYyMTMyMDkzMSwtMTczNz
+U5NTU1NiwtMjAxMzI0ODM2NSwxMTI5NjgyNTE0LC0yMDg4NzQ2
+NjEyXX0=
 -->
