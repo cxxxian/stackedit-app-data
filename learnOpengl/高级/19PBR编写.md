@@ -410,12 +410,15 @@ case MaterialType::PbrMaterial: {
 
 ![输入图片说明](/imgs/2025-03-10/1dQcdACMhzDIgJa5.png)
 
-解释一下这个`arm`贴图，分别代表`AO`````
+解释一下这个`arm`贴图，分别代表`AO`，`Roughness`，`matellic`三个参数的值，分别对应`RGB`三个通道
+`AO`是指环境遮蔽，还用不上
+`Roughness`也用不上因为我们有专门`Roughness`的贴图
+只需要用`matellic`，即``
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Njk2MTE3NTQsNzgyODk2Njg0LDE3OT
-AzMTU4MzQsLTIyMDE5OTkyNCwtOTQ4OTgwMDM3LC0yNDc4OTA1
-NzUsMTMyNTcwMzQ0NiwtMzcxNDMxMzM4LDE0OTk0ODQ3NzAsNj
-A5NDA0MDI1LC00NjU4MzkzNDUsLTIyMDQ5NTk4Niw3Mjg0OTgw
-NCwtMTYyMTMyMDkzMSwtMTczNzU5NTU1NiwtMjAxMzI0ODM2NS
-wxMTI5NjgyNTE0LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbNTA0MTQxODc1LDc4Mjg5NjY4NCwxNzkwMz
+E1ODM0LC0yMjAxOTk5MjQsLTk0ODk4MDAzNywtMjQ3ODkwNTc1
+LDEzMjU3MDM0NDYsLTM3MTQzMTMzOCwxNDk5NDg0NzcwLDYwOT
+QwNDAyNSwtNDY1ODM5MzQ1LC0yMjA0OTU5ODYsNzI4NDk4MDQs
+LTE2MjEzMjA5MzEsLTE3Mzc1OTU1NTYsLTIwMTMyNDgzNjUsMT
+EyOTY4MjUxNCwtMjA4ODc0NjYxMl19
 -->
