@@ -418,19 +418,19 @@ case MaterialType::PbrMaterial: {
 我们去`pbrMaterial.h`中声明对应的材质贴图
 但是对于这几个贴图我们要有不同的滤波的方式
 `mAlbedo`用双线性插值，因为他是最主要的颜色贴图
-剩下三个使用的是最邻近采样，因为我们需要有颗粒分明的效果，不会被周围的像素插值
+剩下三个使用的是最邻近插值，因为我们需要有颗粒分明的效果，不会被周围的像素插值
 ```cpp
 public:
-	Texture* mAlbedo{ nullptr };
-	Texture* mRoughness{ nullptr };
-	Texture* mNormal{ nullptr };
-	Texture* mMetallic{ nullptr };
+	Texture* mAlbedo{ nullptr };//双线性插值
+	Texture* mRoughness{ nullptr };//最邻近插值
+	Texture* mNormal{ nullptr };//最邻近插值
+	Texture* mMetallic{ nullptr };//最邻近插值
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4NzM1ODEyLC04MDY0MTk4NzAsNzgyOD
-k2Njg0LDE3OTAzMTU4MzQsLTIyMDE5OTkyNCwtOTQ4OTgwMDM3
-LC0yNDc4OTA1NzUsMTMyNTcwMzQ0NiwtMzcxNDMxMzM4LDE0OT
-k0ODQ3NzAsNjA5NDA0MDI1LC00NjU4MzkzNDUsLTIyMDQ5NTk4
-Niw3Mjg0OTgwNCwtMTYyMTMyMDkzMSwtMTczNzU5NTU1NiwtMj
-AxMzI0ODM2NSwxMTI5NjgyNTE0LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTY0MTE4ODE1NCwtODA2NDE5ODcwLDc4Mj
+g5NjY4NCwxNzkwMzE1ODM0LC0yMjAxOTk5MjQsLTk0ODk4MDAz
+NywtMjQ3ODkwNTc1LDEzMjU3MDM0NDYsLTM3MTQzMTMzOCwxND
+k5NDg0NzcwLDYwOTQwNDAyNSwtNDY1ODM5MzQ1LC0yMjA0OTU5
+ODYsNzI4NDk4MDQsLTE2MjEzMjA5MzEsLTE3Mzc1OTU1NTYsLT
+IwMTMyNDgzNjUsMTEyOTY4MjUxNCwtMjA4ODc0NjYxMl19
 -->
