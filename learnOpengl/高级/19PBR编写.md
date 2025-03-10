@@ -242,16 +242,16 @@ void prepare() {
 
 
 	glm::vec3 lightPositions[] = {
-			glm::vec3(-3.0f,  3.0f, 10.0f),
-			glm::vec3(3.0f,  3.0f, 10.0f),
-			glm::vec3(-3.0f, -3.0f, 10.0f),
-			glm::vec3(3.0f, -3.0f, 10.0f),
+		glm::vec3(-3.0f,  3.0f, 10.0f),
+		glm::vec3(3.0f,  3.0f, 10.0f),
+		glm::vec3(-3.0f, -3.0f, 10.0f),
+		glm::vec3(3.0f, -3.0f, 10.0f),
 	};
 	glm::vec3 lightColors[] = {
-		glm::vec3(300.0f, 0.0f, 0.0f),
-		glm::vec3(0.0f, 300.0f, 0.0f),
-		glm::vec3(0.0f, 0.0f, 300.0f),
-		glm::vec3(300.0f, 300.0f, 300.0f)
+	glm::vec3(300.0f, 300.0f, 300.0f),
+	glm::vec3(300.0f, 300.0f, 300.0f),
+	glm::vec3(300.0f, 300.0f, 300.0f),
+	glm::vec3(300.0f, 300.0f, 300.0f)
 	};
 	for (int i = 0; i < 4; i++) {
 		auto pointLight = new PointLight();
@@ -400,10 +400,10 @@ case MaterialType::PbrMaterial: {
 	break;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc5MDMxNTgzNCwtMjIwMTk5OTI0LC05ND
-g5ODAwMzcsLTI0Nzg5MDU3NSwxMzI1NzAzNDQ2LC0zNzE0MzEz
-MzgsMTQ5OTQ4NDc3MCw2MDk0MDQwMjUsLTQ2NTgzOTM0NSwtMj
-IwNDk1OTg2LDcyODQ5ODA0LC0xNjIxMzIwOTMxLC0xNzM3NTk1
-NTU2LC0yMDEzMjQ4MzY1LDExMjk2ODI1MTQsLTIwODg3NDY2MT
-JdfQ==
+eyJoaXN0b3J5IjpbNzgyODk2Njg0LDE3OTAzMTU4MzQsLTIyMD
+E5OTkyNCwtOTQ4OTgwMDM3LC0yNDc4OTA1NzUsMTMyNTcwMzQ0
+NiwtMzcxNDMxMzM4LDE0OTk0ODQ3NzAsNjA5NDA0MDI1LC00Nj
+U4MzkzNDUsLTIyMDQ5NTk4Niw3Mjg0OTgwNCwtMTYyMTMyMDkz
+MSwtMTczNzU5NTU1NiwtMjAxMzI0ODM2NSwxMTI5NjgyNTE0LC
+0yMDg4NzQ2NjEyXX0=
 -->
