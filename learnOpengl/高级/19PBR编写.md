@@ -294,6 +294,7 @@ void main()
 我们现在要做的就是正确构建`pbr`计算公式，然后通过`renderObject`把相应的变量传到`shader`中
 
 # 完善frag中的main函数
+就是完善全流程的`pbr`计算，利用`D G F`三个函数来进行计算，得到最终的颜色输出
 ```glsl
 void main()
 {
@@ -351,7 +352,7 @@ void main()
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI5MDIwMTIwOCwtMjQ3ODkwNTc1LDEzMj
+eyJoaXN0b3J5IjpbMTM0MDMxNTgxMiwtMjQ3ODkwNTc1LDEzMj
 U3MDM0NDYsLTM3MTQzMTMzOCwxNDk5NDg0NzcwLDYwOTQwNDAy
 NSwtNDY1ODM5MzQ1LC0yMjA0OTU5ODYsNzI4NDk4MDQsLTE2Mj
 EzMjA5MzEsLTE3Mzc1OTU1NTYsLTIwMTMyNDgzNjUsMTEyOTY4
