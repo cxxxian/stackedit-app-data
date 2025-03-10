@@ -185,11 +185,29 @@ vec3 fresnelSchlick(vec3 F0, float HdotV){
 ```
 
 # 构造实验环境
+先把`renderer.h`中的两个函数改成`std::vector<PointLight*> pointLights`点光源数组
+```cpp
+void render(
+	Scene* scene,
+	Camera* camera,
+	std::vector<PointLight*> pointLights,
+	AmbientLight* ambLight,
+	unsigned int fbo = 0
+);
+
+void renderObject(
+	Object* object,
+	Camera* camera,
+	std::vector<PointLight*> pointLights,
+	AmbientLight* ambLight
+);
+```
 ## 1 渲染环境改为四个点光源
+
 ## 2 生成一堆阵列小球
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjA5NDA0MDI1LC00NjU4MzkzNDUsLTIyMD
-Q5NTk4Niw3Mjg0OTgwNCwtMTYyMTMyMDkzMSwtMTczNzU5NTU1
-NiwtMjAxMzI0ODM2NSwxMTI5NjgyNTE0LC0yMDg4NzQ2NjEyXX
-0=
+eyJoaXN0b3J5IjpbMTQ5OTQ4NDc3MCw2MDk0MDQwMjUsLTQ2NT
+gzOTM0NSwtMjIwNDk1OTg2LDcyODQ5ODA0LC0xNjIxMzIwOTMx
+LC0xNzM3NTk1NTU2LC0yMDEzMjQ4MzY1LDExMjk2ODI1MTQsLT
+IwODg3NDY2MTJdfQ==
 -->
