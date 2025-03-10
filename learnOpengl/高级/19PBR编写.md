@@ -457,10 +457,29 @@ void prepare() {
 ```
 
 然后去`pbr.frag`中设计相关贴图变量
-但是我们要先去`pbr.vert`中计算一个`tbn`传到`frag`，后续的`normal`计算需要用（因为默认的normal贴图都是）
+但是我们要先去`pbr.vert`中计算一个`tbn`传到`frag`，后续的`normal`计算需要用（因为默认的`normal`贴图都是朝向z轴的，我们利用`tbn`才能支持旋转后也正确得到法线）
+所以如下，
+我们需要从外界传入`aTangent`，利用`aTangent`
+```glsl
+#version 460 core
+...
+layout (location = 3) in vec3 aTangent;
+...
+out mat3 tbn;
 
+//aPos作为attribute（属性）传入shader
+//不允许更改的
+void main()
+{
+	...
+	normal =  normalMatrix * aNormal;
+	vec3 tangent = normalize(mat3(modelMatrix) * aTangent);
+	vec3 bitangent = normalize(cross(normal, tangent));
+	tbn = mat3(tangent, bitangent, normal);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2Mjg0MzE5LC0yNzM3MzE1MzYsMTM1ND
+eyJoaXN0b3J5IjpbOTQ0NjgwODgxLC0yNzM3MzE1MzYsMTM1ND
 A4NzAyOSwtNjQxMTg4MTU0LC04MDY0MTk4NzAsNzgyODk2Njg0
 LDE3OTAzMTU4MzQsLTIyMDE5OTkyNCwtOTQ4OTgwMDM3LC0yND
 c4OTA1NzUsMTMyNTcwMzQ0NiwtMzcxNDMxMzM4LDE0OTk0ODQ3
