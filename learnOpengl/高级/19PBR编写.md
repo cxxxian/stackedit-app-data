@@ -372,11 +372,38 @@ void prepare() {
 }
 ```
 ## 2 更新uniform
+将相关参数都传到`shader`中
+```cpp
+case MaterialType::PbrMaterial: {
+	PbrMaterial* pbrMat = (PbrMaterial*)material;
+
+	//mvp以及基础参数
+	shader->setMatrix4x4("modelMatrix", mesh->getModelMatrix());
+	shader->setMatrix4x4("viewMatrix", camera->getViewMatrix());
+	shader->setMatrix4x4("projectionMatrix", camera->getProjectionMatrix());
+	auto normalMatrix = glm::mat3(glm::transpose(glm::inverse(mesh->getModelMatrix())));
+	shader->setMatrix3x3("normalMatrix", normalMatrix);
+	shader->setVector3("cameraPosition", camera->mPosition);
+
+	//pbr相关参数更新
+	shader->setFloat("roughness", pbrMat->mRoughness);
+	shader->setFloat("metallic", pbrMat->mMetallic);
+	shader->setInt("albedoTex", 0);
+	pbrMat->mAlbedo->setUnit(0);
+	pbrMat->mAlbedo->bind();
+
+	for (int i = 0; i < pointLights.size(); i++) {
+		shader->setVector3("pointLights[" + std::to_string(i) + "].color", pointLights[i]->mColor);
+		shader->setVector3("pointLights[" + std::to_string(i) + "].position", pointLights[i]->getPosition());
+	}
+}
+	break;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjE4ODMzNzM4LC0yMjAxOTk5MjQsLTk0OD
-k4MDAzNywtMjQ3ODkwNTc1LDEzMjU3MDM0NDYsLTM3MTQzMTMz
-OCwxNDk5NDg0NzcwLDYwOTQwNDAyNSwtNDY1ODM5MzQ1LC0yMj
-A0OTU5ODYsNzI4NDk4MDQsLTE2MjEzMjA5MzEsLTE3Mzc1OTU1
-NTYsLTIwMTMyNDgzNjUsMTEyOTY4MjUxNCwtMjA4ODc0NjYxMl
-19
+eyJoaXN0b3J5IjpbMTc5MDMxNTgzNCwtMjIwMTk5OTI0LC05ND
+g5ODAwMzcsLTI0Nzg5MDU3NSwxMzI1NzAzNDQ2LC0zNzE0MzEz
+MzgsMTQ5OTQ4NDc3MCw2MDk0MDQwMjUsLTQ2NTgzOTM0NSwtMj
+IwNDk1OTg2LDcyODQ5ODA0LC0xNjIxMzIwOTMxLC0xNzM3NTk1
+NTU2LC0yMDEzMjQ4MzY1LDExMjk2ODI1MTQsLTIwODg3NDY2MT
+JdfQ==
 -->
