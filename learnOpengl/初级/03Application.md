@@ -3,7 +3,7 @@
 ![输入图片说明](/imgs/2024-10-13/sVDUnB9Ry98gBWSi.png)
 # 按三个环节设计接口
 ![输入图片说明](/imgs/2024-10-13/S2w0kZL0slRjxDTp.png)
-```
+```从【【
 bool Application::init(const int& width, const int& height)
 {
 	mWidth = width;
@@ -133,5 +133,5 @@ KeyBoardCallback mKeyBoardCallback{ nullptr };
 void setKeyBoardCallback(KeyBoardCallback callback) { mKeyBoardCallback = callback; }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzg2NzEwOTBdfQ==
+eyJoaXN0b3J5IjpbMTM5ODIyODI0MCwzODY3MTA5MF19
 -->
