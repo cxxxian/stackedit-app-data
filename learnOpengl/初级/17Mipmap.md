@@ -26,11 +26,11 @@
 ![输入图片说明](/imgs/2024-10-27/EY9G9rShjdL29bn1.png)
 在texture的构造函数中
 将原本的glTexImage2D改为
-```
+```cpp
 glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
 ```
 自己设置级别的level。此做法用来：遍历每个mipmap的层级，为每个级别的mipmap填充图片数据
-```
+```cpp
 for (int level = 0; true; ++level) {
         //1 将当前级别的mipmap对应的数据发往gpu端
         glTexImage2D(GL_TEXTURE_2D, level, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
@@ -44,7 +44,7 @@ for (int level = 0; true; ++level) {
     }
 ```
 然后在vertex.glsl中，添加时间并利用时间进行缩放，此处要去main中绑定time：`shader->setFloat("time", glfwGetTime());`
-```
+```glsl
 #version 460 core
 layout (location = 0) in vec3 aPos;
 layout (location = 1) in vec3 aColor;
@@ -69,7 +69,7 @@ void main()
 我们原本是这样用的`glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);`
 但是这样的过滤方式并不会用上mipmap，我们需要自由组合，如`GL_NEAREST_MIPMAP_LINEAR`或`GL_LINER_MIPMAP_NEAREST`等等这种。
 因为mipmap主要是针对大图像采样到小像素范围中，所以只要改下面那一句。
-```
+```cpp
 //4 设置纹理过滤方式
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     //****重要****
@@ -81,5 +81,5 @@ void main()
     //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjA3NDg5NDg2XX0=
+eyJoaXN0b3J5IjpbOTE0MjQ0MzY1LDYwNzQ4OTQ4Nl19
 -->
