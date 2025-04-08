@@ -42,10 +42,52 @@
 
 # 实现预积分工具编写
 ## 1 清理代码，只渲染一次即可
+`render.h`全部删光了，声明一个方法`renderIBLDiffuse`用来渲染预积分贴图
+```cpp
+class Renderer {
+public:
+	Renderer();
+	~Renderer();
 
+	void renderIBLDiffuse(Texture* hdrTex, Framebuffer* fbo);
+
+	void setClearColor(glm::vec3 color);
+
+private:
+	Shader* mIBLDiffuseShader{ nullptr };
+};
+```
+`main.cpp`也基本上删光了
+‘声明一个
+```cpp
+Renderer* renderer = nullptr;
+
+Framebuffer* fbo = nullptr;
+
+int WIDTH = 128;
+int HEIGHT = 128;
+
+glm::vec3 clearColor{};
+
+void doRender(std::string path) {
+
+}
+int main() {
+	if (!glApp->init(WIDTH, HEIGHT)) {
+		return -1;
+	}
+	//设置opengl视口以及清理颜色
+	GL_CALL(glViewport(0, 0, WIDTH, HEIGHT));
+	GL_CALL(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
+	
+	doRender("xxx");
+	glApp->destroy();
+	return 0;
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MzQ5NzA5MDUsLTMyODYwNTg2OCwxMD
-M5MzAyMDE1LDE3NjExNzE4NTksMTcxNDQ0NzA4NCwyMzQzODk4
-OSw2NjIzNTE1LC0xOTA2ODIzNTczLDE3NDUwMTI3MjYsMTUzNT
-Q0MDIxOCwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbMjAwNjExMzg1NCwtMzI4NjA1ODY4LDEwMz
+kzMDIwMTUsMTc2MTE3MTg1OSwxNzE0NDQ3MDg0LDIzNDM4OTg5
+LDY2MjM1MTUsLTE5MDY4MjM1NzMsMTc0NTAxMjcyNiwxNTM1ND
+QwMjE4LC0yMDg4NzQ2NjEyXX0=
 -->
