@@ -23,13 +23,13 @@
 ![输入图片说明](/imgs/2025-04-08/c8f3ERlwJXefgF8B.png)
 
 ## 向量空间转换
-把P乘上法线坐标系gou
+把法线坐标系下的`P`乘上法线坐标系构成的矩阵，即可得到`P`在世界坐标系下的值
 
 ![输入图片说明](/imgs/2025-04-08/XeIErVIM2w3CKoIc.png)
 
 ![输入图片说明](/imgs/2025-04-08/PJsw238lPdd6ETvQ.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1NTY0NDg4NCwyMzQzODk4OSw2NjIzNT
+eyJoaXN0b3J5IjpbMTcxNDQ0NzA4NCwyMzQzODk4OSw2NjIzNT
 E1LC0xOTA2ODIzNTczLDE3NDUwMTI3MjYsMTUzNTQ0MDIxOCwt
 MjA4ODc0NjYxMl19
 -->
