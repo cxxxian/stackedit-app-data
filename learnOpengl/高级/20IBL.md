@@ -10,7 +10,7 @@
 
 ![输入图片说明](/imgs/2025-04-08/5wJpcHKCBclPVSm2.png)
 
-## 积分计算
+## 积分计算（先考虑diffuse）
 
 **对内层和外层积分分别使用两次黎曼和**
 
@@ -40,7 +40,8 @@
 
 ![输入图片说明](/imgs/2025-04-08/Y3xPs3ic2wj9KwtI.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAzOTMwMjAxNSwxNzYxMTcxODU5LDE3MT
-Q0NDcwODQsMjM0Mzg5ODksNjYyMzUxNSwtMTkwNjgyMzU3Mywx
-NzQ1MDEyNzI2LDE1MzU0NDAyMTgsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbLTMyODYwNTg2OCwxMDM5MzAyMDE1LDE3Nj
+ExNzE4NTksMTcxNDQ0NzA4NCwyMzQzODk4OSw2NjIzNTE1LC0x
+OTA2ODIzNTczLDE3NDUwMTI3MjYsMTUzNTQ0MDIxOCwtMjA4OD
+c0NjYxMl19
 -->
