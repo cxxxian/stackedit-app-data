@@ -88,9 +88,10 @@ int main() {
 ```
 
 ## 2 引入TinyExr，用于读取EXR的HDR贴图
-在`application`引入`tinyexr.h`，`tinyexr.cc`两个文件，然后需要
+在`application`目录下引入`tinyexr.h`，`tinyexr.cc`两个文件，
+然后需要`application`目录下`cmakeList`添加配置，因为以前没有`.cc`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg1NTQ1ODA0NCwxMjc2MDc2MjY0LC0zMj
+eyJoaXN0b3J5IjpbMjA3NzY2NTcyNywxMjc2MDc2MjY0LC0zMj
 g2MDU4NjgsMTAzOTMwMjAxNSwxNzYxMTcxODU5LDE3MTQ0NDcw
 ODQsMjM0Mzg5ODksNjYyMzUxNSwtMTkwNjgyMzU3MywxNzQ1MD
 EyNzI2LDE1MzU0NDAyMTgsLTIwODg3NDY2MTJdfQ==
