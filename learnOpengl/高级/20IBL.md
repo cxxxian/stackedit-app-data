@@ -88,10 +88,10 @@ int main() {
 ```
 
 ## 2 引入TinyExr，用于读取EXR的HDR贴图
-tinyexr.h`
+在`application`引入`tinyexr.h`，`tinyexr.cc`两个文件，然后需要
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDkyMzIzMDUsMTI3NjA3NjI2NCwtMz
-I4NjA1ODY4LDEwMzkzMDIwMTUsMTc2MTE3MTg1OSwxNzE0NDQ3
-MDg0LDIzNDM4OTg5LDY2MjM1MTUsLTE5MDY4MjM1NzMsMTc0NT
-AxMjcyNiwxNTM1NDQwMjE4LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbMTg1NTQ1ODA0NCwxMjc2MDc2MjY0LC0zMj
+g2MDU4NjgsMTAzOTMwMjAxNSwxNzYxMTcxODU5LDE3MTQ0NDcw
+ODQsMjM0Mzg5ODksNjYyMzUxNSwtMTkwNjgyMzU3MywxNzQ1MD
+EyNzI2LDE1MzU0NDAyMTgsLTIwODg3NDY2MTJdfQ==
 -->
