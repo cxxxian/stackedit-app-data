@@ -32,11 +32,11 @@
 对应着公式看程序
 `numSamples`循环结束后就会变成`n1 * n2`，
 `localVec`是采样点在法线坐标系下的位置
-然后我们利用法线坐标系矩阵将
+然后我们利用法线坐标系矩阵将`localVec`转到世界坐标系下
 
 ![输入图片说明](/imgs/2025-04-08/iJzI5MwNxsH3Q6q6.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDcyNzg5MywxNzE0NDQ3MDg0LDIzND
+eyJoaXN0b3J5IjpbMTc2MTE3MTg1OSwxNzE0NDQ3MDg0LDIzND
 M4OTg5LDY2MjM1MTUsLTE5MDY4MjM1NzMsMTc0NTAxMjcyNiwx
 NTM1NDQwMjE4LC0yMDg4NzQ2NjEyXX0=
 -->
