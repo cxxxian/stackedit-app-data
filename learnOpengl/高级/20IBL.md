@@ -36,9 +36,11 @@
 
 ![输入图片说明](/imgs/2025-04-08/iJzI5MwNxsH3Q6q6.png)
 
+做预积分，把半球的与动态参数无关的积分结果存在`IBL`贴图
+
 ![输入图片说明](/imgs/2025-04-08/Y3xPs3ic2wj9KwtI.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzNzA1NDQzNCwxNzYxMTcxODU5LDE3MT
+eyJoaXN0b3J5IjpbMTAzOTMwMjAxNSwxNzYxMTcxODU5LDE3MT
 Q0NDcwODQsMjM0Mzg5ODksNjYyMzUxNSwtMTkwNjgyMzU3Mywx
 NzQ1MDEyNzI2LDE1MzU0NDAyMTgsLTIwODg3NDY2MTJdfQ==
 -->
