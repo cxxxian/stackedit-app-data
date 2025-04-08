@@ -96,9 +96,16 @@ file(GLOB_RECURSE APP ./  *.cpp *.cc)
 add_library(app ${APP} )
 ```
 还需要引入一个`miniz`文件夹，配合`tinyexr.h`，`tinyexr.cc`使用
-要使用这个文件夹，就得去最外层的
+要使用这个文件夹，就得去最外层的`cmakeList`添加文件配置
+```
+include_directories(
+	SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/thirdParty/include
+	SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/application/miniz
+)
+```
+这样就可以编译成功了
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODE0Nzg3NzI5LDEyNzYwNzYyNjQsLTMyOD
+eyJoaXN0b3J5IjpbNzcxOTExNzA1LDEyNzYwNzYyNjQsLTMyOD
 YwNTg2OCwxMDM5MzAyMDE1LDE3NjExNzE4NTksMTcxNDQ0NzA4
 NCwyMzQzODk4OSw2NjIzNTE1LC0xOTA2ODIzNTczLDE3NDUwMT
 I3MjYsMTUzNTQ0MDIxOCwtMjA4ODc0NjYxMl19
