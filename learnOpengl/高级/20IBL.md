@@ -35,8 +35,10 @@
 然后我们利用法线坐标系矩阵将`localVec`转到世界坐标系下
 
 ![输入图片说明](/imgs/2025-04-08/iJzI5MwNxsH3Q6q6.png)
+
+![输入图片说明](/imgs/2025-04-08/Y3xPs3ic2wj9KwtI.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2MTE3MTg1OSwxNzE0NDQ3MDg0LDIzND
-M4OTg5LDY2MjM1MTUsLTE5MDY4MjM1NzMsMTc0NTAxMjcyNiwx
-NTM1NDQwMjE4LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbMTUzNzA1NDQzNCwxNzYxMTcxODU5LDE3MT
+Q0NDcwODQsMjM0Mzg5ODksNjYyMzUxNSwtMTkwNjgyMzU3Mywx
+NzQ1MDEyNzI2LDE1MzU0NDAyMTgsLTIwODg3NDY2MTJdfQ==
 -->
