@@ -88,6 +88,8 @@ int main() {
 ```
 
 ## 2 引入TinyExr，用于读取EXR的HDR贴图
+此处专门说明一下这个`EXR`格式的图片，内部存储的亮度是可以超过一的，所以是`HDR`贴图，用这个比较好
+
 在`application`目录下引入`tinyexr.h`，`tinyexr.cc`两个文件，
 然后需要`application`目录下`cmakeList`添加配置，因为以前没有`.cc`文件
 ```cmake
@@ -105,8 +107,8 @@ include_directories(
 ```
 这样就可以编译成功了
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzcxOTExNzA1LDEyNzYwNzYyNjQsLTMyOD
-YwNTg2OCwxMDM5MzAyMDE1LDE3NjExNzE4NTksMTcxNDQ0NzA4
-NCwyMzQzODk4OSw2NjIzNTE1LC0xOTA2ODIzNTczLDE3NDUwMT
-I3MjYsMTUzNTQ0MDIxOCwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTE2NDM1OTczNjgsMTI3NjA3NjI2NCwtMz
+I4NjA1ODY4LDEwMzkzMDIwMTUsMTc2MTE3MTg1OSwxNzE0NDQ3
+MDg0LDIzNDM4OTg5LDY2MjM1MTUsLTE5MDY4MjM1NzMsMTc0NT
+AxMjcyNiwxNTM1NDQwMjE4LC0yMDg4NzQ2NjEyXX0=
 -->
