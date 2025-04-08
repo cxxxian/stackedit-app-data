@@ -58,7 +58,8 @@ private:
 };
 ```
 `main.cpp`也基本上删光了
-‘声明一个
+声明一个`doRender`方法，用来将传入的环境贴图进行预积分
+以前所有的渲染逻辑都删掉
 ```cpp
 Renderer* renderer = nullptr;
 
@@ -86,8 +87,8 @@ int main() {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwNjExMzg1NCwtMzI4NjA1ODY4LDEwMz
-kzMDIwMTUsMTc2MTE3MTg1OSwxNzE0NDQ3MDg0LDIzNDM4OTg5
-LDY2MjM1MTUsLTE5MDY4MjM1NzMsMTc0NTAxMjcyNiwxNTM1ND
-QwMjE4LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTE3Njk2NjcyMDUsLTMyODYwNTg2OCwxMD
+M5MzAyMDE1LDE3NjExNzE4NTksMTcxNDQ0NzA4NCwyMzQzODk4
+OSw2NjIzNTE1LC0xOTA2ODIzNTczLDE3NDUwMTI3MjYsMTUzNT
+Q0MDIxOCwtMjA4ODc0NjYxMl19
 -->
