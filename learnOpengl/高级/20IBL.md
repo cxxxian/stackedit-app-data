@@ -89,10 +89,17 @@ int main() {
 
 ## 2 引入TinyExr，用于读取EXR的HDR贴图
 在`application`目录下引入`tinyexr.h`，`tinyexr.cc`两个文件，
-然后需要`application`目录下`cmakeList`添加配置，因为以前没有`.cc`
+然后需要`application`目录下`cmakeList`添加配置，因为以前没有`.cc`文件
+```cmake
+#递归将本文件夹下所有cpp
+file(GLOB_RECURSE APP ./  *.cpp *.cc)
+add_library(app ${APP} )
+```
+还需要引入一个`miniz`文件夹，配合`tinyexr.h`，`tinyexr.cc`使用
+要使用这个文件夹，就得去最外层的
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3NzY2NTcyNywxMjc2MDc2MjY0LC0zMj
-g2MDU4NjgsMTAzOTMwMjAxNSwxNzYxMTcxODU5LDE3MTQ0NDcw
-ODQsMjM0Mzg5ODksNjYyMzUxNSwtMTkwNjgyMzU3MywxNzQ1MD
-EyNzI2LDE1MzU0NDAyMTgsLTIwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbODE0Nzg3NzI5LDEyNzYwNzYyNjQsLTMyOD
+YwNTg2OCwxMDM5MzAyMDE1LDE3NjExNzE4NTksMTcxNDQ0NzA4
+NCwyMzQzODk4OSw2NjIzNTE1LC0xOTA2ODIzNTczLDE3NDUwMT
+I3MjYsMTUzNTQ0MDIxOCwtMjA4ODc0NjYxMl19
 -->
