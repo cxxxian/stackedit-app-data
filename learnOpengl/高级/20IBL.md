@@ -29,9 +29,14 @@
 
 ![输入图片说明](/imgs/2025-04-08/PJsw238lPdd6ETvQ.png)
 
+对应着公式看程序
+`numSamples`循环结束后就会变成`n1 * n2`，
+`localVec`是采样点在法线坐标系下的位置
+然后我们利用法线坐标系矩阵将
+
 ![输入图片说明](/imgs/2025-04-08/iJzI5MwNxsH3Q6q6.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4Mzc2NTg5NywxNzE0NDQ3MDg0LDIzND
+eyJoaXN0b3J5IjpbLTE1MDcyNzg5MywxNzE0NDQ3MDg0LDIzND
 M4OTg5LDY2MjM1MTUsLTE5MDY4MjM1NzMsMTc0NTAxMjcyNiwx
 NTM1NDQwMjE4LC0yMDg4NzQ2NjEyXX0=
 -->
