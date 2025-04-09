@@ -1,12 +1,20 @@
 # PBR渲染流程加入IBL
 ## 1 在PBR的Shader中，加入irradianceMap的使用，并且输出颜色实验
-此处是作为实验，直接把`irradiance`颜色输出，
+此处是作为实验，直接把`irradiance`颜色输出，`irradiance`是我们预积分得到的结果
+
+![输入图片说明](/imgs/2025-04-08/Y3xPs3ic2wj9KwtI.png)
+
+根据公式，预积分得到的`irradiance`还要乘上自身的`color`和`kd`才是真正的环境光的值
+
 ```glsl
 uniform samplerCube irradianceMap;
 void main()
 {
 	...
 	vec3 irradiance = texture(irradianceMap, N).rgb;
+	//最终的L = irradiance * color * kd;
+	vec3 kd = 1.0 - fresnelSchlickRoughness(F0,max(dot(N,V),0.0), 	roughness);
+	vec3 ambient = irradiance * albedo * kd;
 	FragColor = vec4(irradiance, 1.0);
 }
 ```
@@ -35,5 +43,5 @@ case MaterialType::PbrMaterial: {
 ## 3 构造场景，加入天空盒
 ## 4 PBR光照当中加入间接光照
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTY5NDEzOTAsMTYxMTk4Nzk0N119
+eyJoaXN0b3J5IjpbMjAwMTg0OTI5MCwxNjExOTg3OTQ3XX0=
 -->
