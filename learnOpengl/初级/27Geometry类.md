@@ -204,11 +204,13 @@ int main() {
 ![输入图片说明](/imgs/2024-11-20/dcSRo15azmXF0sOG.png)
 
 ### uv值分析
+
 ![输入图片说明](/imgs/2024-11-20/kvNhu9aQcU0bvnS9.png)
 
 ### 索引值分析
 此处不需要等于 `i < latitude, j < long`，是因为，我们通过p1，可以知道p2，p3，p4。
 举一反三，到m+7的时候，我们就可以得到m+8，不用再算以m+8为基础的了
+
 ![输入图片说明](/imgs/2024-11-20/Ba5qJ15CVUxRnnYo.png)
 ### 代码实现
 ```cpp
@@ -307,6 +309,6 @@ Geometry* Geometry::createSphere(float radius)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcyNTE4MDYxNywxOTM0MTgzODksLTY5MD
-MxNzE4OV19
+eyJoaXN0b3J5IjpbLTk3NTkyMzgzMSwxNzI1MTgwNjE3LDE5Mz
+QxODM4OSwtNjkwMzE3MTg5XX0=
 -->
