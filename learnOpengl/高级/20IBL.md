@@ -204,10 +204,34 @@ Texture* Texture::createHDRCubeMap(int width, int height)
 
 ## FBO类新增工具函数
 ### 3.3 createHDRCubeMapFBO
-```c
+```cpp
+Framebuffer* Framebuffer::createCubeMapHDRFbo(int width, int height)
+{
+	Framebuffer* fb = new Framebuffer();
+	unsigned int fbo;
+	glGenFramebuffers(1, &fbo);
+	glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+
+	Texture* colorAttachment = Texture::createHDRCubeMap(width, height);
+	glFramebufferTexture2D(
+		GL_FRAMEBUFFER,
+		GL_COLOR_ATTACHMENT0,
+		GL_TEXTURE_CUBE_MAP_POSITIVE_X,
+		colorAttachment->getTexture(),
+		0
+	);
+
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	fb->mFBO = fbo;
+	fb->mColorAttachment = colorAttachment;
+	fb->mWidth = width;
+	fb->mHeight = height;
+
+	return fb;
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3MDU2MTI2NiwtMTI3MjY4NDI1LC0xNj
+eyJoaXN0b3J5IjpbMTkzNjEwMDA1OCwtMTI3MjY4NDI1LC0xNj
 QzNTk3MzY4LDEyNzYwNzYyNjQsLTMyODYwNTg2OCwxMDM5MzAy
 MDE1LDE3NjExNzE4NTksMTcxNDQ0NzA4NCwyMzQzODk4OSw2Nj
 IzNTE1LC0xOTA2ODIzNTczLDE3NDUwMTI3MjYsMTUzNTQ0MDIx
