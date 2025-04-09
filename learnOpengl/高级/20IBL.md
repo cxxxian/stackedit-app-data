@@ -109,6 +109,8 @@ include_directories(
 
 ## 3 纹理类新增工具函数
 ### 3.1 createExrTexture
+这里运用了新的库，`TINYEXR_IMPLEMENTATION`表示启用
+正常使用`tiny`库进行图片的读取，不同的地方在于，`tiny`库并没有内置图片旋转的方法，而一般图片的原点在左上角，`OpenGL`shi
 ```cpp
 #define TINYEXR_IMPLEMENTATION
 #include "../application/tinyexr.h"
@@ -164,9 +166,9 @@ Texture* Texture::createExrTexture(const std::string& path)
 ```
 ### 3.2 createHDRCubeMap
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzIyODgyNjU5LC0xNjQzNTk3MzY4LDEyNz
-YwNzYyNjQsLTMyODYwNTg2OCwxMDM5MzAyMDE1LDE3NjExNzE4
-NTksMTcxNDQ0NzA4NCwyMzQzODk4OSw2NjIzNTE1LC0xOTA2OD
-IzNTczLDE3NDUwMTI3MjYsMTUzNTQ0MDIxOCwtMjA4ODc0NjYx
-Ml19
+eyJoaXN0b3J5IjpbLTg1MTEzOTk1NiwtMTY0MzU5NzM2OCwxMj
+c2MDc2MjY0LC0zMjg2MDU4NjgsMTAzOTMwMjAxNSwxNzYxMTcx
+ODU5LDE3MTQ0NDcwODQsMjM0Mzg5ODksNjYyMzUxNSwtMTkwNj
+gyMzU3MywxNzQ1MDEyNzI2LDE1MzU0NDAyMTgsLTIwODg3NDY2
+MTJdfQ==
 -->
