@@ -248,13 +248,69 @@ void main(){
 	uvw = normalize(aPos);
 }
 ```
-```
+`iblDiffuse.frag`如下：
+
+![输入图片说明](/imgs/2025-04-08/Y3xPs3ic2wj9KwtI.png)
+
+对应着公式来
+```cpp
+#version 460
+
+out vec4 FragColor;
+in vec3 uvw;
+
+uniform sampler2D envMap;
+
+const float PI = 3.1415926535897932384626433832795;
+
+vec2  uvwToUv(vec3 uvwN){
+	float  phi = asin(uvwN.y);
+	float theta = atan(uvwN.z, uvwN.x);
+	float u = theta / (2.0 * PI) + 0.5;
+	float v = phi / PI + 0.5;
+	return vec2(u, v);
+}
+
+void main(){
+	vec3 normal = normalize(uvw);
+	vec3 irradiance = vec3(0.0);
+
+	//准备以法线为z轴的本地坐标系
+	vec3 up = vec3(0.0, 1.0, 0.0);
+	vec3 right = normalize(cross(up, normal));
+	up = normalize(cross(normal, right));
+
+	float delta = 0.025;
+	float sampleNum = 0.0;
+	for(float phi = 0.0; phi < 2.0 * PI; phi += delta){
+		for(float theta = 0.0; theta < 0.5 * PI; theta += delta){
+			//1 极坐标转化为采样的local向量
+			vec3 localVec = vec3(sin(theta) * cos(phi), sin(theta) * sin(phi), cos(theta));
+
+			//2 local向量转化为world坐标系中
+			vec3 worldVec = localVec.x * right + localVec.y * up + localVec.z * normal;
+
+			//3 通过world向量采样球面贴图
+			vec2 uv = uvwToUv(normalize(worldVec));
+			vec3 Li = texture(envMap, uv).rgb;
+
+			//4 将Radiance通过公式转化为Irradiance累加到变量上
+			irradiance += Li * cos(theta) * sin(theta);
+			
+
+			sampleNum++;
+		}
+	}
+
+	irradiance = PI * irradiance * 1.0 / sampleNum;
+	FragColor = vec4(irradiance, 1.0);
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDM1MjM2MjMsLTQwNDQ1OTk0MywtMj
-U2MDcwMzY3LDE5MzYxMDAwNTgsLTEyNzI2ODQyNSwtMTY0MzU5
-NzM2OCwxMjc2MDc2MjY0LC0zMjg2MDU4NjgsMTAzOTMwMjAxNS
-wxNzYxMTcxODU5LDE3MTQ0NDcwODQsMjM0Mzg5ODksNjYyMzUx
-NSwtMTkwNjgyMzU3MywxNzQ1MDEyNzI2LDE1MzU0NDAyMTgsLT
-IwODg3NDY2MTJdfQ==
+eyJoaXN0b3J5IjpbNjY4OTkxNzY3LC00MDQ0NTk5NDMsLTI1Nj
+A3MDM2NywxOTM2MTAwMDU4LC0xMjcyNjg0MjUsLTE2NDM1OTcz
+NjgsMTI3NjA3NjI2NCwtMzI4NjA1ODY4LDEwMzkzMDIwMTUsMT
+c2MTE3MTg1OSwxNzE0NDQ3MDg0LDIzNDM4OTg5LDY2MjM1MTUs
+LTE5MDY4MjM1NzMsMTc0NTAxMjcyNiwxNTM1NDQwMjE4LC0yMD
+g4NzQ2NjEyXX0=
 -->
