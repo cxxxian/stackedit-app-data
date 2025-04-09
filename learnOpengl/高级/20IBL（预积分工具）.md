@@ -345,7 +345,7 @@ int main() {
 ```
 ### 5.2 渲染六个CubeMap的面，并且导出EXR图片
 完善`renderer`中的方法
-此处的相机矩阵（`viewMatrix`）要尊崇
+此处的相机矩阵（`viewMatrix`）尊崇`OpenGL`给的规范设计，在点光源笔记有详细解释
 ```cpp
 void Renderer::renderIBLDiffuse(Texture* hdrTex, Framebuffer* fbo)
 {
@@ -400,6 +400,6 @@ void Renderer::renderIBLDiffuse(Texture* hdrTex, Framebuffer* fbo)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIzNzM4Mzg1NiwtMTI0NTQ5NjI0OSwxMj
-c5MTUyMDc1XX0=
+eyJoaXN0b3J5IjpbLTE5MTk3MDk2ODksLTEyNDU0OTYyNDksMT
+I3OTE1MjA3NV19
 -->
