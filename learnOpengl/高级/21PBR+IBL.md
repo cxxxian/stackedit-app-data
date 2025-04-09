@@ -11,8 +11,19 @@ public:
 	Texture* mIrradianceIndirect{ nullptr };//环境贴图IBL
 };
 ```
+相应的要去`renderer.cpp`中的渲染函数加入``贴图的传输
+```cpp
+case MaterialType::PbrMaterial: {
+	...
+	shader->setInt("irradianceMap", 4);
+	pbrMat->mIrradianceIndirect->setUnit(4);
+	pbrMat->mIrradianceIndirect->bind();
+	...
+}
+	break;
+```
 ## 3 构造场景，加入天空盒
 ## 4 PBR光照当中加入间接光照
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzAwNzA2NDIyLDE2MTE5ODc5NDddfQ==
+eyJoaXN0b3J5IjpbLTExMjIxNTQ1MiwxNjExOTg3OTQ3XX0=
 -->
