@@ -309,13 +309,46 @@ void main(){
 
 ## 5 编写执行代码
 ### 5.1 读取球面贴图，制作FBO
+`main.cpp`中的`doRender`方法如下，我们读取贴图制作材质，然后创建一个`fbo`，然后送到`renderer`那边展开渲染工作
+```cpp
+void doRender(std::string path) {
+	//1 读取exr的球面环境贴图
+	auto exrTex = Texture::createExrTexture(path);
+
+	//2 创建带有cubemapColorAttachment的FBO
+	auto fbo = Framebuffer::createCubeMapHDRFbo(WIDTH, HEIGHT);
+
+	//3 进行渲染工作
+	renderer = new Renderer();
+	renderer->renderIBLDiffuse(exrTex, fbo);
+
+}
+```
+最后在main方法中调用，我们zhi'xu'yao'xuan
+```cpp
+int main() {
+	if (!glApp->init(WIDTH, HEIGHT)) {
+		return -1;
+	}
+
+
+	//设置opengl视口以及清理颜色
+	GL_CALL(glViewport(0, 0, WIDTH, HEIGHT));
+	GL_CALL(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
+	
+	doRender("assets/textures/ibl/warm_bar_4k.exr");
+
+	glApp->destroy();
+
+	return 0;
+}
 ```
 ### 5.2 渲染六个CubeMap的面，并且导出EXR图片
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2MDczODIyNSwtMTU1NjgwMzk1MywtND
-A0NDU5OTQzLC0yNTYwNzAzNjcsMTkzNjEwMDA1OCwtMTI3MjY4
-NDI1LC0xNjQzNTk3MzY4LDEyNzYwNzYyNjQsLTMyODYwNTg2OC
-wxMDM5MzAyMDE1LDE3NjExNzE4NTksMTcxNDQ0NzA4NCwyMzQz
-ODk4OSw2NjIzNTE1LC0xOTA2ODIzNTczLDE3NDUwMTI3MjYsMT
-UzNTQ0MDIxOCwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbNzU5NjY5MDgwLC0xNTU2ODAzOTUzLC00MD
+Q0NTk5NDMsLTI1NjA3MDM2NywxOTM2MTAwMDU4LC0xMjcyNjg0
+MjUsLTE2NDM1OTczNjgsMTI3NjA3NjI2NCwtMzI4NjA1ODY4LD
+EwMzkzMDIwMTUsMTc2MTE3MTg1OSwxNzE0NDQ3MDg0LDIzNDM4
+OTg5LDY2MjM1MTUsLTE5MDY4MjM1NzMsMTc0NTAxMjcyNiwxNT
+M1NDQwMjE4LC0yMDg4NzQ2NjEyXX0=
 -->
