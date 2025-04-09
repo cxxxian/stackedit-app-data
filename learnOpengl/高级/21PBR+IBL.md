@@ -88,9 +88,28 @@ void prepare() {
 ![输入图片说明](/imgs/2025-04-09/AHVZ12IzTgRTkOx7.png)
 
 ## 4 PBR光照当中加入间接光照
-```c
+```glsl
+vec3 fresnelSchlickRoughness(vec3 F0,float HdotV, float roughness)
+{
+    return F0 + (max(vec3(1.0 - roughness), F0) - F0) * pow((1.0 - HdotV), 5.0);
+}   
+
+void main()
+{
+	...
+	vec3 irradiance = texture(irradianceMap, N).rgb;
+
+	//最终的L = irradiance * color * kd;
+	vec3 kd = 1.0 - fresnelSchlickRoughness(F0,max(dot(N,V),0.0), roughness);
+	vec3 ambient = irradiance * albedo * kd;
+
+	//vec3 ambient = vec3(0.1) * albedo;
+	Lo += ambient;
+
+	FragColor = vec4(Lo, 1.0);
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjgwODg1ODM3LDc3NTc5NDI1NCwxNjUxNT
-I0NzY2LDIwMDE4NDkyOTAsMTYxMTk4Nzk0N119
+eyJoaXN0b3J5IjpbMTkxNTE2Njg2Myw3NzU3OTQyNTQsMTY1MT
+UyNDc2NiwyMDAxODQ5MjkwLDE2MTE5ODc5NDddfQ==
 -->
