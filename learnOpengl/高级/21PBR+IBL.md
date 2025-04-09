@@ -41,7 +41,11 @@ case MaterialType::PbrMaterial: {
 	break;
 ```
 ## 3 构造场景，加入天空盒
+
+
+
 ## 4 PBR光照当中加入间接光照
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwMTg0OTI5MCwxNjExOTg3OTQ3XX0=
+eyJoaXN0b3J5IjpbOTY0OTM3MTcyLDIwMDE4NDkyOTAsMTYxMT
+k4Nzk0N119
 -->
