@@ -88,7 +88,9 @@ void prepare() {
 ![输入图片说明](/imgs/2025-04-09/AHVZ12IzTgRTkOx7.png)
 
 ## 4 PBR光照当中加入间接光照
+```c
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzc1Nzk0MjU0LDE2NTE1MjQ3NjYsMjAwMT
-g0OTI5MCwxNjExOTg3OTQ3XX0=
+eyJoaXN0b3J5IjpbNjgwODg1ODM3LDc3NTc5NDI1NCwxNjUxNT
+I0NzY2LDIwMDE4NDkyOTAsMTYxMTk4Nzk0N119
 -->
