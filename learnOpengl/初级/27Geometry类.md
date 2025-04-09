@@ -154,7 +154,9 @@ void render(){
 }
 ```
 就可以看到立方体了，不过此时我们还没开启深度检测
+
 ![输入图片说明](/imgs/2024-11-20/tVtV6GX8Bq7XemJc.png)
+
 复习一遍深度测试流程
 制作`prepareState()`用来开启深度测试，在`main`函数中调用，**最重要的是，别忘记清理深度缓存信息**
 ```cpp
@@ -179,21 +181,31 @@ int main() {
 	...
 }
 ```
+
 ![输入图片说明](/imgs/2024-11-20/02ldfXzuYfLfTwL6.png)
 # 球体
 ### 位置分析
+
 ![输入图片说明](/imgs/2024-11-20/jZCCAaqMtWofLJZG.png)
+
 ![输入图片说明](/imgs/2024-11-20/cxaje47wVFc5vSOg.png)
+
 ![输入图片说明](/imgs/2024-11-20/QBIsPXH4NAq211Yt.png)
+
 **纬线只需要0-180度，经线0-360度**，就可以确定球上的每一个顶点的值
 `glm::pi<float>()`是派的值
+
 ![输入图片说明](/imgs/2024-11-20/dM6dsgL7VLgTTZyK.png)
+
 此处注意我们的 `i <= latitude, j <= long`，为什么要取等，这样是数据冗余的。
 原因：
 如下图，我们最左边的一列和最右边一列其实是同一条经线，但是但是，两边需要存储的uv值其实是有区别的，虽然是数据冗余，但是我们可以更方便地进行uv绑定
+
 ![输入图片说明](/imgs/2024-11-20/dcSRo15azmXF0sOG.png)
+
 ### uv值分析
 ![输入图片说明](/imgs/2024-11-20/kvNhu9aQcU0bvnS9.png)
+
 ### 索引值分析
 此处不需要等于 `i < latitude, j < long`，是因为，我们通过p1，可以知道p2，p3，p4。
 举一反三，到m+7的时候，我们就可以得到m+8，不用再算以m+8为基础的了
@@ -295,5 +307,6 @@ Geometry* Geometry::createSphere(float radius)
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzNDE4Mzg5LC02OTAzMTcxODldfQ==
+eyJoaXN0b3J5IjpbMTcyNTE4MDYxNywxOTM0MTgzODksLTY5MD
+MxNzE4OV19
 -->
