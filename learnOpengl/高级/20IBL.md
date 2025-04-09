@@ -106,9 +106,64 @@ include_directories(
 )
 ```
 这样就可以编译成功了
+
+## 3 纹理类新增工具函数
+### 3.1 createExrTexture
+```cpp
+Texture* Texture::createExrTexture(const std::string& path)
+{
+	Texture* tex = new Texture();
+	//1 数据读取
+	float* data = nullptr;
+	int width, height;
+	//有报错的话装给err
+	const char* err = nullptr;
+	//成功与否的信号
+	int ret;
+
+	ret = LoadEXR(&data, &width, &height, path.c_str(), &err);
+	if (ret != TINYEXR_SUCCESS) {
+		if (err) {
+			std::cerr << "Error Loading Exr:" << err << std::endl;
+			FreeEXRErrorMessage(err);
+		}
+		return nullptr;
+	}
+	//y方向进行反向，因为tiny库没有反向的函数，我们要自己写
+	int channels = 4;//这里的channels可以去看LoadEXR方法的返回值，无论输入的格式是什么输出的data一定是rgba格式的
+	for (int y = 0; y < height / 2; ++y) {
+		int opposite_y = height - 1 - y;
+		for (int x = 0; x < width * channels; x++) {
+			std::swap(data[width * channels * y + x], data[width * channels * opposite_y + x]);
+		}
+	}
+
+	//2 生成纹理
+	GLuint glTex;
+	glGenTextures(1, &glTex);
+	glBindTexture(GL_TEXTURE_2D, glTex);
+
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB16F, width, height, 0, GL_RGBA, GL_FLOAT, data);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);//u
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);//v
+
+	tex->mTexture = glTex;
+	tex->mWidth = width;
+	tex->mHeight = height;
+	tex->mUnit = 0;
+
+	return tex;
+}
+```
+### 3.2 createHDRCubeMap
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NDM1OTczNjgsMTI3NjA3NjI2NCwtMz
-I4NjA1ODY4LDEwMzkzMDIwMTUsMTc2MTE3MTg1OSwxNzE0NDQ3
-MDg0LDIzNDM4OTg5LDY2MjM1MTUsLTE5MDY4MjM1NzMsMTc0NT
-AxMjcyNiwxNTM1NDQwMjE4LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbMTU4MTAwOTgzLC0xNjQzNTk3MzY4LDEyNz
+YwNzYyNjQsLTMyODYwNTg2OCwxMDM5MzAyMDE1LDE3NjExNzE4
+NTksMTcxNDQ0NzA4NCwyMzQzODk4OSw2NjIzNTE1LC0xOTA2OD
+IzNTczLDE3NDUwMTI3MjYsMTUzNTQ0MDIxOCwtMjA4ODc0NjYx
+Ml19
 -->
