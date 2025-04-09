@@ -110,6 +110,9 @@ include_directories(
 ## 3 纹理类新增工具函数
 ### 3.1 createExrTexture
 ```cpp
+#define TINYEXR_IMPLEMENTATION
+#include "../application/tinyexr.h"
+
 Texture* Texture::createExrTexture(const std::string& path)
 {
 	Texture* tex = new Texture();
@@ -161,7 +164,7 @@ Texture* Texture::createExrTexture(const std::string& path)
 ```
 ### 3.2 createHDRCubeMap
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4MTAwOTgzLC0xNjQzNTk3MzY4LDEyNz
+eyJoaXN0b3J5IjpbMzIyODgyNjU5LC0xNjQzNTk3MzY4LDEyNz
 YwNzYyNjQsLTMyODYwNTg2OCwxMDM5MzAyMDE1LDE3NjExNzE4
 NTksMTcxNDQ0NzA4NCwyMzQzODk4OSw2NjIzNTE1LC0xOTA2OD
 IzNTczLDE3NDUwMTI3MjYsMTUzNTQ0MDIxOCwtMjA4ODc0NjYx
