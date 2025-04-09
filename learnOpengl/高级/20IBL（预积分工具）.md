@@ -400,8 +400,8 @@ void Renderer::renderIBLDiffuse(Texture* hdrTex, Framebuffer* fbo)
 }
 ```
 
-# PBR渲染流程加入IBL
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEyNDU0MjM3MSwtMTI0NTQ5NjI0OSwxMj
+eyJoaXN0b3J5IjpbLTYyNzAxNjg2MSwtMTI0NTQ5NjI0OSwxMj
 c5MTUyMDc1XX0=
 -->
