@@ -324,7 +324,7 @@ void doRender(std::string path) {
 
 }
 ```
-最后在main方法中调用，我们zhi'xu'yao'xuan
+最后在`main`方法中调用，我们只需要渲染一次，不用像以前一样一直渲染
 ```cpp
 int main() {
 	if (!glApp->init(WIDTH, HEIGHT)) {
@@ -345,10 +345,10 @@ int main() {
 ```
 ### 5.2 渲染六个CubeMap的面，并且导出EXR图片
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzU5NjY5MDgwLC0xNTU2ODAzOTUzLC00MD
-Q0NTk5NDMsLTI1NjA3MDM2NywxOTM2MTAwMDU4LC0xMjcyNjg0
-MjUsLTE2NDM1OTczNjgsMTI3NjA3NjI2NCwtMzI4NjA1ODY4LD
-EwMzkzMDIwMTUsMTc2MTE3MTg1OSwxNzE0NDQ3MDg0LDIzNDM4
-OTg5LDY2MjM1MTUsLTE5MDY4MjM1NzMsMTc0NTAxMjcyNiwxNT
-M1NDQwMjE4LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbMTI3OTE1MjA3NSwtMTU1NjgwMzk1MywtND
+A0NDU5OTQzLC0yNTYwNzAzNjcsMTkzNjEwMDA1OCwtMTI3MjY4
+NDI1LC0xNjQzNTk3MzY4LDEyNzYwNzYyNjQsLTMyODYwNTg2OC
+wxMDM5MzAyMDE1LDE3NjExNzE4NTksMTcxNDQ0NzA4NCwyMzQz
+ODk4OSw2NjIzNTE1LC0xOTA2ODIzNTczLDE3NDUwMTI3MjYsMT
+UzNTQ0MDIxOCwtMjA4ODc0NjYxMl19
 -->
