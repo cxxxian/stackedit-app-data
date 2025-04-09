@@ -83,11 +83,13 @@ void prepare() {
 }
 
 ```
+运行输出的结果如下：
+因为我们此时在做实验，把`irradiance`作为颜色直接输出了，这个是预积分的值
 
 ![输入图片说明](/imgs/2025-04-09/AHVZ12IzTgRTkOx7.png)
 
 ## 4 PBR光照当中加入间接光照
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY1MTUyNDc2NiwyMDAxODQ5MjkwLDE2MT
-E5ODc5NDddfQ==
+eyJoaXN0b3J5IjpbMTkxMTI5NDY3NSwxNjUxNTI0NzY2LDIwMD
+E4NDkyOTAsMTYxMTk4Nzk0N119
 -->
