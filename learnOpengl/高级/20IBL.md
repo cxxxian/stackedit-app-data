@@ -167,12 +167,48 @@ Texture* Texture::createExrTexture(const std::string& path)
 }
 ```
 ### 3.2 createHDRCubeMap
+这里`glTexImage2D`最后是`nullptr`，是因为我们暂时只是开辟空间，还没传数据
+```cpp
+Texture* Texture::createHDRCubeMap(int width, int height)
+{
+	Texture* tex = new Texture();
+
+	GLuint glTex;
+	glGenTextures(1, &glTex);
+	glBindTexture(GL_TEXTURE_CUBE_MAP, glTex);
+
+	for (int i = 0; i < 6; i++) {
+		glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i,
+			0, GL_RGB16F,
+			width, height, 0,
+			GL_RGB, GL_FLOAT, nullptr);
+	}
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);//s
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);//t
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_BORDER);//r
+
+	glBindTexture(GL_TEXTURE_CUBE_MAP, 0);
+
+	tex->mTexture = glTex;
+	tex->mWidth = width;
+	tex->mHeight = height;
+	tex->mUnit = 0;
+	tex->mTextureTarget = GL_TEXTURE_CUBE_MAP;
+
+	return tex;
+}
 ```
 
+## FBO类新增工具函数
+### 3.3 createHDRCubeMapFBO
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MDA0Mjk4MDAsLTE2NDM1OTczNjgsMT
-I3NjA3NjI2NCwtMzI4NjA1ODY4LDEwMzkzMDIwMTUsMTc2MTE3
-MTg1OSwxNzE0NDQ3MDg0LDIzNDM4OTg5LDY2MjM1MTUsLTE5MD
-Y4MjM1NzMsMTc0NTAxMjcyNiwxNTM1NDQwMjE4LC0yMDg4NzQ2
-NjEyXX0=
+eyJoaXN0b3J5IjpbLTEyNzI2ODQyNSwtMTY0MzU5NzM2OCwxMj
+c2MDc2MjY0LC0zMjg2MDU4NjgsMTAzOTMwMjAxNSwxNzYxMTcx
+ODU5LDE3MTQ0NDcwODQsMjM0Mzg5ODksNjYyMzUxNSwtMTkwNj
+gyMzU3MywxNzQ1MDEyNzI2LDE1MzU0NDAyMTgsLTIwODg3NDY2
+MTJdfQ==
 -->
