@@ -232,10 +232,27 @@ Framebuffer* Framebuffer::createCubeMapHDRFbo(int width, int height)
 ```
 
 ## 4 预积分shader代码编写
+`iblDiffuse.vert`如下：
+```glsl
+#version 460
+layout(location = 0) in vec3 aPos;
+out vec3 uvw;
+
+uniform mat4 viewMatrix;
+uniform mat4 projectionMatrix;
+
+void main(){
+	vec4 transformPosition = vec4(aPos, 1.0);
+	gl_Position = projectionMatrix * viewMatrix * transformPosition;
+
+	uvw = normalize(aPos);
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1NjA3MDM2NywxOTM2MTAwMDU4LC0xMj
-cyNjg0MjUsLTE2NDM1OTczNjgsMTI3NjA3NjI2NCwtMzI4NjA1
-ODY4LDEwMzkzMDIwMTUsMTc2MTE3MTg1OSwxNzE0NDQ3MDg0LD
-IzNDM4OTg5LDY2MjM1MTUsLTE5MDY4MjM1NzMsMTc0NTAxMjcy
-NiwxNTM1NDQwMjE4LC0yMDg4NzQ2NjEyXX0=
+eyJoaXN0b3J5IjpbLTQwNDQ1OTk0MywtMjU2MDcwMzY3LDE5Mz
+YxMDAwNTgsLTEyNzI2ODQyNSwtMTY0MzU5NzM2OCwxMjc2MDc2
+MjY0LC0zMjg2MDU4NjgsMTAzOTMwMjAxNSwxNzYxMTcxODU5LD
+E3MTQ0NDcwODQsMjM0Mzg5ODksNjYyMzUxNSwtMTkwNjgyMzU3
+MywxNzQ1MDEyNzI2LDE1MzU0NDAyMTgsLTIwODg3NDY2MTJdfQ
+==
 -->
