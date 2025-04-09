@@ -399,7 +399,9 @@ void Renderer::renderIBLDiffuse(Texture* hdrTex, Framebuffer* fbo)
 	mIBLDiffuseShader->end();
 }
 ```
+
+# PBR渲染流程加入IBL
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MTk3MDk2ODksLTEyNDU0OTYyNDksMT
-I3OTE1MjA3NV19
+eyJoaXN0b3J5IjpbMTEyNDU0MjM3MSwtMTI0NTQ5NjI0OSwxMj
+c5MTUyMDc1XX0=
 -->
