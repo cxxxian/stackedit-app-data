@@ -42,10 +42,52 @@ case MaterialType::PbrMaterial: {
 ```
 ## 3 构造场景，加入天空盒
 
+```cpp
+void prepare() {
+	...
 
+	//pass 01
+	auto geometry = Geometry::createSphere(1.0f);
+	material = new PbrMaterial();
+	material->mAlbedo = new Texture("assets/textures/pbr/slab_tiles_diff_2k.jpg", 0, GL_SRGB_ALPHA);
+	material->mNormal = Texture::createNearestTexture("assets/textures/pbr/slab_tiles_nor_gl_2k.jpg");
+	material->mRoughness = Texture::createNearestTexture("assets/textures/pbr/slab_tiles_rough_2k.jpg");
+	material->mMetallic = Texture::createNearestTexture("assets/textures/pbr/slab_tiles_arm_2k.jpg");
+	material->mIrradianceIndirect = Texture::createExrCubeMap(
+		{
+			"assets/textures/pbr/IBL/env_0.exr",
+			"assets/textures/pbr/IBL/env_1.exr",
+			"assets/textures/pbr/IBL/env_2.exr",
+			"assets/textures/pbr/IBL/env_3.exr",
+			"assets/textures/pbr/IBL/env_4.exr",
+			"assets/textures/pbr/IBL/env_5.exr"
+		}
+	);
+
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 5; j++) {
+			auto mesh = new Mesh(geometry, material);
+			mesh->setPosition(glm::vec3(i * 2.5, j * 2.5, 0.0f));
+			sceneOff->addChild(mesh);
+		}
+	}
+
+	auto boxGeo = Geometry::createBox(1.0f);
+	auto boxMat = new CubeMaterial();
+	boxMat->mDiffuse = Texture::createExrTexture("assets/textures/pbr/warm_bar_4k.exr");
+	auto boxMesh = new Mesh(boxGeo, boxMat);
+	sceneOff->addChild(boxMesh);
+	...
+	}
+
+}
+
+```
+
+![输入图片说明](/imgs/2025-04-09/AHVZ12IzTgRTkOx7.png)
 
 ## 4 PBR光照当中加入间接光照
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTY0OTM3MTcyLDIwMDE4NDkyOTAsMTYxMT
-k4Nzk0N119
+eyJoaXN0b3J5IjpbMTY1MTUyNDc2NiwyMDAxODQ5MjkwLDE2MT
+E5ODc5NDddfQ==
 -->
