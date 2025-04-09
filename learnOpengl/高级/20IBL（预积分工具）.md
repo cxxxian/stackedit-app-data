@@ -344,6 +344,60 @@ int main() {
 }
 ```
 ### 5.2 渲染六个CubeMap的面，并且导出EXR图片
+完善`renderer`中的方法
+```cpp
+void Renderer::renderIBLDiffuse(Texture* hdrTex, Framebuffer* fbo)
+{
+	//rgb三个通道所以乘3
+	std::vector<float> pixels(fbo->mWidth * fbo->mHeight * 3);
+
+	//1 准备渲染cubeMap六个面所需要的投影+相机矩阵
+	auto projection = glm::perspective(glm::radians(90.0f), 1.0f, 0.1f, 1000.0f);
+	glm::mat4 views[] = {
+	   glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f,  0.0f,  0.0f), glm::vec3(0.0f, -1.0f,  0.0f)),
+	   glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(-1.0f,  0.0f,  0.0f), glm::vec3(0.0f, -1.0f,  0.0f)),
+	   glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f,  0.0f,  1.0f)),
+	   glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, -1.0f,  0.0f), glm::vec3(0.0f,  0.0f, -1.0f)),
+	   glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f,  0.0f,  1.0f), glm::vec3(0.0f, -1.0f,  0.0f)),
+	   glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f,  0.0f, -1.0f), glm::vec3(0.0f, -1.0f,  0.0f))
+	};
+	//2 开始渲染
+	glBindFramebuffer(GL_FRAMEBUFFER, fbo->mFBO);
+	glViewport(0, 0, fbo->mWidth, fbo->mHeight);
+	//shader需要传输vao
+	auto geometry = Geometry::createBox(1.0f);
+	glBindVertexArray(geometry->getVao());
+
+	mIBLDiffuseShader->begin();
+	hdrTex->setUnit(0);
+	hdrTex->bind();
+	mIBLDiffuseShader->setInt("envMap", 0);
+
+	mIBLDiffuseShader->setMatrix4x4("projectionMatrix", projection);
+
+	for (int i = 0; i < 6; i++) {
+		glFramebufferTexture2D(
+			GL_FRAMEBUFFER,
+			GL_COLOR_ATTACHMENT0,
+			GL_TEXTURE_CUBE_MAP_POSITIVE_X + i,
+			fbo->mColorAttachment->getTexture(),
+			0
+		);
+		glClear(GL_COLOR_BUFFER_BIT);
+		mIBLDiffuseShader->setMatrix4x4("viewMatrix", views[i]);
+
+		glDrawElements(GL_TRIANGLES, geometry->getIndicesCount(), GL_UNSIGNED_INT, 0);
+
+		//渲染完毕一个面之后，立刻输出为图片
+		glReadPixels(0, 0, fbo->mWidth, fbo->mHeight, GL_RGB, GL_FLOAT, pixels.data());
+
+		//读取到的像素数据写入到文件当中
+		const char* err = nullptr;
+		SaveEXR(pixels.data(), fbo->mWidth, fbo->mHeight, 3, 1, ("env_" + std::to_string(i) + ".exr").c_str(), &err);
+	}
+	mIBLDiffuseShader->end();
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3OTE1MjA3NV19
+eyJoaXN0b3J5IjpbLTEyNDU0OTYyNDksMTI3OTE1MjA3NV19
 -->
