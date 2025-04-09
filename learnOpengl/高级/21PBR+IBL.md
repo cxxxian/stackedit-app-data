@@ -13,8 +13,7 @@ void main()
 	...
 	vec3 irradiance = texture(irradianceMap, N).rgb;
 	//最终的L = irradiance * color * kd;
-	vec3 kd = 1.0 - fresnelSchlickRoughness(F0,max(dot(N,V),0.0), 	roughness);
-	vec3 ambient = irradiance * albedo * kd;
+	...
 	FragColor = vec4(irradiance, 1.0);
 }
 ```
@@ -90,6 +89,6 @@ void prepare() {
 
 ## 4 PBR光照当中加入间接光照
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxMTI5NDY3NSwxNjUxNTI0NzY2LDIwMD
-E4NDkyOTAsMTYxMTk4Nzk0N119
+eyJoaXN0b3J5IjpbNzc1Nzk0MjU0LDE2NTE1MjQ3NjYsMjAwMT
+g0OTI5MCwxNjExOTg3OTQ3XX0=
 -->
