@@ -93,7 +93,7 @@ void prepare() {
 vec3 H = normalize(L + V);
 vec3 F = fresnelSchlick(F0,max(dot(H,V),0.0));
 ```
-但是此时，我们环境光就会有无数条入射光，这时候`H`就不好算了，我们可以直接近似为`N,V`的点乘
+但是此时，我们环境光就会有无数条入射光，这时候`H`就不好算了，我们可以直接近似为`N,V`的点乘，`N`是通过法线贴图采样得来的
 ```glsl
 vec3 fresnelSchlickRoughness(vec3 F0,float HdotV, float roughness)
 {
@@ -116,7 +116,7 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzI0MjQzNTAsMTkxNTE2Njg2Myw3Nz
-U3OTQyNTQsMTY1MTUyNDc2NiwyMDAxODQ5MjkwLDE2MTE5ODc5
-NDddfQ==
+eyJoaXN0b3J5IjpbMTEyNDAxNTc3NCwxOTE1MTY2ODYzLDc3NT
+c5NDI1NCwxNjUxNTI0NzY2LDIwMDE4NDkyOTAsMTYxMTk4Nzk0
+N119
 -->
