@@ -94,7 +94,7 @@ vec3 H = normalize(L + V);
 vec3 F = fresnelSchlick(F0,max(dot(H,V),0.0));
 ```
 但是此时，我们环境光就会有无数条入射光，这时候`H`就不好算了，我们可以直接近似为`N,V`的点乘，`N`是通过法线贴图采样得来的
-而且此时，我们算的是环境光照的`diffuse`部分，所以我们可以设计一个新函数`fresnelSchlickRoughness`，加入`Roughness`因素的
+而且此时，我们算的是环境光照的`diffuse`部分，所以我们可以设计一个新函数`fresnelSchlickRoughness`，加入`Roughness`因素的影响
 ```glsl
 vec3 fresnelSchlickRoughness(vec3 F0,float HdotV, float roughness)
 {
@@ -117,7 +117,7 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzUyMzk5MTU4LDE5MTUxNjY4NjMsNzc1Nz
-k0MjU0LDE2NTE1MjQ3NjYsMjAwMTg0OTI5MCwxNjExOTg3OTQ3
-XX0=
+eyJoaXN0b3J5IjpbLTE1MjIwMjkzMjYsMTkxNTE2Njg2Myw3Nz
+U3OTQyNTQsMTY1MTUyNDc2NiwyMDAxODQ5MjkwLDE2MTE5ODc5
+NDddfQ==
 -->
