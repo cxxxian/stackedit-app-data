@@ -1,3 +1,4 @@
+# Diffuse
 # PBR渲染流程加入IBL
 ## 1 在PBR的Shader中，加入irradianceMap的使用，并且输出颜色实验
 此处是作为实验，直接把`irradiance`颜色输出，`irradiance`是我们预积分得到的结果
@@ -116,8 +117,12 @@ void main()
 	FragColor = vec4(Lo, 1.0);
 }
 ```
+
+# Specular
+
+![输入图片说明](/imgs/2025-04-10/GMdJdnMEeV9D8UJA.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjIwMjkzMjYsMTkxNTE2Njg2Myw3Nz
-U3OTQyNTQsMTY1MTUyNDc2NiwyMDAxODQ5MjkwLDE2MTE5ODc5
-NDddfQ==
+eyJoaXN0b3J5IjpbMTQzNTAwNDIwMCwtMTUyMjAyOTMyNiwxOT
+E1MTY2ODYzLDc3NTc5NDI1NCwxNjUxNTI0NzY2LDIwMDE4NDky
+OTAsMTYxMTk4Nzk0N119
 -->
