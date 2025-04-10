@@ -88,10 +88,12 @@ void prepare() {
 ![输入图片说明](/imgs/2025-04-09/AHVZ12IzTgRTkOx7.png)
 
 ## 4 PBR光照当中加入间接光照
-
+我们原本的的`fresnel`项使用的是`H,V`的点乘，这是因为我们的点光源与物体表面只会有一种入射光的情况
 ```glsl
+vec3 H = normalize(L + V);
 vec3 F = fresnelSchlick(F0,max(dot(H,V),0.0));
 ```
+但是此时，我们环境光就会有无数条入射光，这时候`H`就不好算了，我们可以直接尽速w
 ```glsl
 vec3 fresnelSchlickRoughness(vec3 F0,float HdotV, float roughness)
 {
@@ -114,7 +116,7 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3NTMzNDQ4MCwxOTE1MTY2ODYzLDc3NT
+eyJoaXN0b3J5IjpbLTEwNjE1NTQ0MywxOTE1MTY2ODYzLDc3NT
 c5NDI1NCwxNjUxNTI0NzY2LDIwMDE4NDkyOTAsMTYxMTk4Nzk0
 N119
 -->
