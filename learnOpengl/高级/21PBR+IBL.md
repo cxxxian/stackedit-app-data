@@ -124,11 +124,11 @@ void main()
 
 ![输入图片说明](/imgs/2025-04-10/9x9bXLd1PDeVpCAB.png)
 
-
+固定`roughness`，简化问题，先假设观察方向固定，沿着法线方向向内观察，以此方向做预积分存储
 
 ![输入图片说明](/imgs/2025-04-10/96yaAlwW6BOxhigk.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTIwNTc1MzQsMTg3MjYyNjY1NywxNDM1MD
-A0MjAwLC0xNTIyMDI5MzI2LDE5MTUxNjY4NjMsNzc1Nzk0MjU0
-LDE2NTE1MjQ3NjYsMjAwMTg0OTI5MCwxNjExOTg3OTQ3XX0=
+eyJoaXN0b3J5IjpbMjUxNzE1ODQ2LDE4NzI2MjY2NTcsMTQzNT
+AwNDIwMCwtMTUyMjAyOTMyNiwxOTE1MTY2ODYzLDc3NTc5NDI1
+NCwxNjUxNTI0NzY2LDIwMDE4NDkyOTAsMTYxMTk4Nzk0N119
 -->
