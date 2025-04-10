@@ -88,6 +88,10 @@ void prepare() {
 ![输入图片说明](/imgs/2025-04-09/AHVZ12IzTgRTkOx7.png)
 
 ## 4 PBR光照当中加入间接光照
+
+```glsl
+vec3 F = fresnelSchlick(F0,max(dot(H,V),0.0));
+```
 ```glsl
 vec3 fresnelSchlickRoughness(vec3 F0,float HdotV, float roughness)
 {
@@ -110,6 +114,7 @@ void main()
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxNTE2Njg2Myw3NzU3OTQyNTQsMTY1MT
-UyNDc2NiwyMDAxODQ5MjkwLDE2MTE5ODc5NDddfQ==
+eyJoaXN0b3J5IjpbMTM3NTMzNDQ4MCwxOTE1MTY2ODYzLDc3NT
+c5NDI1NCwxNjUxNTI0NzY2LDIwMDE4NDkyOTAsMTYxMTk4Nzk0
+N119
 -->
