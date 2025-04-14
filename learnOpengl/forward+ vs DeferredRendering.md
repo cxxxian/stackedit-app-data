@@ -1,4 +1,4 @@
-一、选择 Deferred Rendering 的典型场景
+一、选择 `Deferred Rendering` 的典型场景
 1. 核心优势
 超多动态光源支持：
 延迟渲染的核心原理是将 几何信息（G-Buffer） 与 光照计算分离
@@ -34,29 +34,23 @@ glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, 
 典型分辨率：`4K` 下 `G-Buffer` 总带宽 ≈ `500MB`（`RGBA16F x4`）
 需要复杂后处理：
 `SSAO`、`SSR` 等屏幕空间效果直接读取 `G-Buffer`
-4. 性能瓶颈
-带宽压力：
-```math
-复制代码
-\text{G-Buffer 带宽} = \text{分辨率} \times \text{每像素字节数} \times \text{Buffer数量}
-4K x 4(RGBA16F) x 4 Buffers ≈ 2560x1440x(8 bytes/channel x4 channels)x4 ≈ 567MB/Frame
+
 透明物体处理：
 需要额外 Forward Pass 渲染透明物体
 5. 典型案例
 《赛博朋克 2077》：
 密集霓虹灯、车灯、全动态光照
-使用改进版 Deferred + Ray Tracing 混合管线
-二、选择 Forward+ 的典型场景
+使用改进版 `Deferred + Ray Tracing` 混合管线
+二、选择 `Forward+` 的典型场景
 1. 核心优势
 带宽效率：
-不需要存储完整的 G-Buffer
+不需要存储完整的 `G-Buffer`
 移动端等带宽敏感平台优势明显
 材质多样性支持：
-复杂材质（毛发、皮肤 SSS）可直接在着色器实现
-无 G-Buffer 精度限制（如法线压缩失真）
+复杂材质（毛发、皮肤 `SSS`）可直接在着色器实现
+无 `G-Buffer` 精度限制（如法线压缩失真）
 2. 技术实现关键
-cpp
-复制代码
+```cpp
 // 核心：分块光源列表（Tile-Based Light Lists）
 uniform sampler2D depthTexture; // 深度缓冲区
 uniform mat4 invProjection;      // 逆投影矩阵
@@ -80,22 +74,20 @@ for (int tileY = 0; tileY < numTilesY; tileY++) {
         lightIndices[tileX][tileY] = FindAffectingLights(minBounds, maxBounds);
     }
 }
+```
 3. 适用平台
-移动端/VR 设备：
-Adreno/Mali GPU 的 Tile-Based 架构天然适配
-带宽节省示例：
-math
-复制代码
-\text{Forward+ 带宽} ≈ \frac{1}{3} \times \text{Deferred}  
-需要 MSAA 的场景：
-Forward 管线天然支持硬件 MSAA
-Deferred 的 MSAA 需要多重采样 G-Buffer（成本极高）
+移动端/`VR` 设备：
+`Adreno/Mali GPU` 的 `Tile-Based` 架构天然适配
+
+需要 `MSAA` 的场景：
+`Forward` 管线天然支持硬件 `MSAA`
+`Deferred` 的 `MSAA` 需要多重采样 `G-Buffer`（成本极高）
 4. 性能瓶颈
 光源数量限制：
-每个分块的光源数受限于 GPU 寄存器（通常 ≤ 256）
-动态分支过多可能降低 SIMD 利用率
+每个分块的光源数受限于 `GPU` 寄存器（通常 `≤ 256`）
+动态分支过多可能降低 `SIMD` 利用率
 复杂光源类型：
-投射阴影的聚光灯处理不如 Deferred 高效
+投射阴影的聚光灯处理不如 `Deferred` 高效
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwMjYwNDU5M119
+eyJoaXN0b3J5IjpbNDYxMTQ5MTYyXX0=
 -->
