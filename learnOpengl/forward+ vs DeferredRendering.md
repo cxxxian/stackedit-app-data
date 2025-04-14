@@ -88,6 +88,8 @@ for (int tileY = 0; tileY < numTilesY; tileY++) {
 动态分支过多可能降低 `SIMD` 利用率
 复杂光源类型：
 投射阴影的聚光灯处理不如 `Deferred` 高效
+
+![输入图片说明](/imgs/2025-04-14/yQECMKOfXvo9d78J.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDYxMTQ5MTYyXX0=
+eyJoaXN0b3J5IjpbNTgzMDE0MTAxLDQ2MTE0OTE2Ml19
 -->
