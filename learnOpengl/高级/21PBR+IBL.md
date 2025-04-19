@@ -142,13 +142,13 @@ void main()
 
 ![输入图片说明](/imgs/2025-04-19/FVbhFbJp2MvZOFie.png)
 
-这里的权重，其实就是想看哪些光和目光的夹角小，影响就会更大，所以用`L`（入射光）与`N`的点乘，为什么用`N`，因为我们做了一个很重要的假设，*观察方向固定，沿着法线方向向内观察*
+这里的权重，其实就是想看哪些光和目光的夹角小，影响就会更大，所以用`L`（入射光）与`N`的点乘，为什么用`N`，因为我们做了一个很重要的假设，**观察方向固定，沿着法线方向向内观察**
 
 ![输入图片说明](/imgs/2025-04-19/YoLd77q6m5PlhFCf.png)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI5NDU0MTQyMiwtMTc4NTkzOTE2MSwyMT
+eyJoaXN0b3J5IjpbLTI2OTYzMTU0MCwtMTc4NTkzOTE2MSwyMT
 I5NzY1OTIsMTYwNDM0MTgyNywyMDA3NDkwNjkyLC02NTM1OTQw
 MDUsMjUxNzE1ODQ2LDE4NzI2MjY2NTcsMTQzNTAwNDIwMCwtMT
 UyMjAyOTMyNiwxOTE1MTY2ODYzLDc3NTc5NDI1NCwxNjUxNTI0
