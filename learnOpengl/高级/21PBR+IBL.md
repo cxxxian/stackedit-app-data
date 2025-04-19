@@ -137,8 +137,12 @@ void main()
 ![输入图片说明](/imgs/2025-04-19/0y5fkrDRCjBusyCS.png)
 
 ![输入图片说明](/imgs/2025-04-19/eMijpRUTS2wC4Qw7.png)
+
+把整个积分拆分，对这两个分别做预积分
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMzUwMjkxNjgsMjEyOTc2NTkyLDE2MD
+eyJoaXN0b3J5IjpbLTE3ODU5MzkxNjEsMjEyOTc2NTkyLDE2MD
 QzNDE4MjcsMjAwNzQ5MDY5MiwtNjUzNTk0MDA1LDI1MTcxNTg0
 NiwxODcyNjI2NjU3LDE0MzUwMDQyMDAsLTE1MjIwMjkzMjYsMT
 kxNTE2Njg2Myw3NzU3OTQyNTQsMTY1MTUyNDc2NiwyMDAxODQ5
