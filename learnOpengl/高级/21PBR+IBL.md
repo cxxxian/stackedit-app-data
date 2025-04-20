@@ -151,8 +151,10 @@ void main()
 ### 重要性采样
 
 ![输入图片说明](/imgs/2025-04-20/vv9qwPyagni36S9B.png)
+
+![输入图片说明](/imgs/2025-04-20/fQtjxuZCGkovBmmq.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ4MjAxNDAxLC0yMDQyMzYwNDk5LC0yNj
+eyJoaXN0b3J5IjpbMzgzMDY5NjUwLC0yMDQyMzYwNDk5LC0yNj
 k2MzE1NDAsLTE3ODU5MzkxNjEsMjEyOTc2NTkyLDE2MDQzNDE4
 MjcsMjAwNzQ5MDY5MiwtNjUzNTk0MDA1LDI1MTcxNTg0NiwxOD
 cyNjI2NjU3LDE0MzUwMDQyMDAsLTE1MjIwMjkzMjYsMTkxNTE2
