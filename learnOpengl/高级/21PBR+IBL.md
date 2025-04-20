@@ -187,18 +187,19 @@ void main()
 
 ![输入图片说明](/imgs/2025-04-20/z5oP5MHb5TFPpoOK.png)
 
-最后返回的是一个二维向量，就是我们之前推导的，`x`就是普通的`i / N`，`y`通过设计的方法进行计算
+最后返回的是一个二维向量，就是我们之前推导的，`x`就是普通的`i / N`，`y`通过设计的方法进行计算，
+这个`2.328306`一长串是用来做归一化的
 
 `0x00FF00FF`理解为蒙版，我们现在要做把两小段的左边变到分别的右边，利用蒙版把不需要的部分置为`0`，然后就可以进行右移了
 
 ![输入图片说明](/imgs/2025-04-20/02zgmR9qtLWBn11B.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEwNTc4ODUxNiw4NDg4MDI5OTQsLTE3MT
-AxNTk3MzcsMTcwMjQ4MjM4MywyMTI5MTA0MzgwLDQ1MTU1ODM0
-Miw4OTYzOTA1NSwtMTcyODgzNjEwNSwtMTM5MzY4ODY1NSwtMT
-k4NDk3MjczOCwxOTk3MTc3MjE4LDM4MzA2OTY1MCwtMjA0MjM2
-MDQ5OSwtMjY5NjMxNTQwLC0xNzg1OTM5MTYxLDIxMjk3NjU5Mi
-wxNjA0MzQxODI3LDIwMDc0OTA2OTIsLTY1MzU5NDAwNSwyNTE3
-MTU4NDZdfQ==
+eyJoaXN0b3J5IjpbMTg4Njc5MzE3OCwyMTA1Nzg4NTE2LDg0OD
+gwMjk5NCwtMTcxMDE1OTczNywxNzAyNDgyMzgzLDIxMjkxMDQz
+ODAsNDUxNTU4MzQyLDg5NjM5MDU1LC0xNzI4ODM2MTA1LC0xMz
+kzNjg4NjU1LC0xOTg0OTcyNzM4LDE5OTcxNzcyMTgsMzgzMDY5
+NjUwLC0yMDQyMzYwNDk5LC0yNjk2MzE1NDAsLTE3ODU5MzkxNj
+EsMjEyOTc2NTkyLDE2MDQzNDE4MjcsMjAwNzQ5MDY5MiwtNjUz
+NTk0MDA1XX0=
 -->
