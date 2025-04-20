@@ -171,9 +171,11 @@ void main()
 
 ### 低差异序列算法
 
+左边的不好，有的地方密集有的地方稀疏，我们希望得到右边的效果
+
 ![输入图片说明](/imgs/2025-04-20/NiVDeXgrIKCUM79z.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg2MzYwNTQ3Nyw0NTE1NTgzNDIsODk2Mz
+eyJoaXN0b3J5IjpbMjEyOTEwNDM4MCw0NTE1NTgzNDIsODk2Mz
 kwNTUsLTE3Mjg4MzYxMDUsLTEzOTM2ODg2NTUsLTE5ODQ5NzI3
 MzgsMTk5NzE3NzIxOCwzODMwNjk2NTAsLTIwNDIzNjA0OTksLT
 I2OTYzMTU0MCwtMTc4NTkzOTE2MSwyMTI5NzY1OTIsMTYwNDM0
