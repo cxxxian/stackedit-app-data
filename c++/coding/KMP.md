@@ -1,6 +1,19 @@
 构建`next`数组方法：
 ```cpp
+void getNext(vector<int>& next, const string& s){
+	int j = 0;
+	next[0] = 0;
+	for(int i = 1; i < s.length(); i++){
+		while(j > 0 && s[i] != s[j]){
+			j = next[j - 1];
+		}
 
+		if(s[i] == s[j]){
+			j++;
+		}
+		next[i] = j;
+	}
+}
 ```
 
 ## eg1
@@ -82,5 +95,6 @@ public:
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5NjY5MzcyMSwtMjA3NjA5ODYxM119
+eyJoaXN0b3J5IjpbLTE4MjI3OTU3NjEsLTIwNzYwOTg2MTNdfQ
+==
 -->
