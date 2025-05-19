@@ -21,40 +21,26 @@ public:
 		}
 		vector<int> next(needle.length(), 0);
 		getNext(next, needle);
-
+		
 		int j = 0;
 
-for(int i = 0; i < haystack.length(); i++){
+		for(int i = 0; i < haystack.length(); i++){
+			while(j > 0 && haystack[i] != needle[j]){
+				j = next[j - 1];
+			}
+			if(haystack[i] == needle[j]){
+				j++;
+			}
 
-while(j > 0 && haystack[i] != needle[j]){
+			if(j == needle.length())
+				return (i - needle.length() + 1);
+			}
 
-j = next[j - 1];
-
-}
-
-if(haystack[i] == needle[j]){
-
-j++;
-
-}
-
-if(j == needle.length()){
-
-return (i - needle.length() + 1);
-
-}
-
-}
-
-  
-
-return -1;
-
-  
-
-}
+		}
+	return -1;
+	}
 };
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1OTkwMTM1Ml19
+eyJoaXN0b3J5IjpbLTIwNzYwOTg2MTNdfQ==
 -->
