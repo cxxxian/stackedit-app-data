@@ -11,7 +11,7 @@ bool Application::init(const int& width, const int& height)
 	mHeight = height;
 	glfwInit();
 
-	//主要版本和次要版本，意为3.3
+	//主要版本和次要版本，意为4.6
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -139,5 +139,6 @@ KeyBoardCallback mKeyBoardCallback{ nullptr };
 void setKeyBoardCallback(KeyBoardCallback callback) { mKeyBoardCallback = callback; }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwMTAwNTg2LDM4NjcxMDkwXX0=
+eyJoaXN0b3J5IjpbLTM4NDYzMzk4LC0zMDEwMDU4NiwzODY3MT
+A5MF19
 -->
