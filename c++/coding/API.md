@@ -12,6 +12,12 @@ std::string s = "12345";
 int num = std::stoi(s);
 std::cout << num;  // 输出 12345
 ```
+# to_string
+把数字转化成字符串
+```cpp
+std::string to_string(int value);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDg1OTEwMDEsLTEzODIwOTcxODVdfQ==
+eyJoaXN0b3J5IjpbLTE0NjcyMDk1LDQ4NTkxMDAxLC0xMzgyMD
+k3MTg1XX0=
 -->
