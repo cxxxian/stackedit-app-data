@@ -85,7 +85,7 @@
 ![输入图片说明](/imgs/2025-03-08/2XlHY3Hro2hr56Rd.png)
 
 这个式子的意思就是，
-光线的`Radiance`转化为反射处的`Irradiance`，然后乘上`BRDF`系数，最后转到人眼处的`Radiance`
+**光线的`Radiance`转化为反射处的`Irradiance`，然后乘上`BRDF`系数，最后转到人眼处的`Radiance`**
 
 ![输入图片说明](/imgs/2025-03-08/m4fVMzi2qL9fREyA.png)
 
@@ -225,5 +225,5 @@
 
 ![输入图片说明](/imgs/2025-03-09/91NH12lN902bkmJp.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzgwOTc0OTldfQ==
+eyJoaXN0b3J5IjpbMTc0NDkyOTY1LC0yMDc4MDk3NDk5XX0=
 -->
