@@ -34,10 +34,11 @@ int main()
 
 
 # string的insert
+在字符串s的某个位置
 ```
 s.insert(s.begin() + i + 1, '.');
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQzOTg1ODAxLDE2MzQ3NTc4MDMsNDg1OT
-EwMDEsLTEzODIwOTcxODVdfQ==
+eyJoaXN0b3J5IjpbMTMxNjMzMjc3MCwxNjM0NzU3ODAzLDQ4NT
+kxMDAxLC0xMzgyMDk3MTg1XX0=
 -->
