@@ -38,9 +38,10 @@ int main()
 ```cpp
 s.insert(s.begin() + i + 1, '.');
 ```
+字符串增加字符的方法：
 
 ![输入图片说明](/imgs/2025-06-17/gGFaRv7baVROCfZV.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcyMzQ0MzA2MCwxNjM0NzU3ODAzLDQ4NT
+eyJoaXN0b3J5IjpbMTkxNDQ3ODU5MCwxNjM0NzU3ODAzLDQ4NT
 kxMDAxLC0xMzgyMDk3MTg1XX0=
 -->
