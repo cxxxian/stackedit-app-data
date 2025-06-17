@@ -34,11 +34,11 @@ int main()
 
 
 # string的insert
-在字符串s的某个位置
-```
+在字符串`s`的某个位置加入一个`char`字符
+```cpp
 s.insert(s.begin() + i + 1, '.');
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMxNjMzMjc3MCwxNjM0NzU3ODAzLDQ4NT
-kxMDAxLC0xMzgyMDk3MTg1XX0=
+eyJoaXN0b3J5IjpbLTYyMjIzMzIxLDE2MzQ3NTc4MDMsNDg1OT
+EwMDEsLTEzODIwOTcxODVdfQ==
 -->
