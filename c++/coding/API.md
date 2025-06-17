@@ -38,7 +38,9 @@ int main()
 ```cpp
 s.insert(s.begin() + i + 1, '.');
 ```
+
+![输入图片说明](/imgs/2025-06-17/gGFaRv7baVROCfZV.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyMjIzMzIxLDE2MzQ3NTc4MDMsNDg1OT
-EwMDEsLTEzODIwOTcxODVdfQ==
+eyJoaXN0b3J5IjpbMTcyMzQ0MzA2MCwxNjM0NzU3ODAzLDQ4NT
+kxMDAxLC0xMzgyMDk3MTg1XX0=
 -->
