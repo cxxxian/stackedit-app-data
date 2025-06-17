@@ -31,7 +31,13 @@ int main()
 `a = sfs, b = sfsa, c = sa`
 返回值： `string`，包含`s`中从`pos`开始的`len`个字符的拷贝（`pos`的默认值是`0`，`len`的默认值是`s.size() - pos`，即不加参数会默认拷贝整个`s`）
 异常 ：若`pos`的值超过了`string`的大小，则`substr`函数会抛出一个`out_of_range`异常；若`pos+n`的值超过了`string`的大小，则`substr`会调整`n`的值，只拷贝到`string`的末尾
+
+
+# string的insert
+```
+s.insert(s.begin() + i + 1, '.');
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYzNDc1NzgwMyw0ODU5MTAwMSwtMTM4Mj
-A5NzE4NV19
+eyJoaXN0b3J5IjpbNTQzOTg1ODAxLDE2MzQ3NTc4MDMsNDg1OT
+EwMDEsLTEzODIwOTcxODVdfQ==
 -->
