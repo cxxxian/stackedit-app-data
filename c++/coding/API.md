@@ -42,7 +42,9 @@ s.insert(s.begin() + i + 1, '.');
 
 ![输入图片说明](/imgs/2025-06-17/gGFaRv7baVROCfZV.png)
 
-# 
+# string的声明
+长度为`n`，内部都是`'.'`
+然后`vector<string> chess`同理，`n`个元素，每个元素都是`str`
 ```cpp
 string str(n, '.');
 vector<string> chess(n, str);
@@ -52,6 +54,6 @@ return result;
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTI3OTc1NjAsMTYzNDc1NzgwMyw0OD
-U5MTAwMSwtMTM4MjA5NzE4NV19
+eyJoaXN0b3J5IjpbLTYwMDMxOTM3LDE2MzQ3NTc4MDMsNDg1OT
+EwMDEsLTEzODIwOTcxODVdfQ==
 -->
