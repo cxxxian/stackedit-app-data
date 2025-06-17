@@ -41,7 +41,17 @@ s.insert(s.begin() + i + 1, '.');
 字符串增加字符的方法：
 
 ![输入图片说明](/imgs/2025-06-17/gGFaRv7baVROCfZV.png)
+
+# 
+```cpp
+string str(n, '.');
+vector<string> chess(n, str);
+backTracing(n, 0, chess);
+return result;
+```
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxNDQ3ODU5MCwxNjM0NzU3ODAzLDQ4NT
-kxMDAxLC0xMzgyMDk3MTg1XX0=
+eyJoaXN0b3J5IjpbLTE0OTI3OTc1NjAsMTYzNDc1NzgwMyw0OD
+U5MTAwMSwtMTM4MjA5NzE4NV19
 -->
