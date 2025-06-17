@@ -17,11 +17,21 @@ std::cout << num;  // 输出 12345
 ```cpp
 std::string to_string(int value);
 ```
-
-形式 ： s.substr(pos, len)
-返回值： string，包含s中从pos开始的len个字符的拷贝（pos的默认值是0，len的默认值是s.size() - pos，即不加参数会默认拷贝整个s）
+# substr
+```cpp
+int main()
+{
+	string s="sfsa";
+	string a=s.substr(0,3);
+	string b=s.substr();
+	string c=s.substr(2,3);
+	return 0;
+}
+```
+`a = sfs, b = sfsa, c = sa`
+返回值： `string`，包含`s`中从`pos`开始的`len`个字符的拷贝（`pos`的默认值是`0`，`len`的默认值是s.size() - pos，即不加参数会默认拷贝整个s）
 异常 ：若pos的值超过了string的大小，则substr函数会抛出一个out_of_range异常；若pos+n的值超过了string的大小，则substr会调整n的值，只拷贝到string的末尾
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwOTQ4NTExNiw0ODU5MTAwMSwtMTM4Mj
-A5NzE4NV19
+eyJoaXN0b3J5IjpbNDI4ODExNzUzLDQ4NTkxMDAxLC0xMzgyMD
+k3MTg1XX0=
 -->
