@@ -1,6 +1,7 @@
 # 封装一个Application
 ![输入图片说明](/imgs/2024-10-13/VIxcnh6mId4MhoGT.png)
 ![输入图片说明](/imgs/2024-10-13/sVDUnB9Ry98gBWSi.png)
+
 # 按三个环节设计接口
 ![输入图片说明](/imgs/2024-10-13/S2w0kZL0slRjxDTp.png)
 
@@ -139,6 +140,6 @@ KeyBoardCallback mKeyBoardCallback{ nullptr };
 void setKeyBoardCallback(KeyBoardCallback callback) { mKeyBoardCallback = callback; }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4NDYzMzk4LC0zMDEwMDU4NiwzODY3MT
-A5MF19
+eyJoaXN0b3J5IjpbLTE4NjU3NzE5NjAsLTM4NDYzMzk4LC0zMD
+EwMDU4NiwzODY3MTA5MF19
 -->
