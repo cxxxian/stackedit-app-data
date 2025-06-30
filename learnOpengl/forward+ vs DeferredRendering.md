@@ -92,9 +92,42 @@ for (int tileY = 0; tileY < numTilesY; tileY++) {
 ![输入图片说明](/imgs/2025-04-14/yQECMKOfXvo9d78J.png)
 
 
+# Forward+ 的原理
 
+Forward+（也称为 Clustered Forward Shading 或 Tiled Forward Shading）是一种先进的光照技术，旨在优化多光源场景的渲染性能。它是传统 Forward Rendering 的扩展，通过在光照计算之前引入一个基于计算着色器（Compute Shader）的光源剔除阶段，减少了每个像素需要处理的光源数量。
+
+#### 1. **光源剔除（Light Culling）**
+
+Forward+ 的核心在于光源剔除阶段。在这个阶段，屏幕被划分为多个小的区域（通常称为 Tile 或 Cluster），每个区域的大小通常是 16x16 或 32x32 像素。对于每个 Tile，计算其对应的视锥体（Bounding Box），然后将场景中的光源与这些视锥体进行相交测试，以确定哪些光源对当前 Tile 有贡献。
+
+#### 2. **光源列表生成**
+
+在光源剔除阶段，会生成两个光源索引列表：
+
+-   **不透明光源索引列表**：用于不透明几何体的光照计算。
+    
+-   **透明光源索引列表**：用于透明几何体的光照计算。
+    
+
+这些列表存储了影响每个 Tile 的光源索引，从而在后续的光照计算中，每个像素只需要考虑其所在 Tile 的光源列表，而不是场景中的所有光源。
+
+#### 3. **前向渲染（Forward Rendering）**
+
+在光源剔除阶段之后，使用标准的前向渲染流程来对场景中的物体进行着色。与传统的前向渲染不同，Forward+ 在计算每个像素的光照时，只会遍历当前像素所在 Tile 的光源列表，而不是场景中的所有光源。
+
+#### 4. **性能优化**
+
+Forward+ 的主要优势在于减少了光照计算的复杂度。通过将光源分组到 Tile 中，每个像素只需要处理少量的光源，而不是整个场景中的所有光源。这显著减少了光照计算的开销，提高了渲染性能。
+
+#### 5. **应用场景**
+
+Forward+ 特别适用于场景中有大量动态光源的情况，如粒子系统、动态灯光效果等。它能够有效地处理这些光源，而不会显著降低性能。
+
+### 总结
+
+Forward+ 是一种结合了传统前向渲染和基于 Tile 的光源剔除技术的渲染方法。它通过在光照计算之前引入光源剔除阶段，减少了每个像素需要处理的光源数量，从而优化了多光源场景的渲染性能。这种方法在处理大量动态光源时表现出色，同时支持不透明和透明物体的渲染
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjMyNjMyNzE3LDU4MzAxNDEwMSw0NjExND
-kxNjJdfQ==
+eyJoaXN0b3J5IjpbLTE3OTI1MTMzMzAsNjMyNjMyNzE3LDU4Mz
+AxNDEwMSw0NjExNDkxNjJdfQ==
 -->
