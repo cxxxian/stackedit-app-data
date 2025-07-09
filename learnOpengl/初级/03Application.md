@@ -71,7 +71,9 @@ void Application::destroy()
 
 ## 如何做一个回调函数
 ### 窗口变换例子
+
 ![输入图片说明](/imgs/2024-10-13/ntHIG4xCIvTcI34R.png)
+
 在application.h中
 1. 声明一个指针函数
 ```cpp
@@ -142,6 +144,6 @@ KeyBoardCallback mKeyBoardCallback{ nullptr };
 void setKeyBoardCallback(KeyBoardCallback callback) { mKeyBoardCallback = callback; }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwOTA5NDc2NCwtMTg2NTc3MTk2MCwtMz
+eyJoaXN0b3J5IjpbLTM5NjY4NjM4NCwtMTg2NTc3MTk2MCwtMz
 g0NjMzOTgsLTMwMTAwNTg2LDM4NjcxMDkwXX0=
 -->
