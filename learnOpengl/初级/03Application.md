@@ -58,6 +58,7 @@ void Application::destroy()
 }
 ```
 # 函数指针
+
 ![输入图片说明](/imgs/2024-10-13/CNaydYLtOfCeBkqe.png)
 
 此例的MyFunc指的是两个形参是int类型的，返回类型也是int类型的
@@ -141,6 +142,6 @@ KeyBoardCallback mKeyBoardCallback{ nullptr };
 void setKeyBoardCallback(KeyBoardCallback callback) { mKeyBoardCallback = callback; }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzYyNDkxNDgyLC0xODY1NzcxOTYwLC0zOD
-Q2MzM5OCwtMzAxMDA1ODYsMzg2NzEwOTBdfQ==
+eyJoaXN0b3J5IjpbMTUwOTA5NDc2NCwtMTg2NTc3MTk2MCwtMz
+g0NjMzOTgsLTMwMTAwNTg2LDM4NjcxMDkwXX0=
 -->
