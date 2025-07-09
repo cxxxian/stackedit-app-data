@@ -59,6 +59,7 @@ void Application::destroy()
 ```
 # 函数指针
 ![输入图片说明](/imgs/2024-10-13/CNaydYLtOfCeBkqe.png)
+
 此例的MyFunc指的是两个形参是int类型的，返回类型也是int类型的
 ## 此处目的
 为了外界不破坏Application类的情况下，通过函数指针去将自己在main函数设计的函数传给Application
@@ -140,6 +141,6 @@ KeyBoardCallback mKeyBoardCallback{ nullptr };
 void setKeyBoardCallback(KeyBoardCallback callback) { mKeyBoardCallback = callback; }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjU3NzE5NjAsLTM4NDYzMzk4LC0zMD
-EwMDU4NiwzODY3MTA5MF19
+eyJoaXN0b3J5IjpbMzYyNDkxNDgyLC0xODY1NzcxOTYwLC0zOD
+Q2MzM5OCwtMzAxMDA1ODYsMzg2NzEwOTBdfQ==
 -->
