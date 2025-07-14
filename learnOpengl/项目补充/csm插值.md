@@ -57,7 +57,26 @@ float csm(vec3 positionWorldSpace, vec3 normal, vec3 lightDir, float pcfRadius){
 
 这样，当像素落入相邻两张 shadow‑map 的重叠区时，shader 会自动再采样下一层并用 `smoothstep` 做权重插值，纹理分辨率骤变带来的亮/暗跳变即可消除。
 
+# 总结
+## 插值怎么做？
 
+我们选择“**世界空间 z 深度**”作为插值因子（也可以是相机空间 z）：
+
+### ✳️ 插值公式：
+
+```glsl
+finalShadow = mix(shadow0, shadow1, w);
+```
+
+其中：
+
+-   `shadow0`：当前 cascade（近层）的阴影值
+    
+-   `shadow1`：下一层 cascade（远层）的阴影值
+    
+-   `w`：权重，取值 [0,1]，表示像素在交界处的位置
+
+用大白话讲其实跟贴图没有任何关系，插值步骤体现在最后计算出来的`shadow`值，在两个相邻层级之间，对不同两个`shadowMap`得出的`shadow`值做插值得出一个平滑过滤
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY4NjMxNzgxXX0=
+eyJoaXN0b3J5IjpbMjczMDYxMzA0XX0=
 -->
