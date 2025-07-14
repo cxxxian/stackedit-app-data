@@ -52,6 +52,20 @@ vec3 color = mix(blue, red, t);    // 等价于 if/else
 ```
 -   `step(edge, x)` 在硬件里是无分支的比较；
 -   `mix(x, y, t)` = `x * (1‑t) + y * t`，同样无分支。
+
+
+# 如何降低DrawCall
+降低Draw Call主要是为了减轻CPU向GPU提交绘制命令的压力，提高渲染效率。常用方法包括：
+
+-   **GPU Instancing（实例化）**：一次Draw Call绘制多个相同模型的不同实例，减少重复调用。
+-   **合批（Batching）**：把多个小物体的顶点合并成一个大顶点缓冲，一次提交，减少调用次数。（
+ **静态合批（Static Batching）**：针对静态不动的物体，预先把它们的顶点和索引合并，渲染时只需一次提交。
+ **动态合批（Dynamic Batching）**：对频繁移动的物体，实时在CPU端把它们的顶点合并成一个缓冲，但合批开销较大。）
+-   **使用纹理图集（Texture Atlas）**：将多个纹理合并成一张大纹理，避免频繁切换材质。
+-   **减少状态切换**：按材质、渲染状态排序物体，减少GPU切换开销。
+-   **合并绘制调用**：合并多种绘制命令，尽量用一个Draw Call完成。
+-   **裁剪和视锥剔除**：不渲染不可见物体，避免无用Draw Call。
+-   **使用延迟渲染**：减少光照计算重复，间接降低Draw Call负担。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3NTg3ODIyNF19
+eyJoaXN0b3J5IjpbODYxNTM2NjUwLC0yNzU4NzgyMjRdfQ==
 -->
