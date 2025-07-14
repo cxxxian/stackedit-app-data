@@ -117,6 +117,8 @@ lightMatrix = proj * lightView;
 
 这时即使阴影在真实世界中没有动，**屏幕上的阴影就跳了一格**，你看到的就是**闪烁或游移现象**。
 
+再解释一下为什么
+
 ----------
 
 ## 怎么解决？
@@ -154,5 +156,5 @@ centerLS.xy = worldTexelSize * floor(centerLS.xy / worldTexelSize); // 向下对
 
 然后用对齐后的中心 `centerLS` 构造新的正交投影盒 → 投影矩阵。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDE5NTUxOThdfQ==
+eyJoaXN0b3J5IjpbNDEyNDk0Njk3LC0xODQxOTU1MTk4XX0=
 -->
