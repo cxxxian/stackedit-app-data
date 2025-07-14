@@ -40,7 +40,18 @@ if (a > 0) {
         
     -   这次屏蔽掉线程 0 和 2，只让 1 和 3 写入结果
 
+可以改写为：
+`mix` 线性插值写法（推荐）
 
+```glsl
+vec3 red  = vec3(1.0, 0.0, 0.0);
+vec3 blue = vec3(0.0, 0.0, 1.0);
+
+float t   = step(0.5, a);          // a ≤ 0.5 → 0，a > 0.5 → 1
+vec3 color = mix(blue, red, t);    // 等价于 if/else
+```
+-   `step(edge, x)` 在硬件里是无分支的比较；
+-   `mix(x, y, t)` = `x * (1‑t) + y * t`，同样无分支。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzI1ODc5MDRdfQ==
+eyJoaXN0b3J5IjpbLTI3NTg3ODIyNF19
 -->
