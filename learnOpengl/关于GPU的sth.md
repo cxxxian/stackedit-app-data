@@ -71,8 +71,8 @@ vec3 color = mix(blue, red, t);    // 等价于 if/else
 ### 为什么要动态合批？
 
 如果每个小物体单独调用Draw Call，CPU压力大。
-
 但是它们又不能预先合批，因为它们的变换数据（位置、旋转）每帧都会变，顶点数据需要变动。
+
 ### 工作流程（简化）
 
 1.  CPU先计算每个小物体变换后的顶点（把原始模型顶点乘以模型矩阵）
@@ -84,5 +84,5 @@ vec3 color = mix(blue, red, t);    // 等价于 if/else
 -   每帧都需要复制和合并顶点数据，CPU开销较大
 -   只能合批顶点数比较少的小物体（比如几百顶点以内），否则复制开销过大
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0NTQ1NDc4OSwtMjc1ODc4MjI0XX0=
+eyJoaXN0b3J5IjpbNTEyNTc2MjMsLTI3NTg3ODIyNF19
 -->
