@@ -294,7 +294,24 @@ texelSize = 100 / 2048 = 0.0488;
 含义是：
 
 > ✅ “一个 texel 在光空间里对应 0.0488 个世界单位的长度”
+
+
+## 所以它们都在同一空间下：
+
+`centerLS.x`
+包围盒中心在光空间的 X 坐标
+世界单位（如米）
+
+`texelSize`
+1 个 texel 在光空间中多宽
+世界单位（如米）
+
+所以可以直接相除，计算“当前中心点处在第几个 texel 网格上”：
+
+```
+centerLS.x / texelSize  ≈  21.0 表示第 21 格
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMwMzE2NjM4OSwtNjc2NzQ0NjA1LC0xOT
+eyJoaXN0b3J5IjpbMTk4MTc4MjE1NCwtNjc2NzQ0NjA1LC0xOT
 M0NDM4ODIyLC0xODQxOTU1MTk4XX0=
 -->
