@@ -63,7 +63,7 @@ float csm(vec3 positionWorldSpace, vec3 normal, vec3 lightDir, float pcfRadius){
 
 我们选择“**世界空间 z 深度**”作为插值因子（也可以是相机空间 z）：
 
-### ✳️ 插值公式：
+### 插值公式：
 
 ```glsl
 finalShadow = mix(shadow0, shadow1, w);
@@ -154,5 +154,5 @@ centerLS.xy = worldTexelSize * floor(centerLS.xy / worldTexelSize); // 向下对
 
 然后用对齐后的中心 `centerLS` 构造新的正交投影盒 → 投影矩阵。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Mzk2MjExNzRdfQ==
+eyJoaXN0b3J5IjpbLTE4NDE5NTUxOThdfQ==
 -->
