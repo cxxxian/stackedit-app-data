@@ -218,11 +218,9 @@ P_world 在 shadow map 上的 `uv` 坐标也跟着微变，例如从 (0.502, 0.4
 
 我们做了这个操作：
 
-cpp
-
-复制编辑
-
-`centerLS.x = texelSize * floor(centerLS.x / texelSize);`
+```cpp
+centerLS.x = texelSize * floor(centerLS.x / texelSize);
+```
 
 举例：
 
@@ -241,7 +239,7 @@ cpp
 
 ----------
 
-## 🧠 更形象的比喻
+### 🧠 更形象的比喻
 
 把 shadow map 看成一张纸上的网格（格子大小 = texelSize）
 
@@ -254,11 +252,11 @@ cpp
 
 ----------
 
-## ✅ 总结一句话：
+### ✅ 总结一句话：
 
 > **不对齐时：每帧的 lightMatrix 总有微小变化，导致阴影采样落在不同 texel，产生闪烁。**  
 > **对齐后：只要摄像机没有跨过一个 texel，lightMatrix 就锁定不变，阴影采样点固定，因此画面稳定。**
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODQwMjUzMTUsLTE5MzQ0Mzg4MjIsLT
-E4NDE5NTUxOThdfQ==
+eyJoaXN0b3J5IjpbLTY3Njc0NDYwNSwtMTkzNDQzODgyMiwtMT
+g0MTk1NTE5OF19
 -->
