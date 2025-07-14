@@ -118,7 +118,8 @@ lightMatrix = proj * lightView;
 这时即使阴影在真实世界中没有动，**屏幕上的阴影就跳了一格**，你看到的就是**闪烁或游移现象**。
 
 再解释一下为什么`lightMatrix`会和摄像机扯上关系，明明`lightMatrix`只和光源有关啊。
-主要原因就是我们现在做的是`CSM`，这个包围盒我们是利用玩家视角的摄像机从`NDC`去反推出世界坐标的！所以
+主要原因就是我们现在做的是`CSM`，这个包围盒我们是利用玩家视角的摄像机从`NDC`去反推出世界坐标的！所以这里就和玩家视角摄像机扯上关系了
+
 
 ----------
 
@@ -157,5 +158,6 @@ centerLS.xy = worldTexelSize * floor(centerLS.xy / worldTexelSize); // 向下对
 
 然后用对齐后的中心 `centerLS` 构造新的正交投影盒 → 投影矩阵。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg2MDk2NjgyOSwtMTg0MTk1NTE5OF19
+eyJoaXN0b3J5IjpbLTE5MzQ0Mzg4MjIsLTE4NDE5NTUxOThdfQ
+==
 -->
