@@ -157,7 +157,9 @@ centerLS.xy = worldTexelSize * floor(centerLS.xy / worldTexelSize); // 向下对
 
 
 然后用对齐后的中心 `centerLS` 构造新的正交投影盒 → 投影矩阵。
+
+### 让我们y
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MzQ0Mzg4MjIsLTE4NDE5NTUxOThdfQ
-==
+eyJoaXN0b3J5IjpbLTM0OTkyMDYwNCwtMTkzNDQzODgyMiwtMT
+g0MTk1NTE5OF19
 -->
