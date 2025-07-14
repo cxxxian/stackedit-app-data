@@ -92,32 +92,34 @@ finalShadow = mix(shadow0, shadow1, w);
 lightMatrix = proj * lightView;
 ```
 
-这个正交矩阵定义了当前 shadow map 在光源空间中能“看到”的区域：
+这个正交矩阵定义了当前 `shadow map` 在光源空间中能“看到”的区域：
 
--   比如：x ∈ [-50, 50], y ∈ [-50, 50]，宽高共 100 个世界单位；
+-   比如：`x ∈ [-50, 50], y ∈ [-50, 50]`，宽高共 `100` 个世界单位；
     
--   你把它渲染到一个 2048×2048 的 shadow map 中；
+-   你把它渲染到一个 `2048×2048` 的 `shadow map` 中；
     
 -   所以：**每个 texel 大约对应世界空间中的 100/2048 ≈ 0.0488 个单位**。
     
 
 ----------
 
-## ❗ 问题来了
+## 问题来了
 
-你会发现，**只要摄像机稍微动一动，lightMatrix 的投影中心就会移动一点点**，比如 0.01 的单位，但 shadow map 是离散的 texel，它无法“半格”移动，于是采样位置会跳跃：
+你会发现，**只要摄像机稍微动一动，lightMatrix 的投影中心就会移动一点点**，比如 `0.01` 的单位，但 `shadow map` 是离散的 `texel`，它无法“半格”移动，于是采样位置会跳跃：
 
-text
+```cpp
+摄像机移动前：
+     世界空间点 P → 落到 shadow map 第 512×512 格
 
-复制编辑
-
-`摄像机移动前：      世界空间点 P → 落到 shadow map 第 512×512 格  摄像机微动：      世界空间点 P → 落到 shadow map 第 513×512 格`
+摄像机微动：
+     世界空间点 P → 落到 shadow map 第 513×512 格
+```
 
 这时即使阴影在真实世界中没有动，**屏幕上的阴影就跳了一格**，你看到的就是**闪烁或游移现象**。
 
 ----------
 
-## ✅ 怎么解决？
+## 怎么解决？
 
 我们要做的是：
 
@@ -125,7 +127,7 @@ text
 
 ----------
 
-### 📐 计算步骤（核心）
+### 计算步骤（核心）
 
 你可以在构造 lightView → lightProj 矩阵时，加一步 **对中心坐标进行 texel 级对齐**。
 
@@ -136,23 +138,21 @@ text
 -   你已经得出当前视锥在光源空间下的正交包围盒大小为 `width, height`（比如 100）
     
 -   那么一个 texel 对应的世界单位大小：
-    
 
-cpp
-
-复制编辑
-
-`float worldTexelSize = width / resolution;`
+```glsl
+float worldTexelSize = width / resolution;
+```
 
 然后你对包围盒中心 `vec3 centerWS` 做对齐：
 
-cpp
+```glsl
+vec3 centerLS = lightView * vec4(centerWS, 1.0);  // 转到 light space
 
-复制编辑
+centerLS.xy = worldTexelSize * floor(centerLS.xy / worldTexelSize); // 向下对齐
+```
 
-`vec3 centerLS = lightView * vec4(centerWS, 1.0);  // 转到 light space  centerLS.xy = worldTexelSize * floor(centerLS.xy / worldTexelSize); // 向下对齐`
 
 然后用对齐后的中心 `centerLS` 构造新的正交投影盒 → 投影矩阵。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ3NDkyMTQ1XX0=
+eyJoaXN0b3J5IjpbLTE3Mzk2MjExNzRdfQ==
 -->
