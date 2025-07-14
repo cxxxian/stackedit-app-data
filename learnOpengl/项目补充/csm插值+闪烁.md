@@ -256,7 +256,23 @@ centerLS.x = texelSize * floor(centerLS.x / texelSize);
 
 > **不对齐时：每帧的 lightMatrix 总有微小变化，导致阴影采样落在不同 texel，产生闪烁。**  
 > **对齐后：只要摄像机没有跨过一个 texel，lightMatrix 就锁定不变，阴影采样点固定，因此画面稳定。**
+
+# 解析`centerLS.x = texelSize * floor(centerLS.x / texelSize);`
+
+为什么要这样算
+### `centerLS.x` 是什么？
+
+```vec3 centerLS = (lightView * vec4(centerWS, 1.0)).xyz;`
+
+-   `centerWS` 是你当前主摄像机视锥包围盒的中心，单位是“世界坐标”
+    
+-   `lightView` 是光源的视图矩阵，作用是把“世界坐标”变成 **光源空间（Light Space）坐标**
+    
+-   所以 `centerLS` 仍然是“以米为单位的坐标值”，只不过是光源视角下的位置
+    
+
+✅ 它是**光空间下的世界坐标位置**，不是纹理坐标。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3Njc0NDYwNSwtMTkzNDQzODgyMiwtMT
-g0MTk1NTE5OF19
+eyJoaXN0b3J5IjpbLTE3ODM3OTc4NTgsLTY3Njc0NDYwNSwtMT
+kzNDQzODgyMiwtMTg0MTk1NTE5OF19
 -->
