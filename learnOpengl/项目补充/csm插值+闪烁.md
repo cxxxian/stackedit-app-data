@@ -262,17 +262,39 @@ centerLS.x = texelSize * floor(centerLS.x / texelSize);
 为什么要这样算
 ### `centerLS.x` 是什么？
 
-```vec3 centerLS = (lightView * vec4(centerWS, 1.0)).xyz;`
+```cpp
+vec3 centerLS = (lightView * vec4(centerWS, 1.0)).xyz;
+```
 
 -   `centerWS` 是你当前主摄像机视锥包围盒的中心，单位是“世界坐标”
     
 -   `lightView` 是光源的视图矩阵，作用是把“世界坐标”变成 **光源空间（Light Space）坐标**
     
 -   所以 `centerLS` 仍然是“以米为单位的坐标值”，只不过是光源视角下的位置
-    
+它是**光空间下的世界坐标位置**，不是纹理坐标。
 
-✅ 它是**光空间下的世界坐标位置**，不是纹理坐标。
+
+### `texelSize` 是什么？
+
+```cpp
+float texelSize = width / resolution;
+```
+
+举个例子：
+
+-   `width = 100.0f` → 表示你当前 `light projection` 覆盖的世界空间区域宽 100 个单位
+    
+-   `resolution = 2048` → 表示 `shadow map` 横向有 `2048` 个 `texel`
+    
+-   所以：
+```
+texelSize = 100 / 2048 = 0.0488;
+```
+
+含义是：
+
+> ✅ “一个 texel 在光空间里对应 0.0488 个世界单位的长度”
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODM3OTc4NTgsLTY3Njc0NDYwNSwtMT
-kzNDQzODgyMiwtMTg0MTk1NTE5OF19
+eyJoaXN0b3J5IjpbMTMwMzE2NjM4OSwtNjc2NzQ0NjA1LC0xOT
+M0NDM4ODIyLC0xODQxOTU1MTk4XX0=
 -->
