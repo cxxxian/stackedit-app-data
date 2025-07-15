@@ -1,6 +1,7 @@
 # reverse
 `reverse`用法：
 ```cpp
+#include<algorithm>
 string t = "aabbcc"
 reverse(result.begin(), result.end());`
 ```
@@ -8,6 +9,7 @@ reverse(result.begin(), result.end());`
 # std::stoi(s)
 可以将字符串转成`int`
 ```cpp
+#include<string>
 std::string s = "12345";
 int num = std::stoi(s);
 std::cout << num;  // 输出 12345
@@ -54,6 +56,6 @@ return result;
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwMDMxOTM3LDE2MzQ3NTc4MDMsNDg1OT
-EwMDEsLTEzODIwOTcxODVdfQ==
+eyJoaXN0b3J5IjpbLTEyODgwNDE1OSwtNjAwMzE5MzcsMTYzND
+c1NzgwMyw0ODU5MTAwMSwtMTM4MjA5NzE4NV19
 -->
