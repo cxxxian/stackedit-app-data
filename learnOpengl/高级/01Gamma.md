@@ -293,6 +293,9 @@ void main()
 这样渲染出来的几何体就是完全正常的了，光照也是完全对应相应的线性进行转化的
 
 ![输入图片说明](/imgs/2025-02-20/OdyBkZExItyV79kD.png)
+
+# 总结
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTc2NjAxMDVdfQ==
+eyJoaXN0b3J5IjpbODg2NTc4NjgsLTE5OTc2NjAxMDVdfQ==
 -->
