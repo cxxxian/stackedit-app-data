@@ -295,7 +295,8 @@ void main()
 ![输入图片说明](/imgs/2025-02-20/OdyBkZExItyV79kD.png)
 
 # 总结
-
+首先如果是一张`SRGB`的图片，就代表它被`1/2.2`次幂计算了，主要原因是拉长暗部，使得暗部精度损失不那么严重。
+然后我们导入图片时，将其转为`RGB`，这样才是线性颜色空间，与光照正常zuo
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODg2NTc4NjgsLTE5OTc2NjAxMDVdfQ==
+eyJoaXN0b3J5IjpbLTM4NTA2NDQ0OCwtMTk5NzY2MDEwNV19
 -->
