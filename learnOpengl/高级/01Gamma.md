@@ -296,7 +296,10 @@ void main()
 
 # 总结
 首先如果是一张`SRGB`的图片，就代表它被`1/2.2`次幂计算了，主要原因是拉长暗部，使得暗部精度损失不那么严重。
-然后我们导入图片时，将其转为`RGB`，这样才是线性颜色空间，与光照正常zuo
+然后我们导入图片时，将其从`SRGB`转为`RGB`，通过声明贴图时即可做到，这样才是线性颜色空间，与光照正常做计算
+然后最后输出颜色前，做`1/2.2`次幂计算抵抗屏幕
+屏幕会做固有的`2.2`次幂
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4NTA2NDQ0OCwtMTk5NzY2MDEwNV19
+eyJoaXN0b3J5IjpbLTIxMTU5Mjc3MjIsLTE5OTc2NjAxMDVdfQ
+==
 -->
