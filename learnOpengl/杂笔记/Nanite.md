@@ -55,7 +55,21 @@ Nanite 的突破点就是：
 
  **目的**：可以像八叉树 / BVH 一样进行层级管理和剔除。
 
+这是离线阶段：
+1.  **模型拆 Cluster**
+    
+2.  每个 Cluster 的顶点 / 索引 / 包围盒 / LOD 信息都打包好
+    
+3.  **上传到 GPU 显存一次**，放到一个 **Buffer（StructuredBuffer / SSBO）**
+    
+    -   这个 Buffer 可以被 Compute Shader 和 Vertex Shader 直接读取
+        
+
+> 注意：这一部分数据的上传是 **一次性的初始化**，不是每帧都发
+
+
 ----------
+
 
 ### 2. **层级 LOD（Hierarchical LOD）**
 
@@ -163,5 +177,5 @@ Nanite 的突破点就是：
 
 它解决了“**实时渲染海量三角形**”的老问题，让开发者可以直接用电影资产放进游戏里。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDU0NjM0NzhdfQ==
+eyJoaXN0b3J5IjpbLTkzMDIzOTA2NSwtMTIwNTQ2MzQ3OF19
 -->
