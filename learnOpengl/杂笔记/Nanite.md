@@ -53,7 +53,7 @@ Nanite 的突破点就是：
 -   所以一个上亿三角形的模型，会被拆成几十万个 Cluster。
     
 
-👉 **目的**：可以像八叉树 / BVH 一样进行层级管理和剔除。
+ **目的**：可以像八叉树 / BVH 一样进行层级管理和剔除。
 
 ----------
 
@@ -91,7 +91,7 @@ Nanite 的突破点就是：
     -   然后 GPU 用 **Multi-Draw Indirect (MDI)** 一次性画所有可见的 Cluster。
         
 
-👉 **CPU 几乎不参与 draw call 调度**，完全是 GPU 自己驱动渲染。
+ **CPU 几乎不参与 draw call 调度**，完全是 GPU 自己驱动渲染。
 
 ----------
 
@@ -163,5 +163,5 @@ Nanite 的突破点就是：
 
 它解决了“**实时渲染海量三角形**”的老问题，让开发者可以直接用电影资产放进游戏里。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MzQ5NjU0MzBdfQ==
+eyJoaXN0b3J5IjpbLTEyMDU0NjM0NzhdfQ==
 -->
