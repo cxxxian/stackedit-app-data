@@ -178,8 +178,84 @@ Nanite 的突破点就是：
 它解决了“**实时渲染海量三角形**”的老问题，让开发者可以直接用电影资产放进游戏里。
 
 
+## 解释一下这两个流程：
+写入 **Indirect Command Buffer**。
+ **GPU 一次 Multi-Draw Indirect** → 批量渲染所有 Cluster。
 
+## 写入 Indirect Command Buffer
+### 什么是 Indirect Command Buffer？
+
+-   它是 GPU 内存里的一块特殊 **缓冲区（Buffer）**，专门存储绘制指令。
+    
+-   每条命令通常包含类似以下信息（以 OpenGL 为例）：
+```cpp
+struct DrawElementsIndirectCommand {
+    GLuint count;          // 三角形索引数
+    GLuint instanceCount;  // 实例数量
+    GLuint firstIndex;     // 索引缓冲区起点
+    GLuint baseVertex;     // 顶点缓冲区偏移
+    GLuint baseInstance;   // 实例偏移
+};
+```
+### 谁写入这块 Buffer？
+
+-   **Compute Shader 在 GPU 上写入**
+    
+-   过程：
+    
+    1.  GPU 读取 Cluster 数据（顶点、索引、包围盒、LOD）
+        
+    2.  根据视锥体裁剪 / 遮挡裁剪 / LOD 选择，判断哪些 Cluster 可见
+        
+    3.  把可见 Cluster 对应的绘制参数写入 Indirect Command Buffer
+        
+
+> ⚠️ 注意：**CPU 不参与这个写入过程**，GPU 完全自主生成要画哪些 Cluster 的命令。
+
+----------
+
+## GPU 一次 Multi-Draw Indirect → 批量渲染所有 Cluster
+
+### Multi-Draw Indirect (MDI)
+
+-   是一种 GPU 绘制接口，允许 **一次调用**就渲染 Buffer 里存储的多条命令。
+    
+-   OpenGL 示例：
+```cpp
+glBindBuffer(GL_DRAW_INDIRECT_BUFFER, indirectCommandBuffer);
+glMultiDrawElementsIndirect(GL_TRIANGLES, GL_UNSIGNED_INT, 0, drawCount, 0);
+```
+-   这里：
+    
+    -   `indirectCommandBuffer` → GPU 上的缓冲区，里面存了很多 DrawElementsIndirectCommand
+        
+    -   `drawCount` → 命令数量（可见的 Cluster 数量）
+        
+
+### 批量渲染 Cluster
+
+-   GPU 会循环读取 Indirect Command Buffer 中每条命令
+    
+-   直接渲染每个可见 Cluster
+    
+-   **CPU 不发单独 draw call**，只发一次 MDI
+    
+-   结果：GPU 批量渲染了成千上万个 Cluster，高效且并行
+- 
+## 总结
+
+步骤
+
+解释
+
+**写入 Indirect Command Buffer**
+
+GPU 自己生成每个可见 Cluster 的绘制参数，放到 GPU 内存的 buffer 里
+
+**GPU 一次 Multi-Draw Indirect**
+
+GPU 一次性批量读取这些命令，把所有可见 Cluster 渲染出来，CPU 只发一条 draw call
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzgyOTMzOTEsLTkzMDIzOTA2NSwtMT
+eyJoaXN0b3J5IjpbLTE1MTQ5ODQxNzksLTkzMDIzOTA2NSwtMT
 IwNTQ2MzQ3OF19
 -->
