@@ -244,18 +244,21 @@ glMultiDrawElementsIndirect(GL_TRIANGLES, GL_UNSIGNED_INT, 0, drawCount, 0);
 - 
 ## 总结
 
-步骤
 
-解释
-
-**写入 Indirect Command Buffer**
-
+**写入 Indirect Command Buffer**：
 GPU 自己生成每个可见 Cluster 的绘制参数，放到 GPU 内存的 buffer 里
 
-**GPU 一次 Multi-Draw Indirect**
-
+**GPU 一次 Multi-Draw Indirect**：
 GPU 一次性批量读取这些命令，把所有可见 Cluster 渲染出来，CPU 只发一条 draw call
+
+核心概念：
+
+-   **Indirect Command Buffer** = GPU 内存里的“绘制清单”
+    
+-   **Multi-Draw Indirect** = GPU 按清单批量画，不需要 CPU 干预
+    
+-   **优势** = CPU draw call 几乎为 1 → 完全解决传统大量 draw call 的瓶颈
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MTQ5ODQxNzksLTkzMDIzOTA2NSwtMT
-IwNTQ2MzQ3OF19
+eyJoaXN0b3J5IjpbMjA4NzM1MDkxMywtOTMwMjM5MDY1LC0xMj
+A1NDYzNDc4XX0=
 -->
