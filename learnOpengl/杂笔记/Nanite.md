@@ -208,7 +208,18 @@ struct DrawElementsIndirectCommand {
     2.  根据视锥体裁剪 / 遮挡裁剪 / LOD 选择，判断哪些 Cluster 可见
         
     3.  把可见 Cluster 对应的绘制参数写入 Indirect Command Buffer
-        
+
+对每个可见 Cluster，Compute Shader 生成一条绘制命令结构体：
+```glsl
+DrawElementsIndirectCommand cmd;
+cmd.count = clusterIndexCount;
+cmd.instanceCount = 1;
+cmd.firstIndex = clusterIndexOffset;
+cmd.baseVertex = clusterVertexOffset;
+cmd.baseInstance = 0;
+```
+-   写入 **Indirect Command Buffer** 中的下一个空位
+-   这里的 buffer 是 **GPU 可写的 SSBO / StructuredBuffer**
 
 > ⚠️ 注意：**CPU 不参与这个写入过程**，GPU 完全自主生成要画哪些 Cluster 的命令。
 
@@ -259,6 +270,6 @@ GPU 一次性批量读取这些命令，把所有可见 Cluster 渲染出来，C
     
 -   **优势** = CPU draw call 几乎为 1 → 完全解决传统大量 draw call 的瓶颈
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4NzM1MDkxMywtOTMwMjM5MDY1LC0xMj
-A1NDYzNDc4XX0=
+eyJoaXN0b3J5IjpbLTY4NzcyNDc4MiwyMDg3MzUwOTEzLC05Mz
+AyMzkwNjUsLTEyMDU0NjM0NzhdfQ==
 -->
