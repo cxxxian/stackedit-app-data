@@ -1,3 +1,5 @@
+先理清一个小概念
+**绑定 VAO/VBO 是每帧“指一下”用哪个缓冲区，不是传数据；只有 Uniform 这种小数据是每帧真的传输的。**
 # 为什么需要 Nanite？
 
 在传统实时渲染管线里（Unity / UE4 / 其他引擎）：
@@ -270,6 +272,6 @@ GPU 一次性批量读取这些命令，把所有可见 Cluster 渲染出来，C
     
 -   **优势** = CPU draw call 几乎为 1 → 完全解决传统大量 draw call 的瓶颈
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4NzcyNDc4MiwyMDg3MzUwOTEzLC05Mz
-AyMzkwNjUsLTEyMDU0NjM0NzhdfQ==
+eyJoaXN0b3J5IjpbLTQ2NTg0NjA4MywtNjg3NzI0NzgyLDIwOD
+czNTA5MTMsLTkzMDIzOTA2NSwtMTIwNTQ2MzQ3OF19
 -->
