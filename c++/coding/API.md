@@ -64,8 +64,10 @@ getline(cin, word);
 string word;
 cin >> word;
 ```
+
+# int tolower(int ch);
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4ODE2MTY4NiwtMTI4ODA0MTU5LC02MD
-AzMTkzNywxNjM0NzU3ODAzLDQ4NTkxMDAxLC0xMzgyMDk3MTg1
-XX0=
+eyJoaXN0b3J5IjpbMjAxMzczNzQ1NCwtMzg4MTYxNjg2LC0xMj
+g4MDQxNTksLTYwMDMxOTM3LDE2MzQ3NTc4MDMsNDg1OTEwMDEs
+LTEzODIwOTcxODVdfQ==
 -->
