@@ -53,9 +53,19 @@ vector<string> chess(n, str);
 backTracing(n, 0, chess);
 return result;
 ```
-
-
+# getline
+整行输入
+```cpp
+string word;
+getline(cin, word);
+```
+如果如以下写法，会造成例如输入`ABSIB T`，只会输入`ABSIB`
+```cpp
+string word;
+cin >> word;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyODgwNDE1OSwtNjAwMzE5MzcsMTYzND
-c1NzgwMyw0ODU5MTAwMSwtMTM4MjA5NzE4NV19
+eyJoaXN0b3J5IjpbLTM4ODE2MTY4NiwtMTI4ODA0MTU5LC02MD
+AzMTkzNywxNjM0NzU3ODAzLDQ4NTkxMDAxLC0xMzgyMDk3MTg1
+XX0=
 -->
