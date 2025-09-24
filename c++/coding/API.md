@@ -65,9 +65,17 @@ string word;
 cin >> word;
 ```
 
-# int tolower(int ch);
+# tolower
+头文件`<cctype>`
+转小写
+```cpp
+char target;
+cin >> target;
+target = tolower(target);
+```
+大写的API是`toupper`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxMzczNzQ1NCwtMzg4MTYxNjg2LC0xMj
-g4MDQxNTksLTYwMDMxOTM3LDE2MzQ3NTc4MDMsNDg1OTEwMDEs
-LTEzODIwOTcxODVdfQ==
+eyJoaXN0b3J5IjpbLTE1Mjg5NTgxMTAsLTM4ODE2MTY4NiwtMT
+I4ODA0MTU5LC02MDAzMTkzNywxNjM0NzU3ODAzLDQ4NTkxMDAx
+LC0xMzgyMDk3MTg1XX0=
 -->
