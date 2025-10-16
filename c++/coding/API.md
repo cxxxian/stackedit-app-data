@@ -17,7 +17,7 @@ std::cout << num;  // 输出 12345
 # to_string
 把数字转化成字符串
 ```cpp
-std::string to_string(int value);
+std::string a = std::to_string(int value);
 ```
 # substr
 ```cpp
@@ -75,7 +75,7 @@ target = tolower(target);
 ```
 大写的API是`toupper`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1Mjg5NTgxMTAsLTM4ODE2MTY4NiwtMT
-I4ODA0MTU5LC02MDAzMTkzNywxNjM0NzU3ODAzLDQ4NTkxMDAx
-LC0xMzgyMDk3MTg1XX0=
+eyJoaXN0b3J5IjpbMjAyNzUzMTUxMywtMTUyODk1ODExMCwtMz
+g4MTYxNjg2LC0xMjg4MDQxNTksLTYwMDMxOTM3LDE2MzQ3NTc4
+MDMsNDg1OTEwMDEsLTEzODIwOTcxODVdfQ==
 -->
