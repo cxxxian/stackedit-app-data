@@ -16,7 +16,7 @@ void getNext(vector<int>& next, const string& s){
 }
 ```
 # 实现 strStr()
-其实`getNext`和主函数`strStr`很像，就是注意一下`getNext`的`i`是从`1`开始循环的，而`strStr`是从`0`
+其实`getNext`和主函数`strStr`很像，就是注意一下`getNext`的`i`是从`1`开始循环的，而`strStr`是从`0`开始的
 ```cpp
 class Solution {
 public:
@@ -60,8 +60,9 @@ public:
 	}
 };
 ```
-
-## eg2
+# 重复的子字符串
+`len - (next[len - 1] + 1)` 是最长相等前后缀不包含的子串的长度。
+如果`len % (len - (next[len - 1] + 1)) == 0` ，则说明数组的长度正好可以被 最长相等前后缀不包含的子串的长度 整除 ，说明该字符串有重复的子字符串。
 ```cpp
 class Solution {
 public:
@@ -95,6 +96,6 @@ public:
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMzNjY1ODg3MSwtMTgyMjc5NTc2MSwtMj
-A3NjA5ODYxM119
+eyJoaXN0b3J5IjpbMzgwMzAwOTkxLC0xODIyNzk1NzYxLC0yMD
+c2MDk4NjEzXX0=
 -->
