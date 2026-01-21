@@ -14,6 +14,9 @@ std::string s = "12345";
 int num = std::stoi(s);
 std::cout << num;  // 输出 12345
 ```
+`stoi` 函数：将字符串转成 `int` 整数。
+`stol` 函数：将字符串转成 `long` 整数。
+`stoll` 函数：将字符串转成 `long long` 整数。
 # to_string
 把数字转化成字符串
 ```cpp
@@ -75,7 +78,8 @@ target = tolower(target);
 ```
 大写的API是`toupper`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAyNzUzMTUxMywtMTUyODk1ODExMCwtMz
-g4MTYxNjg2LC0xMjg4MDQxNTksLTYwMDMxOTM3LDE2MzQ3NTc4
-MDMsNDg1OTEwMDEsLTEzODIwOTcxODVdfQ==
+eyJoaXN0b3J5IjpbLTEwOTU3NzUzNzcsMjAyNzUzMTUxMywtMT
+UyODk1ODExMCwtMzg4MTYxNjg2LC0xMjg4MDQxNTksLTYwMDMx
+OTM3LDE2MzQ3NTc4MDMsNDg1OTEwMDEsLTEzODIwOTcxODVdfQ
+==
 -->
