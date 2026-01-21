@@ -15,8 +15,8 @@ void getNext(vector<int>& next, const string& s){
 	}
 }
 ```
-
-## eg1
+# 实现 strStr()
+其实`getNext`和主函数`strStr`很像，就是注意一下`getNext`的`i`是从`1`开始循环的，而`strStr`是从`0`
 ```cpp
 class Solution {
 public:
@@ -95,6 +95,6 @@ public:
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjI3OTU3NjEsLTIwNzYwOTg2MTNdfQ
-==
+eyJoaXN0b3J5IjpbLTMzNjY1ODg3MSwtMTgyMjc5NTc2MSwtMj
+A3NjA5ODYxM119
 -->
