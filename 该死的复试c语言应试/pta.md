@@ -18,7 +18,7 @@ int main(){
 ```
 # 在顺序表 list 的第 i 个位置上插入元素 x
 这种题从后往前做
-从后往前，每一个向后移动，直到遇到希望插入的
+从后往前，每一个向后移动，直到遇到希望插入的`index`
 ```c
 #include <stdio.h>
 
@@ -52,6 +52,7 @@ int main(){
 ```
 # 从顺序表 list 中删除第 i 个元素
 相应的这种题从前往后做
+遇到希望删除的数字之后，之后的所有往前移动一位
 ```c
 #include <stdio.h>
 int main(){
@@ -79,6 +80,41 @@ int main(){
     
 }
 ```
+# 求单链表list中的元素个数，即表长
+学习一下链表的chuang'jian使用
+```c
+#include <stdio.h>
+#include <stdlib.h>
+struct Node{
+    int data;
+    struct Node* next;
+};
+int main(){
+    int n;
+    scanf("%d", &n);
+    struct Node* head = (struct Node*)malloc(sizeof(struct Node));
+    head->next = NULL;
+    struct Node* tail = head;
+    for(int i = 0; i < n; i++){
+        int x;
+        scanf("%d", &x);
+
+        struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+        newNode->data = x;
+        newNode->next = NULL;
+        tail->next = newNode;
+        tail = newNode;
+    }
+    int len = 0;
+    struct Node *cur = head->next;
+    while(cur){
+        len++;
+        cur = cur->next;
+    }
+    printf("%d", len);
+    return 0;
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTk5NjY4MDNdfQ==
+eyJoaXN0b3J5IjpbMTA3MDMwODMxXX0=
 -->
