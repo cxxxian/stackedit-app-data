@@ -81,7 +81,9 @@ int main(){
 }
 ```
 # 求单链表list中的元素个数，即表长
-学习一下链表的chuang'jian使用
+学习一下链表的创建和使用
+特别是：`struct Node* head = (struct Node*)malloc(sizeof(struct Node));`
+以及`struct Node* next;`别忘了`struct`
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -116,5 +118,5 @@ int main(){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3MDMwODMxXX0=
+eyJoaXN0b3J5IjpbMTk2ODY4NDI2Ml19
 -->
