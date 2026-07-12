@@ -17,7 +17,7 @@
 
 利用`TexCoord * 10 * ceil`，可以讲原本`0-1`的`uv`转成`0-10`，然后用`ceil`之后就能实现上面这种画格子的效果，
 但是因为`TexCoord * 10`的原因，整个颜色输出会变亮，所以我们在`ceil`之后要手动`divide`除以`10`
-因为`uv`是`RG`两个数值，横向`R`（红色），纵向（绿色）`G`，所以我们利用`BreakOutFloat2Components`
+因为`uv`是`RG`两个数值，横向`R`（红色），纵向（绿色）`G`，所以我们利用**BreakOutFloat2Components**节点，可以拆分出两个通道，输出`R`的话就可以实现竖纹的效果，因为`R`代表`u`通道
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTg5OTM1NTEsLTY2MTg3NzI2XX0=
+eyJoaXN0b3J5IjpbMTM3MDU3NjgwMCwtNjYxODc3MjZdfQ==
 -->
