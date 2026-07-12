@@ -52,8 +52,10 @@ return (step(ceil(uv * 10) / 10 - sin(t), 0.5));
 ![输入图片说明](/imgs/2026-07-12/Ml7icAjLcTyPA2kc.png)
 
 实现出来长这样，但是会发现这就只是一个`1/4`个圆形，是因为`TexCoord`的`uv`左上角是`(0,0)`，右下角是`(1,1)`，所以会造成圆心在左上角的错误
+
+所以yi'b
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzYzNDA5MDE1LC0yMDA3MjY4MTc2LC02ND
-gxOTc3NSwxMDAwNzQwMTM5LDE5Mjk2OTU1MzUsLTY2MTg3NzI2
-XX0=
+eyJoaXN0b3J5IjpbLTE5NDY5MDEzMDksNzYzNDA5MDE1LC0yMD
+A3MjY4MTc2LC02NDgxOTc3NSwxMDAwNzQwMTM5LDE5Mjk2OTU1
+MzUsLTY2MTg3NzI2XX0=
 -->
