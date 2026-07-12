@@ -30,7 +30,11 @@
 
 如果希望更丝滑，就把刚刚的`*10`（乘大`uv`值和`divide 10`同步调整）拉大，如果不想丝滑那就拉小，拉到`2`的时候就会变成只有两格在移动变色
 如果想调整来回滑动的速度，可以进入`sin`节点调整周期（`Period`）值，越大就越慢
+
+![输入图片说明](/imgs/2026-07-12/HvXXE8VYuRXXlFpY.png)
+
+我们刚刚做得所有计算，因为是灰度值，所以直接连接到`lerp`的`alpha`值，然后做两个输入即可进行自定义切换
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwMDc0MDEzOSwxOTI5Njk1NTM1LC02Nj
-E4NzcyNl19
+eyJoaXN0b3J5IjpbLTY0ODE5Nzc1LDEwMDA3NDAxMzksMTkyOT
+Y5NTUzNSwtNjYxODc3MjZdfQ==
 -->
