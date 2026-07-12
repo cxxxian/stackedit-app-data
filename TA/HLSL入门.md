@@ -15,7 +15,7 @@
 
 ![输入图片说明](/imgs/2026-07-12/fhjTOWpFqpl9ELxM.png)
 
-利用`TexCoord * 10 * ceil`，可以讲原本`0-1`的uv转成`0-10`，然后
+利用`TexCoord * 10 * ceil`，可以讲原本`0-1`的`uv`转成`0-10`，然后用`ceil`之后就能实现上面这种画格子的效果
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzA2ODU5NDg1LC02NjE4NzcyNl19
+eyJoaXN0b3J5IjpbLTEwNzkzODU2MzIsLTY2MTg3NzI2XX0=
 -->
