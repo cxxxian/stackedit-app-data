@@ -44,7 +44,10 @@ return (step(ceil(uv * 10) / 10 - sin(t), 0.5));
 其实就是照着蓝图可以从内往外倒推，使用`custom`节点换上自己的代码，要自己调整输出类型以及输入的参数，然后把`TexCoord`和`time`连接到输入参数即可
 
 ![输入图片说明](/imgs/2026-07-12/6D4msmFWoHQ6eFiA.png)
+
+# 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDcyNjgxNzYsLTY0ODE5Nzc1LDEwMD
-A3NDAxMzksMTkyOTY5NTUzNSwtNjYxODc3MjZdfQ==
+eyJoaXN0b3J5IjpbMTU4MjI5MDEyNywtMjAwNzI2ODE3NiwtNj
+Q4MTk3NzUsMTAwMDc0MDEzOSwxOTI5Njk1NTM1LC02NjE4Nzcy
+Nl19
 -->
