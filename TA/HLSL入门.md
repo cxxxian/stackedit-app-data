@@ -17,6 +17,7 @@
 
 利用`TexCoord * 10 * ceil`，可以讲原本`0-1`的`uv`转成`0-10`，然后用`ceil`之后就能实现上面这种画格子的效果，
 但是因为`TexCoord * 10`的原因，整个颜色输出会变亮，所以我们在`ceil`之后要手动`divide`除以`10`
+因为`uv`是`RG`两个数值，横向`R`（红色），纵向（绿色）`G`，所以我们利用`BreakOutFloat2Components`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzODYwMzM0NSwtNjYxODc3MjZdfQ==
+eyJoaXN0b3J5IjpbLTE5OTg5OTM1NTEsLTY2MTg3NzI2XX0=
 -->
