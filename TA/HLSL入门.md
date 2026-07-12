@@ -73,11 +73,17 @@ Returns the Base value raised to the powerof Exponent. Base value must be positi
 float d = length(uv - pos);
 return d;
 ```
+加上一个参数，就可以控制圆的半径，只有在`radius`之内才是`1`
+```hlsl
+float d = length(uv - pos);
+return d <= radius;
+```
+
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNTk1NzUwNjgsLTg3NDkzNDIxOCwtNz
+eyJoaXN0b3J5IjpbLTIwNjk0NDUyNDgsLTg3NDkzNDIxOCwtNz
 IwMDg2OTc3LC0xNTkzMzcyMTQwLDE1Njk0OTAzMjMsNzYzNDA5
 MDE1LC0yMDA3MjY4MTc2LC02NDgxOTc3NSwxMDAwNzQwMTM5LD
 E5Mjk2OTU1MzUsLTY2MTg3NzI2XX0=
