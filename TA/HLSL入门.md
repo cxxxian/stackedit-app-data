@@ -67,10 +67,17 @@ Returns the Base value raised to the powerof Exponent. Base value must be positi
 ![输入图片说明](/imgs/2026-07-12/pkpzAzbG8rueCDyk.png)
 
 ## 程序做法
+这样就行，很简单。
+两个输入分别是`uv`，`pos`，对应`TexCoord`和我们自定义的一个二维常数输入，用来控制圆心位置
+```hlsl
+float d = length(uv - pos);
+return d;
+```
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcyMDA4Njk3NywtMTU5MzM3MjE0MCwxNT
-Y5NDkwMzIzLDc2MzQwOTAxNSwtMjAwNzI2ODE3NiwtNjQ4MTk3
-NzUsMTAwMDc0MDEzOSwxOTI5Njk1NTM1LC02NjE4NzcyNl19
+eyJoaXN0b3J5IjpbLTg3NDkzNDIxOCwtNzIwMDg2OTc3LC0xNT
+kzMzcyMTQwLDE1Njk0OTAzMjMsNzYzNDA5MDE1LC0yMDA3MjY4
+MTc2LC02NDgxOTc3NSwxMDAwNzQwMTM5LDE5Mjk2OTU1MzUsLT
+Y2MTg3NzI2XX0=
 -->
