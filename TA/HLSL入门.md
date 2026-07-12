@@ -45,9 +45,11 @@ return (step(ceil(uv * 10) / 10 - sin(t), 0.5));
 
 ![输入图片说明](/imgs/2026-07-12/6D4msmFWoHQ6eFiA.png)
 
-# 
+# 画个圆
+`X^2 + Y^2 = R^2`
+其实就是满足圆形方程
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4MjI5MDEyNywtMjAwNzI2ODE3NiwtNj
-Q4MTk3NzUsMTAwMDc0MDEzOSwxOTI5Njk1NTM1LC02NjE4Nzcy
-Nl19
+eyJoaXN0b3J5IjpbLTE5ODc4MDE1OTMsLTIwMDcyNjgxNzYsLT
+Y0ODE5Nzc1LDEwMDA3NDAxMzksMTkyOTY5NTUzNSwtNjYxODc3
+MjZdfQ==
 -->
