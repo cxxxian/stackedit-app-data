@@ -46,6 +46,8 @@ return (step(ceil(uv * 10) / 10 - sin(t), 0.5));
 ![输入图片说明](/imgs/2026-07-12/6D4msmFWoHQ6eFiA.png)
 
 # 画个圆
+## 蓝图实现
+### 方程做法
 `X^2 + Y^2 = R^2`
 其实就是满足圆形方程
 
@@ -58,30 +60,15 @@ return (step(ceil(uv * 10) / 10 - sin(t), 0.5));
 Returns the Base value raised to the powerof Exponent. Base value must be positive,values less than 0 will be clamped.
 所以解决办法也很简单，不用就好了，我们直接用`multiply`节点，输入的`A,B`都是自身就能得到`X^2, Y^2`的效果
 
-Begin Object Class=/Script/UnrealEd.MaterialGraphNode Name="MaterialGraphNode_0" ExportPath="/Script/UnrealEd.MaterialGraphNode'/Engine/Transient.M_Circle:MaterialGraph_0.MaterialGraphNode_0'"
-   Begin Object Class=/Script/Engine.MaterialExpressionTextureCoordinate Name="MaterialExpressionTextureCoordinate_0" ExportPath="/Script/Engine.MaterialExpressionTextureCoordinate'/Engine/Transient.M_Circle:MaterialGraph_0.MaterialGraphNode_0.MaterialExpressionTextureCoordinate_0'"
-   End Object
-   Begin Object Name="MaterialExpressionTextureCoordinate_0" ExportPath="/Script/Engine.MaterialExpressionTextureCoordinate'/Engine/Transient.M_Circle:MaterialGraph_0.MaterialGraphNode_0.MaterialExpressionTextureCoordinate_0'"
-      MaterialExpressionEditorX=-1696
-      MaterialExpressionEditorY=32
-      MaterialExpressionGuid=56357DD44FC6722C5D2BAE9A9F7D99F0
-      Material="/Script/UnrealEd.PreviewMaterial'/Engine/Transient.M_Circle'"
-   End Object
-   MaterialExpression="/Script/Engine.MaterialExpressionTextureCoordinate'MaterialExpressionTextureCoordinate_0'"
-   NodePosX=-1696
-   NodePosY=32
-   AdvancedPinDisplay=Hidden
-   NodeGuid=8640F5E642B20315DA0A9BB63D60A447
-   CustomProperties Pin (PinId=34B250084C632A7F715EC299A591CA33,PinName="坐标索引",PinType.PinCategory="optional",PinType.PinSubCategory="int",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="0",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=True,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-   CustomProperties Pin (PinId=893EA94F4E1EAF0D7EF2B7B02C27A1DB,PinName="U平铺",PinType.PinCategory="optional",PinType.PinSubCategory="red",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="1.0",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=True,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=True,bOrphanedPin=False,)
-   CustomProperties Pin (PinId=8035103846E662AC4A3A43AFDE818F87,PinName="V平铺",PinType.PinCategory="optional",PinType.PinSubCategory="red",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="1.0",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=True,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=True,bOrphanedPin=False,)
-   CustomProperties Pin (PinId=09EAC8384F6BEBEC7614FAB27F3E37A7,PinName="解除镜像U",PinType.PinCategory="optional",PinType.PinSubCategory="bool",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="false",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=True,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=True,bOrphanedPin=False,)
-   CustomProperties Pin (PinId=DA047B824A0EEC17222B1090F2BCEF6A,PinName="解除镜像V",PinType.PinCategory="optional",PinType.PinSubCategory="bool",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue="false",PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=True,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=True,bOrphanedPin=False,)
-   CustomProperties Pin (PinId=D9800BBA41C6FEE4773771998ADD1FA5,PinName="Output",PinFriendlyName=NSLOCTEXT("MaterialGraphNode", "Space", " "),Direction="EGPD_Output",PinType.PinCategory="",PinType.PinSubCategory="",PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(MaterialGraphNode_10 0D6CF80348D2E8D2BC6ACDAA2512D30B,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
-End Object
+### 向量做法
+这个做法利用了向量，我们用一个二维常数值`(0.5,0.5)`减去`TexCoord`，然后去算二维向量的`length`并做二次幂
+
+![输入图片说明](/imgs/2026-07-12/pkpzAzbG8rueCDyk.png)
+
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE0NDU0NTg2MiwtMTU5MzM3MjE0MCwxNT
-Y5NDkwMzIzLDc2MzQwOTAxNSwtMjAwNzI2ODE3NiwtNjQ4MTk3
-NzUsMTAwMDc0MDEzOSwxOTI5Njk1NTM1LC02NjE4NzcyNl19
+eyJoaXN0b3J5IjpbNzM5NjAwNTgyLC0xNTkzMzcyMTQwLDE1Nj
+k0OTAzMjMsNzYzNDA5MDE1LC0yMDA3MjY4MTc2LC02NDgxOTc3
+NSwxMDAwNzQwMTM5LDE5Mjk2OTU1MzUsLTY2MTg3NzI2XX0=
 -->
