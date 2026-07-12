@@ -48,8 +48,12 @@ return (step(ceil(uv * 10) / 10 - sin(t), 0.5));
 # 画个圆
 `X^2 + Y^2 = R^2`
 其实就是满足圆形方程
+
+![输入图片说明](/imgs/2026-07-12/Ml7icAjLcTyPA2kc.png)
+
+实现出来长这样，但是会发现这就只是一个`1/4`个圆形，是因为
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5ODc4MDE1OTMsLTIwMDcyNjgxNzYsLT
+eyJoaXN0b3J5IjpbLTExODkyOTA2MzYsLTIwMDcyNjgxNzYsLT
 Y0ODE5Nzc1LDEwMDA3NDAxMzksMTkyOTY5NTUzNSwtNjYxODc3
 MjZdfQ==
 -->
