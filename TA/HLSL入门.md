@@ -53,9 +53,13 @@ return (step(ceil(uv * 10) / 10 - sin(t), 0.5));
 
 实现出来长这样，但是会发现这就只是一个`1/4`个圆形，是因为`TexCoord`的`uv`左上角是`(0,0)`，右下角是`(1,1)`，所以会造成圆心在左上角的错误
 
-所以yi'b
+所以一般我们的做法就直接`-0.5 * 2`就能把`uv`映射到`-1~1`了，然后中心是`(0,0)`，但是这个`pow`节点，底数必须得是正数，负数的话会被按照`0`处理
+`pow`
+```txt
+Returns the Base value raised to the powerof Exponent. Base value must be positive,values less than 0 will be clamped.
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NDY5MDEzMDksNzYzNDA5MDE1LC0yMD
-A3MjY4MTc2LC02NDgxOTc3NSwxMDAwNzQwMTM5LDE5Mjk2OTU1
-MzUsLTY2MTg3NzI2XX0=
+eyJoaXN0b3J5IjpbMTU0MTUyMTEyNyw3NjM0MDkwMTUsLTIwMD
+cyNjgxNzYsLTY0ODE5Nzc1LDEwMDA3NDAxMzksMTkyOTY5NTUz
+NSwtNjYxODc3MjZdfQ==
 -->
