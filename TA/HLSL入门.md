@@ -13,7 +13,9 @@
 2. 依赖模型拓扑纯数学程序化生成
 3. 同时包含横竖两套渐变一维标量，单方向线性渐变
 
+![输入图片说明](/imgs/2026-07-12/fhjTOWpFqpl9ELxM.png)
 
+利用`TexCoord * 10 * ceil`，可以讲原本`0-1`的uv转成`0-10`，然后
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxNjU4MTYxOSwtNjYxODc3MjZdfQ==
+eyJoaXN0b3J5IjpbMzA2ODU5NDg1LC02NjE4NzcyNl19
 -->
