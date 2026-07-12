@@ -86,13 +86,20 @@ return d <= radius;
 `frac`定义如下：`Frac(X)` = **取小数部分**，舍去整数部分，只保留小数点后的数值
 `Frac(x) = x - Floor(x);`
 输出范围永远固定：`[0, 1)`，最大值无限接近 `1`，不会等于 `1`。
-所以代码就变成了
+所以代码就变成了：
+```hlsl
+float d = length(frac(uv * gridSize) - pos);
+return d <= radius;
+```
+效果如下
+
+![输入图片说明](/imgs/2026-07-12/rq0IYllG4HvyXzvw.png)
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1NzA2OTE2OSwtODc0OTM0MjE4LC03Mj
-AwODY5NzcsLTE1OTMzNzIxNDAsMTU2OTQ5MDMyMyw3NjM0MDkw
-MTUsLTIwMDcyNjgxNzYsLTY0ODE5Nzc1LDEwMDA3NDAxMzksMT
-kyOTY5NTUzNSwtNjYxODc3MjZdfQ==
+eyJoaXN0b3J5IjpbODIzMTEzNTE5LC04NzQ5MzQyMTgsLTcyMD
+A4Njk3NywtMTU5MzM3MjE0MCwxNTY5NDkwMzIzLDc2MzQwOTAx
+NSwtMjAwNzI2ODE3NiwtNjQ4MTk3NzUsMTAwMDc0MDEzOSwxOT
+I5Njk1NTM1LC02NjE4NzcyNl19
 -->
