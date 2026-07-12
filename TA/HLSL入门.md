@@ -22,8 +22,10 @@
 ![输入图片说明](/imgs/2026-07-12/IcwmpUMNWHlVKZ48.png)
 
 然后我们减去一个颜色值就可以得到这种效果了
-但要想实现左右动态移动的效果，我们要引入一个`time`和`sin`正弦函数，因为`sin`值是`-1~1`，所以
+但要想实现左右动态移动的效果，我们要引入一个`time`和`sin`正弦函数，因为`sin`值是`-1~1`，所以我们把原本的`R`通道值减去这个`sin`值，就可以得到一种往返黑白渐变的效果
+可以看到原本最左边其实不是白色的，但是因为会有机会减去`-1`，所以他也能做到变成纯白色
+但是dan'chun'zhe'g'y
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDUzMDk5ODAsMTkyOTY5NTUzNSwtNj
-YxODc3MjZdfQ==
+eyJoaXN0b3J5IjpbMjAwMjczNzc2NSwxOTI5Njk1NTM1LC02Nj
+E4NzcyNl19
 -->
