@@ -1,8 +1,10 @@
 # 广告牌切换效果
 
+## 蓝图实现
+
 ![输入图片说明](/imgs/2026-07-12/WzZYFToRG5cs8eFR.png)
 
-## 简单一句话区分
+### 简单一句话区分
 **TexCoord** = 
 1. 拿模型自带的 UV 坐标（附带横竖基础渐变），用来贴图片
 2. 数据来源读取模型预烘焙 UV
@@ -36,7 +38,13 @@
 我们刚刚做得所有计算，因为是灰度值，所以直接连接到`lerp`的`alpha`值，然后做两个输入即可进行自定义切换
 
 ## 程序实现
+```hlsl
+return (step(ceil(uv * 10) / 10 - sin(t), 0.5));
+```
+其实就是照着蓝图可以从内往外倒推
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3NjQyNTM3NSwtNjQ4MTk3NzUsMTAwMD
+eyJoaXN0b3J5IjpbMTU2OTUwNjkxNSwtNjQ4MTk3NzUsMTAwMD
 c0MDEzOSwxOTI5Njk1NTM1LC02NjE4NzcyNl19
 -->
