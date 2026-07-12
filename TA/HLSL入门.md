@@ -16,7 +16,7 @@
 ![输入图片说明](/imgs/2026-07-12/fhjTOWpFqpl9ELxM.png)
 
 利用`TexCoord * 10 * ceil`，可以讲原本`0-1`的`uv`转成`0-10`，然后用`ceil`之后就能实现上面这种画格子的效果，
-但是因为`TexCoord * 10`的原因，整个颜色输出会变亮，所以w
+但是因为`TexCoord * 10`的原因，整个颜色输出会变亮，所以我们在`ceil`之后要手动`divide`除以`10`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5Mjk1MTY0MDAsLTY2MTg3NzI2XX0=
+eyJoaXN0b3J5IjpbMTEzODYwMzM0NSwtNjYxODc3MjZdfQ==
 -->
