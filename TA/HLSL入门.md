@@ -81,13 +81,21 @@ return d <= radius;
 
 ![输入图片说明](/imgs/2026-07-12/ZDzEL3llDPs7m4F5.png)
 
-现在我们希望zuo
+现在我们希望做很多个圆，可以利用`frac`函数（蓝图同名）
+我们将`uv`扩大`gridSize`倍数，然后用`frac`处理`uv`
+`frac`定义如下：`Frac(X)` = **取小数部分**，舍去整数部分，只保留小数点后的数值
+
+公式：
+
+\(\text{Frac}(x) = x - \text{Floor}(x)\)
+
+输出范围永远固定：`[0, 1)`，最大值无限接近 1，不会等于 1。
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NDg2OTgxMjksLTg3NDkzNDIxOCwtNz
-IwMDg2OTc3LC0xNTkzMzcyMTQwLDE1Njk0OTAzMjMsNzYzNDA5
-MDE1LC0yMDA3MjY4MTc2LC02NDgxOTc3NSwxMDAwNzQwMTM5LD
-E5Mjk2OTU1MzUsLTY2MTg3NzI2XX0=
+eyJoaXN0b3J5IjpbNzk1Njg3NTEyLC04NzQ5MzQyMTgsLTcyMD
+A4Njk3NywtMTU5MzM3MjE0MCwxNTY5NDkwMzIzLDc2MzQwOTAx
+NSwtMjAwNzI2ODE3NiwtNjQ4MTk3NzUsMTAwMDc0MDEzOSwxOT
+I5Njk1NTM1LC02NjE4NzcyNl19
 -->
