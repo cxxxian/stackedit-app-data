@@ -24,8 +24,10 @@
 然后我们减去一个颜色值就可以得到这种效果了
 但要想实现左右动态移动的效果，我们要引入一个`time`和`sin`正弦函数，因为`sin`值是`-1~1`，所以我们把原本的`R`通道值减去这个`sin`值，就可以得到一种往返黑白渐变的效果
 可以看到原本最左边其实不是白色的，但是因为会有机会减去`-1`，所以他也能做到变成纯白色
-这样做法会存在阶梯，所以我们可以利用先前学到的`step`节点
+这样做法会存在阶梯，所以我们可以利用先前学到的`step`节点，如下图，就可以做到只有纯黑纯白的切换了，因为低于`0.5`会变成黑色，低于`0.5`
+
+![输入图片说明](/imgs/2026-07-12/wMUbmKm3k5wbGKil.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDg0ODUxMTMsMTkyOTY5NTUzNSwtNj
+eyJoaXN0b3J5IjpbLTE3MDE0NjY0MjIsMTkyOTY5NTUzNSwtNj
 YxODc3MjZdfQ==
 -->
