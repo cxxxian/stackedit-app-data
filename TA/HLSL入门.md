@@ -29,8 +29,8 @@
 ![输入图片说明](/imgs/2026-07-12/wMUbmKm3k5wbGKil.png)
 
 如果希望更丝滑，就把刚刚的`*10`（乘大`uv`值和`divide 10`同步调整）拉大，如果不想丝滑那就拉小，拉到`2`的时候就会变成只有两格在移动变色
-如果想调整来回滑动的速度，可以进入`sin`节点调整周期（`Period`）值
+如果想调整来回滑动的速度，可以进入`sin`节点调整周期（`Period`）值，越大就越慢
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTAzOTcxMTc5LDE5Mjk2OTU1MzUsLTY2MT
-g3NzI2XX0=
+eyJoaXN0b3J5IjpbMTAwMDc0MDEzOSwxOTI5Njk1NTM1LC02Nj
+E4NzcyNl19
 -->
