@@ -62,14 +62,15 @@ Returns the Base value raised to the powerof Exponent. Base value must be positi
 
 ### 向量做法
 这个做法利用了向量，我们用一个二维常数值`(0.5,0.5)`减去`TexCoord`，然后去算二维向量的`length`并做二次幂，其实得出来的也是圆形
-并且把`exp`值和左上角的二维常数改成`time`控制的`sin`函数之后，圆形就会对应进行收缩放大和左上角到右下角的周期变化yun
+并且把`exp`值和左上角的二维常数改成`time`控制的`sin`函数之后，圆形就会对应进行收缩放大和左上角到右下角的周期变化运动
 
 ![输入图片说明](/imgs/2026-07-12/pkpzAzbG8rueCDyk.png)
 
+## 程序做法
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjM4MDE1MDg0LC0xNTkzMzcyMTQwLDE1Nj
-k0OTAzMjMsNzYzNDA5MDE1LC0yMDA3MjY4MTc2LC02NDgxOTc3
-NSwxMDAwNzQwMTM5LDE5Mjk2OTU1MzUsLTY2MTg3NzI2XX0=
+eyJoaXN0b3J5IjpbLTcyMDA4Njk3NywtMTU5MzM3MjE0MCwxNT
+Y5NDkwMzIzLDc2MzQwOTAxNSwtMjAwNzI2ODE3NiwtNjQ4MTk3
+NzUsMTAwMDc0MDEzOSwxOTI5Njk1NTM1LC02NjE4NzcyNl19
 -->
