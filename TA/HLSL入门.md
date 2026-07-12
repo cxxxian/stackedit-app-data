@@ -34,7 +34,9 @@
 ![输入图片说明](/imgs/2026-07-12/HvXXE8VYuRXXlFpY.png)
 
 我们刚刚做得所有计算，因为是灰度值，所以直接连接到`lerp`的`alpha`值，然后做两个输入即可进行自定义切换
+
+## 程序实现
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0ODE5Nzc1LDEwMDA3NDAxMzksMTkyOT
-Y5NTUzNSwtNjYxODc3MjZdfQ==
+eyJoaXN0b3J5IjpbLTQ3NjQyNTM3NSwtNjQ4MTk3NzUsMTAwMD
+c0MDEzOSwxOTI5Njk1NTM1LC02NjE4NzcyNl19
 -->
