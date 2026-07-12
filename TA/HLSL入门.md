@@ -22,8 +22,8 @@
 ![输入图片说明](/imgs/2026-07-12/IcwmpUMNWHlVKZ48.png)
 
 然后我们减去一个颜色值就可以得到这种效果了
-但要想实现左右动态移动的效果，我们要引入一个`time`和`sin`正弦函数，然后我们把
+但要想实现左右动态移动的效果，我们要引入一个`time`和`sin`正弦函数，因为`sin`值是`-1~1`，所以
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTgyODEzNjUwLDE5Mjk2OTU1MzUsLTY2MT
-g3NzI2XX0=
+eyJoaXN0b3J5IjpbLTE0NDUzMDk5ODAsMTkyOTY5NTUzNSwtNj
+YxODc3MjZdfQ==
 -->
