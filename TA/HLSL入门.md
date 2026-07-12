@@ -61,14 +61,15 @@ Returns the Base value raised to the powerof Exponent. Base value must be positi
 所以解决办法也很简单，不用就好了，我们直接用`multiply`节点，输入的`A,B`都是自身就能得到`X^2, Y^2`的效果
 
 ### 向量做法
-这个做法利用了向量，我们用一个二维常数值`(0.5,0.5)`减去`TexCoord`，然后去算二维向量的`length`并做二次幂
+这个做法利用了向量，我们用一个二维常数值`(0.5,0.5)`减去`TexCoord`，然后去算二维向量的`length`并做二次幂，其实得出来的也是圆形
+并且把`exp`值和左上角的二维常数改成`time`控制的`sin`函数之后，圆形就会对应进行收缩放大和左上角到右下角的周期变化yun
 
 ![输入图片说明](/imgs/2026-07-12/pkpzAzbG8rueCDyk.png)
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzM5NjAwNTgyLC0xNTkzMzcyMTQwLDE1Nj
+eyJoaXN0b3J5IjpbNjM4MDE1MDg0LC0xNTkzMzcyMTQwLDE1Nj
 k0OTAzMjMsNzYzNDA5MDE1LC0yMDA3MjY4MTc2LC02NDgxOTc3
 NSwxMDAwNzQwMTM5LDE5Mjk2OTU1MzUsLTY2MTg3NzI2XX0=
 -->
