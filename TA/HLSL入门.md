@@ -56,9 +56,10 @@ return (step(ceil(uv * 10) / 10 - sin(t), 0.5));
 所以一般我们的做法就直接`-0.5 * 2`就能把`uv`映射到`-1~1`了，然后中心是`(0,0)`，但是这个`pow`节点，底数必须得是正数，负数的话会被按照`0`处理
 `pow`相关文档说明如下：
 Returns the Base value raised to the powerof Exponent. Base value must be positive,values less than 0 will be clamped.
+所以解决办法也很简单，不用就好了，我们直接用`multiply`节点，输入的`A,B`都是自身就能得到`X^2, Y^2`的效果
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4ODczMzE2OSw3NjM0MDkwMTUsLTIwMD
+eyJoaXN0b3J5IjpbMTU2OTQ5MDMyMyw3NjM0MDkwMTUsLTIwMD
 cyNjgxNzYsLTY0ODE5Nzc1LDEwMDA3NDAxMzksMTkyOTY5NTUz
 NSwtNjYxODc3MjZdfQ==
 -->
