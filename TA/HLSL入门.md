@@ -132,7 +132,7 @@ return (colBrick);
 如果我们希望作为蒙版的话，也可以将混合模式改成遮罩，然后输出连到`opacityMask`（不透明蒙版），可以利用蒙版作为`alpha`做更多效果
 
 # 圆形动画
-先简单hua'ge
+先简单画个圆
 ```hlsl
 float result;
 result = length(pos - uv) < size;
@@ -140,7 +140,7 @@ return result;
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDYzNDIxNiwxNzk2NjQ3OTA2LDE1OD
+eyJoaXN0b3J5IjpbLTExNzE1MjQ4NCwxNzk2NjQ3OTA2LDE1OD
 MyODgxNzQsLTk4NDc3ODcwMywyMTEzODQ5MTM1LDgyMzExMzUx
 OSwtODc0OTM0MjE4LC03MjAwODY5NzcsLTE1OTMzNzIxNDAsMT
 U2OTQ5MDMyMyw3NjM0MDkwMTUsLTIwMDcyNjgxNzYsLTY0ODE5
