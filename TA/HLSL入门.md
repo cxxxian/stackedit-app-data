@@ -201,6 +201,7 @@ return result;
 ```
 这样是逆时针的，如果改成`float2(cos(1 - angle), sin(1 - angle))`初始就会是顺时针
 加入一个`outEmissive`并且开启遮罩我们就可以做出颜色变化
+jie'shi'y'xi
 ```hlsl
 float result = 0;
 for(int i = 0; i < nSides; i++){
@@ -233,11 +234,11 @@ return result;
 这样越中心的位置会越亮，因为越中心圆形重叠的个数越多
 ![输入图片说明](/imgs/2026-07-19/1HVJpjjIgqgvNrZk.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjQxODM3ODEsODE0NzE1NzQ4LDc4Mz
-Q2NzkxNCwtMjc3ODY5NDI5LC0xMDk2NjE3NTg1LC0xMTcxNTI0
-ODQsMTc5NjY0NzkwNiwxNTgzMjg4MTc0LC05ODQ3Nzg3MDMsMj
-ExMzg0OTEzNSw4MjMxMTM1MTksLTg3NDkzNDIxOCwtNzIwMDg2
-OTc3LC0xNTkzMzcyMTQwLDE1Njk0OTAzMjMsNzYzNDA5MDE1LC
-0yMDA3MjY4MTc2LC02NDgxOTc3NSwxMDAwNzQwMTM5LDE5Mjk2
-OTU1MzVdfQ==
+eyJoaXN0b3J5IjpbLTk0NjQ5Mjg2NCwtMTQ2NDE4Mzc4MSw4MT
+Q3MTU3NDgsNzgzNDY3OTE0LC0yNzc4Njk0MjksLTEwOTY2MTc1
+ODUsLTExNzE1MjQ4NCwxNzk2NjQ3OTA2LDE1ODMyODgxNzQsLT
+k4NDc3ODcwMywyMTEzODQ5MTM1LDgyMzExMzUxOSwtODc0OTM0
+MjE4LC03MjAwODY5NzcsLTE1OTMzNzIxNDAsMTU2OTQ5MDMyMy
+w3NjM0MDkwMTUsLTIwMDcyNjgxNzYsLTY0ODE5Nzc1LDEwMDA3
+NDAxMzldfQ==
 -->
