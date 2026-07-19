@@ -139,6 +139,9 @@ result = length(pos - uv) < size;
 return result;
 ```
 优化一下，能做出`nSides`个圆围着中心的效果
+-   `float2(cosθ, sinθ)`：固定长度 1，只记录朝向；
+-   乘以标量 radius：把向量整体拉长到 radius，朝向 / 角度保持不变；
+-   最后 `+ center` 只是把整个点平移到画布中心，不改变长度和角度。
 ```hlsl
 float result = 0;
 for(int i = 0; i < nSides; i++){
@@ -153,10 +156,10 @@ return saturate(result);
 ![输入图片说明](/imgs/2026-07-19/uUUhyzCftGLKPytS.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwMTAzNzY0MiwtMTE3MTUyNDg0LDE3OT
-Y2NDc5MDYsMTU4MzI4ODE3NCwtOTg0Nzc4NzAzLDIxMTM4NDkx
-MzUsODIzMTEzNTE5LC04NzQ5MzQyMTgsLTcyMDA4Njk3NywtMT
-U5MzM3MjE0MCwxNTY5NDkwMzIzLDc2MzQwOTAxNSwtMjAwNzI2
-ODE3NiwtNjQ4MTk3NzUsMTAwMDc0MDEzOSwxOTI5Njk1NTM1LC
-02NjE4NzcyNl19
+eyJoaXN0b3J5IjpbLTEwOTY2MTc1ODUsLTExNzE1MjQ4NCwxNz
+k2NjQ3OTA2LDE1ODMyODgxNzQsLTk4NDc3ODcwMywyMTEzODQ5
+MTM1LDgyMzExMzUxOSwtODc0OTM0MjE4LC03MjAwODY5NzcsLT
+E1OTMzNzIxNDAsMTU2OTQ5MDMyMyw3NjM0MDkwMTUsLTIwMDcy
+NjgxNzYsLTY0ODE5Nzc1LDEwMDA3NDAxMzksMTkyOTY5NTUzNS
+wtNjYxODc3MjZdfQ==
 -->
