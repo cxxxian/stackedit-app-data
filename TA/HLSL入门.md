@@ -101,12 +101,13 @@ return d <= radius;
 float2 tex = frac(float2(uv.x * grid.x, uv.y * grid.y));
 return tex;
 ```
-注意这里`return`
+注意这里`return tex`，所以对应虚幻输出节点要调整为`float2`
+要实现自定义砖块样式
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NzQ5MzcyMywyMTEzODQ5MTM1LDgyMz
-ExMzUxOSwtODc0OTM0MjE4LC03MjAwODY5NzcsLTE1OTMzNzIx
-NDAsMTU2OTQ5MDMyMyw3NjM0MDkwMTUsLTIwMDcyNjgxNzYsLT
-Y0ODE5Nzc1LDEwMDA3NDAxMzksMTkyOTY5NTUzNSwtNjYxODc3
-MjZdfQ==
+eyJoaXN0b3J5IjpbLTExNTk5ODQ0NTgsMjExMzg0OTEzNSw4Mj
+MxMTM1MTksLTg3NDkzNDIxOCwtNzIwMDg2OTc3LC0xNTkzMzcy
+MTQwLDE1Njk0OTAzMjMsNzYzNDA5MDE1LC0yMDA3MjY4MTc2LC
+02NDgxOTc3NSwxMDAwNzQwMTM5LDE5Mjk2OTU1MzUsLTY2MTg3
+NzI2XX0=
 -->
