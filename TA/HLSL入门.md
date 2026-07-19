@@ -182,8 +182,10 @@ return saturate(result);
 ```
 
 ![输入图片说明](/imgs/2026-07-19/2MJ7iqraZ3OCEa7E.png)
+
+如果想做出一种`3d`的感觉的话ke'yi
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0OTU5Mjg1NCwtMjc3ODY5NDI5LC0xMD
+eyJoaXN0b3J5IjpbMTA1Njk2MDUxNSwtMjc3ODY5NDI5LC0xMD
 k2NjE3NTg1LC0xMTcxNTI0ODQsMTc5NjY0NzkwNiwxNTgzMjg4
 MTc0LC05ODQ3Nzg3MDMsMjExMzg0OTEzNSw4MjMxMTM1MTksLT
 g3NDkzNDIxOCwtNzIwMDg2OTc3LC0xNTkzMzcyMTQwLDE1Njk0
