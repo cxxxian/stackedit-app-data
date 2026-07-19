@@ -110,14 +110,15 @@ if(tex.x >= dim.x || tex.x <= -dim.x || tex.y >= dim.y || tex.y <= -dim.y){
 }
 return (1);
 ```
-但其实这里`tex.x <= -dim.x`小于一个负数没用，不知道为什么教程zh
+但其实这里`tex.x <= -dim.x`小于一个负数没用，不知道为什么教程这样写
+然后我们将输出改为`float3`，这样子就可以输出黑白了
 
 ![输入图片说明](/imgs/2026-07-19/wyLhRtrYckJ5j6GU.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNTg0NjYyOTIsMjExMzg0OTEzNSw4Mj
-MxMTM1MTksLTg3NDkzNDIxOCwtNzIwMDg2OTc3LC0xNTkzMzcy
-MTQwLDE1Njk0OTAzMjMsNzYzNDA5MDE1LC0yMDA3MjY4MTc2LC
-02NDgxOTc3NSwxMDAwNzQwMTM5LDE5Mjk2OTU1MzUsLTY2MTg3
-NzI2XX0=
+eyJoaXN0b3J5IjpbLTk4NDc3ODcwMywyMTEzODQ5MTM1LDgyMz
+ExMzUxOSwtODc0OTM0MjE4LC03MjAwODY5NzcsLTE1OTMzNzIx
+NDAsMTU2OTQ5MDMyMyw3NjM0MDkwMTUsLTIwMDcyNjgxNzYsLT
+Y0ODE5Nzc1LDEwMDA3NDAxMzksMTkyOTY5NTUzNSwtNjYxODc3
+MjZdfQ==
 -->
