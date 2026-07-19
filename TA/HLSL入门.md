@@ -138,12 +138,19 @@ float result;
 result = length(pos - uv) < size;
 return result;
 ```
+float result = 0;
+for(int i = 0; i < nSides; i++){
+float angle = (i / nSides) * 2 * 3.14;
+float2 pos = center + radius * float2(cos(angle), sin(angle));
+result += length(pos - uv) < size;
+}
+return saturate(result);
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNzE1MjQ4NCwxNzk2NjQ3OTA2LDE1OD
-MyODgxNzQsLTk4NDc3ODcwMywyMTEzODQ5MTM1LDgyMzExMzUx
-OSwtODc0OTM0MjE4LC03MjAwODY5NzcsLTE1OTMzNzIxNDAsMT
-U2OTQ5MDMyMyw3NjM0MDkwMTUsLTIwMDcyNjgxNzYsLTY0ODE5
-Nzc1LDEwMDA3NDAxMzksMTkyOTY5NTUzNSwtNjYxODc3MjZdfQ
-==
+eyJoaXN0b3J5IjpbNDIyNDk2MDE0LC0xMTcxNTI0ODQsMTc5Nj
+Y0NzkwNiwxNTgzMjg4MTc0LC05ODQ3Nzg3MDMsMjExMzg0OTEz
+NSw4MjMxMTM1MTksLTg3NDkzNDIxOCwtNzIwMDg2OTc3LC0xNT
+kzMzcyMTQwLDE1Njk0OTAzMjMsNzYzNDA5MDE1LC0yMDA3MjY4
+MTc2LC02NDgxOTc3NSwxMDAwNzQwMTM5LDE5Mjk2OTU1MzUsLT
+Y2MTg3NzI2XX0=
 -->
