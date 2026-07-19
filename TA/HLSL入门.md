@@ -167,13 +167,26 @@ for(int i = 0; i < nSides; i++){
 }
 return saturate(result);
 ```
-然后我希望xiang'w
+然后我希望向外层扩散
+可以利用第二层`for`，取`(j / nCopies) * radius`，就可以对半径做均分取值绘制
+```hlsl
+float result = 0;
+for(int i = 0; i < nSides; i++){
+    for(int j = 0; j < nCopies; j++){
+        float angle = (i / nSides) * time * 3.14;
+        float2 pos = center + (j / nCopies) * radius * float2(cos(angle), sin(angle));
+        result += length(pos - uv) < size;
+    }
+}
+return saturate(result);
+```
+
 ![输入图片说明](/imgs/2026-07-19/2MJ7iqraZ3OCEa7E.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTE4Mjc3NTIyLC0yNzc4Njk0MjksLTEwOT
-Y2MTc1ODUsLTExNzE1MjQ4NCwxNzk2NjQ3OTA2LDE1ODMyODgx
-NzQsLTk4NDc3ODcwMywyMTEzODQ5MTM1LDgyMzExMzUxOSwtOD
-c0OTM0MjE4LC03MjAwODY5NzcsLTE1OTMzNzIxNDAsMTU2OTQ5
-MDMyMyw3NjM0MDkwMTUsLTIwMDcyNjgxNzYsLTY0ODE5Nzc1LD
-EwMDA3NDAxMzksMTkyOTY5NTUzNSwtNjYxODc3MjZdfQ==
+eyJoaXN0b3J5IjpbLTY0OTU5Mjg1NCwtMjc3ODY5NDI5LC0xMD
+k2NjE3NTg1LC0xMTcxNTI0ODQsMTc5NjY0NzkwNiwxNTgzMjg4
+MTc0LC05ODQ3Nzg3MDMsMjExMzg0OTEzNSw4MjMxMTM1MTksLT
+g3NDkzNDIxOCwtNzIwMDg2OTc3LC0xNTkzMzcyMTQwLDE1Njk0
+OTAzMjMsNzYzNDA5MDE1LC0yMDA3MjY4MTc2LC02NDgxOTc3NS
+wxMDAwNzQwMTM5LDE5Mjk2OTU1MzUsLTY2MTg3NzI2XX0=
 -->
