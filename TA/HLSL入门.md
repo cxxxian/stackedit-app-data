@@ -187,7 +187,7 @@ return saturate(result);
 例如：`float2 pos = center + (j / nCopies) * radius * float2(cos(1 - angle), sin(3 * angle));`
 
 # 圆形动画2.0
-做出类似于加载圆形进度条的感觉，重点就是要把刚刚的`time`yong
+做出类似于加载圆形进度条的感觉，重点就是要把刚刚的`time`用`sin(time)`，控制在`-1~1`，要不然`time`增大之后`angle`的速度就会原来越大不是均分分布
 ```hlsl
 float result = 0;
 for(int i = 0; i < nSides; i++){
@@ -200,11 +200,11 @@ for(int i = 0; i < nSides; i++){
 return result;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIzNTMyNTc2MCw3ODM0Njc5MTQsLTI3Nz
-g2OTQyOSwtMTA5NjYxNzU4NSwtMTE3MTUyNDg0LDE3OTY2NDc5
-MDYsMTU4MzI4ODE3NCwtOTg0Nzc4NzAzLDIxMTM4NDkxMzUsOD
-IzMTEzNTE5LC04NzQ5MzQyMTgsLTcyMDA4Njk3NywtMTU5MzM3
-MjE0MCwxNTY5NDkwMzIzLDc2MzQwOTAxNSwtMjAwNzI2ODE3Ni
-wtNjQ4MTk3NzUsMTAwMDc0MDEzOSwxOTI5Njk1NTM1LC02NjE4
-NzcyNl19
+eyJoaXN0b3J5IjpbLTExMTE2OTY5MjAsNzgzNDY3OTE0LC0yNz
+c4Njk0MjksLTEwOTY2MTc1ODUsLTExNzE1MjQ4NCwxNzk2NjQ3
+OTA2LDE1ODMyODgxNzQsLTk4NDc3ODcwMywyMTEzODQ5MTM1LD
+gyMzExMzUxOSwtODc0OTM0MjE4LC03MjAwODY5NzcsLTE1OTMz
+NzIxNDAsMTU2OTQ5MDMyMyw3NjM0MDkwMTUsLTIwMDcyNjgxNz
+YsLTY0ODE5Nzc1LDEwMDA3NDAxMzksMTkyOTY5NTUzNSwtNjYx
+ODc3MjZdfQ==
 -->
