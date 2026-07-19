@@ -124,9 +124,14 @@ if(tex.x >= dim.x || tex.x <= -dim.x || tex.y >= dim.y || tex.y <= -dim.y){
 }
 return (colBrick);
 ```
-这样子就能实现左上角向下向右偏移`dim / 2`个单位，得到zhua
+这样子就能实现左上角向下向右偏移`dim / 2`个单位，得到砖缝
+效果如图
+
+![输入图片说明](/imgs/2026-07-19/CBSEHxEqpXuNblKB.png)
+
+如果我们希望作为meng
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk0NDQ5MzQzMCwxNTgzMjg4MTc0LC05OD
+eyJoaXN0b3J5IjpbLTExMTA0OTE4MSwxNTgzMjg4MTc0LC05OD
 Q3Nzg3MDMsMjExMzg0OTEzNSw4MjMxMTM1MTksLTg3NDkzNDIx
 OCwtNzIwMDg2OTc3LC0xNTkzMzcyMTQwLDE1Njk0OTAzMjMsNz
 YzNDA5MDE1LC0yMDA3MjY4MTc2LC02NDgxOTc3NSwxMDAwNzQw
