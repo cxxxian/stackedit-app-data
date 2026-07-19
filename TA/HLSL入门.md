@@ -102,10 +102,20 @@ float2 tex = frac(float2(uv.x * grid.x, uv.y * grid.y));
 return tex;
 ```
 注意这里`return tex`，所以对应虚幻输出节点要调整为`float2`
-要实现自定义砖块样式
+要实现自定义砖块样式，只需要做一个输出的判断即可
+```hlsl
+float2 tex = frac(float2(uv.x * grid.x, uv.y * grid.y));
+if(tex.x >= dim.x || tex.x <= -dim.x || tex.y >= dim.y || tex.y <= -dim.y){
+    return (0);
+}
+return (1);
+```
+但其实这里`tex.x <= -dim.x`小于一个负数没用，不知道为什么教程zh
+
+![输入图片说明](/imgs/2026-07-19/wyLhRtrYckJ5j6GU.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNTk5ODQ0NTgsMjExMzg0OTEzNSw4Mj
+eyJoaXN0b3J5IjpbLTExNTg0NjYyOTIsMjExMzg0OTEzNSw4Mj
 MxMTM1MTksLTg3NDkzNDIxOCwtNzIwMDg2OTc3LC0xNTkzMzcy
 MTQwLDE1Njk0OTAzMjMsNzYzNDA5MDE1LC0yMDA3MjY4MTc2LC
 02NDgxOTc3NSwxMDAwNzQwMTM5LDE5Mjk2OTU1MzUsLTY2MTg3
