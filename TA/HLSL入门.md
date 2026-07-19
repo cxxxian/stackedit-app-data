@@ -183,12 +183,13 @@ return saturate(result);
 
 ![输入图片说明](/imgs/2026-07-19/2MJ7iqraZ3OCEa7E.png)
 
-如果想做出一种`3d`的感觉的话ke'yi
+如果想做出一种`3d`的感觉的话可以操作正余弦
+例如：`float2 pos = center + (j / nCopies) * radius * float2(cos(1 - angle), sin(3 * angle));`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1Njk2MDUxNSwtMjc3ODY5NDI5LC0xMD
-k2NjE3NTg1LC0xMTcxNTI0ODQsMTc5NjY0NzkwNiwxNTgzMjg4
-MTc0LC05ODQ3Nzg3MDMsMjExMzg0OTEzNSw4MjMxMTM1MTksLT
-g3NDkzNDIxOCwtNzIwMDg2OTc3LC0xNTkzMzcyMTQwLDE1Njk0
-OTAzMjMsNzYzNDA5MDE1LC0yMDA3MjY4MTc2LC02NDgxOTc3NS
-wxMDAwNzQwMTM5LDE5Mjk2OTU1MzUsLTY2MTg3NzI2XX0=
+eyJoaXN0b3J5IjpbNzgzNDY3OTE0LC0yNzc4Njk0MjksLTEwOT
+Y2MTc1ODUsLTExNzE1MjQ4NCwxNzk2NjQ3OTA2LDE1ODMyODgx
+NzQsLTk4NDc3ODcwMywyMTEzODQ5MTM1LDgyMzExMzUxOSwtOD
+c0OTM0MjE4LC03MjAwODY5NzcsLTE1OTMzNzIxNDAsMTU2OTQ5
+MDMyMyw3NjM0MDkwMTUsLTIwMDcyNjgxNzYsLTY0ODE5Nzc1LD
+EwMDA3NDAxMzksMTkyOTY5NTUzNSwtNjYxODc3MjZdfQ==
 -->
