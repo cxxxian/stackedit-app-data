@@ -101,11 +101,12 @@ return d <= radius;
 float2 tex = frac(float2(uv.x * grid.x, uv.y * grid.y));
 return tex;
 ```
-
+注意这里`return`
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExMzg0OTEzNSw4MjMxMTM1MTksLTg3ND
-kzNDIxOCwtNzIwMDg2OTc3LC0xNTkzMzcyMTQwLDE1Njk0OTAz
-MjMsNzYzNDA5MDE1LC0yMDA3MjY4MTc2LC02NDgxOTc3NSwxMD
-AwNzQwMTM5LDE5Mjk2OTU1MzUsLTY2MTg3NzI2XX0=
+eyJoaXN0b3J5IjpbLTE1NzQ5MzcyMywyMTEzODQ5MTM1LDgyMz
+ExMzUxOSwtODc0OTM0MjE4LC03MjAwODY5NzcsLTE1OTMzNzIx
+NDAsMTU2OTQ5MDMyMyw3NjM0MDkwMTUsLTIwMDcyNjgxNzYsLT
+Y0ODE5Nzc1LDEwMDA3NDAxMzksMTkyOTY5NTUzNSwtNjYxODc3
+MjZdfQ==
 -->
