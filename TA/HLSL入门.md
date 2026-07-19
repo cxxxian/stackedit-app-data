@@ -201,7 +201,6 @@ return result;
 ```
 这样是逆时针的，如果改成`float2(cos(1 - angle), sin(1 - angle))`初始就会是顺时针
 加入一个`outEmissive`并且开启遮罩我们就可以做出颜色变化
-jie'shi'y'xi
 ```hlsl
 float result = 0;
 for(int i = 0; i < nSides; i++){
@@ -216,6 +215,19 @@ return result;
 ```
 
 ![输入图片说明](/imgs/2026-07-19/s4XKdis71In6sJDY.png)
+
+这里解释一下遮罩区别
+### 区别 1：像素生存逻辑（你说的裁剪）
+-   **BaseColor（基础颜色）**
+    永远保留全部像素，不会删除任何区域：
+    val=0 → 纯黑色像素；val=1 → 白色像素；整张面片完整存在，挡住后方物体。
+-   **Opacity Mask（不透明蒙版）**
+    硬裁剪丢弃像素，阈值默认 0.5：
+    val ≥ 0.5：像素保留正常渲染；
+    val ＜ 0.5：像素直接**彻底删除、镂空透明**，能看到模型背后的东西。
+### 区别 2：通道职能完全不一样
+-   BaseColor：**控制像素本身的颜色**，决定这个点是什么颜色；
+-   Opacity Mask：**只控制像素要不要存在**，完全不影响颜色，颜色由自发光 / 基础色单独控制（你图里颜色走的是 outEmissive）。
 
 如果我们想让它发光，可以注意到我们`result`专门没做`saturate`
 所以直接把`result`乘上
@@ -234,7 +246,7 @@ return result;
 这样越中心的位置会越亮，因为越中心圆形重叠的个数越多
 ![输入图片说明](/imgs/2026-07-19/1HVJpjjIgqgvNrZk.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk0NjQ5Mjg2NCwtMTQ2NDE4Mzc4MSw4MT
+eyJoaXN0b3J5IjpbMTE3MDUxNjY0MiwtMTQ2NDE4Mzc4MSw4MT
 Q3MTU3NDgsNzgzNDY3OTE0LC0yNzc4Njk0MjksLTEwOTY2MTc1
 ODUsLTExNzE1MjQ4NCwxNzk2NjQ3OTA2LDE1ODMyODgxNzQsLT
 k4NDc3ODcwMywyMTEzODQ5MTM1LDgyMzExMzUxOSwtODc0OTM0
