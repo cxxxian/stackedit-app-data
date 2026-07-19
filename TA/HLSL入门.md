@@ -96,10 +96,15 @@ return d <= radius;
 ![输入图片说明](/imgs/2026-07-12/rq0IYllG4HvyXzvw.png)
 
 # 砖块效果
+利用`uv`实现，这样即可实现`grid.x * grid.y`个数的砖墙
+```hlsl
+float2 tex = frac(float2(uv.x * grid.x, uv.y * grid.y));
+return tex;
+```
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4ODY5NzAwMyw4MjMxMTM1MTksLTg3ND
+eyJoaXN0b3J5IjpbMjExMzg0OTEzNSw4MjMxMTM1MTksLTg3ND
 kzNDIxOCwtNzIwMDg2OTc3LC0xNTkzMzcyMTQwLDE1Njk0OTAz
 MjMsNzYzNDA5MDE1LC0yMDA3MjY4MTc2LC02NDgxOTc3NSwxMD
 AwNzQwMTM5LDE5Mjk2OTU1MzUsLTY2MTg3NzI2XX0=
