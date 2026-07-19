@@ -129,9 +129,9 @@ return (colBrick);
 
 ![输入图片说明](/imgs/2026-07-19/CBSEHxEqpXuNblKB.png)
 
-如果我们希望作为meng
+如果我们希望作为蒙版的话，也可以
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTA0OTE4MSwxNTgzMjg4MTc0LC05OD
+eyJoaXN0b3J5IjpbLTE0MDQwNDA2MSwxNTgzMjg4MTc0LC05OD
 Q3Nzg3MDMsMjExMzg0OTEzNSw4MjMxMTM1MTksLTg3NDkzNDIx
 OCwtNzIwMDg2OTc3LC0xNTkzMzcyMTQwLDE1Njk0OTAzMjMsNz
 YzNDA5MDE1LC0yMDA3MjY4MTc2LC02NDgxOTc3NSwxMDAwNzQw
