@@ -213,12 +213,31 @@ for(int i = 0; i < nSides; i++){
 outEmissive = float3(sin(time), 0, 0.1);
 return result;
 ```
+
+![输入图片说明](/imgs/2026-07-19/s4XKdis71In6sJDY.png)
+
+如果我们想让它发光，可以注意到我们`result`专门没做`saturate`
+所以直接把`result`乘上
+```hlsl
+float result = 0;
+for(int i = 0; i < nSides; i++){
+    for(int j = 0; j < nCopies; j++){
+        float angle = (i / nSides) * sin(time) * 2 * 3.14;
+        float2 pos = center + (j / nCopies) * radius * float2(cos(angle), sin(angle));
+        result += length(pos - uv) < size;
+    }
+}
+outEmissive = result * float3(sin(time), 0, 0.1);
+return result;
+```
+这样越中心的wei'zh'zi
+![输入图片说明](/imgs/2026-07-19/1HVJpjjIgqgvNrZk.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzEwODQzMDksODE0NzE1NzQ4LDc4Mz
-Q2NzkxNCwtMjc3ODY5NDI5LC0xMDk2NjE3NTg1LC0xMTcxNTI0
-ODQsMTc5NjY0NzkwNiwxNTgzMjg4MTc0LC05ODQ3Nzg3MDMsMj
-ExMzg0OTEzNSw4MjMxMTM1MTksLTg3NDkzNDIxOCwtNzIwMDg2
-OTc3LC0xNTkzMzcyMTQwLDE1Njk0OTAzMjMsNzYzNDA5MDE1LC
-0yMDA3MjY4MTc2LC02NDgxOTc3NSwxMDAwNzQwMTM5LDE5Mjk2
-OTU1MzVdfQ==
+eyJoaXN0b3J5IjpbLTU3ODEwMTgzOSw4MTQ3MTU3NDgsNzgzND
+Y3OTE0LC0yNzc4Njk0MjksLTEwOTY2MTc1ODUsLTExNzE1MjQ4
+NCwxNzk2NjQ3OTA2LDE1ODMyODgxNzQsLTk4NDc3ODcwMywyMT
+EzODQ5MTM1LDgyMzExMzUxOSwtODc0OTM0MjE4LC03MjAwODY5
+NzcsLTE1OTMzNzIxNDAsMTU2OTQ5MDMyMyw3NjM0MDkwMTUsLT
+IwMDcyNjgxNzYsLTY0ODE5Nzc1LDEwMDA3NDAxMzksMTkyOTY5
+NTUzNV19
 -->
