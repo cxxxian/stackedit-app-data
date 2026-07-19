@@ -199,9 +199,9 @@ for(int i = 0; i < nSides; i++){
 }
 return result;
 ```
-这样是逆时针的，如果改成`
+这样是逆时针的，如果改成`float2(cos(1 - angle), sin(1 - angle))`初始就会是顺时针
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQ1NTgxMDU0LDc4MzQ2NzkxNCwtMjc3OD
+eyJoaXN0b3J5IjpbODE0NzE1NzQ4LDc4MzQ2NzkxNCwtMjc3OD
 Y5NDI5LC0xMDk2NjE3NTg1LC0xMTcxNTI0ODQsMTc5NjY0Nzkw
 NiwxNTgzMjg4MTc0LC05ODQ3Nzg3MDMsMjExMzg0OTEzNSw4Mj
 MxMTM1MTksLTg3NDkzNDIxOCwtNzIwMDg2OTc3LC0xNTkzMzcy
