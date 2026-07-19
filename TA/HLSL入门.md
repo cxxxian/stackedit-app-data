@@ -124,10 +124,11 @@ if(tex.x >= dim.x || tex.x <= -dim.x || tex.y >= dim.y || tex.y <= -dim.y){
 }
 return (colBrick);
 ```
+这样子就能实现左上角向下向右偏移`dim / 2`个单位，得到zhua
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4MzI4ODE3NCwtOTg0Nzc4NzAzLDIxMT
-M4NDkxMzUsODIzMTEzNTE5LC04NzQ5MzQyMTgsLTcyMDA4Njk3
-NywtMTU5MzM3MjE0MCwxNTY5NDkwMzIzLDc2MzQwOTAxNSwtMj
-AwNzI2ODE3NiwtNjQ4MTk3NzUsMTAwMDc0MDEzOSwxOTI5Njk1
-NTM1LC02NjE4NzcyNl19
+eyJoaXN0b3J5IjpbLTk0NDQ5MzQzMCwxNTgzMjg4MTc0LC05OD
+Q3Nzg3MDMsMjExMzg0OTEzNSw4MjMxMTM1MTksLTg3NDkzNDIx
+OCwtNzIwMDg2OTc3LC0xNTkzMzcyMTQwLDE1Njk0OTAzMjMsNz
+YzNDA5MDE1LC0yMDA3MjY4MTc2LC02NDgxOTc3NSwxMDAwNzQw
+MTM5LDE5Mjk2OTU1MzUsLTY2MTg3NzI2XX0=
 -->
