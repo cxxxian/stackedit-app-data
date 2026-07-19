@@ -186,13 +186,25 @@ return saturate(result);
 如果想做出一种`3d`的感觉的话可以操作正余弦
 例如：`float2 pos = center + (j / nCopies) * radius * float2(cos(1 - angle), sin(3 * angle));`
 
-# 圆形dong'hu
+# 圆形动画2.0
+做出类似于加载圆形进度条的感觉，重点就是要把刚刚的`time`yong
+```hlsl
+float result = 0;
+for(int i = 0; i < nSides; i++){
+    for(int j = 0; j < nCopies; j++){
+        float angle = (i / nSides) * sin(time) * 2 * 3.14;
+        float2 pos = center + (j / nCopies) * radius * float2(cos(angle), sin(angle));
+        result += length(pos - uv) < size;
+    }
+}
+return result;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUzMTA4NzQ1LDc4MzQ2NzkxNCwtMjc3OD
-Y5NDI5LC0xMDk2NjE3NTg1LC0xMTcxNTI0ODQsMTc5NjY0Nzkw
-NiwxNTgzMjg4MTc0LC05ODQ3Nzg3MDMsMjExMzg0OTEzNSw4Mj
-MxMTM1MTksLTg3NDkzNDIxOCwtNzIwMDg2OTc3LC0xNTkzMzcy
-MTQwLDE1Njk0OTAzMjMsNzYzNDA5MDE1LC0yMDA3MjY4MTc2LC
-02NDgxOTc3NSwxMDAwNzQwMTM5LDE5Mjk2OTU1MzUsLTY2MTg3
-NzI2XX0=
+eyJoaXN0b3J5IjpbMTIzNTMyNTc2MCw3ODM0Njc5MTQsLTI3Nz
+g2OTQyOSwtMTA5NjYxNzU4NSwtMTE3MTUyNDg0LDE3OTY2NDc5
+MDYsMTU4MzI4ODE3NCwtOTg0Nzc4NzAzLDIxMTM4NDkxMzUsOD
+IzMTEzNTE5LC04NzQ5MzQyMTgsLTcyMDA4Njk3NywtMTU5MzM3
+MjE0MCwxNTY5NDkwMzIzLDc2MzQwOTAxNSwtMjAwNzI2ODE3Ni
+wtNjQ4MTk3NzUsMTAwMDc0MDEzOSwxOTI5Njk1NTM1LC02NjE4
+NzcyNl19
 -->
