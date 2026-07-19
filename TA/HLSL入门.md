@@ -138,19 +138,25 @@ float result;
 result = length(pos - uv) < size;
 return result;
 ```
+优化一下，能做出`nSides`个圆围着中心的效果
+```hlsl
 float result = 0;
 for(int i = 0; i < nSides; i++){
-float angle = (i / nSides) * 2 * 3.14;
-float2 pos = center + radius * float2(cos(angle), sin(angle));
-result += length(pos - uv) < size;
+	float angle = (i / nSides) * 2 * 3.14;
+	float2 pos = center + radius * float2(cos(angle), sin(angle));
+	result += length(pos - uv) < size;
 }
 return saturate(result);
+```
+就像这样：
+
+![输入图片说明](/imgs/2026-07-19/uUUhyzCftGLKPytS.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDIyNDk2MDE0LC0xMTcxNTI0ODQsMTc5Nj
-Y0NzkwNiwxNTgzMjg4MTc0LC05ODQ3Nzg3MDMsMjExMzg0OTEz
-NSw4MjMxMTM1MTksLTg3NDkzNDIxOCwtNzIwMDg2OTc3LC0xNT
-kzMzcyMTQwLDE1Njk0OTAzMjMsNzYzNDA5MDE1LC0yMDA3MjY4
-MTc2LC02NDgxOTc3NSwxMDAwNzQwMTM5LDE5Mjk2OTU1MzUsLT
-Y2MTg3NzI2XX0=
+eyJoaXN0b3J5IjpbMTIwMTAzNzY0MiwtMTE3MTUyNDg0LDE3OT
+Y2NDc5MDYsMTU4MzI4ODE3NCwtOTg0Nzc4NzAzLDIxMTM4NDkx
+MzUsODIzMTEzNTE5LC04NzQ5MzQyMTgsLTcyMDA4Njk3NywtMT
+U5MzM3MjE0MCwxNTY5NDkwMzIzLDc2MzQwOTAxNSwtMjAwNzI2
+ODE3NiwtNjQ4MTk3NzUsMTAwMDc0MDEzOSwxOTI5Njk1NTM1LC
+02NjE4NzcyNl19
 -->
