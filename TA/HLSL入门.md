@@ -155,13 +155,24 @@ return saturate(result);
 
 ![输入图片说明](/imgs/2026-07-19/uUUhyzCftGLKPytS.png)
 
-但是这是
+但是这是静止的，我们想让它动起来
+原本是这样，意思是整个圆，那如果`*1`就是半圆，`*0.5`就是`1/4`圆，所以我们把这个值改成`time`，就可以让它动起来了
+`float angle = (i / nSides) * 2 * 3.14;`
+```hlsl
+float result = 0;
+for(int i = 0; i < nSides; i++){
+    float angle = (i / nSides) * time * 3.14;
+    float2 pos = center + radius * float2(cos(angle), sin(angle));
+    result += length(pos - uv) < size;
+}
+return saturate(result);
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQ5OTQyNDQ0LC0xMDk2NjE3NTg1LC0xMT
-cxNTI0ODQsMTc5NjY0NzkwNiwxNTgzMjg4MTc0LC05ODQ3Nzg3
-MDMsMjExMzg0OTEzNSw4MjMxMTM1MTksLTg3NDkzNDIxOCwtNz
-IwMDg2OTc3LC0xNTkzMzcyMTQwLDE1Njk0OTAzMjMsNzYzNDA5
-MDE1LC0yMDA3MjY4MTc2LC02NDgxOTc3NSwxMDAwNzQwMTM5LD
-E5Mjk2OTU1MzUsLTY2MTg3NzI2XX0=
+eyJoaXN0b3J5IjpbLTI3Nzg2OTQyOSwtMTA5NjYxNzU4NSwtMT
+E3MTUyNDg0LDE3OTY2NDc5MDYsMTU4MzI4ODE3NCwtOTg0Nzc4
+NzAzLDIxMTM4NDkxMzUsODIzMTEzNTE5LC04NzQ5MzQyMTgsLT
+cyMDA4Njk3NywtMTU5MzM3MjE0MCwxNTY5NDkwMzIzLDc2MzQw
+OTAxNSwtMjAwNzI2ODE3NiwtNjQ4MTk3NzUsMTAwMDc0MDEzOS
+wxOTI5Njk1NTM1LC02NjE4NzcyNl19
 -->
