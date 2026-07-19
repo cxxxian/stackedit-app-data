@@ -115,9 +115,17 @@ return (1);
 
 ![输入图片说明](/imgs/2026-07-19/wyLhRtrYckJ5j6GU.png)
 
-现在会发现mei
+现在会发现每一个面的线对应不上
+加上一个`offset`，值为`dim / 2`
+```hlsl
+float2 tex = frac(float2(uv.x * grid.x + offset.x, uv.y * grid.y + offset.x));
+if(tex.x >= dim.x || tex.x <= -dim.x || tex.y >= dim.y || tex.y <= -dim.y){
+    return (colMortar);
+}
+return (colBrick);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1Nzc3MDIyNSwtOTg0Nzc4NzAzLDIxMT
+eyJoaXN0b3J5IjpbMTU4MzI4ODE3NCwtOTg0Nzc4NzAzLDIxMT
 M4NDkxMzUsODIzMTEzNTE5LC04NzQ5MzQyMTgsLTcyMDA4Njk3
 NywtMTU5MzM3MjE0MCwxNTY5NDkwMzIzLDc2MzQwOTAxNSwtMj
 AwNzI2ODE3NiwtNjQ4MTk3NzUsMTAwMDc0MDEzOSwxOTI5Njk1
