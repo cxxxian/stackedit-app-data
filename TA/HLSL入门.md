@@ -248,26 +248,27 @@ return result;
 
 # rayMatching
 还是从画一个圆开始
-为什么是`viewDir - worldPos`，我们要注意`worldPos`是一个点，`viewDir `是一个向量，所以我们`viewDir = worldPos - rayOrigin `
-```hlsl
-float3 rayOrigin = viewDir - worldPos;
-float3 rayStep = viewDir * 1;
 
-for(int i = 0; i < 256; i++){
-    float dist = length(rayOrigin - sphereCenter) - sphereRadius;
+```hlsl
+float3 ro = camWorldPos;
+float3 rd = normalize(worldPos - camWorldPos);
+float3 p = ro;
+
+for(int i = 0; i < 512; i++){
+    float dist = length(p - sphereCenter) - sphereRadius;
     if(dist < 0.01){
         return float3(1, 0, 0);
     }
-    rayOrigin += rayStep;
+    p += rd;
 }
 return float3(0, 0, 0);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjU5NDc4MTYxLDExNzA1MTY2NDIsLTE0Nj
-QxODM3ODEsODE0NzE1NzQ4LDc4MzQ2NzkxNCwtMjc3ODY5NDI5
-LC0xMDk2NjE3NTg1LC0xMTcxNTI0ODQsMTc5NjY0NzkwNiwxNT
-gzMjg4MTc0LC05ODQ3Nzg3MDMsMjExMzg0OTEzNSw4MjMxMTM1
-MTksLTg3NDkzNDIxOCwtNzIwMDg2OTc3LC0xNTkzMzcyMTQwLD
-E1Njk0OTAzMjMsNzYzNDA5MDE1LC0yMDA3MjY4MTc2LC02NDgx
-OTc3NV19
+eyJoaXN0b3J5IjpbLTExNDI1MzkwODAsMjU5NDc4MTYxLDExNz
+A1MTY2NDIsLTE0NjQxODM3ODEsODE0NzE1NzQ4LDc4MzQ2Nzkx
+NCwtMjc3ODY5NDI5LC0xMDk2NjE3NTg1LC0xMTcxNTI0ODQsMT
+c5NjY0NzkwNiwxNTgzMjg4MTc0LC05ODQ3Nzg3MDMsMjExMzg0
+OTEzNSw4MjMxMTM1MTksLTg3NDkzNDIxOCwtNzIwMDg2OTc3LC
+0xNTkzMzcyMTQwLDE1Njk0OTAzMjMsNzYzNDA5MDE1LC0yMDA3
+MjY4MTc2XX0=
 -->
