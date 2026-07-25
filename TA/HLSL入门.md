@@ -372,13 +372,47 @@ for(int i = 0; i < 512; i++){
 opacityMask = 0;
 return float3(0, 0, 0);
 ```
+## 甜甜圈
+```hlsl
+float3 ro = camWorldPos;
+float3 rd = normalize(worldPos - camWorldPos);
+float3 p = ro;
+float3 lightDirection = normalize(lightPos);
+
+struct sdfShapes{
+    float donut(float3 p, float size, float cutout){
+        float2 q = float2(length(p.xz) - size, p.y);
+        return length(q) - cutout;
+    }
+};
+sdfShapes sdf;
+
+for(int i = 0; i < 512; i++){
+
+    float dist = sdf.donut(p, 50, 25);
+
+    if(dist < 0.01){
+        //float3 normal = normalize(p - displace);
+        float3 normal = 0;
+        float diffuse = max(dot(normal, lightDirection), 0);
+        float3 reflection = reflect(lightDirection, normal);
+        float3 viewDirection = normalize(p - camWorldPos);
+        float specular = pow(max(dot(reflection, viewDirection), 0), 16);
+        opacityMask = 1;
+        return (diffuse * float3(1, 0, 0)) + (specular * float3(1, 1, 1));
+    }
+    p += rd;
+}
+opacityMask = 0;
+return float3(0, 0, 0);
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzI5NDE3MjQyLC0zMjc2MTM3MTYsMzk5OT
-U4NTM0LDEwMTEyMDM3NjIsMjAzNDAzOTkwMywyMDI3NDA1NjI1
-LDE5MzE0ODE5NzQsMTA3MjcwMzM4NiwtODE3MTEwNjk4LC0xMj
-c0ODk1NTQ2LDI1OTQ3ODE2MSwxMTcwNTE2NjQyLC0xNDY0MTgz
-NzgxLDgxNDcxNTc0OCw3ODM0Njc5MTQsLTI3Nzg2OTQyOSwtMT
-A5NjYxNzU4NSwtMTE3MTUyNDg0LDE3OTY2NDc5MDYsMTU4MzI4
-ODE3NF19
+eyJoaXN0b3J5IjpbLTY3MTQ5Nzc1MywtMzI3NjEzNzE2LDM5OT
+k1ODUzNCwxMDExMjAzNzYyLDIwMzQwMzk5MDMsMjAyNzQwNTYy
+NSwxOTMxNDgxOTc0LDEwNzI3MDMzODYsLTgxNzExMDY5OCwtMT
+I3NDg5NTU0NiwyNTk0NzgxNjEsMTE3MDUxNjY0MiwtMTQ2NDE4
+Mzc4MSw4MTQ3MTU3NDgsNzgzNDY3OTE0LC0yNzc4Njk0MjksLT
+EwOTY2MTc1ODUsLTExNzE1MjQ4NCwxNzk2NjQ3OTA2LDE1ODMy
+ODgxNzRdfQ==
 -->
