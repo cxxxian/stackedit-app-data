@@ -414,6 +414,22 @@ return float3(0, 0, 0);
 `eps` = 微小偏移步长。
 不能太大：太大采样点跑到曲面外面；
 不能太小：GPU 浮点精度不足，推荐 `0.001`。
+
+### 数学概念：梯度 Gradient
+SDF 函数 `S(p)`，输入空间点 p，输出到物体表面距离。
+
+梯度 `∇S` 就是法线方向：
+
+-   梯度指向：**距离场增长最快的方向**
+-   永远垂直几何体表面、向外
+
+我们没有解析求导公式，用**中心有限差分**近似导数。
+
+一维导数近似公式：
+
+\(\frac{dS}{dx} \approx \frac{S(x+\varepsilon)-S(x-\varepsilon)}{2\varepsilon}\)
+
+分母`2ε`只是统一缩放，最后会被 normalize 归一化抵消，代码里直接省略分母。
 ```hlsl
 float eps = 0.001;
 float3 normal = normalize(float3(
@@ -426,11 +442,11 @@ float3 normal = normalize(float3(
 ));
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTg0NjYyNzgyLDIwNTkyNjI2NDIsLTIwNT
-UxNDg4NzEsLTkwMTUzNjkwMywtMzI3NjEzNzE2LDM5OTk1ODUz
-NCwxMDExMjAzNzYyLDIwMzQwMzk5MDMsMjAyNzQwNTYyNSwxOT
-MxNDgxOTc0LDEwNzI3MDMzODYsLTgxNzExMDY5OCwtMTI3NDg5
-NTU0NiwyNTk0NzgxNjEsMTE3MDUxNjY0MiwtMTQ2NDE4Mzc4MS
-w4MTQ3MTU3NDgsNzgzNDY3OTE0LC0yNzc4Njk0MjksLTEwOTY2
-MTc1ODVdfQ==
+eyJoaXN0b3J5IjpbNDE2NjEzNjAwLDU4NDY2Mjc4MiwyMDU5Mj
+YyNjQyLC0yMDU1MTQ4ODcxLC05MDE1MzY5MDMsLTMyNzYxMzcx
+NiwzOTk5NTg1MzQsMTAxMTIwMzc2MiwyMDM0MDM5OTAzLDIwMj
+c0MDU2MjUsMTkzMTQ4MTk3NCwxMDcyNzAzMzg2LC04MTcxMTA2
+OTgsLTEyNzQ4OTU1NDYsMjU5NDc4MTYxLDExNzA1MTY2NDIsLT
+E0NjQxODM3ODEsODE0NzE1NzQ4LDc4MzQ2NzkxNCwtMjc3ODY5
+NDI5XX0=
 -->
