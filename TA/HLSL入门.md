@@ -411,6 +411,9 @@ opacityMask = 0;
 return float3(0, 0, 0);
 ```
 补上法线实现
+`eps` = 微小偏移步长。
+不能太大：太大采样点跑到曲面外面；
+不能太小：GPU 浮点精度不足，推荐 `0.001`。
 ```hlsl
 float eps = 0.001;
 float3 normal = normalize(float3(
@@ -423,11 +426,11 @@ float3 normal = normalize(float3(
 ));
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1OTI2MjY0MiwtMjA1NTE0ODg3MSwtOT
-AxNTM2OTAzLC0zMjc2MTM3MTYsMzk5OTU4NTM0LDEwMTEyMDM3
-NjIsMjAzNDAzOTkwMywyMDI3NDA1NjI1LDE5MzE0ODE5NzQsMT
-A3MjcwMzM4NiwtODE3MTEwNjk4LC0xMjc0ODk1NTQ2LDI1OTQ3
-ODE2MSwxMTcwNTE2NjQyLC0xNDY0MTgzNzgxLDgxNDcxNTc0OC
-w3ODM0Njc5MTQsLTI3Nzg2OTQyOSwtMTA5NjYxNzU4NSwtMTE3
-MTUyNDg0XX0=
+eyJoaXN0b3J5IjpbNTg0NjYyNzgyLDIwNTkyNjI2NDIsLTIwNT
+UxNDg4NzEsLTkwMTUzNjkwMywtMzI3NjEzNzE2LDM5OTk1ODUz
+NCwxMDExMjAzNzYyLDIwMzQwMzk5MDMsMjAyNzQwNTYyNSwxOT
+MxNDgxOTc0LDEwNzI3MDMzODYsLTgxNzExMDY5OCwtMTI3NDg5
+NTU0NiwyNTk0NzgxNjEsMTE3MDUxNjY0MiwtMTQ2NDE4Mzc4MS
+w4MTQ3MTU3NDgsNzgzNDY3OTE0LC0yNzc4Njk0MjksLTEwOTY2
+MTc1ODVdfQ==
 -->
