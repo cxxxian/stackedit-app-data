@@ -263,9 +263,9 @@ for(int i = 0; i < 512; i++){
 }
 return float3(0, 0, 0);
 ```
-但是这样
+但是这样，`sphereCenter`我们在外面显式写位置`(0, 0, 0)`的话，我们会造成在场景中拖动物体的时候，里面的球位置不会变，还是在`(0, 0, 0)`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI5NTA5NzIzNSwtMTI3NDg5NTU0NiwyNT
+eyJoaXN0b3J5IjpbLTgxNzExMDY5OCwtMTI3NDg5NTU0NiwyNT
 k0NzgxNjEsMTE3MDUxNjY0MiwtMTQ2NDE4Mzc4MSw4MTQ3MTU3
 NDgsNzgzNDY3OTE0LC0yNzc4Njk0MjksLTEwOTY2MTc1ODUsLT
 ExNzE1MjQ4NCwxNzk2NjQ3OTA2LDE1ODMyODgxNzQsLTk4NDc3
