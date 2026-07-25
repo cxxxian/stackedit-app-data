@@ -375,8 +375,8 @@ return float3(0, 0, 0);
 ## 甜甜圈
 重点是`struct`的用法
 以及甜甜圈的画法，法线先置为`0`不管
-`length(p.xz)`是水平面上距离原点`(0, 0)`的长度，然后`- size`之后我们就能得到一个距离甜甜圈圆环中心的距离，在圆环内就是负数，圆环外就是正数，`p.y`不做处理，这个是朝着我们的方向
-然后`cutout`就是甜甜圈这个环的宽度的
+`length(p.xz)`是水平面上距离原点`(0, 0)`的长度，然后`- size`之后我们就能得到一个距离甜甜圈圆环的距离，在圆环内就是负数，圆环外就是正数，`p.y`不做处理，这个是朝着我们的方向，单纯这玩意的距离那就是一根线
+然后再减去`cutout`就有体积了，`cutout`就是甜甜圈这个环的宽度
 ```hlsl
 float3 ro = camWorldPos;
 float3 rd = normalize(worldPos - camWorldPos);
@@ -412,7 +412,7 @@ return float3(0, 0, 0);
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNzI0MzczNjIsLTkwMTUzNjkwMywtMz
+eyJoaXN0b3J5IjpbLTIwNTUxNDg4NzEsLTkwMTUzNjkwMywtMz
 I3NjEzNzE2LDM5OTk1ODUzNCwxMDExMjAzNzYyLDIwMzQwMzk5
 MDMsMjAyNzQwNTYyNSwxOTMxNDgxOTc0LDEwNzI3MDMzODYsLT
 gxNzExMDY5OCwtMTI3NDg5NTU0NiwyNTk0NzgxNjEsMTE3MDUx
