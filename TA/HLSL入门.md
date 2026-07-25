@@ -290,9 +290,28 @@ return float3(0, 0, 0);
 ```
 ## Diffuse
 
+```hlsl
+float3 ro = camWorldPos;
+float3 rd = normalize(worldPos - camWorldPos);
+float3 p = ro;
+float3 lightDirection = normalize(lightPos);
+
+for(int i = 0; i < 512; i++){
+    float dist = length(p - sphereCenter) - sphereRadius;
+    if(dist < 0.01){
+        float3 normal = normalize(p - sphereCenter);
+        float diffuse = max(dot(normal, lightDirection), 0);
+        opacityMask = 1;
+        return diffuse * float3(1, 0, 0);
+    }
+    p += rd;
+}
+opacityMask = 0;
+return float3(0, 0, 0);
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQzNjYxNjcyLDIwMzQwMzk5MDMsMjAyNz
+eyJoaXN0b3J5IjpbNzE3NzAwOTc0LDIwMzQwMzk5MDMsMjAyNz
 QwNTYyNSwxOTMxNDgxOTc0LDEwNzI3MDMzODYsLTgxNzExMDY5
 OCwtMTI3NDg5NTU0NiwyNTk0NzgxNjEsMTE3MDUxNjY0MiwtMT
 Q2NDE4Mzc4MSw4MTQ3MTU3NDgsNzgzNDY3OTE0LC0yNzc4Njk0
