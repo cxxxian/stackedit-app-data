@@ -334,9 +334,42 @@ for(int i = 0; i < 512; i++){
 opacityMask = 0;
 return float3(0, 0, 0);
 ```
+## 动画
+`displace`作为新圆心，然后`+ float3( sin(p.x * sin(time)/3), sin(p.y * sin(time)/3), sin(p.z * sin(time)/3) )`加的这个东西类似于一个`offset`
+至于为什么是乘法，因为：
+正弦函数通用形式：
+A：**频率系数**
+A 越大 → 同样 x 区间内，正弦震荡越多，波纹越密；
+A 越小 → 波纹越稀疏。
+```hlsl
+float3 ro = camWorldPos;
+float3 rd = normalize(worldPos - camWorldPos);
+float3 p = ro;
+float3 lightDirection = normalize(lightPos);
 
+for(int i = 0; i < 512; i++){
+    float3 displace = sphereCenter 
+    + float3( sin(p.x * sin(time)/3),
+              sin(p.y * sin(time)/3),
+              sin(p.z * sin(time)/3) );
+
+    float dist = length(p - displace) - sphereRadius;
+    if(dist < 0.01){
+        float3 normal = normalize(p - sphereCenter);
+        float diffuse = max(dot(normal, lightDirection), 0);
+        float3 reflection = reflect(lightDirection, normal);
+        float3 viewDirection = normalize(p - camWorldPos);
+        float specular = pow(max(dot(reflection, viewDirection), 0), 16);
+        opacityMask = 1;
+        return (diffuse * float3(1, 0, 0)) + (specular * float3(1, 1, 1));
+    }
+    p += rd;
+}
+opacityMask = 0;
+return float3(0, 0, 0);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzMxOTc1NiwzOTk5NTg1MzQsMTAxMT
+eyJoaXN0b3J5IjpbLTc2NzM3ODIwMCwzOTk5NTg1MzQsMTAxMT
 IwMzc2MiwyMDM0MDM5OTAzLDIwMjc0MDU2MjUsMTkzMTQ4MTk3
 NCwxMDcyNzAzMzg2LC04MTcxMTA2OTgsLTEyNzQ4OTU1NDYsMj
 U5NDc4MTYxLDExNzA1MTY2NDIsLTE0NjQxODM3ODEsODE0NzE1
