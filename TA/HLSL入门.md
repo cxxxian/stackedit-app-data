@@ -270,7 +270,7 @@ return float3(0, 0, 0);
 
 把`ActorPosition`作为`sphereCenter`传入，即可解决问题。
 
-做一个输出`opacityMask`，并且把
+做一个输出`opacityMask`，并且把混合模式改成已遮罩，就会只显示圆了
 ```hlsl
 float3 ro = camWorldPos;
 float3 rd = normalize(worldPos - camWorldPos);
@@ -290,11 +290,11 @@ return float3(0, 0, 0);
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5Mjg3Mzk0NDcsMjAyNzQwNTYyNSwxOT
-MxNDgxOTc0LDEwNzI3MDMzODYsLTgxNzExMDY5OCwtMTI3NDg5
-NTU0NiwyNTk0NzgxNjEsMTE3MDUxNjY0MiwtMTQ2NDE4Mzc4MS
-w4MTQ3MTU3NDgsNzgzNDY3OTE0LC0yNzc4Njk0MjksLTEwOTY2
-MTc1ODUsLTExNzE1MjQ4NCwxNzk2NjQ3OTA2LDE1ODMyODgxNz
-QsLTk4NDc3ODcwMywyMTEzODQ5MTM1LDgyMzExMzUxOSwtODc0
-OTM0MjE4XX0=
+eyJoaXN0b3J5IjpbMjAzNDAzOTkwMywyMDI3NDA1NjI1LDE5Mz
+E0ODE5NzQsMTA3MjcwMzM4NiwtODE3MTEwNjk4LC0xMjc0ODk1
+NTQ2LDI1OTQ3ODE2MSwxMTcwNTE2NjQyLC0xNDY0MTgzNzgxLD
+gxNDcxNTc0OCw3ODM0Njc5MTQsLTI3Nzg2OTQyOSwtMTA5NjYx
+NzU4NSwtMTE3MTUyNDg0LDE3OTY2NDc5MDYsMTU4MzI4ODE3NC
+wtOTg0Nzc4NzAzLDIxMTM4NDkxMzUsODIzMTEzNTE5LC04NzQ5
+MzQyMThdfQ==
 -->
