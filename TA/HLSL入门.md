@@ -245,12 +245,29 @@ return result;
 ```
 这样越中心的位置会越亮，因为越中心圆形重叠的个数越多
 ![输入图片说明](/imgs/2026-07-19/1HVJpjjIgqgvNrZk.png)
+
+# rayMatching
+还是从画一个圆开始
+为什么是`viewDir - worldPos`，我们要注意`worldPos`是一个点，`viewDir `是一个向量，所以我们`viewDir = `
+```hlsl
+float3 rayOrigin = viewDir - worldPos;
+float3 rayStep = viewDir * 1;
+
+for(int i = 0; i < 256; i++){
+    float dist = length(rayOrigin - sphereCenter) - sphereRadius;
+    if(dist < 0.01){
+        return float3(1, 0, 0);
+    }
+    rayOrigin += rayStep;
+}
+return float3(0, 0, 0);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3MDUxNjY0MiwtMTQ2NDE4Mzc4MSw4MT
-Q3MTU3NDgsNzgzNDY3OTE0LC0yNzc4Njk0MjksLTEwOTY2MTc1
-ODUsLTExNzE1MjQ4NCwxNzk2NjQ3OTA2LDE1ODMyODgxNzQsLT
-k4NDc3ODcwMywyMTEzODQ5MTM1LDgyMzExMzUxOSwtODc0OTM0
-MjE4LC03MjAwODY5NzcsLTE1OTMzNzIxNDAsMTU2OTQ5MDMyMy
-w3NjM0MDkwMTUsLTIwMDcyNjgxNzYsLTY0ODE5Nzc1LDEwMDA3
-NDAxMzldfQ==
+eyJoaXN0b3J5IjpbODU2MTY2MzMyLDExNzA1MTY2NDIsLTE0Nj
+QxODM3ODEsODE0NzE1NzQ4LDc4MzQ2NzkxNCwtMjc3ODY5NDI5
+LC0xMDk2NjE3NTg1LC0xMTcxNTI0ODQsMTc5NjY0NzkwNiwxNT
+gzMjg4MTc0LC05ODQ3Nzg3MDMsMjExMzg0OTEzNSw4MjMxMTM1
+MTksLTg3NDkzNDIxOCwtNzIwMDg2OTc3LC0xNTkzMzcyMTQwLD
+E1Njk0OTAzMjMsNzYzNDA5MDE1LC0yMDA3MjY4MTc2LC02NDgx
+OTc3NV19
 -->
