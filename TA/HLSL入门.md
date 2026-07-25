@@ -410,9 +410,20 @@ for(int i = 0; i < 512; i++){
 opacityMask = 0;
 return float3(0, 0, 0);
 ```
-补上法线shi'x
+补上法线实现
+```hlsl
+float eps = 0.001;
+float3 normal = normalize(float3(
+	// X轴正向偏移 - X轴负向偏移
+	sdf.donut(p + float3(eps, 0, 0), 50, 25) - sdf.donut(p - 	float3(eps, 0, 0), 50, 25),
+	// Y轴正向偏移 - Y轴负向偏移
+	sdf.donut(p + float3(0, eps, 0), 50, 25) - sdf.donut(p - float3(0, eps, 0), 50, 25),
+	// Z轴正向偏移 - Z轴负向偏移
+	sdf.donut(p + float3(0, 0, eps), 50, 25) - sdf.donut(p - float3(0, 0, eps), 50, 25)
+));
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAyNjA3Njg2OSwtMjA1NTE0ODg3MSwtOT
+eyJoaXN0b3J5IjpbMjA1OTI2MjY0MiwtMjA1NTE0ODg3MSwtOT
 AxNTM2OTAzLC0zMjc2MTM3MTYsMzk5OTU4NTM0LDEwMTEyMDM3
 NjIsMjAzNDAzOTkwMywyMDI3NDA1NjI1LDE5MzE0ODE5NzQsMT
 A3MjcwMzM4NiwtODE3MTEwNjk4LC0xMjc0ODk1NTQ2LDI1OTQ3
