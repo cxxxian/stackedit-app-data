@@ -270,13 +270,30 @@ return float3(0, 0, 0);
 
 把`ActorPosition`作为`sphereCenter`传入，即可解决问题。
 
+```
+float3 ro = camWorldPos;
+float3 rd = normalize(worldPos - camWorldPos);
+float3 p = ro;
+
+for(int i = 0; i < 512; i++){
+    float dist = length(p - sphereCenter) - sphereRadius;
+    if(dist < 0.01){
+        opacityMask = 1;
+        return float3(1, 0, 0);
+    }
+    p += rd;
+}
+opacityMask = 0;
+return float3(0, 0, 0);
+```
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAyNzQwNTYyNSwxOTMxNDgxOTc0LDEwNz
-I3MDMzODYsLTgxNzExMDY5OCwtMTI3NDg5NTU0NiwyNTk0Nzgx
-NjEsMTE3MDUxNjY0MiwtMTQ2NDE4Mzc4MSw4MTQ3MTU3NDgsNz
-gzNDY3OTE0LC0yNzc4Njk0MjksLTEwOTY2MTc1ODUsLTExNzE1
-MjQ4NCwxNzk2NjQ3OTA2LDE1ODMyODgxNzQsLTk4NDc3ODcwMy
-wyMTEzODQ5MTM1LDgyMzExMzUxOSwtODc0OTM0MjE4LC03MjAw
-ODY5NzddfQ==
+eyJoaXN0b3J5IjpbMjA4OTUyNzEwMCwyMDI3NDA1NjI1LDE5Mz
+E0ODE5NzQsMTA3MjcwMzM4NiwtODE3MTEwNjk4LC0xMjc0ODk1
+NTQ2LDI1OTQ3ODE2MSwxMTcwNTE2NjQyLC0xNDY0MTgzNzgxLD
+gxNDcxNTc0OCw3ODM0Njc5MTQsLTI3Nzg2OTQyOSwtMTA5NjYx
+NzU4NSwtMTE3MTUyNDg0LDE3OTY2NDc5MDYsMTU4MzI4ODE3NC
+wtOTg0Nzc4NzAzLDIxMTM4NDkxMzUsODIzMTEzNTE5LC04NzQ5
+MzQyMThdfQ==
 -->
