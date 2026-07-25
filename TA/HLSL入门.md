@@ -417,17 +417,13 @@ return float3(0, 0, 0);
 
 ### 数学概念：梯度 Gradient
 SDF 函数 `S(p)`，输入空间点 p，输出到物体表面距离。
-
 梯度 `∇S` 就是法线方向：
-
 -   梯度指向：**距离场增长最快的方向**
 -   永远垂直几何体表面、向外
-
 我们没有解析求导公式，用**中心有限差分**近似导数。
-
 一维导数近似公式：
 
-\(\frac{dS}{dx} \approx \frac{S(x+\varepsilon)-S(x-\varepsilon)}{2\varepsilon}\)
+![输入图片说明](/imgs/2026-07-25/PCWyMbAgIMZdKDdH.png)
 
 分母`2ε`只是统一缩放，最后会被 normalize 归一化抵消，代码里直接省略分母。
 ```hlsl
@@ -442,11 +438,11 @@ float3 normal = normalize(float3(
 ));
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDE2NjEzNjAwLDU4NDY2Mjc4MiwyMDU5Mj
-YyNjQyLC0yMDU1MTQ4ODcxLC05MDE1MzY5MDMsLTMyNzYxMzcx
-NiwzOTk5NTg1MzQsMTAxMTIwMzc2MiwyMDM0MDM5OTAzLDIwMj
-c0MDU2MjUsMTkzMTQ4MTk3NCwxMDcyNzAzMzg2LC04MTcxMTA2
-OTgsLTEyNzQ4OTU1NDYsMjU5NDc4MTYxLDExNzA1MTY2NDIsLT
-E0NjQxODM3ODEsODE0NzE1NzQ4LDc4MzQ2NzkxNCwtMjc3ODY5
-NDI5XX0=
+eyJoaXN0b3J5IjpbLTk1NDAyNzI1OCw1ODQ2NjI3ODIsMjA1OT
+I2MjY0MiwtMjA1NTE0ODg3MSwtOTAxNTM2OTAzLC0zMjc2MTM3
+MTYsMzk5OTU4NTM0LDEwMTEyMDM3NjIsMjAzNDAzOTkwMywyMD
+I3NDA1NjI1LDE5MzE0ODE5NzQsMTA3MjcwMzM4NiwtODE3MTEw
+Njk4LC0xMjc0ODk1NTQ2LDI1OTQ3ODE2MSwxMTcwNTE2NjQyLC
+0xNDY0MTgzNzgxLDgxNDcxNTc0OCw3ODM0Njc5MTQsLTI3Nzg2
+OTQyOV19
 -->
