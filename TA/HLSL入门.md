@@ -248,7 +248,7 @@ return result;
 
 # rayMatching
 还是从画一个圆开始
-
+很普通的光线步进逻辑
 ```hlsl
 float3 ro = camWorldPos;
 float3 rd = normalize(worldPos - camWorldPos);
@@ -264,7 +264,7 @@ for(int i = 0; i < 512; i++){
 return float3(0, 0, 0);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDI1MzkwODAsMjU5NDc4MTYxLDExNz
+eyJoaXN0b3J5IjpbLTEyNzQ4OTU1NDYsMjU5NDc4MTYxLDExNz
 A1MTY2NDIsLTE0NjQxODM3ODEsODE0NzE1NzQ4LDc4MzQ2Nzkx
 NCwtMjc3ODY5NDI5LC0xMDk2NjE3NTg1LC0xMTcxNTI0ODQsMT
 c5NjY0NzkwNiwxNTgzMjg4MTc0LC05ODQ3Nzg3MDMsMjExMzg0
