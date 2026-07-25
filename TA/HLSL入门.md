@@ -373,6 +373,9 @@ opacityMask = 0;
 return float3(0, 0, 0);
 ```
 ## 甜甜圈
+重点是`struct`的用法
+以及甜甜圈的画法，法线先置为`0`不管
+`length(p.xz)`是水平面上距离原点`(0, 0)`的长度，然后`- size`之后我们就能得到
 ```hlsl
 float3 ro = camWorldPos;
 float3 rd = normalize(worldPos - camWorldPos);
@@ -408,7 +411,7 @@ return float3(0, 0, 0);
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3MTQ5Nzc1MywtMzI3NjEzNzE2LDM5OT
+eyJoaXN0b3J5IjpbLTkwMTUzNjkwMywtMzI3NjEzNzE2LDM5OT
 k1ODUzNCwxMDExMjAzNzYyLDIwMzQwMzk5MDMsMjAyNzQwNTYy
 NSwxOTMxNDgxOTc0LDEwNzI3MDMzODYsLTgxNzExMDY5OCwtMT
 I3NDg5NTU0NiwyNTk0NzgxNjEsMTE3MDUxNjY0MiwtMTQ2NDE4
