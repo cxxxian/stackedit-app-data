@@ -375,7 +375,8 @@ return float3(0, 0, 0);
 ## 甜甜圈
 重点是`struct`的用法
 以及甜甜圈的画法，法线先置为`0`不管
-`length(p.xz)`是水平面上距离原点`(0, 0)`的长度，然后`- size`之后我们就能得到
+`length(p.xz)`是水平面上距离原点`(0, 0)`的长度，然后`- size`之后我们就能得到一个距离甜甜圈圆环中心的距离，在圆环内就是负数，圆环外就是正数，`p.y`不做处理，这个是朝着我们的方向
+然后
 ```hlsl
 float3 ro = camWorldPos;
 float3 rd = normalize(worldPos - camWorldPos);
@@ -411,11 +412,11 @@ return float3(0, 0, 0);
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwMTUzNjkwMywtMzI3NjEzNzE2LDM5OT
-k1ODUzNCwxMDExMjAzNzYyLDIwMzQwMzk5MDMsMjAyNzQwNTYy
-NSwxOTMxNDgxOTc0LDEwNzI3MDMzODYsLTgxNzExMDY5OCwtMT
-I3NDg5NTU0NiwyNTk0NzgxNjEsMTE3MDUxNjY0MiwtMTQ2NDE4
-Mzc4MSw4MTQ3MTU3NDgsNzgzNDY3OTE0LC0yNzc4Njk0MjksLT
-EwOTY2MTc1ODUsLTExNzE1MjQ4NCwxNzk2NjQ3OTA2LDE1ODMy
-ODgxNzRdfQ==
+eyJoaXN0b3J5IjpbLTE4Mzk4MTc1MjEsLTkwMTUzNjkwMywtMz
+I3NjEzNzE2LDM5OTk1ODUzNCwxMDExMjAzNzYyLDIwMzQwMzk5
+MDMsMjAyNzQwNTYyNSwxOTMxNDgxOTc0LDEwNzI3MDMzODYsLT
+gxNzExMDY5OCwtMTI3NDg5NTU0NiwyNTk0NzgxNjEsMTE3MDUx
+NjY0MiwtMTQ2NDE4Mzc4MSw4MTQ3MTU3NDgsNzgzNDY3OTE0LC
+0yNzc4Njk0MjksLTEwOTY2MTc1ODUsLTExNzE1MjQ4NCwxNzk2
+NjQ3OTA2XX0=
 -->
