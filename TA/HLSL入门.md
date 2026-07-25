@@ -248,7 +248,7 @@ return result;
 
 # rayMatching
 还是从画一个圆开始
-为什么是`viewDir - worldPos`，我们要注意`worldPos`是一个点，`viewDir `是一个向量，所以我们`viewDir = `
+为什么是`viewDir - worldPos`，我们要注意`worldPos`是一个点，`viewDir `是一个向量，所以我们`viewDir = worldPos - rayOrigin `
 ```hlsl
 float3 rayOrigin = viewDir - worldPos;
 float3 rayStep = viewDir * 1;
@@ -263,7 +263,7 @@ for(int i = 0; i < 256; i++){
 return float3(0, 0, 0);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODU2MTY2MzMyLDExNzA1MTY2NDIsLTE0Nj
+eyJoaXN0b3J5IjpbMjU5NDc4MTYxLDExNzA1MTY2NDIsLTE0Nj
 QxODM3ODEsODE0NzE1NzQ4LDc4MzQ2NzkxNCwtMjc3ODY5NDI5
 LC0xMDk2NjE3NTg1LC0xMTcxNTI0ODQsMTc5NjY0NzkwNiwxNT
 gzMjg4MTc0LC05ODQ3Nzg3MDMsMjExMzg0OTEzNSw4MjMxMTM1
