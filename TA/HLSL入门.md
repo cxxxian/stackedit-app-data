@@ -338,9 +338,13 @@ return float3(0, 0, 0);
 `displace`作为新圆心，然后`+ float3( sin(p.x * sin(time)/3), sin(p.y * sin(time)/3), sin(p.z * sin(time)/3) )`加的这个东西类似于一个`offset`
 至于为什么是乘法，因为：
 正弦函数通用形式：
+`y = sin(A * x)`
 A：**频率系数**
 A 越大 → 同样 x 区间内，正弦震荡越多，波纹越密；
 A 越小 → 波纹越稀疏。
+`y = sin(A + x)`
+这是**相位偏移**！
+只会让波纹整体左右平移，**波纹疏密完全不变**。
 ```hlsl
 float3 ro = camWorldPos;
 float3 rd = normalize(worldPos - camWorldPos);
@@ -369,7 +373,7 @@ opacityMask = 0;
 return float3(0, 0, 0);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2NzM3ODIwMCwzOTk5NTg1MzQsMTAxMT
+eyJoaXN0b3J5IjpbLTMyNzYxMzcxNiwzOTk5NTg1MzQsMTAxMT
 IwMzc2MiwyMDM0MDM5OTAzLDIwMjc0MDU2MjUsMTkzMTQ4MTk3
 NCwxMDcyNzAzMzg2LC04MTcxMTA2OTgsLTEyNzQ4OTU1NDYsMj
 U5NDc4MTYxLDExNzA1MTY2NDIsLTE0NjQxODM3ODEsODE0NzE1
