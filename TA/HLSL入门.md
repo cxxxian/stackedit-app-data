@@ -310,13 +310,35 @@ for(int i = 0; i < 512; i++){
 opacityMask = 0;
 return float3(0, 0, 0);
 ```
-## s'p
+## Speclar
+```hlsl
+float3 ro = camWorldPos;
+float3 rd = normalize(worldPos - camWorldPos);
+float3 p = ro;
+float3 lightDirection = normalize(lightPos);
+
+for(int i = 0; i < 512; i++){
+    float dist = length(p - sphereCenter) - sphereRadius;
+    if(dist < 0.01){
+        float3 normal = normalize(p - sphereCenter);
+        float diffuse = max(dot(normal, lightDirection), 0);
+        float3 reflection = reflect(lightDirection, normal);
+        float3 viewDirection = normalize(p - camWorldPos);
+        float specular = pow(max(dot(reflection, viewDirection), 0), 16);
+        opacityMask = 1;
+        return (diffuse * float3(1, 0, 0)) + (specular * float3(1, 1, 1));
+    }
+    p += rd;
+}
+opacityMask = 0;
+return float3(0, 0, 0);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2OTQyNDQwNiwxMDExMjAzNzYyLDIwMz
-QwMzk5MDMsMjAyNzQwNTYyNSwxOTMxNDgxOTc0LDEwNzI3MDMz
-ODYsLTgxNzExMDY5OCwtMTI3NDg5NTU0NiwyNTk0NzgxNjEsMT
-E3MDUxNjY0MiwtMTQ2NDE4Mzc4MSw4MTQ3MTU3NDgsNzgzNDY3
-OTE0LC0yNzc4Njk0MjksLTEwOTY2MTc1ODUsLTExNzE1MjQ4NC
-wxNzk2NjQ3OTA2LDE1ODMyODgxNzQsLTk4NDc3ODcwMywyMTEz
-ODQ5MTM1XX0=
+eyJoaXN0b3J5IjpbLTExNzIxNTcxNjMsMTAxMTIwMzc2MiwyMD
+M0MDM5OTAzLDIwMjc0MDU2MjUsMTkzMTQ4MTk3NCwxMDcyNzAz
+Mzg2LC04MTcxMTA2OTgsLTEyNzQ4OTU1NDYsMjU5NDc4MTYxLD
+ExNzA1MTY2NDIsLTE0NjQxODM3ODEsODE0NzE1NzQ4LDc4MzQ2
+NzkxNCwtMjc3ODY5NDI5LC0xMDk2NjE3NTg1LC0xMTcxNTI0OD
+QsMTc5NjY0NzkwNiwxNTgzMjg4MTc0LC05ODQ3Nzg3MDMsMjEx
+Mzg0OTEzNV19
 -->
