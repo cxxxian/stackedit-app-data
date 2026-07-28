@@ -438,10 +438,25 @@ float3 normal = normalize(float3(
 ));
 ```
 # raymarch深度贴图
-```
+利用步进去求颜色
+dan
+```glsl
+float3 rayStep = viewDir * -1;
+float4 inputTex = Texture2DSample(texObject, texObjectSampler, uv);
+
+for(int i = 0; i < 500; i++){
+    if(inputTex.r > 0.1 && inputTex.g > 0.1 && inputTex.b > 0.1){
+        return float3(i, 0, 0);
+    }
+
+    uv += rayStep * 0.01;
+    inputTex = Texture2DSample(texObject, texObjectSampler, uv.xy);
+}
+
+return inputTex;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk5NjY0NDkyOSwtOTU0MDI3MjU4LDU4ND
+eyJoaXN0b3J5IjpbLTc2OTc1Njg5MCwtOTU0MDI3MjU4LDU4ND
 Y2Mjc4MiwyMDU5MjYyNjQyLC0yMDU1MTQ4ODcxLC05MDE1MzY5
 MDMsLTMyNzYxMzcxNiwzOTk5NTg1MzQsMTAxMTIwMzc2MiwyMD
 M0MDM5OTAzLDIwMjc0MDU2MjUsMTkzMTQ4MTk3NCwxMDcyNzAz
