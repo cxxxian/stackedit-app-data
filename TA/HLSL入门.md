@@ -457,11 +457,11 @@ return inputTex;
 ```
 确实有点抽象，对照图片理解会稍微好点，会发现原本白色的地方黑了，黑的地方红了，因为返回的是`(i, 0, 0)`，就是不同的红
 意思差不多就是黑色的`uv`位置会随着`rayStep`的方向去找，当找到白色的时候，就说明可以`return`一个颜色回来作为当前`uv`的颜色值了，所以越远的地方会发现越亮，越近越暗
-然后`i < 50`，`i`越大就越深，`rayStep * 0.15`，
+然后`i < 50`，`i`越大就越深，`rayStep * 0.15`，`0.15`越小层之间就越紧密
 
 ![输入图片说明](/imgs/2026-07-28/2OlyxMO3SirwdSI8.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Mjg4OTc0OCwtOTU0MDI3MjU4LDU4ND
+eyJoaXN0b3J5IjpbMTM4NDY2NTc5NiwtOTU0MDI3MjU4LDU4ND
 Y2Mjc4MiwyMDU5MjYyNjQyLC0yMDU1MTQ4ODcxLC05MDE1MzY5
 MDMsLTMyNzYxMzcxNiwzOTk5NTg1MzQsMTAxMTIwMzc2MiwyMD
 M0MDM5OTAzLDIwMjc0MDU2MjUsMTkzMTQ4MTk3NCwxMDcyNzAz
