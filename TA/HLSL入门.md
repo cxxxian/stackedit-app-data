@@ -465,14 +465,23 @@ return inputTex;
 这个很简单就不做了
 简单来说就是一张混凝土贴图，然后一个浅灰色的`rgb`
 利用一张蒙版贴图，`RGB`三通道有各自的颜色，把三通道分别作为`alpha`输入进行混合得到结果
+`custom`里面的对应代码如下
+```hlsl
+float result = (Pick == 1.0)?In1
+							 (Pick == 2.0)?In2
+							 (Pick==3.0)?In3 :float(0,0,0);
+return result;
+```
 
 ![输入图片说明](/imgs/2026-07-28/htonXBoIjI2Q3n1g.png)
+
+然后利用这个材质我们可以做一个`instance`实例，这样就好像一个对象一样，
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzIxMTEyNDEwLDEzODQ2NjU3OTYsLTk1ND
-AyNzI1OCw1ODQ2NjI3ODIsMjA1OTI2MjY0MiwtMjA1NTE0ODg3
-MSwtOTAxNTM2OTAzLC0zMjc2MTM3MTYsMzk5OTU4NTM0LDEwMT
-EyMDM3NjIsMjAzNDAzOTkwMywyMDI3NDA1NjI1LDE5MzE0ODE5
-NzQsMTA3MjcwMzM4NiwtODE3MTEwNjk4LC0xMjc0ODk1NTQ2LD
-I1OTQ3ODE2MSwxMTcwNTE2NjQyLC0xNDY0MTgzNzgxLDgxNDcx
-NTc0OF19
+eyJoaXN0b3J5IjpbLTE5NTcxNTQyNjMsMTM4NDY2NTc5NiwtOT
+U0MDI3MjU4LDU4NDY2Mjc4MiwyMDU5MjYyNjQyLC0yMDU1MTQ4
+ODcxLC05MDE1MzY5MDMsLTMyNzYxMzcxNiwzOTk5NTg1MzQsMT
+AxMTIwMzc2MiwyMDM0MDM5OTAzLDIwMjc0MDU2MjUsMTkzMTQ4
+MTk3NCwxMDcyNzAzMzg2LC04MTcxMTA2OTgsLTEyNzQ4OTU1ND
+YsMjU5NDc4MTYxLDExNzA1MTY2NDIsLTE0NjQxODM3ODEsODE0
+NzE1NzQ4XX0=
 -->
