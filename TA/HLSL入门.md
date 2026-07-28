@@ -455,8 +455,12 @@ for(int i = 0; i < 50; i++){
 
 return inputTex;
 ```
+确实有点抽象，对照图片理解会稍微好点，会发现原本白色的地方黑了，黑的地方红了，因为返回的是`(i, 0, 0)`，就是不同的红
+意思差不多就是黑色的`uv`位置会随着`rayStep`的方向去找，dang'zha
+
+![输入图片说明](/imgs/2026-07-28/2OlyxMO3SirwdSI8.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc4OTkzOTMyNywtOTU0MDI3MjU4LDU4ND
+eyJoaXN0b3J5IjpbLTIxMDE3ODQyNSwtOTU0MDI3MjU4LDU4ND
 Y2Mjc4MiwyMDU5MjYyNjQyLC0yMDU1MTQ4ODcxLC05MDE1MzY5
 MDMsLTMyNzYxMzcxNiwzOTk5NTg1MzQsMTAxMTIwMzc2MiwyMD
 M0MDM5OTAzLDIwMjc0MDU2MjUsMTkzMTQ4MTk3NCwxMDcyNzAz
