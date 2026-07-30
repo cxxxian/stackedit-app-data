@@ -506,14 +506,28 @@ float4 color = Texture2DSample(texObject, texObjectSampler, txd.texRotation(uv, 
 
 return color;
 ```
-```h
+```hlsl
+// 极坐标螺旋扭曲函数
+float2 texDistortion(float2 uv, float time){
+// 1. 转换uv到【以纹理中心(0.5,0.5)为原点】的极坐标
+	float2 offset = uv - 0.5;
+	float angle = atan2(offset.y, offset.x); // 当前点极角 θ
+	float radius = length(offset);           // 当前点距离中心半径 r
+	// 2. 基础扭曲幅度：随半径 + 时间正弦波动
+	float distortion = 4 * sin(3 * radius + 2 * time);
+	// 3. 扭曲角度：随极角周期性变化（6个周期 = 6瓣花纹）
+	float primDist = sin(2.0 * angle) * distortion;
+
+	// 4. 根据计算出的动态角度旋转UV
+	return texRotation(uv, primDist);
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMTM2MjExOTUsMTQzMjY5MTk3OSw1OD
-EzNTA2MTEsMTM4NDY2NTc5NiwtOTU0MDI3MjU4LDU4NDY2Mjc4
-MiwyMDU5MjYyNjQyLC0yMDU1MTQ4ODcxLC05MDE1MzY5MDMsLT
-MyNzYxMzcxNiwzOTk5NTg1MzQsMTAxMTIwMzc2MiwyMDM0MDM5
-OTAzLDIwMjc0MDU2MjUsMTkzMTQ4MTk3NCwxMDcyNzAzMzg2LC
-04MTcxMTA2OTgsLTEyNzQ4OTU1NDYsMjU5NDc4MTYxLDExNzA1
-MTY2NDJdfQ==
+eyJoaXN0b3J5IjpbMTYyODM2NTU2NywxNDMyNjkxOTc5LDU4MT
+M1MDYxMSwxMzg0NjY1Nzk2LC05NTQwMjcyNTgsNTg0NjYyNzgy
+LDIwNTkyNjI2NDIsLTIwNTUxNDg4NzEsLTkwMTUzNjkwMywtMz
+I3NjEzNzE2LDM5OTk1ODUzNCwxMDExMjAzNzYyLDIwMzQwMzk5
+MDMsMjAyNzQwNTYyNSwxOTMxNDgxOTc0LDEwNzI3MDMzODYsLT
+gxNzExMDY5OCwtMTI3NDg5NTU0NiwyNTk0NzgxNjEsMTE3MDUx
+NjY0Ml19
 -->
