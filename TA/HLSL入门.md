@@ -479,9 +479,33 @@ return result;
 
 ![输入图片说明](/imgs/2026-07-28/LqGNknoKMmYAVU0V.png)
 
+# 数学变换
 
+```hlsl
+struct texDistort{
+    float2 uvScale(float2 uv, float scale){
+        uv = (uv - 0.5) * scale + 0.5;
+        return uv;
+    }
+
+    float2 texRotation(float2 uv, float angle){
+        //顺时针
+        float2x2 rotationMatrix = float2x2(cos(angle), -sin(angle),
+                                           sin(angle), cos(angle));
+
+        return mul(uv - 0.5, rotationMatrix) + 0.5;
+    }
+};
+
+texDistort txd;
+
+//float4 color = Texture2DSample(texObject, texObjectSampler, txd.uvScale(uv, 2.0));
+float4 color = Texture2DSample(texObject, texObjectSampler, txd.texRotation(uv, radians(45)));
+
+return color;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4OTg4MTgwOSw1ODEzNTA2MTEsMTM4ND
+eyJoaXN0b3J5IjpbLTQ5MDU3NDY4NSw1ODEzNTA2MTEsMTM4ND
 Y2NTc5NiwtOTU0MDI3MjU4LDU4NDY2Mjc4MiwyMDU5MjYyNjQy
 LC0yMDU1MTQ4ODcxLC05MDE1MzY5MDMsLTMyNzYxMzcxNiwzOT
 k5NTg1MzQsMTAxMTIwMzc2MiwyMDM0MDM5OTAzLDIwMjc0MDU2
