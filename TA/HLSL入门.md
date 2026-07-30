@@ -480,7 +480,9 @@ return result;
 ![输入图片说明](/imgs/2026-07-28/LqGNknoKMmYAVU0V.png)
 
 # 数学变换
-是`uv`变换，`(uv - 0.5)`可以把`(0, 0)`挪到中心点，基于中心点进行变换，然后`+ 0.5`再把中心点挪回来，这里返回的`uv`就已经不在`0~1`了，我们会有其他策略例如`RepeatClampMirror`
+是`uv`变换，`(uv - 0.5)`可以把`(0, 0)`挪到中心点，基于中心点进行变换，然后`+ 0.5`再把中心点挪回来，这里返回的`uv`就已经不在`0~1`了，我们会有其他策略例如`Repeat, Clamp, Mirror`
+
+XIAM
 ```hlsl
 struct texDistort{
     float2 uvScale(float2 uv, float scale){
@@ -505,7 +507,7 @@ float4 color = Texture2DSample(texObject, texObjectSampler, txd.texRotation(uv, 
 return color;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0NDU3MjQzNSw1ODEzNTA2MTEsMTM4ND
+eyJoaXN0b3J5IjpbLTM3NzE2NTQ1NCw1ODEzNTA2MTEsMTM4ND
 Y2NTc5NiwtOTU0MDI3MjU4LDU4NDY2Mjc4MiwyMDU5MjYyNjQy
 LC0yMDU1MTQ4ODcxLC05MDE1MzY5MDMsLTMyNzYxMzcxNiwzOT
 k5NTg1MzQsMTAxMTIwMzc2MiwyMDM0MDM5OTAzLDIwMjc0MDU2
