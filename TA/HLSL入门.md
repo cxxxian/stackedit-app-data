@@ -506,6 +506,8 @@ float4 color = Texture2DSample(texObject, texObjectSampler, txd.texRotation(uv, 
 
 return color;
 ```
+核心逻辑：
+距离中心越远的像素，被施加的旋转角度不一样；同时角度随时间持续变化 → 形成螺旋扭动动画
 ```hlsl
 // 极坐标螺旋扭曲函数
 float2 texDistortion(float2 uv, float time){
@@ -523,11 +525,11 @@ float2 texDistortion(float2 uv, float time){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYyODM2NTU2NywxNDMyNjkxOTc5LDU4MT
-M1MDYxMSwxMzg0NjY1Nzk2LC05NTQwMjcyNTgsNTg0NjYyNzgy
-LDIwNTkyNjI2NDIsLTIwNTUxNDg4NzEsLTkwMTUzNjkwMywtMz
-I3NjEzNzE2LDM5OTk1ODUzNCwxMDExMjAzNzYyLDIwMzQwMzk5
-MDMsMjAyNzQwNTYyNSwxOTMxNDgxOTc0LDEwNzI3MDMzODYsLT
-gxNzExMDY5OCwtMTI3NDg5NTU0NiwyNTk0NzgxNjEsMTE3MDUx
-NjY0Ml19
+eyJoaXN0b3J5IjpbLTEyNzIwMTgzNzMsMTQzMjY5MTk3OSw1OD
+EzNTA2MTEsMTM4NDY2NTc5NiwtOTU0MDI3MjU4LDU4NDY2Mjc4
+MiwyMDU5MjYyNjQyLC0yMDU1MTQ4ODcxLC05MDE1MzY5MDMsLT
+MyNzYxMzcxNiwzOTk5NTg1MzQsMTAxMTIwMzc2MiwyMDM0MDM5
+OTAzLDIwMjc0MDU2MjUsMTkzMTQ4MTk3NCwxMDcyNzAzMzg2LC
+04MTcxMTA2OTgsLTEyNzQ4OTU1NDYsMjU5NDc4MTYxLDExNzA1
+MTY2NDJdfQ==
 -->
