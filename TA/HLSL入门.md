@@ -480,7 +480,7 @@ return result;
 ![输入图片说明](/imgs/2026-07-28/LqGNknoKMmYAVU0V.png)
 
 # 数学变换
-
+是`uv`变换，`(uv - 0.5)`可以把`(0, 0)`挪到中心点，基于中心点进行变换，然后`+ 0.5`再把中心点挪回来，
 ```hlsl
 struct texDistort{
     float2 uvScale(float2 uv, float scale){
@@ -505,11 +505,11 @@ float4 color = Texture2DSample(texObject, texObjectSampler, txd.texRotation(uv, 
 return color;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5MDU3NDY4NSw1ODEzNTA2MTEsMTM4ND
-Y2NTc5NiwtOTU0MDI3MjU4LDU4NDY2Mjc4MiwyMDU5MjYyNjQy
-LC0yMDU1MTQ4ODcxLC05MDE1MzY5MDMsLTMyNzYxMzcxNiwzOT
-k5NTg1MzQsMTAxMTIwMzc2MiwyMDM0MDM5OTAzLDIwMjc0MDU2
-MjUsMTkzMTQ4MTk3NCwxMDcyNzAzMzg2LC04MTcxMTA2OTgsLT
-EyNzQ4OTU1NDYsMjU5NDc4MTYxLDExNzA1MTY2NDIsLTE0NjQx
-ODM3ODFdfQ==
+eyJoaXN0b3J5IjpbLTE5MjU1MTMyNDQsNTgxMzUwNjExLDEzOD
+Q2NjU3OTYsLTk1NDAyNzI1OCw1ODQ2NjI3ODIsMjA1OTI2MjY0
+MiwtMjA1NTE0ODg3MSwtOTAxNTM2OTAzLC0zMjc2MTM3MTYsMz
+k5OTU4NTM0LDEwMTEyMDM3NjIsMjAzNDAzOTkwMywyMDI3NDA1
+NjI1LDE5MzE0ODE5NzQsMTA3MjcwMzM4NiwtODE3MTEwNjk4LC
+0xMjc0ODk1NTQ2LDI1OTQ3ODE2MSwxMTcwNTE2NjQyLC0xNDY0
+MTgzNzgxXX0=
 -->
