@@ -508,6 +508,35 @@ return color;
 ```
 核心逻辑：
 距离中心越远的像素，被施加的旋转角度不一样；同时角度随时间持续变化 → 形成螺旋扭动动画
+
+#### 1. radius（到中心距离）起了什么作用？
+
+`sin(3 * radius + 2 * time)`
+-   越靠近中心：radius ≈ 0 → sin 值接近 0 → **旋转力度几乎为 0**
+-   越靠近外圈：radius 变大 → sin 来回正负震荡 → **旋转力度很大**
+
+✅ 关键：**中心几乎不转，外圈疯狂扭转**
+
+一张圆图，中间固定、外圈强行扭转，天然会拉出螺旋线条。
+
+#### 2. `sin(6.0 * angle)` 是什么效果？
+angle 是点朝向中心的方向，绕中心完整一圈 = 360°
+`6.0 * angle`：沿着圆圈走一圈，正弦函数会上下震荡 6 次。
+效果：
+圆圈上平均分成 6 段：
+3 段区域：顺时针扭
+3 段区域：逆时针扭
+所以画面会出现**6 瓣对称花纹**。
+#### 3. time 时间项 `+2*time`
+
+随着时间推进，sin 里面的值持续变大。
+相当于：**扭转的波纹，持续从中心向外扩散滚动**，动画就动起来了。
+#### 4. 整合到一起发生了什么？
+
+1.  图片中心点锁死，基本不动；
+2.  越往外的像素，允许扭转的幅度越大；
+3.  一圈上，6 个区域往左拧、6 个区域往右拧；
+4.  随着时间变化，拧动的波纹不断向外移动；
 ```hlsl
 // 极坐标螺旋扭曲函数
 float2 texDistortion(float2 uv, float time){
@@ -525,11 +554,11 @@ float2 texDistortion(float2 uv, float time){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNzIwMTgzNzMsMTQzMjY5MTk3OSw1OD
-EzNTA2MTEsMTM4NDY2NTc5NiwtOTU0MDI3MjU4LDU4NDY2Mjc4
-MiwyMDU5MjYyNjQyLC0yMDU1MTQ4ODcxLC05MDE1MzY5MDMsLT
-MyNzYxMzcxNiwzOTk5NTg1MzQsMTAxMTIwMzc2MiwyMDM0MDM5
-OTAzLDIwMjc0MDU2MjUsMTkzMTQ4MTk3NCwxMDcyNzAzMzg2LC
-04MTcxMTA2OTgsLTEyNzQ4OTU1NDYsMjU5NDc4MTYxLDExNzA1
-MTY2NDJdfQ==
+eyJoaXN0b3J5IjpbNDc1MDg0NDksLTEyNzIwMTgzNzMsMTQzMj
+Y5MTk3OSw1ODEzNTA2MTEsMTM4NDY2NTc5NiwtOTU0MDI3MjU4
+LDU4NDY2Mjc4MiwyMDU5MjYyNjQyLC0yMDU1MTQ4ODcxLC05MD
+E1MzY5MDMsLTMyNzYxMzcxNiwzOTk5NTg1MzQsMTAxMTIwMzc2
+MiwyMDM0MDM5OTAzLDIwMjc0MDU2MjUsMTkzMTQ4MTk3NCwxMD
+cyNzAzMzg2LC04MTcxMTA2OTgsLTEyNzQ4OTU1NDYsMjU5NDc4
+MTYxXX0=
 -->
