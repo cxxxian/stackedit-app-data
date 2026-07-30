@@ -537,6 +537,9 @@ angle 是点朝向中心的方向，绕中心完整一圈 = 360°
 2.  越往外的像素，允许扭转的幅度越大；
 3.  一圈上，6 个区域往左拧、6 个区域往右拧；
 4.  随着时间变化，拧动的波纹不断向外移动；
+
+前面所有代码**只算出了「这个像素应该旋转多少角度 primDist」，但没有真正执行旋转操作**。
+`texRotate(uv, primDist)` 才是**真正把 UV 坐标旋转**的函数。
 ```hlsl
 // 极坐标螺旋扭曲函数
 float2 texDistortion(float2 uv, float time){
@@ -554,11 +557,11 @@ float2 texDistortion(float2 uv, float time){
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc1MDg0NDksLTEyNzIwMTgzNzMsMTQzMj
-Y5MTk3OSw1ODEzNTA2MTEsMTM4NDY2NTc5NiwtOTU0MDI3MjU4
-LDU4NDY2Mjc4MiwyMDU5MjYyNjQyLC0yMDU1MTQ4ODcxLC05MD
-E1MzY5MDMsLTMyNzYxMzcxNiwzOTk5NTg1MzQsMTAxMTIwMzc2
-MiwyMDM0MDM5OTAzLDIwMjc0MDU2MjUsMTkzMTQ4MTk3NCwxMD
-cyNzAzMzg2LC04MTcxMTA2OTgsLTEyNzQ4OTU1NDYsMjU5NDc4
-MTYxXX0=
+eyJoaXN0b3J5IjpbOTIyODA0ODI5LC0xMjcyMDE4MzczLDE0Mz
+I2OTE5NzksNTgxMzUwNjExLDEzODQ2NjU3OTYsLTk1NDAyNzI1
+OCw1ODQ2NjI3ODIsMjA1OTI2MjY0MiwtMjA1NTE0ODg3MSwtOT
+AxNTM2OTAzLC0zMjc2MTM3MTYsMzk5OTU4NTM0LDEwMTEyMDM3
+NjIsMjAzNDAzOTkwMywyMDI3NDA1NjI1LDE5MzE0ODE5NzQsMT
+A3MjcwMzM4NiwtODE3MTEwNjk4LC0xMjc0ODk1NTQ2LDI1OTQ3
+ODE2MV19
 -->
