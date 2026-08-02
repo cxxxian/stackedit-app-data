@@ -580,12 +580,45 @@ return result;
 ![输入图片说明](/imgs/2026-08-02/EYiOgovbSEUnHUuA.png)
 
 以上是绘制一个，水滴是很多的，开始准备绘制多个
+
+```hlsl
+float4 result = float4(0, 0, 0, 0);
+
+float ringThickness = 0.005;
+float fadeInner = 0.005;
+
+float2 seed = float2(123.456, 789.012);
+float2 offsetRange = float2(-1, 1);
+// 水滴个数
+float drops = 100;
+
+for(int i = 0; i < drops; i++){
+    //随机数
+    seed = frac(seed * 123.456);
+    // 利用seed生成 [-1,1] 的随机偏移坐标
+    float2 randOffset = lerp(offsetRange.x, offsetRange.y, seed);
+
+    float radius = 0.05;
+    // 当前uv减去随机偏移 = 把圆环中心挪到随机位置
+    float2 offset = (uv - 0.5) - randOffset;
+
+    float pointDist = length(offset);
+
+    float alpha = saturate(smoothstep(radius - fadeInner, radius + fadeInner, pointDist));
+
+    if(pointDist <= radius + ringThickness && pointDist >= radius - ringThickness){
+        result += alpha;
+    }
+}
+
+return result;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwODM1MjQ5MywtODg1NTEwNTMwLDE4OD
-Q4Mzc4ODEsOTIyODA0ODI5LC0xMjcyMDE4MzczLDE0MzI2OTE5
-NzksNTgxMzUwNjExLDEzODQ2NjU3OTYsLTk1NDAyNzI1OCw1OD
-Q2NjI3ODIsMjA1OTI2MjY0MiwtMjA1NTE0ODg3MSwtOTAxNTM2
-OTAzLC0zMjc2MTM3MTYsMzk5OTU4NTM0LDEwMTEyMDM3NjIsMj
-AzNDAzOTkwMywyMDI3NDA1NjI1LDE5MzE0ODE5NzQsMTA3Mjcw
-MzM4Nl19
+eyJoaXN0b3J5IjpbMTEwMTQxMjUxNywxODA4MzUyNDkzLC04OD
+U1MTA1MzAsMTg4NDgzNzg4MSw5MjI4MDQ4MjksLTEyNzIwMTgz
+NzMsMTQzMjY5MTk3OSw1ODEzNTA2MTEsMTM4NDY2NTc5NiwtOT
+U0MDI3MjU4LDU4NDY2Mjc4MiwyMDU5MjYyNjQyLC0yMDU1MTQ4
+ODcxLC05MDE1MzY5MDMsLTMyNzYxMzcxNiwzOTk5NTg1MzQsMT
+AxMTIwMzc2MiwyMDM0MDM5OTAzLDIwMjc0MDU2MjUsMTkzMTQ4
+MTk3NF19
 -->
