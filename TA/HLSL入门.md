@@ -558,7 +558,7 @@ float2 texDistortion(float2 uv, float time){
 ```
 
 # 雨水效果
-这样jiu
+这样就可以做出一个圆环，内部有点渐变的感觉，是第一步
 ```hlsl
 float4 result = float4(0, 0, 0, 0);
 float2 pointCtr = float2(0.5, 0.5);
@@ -577,7 +577,7 @@ if(pointDist <= radiusMax + ringThickness && pointDist >= radiusMin - ringThickn
 return result;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5MDkwMzU4MSw5MjI4MDQ4MjksLTEyNz
+eyJoaXN0b3J5IjpbLTU4MzgwODA4MCw5MjI4MDQ4MjksLTEyNz
 IwMTgzNzMsMTQzMjY5MTk3OSw1ODEzNTA2MTEsMTM4NDY2NTc5
 NiwtOTU0MDI3MjU4LDU4NDY2Mjc4MiwyMDU5MjYyNjQyLC0yMD
 U1MTQ4ODcxLC05MDE1MzY5MDMsLTMyNzYxMzcxNiwzOTk5NTg1
