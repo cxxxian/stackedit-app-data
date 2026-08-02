@@ -625,12 +625,55 @@ return result;
 学个用法，可以`debug`显示时间，可以看到随着虚幻运行时间会变得越来越大，所以我们可以通过`frac`来限制只取得小数点
 
 ![输入图片说明](/imgs/2026-08-02/DHPEFBFd4EifYFRg.png)
+
+现在就`ok`了， 有
+```hlsl
+float4 result = float4(0, 0, 0, 0);
+
+float ringThickness = 0.005;
+float fadeInner = 0.005;
+
+float duration = 1.0;
+
+float radiusMin = 0.05;
+float radiusMax = 0.1;
+
+float2 seed = float2(123.456, 789.012);
+float2 offsetRange = float2(-1, 1);
+// 水滴个数
+float drops = 100;
+
+for(int i = 0; i < drops; i++){
+    //随机数
+    seed = frac(seed * 123.456);
+    // 利用seed生成 [-1,1] 的随机偏移坐标
+    float2 randOffset = lerp(offsetRange.x, offsetRange.y, seed);
+
+    float cycle = duration + frac(randOffset);
+    float pulse = frac(time / cycle);
+
+    float radius = radiusMin + pulse * (radiusMax - radiusMin);
+
+    // 当前uv减去随机偏移 = 把圆环中心挪到随机位置
+    float2 offset = (uv - 0.5) - randOffset;
+
+    float pointDist = length(offset);
+
+    float alpha = saturate(smoothstep(radius - fadeInner, radius + fadeInner, pointDist));
+
+    if(pointDist <= radius + ringThickness && pointDist >= radius - ringThickness){
+        result += alpha;
+    }
+}
+
+return saturate(result);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3Mjg5ODQyOSwxMTE5MzE4Nzk2LC0xMj
-EzODA2NjIzLDE4MDgzNTI0OTMsLTg4NTUxMDUzMCwxODg0ODM3
-ODgxLDkyMjgwNDgyOSwtMTI3MjAxODM3MywxNDMyNjkxOTc5LD
-U4MTM1MDYxMSwxMzg0NjY1Nzk2LC05NTQwMjcyNTgsNTg0NjYy
-NzgyLDIwNTkyNjI2NDIsLTIwNTUxNDg4NzEsLTkwMTUzNjkwMy
-wtMzI3NjEzNzE2LDM5OTk1ODUzNCwxMDExMjAzNzYyLDIwMzQw
-Mzk5MDNdfQ==
+eyJoaXN0b3J5IjpbNzczMDU3ODEsMTE3Mjg5ODQyOSwxMTE5Mz
+E4Nzk2LC0xMjEzODA2NjIzLDE4MDgzNTI0OTMsLTg4NTUxMDUz
+MCwxODg0ODM3ODgxLDkyMjgwNDgyOSwtMTI3MjAxODM3MywxND
+MyNjkxOTc5LDU4MTM1MDYxMSwxMzg0NjY1Nzk2LC05NTQwMjcy
+NTgsNTg0NjYyNzgyLDIwNTkyNjI2NDIsLTIwNTUxNDg4NzEsLT
+kwMTUzNjkwMywtMzI3NjEzNzE2LDM5OTk1ODUzNCwxMDExMjAz
+NzYyXX0=
 -->
