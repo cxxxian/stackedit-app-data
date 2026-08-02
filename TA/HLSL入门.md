@@ -669,9 +669,11 @@ for(int i = 0; i < drops; i++){
 return saturate(result);
 ```
 但是现在很生硬，因为到最大圈之后会瞬间变小，我们做一个淡出的效果：
-radiusLimit`：给当前水滴固定一个永久不变的最大外圈边界（静态值，不会随时间脉动！）
+区分两个极易混淆的半径：
+1.  `radius`：动态脉动半径，随时间慢慢变大（动画扩张的环）
+2.  `radiusLimit`：静态固定半径，这颗水滴**允许存在的最远边界**
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2ODYxMzYxMCwxNDcyMTc0MzUxLDExNz
+eyJoaXN0b3J5IjpbMTg4MTA0MTU2NiwxNDcyMTc0MzUxLDExNz
 I4OTg0MjksMTExOTMxODc5NiwtMTIxMzgwNjYyMywxODA4MzUy
 NDkzLC04ODU1MTA1MzAsMTg4NDgzNzg4MSw5MjI4MDQ4MjksLT
 EyNzIwMTgzNzMsMTQzMjY5MTk3OSw1ODEzNTA2MTEsMTM4NDY2
