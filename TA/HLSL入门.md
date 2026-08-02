@@ -672,12 +672,32 @@ return saturate(result);
 区分两个极易混淆的半径：
 1.  `radius`：动态脉动半径，随时间慢慢变大（动画扩张的环）
 2.  `radiusLimit`：静态固定半径，这颗水滴**允许存在的最远边界**
+
+区间：`radiusLimit - 0.001 ~ radiusLimit + 0.001`
+1.  像素距离 `pointDist < radiusLimit - fadeOuter`
+    `smoothstep = 0`
+    `1 - 0 = 1` → 不影响 alpha，透明度保持原样
+    
+2.  `pointDist` 进入区间 `radiusLimit ± fadeOuter`
+    `smoothstep` 从 `0` 慢慢升到 `1`
+    `1-term` 从 `1` 慢慢降到 `0 → alpha` 逐渐衰减
+    
+3.  `pointDist > radiusLimit + fadeOuter`
+    `smoothstep=1`
+    `1 - 1 = 0`
+    `alpha` 直接归零，水滴彻底消失
+
+#### 一句话总结这条代码功能：
+
+**一旦像素距离超过 radiusLimit，透明度平滑衰减到 0，实现外缘柔和淡出。**
+``
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4MTA0MTU2NiwxNDcyMTc0MzUxLDExNz
-I4OTg0MjksMTExOTMxODc5NiwtMTIxMzgwNjYyMywxODA4MzUy
-NDkzLC04ODU1MTA1MzAsMTg4NDgzNzg4MSw5MjI4MDQ4MjksLT
-EyNzIwMTgzNzMsMTQzMjY5MTk3OSw1ODEzNTA2MTEsMTM4NDY2
-NTc5NiwtOTU0MDI3MjU4LDU4NDY2Mjc4MiwyMDU5MjYyNjQyLC
-0yMDU1MTQ4ODcxLC05MDE1MzY5MDMsLTMyNzYxMzcxNiwzOTk5
-NTg1MzRdfQ==
+eyJoaXN0b3J5IjpbMjU3OTAzMTIxLDE0NzIxNzQzNTEsMTE3Mj
+g5ODQyOSwxMTE5MzE4Nzk2LC0xMjEzODA2NjIzLDE4MDgzNTI0
+OTMsLTg4NTUxMDUzMCwxODg0ODM3ODgxLDkyMjgwNDgyOSwtMT
+I3MjAxODM3MywxNDMyNjkxOTc5LDU4MTM1MDYxMSwxMzg0NjY1
+Nzk2LC05NTQwMjcyNTgsNTg0NjYyNzgyLDIwNTkyNjI2NDIsLT
+IwNTUxNDg4NzEsLTkwMTUzNjkwMywtMzI3NjEzNzE2LDM5OTk1
+ODUzNF19
 -->
