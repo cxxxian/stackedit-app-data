@@ -668,14 +668,14 @@ for(int i = 0; i < drops; i++){
 
 return saturate(result);
 ```
-但是现在很生硬，因为到最大圈之后会瞬间变小
-radiusLimit：给当前水滴固定一个永久不变的最大外圈边界（静态值，不会随时间脉动！）
+但是现在很生硬，因为到最大圈之后会瞬间变小，我们做一个淡出的效果：
+radiusLimit`：给当前水滴固定一个永久不变的最大外圈边界（静态值，不会随时间脉动！）
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzgxNzgyNjIsMTQ3MjE3NDM1MSwxMT
-cyODk4NDI5LDExMTkzMTg3OTYsLTEyMTM4MDY2MjMsMTgwODM1
-MjQ5MywtODg1NTEwNTMwLDE4ODQ4Mzc4ODEsOTIyODA0ODI5LC
-0xMjcyMDE4MzczLDE0MzI2OTE5NzksNTgxMzUwNjExLDEzODQ2
-NjU3OTYsLTk1NDAyNzI1OCw1ODQ2NjI3ODIsMjA1OTI2MjY0Mi
-wtMjA1NTE0ODg3MSwtOTAxNTM2OTAzLC0zMjc2MTM3MTYsMzk5
-OTU4NTM0XX0=
+eyJoaXN0b3J5IjpbMTM2ODYxMzYxMCwxNDcyMTc0MzUxLDExNz
+I4OTg0MjksMTExOTMxODc5NiwtMTIxMzgwNjYyMywxODA4MzUy
+NDkzLC04ODU1MTA1MzAsMTg4NDgzNzg4MSw5MjI4MDQ4MjksLT
+EyNzIwMTgzNzMsMTQzMjY5MTk3OSw1ODEzNTA2MTEsMTM4NDY2
+NTc5NiwtOTU0MDI3MjU4LDU4NDY2Mjc4MiwyMDU5MjYyNjQyLC
+0yMDU1MTQ4ODcxLC05MDE1MzY5MDMsLTMyNzYxMzcxNiwzOTk5
+NTg1MzRdfQ==
 -->
