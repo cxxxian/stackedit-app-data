@@ -620,15 +620,17 @@ for(int i = 0; i < drops; i++){
 return result;
 ```
 
+![输入图片说明](/imgs/2026-08-02/Kr5CSbhyfLp3phq5.png)
+
 学个用法，可以`debug`显示时间，可以看到随着虚幻运行时间会变得越来越大，所以我们可以通过`frac`来限制只取得小数点
 
 ![输入图片说明](/imgs/2026-08-02/DHPEFBFd4EifYFRg.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTExOTMxODc5NiwtMTIxMzgwNjYyMywxOD
-A4MzUyNDkzLC04ODU1MTA1MzAsMTg4NDgzNzg4MSw5MjI4MDQ4
-MjksLTEyNzIwMTgzNzMsMTQzMjY5MTk3OSw1ODEzNTA2MTEsMT
-M4NDY2NTc5NiwtOTU0MDI3MjU4LDU4NDY2Mjc4MiwyMDU5MjYy
-NjQyLC0yMDU1MTQ4ODcxLC05MDE1MzY5MDMsLTMyNzYxMzcxNi
-wzOTk5NTg1MzQsMTAxMTIwMzc2MiwyMDM0MDM5OTAzLDIwMjc0
-MDU2MjVdfQ==
+eyJoaXN0b3J5IjpbMTE3Mjg5ODQyOSwxMTE5MzE4Nzk2LC0xMj
+EzODA2NjIzLDE4MDgzNTI0OTMsLTg4NTUxMDUzMCwxODg0ODM3
+ODgxLDkyMjgwNDgyOSwtMTI3MjAxODM3MywxNDMyNjkxOTc5LD
+U4MTM1MDYxMSwxMzg0NjY1Nzk2LC05NTQwMjcyNTgsNTg0NjYy
+NzgyLDIwNTkyNjI2NDIsLTIwNTUxNDg4NzEsLTkwMTUzNjkwMy
+wtMzI3NjEzNzE2LDM5OTk1ODUzNCwxMDExMjAzNzYyLDIwMzQw
+Mzk5MDNdfQ==
 -->
