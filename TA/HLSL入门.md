@@ -626,7 +626,7 @@ return result;
 
 ![输入图片说明](/imgs/2026-08-02/DHPEFBFd4EifYFRg.png)
 
-现在就`ok`了， 有慢慢变大的效果，为什么会慢慢变大，因为`time`是慢慢变大的
+现在就`ok`了， 有慢慢变大的效果，为什么会慢慢变大，因为`time`是慢慢变大的，所以pulse 会**平稳从 0 匀速增加到 1，一到 1 瞬间跳回 0，重新开始上涨**，
 ```hlsl
 float4 result = float4(0, 0, 0, 0);
 
@@ -668,12 +668,13 @@ for(int i = 0; i < drops; i++){
 
 return saturate(result);
 ```
+但是现在很生硬，因为到最大圈之后会瞬间变小
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTY3MzUyNzQsMTE3Mjg5ODQyOSwxMT
-E5MzE4Nzk2LC0xMjEzODA2NjIzLDE4MDgzNTI0OTMsLTg4NTUx
-MDUzMCwxODg0ODM3ODgxLDkyMjgwNDgyOSwtMTI3MjAxODM3My
-wxNDMyNjkxOTc5LDU4MTM1MDYxMSwxMzg0NjY1Nzk2LC05NTQw
-MjcyNTgsNTg0NjYyNzgyLDIwNTkyNjI2NDIsLTIwNTUxNDg4Nz
-EsLTkwMTUzNjkwMywtMzI3NjEzNzE2LDM5OTk1ODUzNCwxMDEx
-MjAzNzYyXX0=
+eyJoaXN0b3J5IjpbMTQ3MjE3NDM1MSwxMTcyODk4NDI5LDExMT
+kzMTg3OTYsLTEyMTM4MDY2MjMsMTgwODM1MjQ5MywtODg1NTEw
+NTMwLDE4ODQ4Mzc4ODEsOTIyODA0ODI5LC0xMjcyMDE4MzczLD
+E0MzI2OTE5NzksNTgxMzUwNjExLDEzODQ2NjU3OTYsLTk1NDAy
+NzI1OCw1ODQ2NjI3ODIsMjA1OTI2MjY0MiwtMjA1NTE0ODg3MS
+wtOTAxNTM2OTAzLC0zMjc2MTM3MTYsMzk5OTU4NTM0LDEwMTEy
+MDM3NjJdfQ==
 -->
