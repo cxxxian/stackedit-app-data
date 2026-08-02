@@ -576,8 +576,10 @@ if(pointDist <= radiusMax + ringThickness && pointDist >= radiusMin - ringThickn
 
 return result;
 ```
+
+![输入图片说明](/imgs/2026-08-02/EYiOgovbSEUnHUuA.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4MzgwODA4MCw5MjI4MDQ4MjksLTEyNz
+eyJoaXN0b3J5IjpbMTg4NDgzNzg4MSw5MjI4MDQ4MjksLTEyNz
 IwMTgzNzMsMTQzMjY5MTk3OSw1ODEzNTA2MTEsMTM4NDY2NTc5
 NiwtOTU0MDI3MjU4LDU4NDY2Mjc4MiwyMDU5MjYyNjQyLC0yMD
 U1MTQ4ODcxLC05MDE1MzY5MDMsLTMyNzYxMzcxNiwzOTk5NTg1
