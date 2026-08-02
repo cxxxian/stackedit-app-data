@@ -690,14 +690,58 @@ return saturate(result);
 #### 一句话总结这条代码功能：
 
 **一旦像素距离超过 radiusLimit，透明度平滑衰减到 0，实现外缘柔和淡出。**
-``
+```hlsl
+float4 result = float4(0, 0, 0, 0);
+
+float ringThickness = 0.005;
+float fadeInner = 0.005;
+float fadeOuter = 0.001;
+
+float duration = 1.0;
+
+float radiusMin = 0.05;
+float radiusMax = 0.1;
+
+float2 seed = float2(123.456, 789.012);
+float2 offsetRange = float2(-1, 1);
+// 水滴个数
+float drops = 100;
+
+for(int i = 0; i < drops; i++){
+    //随机数
+    seed = frac(seed * 123.456);
+    // 利用seed生成 [-1,1] 的随机偏移坐标
+    float2 randOffset = lerp(offsetRange.x, offsetRange.y, seed);
+
+    float cycle = duration + frac(randOffset);
+    float pulse = frac(time / cycle);
+
+    float radius = radiusMin + pulse * (radiusMax - radiusMin);
+
+    // 当前uv减去随机偏移 = 把圆环中心挪到随机位置
+    float2 offset = (uv - 0.5) - randOffset;
+
+    float pointDist = length(offset);
+
+    float radiusLimit = radiusMin + (seed.y) * (radiusMax - radiusMin);
+
+    float alpha = saturate(smoothstep(radius - fadeInner, radius + fadeInner, pointDist));
+
+    alpha *= saturate(1 - smoothstep(radiusLimit - fadeOuter, radiusLimit + fadeOuter, pointDist));
+
+    if(pointDist <= radius + ringThickness && pointDist >= radius - ringThickness){
+        result += alpha;
+    }
+}
+
+return saturate(result);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjU3OTAzMTIxLDE0NzIxNzQzNTEsMTE3Mj
-g5ODQyOSwxMTE5MzE4Nzk2LC0xMjEzODA2NjIzLDE4MDgzNTI0
-OTMsLTg4NTUxMDUzMCwxODg0ODM3ODgxLDkyMjgwNDgyOSwtMT
-I3MjAxODM3MywxNDMyNjkxOTc5LDU4MTM1MDYxMSwxMzg0NjY1
-Nzk2LC05NTQwMjcyNTgsNTg0NjYyNzgyLDIwNTkyNjI2NDIsLT
-IwNTUxNDg4NzEsLTkwMTUzNjkwMywtMzI3NjEzNzE2LDM5OTk1
-ODUzNF19
+eyJoaXN0b3J5IjpbLTIxMTA3NzYxMTMsMTQ3MjE3NDM1MSwxMT
+cyODk4NDI5LDExMTkzMTg3OTYsLTEyMTM4MDY2MjMsMTgwODM1
+MjQ5MywtODg1NTEwNTMwLDE4ODQ4Mzc4ODEsOTIyODA0ODI5LC
+0xMjcyMDE4MzczLDE0MzI2OTE5NzksNTgxMzUwNjExLDEzODQ2
+NjU3OTYsLTk1NDAyNzI1OCw1ODQ2NjI3ODIsMjA1OTI2MjY0Mi
+wtMjA1NTE0ODg3MSwtOTAxNTM2OTAzLC0zMjc2MTM3MTYsMzk5
+OTU4NTM0XX0=
 -->
