@@ -556,12 +556,32 @@ float2 texDistortion(float2 uv, float time){
 	return texRotation(uv, primDist);
 }
 ```
+
+# 雨水效果
+这样jiu
+```hlsl
+float4 result = float4(0, 0, 0, 0);
+float2 pointCtr = float2(0.5, 0.5);
+float2 uvOffset = uv - float2(0.5, 0.5);
+float radiusMin = 0.05;
+float radiusMax = 0.1;
+float ringThickness = 0.005;
+float pointDist = length(uvOffset);
+
+float alpha = saturate(smoothstep(radiusMin - ringThickness, radiusMin + ringThickness, pointDist));
+
+if(pointDist <= radiusMax + ringThickness && pointDist >= radiusMin - ringThickness){
+    result += alpha;
+}
+
+return result;
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTIyODA0ODI5LC0xMjcyMDE4MzczLDE0Mz
-I2OTE5NzksNTgxMzUwNjExLDEzODQ2NjU3OTYsLTk1NDAyNzI1
-OCw1ODQ2NjI3ODIsMjA1OTI2MjY0MiwtMjA1NTE0ODg3MSwtOT
-AxNTM2OTAzLC0zMjc2MTM3MTYsMzk5OTU4NTM0LDEwMTEyMDM3
-NjIsMjAzNDAzOTkwMywyMDI3NDA1NjI1LDE5MzE0ODE5NzQsMT
-A3MjcwMzM4NiwtODE3MTEwNjk4LC0xMjc0ODk1NTQ2LDI1OTQ3
-ODE2MV19
+eyJoaXN0b3J5IjpbLTM5MDkwMzU4MSw5MjI4MDQ4MjksLTEyNz
+IwMTgzNzMsMTQzMjY5MTk3OSw1ODEzNTA2MTEsMTM4NDY2NTc5
+NiwtOTU0MDI3MjU4LDU4NDY2Mjc4MiwyMDU5MjYyNjQyLC0yMD
+U1MTQ4ODcxLC05MDE1MzY5MDMsLTMyNzYxMzcxNiwzOTk5NTg1
+MzQsMTAxMTIwMzc2MiwyMDM0MDM5OTAzLDIwMjc0MDU2MjUsMT
+kzMTQ4MTk3NCwxMDcyNzAzMzg2LC04MTcxMTA2OTgsLTEyNzQ4
+OTU1NDZdfQ==
 -->
