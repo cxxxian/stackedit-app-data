@@ -580,7 +580,13 @@ return result;
 ![输入图片说明](/imgs/2026-08-02/EYiOgovbSEUnHUuA.png)
 
 以上是绘制一个，水滴是很多的，开始准备绘制多个
-
+`frac(x)`：取小数部分
+例：frac (3.1415) = 0.1415；frac (5.98) = 0.98
+运行流程（循环每一次）
+1.  初始 seed 固定 `(123.456,789.012)`
+2.  seed × 一个大浮点数（123.456），数值剧烈放大
+3.  frac () 砍掉整数，只保留 0~1 之间的小数
+4.  结果重新赋值给 seed，**作为下一轮计算的输入**
 ```hlsl
 float4 result = float4(0, 0, 0, 0);
 
@@ -614,11 +620,11 @@ for(int i = 0; i < drops; i++){
 return result;
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwMTQxMjUxNywxODA4MzUyNDkzLC04OD
-U1MTA1MzAsMTg4NDgzNzg4MSw5MjI4MDQ4MjksLTEyNzIwMTgz
-NzMsMTQzMjY5MTk3OSw1ODEzNTA2MTEsMTM4NDY2NTc5NiwtOT
-U0MDI3MjU4LDU4NDY2Mjc4MiwyMDU5MjYyNjQyLC0yMDU1MTQ4
-ODcxLC05MDE1MzY5MDMsLTMyNzYxMzcxNiwzOTk5NTg1MzQsMT
-AxMTIwMzc2MiwyMDM0MDM5OTAzLDIwMjc0MDU2MjUsMTkzMTQ4
-MTk3NF19
+eyJoaXN0b3J5IjpbLTEyMTM4MDY2MjMsMTgwODM1MjQ5MywtOD
+g1NTEwNTMwLDE4ODQ4Mzc4ODEsOTIyODA0ODI5LC0xMjcyMDE4
+MzczLDE0MzI2OTE5NzksNTgxMzUwNjExLDEzODQ2NjU3OTYsLT
+k1NDAyNzI1OCw1ODQ2NjI3ODIsMjA1OTI2MjY0MiwtMjA1NTE0
+ODg3MSwtOTAxNTM2OTAzLC0zMjc2MTM3MTYsMzk5OTU4NTM0LD
+EwMTEyMDM3NjIsMjAzNDAzOTkwMywyMDI3NDA1NjI1LDE5MzE0
+ODE5NzRdfQ==
 -->
