@@ -558,7 +558,7 @@ float2 texDistortion(float2 uv, float time){
 ```
 
 # 雨水效果
-这样就可以做出一个圆环，内部有点渐变的感觉，是第一步
+这样就可以做出一个圆环，内部有点渐变的感觉，是第一步，涟漪的感觉
 ```hlsl
 float4 result = float4(0, 0, 0, 0);
 float2 pointCtr = float2(0.5, 0.5);
@@ -581,7 +581,7 @@ return result;
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1MTQ5NDMxNSwxODg0ODM3ODgxLDkyMj
+eyJoaXN0b3J5IjpbLTg4NTUxMDUzMCwxODg0ODM3ODgxLDkyMj
 gwNDgyOSwtMTI3MjAxODM3MywxNDMyNjkxOTc5LDU4MTM1MDYx
 MSwxMzg0NjY1Nzk2LC05NTQwMjcyNTgsNTg0NjYyNzgyLDIwNT
 kyNjI2NDIsLTIwNTUxNDg4NzEsLTkwMTUzNjkwMywtMzI3NjEz
