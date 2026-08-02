@@ -626,7 +626,7 @@ return result;
 
 ![输入图片说明](/imgs/2026-08-02/DHPEFBFd4EifYFRg.png)
 
-现在就`ok`了， 有
+现在就`ok`了， 有慢慢变大的效果，为什么会慢慢变大，因为`time`是慢慢变大的
 ```hlsl
 float4 result = float4(0, 0, 0, 0);
 
@@ -669,11 +669,11 @@ for(int i = 0; i < drops; i++){
 return saturate(result);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzczMDU3ODEsMTE3Mjg5ODQyOSwxMTE5Mz
-E4Nzk2LC0xMjEzODA2NjIzLDE4MDgzNTI0OTMsLTg4NTUxMDUz
-MCwxODg0ODM3ODgxLDkyMjgwNDgyOSwtMTI3MjAxODM3MywxND
-MyNjkxOTc5LDU4MTM1MDYxMSwxMzg0NjY1Nzk2LC05NTQwMjcy
-NTgsNTg0NjYyNzgyLDIwNTkyNjI2NDIsLTIwNTUxNDg4NzEsLT
-kwMTUzNjkwMywtMzI3NjEzNzE2LDM5OTk1ODUzNCwxMDExMjAz
-NzYyXX0=
+eyJoaXN0b3J5IjpbLTEzNTY3MzUyNzQsMTE3Mjg5ODQyOSwxMT
+E5MzE4Nzk2LC0xMjEzODA2NjIzLDE4MDgzNTI0OTMsLTg4NTUx
+MDUzMCwxODg0ODM3ODgxLDkyMjgwNDgyOSwtMTI3MjAxODM3My
+wxNDMyNjkxOTc5LDU4MTM1MDYxMSwxMzg0NjY1Nzk2LC05NTQw
+MjcyNTgsNTg0NjYyNzgyLDIwNTkyNjI2NDIsLTIwNTUxNDg4Nz
+EsLTkwMTUzNjkwMywtMzI3NjEzNzE2LDM5OTk1ODUzNCwxMDEx
+MjAzNzYyXX0=
 -->
