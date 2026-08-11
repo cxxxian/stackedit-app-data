@@ -8,6 +8,9 @@
  Color`）这个同时需要去使用贴图的地方选对应的格式，如果在材质中使用贴图的时候选择了`Color`颜色空间，但是我们在`texture`把`sRGB`取消勾选了，此时就会报错，需要对应
 
 ![输入图片说明](/imgs/2026-08-11/nfeJ8fFm3jGlUmXg.png)
+
+![输入图片说明](/imgs/2026-08-11/scMjzA1WmjNzLzGt.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAyOTQyMjU0MCwxNTc0MTc2NTZdfQ==
+eyJoaXN0b3J5IjpbLTE0Mzc3MDAxNTcsMjAyOTQyMjU0MCwxNT
+c0MTc2NTZdfQ==
 -->
