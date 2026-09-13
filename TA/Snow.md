@@ -31,12 +31,13 @@
 
 为什么要`*1024`和`-50`和转`90`
 `*1024`：因为这里的概念是像素大小，所以要把`uv`的`0~1`映射到`1024`，而`RT`的`Size`就是`1024`
+`-50`：因为默认是从左上角开始`(0, 0)`，所以要把`RT -50`（因为）才能把人放到中心
 
 ![输入图片说明](/imgs/2026-09-13/MnSf9Ap0m15mo7nC.png)
 
 ![输入图片说明](/imgs/2026-09-13/147piDT7bLALYaP8.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk5NjE4OTg5OSwtMTIwNjU0NzI1LDM4MT
+eyJoaXN0b3J5IjpbMTQ1MjM1MTM2MSwtMTIwNjU0NzI1LDM4MT
 kyMTQ0NCwtMTI0MzQ3NTcyMSwtNzM4MDk1NzkxLDMxNTg5MTM0
 MSw5MDcyNTU3MDcsLTY1OTQwNzQ1OCwtNzU1MjI0NzM1XX0=
 -->
