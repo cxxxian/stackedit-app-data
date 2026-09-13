@@ -2,7 +2,7 @@
 初步设计其实就是人的脚印，给渲染到一张`RT`上，然后把`RT`作为`texture`给雪地材质用
 
 # 实现
-## 画板蓝图
+## 画板蓝图（静态）
 首先肯定是先来做一个画板，做一个`Actor`即可
 然后声明一个`RT`，其实我们只需要用高度，直接声明一个`R`通道即可，但是现在我们为了好玩开一个`RGBA16f`，可以在画板上画任意图案，尺寸拉到`1024`
 
@@ -40,7 +40,8 @@
 
 ![输入图片说明](/imgs/2026-09-13/147piDT7bLALYaP8.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1OTQ0ODcxMCwtMTIwNjU0NzI1LDM4MT
-kyMTQ0NCwtMTI0MzQ3NTcyMSwtNzM4MDk1NzkxLDMxNTg5MTM0
-MSw5MDcyNTU3MDcsLTY1OTQwNzQ1OCwtNzU1MjI0NzM1XX0=
+eyJoaXN0b3J5IjpbLTgzMTU1OTI2MywtMzU5NDQ4NzEwLC0xMj
+A2NTQ3MjUsMzgxOTIxNDQ0LC0xMjQzNDc1NzIxLC03MzgwOTU3
+OTEsMzE1ODkxMzQxLDkwNzI1NTcwNywtNjU5NDA3NDU4LC03NT
+UyMjQ3MzVdfQ==
 -->
