@@ -49,10 +49,10 @@
 接下来就是处理材质，我们直接把`WorldToUV`直接包装成`MaterialFunction`，但是这里延伸出两种做法，材质里肯定也要有这个`position`和`size`
 
 ### 方法一
-如果我们直接去材质里声明一个`param`，然后可以获取动态材质实例，但是这样很麻烦，要先在画板蓝图取得动态材质实例的`param`，然后`set`值，
+如果我们直接去材质里声明一个`param`，然后可以获取动态材质实例，但是这样很麻烦，要先在画板蓝图取得动态材质实例的`param`，然后`set`值，而且这种全局变量有更好的做法，
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMwMjAyMjE2MiwtODMxNTU5MjYzLC0zNT
-k0NDg3MTAsLTEyMDY1NDcyNSwzODE5MjE0NDQsLTEyNDM0NzU3
-MjEsLTczODA5NTc5MSwzMTU4OTEzNDEsOTA3MjU1NzA3LC02NT
-k0MDc0NTgsLTc1NTIyNDczNV19
+eyJoaXN0b3J5IjpbLTIwMjI3NzAwOTgsMTMwMjAyMjE2MiwtOD
+MxNTU5MjYzLC0zNTk0NDg3MTAsLTEyMDY1NDcyNSwzODE5MjE0
+NDQsLTEyNDM0NzU3MjEsLTczODA5NTc5MSwzMTU4OTEzNDEsOT
+A3MjU1NzA3LC02NTk0MDc0NTgsLTc1NTIyNDczNV19
 -->
