@@ -4,7 +4,7 @@
 # 实现
 ## 画板蓝图
 首先肯定是先来做一个画板，做一个`Actor`即可
-然后声明一个`RT`，其实我们只需要用高度，直接声明一个`R`通道即可，但是现在我们为了好玩开一个`RGBA16f`，k
+然后声明一个`RT`，其实我们只需要用高度，直接声明一个`R`通道即可，但是现在我们为了好玩开一个`RGBA16f`，可以在画板上画任意图案
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc0NjI1MzUwMSwtNzU1MjI0NzM1XX0=
+eyJoaXN0b3J5IjpbMTI1NDQxNDAxOSwtNzU1MjI0NzM1XX0=
 -->
