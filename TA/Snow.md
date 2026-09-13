@@ -9,10 +9,10 @@
 ![输入图片说明](/imgs/2026-09-13/mLDugJ8hIXRZq4fN.png)
 
 此处用第三人称的地图直接做示例，左下角为`(0, 0)`，
-这里其实就是直接利用世界坐标进行了采样，至于为什么是除`2000`，
+这里其实就是直接利用世界坐标进行了采样，至于为什么是除`2000`，这个是因为地图整个大小大概是`2900 * 3000`，反正就是限制一块区域cai'y的意思
 
 ![输入图片说明](/imgs/2026-09-13/XDd3e007qwAmgIJC.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzMDgyNTk2LC02NTk0MDc0NTgsLTc1NT
+eyJoaXN0b3J5IjpbNzg5MTYzMjE3LC02NTk0MDc0NTgsLTc1NT
 IyNDczNV19
 -->
