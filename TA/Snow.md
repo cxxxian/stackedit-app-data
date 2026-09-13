@@ -26,7 +26,8 @@
 
 ![输入图片说明](/imgs/2026-09-13/9VYxIoAhZmkqao4F.png)
 
-为什么要`-50`和转`90`
+为什么要`*1024`和`-50`和转`90`
+`*1024`：因为这里的概念是像素大小，所以要把`uv`的`0~1`映射到`1024`，而``
 
 ![输入图片说明](/imgs/2026-09-13/CUdYktKmV1TONp2r.png)
 
@@ -34,7 +35,7 @@
 
 ![输入图片说明](/imgs/2026-09-13/147piDT7bLALYaP8.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI5OTgxMDYwNiwtMTIwNjU0NzI1LDM4MT
-kyMTQ0NCwtMTI0MzQ3NTcyMSwtNzM4MDk1NzkxLDMxNTg5MTM0
-MSw5MDcyNTU3MDcsLTY1OTQwNzQ1OCwtNzU1MjI0NzM1XX0=
+eyJoaXN0b3J5IjpbNDc5MDQ2NjE1LC0xMjA2NTQ3MjUsMzgxOT
+IxNDQ0LC0xMjQzNDc1NzIxLC03MzgwOTU3OTEsMzE1ODkxMzQx
+LDkwNzI1NTcwNywtNjU5NDA3NDU4LC03NTUyMjQ3MzVdfQ==
 -->
