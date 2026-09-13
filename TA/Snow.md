@@ -14,7 +14,9 @@
 这个`boxMask`也可以解释一下，`A`入口就是输入的坐标，然后`B`意思是以`(0.5, 0.5)`为中心，`Boundary`就是边界，这里为什么是`0.8`，因为我们还有`0.1`的渐变，`0.8 + 0.1 + 0.1 = 1`总的就是`1`（对应`uv 0~1`）
 
 ![输入图片说明](/imgs/2026-09-13/XDd3e007qwAmgIJC.png)
+
+接下
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzE1ODkxMzQxLDkwNzI1NTcwNywtNjU5ND
-A3NDU4LC03NTUyMjQ3MzVdfQ==
+eyJoaXN0b3J5IjpbNzIwMTk0MjcsMzE1ODkxMzQxLDkwNzI1NT
+cwNywtNjU5NDA3NDU4LC03NTUyMjQ3MzVdfQ==
 -->
