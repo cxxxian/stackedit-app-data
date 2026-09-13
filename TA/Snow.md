@@ -42,11 +42,13 @@
 
 ## 画板（动态）
 现在就希望能让这个画板自定义位置
-那就得先去画板的蓝图维护两个变量
+那就得先去画板的蓝图维护两个变量，位置和大小
 
 ![输入图片说明](/imgs/2026-09-13/w6mLJofRb7lbcq9j.png)
+
+jie'xi'l
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODY4MDYxNzgxLC04MzE1NTkyNjMsLTM1OT
+eyJoaXN0b3J5IjpbLTE3OTMwNDEzLC04MzE1NTkyNjMsLTM1OT
 Q0ODcxMCwtMTIwNjU0NzI1LDM4MTkyMTQ0NCwtMTI0MzQ3NTcy
 MSwtNzM4MDk1NzkxLDMxNTg5MTM0MSw5MDcyNTU3MDcsLTY1OT
 QwNzQ1OCwtNzU1MjI0NzM1XX0=
