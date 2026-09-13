@@ -20,6 +20,9 @@
 ![输入图片说明](/imgs/2026-09-13/FfTqAKImfUfVtzA1.png)
 
 最右边这个`WorldLocationToUV`是我们自己包装的纯函数
+
+![输入图片说明](/imgs/2026-09-13/CUdYktKmV1TONp2r.png)
+
 其实就是也把我们刚刚在材质做的映射在这里同样做一次，和材质那边的坐标能对上
 
 然后就可以开始解决怎么把东西画上`RT`了，就是像下面这样，以及在`Begin Play`那边要做一个清除渲染目标`2D`的操作，要不然下一次运行还会留下上一次的东西
@@ -27,15 +30,13 @@
 ![输入图片说明](/imgs/2026-09-13/9VYxIoAhZmkqao4F.png)
 
 为什么要`*1024`和`-50`和转`90`
-`*1024`：因为这里的概念是像素大小，所以要把`uv`的`0~1`映射到`1024`，而``
-
-![输入图片说明](/imgs/2026-09-13/CUdYktKmV1TONp2r.png)
+`*1024`：因为这里的概念是像素大小，所以要把`uv`的`0~1`映射到`1024`，而`RT`的`Size`就是`1024`
 
 ![输入图片说明](/imgs/2026-09-13/MnSf9Ap0m15mo7nC.png)
 
 ![输入图片说明](/imgs/2026-09-13/147piDT7bLALYaP8.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc5MDQ2NjE1LC0xMjA2NTQ3MjUsMzgxOT
-IxNDQ0LC0xMjQzNDc1NzIxLC03MzgwOTU3OTEsMzE1ODkxMzQx
-LDkwNzI1NTcwNywtNjU5NDA3NDU4LC03NTUyMjQ3MzVdfQ==
+eyJoaXN0b3J5IjpbLTk5NjE4OTg5OSwtMTIwNjU0NzI1LDM4MT
+kyMTQ0NCwtMTI0MzQ3NTcyMSwtNzM4MDk1NzkxLDMxNTg5MTM0
+MSw5MDcyNTU3MDcsLTY1OTQwNzQ1OCwtNzU1MjI0NzM1XX0=
 -->
