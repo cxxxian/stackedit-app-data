@@ -20,9 +20,12 @@
 ![输入图片说明](/imgs/2026-09-13/FfTqAKImfUfVtzA1.png)
 
 最右边这个`WorldLocationToUV`是我们自己包装的纯函数
+其实就是也把我们刚刚在材质做的映射在这里同样做一次，和材质那边的zuo'bia
+
+![输入图片说明](/imgs/2026-09-13/CUdYktKmV1TONp2r.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE2MDE4NTIzNywtNzM4MDk1NzkxLDMxNT
+eyJoaXN0b3J5IjpbLTc3MTIwNTk0NSwtNzM4MDk1NzkxLDMxNT
 g5MTM0MSw5MDcyNTU3MDcsLTY1OTQwNzQ1OCwtNzU1MjI0NzM1
 XX0=
 -->
