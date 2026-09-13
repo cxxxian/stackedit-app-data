@@ -36,11 +36,11 @@
 
 ![输入图片说明](/imgs/2026-09-13/MnSf9Ap0m15mo7nC.png)
 
-这里还有一个bugs
+这里还有一个`bug`是，如果我们采用一种不是透明的贴图，比如左边这个，白色
 
 ![输入图片说明](/imgs/2026-09-13/147piDT7bLALYaP8.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk0NDAzMDk4MSwtMTIwNjU0NzI1LDM4MT
+eyJoaXN0b3J5IjpbMTIwMDY0NDAwMCwtMTIwNjU0NzI1LDM4MT
 kyMTQ0NCwtMTI0MzQ3NTcyMSwtNzM4MDk1NzkxLDMxNTg5MTM0
 MSw5MDcyNTU3MDcsLTY1OTQwNzQ1OCwtNzU1MjI0NzM1XX0=
 -->
