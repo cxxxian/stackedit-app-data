@@ -46,10 +46,13 @@
 
 ![输入图片说明](/imgs/2026-09-13/w6mLJofRb7lbcq9j.png)
 
-接下来就是处理材质，我们直接把`WorldToUV`直接包装成`MaterialFunction`，但是这里延伸出两种做法，dui
+接下来就是处理材质，我们直接把`WorldToUV`直接包装成`MaterialFunction`，但是这里延伸出两种做法，材质里肯定也要有这个`position`和`size`
+
+### 方法一
+如果我们直接去材质里声明一个
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTU5NDIyMzg3LC04MzE1NTkyNjMsLTM1OT
-Q0ODcxMCwtMTIwNjU0NzI1LDM4MTkyMTQ0NCwtMTI0MzQ3NTcy
-MSwtNzM4MDk1NzkxLDMxNTg5MTM0MSw5MDcyNTU3MDcsLTY1OT
-QwNzQ1OCwtNzU1MjI0NzM1XX0=
+eyJoaXN0b3J5IjpbLTIwNTEyODMwOTYsLTgzMTU1OTI2MywtMz
+U5NDQ4NzEwLC0xMjA2NTQ3MjUsMzgxOTIxNDQ0LC0xMjQzNDc1
+NzIxLC03MzgwOTU3OTEsMzE1ODkxMzQxLDkwNzI1NTcwNywtNj
+U5NDA3NDU4LC03NTUyMjQ3MzVdfQ==
 -->
