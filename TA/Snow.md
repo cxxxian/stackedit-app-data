@@ -39,9 +39,11 @@
 这里还有一个`bug`是，如果我们采用一种不是透明的贴图，比如左边这个，背景色白色就会把脚印盖掉，这个后面再来解决
 
 ![输入图片说明](/imgs/2026-09-13/147piDT7bLALYaP8.png)
+
+## 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzMTU1OTI2MywtMzU5NDQ4NzEwLC0xMj
-A2NTQ3MjUsMzgxOTIxNDQ0LC0xMjQzNDc1NzIxLC03MzgwOTU3
-OTEsMzE1ODkxMzQxLDkwNzI1NTcwNywtNjU5NDA3NDU4LC03NT
-UyMjQ3MzVdfQ==
+eyJoaXN0b3J5IjpbLTIxMzg3NTc4OTcsLTgzMTU1OTI2MywtMz
+U5NDQ4NzEwLC0xMjA2NTQ3MjUsMzgxOTIxNDQ0LC0xMjQzNDc1
+NzIxLC03MzgwOTU3OTEsMzE1ODkxMzQxLDkwNzI1NTcwNywtNj
+U5NDA3NDU4LC03NTUyMjQ3MzVdfQ==
 -->
