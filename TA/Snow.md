@@ -19,10 +19,10 @@
 
 ![输入图片说明](/imgs/2026-09-13/FfTqAKImfUfVtzA1.png)
 
-最右边这个`WorldLocationToUV`shi'wo'm
+最右边这个`WorldLocationToUV`是我们自己包装的纯函数
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjM2MjAzOTMxLC03MzgwOTU3OTEsMzE1OD
-kxMzQxLDkwNzI1NTcwNywtNjU5NDA3NDU4LC03NTUyMjQ3MzVd
-fQ==
+eyJoaXN0b3J5IjpbMTE2MDE4NTIzNywtNzM4MDk1NzkxLDMxNT
+g5MTM0MSw5MDcyNTU3MDcsLTY1OTQwNzQ1OCwtNzU1MjI0NzM1
+XX0=
 -->
