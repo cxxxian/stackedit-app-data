@@ -46,9 +46,9 @@
 
 ![输入图片说明](/imgs/2026-09-13/w6mLJofRb7lbcq9j.png)
 
-jie'xi'l
+接下来就是处理材质，我们直接把`WorldToUV`直接包装成`MaterialFunction`，但是这里延伸出两种做法，dui
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTMwNDEzLC04MzE1NTkyNjMsLTM1OT
+eyJoaXN0b3J5IjpbNTU5NDIyMzg3LC04MzE1NTkyNjMsLTM1OT
 Q0ODcxMCwtMTIwNjU0NzI1LDM4MTkyMTQ0NCwtMTI0MzQ3NTcy
 MSwtNzM4MDk1NzkxLDMxNTg5MTM0MSw5MDcyNTU3MDcsLTY1OT
 QwNzQ1OCwtNzU1MjI0NzM1XX0=
