@@ -9,11 +9,11 @@
 ![输入图片说明](/imgs/2026-09-13/mLDugJ8hIXRZq4fN.png)
 
 此处用第三人称的地图直接做示例，左下角为`(0, 0)`，
-这里其实就是直接利用世界坐标进行了采样，至于为什么是除`2000`，这个是因为地图整个大小大概是`2900 * 3000`，反正就是限制一块区域采样的意思
+这里其实就是直接利用世界坐标进行了采样（只用`RG`两通道），至于为什么是除`2000`，这个是因为地图整个大小大概是`2900 * 3000`，反正就是限制一块区域采样的意思
 包括使用了一个`boxMask`，这是因为超过`1`会反复采样，我们只想要`2000`以内的话，就要做一个`mask`
 
 ![输入图片说明](/imgs/2026-09-13/XDd3e007qwAmgIJC.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3MTAwODIyNiwtNjU5NDA3NDU4LC03NT
-UyMjQ3MzVdfQ==
+eyJoaXN0b3J5IjpbOTA3MjU1NzA3LC02NTk0MDc0NTgsLTc1NT
+IyNDczNV19
 -->
