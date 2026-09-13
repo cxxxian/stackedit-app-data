@@ -52,11 +52,11 @@
 如果我们直接去材质里声明一个`param`，然后可以获取动态材质实例，但是这样很麻烦，要先在画板蓝图取得动态材质实例的`param`，然后`set`值，而且这种全局变量有更好的做法，比如如果要创建`100`个敌人，那就需要创建`100`个参数
 ### 方法二
 用材质参数集就可以解决，首先这类似于一个全局维护的参数，然后这个可以直接拖到材质里面使用
-然后小`tips`，这里默认是`vector4`
+然后小`tips`，这里默认是`vector4`，我们可以省，把`position`和`size`合在一起，这样`RG`通道是位置，`BA`通道是大小
 
 ![输入图片说明](/imgs/2026-09-13/R1e73ARDTTpRO31b.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MzcwNDg1ODUsMTMwMjAyMjE2MiwtOD
+eyJoaXN0b3J5IjpbLTE0MjUwODc4MDcsMTMwMjAyMjE2MiwtOD
 MxNTU5MjYzLC0zNTk0NDg3MTAsLTEyMDY1NDcyNSwzODE5MjE0
 NDQsLTEyNDM0NzU3MjEsLTczODA5NTc5MSwzMTU4OTEzNDEsOT
 A3MjU1NzA3LC02NTk0MDc0NTgsLTc1NTIyNDczNV19
