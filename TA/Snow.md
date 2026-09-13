@@ -15,8 +15,10 @@
 
 ![输入图片说明](/imgs/2026-09-13/XDd3e007qwAmgIJC.png)
 
-接下
+接下来就要开始联动玩家位置，通过`getPlayerPawn`为什么是`pawn`而不是`character`
+
+![输入图片说明](/imgs/2026-09-13/FfTqAKImfUfVtzA1.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzIwMTk0MjcsMzE1ODkxMzQxLDkwNzI1NT
-cwNywtNjU5NDA3NDU4LC03NTUyMjQ3MzVdfQ==
+eyJoaXN0b3J5IjpbLTczODA5NTc5MSwzMTU4OTEzNDEsOTA3Mj
+U1NzA3LC02NTk0MDc0NTgsLTc1NTIyNDczNV19
 -->
