@@ -15,10 +15,11 @@
 
 ![输入图片说明](/imgs/2026-09-13/XDd3e007qwAmgIJC.png)
 
-接下来就要开始联动玩家位置，通过`getPlayerPawn`为什么是`pawn`而不是`character`
+接下来就要开始联动玩家位置，通过`getPlayerPawn`为什么是`pawn`而不是`character`，因为`character`专指人，但是我们有时候如果做的是飞机的游戏，那我们就是`pawn`，
 
 ![输入图片说明](/imgs/2026-09-13/FfTqAKImfUfVtzA1.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczODA5NTc5MSwzMTU4OTEzNDEsOTA3Mj
-U1NzA3LC02NTk0MDc0NTgsLTc1NTIyNDczNV19
+eyJoaXN0b3J5IjpbLTExODIxMTQ0NzgsLTczODA5NTc5MSwzMT
+U4OTEzNDEsOTA3MjU1NzA3LC02NTk0MDc0NTgsLTc1NTIyNDcz
+NV19
 -->
