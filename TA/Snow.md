@@ -22,7 +22,7 @@
 最右边这个`WorldLocationToUV`是我们自己包装的纯函数
 其实就是也把我们刚刚在材质做的映射在这里同样做一次，和材质那边的坐标能对上
 
-然后就可以开始解决怎么把东西画上`RT`了，就是像下面这样，以及在`Begin Play`那边要做一个清除渲染目标`2D`
+然后就可以开始解决怎么把东西画上`RT`了，就是像下面这样，以及在`Begin Play`那边要做一个清除渲染目标`2D`的操作
 
 ![输入图片说明](/imgs/2026-09-13/9VYxIoAhZmkqao4F.png)
 
@@ -32,7 +32,7 @@
 
 ![输入图片说明](/imgs/2026-09-13/147piDT7bLALYaP8.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDY1NDcyNSwzODE5MjE0NDQsLTEyND
-M0NzU3MjEsLTczODA5NTc5MSwzMTU4OTEzNDEsOTA3MjU1NzA3
-LC02NTk0MDc0NTgsLTc1NTIyNDczNV19
+eyJoaXN0b3J5IjpbMjA0NzkxNzIyMiwtMTIwNjU0NzI1LDM4MT
+kyMTQ0NCwtMTI0MzQ3NTcyMSwtNzM4MDk1NzkxLDMxNTg5MTM0
+MSw5MDcyNTU3MDcsLTY1OTQwNzQ1OCwtNzU1MjI0NzM1XX0=
 -->
