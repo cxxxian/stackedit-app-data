@@ -7,6 +7,9 @@
 然后声明一个`RT`，其实我们只需要用高度，直接声明一个`R`通道即可，但是现在我们为了好玩开一个`RGBA16f`，可以在画板上画任意图案，尺寸拉到`1024`
 
 ![输入图片说明](/imgs/2026-09-13/mLDugJ8hIXRZq4fN.png)
+
+![输入图片说明](/imgs/2026-09-13/XDd3e007qwAmgIJC.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1OTQwNzQ1OCwtNzU1MjI0NzM1XX0=
+eyJoaXN0b3J5IjpbNjMyMzc2MTQ0LC02NTk0MDc0NTgsLTc1NT
+IyNDczNV19
 -->
