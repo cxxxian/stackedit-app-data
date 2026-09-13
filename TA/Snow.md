@@ -50,9 +50,11 @@
 
 ### 方法一
 如果我们直接去材质里声明一个`param`，然后可以获取动态材质实例，但是这样很麻烦，要先在画板蓝图取得动态材质实例的`param`，然后`set`值，而且这种全局变量有更好的做法，比如如果要创建`100`个敌人，那就需要创建`100`个参数
+### 方法二
+用材质参数集就可以解决，首先这类似于一个全局维护的参数，然后这个可以直接拖到材质里面使用
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjI3Nzg4MjA0LDEzMDIwMjIxNjIsLTgzMT
-U1OTI2MywtMzU5NDQ4NzEwLC0xMjA2NTQ3MjUsMzgxOTIxNDQ0
-LC0xMjQzNDc1NzIxLC03MzgwOTU3OTEsMzE1ODkxMzQxLDkwNz
-I1NTcwNywtNjU5NDA3NDU4LC03NTUyMjQ3MzVdfQ==
+eyJoaXN0b3J5IjpbLTI0NzkwNTM4NywxMzAyMDIyMTYyLC04Mz
+E1NTkyNjMsLTM1OTQ0ODcxMCwtMTIwNjU0NzI1LDM4MTkyMTQ0
+NCwtMTI0MzQ3NTcyMSwtNzM4MDk1NzkxLDMxNTg5MTM0MSw5MD
+cyNTU3MDcsLTY1OTQwNzQ1OCwtNzU1MjI0NzM1XX0=
 -->
