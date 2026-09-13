@@ -40,10 +40,14 @@
 
 ![输入图片说明](/imgs/2026-09-13/147piDT7bLALYaP8.png)
 
-## 
+## 画板（动态）
+现在就希望能让这个画板自定义位置
+那就得先去画板的蓝图维护两个变量
+
+![输入图片说明](/imgs/2026-09-13/w6mLJofRb7lbcq9j.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzg3NTc4OTcsLTgzMTU1OTI2MywtMz
-U5NDQ4NzEwLC0xMjA2NTQ3MjUsMzgxOTIxNDQ0LC0xMjQzNDc1
-NzIxLC03MzgwOTU3OTEsMzE1ODkxMzQxLDkwNzI1NTcwNywtNj
-U5NDA3NDU4LC03NTUyMjQ3MzVdfQ==
+eyJoaXN0b3J5IjpbODY4MDYxNzgxLC04MzE1NTkyNjMsLTM1OT
+Q0ODcxMCwtMTIwNjU0NzI1LDM4MTkyMTQ0NCwtMTI0MzQ3NTcy
+MSwtNzM4MDk1NzkxLDMxNTg5MTM0MSw5MDcyNTU3MDcsLTY1OT
+QwNzQ1OCwtNzU1MjI0NzM1XX0=
 -->
