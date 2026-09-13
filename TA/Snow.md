@@ -18,8 +18,9 @@
 接下来就要开始联动玩家位置，通过`getPlayerPawn`为什么是`pawn`而不是`character`，因为`character`专指人，但是我们有时候如果做的是飞机的游戏，那我们就是`pawn`，`character`是`pawn`的子集
 
 ![输入图片说明](/imgs/2026-09-13/FfTqAKImfUfVtzA1.png)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODkzMzY1ODMyLC03MzgwOTU3OTEsMzE1OD
-kxMzQxLDkwNzI1NTcwNywtNjU5NDA3NDU4LC03NTUyMjQ3MzVd
-fQ==
+eyJoaXN0b3J5IjpbMTU2NDY5MTA2MiwtNzM4MDk1NzkxLDMxNT
+g5MTM0MSw5MDcyNTU3MDcsLTY1OTQwNzQ1OCwtNzU1MjI0NzM1
+XX0=
 -->
