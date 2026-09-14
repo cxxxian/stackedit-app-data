@@ -82,13 +82,19 @@ ok，那设计好了这个材质参数集，就去利用上即可
 
 > 它是**编辑器预览脚本**，不是运行时构造。打包游戏后，默认不会执行（除非手动开启）。
 
+然后为什么`Size / 100`
+UE 引擎的世界单位：**1 单位 = 1 厘米**
+-   蓝图里你给的`Size`：代表这个面片**世界空间的长宽（厘米）**，比如 Size=(100,100)，意思想要一个 100cm ×100cm 的平面。
+-   但是蓝图自带的`Plane`组件：**原始 Plane 默认是 100×100 个单位大小**。
+所以我们要缩放的话要`/100`才对
+
 ![输入图片说明](/imgs/2026-09-14/EmRWw0Kjwn1N8ewZ.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5ODU2MTQsLTEyMjcyMTg3MzMsLTQzMz
-gyNzAwMSwxMDE1NDMwMDc5LC02NTk5ODEzNDcsLTE2MjU5NDk5
-MDcsOTk3NDAzOTI3LDg5NzAyMjQ2NCwxNzgzNzMyNTM5LDEzMD
-IwMjIxNjIsLTgzMTU1OTI2MywtMzU5NDQ4NzEwLC0xMjA2NTQ3
-MjUsMzgxOTIxNDQ0LC0xMjQzNDc1NzIxLC03MzgwOTU3OTEsMz
-E1ODkxMzQxLDkwNzI1NTcwNywtNjU5NDA3NDU4LC03NTUyMjQ3
-MzVdfQ==
+eyJoaXN0b3J5IjpbNzMyODAyNjgzLC0xMjI3MjE4NzMzLC00Mz
+M4MjcwMDEsMTAxNTQzMDA3OSwtNjU5OTgxMzQ3LC0xNjI1OTQ5
+OTA3LDk5NzQwMzkyNyw4OTcwMjI0NjQsMTc4MzczMjUzOSwxMz
+AyMDIyMTYyLC04MzE1NTkyNjMsLTM1OTQ0ODcxMCwtMTIwNjU0
+NzI1LDM4MTkyMTQ0NCwtMTI0MzQ3NTcyMSwtNzM4MDk1NzkxLD
+MxNTg5MTM0MSw5MDcyNTU3MDcsLTY1OTQwNzQ1OCwtNzU1MjI0
+NzM1XX0=
 -->
