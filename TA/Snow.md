@@ -77,15 +77,18 @@ ok，那设计好了这个材质参数集，就去利用上即可
 ![输入图片说明](/imgs/2026-09-14/NCvNyceigAUnLcaM.png)
 
 最后的最后，还可以优化一下，直接把`plane`在画板蓝图构建
-`Construction Script`：在 Actor**生成 / 编辑时初始化**，用来设置组件的初始状态。
+`Construction Script`：在 Actor**生成 / 编辑时初始化**，用来设置组件的初始状态，且**Construction Script：在编辑器视口里实时执行！**
+只要你在细节面板修改这个 Actor 的参数（Position、Size）、移动 Actor、选中 Actor，**都会重新跑一遍这个脚本**，实时更新组件。
+
+> 它是**编辑器预览脚本**，不是运行时构造。打包游戏后，默认不会执行（除非手动开启）。
 
 ![输入图片说明](/imgs/2026-09-14/EmRWw0Kjwn1N8ewZ.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3MzExMTA4OCwtMTIyNzIxODczMywtND
-MzODI3MDAxLDEwMTU0MzAwNzksLTY1OTk4MTM0NywtMTYyNTk0
-OTkwNyw5OTc0MDM5MjcsODk3MDIyNDY0LDE3ODM3MzI1MzksMT
-MwMjAyMjE2MiwtODMxNTU5MjYzLC0zNTk0NDg3MTAsLTEyMDY1
-NDcyNSwzODE5MjE0NDQsLTEyNDM0NzU3MjEsLTczODA5NTc5MS
-wzMTU4OTEzNDEsOTA3MjU1NzA3LC02NTk0MDc0NTgsLTc1NTIy
-NDczNV19
+eyJoaXN0b3J5IjpbMTM5ODU2MTQsLTEyMjcyMTg3MzMsLTQzMz
+gyNzAwMSwxMDE1NDMwMDc5LC02NTk5ODEzNDcsLTE2MjU5NDk5
+MDcsOTk3NDAzOTI3LDg5NzAyMjQ2NCwxNzgzNzMyNTM5LDEzMD
+IwMjIxNjIsLTgzMTU1OTI2MywtMzU5NDQ4NzEwLC0xMjA2NTQ3
+MjUsMzgxOTIxNDQ0LC0xMjQzNDc1NzIxLC03MzgwOTU3OTEsMz
+E1ODkxMzQxLDkwNzI1NTcwNywtNjU5NDA3NDU4LC03NTUyMjQ3
+MzVdfQ==
 -->
