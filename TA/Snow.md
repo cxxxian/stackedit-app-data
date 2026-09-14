@@ -58,13 +58,15 @@
 ![输入图片说明](/imgs/2026-09-13/R1e73ARDTTpRO31b.png)
 
 ok，那设计好了这个材质参数集，就去利用上即可
-我们把整个`WorldToUV`的流程封装成一个材质函数，
+我们把整个`WorldToUV`的流程封装成一个材质函数，并且我们左边勾选了公开到库，待会可以直接在蓝图那边搜到
+这里主要就做一件事情：`WorldToUV`，就是把`uv`映射到我们自己设定的位置，`- Position`就是把`(0,)`
 
 ![输入图片说明](/imgs/2026-09-14/gsEKftMrZjrJ44s9.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjU5NDk5MDcsOTk3NDAzOTI3LDg5Nz
-AyMjQ2NCwxNzgzNzMyNTM5LDEzMDIwMjIxNjIsLTgzMTU1OTI2
-MywtMzU5NDQ4NzEwLC0xMjA2NTQ3MjUsMzgxOTIxNDQ0LC0xMj
-QzNDc1NzIxLC03MzgwOTU3OTEsMzE1ODkxMzQxLDkwNzI1NTcw
-NywtNjU5NDA3NDU4LC03NTUyMjQ3MzVdfQ==
+eyJoaXN0b3J5IjpbLTE4OTQyODc4NDMsLTE2MjU5NDk5MDcsOT
+k3NDAzOTI3LDg5NzAyMjQ2NCwxNzgzNzMyNTM5LDEzMDIwMjIx
+NjIsLTgzMTU1OTI2MywtMzU5NDQ4NzEwLC0xMjA2NTQ3MjUsMz
+gxOTIxNDQ0LC0xMjQzNDc1NzIxLC03MzgwOTU3OTEsMzE1ODkx
+MzQxLDkwNzI1NTcwNywtNjU5NDA3NDU4LC03NTUyMjQ3MzVdfQ
+==
 -->
