@@ -59,14 +59,13 @@
 
 ok，那设计好了这个材质参数集，就去利用上即可
 我们把整个`WorldToUV`的流程封装成一个材质函数，并且我们左边勾选了公开到库，待会可以直接在蓝图那边搜到
-这里主要就做一件事情：`WorldToUV`，就是把`uv`映射到我们自己设定的位置，`- Position`就是把`(0,)`
+这里主要就做一件事情：`WorldToUV`，就是把`uv`映射到我们自己设定的位置，`- Position`就是把`(0, 0)`放到我们的目标位置，然后`/ Size`就是映射到`0~1`，但是现在`(0, 0)`处于中心位置，所以`+0.5`挪到左下角，所以此时整个`0~1`中心位置就是我们的`Position`
 
 ![输入图片说明](/imgs/2026-09-14/gsEKftMrZjrJ44s9.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4OTQyODc4NDMsLTE2MjU5NDk5MDcsOT
-k3NDAzOTI3LDg5NzAyMjQ2NCwxNzgzNzMyNTM5LDEzMDIwMjIx
-NjIsLTgzMTU1OTI2MywtMzU5NDQ4NzEwLC0xMjA2NTQ3MjUsMz
-gxOTIxNDQ0LC0xMjQzNDc1NzIxLC03MzgwOTU3OTEsMzE1ODkx
-MzQxLDkwNzI1NTcwNywtNjU5NDA3NDU4LC03NTUyMjQ3MzVdfQ
-==
+eyJoaXN0b3J5IjpbMTE4Mzk3OTUwNSwtMTYyNTk0OTkwNyw5OT
+c0MDM5MjcsODk3MDIyNDY0LDE3ODM3MzI1MzksMTMwMjAyMjE2
+MiwtODMxNTU5MjYzLC0zNTk0NDg3MTAsLTEyMDY1NDcyNSwzOD
+E5MjE0NDQsLTEyNDM0NzU3MjEsLTczODA5NTc5MSwzMTU4OTEz
+NDEsOTA3MjU1NzA3LC02NTk0MDc0NTgsLTc1NTIyNDczNV19
 -->
