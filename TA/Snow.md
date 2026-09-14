@@ -63,8 +63,12 @@ ok，那设计好了这个材质参数集，就去利用上即可
 这里主要就做一件事情：`WorldToUV`，就是把`uv`映射到我们自己设定的位置，`- Position`就是把`(0, 0)`放到我们的目标位置，然后`/ Size`就是映射到`0~1`，但是现在`(0, 0)`处于中心位置，所以`+0.5`挪到左下角，所以此时整个`0~1`中心位置就是我们的`Position`
 
 ![输入图片说明](/imgs/2026-09-14/gsEKftMrZjrJ44s9.png)
+
+画板蓝图那边其实就是，设置向量参数值，因为我们蓝图里面维护并设置好了值：`Position`和`Size`，所以利用这个值传到材质函数那边，一切完工
+
+![输入图片说明](/imgs/2026-09-14/oq9LIo5ZkSVUpuwg.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk0MDY4ODMzLC0xNjI1OTQ5OTA3LDk5Nz
+eyJoaXN0b3J5IjpbMzA4MzI3MjQwLC0xNjI1OTQ5OTA3LDk5Nz
 QwMzkyNyw4OTcwMjI0NjQsMTc4MzczMjUzOSwxMzAyMDIyMTYy
 LC04MzE1NTkyNjMsLTM1OTQ0ODcxMCwtMTIwNjU0NzI1LDM4MT
 kyMTQ0NCwtMTI0MzQ3NTcyMSwtNzM4MDk1NzkxLDMxNTg5MTM0
