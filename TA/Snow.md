@@ -71,11 +71,15 @@ ok，那设计好了这个材质参数集，就去利用上即可
 最后我们到`M_Snow`材质这里，原本绝对世界位置死板地除以`2000`地逻辑就不要了，改成我们的材质函数`MF_WorldToUV`，虽然我们一开始在材质函数里面有设置一个默认绝对世界位置输入，但是这里不再重新输入一次绝对世界位置的话好像会出`bug`
 
 ![输入图片说明](/imgs/2026-09-14/YJnwBbhGwbFsfhGP.png)
+
+zhi'qi
+
+![输入图片说明](/imgs/2026-09-14/NCvNyceigAUnLcaM.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxNTQzMDA3OSwtNjU5OTgxMzQ3LC0xNj
-I1OTQ5OTA3LDk5NzQwMzkyNyw4OTcwMjI0NjQsMTc4MzczMjUz
-OSwxMzAyMDIyMTYyLC04MzE1NTkyNjMsLTM1OTQ0ODcxMCwtMT
-IwNjU0NzI1LDM4MTkyMTQ0NCwtMTI0MzQ3NTcyMSwtNzM4MDk1
-NzkxLDMxNTg5MTM0MSw5MDcyNTU3MDcsLTY1OTQwNzQ1OCwtNz
-U1MjI0NzM1XX0=
+eyJoaXN0b3J5IjpbMjA0MDAwNjcxOSwxMDE1NDMwMDc5LC02NT
+k5ODEzNDcsLTE2MjU5NDk5MDcsOTk3NDAzOTI3LDg5NzAyMjQ2
+NCwxNzgzNzMyNTM5LDEzMDIwMjIxNjIsLTgzMTU1OTI2MywtMz
+U5NDQ4NzEwLC0xMjA2NTQ3MjUsMzgxOTIxNDQ0LC0xMjQzNDc1
+NzIxLC03MzgwOTU3OTEsMzE1ODkxMzQxLDkwNzI1NTcwNywtNj
+U5NDA3NDU4LC03NTUyMjQ3MzVdfQ==
 -->
