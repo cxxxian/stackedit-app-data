@@ -68,14 +68,13 @@ ok，那设计好了这个材质参数集，就去利用上即可
 
 ![输入图片说明](/imgs/2026-09-14/oq9LIo5ZkSVUpuwg.png)
 
-最后我们到`M_Snow`材质这里，原本绝对世界位置死板地除以
+最后我们到`M_Snow`材质这里，原本绝对世界位置死板地除以`2000`地逻辑就不要了，改成我们的材质函数`MF_WorldToUV`
 
 ![输入图片说明](/imgs/2026-09-14/ryec7aFKq8iXa2y2.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMDMyMDYwNDksLTE2MjU5NDk5MDcsOT
-k3NDAzOTI3LDg5NzAyMjQ2NCwxNzgzNzMyNTM5LDEzMDIwMjIx
-NjIsLTgzMTU1OTI2MywtMzU5NDQ4NzEwLC0xMjA2NTQ3MjUsMz
-gxOTIxNDQ0LC0xMjQzNDc1NzIxLC03MzgwOTU3OTEsMzE1ODkx
-MzQxLDkwNzI1NTcwNywtNjU5NDA3NDU4LC03NTUyMjQ3MzVdfQ
-==
+eyJoaXN0b3J5IjpbLTY1OTk4MTM0NywtMTYyNTk0OTkwNyw5OT
+c0MDM5MjcsODk3MDIyNDY0LDE3ODM3MzI1MzksMTMwMjAyMjE2
+MiwtODMxNTU5MjYzLC0zNTk0NDg3MTAsLTEyMDY1NDcyNSwzOD
+E5MjE0NDQsLTEyNDM0NzU3MjEsLTczODA5NTc5MSwzMTU4OTEz
+NDEsOTA3MjU1NzA3LC02NTk0MDc0NTgsLTc1NTIyNDczNV19
 -->
