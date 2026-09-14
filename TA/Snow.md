@@ -72,11 +72,11 @@ ok，那设计好了这个材质参数集，就去利用上即可
 
 ![输入图片说明](/imgs/2026-09-14/YJnwBbhGwbFsfhGP.png)
 
-zhi'qi
+之前我们还有一个`WorldToUV`的纯函数，是用来把玩家位置映射到`UV`空间大小的，这里也要同步用上我们的`Position`和`Size`，并且这里因为本身纯函数就在画板蓝图里面，所以直接把这两个变量拖过来用很方便
 
 ![输入图片说明](/imgs/2026-09-14/NCvNyceigAUnLcaM.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0MDAwNjcxOSwxMDE1NDMwMDc5LC02NT
+eyJoaXN0b3J5IjpbLTQzMzgyNzAwMSwxMDE1NDMwMDc5LC02NT
 k5ODEzNDcsLTE2MjU5NDk5MDcsOTk3NDAzOTI3LDg5NzAyMjQ2
 NCwxNzgzNzMyNTM5LDEzMDIwMjIxNjIsLTgzMTU1OTI2MywtMz
 U5NDQ4NzEwLC0xMjA2NTQ3MjUsMzgxOTIxNDQ0LC0xMjQzNDc1
