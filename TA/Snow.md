@@ -64,13 +64,18 @@ ok，那设计好了这个材质参数集，就去利用上即可
 
 ![输入图片说明](/imgs/2026-09-14/gsEKftMrZjrJ44s9.png)
 
-画板蓝图那边其实就是，设置向量参数值，因为我们蓝图里面维护并设置好了值：`Position`和`Size`，所以利用这个值传到材质函数那边，一切完工
+画板蓝图那边其实就是，设置向量参数值，因为我们蓝图里面维护并设置好了值：`Position`和`Size`，所以利用这个值传到材质函数那边
 
 ![输入图片说明](/imgs/2026-09-14/oq9LIo5ZkSVUpuwg.png)
+
+最后我们到`M_Snow`材质这里，原本绝对世界位置死板地除以
+
+![输入图片说明](/imgs/2026-09-14/ryec7aFKq8iXa2y2.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzA4MzI3MjQwLC0xNjI1OTQ5OTA3LDk5Nz
-QwMzkyNyw4OTcwMjI0NjQsMTc4MzczMjUzOSwxMzAyMDIyMTYy
-LC04MzE1NTkyNjMsLTM1OTQ0ODcxMCwtMTIwNjU0NzI1LDM4MT
-kyMTQ0NCwtMTI0MzQ3NTcyMSwtNzM4MDk1NzkxLDMxNTg5MTM0
-MSw5MDcyNTU3MDcsLTY1OTQwNzQ1OCwtNzU1MjI0NzM1XX0=
+eyJoaXN0b3J5IjpbLTEwMDMyMDYwNDksLTE2MjU5NDk5MDcsOT
+k3NDAzOTI3LDg5NzAyMjQ2NCwxNzgzNzMyNTM5LDEzMDIwMjIx
+NjIsLTgzMTU1OTI2MywtMzU5NDQ4NzEwLC0xMjA2NTQ3MjUsMz
+gxOTIxNDQ0LC0xMjQzNDc1NzIxLC03MzgwOTU3OTEsMzE1ODkx
+MzQxLDkwNzI1NTcwNywtNjU5NDA3NDU4LC03NTUyMjQ3MzVdfQ
+==
 -->
