@@ -92,11 +92,11 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 ## 让画板跟着玩家走
 分析一下，让画板跟着玩家走，无非就是：
-首先要设置更新``
+首先要设置更新`Position`，这个`Position`其实就是画板位置的意思，然后逐步更新材质参数集的位置，还有`debug`画板的位置
 
 ![输入图片说明](/imgs/2026-09-18/JR8CrACtUfbemcvX.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODgyMDU0NDYxLC0xNjg0MzA5ODYwLDIwMT
+eyJoaXN0b3J5IjpbMTI4NTAxODIwLC0xNjg0MzA5ODYwLDIwMT
 I0NjQzNjAsNzMyODAyNjgzLC0xMjI3MjE4NzMzLC00MzM4Mjcw
 MDEsMTAxNTQzMDA3OSwtNjU5OTgxMzQ3LC0xNjI1OTQ5OTA3LD
 k5NzQwMzkyNyw4OTcwMjI0NjQsMTc4MzczMjUzOSwxMzAyMDIy
