@@ -100,9 +100,9 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 ![输入图片说明](/imgs/2026-09-18/Gef8VTAjOHr6ZZ8b.png)
 
-
+进入游戏跑起来，会发现确实实现了效果，但是中间绘制的
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM0MTc0NDkxNywxMjg1MDE4MjAsLTE2OD
+eyJoaXN0b3J5IjpbMTAxNjc2NzI1MiwxMjg1MDE4MjAsLTE2OD
 QzMDk4NjAsMjAxMjQ2NDM2MCw3MzI4MDI2ODMsLTEyMjcyMTg3
 MzMsLTQzMzgyNzAwMSwxMDE1NDMwMDc5LC02NTk5ODEzNDcsLT
 E2MjU5NDk5MDcsOTk3NDAzOTI3LDg5NzAyMjQ2NCwxNzgzNzMy
