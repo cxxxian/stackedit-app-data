@@ -169,7 +169,6 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 新建一个`Scene Component`叫做`BP_Brush`，后面就挂到脚上
 `Scene Component`和`Actor Component`的区别：`Scene Component`是`Actor Component`的一个子类，
 
-
 折叠封装一部分函数，叫`Draw`，方便我们维护
 现在就是要考虑怎么让画板和这个`Draw`进行通讯
 
@@ -179,7 +178,7 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 ![输入图片说明](/imgs/2026-09-19/SaY9YY4BNTEQKZyJ.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzc3MDk4NjA1LC0xNzgyMzQyNTAwLC0xNj
+eyJoaXN0b3J5IjpbODEzNzI4MzE5LC0xNzgyMzQyNTAwLC0xNj
 E5NDczOTM2LDEzNTk0MTUyNDEsMTg0NTcxNzEzNywxNDE2NzMz
 MTIxLDE4NDc1MDk4NiwtODQ4MDgzNjc5LC0xNzAxODc4NjM0LD
 EyNDY2OTAwNzQsLTIwNDgwOTc5ODYsNDE0NTI5NTMyLC03MDA0
