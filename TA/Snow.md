@@ -142,11 +142,12 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 然后，来平移这里处理处理，要处理反复出现的问题，比如从左往右跑，左边超出`RT`的地方，会从右边重新采样出现
 这显然是不对的，我们通过下面的这个方法来做
-其实也很好理解，`floor`就是向下取整，然后加个绝对值，然后再`saturate`，这样子的话所有值就都变成`0`和`1`，
+其实也很好理解，`floor`就是向下取整，然后加个绝对值，然后再`saturate`，这样子的话所有值就都变成`0`和`1`，这时候取`1-x`，因为我们要的地方此时是`0`，那变成`1`之后就可以作为`mask`了
+相乘是因为这是二维的，超过某一个方向的都应该是
 
 ![输入图片说明](/imgs/2026-09-19/5nfkBcyxYDOpk3H4.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwMzc0MzUzNCwxMjQ2NjkwMDc0LC0yMD
+eyJoaXN0b3J5IjpbLTc0OTQzMDEyMiwxMjQ2NjkwMDc0LC0yMD
 Q4MDk3OTg2LDQxNDUyOTUzMiwtNzAwNDIzNzk2LC0xNjQ2OTcx
 MDg4LC0xODM3MzI3NjQyLC04MDQ0NzUzNDQsLTYxNTY4OTM5OS
 wyMjA5OTU0NDAsLTE1MzA1NTEyMzksMTI2MjkwMDk2LDYzNzQ4
