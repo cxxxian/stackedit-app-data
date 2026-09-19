@@ -103,15 +103,15 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 进入游戏跑起来，会发现确实实现了效果，但是中间绘制的笑脸会在玩家脚下一直更新生成，不会绘制轨迹
 这是因为我们在更新的同时，需要把上一帧的旧轨迹，根据平移回去然后累加到`RT`上
 
-新做一个`M_Translate`，用来实现这个功能，我们只需要半透明和无光照，这样子材质就只有自发光颜色和不透明度，这样就够了
+新做一个`M_Translate`，用来实现这个功能，我们只需要半透明和无光照（不需要受场景光照影响），这样子材质就只有自发光颜色和不透明度，这样就够了
 
 ![输入图片说明](/imgs/2026-09-18/3qwYN8Q9R09eJEUn.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2MjkwMDk2LDYzNzQ4ODYxMCwxMjg1MD
-E4MjAsLTE2ODQzMDk4NjAsMjAxMjQ2NDM2MCw3MzI4MDI2ODMs
-LTEyMjcyMTg3MzMsLTQzMzgyNzAwMSwxMDE1NDMwMDc5LC02NT
-k5ODEzNDcsLTE2MjU5NDk5MDcsOTk3NDAzOTI3LDg5NzAyMjQ2
-NCwxNzgzNzMyNTM5LDEzMDIwMjIxNjIsLTgzMTU1OTI2MywtMz
-U5NDQ4NzEwLC0xMjA2NTQ3MjUsMzgxOTIxNDQ0LC0xMjQzNDc1
-NzIxXX0=
+eyJoaXN0b3J5IjpbLTE1MzA1NTEyMzksMTI2MjkwMDk2LDYzNz
+Q4ODYxMCwxMjg1MDE4MjAsLTE2ODQzMDk4NjAsMjAxMjQ2NDM2
+MCw3MzI4MDI2ODMsLTEyMjcyMTg3MzMsLTQzMzgyNzAwMSwxMD
+E1NDMwMDc5LC02NTk5ODEzNDcsLTE2MjU5NDk5MDcsOTk3NDAz
+OTI3LDg5NzAyMjQ2NCwxNzgzNzMyNTM5LDEzMDIwMjIxNjIsLT
+gzMTU1OTI2MywtMzU5NDQ4NzEwLC0xMjA2NTQ3MjUsMzgxOTIx
+NDQ0XX0=
 -->
