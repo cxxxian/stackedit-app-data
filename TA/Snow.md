@@ -180,11 +180,13 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 开始写事件，这里的`infos`就是我们上面这个结构体的数组
 这个事件意思就是它会去将`info`加入数组中
-然后类默认值，我们把`tick`分组改成后期物理效果，让`BP_Brush`那边保持前期，这样的话`BP_Panel`的`Event Tick`就会永远都比`BP_Brush`晚执行，为什么要这样，是因为
+然后类默认值，我们把`tick`分组改成后期物理效果，让`BP_Brush`那边保持前期，这样的话`BP_Panel`的`Event Tick`就会永远都比`BP_Brush`晚执行，为什么要这样，是因为`BP_Brush`要通过调用`Add Brush`来写入信息
 
 ![输入图片说明](/imgs/2026-09-19/Hvthi6tPgNXDMeOV.png)
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQ1MTIyOTUxLDExMjI0NDkxMjAsLTE3OD
+eyJoaXN0b3J5IjpbMzk1NzM3ODQxLDExMjI0NDkxMjAsLTE3OD
 IzNDI1MDAsLTE2MTk0NzM5MzYsMTM1OTQxNTI0MSwxODQ1NzE3
 MTM3LDE0MTY3MzMxMjEsMTg0NzUwOTg2LC04NDgwODM2NzksLT
 E3MDE4Nzg2MzQsMTI0NjY5MDA3NCwtMjA0ODA5Nzk4Niw0MTQ1
