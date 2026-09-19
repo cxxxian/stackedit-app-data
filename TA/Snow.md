@@ -180,15 +180,15 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 开始写事件，这里的`infos`就是我们上面这个结构体的数组
 这个事件意思就是它会去将`info`加入数组中
-然后类默认值，我们把`tick`分组改成后期物理效果，让`BP_Brush`那边保持前期，这样的话`BP_Panel`的`Event Tick`就会永远都比`BP_Brush`wan'zhi'xi
+然后类默认值，我们把`tick`分组改成后期物理效果，让`BP_Brush`那边保持前期，这样的话`BP_Panel`的`Event Tick`就会永远都比`BP_Brush`晚执行，为什么要这样，是因为
 
 ![输入图片说明](/imgs/2026-09-19/Hvthi6tPgNXDMeOV.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NjczNTE4NiwxMTIyNDQ5MTIwLC0xNz
-gyMzQyNTAwLC0xNjE5NDczOTM2LDEzNTk0MTUyNDEsMTg0NTcx
-NzEzNywxNDE2NzMzMTIxLDE4NDc1MDk4NiwtODQ4MDgzNjc5LC
-0xNzAxODc4NjM0LDEyNDY2OTAwNzQsLTIwNDgwOTc5ODYsNDE0
-NTI5NTMyLC03MDA0MjM3OTYsLTE2NDY5NzEwODgsLTE4MzczMj
-c2NDIsLTgwNDQ3NTM0NCwtNjE1Njg5Mzk5LDIyMDk5NTQ0MCwt
-MTUzMDU1MTIzOV19
+eyJoaXN0b3J5IjpbNTQ1MTIyOTUxLDExMjI0NDkxMjAsLTE3OD
+IzNDI1MDAsLTE2MTk0NzM5MzYsMTM1OTQxNTI0MSwxODQ1NzE3
+MTM3LDE0MTY3MzMxMjEsMTg0NzUwOTg2LC04NDgwODM2NzksLT
+E3MDE4Nzg2MzQsMTI0NjY5MDA3NCwtMjA0ODA5Nzk4Niw0MTQ1
+Mjk1MzIsLTcwMDQyMzc5NiwtMTY0Njk3MTA4OCwtMTgzNzMyNz
+Y0MiwtODA0NDc1MzQ0LC02MTU2ODkzOTksMjIwOTk1NDQwLC0x
+NTMwNTUxMjM5XX0=
 -->
