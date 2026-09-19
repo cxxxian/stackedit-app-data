@@ -189,8 +189,12 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 ![输入图片说明](/imgs/2026-09-19/8fXtcqZQegVYv8dm.png)
 
 现在我们已经有了`BP_Brush`每帧提交信息给`BP_Panel`了，`BP_Panel`中间的事情都是一样的，清理`RT_Snow`，加调试框等等，但是我们刚刚封装的`Draw`函数要大改，因为我们原本是在人脚下直接画一个笑脸，但是现在不一样了，有两只脚，所以就是要利用上`infos`数组
+
+其实就是原本一次绘制
+
+![输入图片说明](/imgs/2026-09-19/LQu9yP5oqBdRATqY.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkyOTI1MDIzNywxMTIyNDQ5MTIwLC0xNz
+eyJoaXN0b3J5IjpbMTk0OTYzOTI0NSwxMTIyNDQ5MTIwLC0xNz
 gyMzQyNTAwLC0xNjE5NDczOTM2LDEzNTk0MTUyNDEsMTg0NTcx
 NzEzNywxNDE2NzMzMTIxLDE4NDc1MDk4NiwtODQ4MDgzNjc5LC
 0xNzAxODc4NjM0LDEyNDY2OTAwNzQsLTIwNDgwOTc5ODYsNDE0
