@@ -116,13 +116,14 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 ![输入图片说明](/imgs/2026-09-19/IWfoi0uRwUGZNY13.png)
 
-然后我们就可以在画板蓝图中，geng'x
+然后我们就可以在画板蓝图中，更新一些值
+
 
 ![输入图片说明](/imgs/2026-09-19/ye5FoJiUuZK1NzQU.png)
 
 ![输入图片说明](/imgs/2026-09-19/e0iKwIZjCPn6ZKIx.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIxMDIzMDUxNSwtMTgzNzMyNzY0MiwtOD
+eyJoaXN0b3J5IjpbLTQ5OTI4NjU0NCwtMTgzNzMyNzY0MiwtOD
 A0NDc1MzQ0LC02MTU2ODkzOTksMjIwOTk1NDQwLC0xNTMwNTUx
 MjM5LDEyNjI5MDA5Niw2Mzc0ODg2MTAsMTI4NTAxODIwLC0xNj
 g0MzA5ODYwLDIwMTI0NjQzNjAsNzMyODAyNjgzLC0xMjI3MjE4
