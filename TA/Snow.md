@@ -188,13 +188,13 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 ![输入图片说明](/imgs/2026-09-19/8fXtcqZQegVYv8dm.png)
 
-现在我们已经有了`BP_Brush`每帧提交信息给`BP_Panel`了，`BP_Panel`中间的事情都是一样的，清理`RT_Snow`，加调试框等等，但是我们刚刚封装的`Draw`函数要大改，因为我们原本是
+现在我们已经有了`BP_Brush`每帧提交信息给`BP_Panel`了，`BP_Panel`中间的事情都是一样的，清理`RT_Snow`，加调试框等等，但是我们刚刚封装的`Draw`函数要大改，因为我们原本是在人脚下直接画一个笑脸，但是现在不一样了，有两只脚，所以就是
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDU3NjkyMTUsMTEyMjQ0OTEyMCwtMT
-c4MjM0MjUwMCwtMTYxOTQ3MzkzNiwxMzU5NDE1MjQxLDE4NDU3
-MTcxMzcsMTQxNjczMzEyMSwxODQ3NTA5ODYsLTg0ODA4MzY3OS
-wtMTcwMTg3ODYzNCwxMjQ2NjkwMDc0LC0yMDQ4MDk3OTg2LDQx
-NDUyOTUzMiwtNzAwNDIzNzk2LC0xNjQ2OTcxMDg4LC0xODM3Mz
-I3NjQyLC04MDQ0NzUzNDQsLTYxNTY4OTM5OSwyMjA5OTU0NDAs
-LTE1MzA1NTEyMzldfQ==
+eyJoaXN0b3J5IjpbMTYyMzk3MDAzNCwxMTIyNDQ5MTIwLC0xNz
+gyMzQyNTAwLC0xNjE5NDczOTM2LDEzNTk0MTUyNDEsMTg0NTcx
+NzEzNywxNDE2NzMzMTIxLDE4NDc1MDk4NiwtODQ4MDgzNjc5LC
+0xNzAxODc4NjM0LDEyNDY2OTAwNzQsLTIwNDgwOTc5ODYsNDE0
+NTI5NTMyLC03MDA0MjM3OTYsLTE2NDY5NzEwODgsLTE4MzczMj
+c2NDIsLTgwNDQ3NTM0NCwtNjE1Njg5Mzk5LDIyMDk5NTQ0MCwt
+MTUzMDU1MTIzOV19
 -->
