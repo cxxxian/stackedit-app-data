@@ -166,11 +166,13 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 ## 双脚脚印实现，有重有轻
 
+新建一个`Component`叫做`BP_Brush`，后面就gua'dao
+
 折叠封装一部分函数，叫`Draw`，方便我们维护
 
 ![输入图片说明](/imgs/2026-09-19/Bi2NQgYziENh5v3Z.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYyMTc0NTMzOCwxODQ1NzE3MTM3LDE0MT
+eyJoaXN0b3J5IjpbMTE1Mjc4NDcwMiwxODQ1NzE3MTM3LDE0MT
 Y3MzMxMjEsMTg0NzUwOTg2LC04NDgwODM2NzksLTE3MDE4Nzg2
 MzQsMTI0NjY5MDA3NCwtMjA0ODA5Nzk4Niw0MTQ1Mjk1MzIsLT
 cwMDQyMzc5NiwtMTY0Njk3MTA4OCwtMTgzNzMyNzY0MiwtODA0
