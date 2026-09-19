@@ -191,15 +191,15 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 现在我们已经有了`BP_Brush`每帧提交信息给`BP_Panel`了，`BP_Panel`中间的事情都是一样的，清理`RT_Snow`，加调试框等等，但是我们刚刚封装的`Draw`函数要大改，因为我们原本是在人脚下直接画一个笑脸，但是现在不一样了，有两只脚，所以就是要利用上`infos`数组
 
 其实就是原本一次绘制，改成用循环，`infos`里东西其实不多，因为最后循环结束后我清理了`infos`，它里面目前就是两个元素，对应两只脚的数据，（现在还没加上，后面把组件加到脚上才会有）
-那这样的话其实就是加入循环逻辑，其他东西也没啥区别，位置和大小改成我们结构体封装的（`info`）
+那这样的话其实就是加入循环逻辑，其他东西也没啥区别，位置和大小改成我们结构体封装的（`info`），通过`info`取得位置和大小，然后就是原来的操作，把位置ying
 
 ![输入图片说明](/imgs/2026-09-19/LQu9yP5oqBdRATqY.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQzNjY2NjE3LDIwMjYzODY5MTAsMTEyMj
-Q0OTEyMCwtMTc4MjM0MjUwMCwtMTYxOTQ3MzkzNiwxMzU5NDE1
-MjQxLDE4NDU3MTcxMzcsMTQxNjczMzEyMSwxODQ3NTA5ODYsLT
-g0ODA4MzY3OSwtMTcwMTg3ODYzNCwxMjQ2NjkwMDc0LC0yMDQ4
-MDk3OTg2LDQxNDUyOTUzMiwtNzAwNDIzNzk2LC0xNjQ2OTcxMD
-g4LC0xODM3MzI3NjQyLC04MDQ0NzUzNDQsLTYxNTY4OTM5OSwy
-MjA5OTU0NDBdfQ==
+eyJoaXN0b3J5IjpbMTI3MzQ0MzE5LDg0MzY2NjYxNywyMDI2Mz
+g2OTEwLDExMjI0NDkxMjAsLTE3ODIzNDI1MDAsLTE2MTk0NzM5
+MzYsMTM1OTQxNTI0MSwxODQ1NzE3MTM3LDE0MTY3MzMxMjEsMT
+g0NzUwOTg2LC04NDgwODM2NzksLTE3MDE4Nzg2MzQsMTI0NjY5
+MDA3NCwtMjA0ODA5Nzk4Niw0MTQ1Mjk1MzIsLTcwMDQyMzc5Ni
+wtMTY0Njk3MTA4OCwtMTgzNzMyNzY0MiwtODA0NDc1MzQ0LC02
+MTU2ODkzOTldfQ==
 -->
