@@ -179,11 +179,12 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 ![输入图片说明](/imgs/2026-09-19/SaY9YY4BNTEQKZyJ.png)
 
 开始写事件，这里的`infos`就是我们上面这个结构体的数组
-
+这个事件意思就是它会去将`info`加入数组中
+然后类默认值，我们把
 
 ![输入图片说明](/imgs/2026-09-19/Hvthi6tPgNXDMeOV.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NTI4MTE4MCwxMTIyNDQ5MTIwLC0xNz
+eyJoaXN0b3J5IjpbLTkzMDc3ODg2MCwxMTIyNDQ5MTIwLC0xNz
 gyMzQyNTAwLC0xNjE5NDczOTM2LDEzNTk0MTUyNDEsMTg0NTcx
 NzEzNywxNDE2NzMzMTIxLDE4NDc1MDk4NiwtODQ4MDgzNjc5LC
 0xNzAxODc4NjM0LDEyNDY2OTAwNzQsLTIwNDgwOTc5ODYsNDE0
