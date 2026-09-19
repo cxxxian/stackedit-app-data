@@ -167,7 +167,7 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 ## 双脚脚印实现，有重有轻
 
 新建一个`Scene Component`叫做`BP_Brush`，后面就挂到脚上
-`Scene Component`和`Actor Component`的区别，`Scene Component`是
+`Scene Component`和`Actor Component`的区别：`Scene Component`是`Actor Component`的一个子类，
 
 
 折叠封装一部分函数，叫`Draw`，方便我们维护
@@ -179,11 +179,11 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 ![输入图片说明](/imgs/2026-09-19/SaY9YY4BNTEQKZyJ.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzE2OTAyNjIsLTE3ODIzNDI1MDAsLT
-E2MTk0NzM5MzYsMTM1OTQxNTI0MSwxODQ1NzE3MTM3LDE0MTY3
-MzMxMjEsMTg0NzUwOTg2LC04NDgwODM2NzksLTE3MDE4Nzg2Mz
-QsMTI0NjY5MDA3NCwtMjA0ODA5Nzk4Niw0MTQ1Mjk1MzIsLTcw
-MDQyMzc5NiwtMTY0Njk3MTA4OCwtMTgzNzMyNzY0MiwtODA0ND
-c1MzQ0LC02MTU2ODkzOTksMjIwOTk1NDQwLC0xNTMwNTUxMjM5
-LDEyNjI5MDA5Nl19
+eyJoaXN0b3J5IjpbNzc3MDk4NjA1LC0xNzgyMzQyNTAwLC0xNj
+E5NDczOTM2LDEzNTk0MTUyNDEsMTg0NTcxNzEzNywxNDE2NzMz
+MTIxLDE4NDc1MDk4NiwtODQ4MDgzNjc5LC0xNzAxODc4NjM0LD
+EyNDY2OTAwNzQsLTIwNDgwOTc5ODYsNDE0NTI5NTMyLC03MDA0
+MjM3OTYsLTE2NDY5NzEwODgsLTE4MzczMjc2NDIsLTgwNDQ3NT
+M0NCwtNjE1Njg5Mzk5LDIyMDk5NTQ0MCwtMTUzMDU1MTIzOSwx
+MjYyOTAwOTZdfQ==
 -->
