@@ -125,11 +125,11 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 按道理来说这样就可以了，但是运行还是会发现没效果，原因如图：
 大致解释就是
-我们希望将`A`
+我们希望将`A`平移后，绘制回`A`上，要做到这种实现的话我们要有一个中间介质
 
 ![输入图片说明](/imgs/2026-09-19/e0iKwIZjCPn6ZKIx.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMjc3ODE0NTYsLTE4MzczMjc2NDIsLT
+eyJoaXN0b3J5IjpbLTE2NDY5NzEwODgsLTE4MzczMjc2NDIsLT
 gwNDQ3NTM0NCwtNjE1Njg5Mzk5LDIyMDk5NTQ0MCwtMTUzMDU1
 MTIzOSwxMjYyOTAwOTYsNjM3NDg4NjEwLDEyODUwMTgyMCwtMT
 Y4NDMwOTg2MCwyMDEyNDY0MzYwLDczMjgwMjY4MywtMTIyNzIx
