@@ -130,7 +130,7 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 ![输入图片说明](/imgs/2026-09-19/e0iKwIZjCPn6ZKIx.png)
 
 那我们就再来一遍`Draw Texture`，但是这次可以看到，是把`SnowSave`画到`Snow`上面
-
+而且这里有一点很重要，因为我们无法对`A`通道进行写入，搜易这里要写不透明，要不然`RT_Snow`会被搞得
 
 ![输入图片说明](/imgs/2026-09-19/wnaF2Qe13nLCk6iM.png)
 
@@ -139,7 +139,7 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 ![输入图片说明](/imgs/2026-09-19/ExB3I5SYe23lkAWj.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjAxMDk2NDI3LC03MDA0MjM3OTYsLTE2ND
+eyJoaXN0b3J5IjpbNDE0NTI5NTMyLC03MDA0MjM3OTYsLTE2ND
 Y5NzEwODgsLTE4MzczMjc2NDIsLTgwNDQ3NTM0NCwtNjE1Njg5
 Mzk5LDIyMDk5NTQ0MCwtMTUzMDU1MTIzOSwxMjYyOTAwOTYsNj
 M3NDg4NjEwLDEyODUwMTgyMCwtMTY4NDMwOTg2MCwyMDEyNDY0
