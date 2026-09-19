@@ -120,6 +120,7 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 首先是创建`translate`材质的实例，这样我们就可以把它的`Offset`赋值，这里就是把`Position - LastPosition`，然后我们再`/ Size`，这样的话就可以映射到`uv`大小了，然后更新`Offset`
 
 然后这个`Draw Material To Render Target`是一次性直接绘制整张，和我们之前的`Draw Texture`不太一样，`Draw Texture`可以设置很多例如`Screen Size`方向什么的参数，但是这个就是直接一次性绘制
+这里比较重要的是，
 
 ![输入图片说明](/imgs/2026-09-19/yDnjQcfrFmW4JyH2.png)
 
@@ -139,11 +140,11 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 ![输入图片说明](/imgs/2026-09-19/ExB3I5SYe23lkAWj.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzc1NDI0NjM5LDQxNDUyOTUzMiwtNzAwND
-IzNzk2LC0xNjQ2OTcxMDg4LC0xODM3MzI3NjQyLC04MDQ0NzUz
-NDQsLTYxNTY4OTM5OSwyMjA5OTU0NDAsLTE1MzA1NTEyMzksMT
-I2MjkwMDk2LDYzNzQ4ODYxMCwxMjg1MDE4MjAsLTE2ODQzMDk4
-NjAsMjAxMjQ2NDM2MCw3MzI4MDI2ODMsLTEyMjcyMTg3MzMsLT
-QzMzgyNzAwMSwxMDE1NDMwMDc5LC02NTk5ODEzNDcsLTE2MjU5
-NDk5MDddfQ==
+eyJoaXN0b3J5IjpbMTIzOTMwMzcwMCw0MTQ1Mjk1MzIsLTcwMD
+QyMzc5NiwtMTY0Njk3MTA4OCwtMTgzNzMyNzY0MiwtODA0NDc1
+MzQ0LC02MTU2ODkzOTksMjIwOTk1NDQwLC0xNTMwNTUxMjM5LD
+EyNjI5MDA5Niw2Mzc0ODg2MTAsMTI4NTAxODIwLC0xNjg0MzA5
+ODYwLDIwMTI0NjQzNjAsNzMyODAyNjgzLC0xMjI3MjE4NzMzLC
+00MzM4MjcwMDEsMTAxNTQzMDA3OSwtNjU5OTgxMzQ3LC0xNjI1
+OTQ5OTA3XX0=
 -->
