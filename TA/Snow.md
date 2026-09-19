@@ -159,11 +159,11 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 ![输入图片说明](/imgs/2026-09-19/xGjbiayeK4FkLWhW.png)
 
-最后！！！记得在每帧清楚一下`RT_Snow`，就比如假设我们的脚印跑出了`RT`范围，就需要在这里清除，为什么这样实现可以，因为我们把`snow`拷贝到了`snowSave`，在
+最后！！！记得在每帧清楚一下`RT_Snow`，就比如假设我们的脚印跑出了`RT`范围，就需要在这里清除，为什么这样实现可以，因为我们把`snow`拷贝到了`snowSave`，在`snowSave`那边我们做了`mask`，就是把超过`RT`之外的都清除，所以这样kao
 
 ![输入图片说明](/imgs/2026-09-19/mzelZI9sQuR0sk2B.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTEwMjc5NjYsMTg0NzUwOTg2LC04ND
+eyJoaXN0b3J5IjpbLTEzNDM5Njg4MjgsMTg0NzUwOTg2LC04ND
 gwODM2NzksLTE3MDE4Nzg2MzQsMTI0NjY5MDA3NCwtMjA0ODA5
 Nzk4Niw0MTQ1Mjk1MzIsLTcwMDQyMzc5NiwtMTY0Njk3MTA4OC
 wtMTgzNzMyNzY0MiwtODA0NDc1MzQ0LC02MTU2ODkzOTksMjIw
