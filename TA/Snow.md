@@ -158,12 +158,16 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 来捋一捋，我们首先用画板的`Size / RT`的分辨率，这样的话就可以算出像素的长度，所以我们之后的这个偏移要基于像素的整数倍
 
 ![输入图片说明](/imgs/2026-09-19/xGjbiayeK4FkLWhW.png)
+
+最后！！！记得在每帧清楚一下`RT_Snow`，就比如假设我们的脚印跑出了`RT`范围，就需要在这里清除，为什么这样实现可以，因为我们把`snow`拷贝到了`snowSave`，在
+
+![输入图片说明](/imgs/2026-09-19/mzelZI9sQuR0sk2B.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg0NzUwOTg2LC04NDgwODM2NzksLTE3MD
-E4Nzg2MzQsMTI0NjY5MDA3NCwtMjA0ODA5Nzk4Niw0MTQ1Mjk1
-MzIsLTcwMDQyMzc5NiwtMTY0Njk3MTA4OCwtMTgzNzMyNzY0Mi
-wtODA0NDc1MzQ0LC02MTU2ODkzOTksMjIwOTk1NDQwLC0xNTMw
-NTUxMjM5LDEyNjI5MDA5Niw2Mzc0ODg2MTAsMTI4NTAxODIwLC
-0xNjg0MzA5ODYwLDIwMTI0NjQzNjAsNzMyODAyNjgzLC0xMjI3
-MjE4NzMzXX0=
+eyJoaXN0b3J5IjpbLTEzMTEwMjc5NjYsMTg0NzUwOTg2LC04ND
+gwODM2NzksLTE3MDE4Nzg2MzQsMTI0NjY5MDA3NCwtMjA0ODA5
+Nzk4Niw0MTQ1Mjk1MzIsLTcwMDQyMzc5NiwtMTY0Njk3MTA4OC
+wtMTgzNzMyNzY0MiwtODA0NDc1MzQ0LC02MTU2ODkzOTksMjIw
+OTk1NDQwLC0xNTMwNTUxMjM5LDEyNjI5MDA5Niw2Mzc0ODg2MT
+AsMTI4NTAxODIwLC0xNjg0MzA5ODYwLDIwMTI0NjQzNjAsNzMy
+ODAyNjgzXX0=
 -->
