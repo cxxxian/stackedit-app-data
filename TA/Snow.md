@@ -142,15 +142,15 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 然后，来平移这里处理处理，要处理反复出现的问题，比如从左往右跑，左边超出`RT`的地方，会从右边重新采样出现
 这显然是不对的，我们通过下面的这个方法来做
-意思就是把`uv`都压在`0`和`1`
+其实也很好理解，`floor`就是向下取整，然后加个绝对值，然后再`saturate`，这样子的话所有值就都变成`0`和`1`，
 
 ![输入图片说明](/imgs/2026-09-19/5nfkBcyxYDOpk3H4.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTg5NDg0MjEwLDEyNDY2OTAwNzQsLTIwND
-gwOTc5ODYsNDE0NTI5NTMyLC03MDA0MjM3OTYsLTE2NDY5NzEw
-ODgsLTE4MzczMjc2NDIsLTgwNDQ3NTM0NCwtNjE1Njg5Mzk5LD
-IyMDk5NTQ0MCwtMTUzMDU1MTIzOSwxMjYyOTAwOTYsNjM3NDg4
-NjEwLDEyODUwMTgyMCwtMTY4NDMwOTg2MCwyMDEyNDY0MzYwLD
-czMjgwMjY4MywtMTIyNzIxODczMywtNDMzODI3MDAxLDEwMTU0
-MzAwNzldfQ==
+eyJoaXN0b3J5IjpbMTkwMzc0MzUzNCwxMjQ2NjkwMDc0LC0yMD
+Q4MDk3OTg2LDQxNDUyOTUzMiwtNzAwNDIzNzk2LC0xNjQ2OTcx
+MDg4LC0xODM3MzI3NjQyLC04MDQ0NzUzNDQsLTYxNTY4OTM5OS
+wyMjA5OTU0NDAsLTE1MzA1NTEyMzksMTI2MjkwMDk2LDYzNzQ4
+ODYxMCwxMjg1MDE4MjAsLTE2ODQzMDk4NjAsMjAxMjQ2NDM2MC
+w3MzI4MDI2ODMsLTEyMjcyMTg3MzMsLTQzMzgyNzAwMSwxMDE1
+NDMwMDc5XX0=
 -->
