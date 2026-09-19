@@ -132,18 +132,18 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 那我们就再来一遍`Draw Texture`，但是这次可以看到，是把`SnowSave`画到`Snow`上面
 
 
-![输入图片说明](/imgs/2026-09-19/38Xx9fMIdO6K6Bmz.png)
+![输入图片说明](/imgs/2026-09-19/wnaF2Qe13nLCk6iM.png)
 
 当然这里直接我们之前不是直接修改在`Snow`上了，所以这里也得同步改一下
 就是原本`translate`，给它改成绘制到拷贝的材质上面
 
 ![输入图片说明](/imgs/2026-09-19/ExB3I5SYe23lkAWj.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwMDQyMzc5NiwtMTY0Njk3MTA4OCwtMT
-gzNzMyNzY0MiwtODA0NDc1MzQ0LC02MTU2ODkzOTksMjIwOTk1
-NDQwLC0xNTMwNTUxMjM5LDEyNjI5MDA5Niw2Mzc0ODg2MTAsMT
-I4NTAxODIwLC0xNjg0MzA5ODYwLDIwMTI0NjQzNjAsNzMyODAy
-NjgzLC0xMjI3MjE4NzMzLC00MzM4MjcwMDEsMTAxNTQzMDA3OS
-wtNjU5OTgxMzQ3LC0xNjI1OTQ5OTA3LDk5NzQwMzkyNyw4OTcw
-MjI0NjRdfQ==
+eyJoaXN0b3J5IjpbNjAxMDk2NDI3LC03MDA0MjM3OTYsLTE2ND
+Y5NzEwODgsLTE4MzczMjc2NDIsLTgwNDQ3NTM0NCwtNjE1Njg5
+Mzk5LDIyMDk5NTQ0MCwtMTUzMDU1MTIzOSwxMjYyOTAwOTYsNj
+M3NDg4NjEwLDEyODUwMTgyMCwtMTY4NDMwOTg2MCwyMDEyNDY0
+MzYwLDczMjgwMjY4MywtMTIyNzIxODczMywtNDMzODI3MDAxLD
+EwMTU0MzAwNzksLTY1OTk4MTM0NywtMTYyNTk0OTkwNyw5OTc0
+MDM5MjddfQ==
 -->
