@@ -140,10 +140,12 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 ![输入图片说明](/imgs/2026-09-19/ExB3I5SYe23lkAWj.png)
 
+然后，来平移这里处理处理，要处理反复出现的问题，比如从左往右跑，左边超出`RT`的地方，会从右边重新采样出现
+zhe'xian'ran
 
 ![输入图片说明](/imgs/2026-09-19/5nfkBcyxYDOpk3H4.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3NDg3NjkzMiwxMjQ2NjkwMDc0LC0yMD
+eyJoaXN0b3J5IjpbLTg4MTI5MTQyOSwxMjQ2NjkwMDc0LC0yMD
 Q4MDk3OTg2LDQxNDUyOTUzMiwtNzAwNDIzNzk2LC0xNjQ2OTcx
 MDg4LC0xODM3MzI3NjQyLC04MDQ0NzUzNDQsLTYxNTY4OTM5OS
 wyMjA5OTU0NDAsLTE1MzA1NTEyMzksMTI2MjkwMDk2LDYzNzQ4
