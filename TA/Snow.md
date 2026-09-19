@@ -108,13 +108,13 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 ![输入图片说明](/imgs/2026-09-18/3qwYN8Q9R09eJEUn.png)
 
 既然要做平移，那我们肯定需要上一帧的那个位置
-所以我们维护一个`LastPosition`，然后在更新位置的函数里面，我们先去
+所以我们维护一个`LastPosition`，然后在更新位置的函数里面，我们把`Position`赋值给`LastPosition`，这样的话我们就可以
 
 ![输入图片说明](/imgs/2026-09-19/V7tY6ZbHxPi3oQWU.png)
 
 ![输入图片说明](/imgs/2026-09-19/IWfoi0uRwUGZNY13.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzcyODE5ODksMjIwOTk1NDQwLC0xNT
+eyJoaXN0b3J5IjpbLTE4NDIxNTA1OTUsMjIwOTk1NDQwLC0xNT
 MwNTUxMjM5LDEyNjI5MDA5Niw2Mzc0ODg2MTAsMTI4NTAxODIw
 LC0xNjg0MzA5ODYwLDIwMTI0NjQzNjAsNzMyODAyNjgzLC0xMj
 I3MjE4NzMzLC00MzM4MjcwMDEsMTAxNTQzMDA3OSwtNjU5OTgx
