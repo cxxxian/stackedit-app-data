@@ -184,11 +184,13 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 ![输入图片说明](/imgs/2026-09-19/Hvthi6tPgNXDMeOV.png)
 
-所以`BP_Brush`就是这样子的，先搞到一个画板对象`Panel`，然后就像刚刚说的，每帧去写入信息，信息就是我们刚刚的`Position`和`Size`，
+所以`BP_Brush`就是这样子的，先搞到一个画板对象`Panel`，然后就像刚刚说的，每帧去写入信息，信息就是我们刚刚的`Position`和`Size`，`Size`其实就是固定的`50`
 
 ![输入图片说明](/imgs/2026-09-19/8fXtcqZQegVYv8dm.png)
+
+xian
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3NzAxODE0MiwxMTIyNDQ5MTIwLC0xNz
+eyJoaXN0b3J5IjpbMTA4NjY2ODAxNCwxMTIyNDQ5MTIwLC0xNz
 gyMzQyNTAwLC0xNjE5NDczOTM2LDEzNTk0MTUyNDEsMTg0NTcx
 NzEzNywxNDE2NzMzMTIxLDE4NDc1MDk4NiwtODQ4MDgzNjc5LC
 0xNzAxODc4NjM0LDEyNDY2OTAwNzQsLTIwNDgwOTc5ODYsNDE0
