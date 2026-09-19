@@ -159,15 +159,16 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 ![输入图片说明](/imgs/2026-09-19/xGjbiayeK4FkLWhW.png)
 
-最后！！！记得在每帧清楚一下`RT_Snow`，就比如假设我们的脚印跑出了`RT`范围，就需要在这里清除，为什么这样实现可以，因为我们把`snow`拷贝到了`snowSave`，在`snowSave`那边我们做了`mask`，就是把超过`RT`之外的都清除，所以这样kao
+最后！！！记得在每帧清楚一下`RT_Snow`，就比如假设我们的脚印跑出了`RT`范围，就需要在这里清除，为什么这样实现可以，因为我们把`snow`拷贝到了`snowSave`，在`snowSave`那边我们做了`mask`，就是把超过`RT`之外的都清除，所以这样后面写回`snow`是对的，但是此时`snow`可能会有之前的痕迹，我们要先清除，然后后面再执行`snowSave`绘制到`snow`上面
+要不然会发现画出来的东西都是乱的，原因就是和之前`RT_Snow`上的东西叠加了
 
 ![输入图片说明](/imgs/2026-09-19/mzelZI9sQuR0sk2B.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDM5Njg4MjgsMTg0NzUwOTg2LC04ND
-gwODM2NzksLTE3MDE4Nzg2MzQsMTI0NjY5MDA3NCwtMjA0ODA5
-Nzk4Niw0MTQ1Mjk1MzIsLTcwMDQyMzc5NiwtMTY0Njk3MTA4OC
-wtMTgzNzMyNzY0MiwtODA0NDc1MzQ0LC02MTU2ODkzOTksMjIw
-OTk1NDQwLC0xNTMwNTUxMjM5LDEyNjI5MDA5Niw2Mzc0ODg2MT
-AsMTI4NTAxODIwLC0xNjg0MzA5ODYwLDIwMTI0NjQzNjAsNzMy
-ODAyNjgzXX0=
+eyJoaXN0b3J5IjpbMTQxNjczMzEyMSwxODQ3NTA5ODYsLTg0OD
+A4MzY3OSwtMTcwMTg3ODYzNCwxMjQ2NjkwMDc0LC0yMDQ4MDk3
+OTg2LDQxNDUyOTUzMiwtNzAwNDIzNzk2LC0xNjQ2OTcxMDg4LC
+0xODM3MzI3NjQyLC04MDQ0NzUzNDQsLTYxNTY4OTM5OSwyMjA5
+OTU0NDAsLTE1MzA1NTEyMzksMTI2MjkwMDk2LDYzNzQ4ODYxMC
+wxMjg1MDE4MjAsLTE2ODQzMDk4NjAsMjAxMjQ2NDM2MCw3MzI4
+MDI2ODNdfQ==
 -->
