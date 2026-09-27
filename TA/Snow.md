@@ -241,13 +241,34 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 `ScreenPisition`专门用来获取**当前正在渲染的这个像素，在渲染目标（RenderTarget / 视口）里面的位置**
 
+#### 两个输出引脚
+1.  **ViewportUV（你最关心的）**
+    -   输出：`float2`，范围 **(0,0) ~ (1,1)**
+    -   原点：**左上角 = (0,0)，右下角 = (1,1)**，正好就是纹理采样标准 UV 坐标系！
+    -   👉 **为什么它能直接当 RenderTarget 的 UV？** 当你渲染到一张 RenderTarget 的时候，当前渲染的视口大小 = 这张 RT 的分辨率。 GPU 每画一个像素，`ViewportUV` 就自动算出这个像素在 RT 纹理上对应的归一化纹理坐标。 相当于 GPU 自动帮你做了：`像素XY坐标 ÷ RT分辨率`，得到 0~1 的 UV 值，直接丢给 Texture Sample 采样这张 RT，完美对齐。
+
+    > 官方文档明确说明：后期材质采样屏幕对齐的 RenderTarget，优先用`ViewportUV`作为采样 UVUnreal Eng...。
+2.  **PixelPosition**
+    -   输出：像素原始坐标，单位是像素，不是 0~1。
+    -   举例：RT 是 1920×1080，那么范围就是 `(0,0) ~ (1920,1080)`。
+    -   用途：做像素级运算，比如像素偏移、抖动、邻域采样，**不能直接拿来采样纹理**，采样纹理必须归一化到 0~1。
+
+#### 核心原理一句话
+
+RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器逐个填充 RT 的像素。`ScreenPosition`在片元着色器拿到当前片元在 RT 缓冲区里的位置，`ViewportUV`把它归一化成纹理 UV。
+
+#### 什么时候能用 / 坑点
+适用场景：
+-   后期材质（PostProcess）采样 SceneTexture、RenderTarget
+-   全屏四边形（ScreenPlane）渲染到 RT，用 ViewportUV 采样自己或者别的 RT
+
 ![输入图片说明](/imgs/2026-09-28/fgfLdDHjInlZqjGF.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxNDE3NTEzMywyMDcwNjAyNTg0LC0xMz
-czMjAzODkxLC0xNTQ3NDY0MDY3LDE2OTUwMTc3NjksLTEzMzM3
-NjY1MDgsMTg1MDE1NTY5OCwxNzE1NjQ2MzU2LC0xMjcwMzMzOD
-Y0LDg0MzY2NjYxNywyMDI2Mzg2OTEwLDExMjI0NDkxMjAsLTE3
-ODIzNDI1MDAsLTE2MTk0NzM5MzYsMTM1OTQxNTI0MSwxODQ1Nz
-E3MTM3LDE0MTY3MzMxMjEsMTg0NzUwOTg2LC04NDgwODM2Nzks
-LTE3MDE4Nzg2MzRdfQ==
+eyJoaXN0b3J5IjpbLTE2MDI1NTIxNzksMjA3MDYwMjU4NCwtMT
+M3MzIwMzg5MSwtMTU0NzQ2NDA2NywxNjk1MDE3NzY5LC0xMzMz
+NzY2NTA4LDE4NTAxNTU2OTgsMTcxNTY0NjM1NiwtMTI3MDMzMz
+g2NCw4NDM2NjY2MTcsMjAyNjM4NjkxMCwxMTIyNDQ5MTIwLC0x
+NzgyMzQyNTAwLC0xNjE5NDczOTM2LDEzNTk0MTUyNDEsMTg0NT
+cxNzEzNywxNDE2NzMzMTIxLDE4NDc1MDk4NiwtODQ4MDgzNjc5
+LC0xNzAxODc4NjM0XX0=
 -->
