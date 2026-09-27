@@ -239,13 +239,15 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 这里的下面半部分的`Texture Sample`是`RT_SnowSave`，为什么是`RT_SnowSave`，因为我们还是要避免一边读取`RT_Snow`一边写入`RT_Snow`的情况，但是`RT_SnowSave`是上一帧的`RT`，所以我们要利用之前写好的平移函数，把`uv`移动到上一帧再采样
 
+`ScreenPisition`专门用来获取**当前正在渲染的这个像素，在渲染目标（RenderTarget / 视口）里面的位置**
+
 ![输入图片说明](/imgs/2026-09-28/fgfLdDHjInlZqjGF.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzM1NDcwOTIsMjA3MDYwMjU4NCwtMT
-M3MzIwMzg5MSwtMTU0NzQ2NDA2NywxNjk1MDE3NzY5LC0xMzMz
-NzY2NTA4LDE4NTAxNTU2OTgsMTcxNTY0NjM1NiwtMTI3MDMzMz
-g2NCw4NDM2NjY2MTcsMjAyNjM4NjkxMCwxMTIyNDQ5MTIwLC0x
-NzgyMzQyNTAwLC0xNjE5NDczOTM2LDEzNTk0MTUyNDEsMTg0NT
-cxNzEzNywxNDE2NzMzMTIxLDE4NDc1MDk4NiwtODQ4MDgzNjc5
-LC0xNzAxODc4NjM0XX0=
+eyJoaXN0b3J5IjpbMjAxNDE3NTEzMywyMDcwNjAyNTg0LC0xMz
+czMjAzODkxLC0xNTQ3NDY0MDY3LDE2OTUwMTc3NjksLTEzMzM3
+NjY1MDgsMTg1MDE1NTY5OCwxNzE1NjQ2MzU2LC0xMjcwMzMzOD
+Y0LDg0MzY2NjYxNywyMDI2Mzg2OTEwLDExMjI0NDkxMjAsLTE3
+ODIzNDI1MDAsLTE2MTk0NzM5MzYsMTM1OTQxNTI0MSwxODQ1Nz
+E3MTM3LDE0MTY3MzMxMjEsMTg0NzUwOTg2LC04NDgwODM2Nzks
+LTE3MDE4Nzg2MzRdfQ==
 -->
