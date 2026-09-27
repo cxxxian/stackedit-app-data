@@ -229,17 +229,17 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 ![输入图片说明](/imgs/2026-09-27/l6l2uD7WoO29IlKH.png)
 
 刚刚只是超过雪面高度不绘制
-那我们想要做到踩下去有深浅呢，通过雪面高度减去`Height`，`Height`其实就是刚刚的`Distance`，得到的结果除于雪面高度归一化，这个结果就当作颜色值直接`render`出来，这样踩得越深就越黑
+那我们想要做到踩下去有深浅呢，通过雪面高度减去`Height`，`Height`其实就是刚刚的`Distance`，得到的结果除于雪面高度归一化，这个结果就当作颜色值直接`render`出来，这样踩得越浅就越黑，越深越白
 
 ![输入图片说明](/imgs/2026-09-27/jcFl03Y4NM2F276f.png)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5NTAxNzc2OSwtMTMzMzc2NjUwOCwxOD
-UwMTU1Njk4LDE3MTU2NDYzNTYsLTEyNzAzMzM4NjQsODQzNjY2
-NjE3LDIwMjYzODY5MTAsMTEyMjQ0OTEyMCwtMTc4MjM0MjUwMC
-wtMTYxOTQ3MzkzNiwxMzU5NDE1MjQxLDE4NDU3MTcxMzcsMTQx
-NjczMzEyMSwxODQ3NTA5ODYsLTg0ODA4MzY3OSwtMTcwMTg3OD
-YzNCwxMjQ2NjkwMDc0LC0yMDQ4MDk3OTg2LDQxNDUyOTUzMiwt
-NzAwNDIzNzk2XX0=
+eyJoaXN0b3J5IjpbLTE1NDc0NjQwNjcsMTY5NTAxNzc2OSwtMT
+MzMzc2NjUwOCwxODUwMTU1Njk4LDE3MTU2NDYzNTYsLTEyNzAz
+MzM4NjQsODQzNjY2NjE3LDIwMjYzODY5MTAsMTEyMjQ0OTEyMC
+wtMTc4MjM0MjUwMCwtMTYxOTQ3MzkzNiwxMzU5NDE1MjQxLDE4
+NDU3MTcxMzcsMTQxNjczMzEyMSwxODQ3NTA5ODYsLTg0ODA4Mz
+Y3OSwtMTcwMTg3ODYzNCwxMjQ2NjkwMDc0LC0yMDQ4MDk3OTg2
+LDQxNDUyOTUzMl19
 -->
