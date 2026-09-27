@@ -239,6 +239,8 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 这里的下面半部分的`Texture Sample`是`RT_SnowSave`，为什么是`RT_SnowSave`，因为我们还是要避免一边读取`RT_Snow`一边写入`RT_Snow`的情况，但是`RT_SnowSave`是上一帧的`RT`，所以我们要利用之前写好的平移函数，把`uv`移动到上一帧再采样
 
+![输入图片说明](/imgs/2026-09-28/fgfLdDHjInlZqjGF.png)
+
 `ScreenPisition`专门用来获取**当前正在渲染的这个像素，在渲染目标（RenderTarget / 视口）里面的位置**
 
 #### 两个输出引脚
@@ -261,14 +263,12 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 适用场景：
 -   后期材质（PostProcess）采样 SceneTexture、RenderTarget
 -   全屏四边形（ScreenPlane）渲染到 RT，用 ViewportUV 采样自己或者别的 RT
-
-![输入图片说明](/imgs/2026-09-28/fgfLdDHjInlZqjGF.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDI1NTIxNzksMjA3MDYwMjU4NCwtMT
-M3MzIwMzg5MSwtMTU0NzQ2NDA2NywxNjk1MDE3NzY5LC0xMzMz
-NzY2NTA4LDE4NTAxNTU2OTgsMTcxNTY0NjM1NiwtMTI3MDMzMz
-g2NCw4NDM2NjY2MTcsMjAyNjM4NjkxMCwxMTIyNDQ5MTIwLC0x
-NzgyMzQyNTAwLC0xNjE5NDczOTM2LDEzNTk0MTUyNDEsMTg0NT
-cxNzEzNywxNDE2NzMzMTIxLDE4NDc1MDk4NiwtODQ4MDgzNjc5
-LC0xNzAxODc4NjM0XX0=
+eyJoaXN0b3J5IjpbMjM0MjU1NjI5LDIwNzA2MDI1ODQsLTEzNz
+MyMDM4OTEsLTE1NDc0NjQwNjcsMTY5NTAxNzc2OSwtMTMzMzc2
+NjUwOCwxODUwMTU1Njk4LDE3MTU2NDYzNTYsLTEyNzAzMzM4Nj
+QsODQzNjY2NjE3LDIwMjYzODY5MTAsMTEyMjQ0OTEyMCwtMTc4
+MjM0MjUwMCwtMTYxOTQ3MzkzNiwxMzU5NDE1MjQxLDE4NDU3MT
+cxMzcsMTQxNjczMzEyMSwxODQ3NTA5ODYsLTg0ODA4MzY3OSwt
+MTcwMTg3ODYzNF19
 -->
