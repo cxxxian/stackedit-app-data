@@ -229,11 +229,11 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 ![输入图片说明](/imgs/2026-09-27/l6l2uD7WoO29IlKH.png)
 
 刚刚只是超过雪面高度不绘制
-那我们想要做到踩下去有深浅呢，通过雪面高度减去`Height`，`Height`其实就是刚刚的`Distance`
+那我们想要做到踩下去有深浅呢，通过雪面高度减去`Height`，`Height`其实就是刚刚的`Distance`，得到的结果除于雪面高度归一化，这个结果就当作颜色值直接`render`出来，这样踩得浅
 
 ![输入图片说明](/imgs/2026-09-27/jcFl03Y4NM2F276f.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5MTkwNDI0MiwtMTMzMzc2NjUwOCwxOD
+eyJoaXN0b3J5IjpbMTkzMjI1NDg0MSwtMTMzMzc2NjUwOCwxOD
 UwMTU1Njk4LDE3MTU2NDYzNTYsLTEyNzAzMzM4NjQsODQzNjY2
 NjE3LDIwMjYzODY5MTAsMTEyMjQ0OTEyMCwtMTc4MjM0MjUwMC
 wtMTYxOTQ3MzkzNiwxMzU5NDE1MjQxLDE4NDU3MTcxMzcsMTQx
