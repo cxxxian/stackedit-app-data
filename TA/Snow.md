@@ -207,16 +207,14 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 然后我们在`Brush`这边做深度检测，主要就是利用这个`Line Trace By Chanel`，初始位置就是`Brush`，也就是脚底的位置其实，然后`End`是脚底位置减掉雪的高度，我们这边初始化给个`30`，然后特别简单，`True`就说明要绘制，`False`就说明不用绘制，也就意味着根本没有碰到雪
 
+**`Line Trace By Chanel`**
 这个节点就是**从起点发射一条直线，检测这条线有没有碰到物体**，俗称射线检测。
-
-## Start 和 End
-
+#### Start 和 End
 -   **Start（起点）**：射线的开始坐标（世界空间位置），比如角色眼睛位置、枪口位置。
 -   **End（终点）**：射线的结束坐标，射线从 Start 一直画到 End。
-
 > 射线不是无限长，只检测 Start → End 这一段线段。
 
-## Return Value（红色输出，布尔值 bool）
+#### Return Value（红色输出，布尔值 bool）
 
 ✅ **Return Value = true**： 射线在 `Start` 到 `End` 之间，**成功击中了符合 Trace Channel 的物体**。
 
@@ -229,17 +227,17 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 3.  被 `Actors to Ignore`（忽略的 Actor）过滤掉；
 4.  射线起点和终点之间是空的。
 
-## Out Hit（蓝色输出，HitResult 结构体）
+#### Out Hit（蓝色输出，HitResult 结构体）
 
 只有 Return Value 为 true 的时候，OutHit 里面才有有效信息：击中的 Actor、碰撞点坐标、法线、击中的骨骼 / 面片等。
 
 ![输入图片说明](/imgs/2026-09-27/l6l2uD7WoO29IlKH.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5NjQ2MTQzMiwxODUwMTU1Njk4LDE3MT
-U2NDYzNTYsLTEyNzAzMzM4NjQsODQzNjY2NjE3LDIwMjYzODY5
-MTAsMTEyMjQ0OTEyMCwtMTc4MjM0MjUwMCwtMTYxOTQ3MzkzNi
-wxMzU5NDE1MjQxLDE4NDU3MTcxMzcsMTQxNjczMzEyMSwxODQ3
-NTA5ODYsLTg0ODA4MzY3OSwtMTcwMTg3ODYzNCwxMjQ2NjkwMD
-c0LC0yMDQ4MDk3OTg2LDQxNDUyOTUzMiwtNzAwNDIzNzk2LC0x
-NjQ2OTcxMDg4XX0=
+eyJoaXN0b3J5IjpbOTYwNjI5NjYxLDE4NTAxNTU2OTgsMTcxNT
+Y0NjM1NiwtMTI3MDMzMzg2NCw4NDM2NjY2MTcsMjAyNjM4Njkx
+MCwxMTIyNDQ5MTIwLC0xNzgyMzQyNTAwLC0xNjE5NDczOTM2LD
+EzNTk0MTUyNDEsMTg0NTcxNzEzNywxNDE2NzMzMTIxLDE4NDc1
+MDk4NiwtODQ4MDgzNjc5LC0xNzAxODc4NjM0LDEyNDY2OTAwNz
+QsLTIwNDgwOTc5ODYsNDE0NTI5NTMyLC03MDA0MjM3OTYsLTE2
+NDY5NzEwODhdfQ==
 -->
