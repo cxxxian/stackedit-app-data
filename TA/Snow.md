@@ -235,15 +235,15 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 接下来会发现，踩得越浅就越黑，越深越白，但是因为是`texture`的原因，会造成比如黑反而还会盖住白的，这样肯定是不对的，所以我们不用`Draw Texture`了，转为用`Draw Material`
 
-关于这里，我们先把`Draw Material`的`Material`准备好，就叫`M_Draw`，
+关于这里，我们先把`Draw Material`的`Material`准备好，就叫`M_Draw`，上半部分就是普通的采样`texture`，用来画脚下脚印图案，为什么要减去`Height`，这里的`Height`如果是`1`，那最后画出来的就是`0`，假设xian'bu
 
 ![输入图片说明](/imgs/2026-09-28/fgfLdDHjInlZqjGF.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkzMjA3MTYsLTEzNzMyMDM4OTEsLTE1ND
-c0NjQwNjcsMTY5NTAxNzc2OSwtMTMzMzc2NjUwOCwxODUwMTU1
-Njk4LDE3MTU2NDYzNTYsLTEyNzAzMzM4NjQsODQzNjY2NjE3LD
-IwMjYzODY5MTAsMTEyMjQ0OTEyMCwtMTc4MjM0MjUwMCwtMTYx
-OTQ3MzkzNiwxMzU5NDE1MjQxLDE4NDU3MTcxMzcsMTQxNjczMz
-EyMSwxODQ3NTA5ODYsLTg0ODA4MzY3OSwtMTcwMTg3ODYzNCwx
-MjQ2NjkwMDc0XX0=
+eyJoaXN0b3J5IjpbLTUxNjEzMzgwMCwtMTM3MzIwMzg5MSwtMT
+U0NzQ2NDA2NywxNjk1MDE3NzY5LC0xMzMzNzY2NTA4LDE4NTAx
+NTU2OTgsMTcxNTY0NjM1NiwtMTI3MDMzMzg2NCw4NDM2NjY2MT
+csMjAyNjM4NjkxMCwxMTIyNDQ5MTIwLC0xNzgyMzQyNTAwLC0x
+NjE5NDczOTM2LDEzNTk0MTUyNDEsMTg0NTcxNzEzNywxNDE2Nz
+MzMTIxLDE4NDc1MDk4NiwtODQ4MDgzNjc5LC0xNzAxODc4NjM0
+LDEyNDY2OTAwNzRdfQ==
 -->
