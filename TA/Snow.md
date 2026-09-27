@@ -237,15 +237,15 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 关于这里，我们先把`Draw Material`的`Material`准备好，就叫`M_Draw`，上半部分就是普通的采样`texture`，用来画脚下脚印图案，为什么要减去`Height`，这里的`Height`如果是`1`，那最后画出来的就是`0`，假设先不看下面的比`max`，`Height`意思是`1 - [(雪面高度 - 脚距离地面的高度) / 雪面高度]`，所以`Height`是`1`的时候，代表雪是满的，没有被踩
 
-这里的下面半部分的`Texture Sample`是`RT_SnowSave`，为什么是`RT_SnowSave`，
+这里的下面半部分的`Texture Sample`是`RT_SnowSave`，为什么是`RT_SnowSave`，因为我们还是要避免一边读取`RT_Snow`一边写入`RT_Snow`的情况，但是`RT_SnowSave`是上一帧的`RT`，所以我们要利用之前写好的平移函数，把`uv`移动到上一帧再采样
 
 ![输入图片说明](/imgs/2026-09-28/fgfLdDHjInlZqjGF.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzY4MzQwNjY3LDIwNzA2MDI1ODQsLTEzNz
-MyMDM4OTEsLTE1NDc0NjQwNjcsMTY5NTAxNzc2OSwtMTMzMzc2
-NjUwOCwxODUwMTU1Njk4LDE3MTU2NDYzNTYsLTEyNzAzMzM4Nj
-QsODQzNjY2NjE3LDIwMjYzODY5MTAsMTEyMjQ0OTEyMCwtMTc4
-MjM0MjUwMCwtMTYxOTQ3MzkzNiwxMzU5NDE1MjQxLDE4NDU3MT
-cxMzcsMTQxNjczMzEyMSwxODQ3NTA5ODYsLTg0ODA4MzY3OSwt
-MTcwMTg3ODYzNF19
+eyJoaXN0b3J5IjpbLTIxMzM1NDcwOTIsMjA3MDYwMjU4NCwtMT
+M3MzIwMzg5MSwtMTU0NzQ2NDA2NywxNjk1MDE3NzY5LC0xMzMz
+NzY2NTA4LDE4NTAxNTU2OTgsMTcxNTY0NjM1NiwtMTI3MDMzMz
+g2NCw4NDM2NjY2MTcsMjAyNjM4NjkxMCwxMTIyNDQ5MTIwLC0x
+NzgyMzQyNTAwLC0xNjE5NDczOTM2LDEzNTk0MTUyNDEsMTg0NT
+cxNzEzNywxNDE2NzMzMTIxLDE4NDc1MDk4NiwtODQ4MDgzNjc5
+LC0xNzAxODc4NjM0XX0=
 -->
