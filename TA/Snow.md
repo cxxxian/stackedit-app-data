@@ -205,15 +205,15 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 ![输入图片说明](/imgs/2026-09-27/hty2HbG5ksplpyZ2.png)
 
-然后我们在`Brush`这边做深度检测，主要就是利用这个`Line Trace By Chanel`，初始位置就是`Brush`，也就是脚底的位置其实，然后`End`是脚底位置减掉雪的高度，我们这边初始化给个`30`，然后特别简单，
+然后我们在`Brush`这边做深度检测，主要就是利用这个`Line Trace By Chanel`，初始位置就是`Brush`，也就是脚底的位置其实，然后`End`是脚底位置减掉雪的高度，我们这边初始化给个`30`，然后特别简单，`True`就说明要绘制，`False`就说明不用绘制
 
 ![输入图片说明](/imgs/2026-09-27/l6l2uD7WoO29IlKH.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTg4ODg0MjYsMTcxNTY0NjM1NiwtMT
-I3MDMzMzg2NCw4NDM2NjY2MTcsMjAyNjM4NjkxMCwxMTIyNDQ5
-MTIwLC0xNzgyMzQyNTAwLC0xNjE5NDczOTM2LDEzNTk0MTUyND
-EsMTg0NTcxNzEzNywxNDE2NzMzMTIxLDE4NDc1MDk4NiwtODQ4
-MDgzNjc5LC0xNzAxODc4NjM0LDEyNDY2OTAwNzQsLTIwNDgwOT
-c5ODYsNDE0NTI5NTMyLC03MDA0MjM3OTYsLTE2NDY5NzEwODgs
-LTE4MzczMjc2NDJdfQ==
+eyJoaXN0b3J5IjpbMTkwMDg5NDUzNSwxNzE1NjQ2MzU2LC0xMj
+cwMzMzODY0LDg0MzY2NjYxNywyMDI2Mzg2OTEwLDExMjI0NDkx
+MjAsLTE3ODIzNDI1MDAsLTE2MTk0NzM5MzYsMTM1OTQxNTI0MS
+wxODQ1NzE3MTM3LDE0MTY3MzMxMjEsMTg0NzUwOTg2LC04NDgw
+ODM2NzksLTE3MDE4Nzg2MzQsMTI0NjY5MDA3NCwtMjA0ODA5Nz
+k4Niw0MTQ1Mjk1MzIsLTcwMDQyMzc5NiwtMTY0Njk3MTA4OCwt
+MTgzNzMyNzY0Ml19
 -->
