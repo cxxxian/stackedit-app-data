@@ -229,11 +229,11 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 ![输入图片说明](/imgs/2026-09-27/l6l2uD7WoO29IlKH.png)
 
 刚刚只是超过雪面高度不绘制
-那我们想要
+那我们想要做到
 
 ![输入图片说明](/imgs/2026-09-27/jcFl03Y4NM2F276f.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDQ0ODc3MzAsLTEzMzM3NjY1MDgsMT
+eyJoaXN0b3J5IjpbLTE3ODM3MDMwNDgsLTEzMzM3NjY1MDgsMT
 g1MDE1NTY5OCwxNzE1NjQ2MzU2LC0xMjcwMzMzODY0LDg0MzY2
 NjYxNywyMDI2Mzg2OTEwLDExMjI0NDkxMjAsLTE3ODIzNDI1MD
 AsLTE2MTk0NzM5MzYsMTM1OTQxNTI0MSwxODQ1NzE3MTM3LDE0
