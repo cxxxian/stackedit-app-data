@@ -213,31 +213,26 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 -   **Start（起点）**：射线的开始坐标（世界空间位置），比如角色眼睛位置、枪口位置。
 -   **End（终点）**：射线的结束坐标，射线从 Start 一直画到 End。
 > 射线不是无限长，只检测 Start → End 这一段线段。
-
 #### Return Value（红色输出，布尔值 bool）
-
 ✅ **Return Value = true**： 射线在 `Start` 到 `End` 之间，**成功击中了符合 Trace Channel 的物体**。
-
 > 你这里通道是 `Visibility`，只有碰撞设置里响应 Visibility 通道的物体才会被检测到。
-
 ❌ **Return Value = false**：
-
 1.  整条线段上**没有碰到任何符合条件物体**；
 2.  碰到的物体碰撞通道不响应 Visibility；
 3.  被 `Actors to Ignore`（忽略的 Actor）过滤掉；
 4.  射线起点和终点之间是空的。
-
 #### Out Hit（蓝色输出，HitResult 结构体）
-
 只有 Return Value 为 true 的时候，OutHit 里面才有有效信息：击中的 Actor、碰撞点坐标、法线、击中的骨骼 / 面片等。
+
+所以我们这边的碰撞物体其实就是地面来着，`Distance`的意思就是脚底距离地面的高度
 
 ![输入图片说明](/imgs/2026-09-27/l6l2uD7WoO29IlKH.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTYwNjI5NjYxLDE4NTAxNTU2OTgsMTcxNT
-Y0NjM1NiwtMTI3MDMzMzg2NCw4NDM2NjY2MTcsMjAyNjM4Njkx
-MCwxMTIyNDQ5MTIwLC0xNzgyMzQyNTAwLC0xNjE5NDczOTM2LD
-EzNTk0MTUyNDEsMTg0NTcxNzEzNywxNDE2NzMzMTIxLDE4NDc1
-MDk4NiwtODQ4MDgzNjc5LC0xNzAxODc4NjM0LDEyNDY2OTAwNz
-QsLTIwNDgwOTc5ODYsNDE0NTI5NTMyLC03MDA0MjM3OTYsLTE2
-NDY5NzEwODhdfQ==
+eyJoaXN0b3J5IjpbLTEzMzM3NjY1MDgsMTg1MDE1NTY5OCwxNz
+E1NjQ2MzU2LC0xMjcwMzMzODY0LDg0MzY2NjYxNywyMDI2Mzg2
+OTEwLDExMjI0NDkxMjAsLTE3ODIzNDI1MDAsLTE2MTk0NzM5Mz
+YsMTM1OTQxNTI0MSwxODQ1NzE3MTM3LDE0MTY3MzMxMjEsMTg0
+NzUwOTg2LC04NDgwODM2NzksLTE3MDE4Nzg2MzQsMTI0NjY5MD
+A3NCwtMjA0ODA5Nzk4Niw0MTQ1Mjk1MzIsLTcwMDQyMzc5Niwt
+MTY0Njk3MTA4OF19
 -->
