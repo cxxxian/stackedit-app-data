@@ -272,11 +272,13 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 
 ![输入图片说明](/imgs/2026-09-28/03rguYQ4ep36W9mB.png)
 
-然后这里通过动态材质实例，去给`M_Draw`里的参数`Height`fu
+然后这里通过动态材质实例，去给`M_Draw`里的参数`Height`赋值，`Height`就是用刚刚写的那一套赋值的：`1 - [(雪面高度 - 脚距离地面的高度) / 雪面高度]`
 
 ![输入图片说明](/imgs/2026-09-28/SPh67EAfG4cAKryR.png)
+
+那这样我们最终就得到了这个材质，然后
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwNDAzNDAyMywtOTEzNDU2OTAzLC01Mj
+eyJoaXN0b3J5IjpbMTkxNTkyNjc2OCwtOTEzNDU2OTAzLC01Mj
 UyMjE2MDgsMjM0MjU1NjI5LDIwNzA2MDI1ODQsLTEzNzMyMDM4
 OTEsLTE1NDc0NjQwNjcsMTY5NTAxNzc2OSwtMTMzMzc2NjUwOC
 wxODUwMTU1Njk4LDE3MTU2NDYzNTYsLTEyNzAzMzM4NjQsODQz
