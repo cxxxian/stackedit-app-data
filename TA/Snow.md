@@ -237,7 +237,7 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 
 关于这里，我们先把`Draw Material`的`Material`准备好，就叫`M_Draw`，上半部分就是普通的采样`texture`，用来画脚下脚印图案，为什么要减去`Height`，这里的`Height`如果是`1`，那最后画出来的就是`0`，假设先不看下面的比`max`，`Height`意思是`1 - [(雪面高度 - 脚距离地面的高度) / 雪面高度]`，所以`Height`是`1`的时候，代表雪是满的，没有被踩，所以这个`texture - Height`会得到黑色
 这同样也就是为什么和下面的`RT_SnowSave`取`Max`的原因，因为我们要的结果就是那一块被踩得最深，取到那个最深的部分
-举个例子，如果`Height`是`0`的时候，代表雪是满的，没有被踩
+举个例子，如果`Height`是`0`的时候，踩得最深，`texture - Height`依旧是白色，然后和下面的`RT_SnowSave`比大小
 
 这里的下面半部分的`Texture Sample`是`RT_SnowSave`，为什么是`RT_SnowSave`，因为我们还是要避免一边读取`RT_Snow`一边写入`RT_Snow`的情况，但是`RT_SnowSave`是上一帧的`RT`，所以我们要利用之前写好的平移函数，把`uv`移动到上一帧再采样
 
@@ -266,11 +266,11 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 -   后期材质（PostProcess）采样 SceneTexture、RenderTarget
 -   全屏四边形（ScreenPlane）渲染到 RT，用 ViewportUV 采样自己或者别的 RT
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMTUwMDc1NzIsLTUyNTIyMTYwOCwyMz
-QyNTU2MjksMjA3MDYwMjU4NCwtMTM3MzIwMzg5MSwtMTU0NzQ2
-NDA2NywxNjk1MDE3NzY5LC0xMzMzNzY2NTA4LDE4NTAxNTU2OT
-gsMTcxNTY0NjM1NiwtMTI3MDMzMzg2NCw4NDM2NjY2MTcsMjAy
-NjM4NjkxMCwxMTIyNDQ5MTIwLC0xNzgyMzQyNTAwLC0xNjE5ND
-czOTM2LDEzNTk0MTUyNDEsMTg0NTcxNzEzNywxNDE2NzMzMTIx
-LDE4NDc1MDk4Nl19
+eyJoaXN0b3J5IjpbLTkxMzQ1NjkwMywtNTI1MjIxNjA4LDIzND
+I1NTYyOSwyMDcwNjAyNTg0LC0xMzczMjAzODkxLC0xNTQ3NDY0
+MDY3LDE2OTUwMTc3NjksLTEzMzM3NjY1MDgsMTg1MDE1NTY5OC
+wxNzE1NjQ2MzU2LC0xMjcwMzMzODY0LDg0MzY2NjYxNywyMDI2
+Mzg2OTEwLDExMjI0NDkxMjAsLTE3ODIzNDI1MDAsLTE2MTk0Nz
+M5MzYsMTM1OTQxNTI0MSwxODQ1NzE3MTM3LDE0MTY3MzMxMjEs
+MTg0NzUwOTg2XX0=
 -->
