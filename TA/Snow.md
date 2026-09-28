@@ -268,8 +268,11 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 
 
 我们准备好这个之后，就去用上就好
+在`Draw`
+
+![输入图片说明](/imgs/2026-09-28/03rguYQ4ep36W9mB.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwNTg2MDQzNiwtOTEzNDU2OTAzLC01Mj
+eyJoaXN0b3J5IjpbLTk2ODI1NDQ1OCwtOTEzNDU2OTAzLC01Mj
 UyMjE2MDgsMjM0MjU1NjI5LDIwNzA2MDI1ODQsLTEzNzMyMDM4
 OTEsLTE1NDc0NjQwNjcsMTY5NTAxNzc2OSwtMTMzMzc2NjUwOC
 wxODUwMTU1Njk4LDE3MTU2NDYzNTYsLTEyNzAzMzM4NjQsODQz
