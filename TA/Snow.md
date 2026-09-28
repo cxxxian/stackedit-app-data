@@ -278,12 +278,12 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 
 那这样我们最终就得到了这个材质，原本是`Draw Texture`，现在用`Draw Material`绘制出脚印，这样子就踩得深的可以覆盖浅的，不会相互遮罩了
 
-现在回去解决之前的东西，之前为了好玩，画笑脸，把`RGBA`
+现在回去解决之前的东西，之前为了好玩，画笑脸，把`RGBA16f`全打开了，其实我们只需要`R16f`，甚至`R8f`
 
 ![输入图片说明](/imgs/2026-09-28/VQTsHz4XUZIGT9Ic.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODMyNzE4NDY5LC0xNjczMjM5MDMxLC05MT
+eyJoaXN0b3J5IjpbNDMxMjkwODE1LC0xNjczMjM5MDMxLC05MT
 M0NTY5MDMsLTUyNTIyMTYwOCwyMzQyNTU2MjksMjA3MDYwMjU4
 NCwtMTM3MzIwMzg5MSwtMTU0NzQ2NDA2NywxNjk1MDE3NzY5LC
 0xMzMzNzY2NTA4LDE4NTAxNTU2OTgsMTcxNTY0NjM1NiwtMTI3
