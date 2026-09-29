@@ -231,7 +231,7 @@ UE 引擎的世界单位：**1 单位 = 1 厘米**
 刚刚只是超过雪面高度不绘制
 那我们想要做到踩下去有深浅呢，通过雪面高度减去`Height`，`Height`其实就是刚刚的`Distance`，得到的结果除于雪面高度归一化，这个结果就当作颜色值直接`render`出来，这样踩得越浅就越黑，越深越白
 
-![输入图片说明](/imgs/2026-09-27/jcFl03Y4NM2F276f.png)
+![输入图片说明](/imgs/2026-09-29/iPhIyJwGEJbWQWlD.png)
 
 接下来会发现，踩得越浅就越黑，越深越白，但是因为是`texture`的原因，会造成比如黑反而还会盖住白的，这样肯定是不对的，所以我们不用`Draw Texture`了，转为用`Draw Material`
 
@@ -283,11 +283,11 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 ![输入图片说明](/imgs/2026-09-28/VQTsHz4XUZIGT9Ic.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDMxMjkwODE1LC0xNjczMjM5MDMxLC05MT
-M0NTY5MDMsLTUyNTIyMTYwOCwyMzQyNTU2MjksMjA3MDYwMjU4
-NCwtMTM3MzIwMzg5MSwtMTU0NzQ2NDA2NywxNjk1MDE3NzY5LC
-0xMzMzNzY2NTA4LDE4NTAxNTU2OTgsMTcxNTY0NjM1NiwtMTI3
-MDMzMzg2NCw4NDM2NjY2MTcsMjAyNjM4NjkxMCwxMTIyNDQ5MT
-IwLC0xNzgyMzQyNTAwLC0xNjE5NDczOTM2LDEzNTk0MTUyNDEs
-MTg0NTcxNzEzN119
+eyJoaXN0b3J5IjpbLTY2NjA1MTM5OSw0MzEyOTA4MTUsLTE2Nz
+MyMzkwMzEsLTkxMzQ1NjkwMywtNTI1MjIxNjA4LDIzNDI1NTYy
+OSwyMDcwNjAyNTg0LC0xMzczMjAzODkxLC0xNTQ3NDY0MDY3LD
+E2OTUwMTc3NjksLTEzMzM3NjY1MDgsMTg1MDE1NTY5OCwxNzE1
+NjQ2MzU2LC0xMjcwMzMzODY0LDg0MzY2NjYxNywyMDI2Mzg2OT
+EwLDExMjI0NDkxMjAsLTE3ODIzNDI1MDAsLTE2MTk0NzM5MzYs
+MTM1OTQxNTI0MV19
 -->
