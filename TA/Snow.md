@@ -285,15 +285,17 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 玩点好玩的，既然我们已经封装成了`BP_Brush`，那其实意味着我们可以自由加到任意我们希望有交互的物体上，
 例如我们可以加到球体上
 但是会发现没有，其实也很好理解，我们挂的`BP_Brush`默认在球的中心，我们拖动一下可以得知球的半径是`50`，超过了雪面的高度，所以肯定没效果
-所以在`BP_Brush`这边多维护一个`ZOffset`
+所以在`BP_Brush`这边多维护一个`ZOffset`，让物体每次减去这个然后再执行后续逻辑
 
 ![输入图片说明](/imgs/2026-09-30/zyUbi7qZVqpShvic.png)
+
+那我们就可以把球的`ZOffset`设为`50`，这样无论z
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODk2NjA3NDcsLTY2NjA1MTM5OSw0Mz
-EyOTA4MTUsLTE2NzMyMzkwMzEsLTkxMzQ1NjkwMywtNTI1MjIx
-NjA4LDIzNDI1NTYyOSwyMDcwNjAyNTg0LC0xMzczMjAzODkxLC
-0xNTQ3NDY0MDY3LDE2OTUwMTc3NjksLTEzMzM3NjY1MDgsMTg1
-MDE1NTY5OCwxNzE1NjQ2MzU2LC0xMjcwMzMzODY0LDg0MzY2Nj
-YxNywyMDI2Mzg2OTEwLDExMjI0NDkxMjAsLTE3ODIzNDI1MDAs
-LTE2MTk0NzM5MzZdfQ==
+eyJoaXN0b3J5IjpbNzYwNTQyMTQsLTY2NjA1MTM5OSw0MzEyOT
+A4MTUsLTE2NzMyMzkwMzEsLTkxMzQ1NjkwMywtNTI1MjIxNjA4
+LDIzNDI1NTYyOSwyMDcwNjAyNTg0LC0xMzczMjAzODkxLC0xNT
+Q3NDY0MDY3LDE2OTUwMTc3NjksLTEzMzM3NjY1MDgsMTg1MDE1
+NTY5OCwxNzE1NjQ2MzU2LC0xMjcwMzMzODY0LDg0MzY2NjYxNy
+wyMDI2Mzg2OTEwLDExMjI0NDkxMjAsLTE3ODIzNDI1MDAsLTE2
+MTk0NzM5MzZdfQ==
 -->
