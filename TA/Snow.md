@@ -319,14 +319,14 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 
 ![输入图片说明](/imgs/2026-09-30/YNWXdGIcCs8E5oAI.png)
 
-既然准备好了材质，我们还要准备一个`RT`，但是我们需要建立第三章`RT`吗，其实不需要，可以复用一下`RT_SnowSave`，因为先前`RT_SnowSave`是用来做`RT_Snow`的备份，从而实现平移的功能，但是同一帧实现完之后就没用了，所以在后面跟上一个`Draw Material To Render Target`，把`M_Heap`画到`RT_SnowSave`上面
+既然准备好了材质，我们还要准备一个`RT`，但是我们需要建立第三章`RT`吗，其实不需要，可以复用一下`RT_SnowSave`，因为先前`RT_SnowSave`是用来做`RT_Snow`的备份，从而实现平移的功能，但是同一帧实现完之后就没用了，所以在后面跟上一个`Draw Material To Render Target`，把`M_Heap`画到`RT_SnowSave`上面，完美解决问题
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTY0MDU5OTYsLTI4NjY5MTU0MCwtMT
-gwNzQ5MzU3NSwxMTY2MTE0MDcyLC02NDIzODc2ODcsNDA0Nzgw
-MTYyLC0zMjA4MzMzNDMsLTE2ODU2OTM1NDQsLTY2NjA1MTM5OS
-w0MzEyOTA4MTUsLTE2NzMyMzkwMzEsLTkxMzQ1NjkwMywtNTI1
-MjIxNjA4LDIzNDI1NTYyOSwyMDcwNjAyNTg0LC0xMzczMjAzOD
-kxLC0xNTQ3NDY0MDY3LDE2OTUwMTc3NjksLTEzMzM3NjY1MDgs
-MTg1MDE1NTY5OF19
+eyJoaXN0b3J5IjpbLTcxMDAyOTI2MCwtMjg2NjkxNTQwLC0xOD
+A3NDkzNTc1LDExNjYxMTQwNzIsLTY0MjM4NzY4Nyw0MDQ3ODAx
+NjIsLTMyMDgzMzM0MywtMTY4NTY5MzU0NCwtNjY2MDUxMzk5LD
+QzMTI5MDgxNSwtMTY3MzIzOTAzMSwtOTEzNDU2OTAzLC01MjUy
+MjE2MDgsMjM0MjU1NjI5LDIwNzA2MDI1ODQsLTEzNzMyMDM4OT
+EsLTE1NDc0NjQwNjcsMTY5NTAxNzc2OSwtMTMzMzc2NjUwOCwx
+ODUwMTU1Njk4XX0=
 -->
