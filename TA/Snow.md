@@ -293,11 +293,11 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 
 ## 让雪堆起来
 
-w
+我们可以直接去`M_Snow`操作效果
 
 ![输入图片说明](/imgs/2026-09-30/4HuUrruKTRcsheLl.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODc5MTA3MTU0LC0zMjA4MzMzNDMsLTE2OD
+eyJoaXN0b3J5IjpbNDA0NzgwMTYyLC0zMjA4MzMzNDMsLTE2OD
 U2OTM1NDQsLTY2NjA1MTM5OSw0MzEyOTA4MTUsLTE2NzMyMzkw
 MzEsLTkxMzQ1NjkwMywtNTI1MjIxNjA4LDIzNDI1NTYyOSwyMD
 cwNjAyNTg0LC0xMzczMjAzODkxLC0xNTQ3NDY0MDY3LDE2OTUw
