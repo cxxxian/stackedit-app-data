@@ -299,8 +299,10 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 ![输入图片说明](/imgs/2026-09-30/4HuUrruKTRcsheLl.png)
 
 然后`Add`叠加上我们原本的效果即可，
+
+![输入图片说明](/imgs/2026-09-30/9JuuUPv9emYzWwgu.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxOTAwMTAwMyw0MDQ3ODAxNjIsLTMyMD
+eyJoaXN0b3J5IjpbMjA3NTU4NTQ1NCw0MDQ3ODAxNjIsLTMyMD
 gzMzM0MywtMTY4NTY5MzU0NCwtNjY2MDUxMzk5LDQzMTI5MDgx
 NSwtMTY3MzIzOTAzMSwtOTEzNDU2OTAzLC01MjUyMjE2MDgsMj
 M0MjU1NjI5LDIwNzA2MDI1ODQsLTEzNzMyMDM4OTEsLTE1NDc0
