@@ -324,8 +324,10 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 ![输入图片说明](/imgs/2026-09-30/ccRbqDcdLDFaQBWX.png)
 
 那其实就没毛了，最后就把`RT_SnowSave`拿去采样用在`M_Snow`即可，此时的`RT_SnowSave`已经是我们处理过的堆积雪的贴图了
+
+![输入图片说明](/imgs/2026-09-30/jrvIFYK8L8CRr9Wh.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc1MTczMzM4MywtNTgwMjI0NjQ2LC0yOD
+eyJoaXN0b3J5IjpbLTczMDc4MzcyNiwtNTgwMjI0NjQ2LC0yOD
 Y2OTE1NDAsLTE4MDc0OTM1NzUsMTE2NjExNDA3MiwtNjQyMzg3
 Njg3LDQwNDc4MDE2MiwtMzIwODMzMzQzLC0xNjg1NjkzNTQ0LC
 02NjYwNTEzOTksNDMxMjkwODE1LC0xNjczMjM5MDMxLC05MTM0
