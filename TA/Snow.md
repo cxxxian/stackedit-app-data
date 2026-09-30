@@ -308,11 +308,12 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 现在我们希望堆砌起来的雪也有正常的法线效果
 
 我们先用用这个`NormalFromHeightmap`看看效果
+发现确实是有效果的，但是`HeightMap`需要输入一张`Texture Object`
 
 ![输入图片说明](/imgs/2026-09-30/zF4Kz0N6zP2kH5XG.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTUyMDQ0Njc5LDExNjYxMTQwNzIsLTY0Mj
+eyJoaXN0b3J5IjpbLTEzODA2OTc1LDExNjYxMTQwNzIsLTY0Mj
 M4NzY4Nyw0MDQ3ODAxNjIsLTMyMDgzMzM0MywtMTY4NTY5MzU0
 NCwtNjY2MDUxMzk5LDQzMTI5MDgxNSwtMTY3MzIzOTAzMSwtOT
 EzNDU2OTAzLC01MjUyMjE2MDgsMjM0MjU1NjI5LDIwNzA2MDI1
