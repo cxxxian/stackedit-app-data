@@ -314,8 +314,10 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 
 ![输入图片说明](/imgs/2026-09-30/zF4Kz0N6zP2kH5XG.png)
 
+所以我们得提取一下，把堆砌这块的实现，做成一个`M_Heap`
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTYxOTIxOTksMTE2NjExNDA3MiwtNj
+eyJoaXN0b3J5IjpbLTE4MDc0OTM1NzUsMTE2NjExNDA3MiwtNj
 QyMzg3Njg3LDQwNDc4MDE2MiwtMzIwODMzMzQzLC0xNjg1Njkz
 NTQ0LC02NjYwNTEzOTksNDMxMjkwODE1LC0xNjczMjM5MDMxLC
 05MTM0NTY5MDMsLTUyNTIyMTYwOCwyMzQyNTU2MjksMjA3MDYw
