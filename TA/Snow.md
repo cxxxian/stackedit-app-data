@@ -321,8 +321,10 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 
 既然准备好了材质，我们还要准备一个`RT`，但是我们需要建立第三章`RT`吗，其实不需要，可以复用一下`RT_SnowSave`，因为先前`RT_SnowSave`是用来做`RT_Snow`的备份，从而实现平移的功能，但是同一帧实现完之后就没用了，所以在后面跟上一个`Draw Material To Render Target`，把`M_Heap`画到`RT_SnowSave`上面，完美解决问题
 
+![输入图片说明](/imgs/2026-09-30/ccRbqDcdLDFaQBWX.png)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxMDAyOTI2MCwtMjg2NjkxNTQwLC0xOD
+eyJoaXN0b3J5IjpbLTU4MDIyNDY0NiwtMjg2NjkxNTQwLC0xOD
 A3NDkzNTc1LDExNjYxMTQwNzIsLTY0MjM4NzY4Nyw0MDQ3ODAx
 NjIsLTMyMDgzMzM0MywtMTY4NTY5MzU0NCwtNjY2MDUxMzk5LD
 QzMTI5MDgxNSwtMTY3MzIzOTAzMSwtOTEzNDU2OTAzLC01MjUy
