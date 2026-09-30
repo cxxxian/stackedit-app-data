@@ -315,12 +315,12 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 ![输入图片说明](/imgs/2026-09-30/zF4Kz0N6zP2kH5XG.png)
 
 所以我们得提取一下，把堆砌这块的实现，做成一个`M_Heap`
-没啥毛病，就是复制过来，并且也不需要转换`uv`，因为这里就是单纯的贴图采样，没有世界坐标zhu
+没啥毛病，就是复制过来，并且也不需要转换`uv`，因为这里就是单纯的贴图采样，没有世界坐标转`uv`的问题
 
 ![输入图片说明](/imgs/2026-09-30/YNWXdGIcCs8E5oAI.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkyODEyMjY5NiwtMTgwNzQ5MzU3NSwxMT
+eyJoaXN0b3J5IjpbLTI4NjY5MTU0MCwtMTgwNzQ5MzU3NSwxMT
 Y2MTE0MDcyLC02NDIzODc2ODcsNDA0NzgwMTYyLC0zMjA4MzMz
 NDMsLTE2ODU2OTM1NDQsLTY2NjA1MTM5OSw0MzEyOTA4MTUsLT
 E2NzMyMzkwMzEsLTkxMzQ1NjkwMywtNTI1MjIxNjA4LDIzNDI1
