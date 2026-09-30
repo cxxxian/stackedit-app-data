@@ -305,9 +305,10 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 
 ### 雪堆砌法线问题
 
-现在我们希望对其
+现在我们希望堆砌起来的雪也有正常的法线效果
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc4MTM2NjUwNCwxMTY2MTE0MDcyLC02ND
+eyJoaXN0b3J5IjpbMTg4OTUwNjA2OCwxMTY2MTE0MDcyLC02ND
 IzODc2ODcsNDA0NzgwMTYyLC0zMjA4MzMzNDMsLTE2ODU2OTM1
 NDQsLTY2NjA1MTM5OSw0MzEyOTA4MTUsLTE2NzMyMzkwMzEsLT
 kxMzQ1NjkwMywtNTI1MjIxNjA4LDIzNDI1NTYyOSwyMDcwNjAy
