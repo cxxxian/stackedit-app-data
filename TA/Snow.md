@@ -294,11 +294,12 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 ## 让雪堆起来
 
 我们可以直接去`M_Snow`操作效果
+通过将`RT_Snow`模糊然后叠加到原的`RT_Snow`上面
 
 
 ![输入图片说明](/imgs/2026-09-30/4HuUrruKTRcsheLl.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNTQyMjAzMiw0MDQ3ODAxNjIsLTMyMD
+eyJoaXN0b3J5IjpbLTgzMzM2MjI1Myw0MDQ3ODAxNjIsLTMyMD
 gzMzM0MywtMTY4NTY5MzU0NCwtNjY2MDUxMzk5LDQzMTI5MDgx
 NSwtMTY3MzIzOTAzMSwtOTEzNDU2OTAzLC01MjUyMjE2MDgsMj
 M0MjU1NjI5LDIwNzA2MDI1ODQsLTEzNzMyMDM4OTEsLTE1NDc0
