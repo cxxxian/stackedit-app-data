@@ -330,12 +330,14 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 然后其实我们就可以先利用`RT`做出想要的效果了，先把光照做成此表面，然后设置一些相应的参数，最重要的是把`NormalFromHeightmap`用上，这样我们就会有效果了，但是只是假效果，骗眼睛的，虽然也就那样，但是我们接下来就真的让雪堆起来
 
 ![输入图片说明](/imgs/2026-10-01/NndzvtFI017aCePy.png)
+
+启用`Virtual Heightfield Mesh`插件，然后在项目中开启``
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk5NTUyNzczMiwtNzMwNzgzNzI2LC01OD
-AyMjQ2NDYsLTI4NjY5MTU0MCwtMTgwNzQ5MzU3NSwxMTY2MTE0
-MDcyLC02NDIzODc2ODcsNDA0NzgwMTYyLC0zMjA4MzMzNDMsLT
-E2ODU2OTM1NDQsLTY2NjA1MTM5OSw0MzEyOTA4MTUsLTE2NzMy
-MzkwMzEsLTkxMzQ1NjkwMywtNTI1MjIxNjA4LDIzNDI1NTYyOS
-wyMDcwNjAyNTg0LC0xMzczMjAzODkxLC0xNTQ3NDY0MDY3LDE2
-OTUwMTc3NjldfQ==
+eyJoaXN0b3J5IjpbMTAxNjI5NzUyNywtOTk1NTI3NzMyLC03Mz
+A3ODM3MjYsLTU4MDIyNDY0NiwtMjg2NjkxNTQwLC0xODA3NDkz
+NTc1LDExNjYxMTQwNzIsLTY0MjM4NzY4Nyw0MDQ3ODAxNjIsLT
+MyMDgzMzM0MywtMTY4NTY5MzU0NCwtNjY2MDUxMzk5LDQzMTI5
+MDgxNSwtMTY3MzIzOTAzMSwtOTEzNDU2OTAzLC01MjUyMjE2MD
+gsMjM0MjU1NjI5LDIwNzA2MDI1ODQsLTEzNzMyMDM4OTEsLTE1
+NDc0NjQwNjddfQ==
 -->
