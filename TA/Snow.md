@@ -327,11 +327,11 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 
 ![输入图片说明](/imgs/2026-09-30/jrvIFYK8L8CRr9Wh.png)
 
-然后其实我们就可以先利用`RT`做出想要的效果了，先把guang'zha
+然后其实我们就可以先利用`RT`做出想要的效果了，先把光照做成此表面，然后设置一些xian
 
 ![输入图片说明](/imgs/2026-10-01/NndzvtFI017aCePy.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNDA2MDA3ODksLTczMDc4MzcyNiwtNT
+eyJoaXN0b3J5IjpbLTE4MzQ1NDU0MzQsLTczMDc4MzcyNiwtNT
 gwMjI0NjQ2LC0yODY2OTE1NDAsLTE4MDc0OTM1NzUsMTE2NjEx
 NDA3MiwtNjQyMzg3Njg3LDQwNDc4MDE2MiwtMzIwODMzMzQzLC
 0xNjg1NjkzNTQ0LC02NjYwNTEzOTksNDMxMjkwODE1LC0xNjcz
