@@ -338,12 +338,12 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 
 先把模式切换到地形之后，然后弄一座山出来
 现在希望启用一个虚拟高度场网格体，那肯定需要一个虚拟高度场
-虚拟高度场由材质来给，做一个`M_Land`，但是我们用的是`Runtime Virtual Texture Output`
+虚拟高度场由材质来给，做一个`M_Land`，但是我们用的是`Runtime Virtual Texture Output`，并且虚拟高度场网格体自身不携带法线，所以把地形的法线也一并赋值过来
 
 ![输入图片说明](/imgs/2026-10-02/0cAyE27VO2ddss2r.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3MjAyNzQ1MCwxNDIwNTIwNjY4LC0xMD
+eyJoaXN0b3J5IjpbMTk4MzA0NzA4NiwxNDIwNTIwNjY4LC0xMD
 c3Mzg2MDk3LC05OTU1Mjc3MzIsLTczMDc4MzcyNiwtNTgwMjI0
 NjQ2LC0yODY2OTE1NDAsLTE4MDc0OTM1NzUsMTE2NjExNDA3Mi
 wtNjQyMzg3Njg3LDQwNDc4MDE2MiwtMzIwODMzMzQzLC0xNjg1
