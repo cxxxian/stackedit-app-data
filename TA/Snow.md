@@ -356,10 +356,11 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 然后就是去优化`M_Snow`材质，我们要用上全局位置偏移，积雪才会有深度
 以及一些其他的东西，我们慢慢来捋
 首先是法线，现在我们主用刚刚做的`RVT_Normal`，然后再加上我们自己的根据`RT`做出来的法线，混合一下最终输出成最终的法线
+然后中间乘上积雪深度，然后乘向量`(0,0,1)`，这样子就可以朝上偏移
 
 ![输入图片说明](/imgs/2026-10-02/0EALaB2vqN26PCoS.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxOTg3NDQ1OSwyMTAwNTI5MzI2LC0xMj
+eyJoaXN0b3J5IjpbLTg2MDE5NDIwNCwyMTAwNTI5MzI2LC0xMj
 M5MjE1NzAzLC05MTA2NzQwOTksMTk4MzgxNDYzMiwxOTgzMDQ3
 MDg2LDE0MjA1MjA2NjgsLTEwNzczODYwOTcsLTk5NTUyNzczMi
 wtNzMwNzgzNzI2LC01ODAyMjQ2NDYsLTI4NjY5MTU0MCwtMTgw
