@@ -354,10 +354,12 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 然后把`RVT_Normal`也放进`land`里面，然后`create Volumes`
 
 然后就是去优化`M_Snow`材质，我们要用上全局位置偏移，积雪才会有深度
+以及一些其他的东西，我们慢慢来捋
+首先是法线，现在我们主用刚刚做的
 
 ![输入图片说明](/imgs/2026-10-02/0EALaB2vqN26PCoS.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzMzgwMDg5NiwyMTAwNTI5MzI2LC0xMj
+eyJoaXN0b3J5IjpbMTIyMTg4NTk5MSwyMTAwNTI5MzI2LC0xMj
 M5MjE1NzAzLC05MTA2NzQwOTksMTk4MzgxNDYzMiwxOTgzMDQ3
 MDg2LDE0MjA1MjA2NjgsLTEwNzczODYwOTcsLTk5NTUyNzczMi
 wtNzMwNzgzNzI2LC01ODAyMjQ2NDYsLTI4NjY5MTU0MCwtMTgw
