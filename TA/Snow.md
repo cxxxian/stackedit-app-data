@@ -336,9 +336,11 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 
 启用`Virtual Heightfield Mesh`插件，然后在项目中开启`enable virtual texture support`
 
+先把模式切换到地形之后，然后弄一座山出来
 现在做好一个虚拟高度场网格体，那肯定需要一个虚拟高度场
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYzMzMyODE5MywtMTA3NzM4NjA5NywtOT
+eyJoaXN0b3J5IjpbMTQyMDUyMDY2OCwtMTA3NzM4NjA5NywtOT
 k1NTI3NzMyLC03MzA3ODM3MjYsLTU4MDIyNDY0NiwtMjg2Njkx
 NTQwLC0xODA3NDkzNTc1LDExNjYxMTQwNzIsLTY0MjM4NzY4Ny
 w0MDQ3ODAxNjIsLTMyMDgzMzM0MywtMTY4NTY5MzU0NCwtNjY2
