@@ -351,13 +351,13 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 然后在放置面板上，搜`Virtual Heightfield Mesh`，然后拖到场景里，里面的`Virtual Texture`用刚刚构建出来的`Runtime Virtual Height Volumes`然后接着`build`一个`RVT_Height_MinMax`
 （有点乱，建议直接回顾工程）
 
-然后ba
+然后把`RVT_Normal`也放进
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc3OTM4NDgwNywtMTIzOTIxNTcwMywtOT
-EwNjc0MDk5LDE5ODM4MTQ2MzIsMTk4MzA0NzA4NiwxNDIwNTIw
-NjY4LC0xMDc3Mzg2MDk3LC05OTU1Mjc3MzIsLTczMDc4MzcyNi
-wtNTgwMjI0NjQ2LC0yODY2OTE1NDAsLTE4MDc0OTM1NzUsMTE2
-NjExNDA3MiwtNjQyMzg3Njg3LDQwNDc4MDE2MiwtMzIwODMzMz
-QzLC0xNjg1NjkzNTQ0LC02NjYwNTEzOTksNDMxMjkwODE1LC0x
-NjczMjM5MDMxXX0=
+eyJoaXN0b3J5IjpbLTEzNjk2NjkzNzgsLTEyMzkyMTU3MDMsLT
+kxMDY3NDA5OSwxOTgzODE0NjMyLDE5ODMwNDcwODYsMTQyMDUy
+MDY2OCwtMTA3NzM4NjA5NywtOTk1NTI3NzMyLC03MzA3ODM3Mj
+YsLTU4MDIyNDY0NiwtMjg2NjkxNTQwLC0xODA3NDkzNTc1LDEx
+NjYxMTQwNzIsLTY0MjM4NzY4Nyw0MDQ3ODAxNjIsLTMyMDgzMz
+M0MywtMTY4NTY5MzU0NCwtNjY2MDUxMzk5LDQzMTI5MDgxNSwt
+MTY3MzIzOTAzMV19
 -->
