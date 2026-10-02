@@ -346,8 +346,12 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 
 ![输入图片说明](/imgs/2026-10-02/Y10y5ImY755QspU7.png)
 
+然后去地形用上`RVT_Height`先，然后`create Volumes`
+
+然后在
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzMDM2ODMwNCwxOTgzMDQ3MDg2LDE0Mj
+eyJoaXN0b3J5IjpbMTk4MzgxNDYzMiwxOTgzMDQ3MDg2LDE0Mj
 A1MjA2NjgsLTEwNzczODYwOTcsLTk5NTUyNzczMiwtNzMwNzgz
 NzI2LC01ODAyMjQ2NDYsLTI4NjY5MTU0MCwtMTgwNzQ5MzU3NS
 wxMTY2MTE0MDcyLC02NDIzODc2ODcsNDA0NzgwMTYyLC0zMjA4
