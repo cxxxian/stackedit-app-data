@@ -363,11 +363,11 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 终于！有效果了，但是不好看，原因是太圆了，我们用的其实就是圆形遮罩，所以积雪边缘特别圆。
 所以我们可以，通过噪声来扰动一下我们的积雪效果
 但是会发现直接用`UV`采样噪声，叠加到`HeapHeight`上，这个`noise`还会跟着我们跑，不对不对
-
+其实就是倒推一下，我们做过`WorldToSnowUv`，那这个就是倒推回去`SnowToWorldUv`，为什么yao
 
 ![输入图片说明](/imgs/2026-10-03/QQvfisR4cORxEVoG.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzNzU0NjQ5MywtMzk3MzkwNDQxLC0xNz
+eyJoaXN0b3J5IjpbMTc0OTUwNDc2NCwtMzk3MzkwNDQxLC0xNz
 U5NjQyNDYsLTg2MDE5NDIwNCwyMTAwNTI5MzI2LC0xMjM5MjE1
 NzAzLC05MTA2NzQwOTksMTk4MzgxNDYzMiwxOTgzMDQ3MDg2LD
 E0MjA1MjA2NjgsLTEwNzczODYwOTcsLTk5NTUyNzczMiwtNzMw
