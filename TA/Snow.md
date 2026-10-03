@@ -361,11 +361,11 @@ RenderTarget 本质就是一张纹理。渲染 RT 的时候，GPU 的光栅器�
 ![输入图片说明](/imgs/2026-10-02/0EALaB2vqN26PCoS.png)
 
 终于！有效果了，但是不好看，原因是太圆了，我们用的其实就是圆形遮罩，所以积雪边缘特别圆。
-s'yi'yi
+所以我们可以，通过噪声来扰动一下我们的积雪效果
 
 ![输入图片说明](/imgs/2026-10-03/QQvfisR4cORxEVoG.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODIwMjMxMzEwLC0zOTczOTA0NDEsLTE3NT
+eyJoaXN0b3J5IjpbMzYxODk4NzI4LC0zOTczOTA0NDEsLTE3NT
 k2NDI0NiwtODYwMTk0MjA0LDIxMDA1MjkzMjYsLTEyMzkyMTU3
 MDMsLTkxMDY3NDA5OSwxOTgzODE0NjMyLDE5ODMwNDcwODYsMT
 QyMDUyMDY2OCwtMTA3NzM4NjA5NywtOTk1NTI3NzMyLC03MzA3
